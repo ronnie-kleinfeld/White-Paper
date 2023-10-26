@@ -1,0 +1,13 @@
+Windows
+
+Notepad++
+
+Visual Studio Code
+VSCode plugins
+	Simple react snippets
+	Preitter
+	Settings > Format code on save
+
+NodeJS.org 12.16.1 LTS
+	npm i -g create-react-app
+
