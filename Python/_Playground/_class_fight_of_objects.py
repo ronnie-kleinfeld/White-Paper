@@ -50,7 +50,7 @@ class Battle:
         defender.health = defender.health - damage_2_defender
 
         print(
-            f"{attacker.name} attacks {defender.name} deals {damage_2_defender} damage, {defender.name} is down from {defender.health + damage_2_defender} to {defender.health} health"
+            f"{attacker.name} attacks {defender.name} deals {damage_2_defender:02d} damage, {defender.name} is down from {(defender.health + damage_2_defender):02d} to {defender.health:02d} health"
         )
 
         if defender.health <= 0:
@@ -60,7 +60,7 @@ class Battle:
             return "Fight Again"
 
 
-thor = Warrior("111", 9, 2, 1)
-loki = Warrior("222", 9, 2, 1)
+thor = Warrior("111", 50, 10, 5)
+loki = Warrior("222", 50, 10, 5)
 battle = Battle()
 battle.start_fight(thor, loki)

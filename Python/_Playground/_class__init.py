@@ -2,10 +2,15 @@ class Point:
     # static members
     color = "111"  # Point.color = "222"
 
-    # static methods
+    # static class methods
     @classmethod
-    def blabla(cls):  # Point.blabla()
+    def blabla(cls):  # Point.blabla() returns a point object
         return cls(10, 10)
+
+    # static methods
+    @staticmethod
+    def blublu(blu):  # Point.blublu()
+        print(blu)
 
     # members
     # initialized in init or inline when needed
@@ -22,6 +27,11 @@ class Point:
     def draw(self):  # point.draw()
         print("Draw")
 
+
+point0 = Point.blabla()
+print("blabla", point0.age)
+
+Point.blublu(7)
 
 point1 = Point(1, 1)
 print(point1)  # <__main__.Point object at 0x101830200>

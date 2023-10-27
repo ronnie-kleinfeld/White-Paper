@@ -1,4 +1,10 @@
 print("LAMBDA")
+
+# anonymous function
+sum = lambda x, y: x + y
+print(sum(4, 5))  # 9
+
+
 items = [
     ("Product1", 10),
     ("Product3", 9),

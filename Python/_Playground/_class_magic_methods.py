@@ -10,12 +10,21 @@ class Point:
     def __str__(self) -> str:
         return f"Point {self.x, self.y}"
 
+    # __eq__ python infer __ne__
     def __eq__(self, __value: object) -> bool:
         return self.x == __value.x and self.y == __value.y
 
+    # __lt__ python infer __gt__
+    # __le__
+    # __ge__
     def __gt__(self, __value: object) -> bool:
         return self.x > __value.x or self.y > __value.y
 
+    # __add__
+    # __sub__
+    # __mul__
+    # __div__
+    # __mod__
     def __add__(self, __value: object):
         return Point(self.x + __value.x, self.y + __value.y)
 

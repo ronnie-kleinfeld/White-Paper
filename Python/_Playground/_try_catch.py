@@ -49,7 +49,8 @@ raise ValueError("Age can not be 0 or less")
 
 # custom error
 class InvalidOperationError(Exception):
-    pass
+    def __init__(self, *args: object, **kwargs) -> None:
+        Exception.__init__(*args, *args, **kwargs)
 
 
 raise InvalidOperationError("message")
