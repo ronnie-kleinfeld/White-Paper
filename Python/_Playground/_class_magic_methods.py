@@ -7,7 +7,6 @@ class Point:
         self.x = x
         self.y = y
 
-    # default is <__main__.Point object at 0x108e65940>
     def __str__(self) -> str:
         return f"Point {self.x, self.y}"
 
@@ -21,18 +20,12 @@ class Point:
         return Point(self.x + __value.x, self.y + __value.y)
 
 
-# __str__
-point1 = Point(1, 2)
-print(point1)  # __str__: Point (1, 2)
+point1 = Point(1, 3)
+point2 = Point(1, 3)
+point3 = Point(1, 2)
 
-# __eq__
-point2 = Point(1, 2)
-print(point1 == point2)  # True
-
-# __gt__
-print(point1 > point2)  # False
-point1.x = 3
-print(point1 > point2)  # True
-
-# __add__
-print(point1 + point2)  # Point (4, 4)
+print(point1)  # __str__: Point (1, 3)
+print(point1 == point2)  # __eq__: True
+print(point1 > point3)  # __gt__: True
+print(point1 < point3)  # __gt__: False
+print(point1 + point2 + point3)  # __add__: Point (3, 8)
