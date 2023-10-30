@@ -20,7 +20,7 @@ while num < 5:  # 1 2 4 5
 
 import math
 
-height = 7
+height = 9
 i = 1
 while i <= height:
     print(" " * math.floor(height - i), end="")
