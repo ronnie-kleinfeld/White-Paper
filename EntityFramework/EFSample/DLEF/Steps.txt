@@ -1,0 +1,19 @@
+﻿Create new project
+
+Install NuGet EntityFramework
+
+Create Model (in Program.cs)
+
+Add ConnectionString to App.Config
+  <connectionStrings>
+    <add name="DefaultConnection" connectionString="Data Source=RonnieDev;Initial Catalog=Pluto2;Persist Security Info=True;User ID=sa;Password=qweQWE123!@#" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+
+Create DBContext (in Program.cs)
+  add the name of the ConnectionString in the App.Config
+
+in PackageManagerConsole
+enable-migrations projectName:DLEF
+
+add-migration MigrationName projectName:DLEF -Force
+update-database projectName:DLEF
