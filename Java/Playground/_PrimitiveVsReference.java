@@ -4,11 +4,10 @@ import java.awt.*;
 public class _PrimitiveVsReference {
     public static void main(String[] args) {
         int x = 5;
-        int y = 6;
+        int y = x;
         System.out.println(x); // 5
-        System.out.println(y); // 6
+        System.out.println(y); // 5
 
-        y = x;
         x = 2;
         System.out.println(x); // 2
         System.out.println(y); // 5
