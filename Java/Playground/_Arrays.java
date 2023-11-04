@@ -21,5 +21,10 @@ public class _Arrays {
 
         Arrays.sort(status);
         System.out.println(Arrays.toString(status)); // [1, 2, 3, 4, 5]
+
+        // swap in array
+        String[] kids = { "Yossi", "Danny" };
+        System.out.println(Arrays.toString(kids));
+
     }
 }
