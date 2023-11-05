@@ -10,22 +10,22 @@ db = Path(
     "/Users/ronniekleinfeld/Dev/White papers/Python/_Playground/SQLite/db.sqlite3"
 )
 # print("INSERT")
-# with sqlite3.connect(db) as connection:
-#     command = "INSERT INTO Movies VALUES(?, ?)"
+# with sqlite3.connect(db) as con:
+#     cmd = "INSERT INTO Movies VALUES(?, ?)"
 #     for movie in movies:
-#         connection.execute(command, tuple(movie.values()))
-#     connection.commit()
+#         con.execute(cmd, tuple(movie.values()))
+#     con.commit()
 
 print("SELECT")  # iter rows
-with sqlite3.connect(db) as connection:
-    command = "SELECT * FROM Movies"
-    cursor = connection.execute(command)
+with sqlite3.connect(db) as con:
+    cmd = "SELECT * FROM Movies"
+    cursor = con.execute(cmd)
     for row in cursor:
         print(row)
 
 print("SELECT")  # fetch all into list
-with sqlite3.connect(db) as connection:
-    command = "SELECT * FROM Movies"
-    cursor = connection.execute(command)
+with sqlite3.connect(db) as con:
+    cmd = "SELECT * FROM Movies"
+    cursor = con.execute(cmd)
     data = cursor.fetchall()
     print(data)

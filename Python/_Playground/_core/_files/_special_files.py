@@ -13,13 +13,13 @@ with ZipFile("/Users/ronniekleinfeld/Music/files.zip") as zip:
 print("CSV")
 import csv
 
-with open("special_files.csv", "w") as file:
+with open("_special_files.csv", "w") as file:
     writer = csv.writer(file)
     writer.writerow(["trans", "product"])
     writer.writerow([1000, 1])
     writer.writerow([1001, 15])
 
-with open("special_files.csv") as file:
+with open("_special_files.csv") as file:
     reader = csv.reader(file)
     # print(reader)
     # print(list(reader))  # [['trans', 'product'], ['1000', '1'], ['1001', '15']]
