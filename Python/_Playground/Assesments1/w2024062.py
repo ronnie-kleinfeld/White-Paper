@@ -1,6 +1,6 @@
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
 progression_rules = {}
-progression_summary = {}
+outcomes_summary = {}
 
 
 def generate_key(pass_credits, defer_credits, fail_credits):
@@ -52,9 +52,9 @@ def add_progression_rules():
     add_progression_rule(0, 0, 120, "Exclude")
 
 
-def init_progression_summary():
+def init_outcomes_summary():
     for key, value in progression_rules.items():
-        progression_summary[value.message.upper()] = 0
+        outcomes_summary[value.message.upper()] = 0
 
 
 def check_if_has_more_outcomes() -> bool:
@@ -79,7 +79,7 @@ def input_data():
         total_credits = pass_credits + defer_credits + fail_credits
         if total_credits == 120:
             outcome_key = generate_key(pass_credits, defer_credits, fail_credits)
-            progression_summary[progression_rules[outcome_key].message.upper()] += 1
+            outcomes_summary[progression_rules[outcome_key].message.upper()] += 1
             print(progression_rules[outcome_key].message)
             if check_if_has_more_outcomes() is False:
                 break
@@ -101,13 +101,13 @@ def input_credits_and_validate(verb):
 
 
 def show_histogram():
-    for key, value in progression_summary.items():
+    for key, value in outcomes_summary.items():
         print(key, value)
 
 
 def main():
     add_progression_rules()
-    init_progression_summary()
+    init_outcomes_summary()
     input_data()
     show_histogram()
 
