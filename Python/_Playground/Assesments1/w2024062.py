@@ -57,21 +57,31 @@ def init_progression_summary():
         progression_summary[value.message.upper()] = 0
 
 
+def check_if_has_more_outcomes() -> bool:
+    print()
+    print("Would you like to enter another set of data?")
+    has_more = input("Enter 'y' for yes or 'q' to quit and view results: ")
+    if has_more.upper() == "Q":
+        return False
+    elif has_more.upper() == "Y":
+        return True
+    else:
+        print("Out of range, acceptable values are 'y' for yes ot 'q' to quit.")
+        check_if_has_more_outcomes()
+
+
 def input_data():
     while True:
         pass_credits = input_credits_and_validate("pass")
         defer_credits = input_credits_and_validate("defer")
         fail_credits = input_credits_and_validate("fail")
 
-        total = pass_credits + defer_credits + fail_credits
-        if total == 120:
+        total_credits = pass_credits + defer_credits + fail_credits
+        if total_credits == 120:
             outcome_key = generate_key(pass_credits, defer_credits, fail_credits)
             progression_summary[progression_rules[outcome_key].message.upper()] += 1
             print(progression_rules[outcome_key].message)
-            print()
-            print("Would you like to enter another set of data?")
-            more = input("Enter 'y' for yes or 'q' to quit and view results: ")
-            if more == "q":
+            if check_if_has_more_outcomes() is False:
                 break
         else:
             print("Total incorrect")
