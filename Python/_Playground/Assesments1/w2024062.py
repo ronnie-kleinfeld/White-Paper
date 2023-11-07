@@ -7,7 +7,7 @@ def generate_key(pass_credits, defer_credits, fail_credits):
     return f"{pass_credits:03d}{defer_credits:03d}{fail_credits:03d}"
 
 
-class ProgressionRules:
+class Progression_Rules:
     def __init__(self, pass_credits, defer_credits, fail_credits, message):
         self.pass_credits = pass_credits
         self.defer_credits = defer_credits
@@ -18,7 +18,7 @@ class ProgressionRules:
 def add_progression_rule(pass_credits, defer_credits, fail_credits, message):
     progression_rules[
         generate_key(pass_credits, defer_credits, fail_credits)
-    ] = ProgressionRules(pass_credits, defer_credits, fail_credits, message)
+    ] = Progression_Rules(pass_credits, defer_credits, fail_credits, message)
 
 
 def add_progression_rules():
