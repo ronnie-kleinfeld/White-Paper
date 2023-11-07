@@ -1,5 +1,6 @@
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
 progression_rules = {}
+outcomes_log = []
 outcomes_summary = {}
 
 
@@ -7,18 +8,21 @@ def generate_key(pass_credits, defer_credits, fail_credits):
     return f"{pass_credits:03d}{defer_credits:03d}{fail_credits:03d}"
 
 
-class Progression_Rules:
+class ProgressionRule:
     def __init__(self, pass_credits, defer_credits, fail_credits, message):
         self.pass_credits = pass_credits
         self.defer_credits = defer_credits
         self.fail_credits = fail_credits
         self.message = message
 
+    def __str__(self) -> str:
+        return f"{self.message} - {self.pass_credits}, {self.defer_credits}, {self.fail_credits}"
+
 
 def add_progression_rule(pass_credits, defer_credits, fail_credits, message):
     progression_rules[
         generate_key(pass_credits, defer_credits, fail_credits)
-    ] = Progression_Rules(pass_credits, defer_credits, fail_credits, message)
+    ] = ProgressionRule(pass_credits, defer_credits, fail_credits, message)
 
 
 def add_progression_rules():
@@ -52,6 +56,10 @@ def add_progression_rules():
     add_progression_rule(0, 0, 120, "Exclude")
 
 
+def add_to_coutcomes_log(progression_rule):
+    outcomes_log.append(progression_rule)
+
+
 def init_outcomes_summary():
     for key, value in progression_rules.items():
         outcomes_summary[value.message.upper()] = 0
@@ -79,8 +87,10 @@ def input_data():
         total_credits = pass_credits + defer_credits + fail_credits
         if total_credits == 120:
             outcome_key = generate_key(pass_credits, defer_credits, fail_credits)
-            outcomes_summary[progression_rules[outcome_key].message.upper()] += 1
-            print(progression_rules[outcome_key].message)
+            progression_rule = progression_rules[outcome_key]
+            outcomes_summary[progression_rule.message.upper()] += 1
+            print(progression_rule.message)
+            add_to_coutcomes_log(progression_rule)
             if check_if_has_more_outcomes() is False:
                 break
         else:
@@ -105,11 +115,19 @@ def show_histogram():
         print(key, value)
 
 
+def show_outcome_log():
+    print()
+    print("Part 2:")
+    for index, name in enumerate(outcomes_log):
+        print(f"{index}: {name}")
+
+
 def main():
     add_progression_rules()
     init_outcomes_summary()
     input_data()
     show_histogram()
+    show_outcome_log()
 
 
 main()
