@@ -1,4 +1,5 @@
 progression_outcomes = {}
+progression_results = {}
 
 
 def generate_key(pass_credits, defer_credits, fail_credits):
@@ -26,54 +27,56 @@ def add_progression_outcomes():
     add_progression_outcome(120, 0, 0, "Progress")
     add_progression_outcome(100, 20, 0, "Progress (module trailer)")
     add_progression_outcome(100, 0, 20, "Progress (module trailer)")
-    add_progression_outcome(80, 40, 0, "Do not Progress – module retriever")
-    add_progression_outcome(80, 20, 20, "Do not Progress – module retriever")
-    add_progression_outcome(80, 0, 40, "Do not Progress – module retriever")
-    add_progression_outcome(60, 60, 0, "Do not progress – module retriever")
-    add_progression_outcome(60, 40, 20, "Do not progress – module retriever")
-    add_progression_outcome(60, 20, 40, "Do not progress – module retriever")
-    add_progression_outcome(60, 0, 60, "Do not progress – module retriever")
-    add_progression_outcome(40, 80, 0, "Do not progress – module retriever")
-    add_progression_outcome(40, 60, 20, "Do not progress – module retriever")
-    add_progression_outcome(40, 40, 40, "Do not progress – module retriever")
-    add_progression_outcome(40, 20, 60, "Do not progress – module retriever")
+    add_progression_outcome(80, 40, 0, "Do not Progress - module retriever")
+    add_progression_outcome(80, 20, 20, "Do not Progress - module retriever")
+    add_progression_outcome(80, 0, 40, "Do not Progress - module retriever")
+    add_progression_outcome(60, 60, 0, "Do not progress - module retriever")
+    add_progression_outcome(60, 40, 20, "Do not progress - module retriever")
+    add_progression_outcome(60, 20, 40, "Do not progress - module retriever")
+    add_progression_outcome(60, 0, 60, "Do not progress - module retriever")
+    add_progression_outcome(40, 80, 0, "Do not progress - module retriever")
+    add_progression_outcome(40, 60, 20, "Do not progress - module retriever")
+    add_progression_outcome(40, 40, 40, "Do not progress - module retriever")
+    add_progression_outcome(40, 20, 60, "Do not progress - module retriever")
     add_progression_outcome(40, 0, 80, "Exclude")
-    add_progression_outcome(20, 100, 0, "Do not progress – module retriever")
-    add_progression_outcome(20, 80, 20, "Do not progress – module retriever")
-    add_progression_outcome(20, 60, 40, "Do not progress – module retriever")
-    add_progression_outcome(20, 40, 60, "Do not progress – module retriever")
+    add_progression_outcome(20, 100, 0, "Do not progress - module retriever")
+    add_progression_outcome(20, 80, 20, "Do not progress - module retriever")
+    add_progression_outcome(20, 60, 40, "Do not progress - module retriever")
+    add_progression_outcome(20, 40, 60, "Do not progress - module retriever")
     add_progression_outcome(20, 20, 80, "Exclude")
     add_progression_outcome(20, 0, 100, "Exclude")
-    add_progression_outcome(0, 120, 0, "Do not progress – module retriever")
-    add_progression_outcome(0, 100, 20, "Do not progress – module retriever")
-    add_progression_outcome(0, 80, 40, "Do not progress – module retriever")
-    add_progression_outcome(0, 60, 60, "Do not progress – module retriever")
+    add_progression_outcome(0, 120, 0, "Do not progress - module retriever")
+    add_progression_outcome(0, 100, 20, "Do not progress - module retriever")
+    add_progression_outcome(0, 80, 40, "Do not progress - module retriever")
+    add_progression_outcome(0, 60, 60, "Do not progress - module retriever")
     add_progression_outcome(0, 40, 80, "Exclude")
     add_progression_outcome(0, 20, 100, "Exclude")
     add_progression_outcome(0, 0, 120, "Exclude")
 
 
+def init_progression_results():
+    for key, value in progression_outcomes.items():
+        progression_results[value.message.upper()] = 0
+
+
 def multiple_outcomes():
     while True:
-        outcome_key = input_progression()
-        print(progression_outcomes[outcome_key].message)
-        print()
-        print("Would you like to enter another set of data?")
-        more = input("Enter 'y' for yes or 'q' to quit and view results: ")
-        if more == "q":
-            break
+        pass_credits = input_validation("pass")
+        defer_credits = input_validation("defer")
+        fail_credits = input_validation("fail")
 
-
-def input_progression():
-    pass_credits = input_validation("pass")
-    defer_credits = input_validation("defer")
-    fail_credits = input_validation("fail")
-
-    total = pass_credits + defer_credits + fail_credits
-    if total == 120:
-        return f"{pass_credits:03d}{defer_credits:03d}{fail_credits:03d}"
-    else:
-        print("Total incorrect")
+        total = pass_credits + defer_credits + fail_credits
+        if total == 120:
+            outcome_key = f"{pass_credits:03d}{defer_credits:03d}{fail_credits:03d}"
+            progression_results[progression_outcomes[outcome_key].message.upper()] += 1
+            print(progression_outcomes[outcome_key].message)
+            print()
+            print("Would you like to enter another set of data?")
+            more = input("Enter 'y' for yes or 'q' to quit and view results: ")
+            if more == "q":
+                break
+        else:
+            print("Total incorrect")
 
 
 def input_validation(verb):
@@ -90,9 +93,16 @@ def input_validation(verb):
             print("Integer required")
 
 
+def show_histogram():
+    for key, value in progression_results.items():
+        print(key, value)
+
+
 def main():
     add_progression_outcomes()
+    init_progression_results()
     multiple_outcomes()
+    show_histogram()
 
 
 main()
