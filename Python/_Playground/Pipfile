@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 requests = "*"
 pypdf2 = "*"
+numpy = "*"
 
 [dev-packages]
 
