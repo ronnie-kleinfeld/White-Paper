@@ -1,10 +1,14 @@
+# BAD EXAMPLE OF THREADING TO LOCK BANK ACCOUNT FROM MULTIPLE DRAW
+# BAD EXAMPLE OF THREADING TO LOCK BANK ACCOUNT FROM MULTIPLE DRAW
+# BAD EXAMPLE OF THREADING TO LOCK BANK ACCOUNT FROM MULTIPLE DRAW
+# BAD EXAMPLE OF THREADING TO LOCK BANK ACCOUNT FROM MULTIPLE DRAW
+
 import threading
 import time
-import random
 
 
 class BankAccount(threading.Thread):
-    acct_balance = 100
+    account_balance = 100
 
     def __init__(self, name, money_request):
         threading.Thread.__init__(self)
@@ -12,33 +16,30 @@ class BankAccount(threading.Thread):
         self.money_request = money_request
 
     def run(self):
-        # Get lock to keep other threads from accessing the account
-        threadLock.acquire()
-        # Call the static method
+        thread_lock.acquire()
         BankAccount.get_money(self)
-        # Release lock so other thread can access the account
-        threadLock.release()
+        thread_lock.release()
 
     @staticmethod
-    def get_money(customer):
+    def get_money(bank_account):
         print(
             "{} tries to withdrawal ${} at {}".format(
-                customer.name,
-                customer.money_request,
+                bank_account.name,
+                bank_account.money_request,
                 time.strftime("%H:%M:%S", time.gmtime()),
             )
         )
-        if BankAccount.acct_balance - customer.money_request > 0:
-            BankAccount.acct_balance -= customer.money_request
-            print(f"New account balance is : ${BankAccount.acct_balance}")
+        if BankAccount.account_balance - bank_account.money_request > 0:
+            BankAccount.account_balance -= bank_account.money_request
+            print(f"New account balance is : ${BankAccount.account_balance}")
         else:
             print("Not enough money in the account")
-            print(f"Current balance : ${BankAccount.acct_balance}")
+            print(f"Current balance : ${BankAccount.account_balance}")
         time.sleep(3)
 
 
 # Create a lock to be used by threads
-threadLock = threading.Lock()
+thread_lock = threading.Lock()
 # Create new threads
 doug = BankAccount("Doug", 1)
 paul = BankAccount("Paul", 100)
