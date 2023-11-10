@@ -9,7 +9,7 @@ def execute_thread(i):
     threadLock.acquire()
     print(f"Thread {i+1} sleeps at {time.strftime("%H:%M:%S", start)}")
     threadLock.release()
-    rand_sleep_time = random.randint(2, 10)
+    rand_sleep_time = random.randint(1, 10)
     time.sleep(rand_sleep_time)
     threadLock.acquire()
     print(f"Thread {i+1} slept for {rand_sleep_time} seconds {time.strftime("%H:%M:%S", start)}-{time.strftime("%H:%M:%S", time.gmtime())} {threading.active_count()-2} threads left alive")
