@@ -6,10 +6,9 @@
 # Date: Nov 11, 2023
 
 
-import ProgressionRule as pr
 import os
 import pickle
-from pathlib import Path
+import ProgressionRule as pr
 
 
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
@@ -154,13 +153,7 @@ def print_progression_data_from_file():
         print(f"{index}: {item}")
 
 
-def delete_progression_data_file():
-    if os.path.exists(path):
-        os.remove(path)
-
-
 def main():
-    # delete_progression_data_file()
     add_progression_rules()
     init_progression_summary()
     input_data()
