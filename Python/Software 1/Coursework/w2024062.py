@@ -1,28 +1,38 @@
+# I declare that my work contains no examples of misconduct, such as plagiarism, or collusion.
+# Any code taken from other sources is referenced within my code solution.
+# I used the listed libraries which are common Python libraries
+# I used https://stackoverflow.com to learn how to read and save data in file
+# Student ID: 20240602 Ronnie Kleinfeld
+# Date: Nov 11, 2023
+
+
+import ProgressionRule as pr
+import os
+import pickle
+from pathlib import Path
+
+
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
 progression_rules = {}
-outcomes_log = []
-outcomes_summary = {}
+progression_log = []
+progression_summary = {}
+
+# get a path for Part 3 file
+current_directory = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__))
+)
+FILE_NAME = "progression_data.txt"
+path = os.path.join(current_directory, FILE_NAME)
 
 
 def generate_key(pass_credits, defer_credits, fail_credits):
     return f"{pass_credits:03d}{defer_credits:03d}{fail_credits:03d}"
 
 
-class ProgressionRule:
-    def __init__(self, pass_credits, defer_credits, fail_credits, message):
-        self.pass_credits = pass_credits
-        self.defer_credits = defer_credits
-        self.fail_credits = fail_credits
-        self.message = message
-
-    def __str__(self) -> str:
-        return f"{self.message} - {self.pass_credits}, {self.defer_credits}, {self.fail_credits}"
-
-
 def add_progression_rule(pass_credits, defer_credits, fail_credits, message):
     progression_rules[
         generate_key(pass_credits, defer_credits, fail_credits)
-    ] = ProgressionRule(pass_credits, defer_credits, fail_credits, message)
+    ] = pr.ProgressionRule(pass_credits, defer_credits, fail_credits, message)
 
 
 def add_progression_rules():
@@ -56,16 +66,19 @@ def add_progression_rules():
     add_progression_rule(0, 0, 120, "Exclude")
 
 
-def add_to_coutcomes_log(progression_rule):
-    outcomes_log.append(progression_rule)
+def add_to_progression_log(progression_rule):
+    # for Part 2
+    progression_log.append(progression_rule)
+    # for Part 3
+    write_progression_data_to_file(progression_log)
 
 
-def init_outcomes_summary():
+def init_progression_summary():
     for key, value in progression_rules.items():
-        outcomes_summary[value.message.upper()] = 0
+        progression_summary[value.message.upper()] = 0
 
 
-def check_if_has_more_outcomes() -> bool:
+def check_if_has_more_input() -> bool:
     print()
     print("Would you like to enter another set of data?")
     has_more = input("Enter 'y' for yes or 'q' to quit and view results: ")
@@ -75,7 +88,7 @@ def check_if_has_more_outcomes() -> bool:
         return True
     else:
         print("Out of range, acceptable values are 'y' for yes ot 'q' to quit.")
-        check_if_has_more_outcomes()
+        check_if_has_more_input()
 
 
 def input_data():
@@ -88,10 +101,10 @@ def input_data():
         if total_credits == 120:
             outcome_key = generate_key(pass_credits, defer_credits, fail_credits)
             progression_rule = progression_rules[outcome_key]
-            outcomes_summary[progression_rule.message.upper()] += 1
+            progression_summary[progression_rule.message.upper()] += 1
             print(progression_rule.message)
-            add_to_coutcomes_log(progression_rule)
-            if check_if_has_more_outcomes() is False:
+            add_to_progression_log(progression_rule)
+            if check_if_has_more_input() is False:
                 break
         else:
             print("Total incorrect")
@@ -111,23 +124,49 @@ def input_credits_and_validate(verb):
 
 
 def show_histogram():
-    for key, value in outcomes_summary.items():
+    print()
+    print("Part 1: Histogram data")
+    for key, value in progression_summary.items():
         print(key, value)
 
 
-def show_outcome_log():
+# for Part 2
+def print_outcome_log():
     print()
     print("Part 2:")
-    for index, name in enumerate(outcomes_log):
-        print(f"{index}: {name}")
+    for index, item in enumerate(progression_log):
+        print(f"{index}: {item}")
+
+
+# for part 3
+def write_progression_data_to_file(progression_rule):
+    with open(path, "wb") as file:
+        pickle.dump(progression_rule, file, pickle.HIGHEST_PROTOCOL)
+
+
+def print_progression_data_from_file():
+    with open(path, "rb") as file:
+        items = pickle.load(file)
+
+    print()
+    print("Part 3:")
+    for index, item in enumerate(items):
+        print(f"{index}: {item}")
+
+
+def delete_progression_data_file():
+    if os.path.exists(path):
+        os.remove(path)
 
 
 def main():
+    # delete_progression_data_file()
     add_progression_rules()
-    init_outcomes_summary()
+    init_progression_summary()
     input_data()
     show_histogram()
-    show_outcome_log()
+    print_outcome_log()
+    print_progression_data_from_file()
 
 
 main()
