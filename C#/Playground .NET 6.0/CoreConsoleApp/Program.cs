@@ -5,8 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-
-            PrimitiveTypes.PT();
+            Console.WriteLine("Ronnie is back!");
         }
     }
 }
