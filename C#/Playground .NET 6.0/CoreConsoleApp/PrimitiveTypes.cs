@@ -1,5 +1,10 @@
 namespace CoreConsoleApp
 {
+    /// <summary>
+    /// Primitive types are the one that are native runtime in the CPU
+    /// Primitive types inherit from System.ValueType or struct by default
+    /// see diagram
+    /// </summary>
     public class PrimitiveTypes
     {
         public static void PT()
