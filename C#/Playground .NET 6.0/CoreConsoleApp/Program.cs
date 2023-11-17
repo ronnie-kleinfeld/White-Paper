@@ -1,4 +1,6 @@
-﻿using CoreConsoleApp.Core.Variables;
+﻿using CoreConsoleApp.Core;
+using CoreConsoleApp.Core.Interfaces;
+using CoreConsoleApp.Core.Variables;
 
 namespace CoreConsoleApp
 {
@@ -9,7 +11,8 @@ namespace CoreConsoleApp
             Console.WriteLine("Hello, World!");
 
             PrintTriangle();
-            PrimitiveTypes.PT();
+            PrimitiveTypes.DoUse();
+            Comparable.DoUse();
         }
 
         private static void PrintTriangle()

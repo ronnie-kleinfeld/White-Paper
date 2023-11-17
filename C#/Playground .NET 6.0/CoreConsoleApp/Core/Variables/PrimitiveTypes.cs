@@ -7,7 +7,7 @@ namespace CoreConsoleApp.Core.Variables
     /// </summary>
     public class PrimitiveTypes
     {
-        public static void PT()
+        public static void DoUse()
         {
             Boolean b1 = true; // {true,false}
 
