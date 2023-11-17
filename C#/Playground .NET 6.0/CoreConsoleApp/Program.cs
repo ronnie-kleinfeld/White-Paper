@@ -1,4 +1,6 @@
-﻿namespace CoreConsoleApp
+﻿using CoreConsoleApp.Core.Variables;
+
+namespace CoreConsoleApp
 {
     internal class Program
     {

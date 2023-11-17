@@ -1,6 +1,4 @@
-using System;
-using System.Security.AccessControl;
-namespace CoreConsoleApp
+namespace CoreConsoleApp.Core.Variables
 {
     /// <summary>
     /// struct inherits from System.ValueType by default

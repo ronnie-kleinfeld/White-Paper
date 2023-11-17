@@ -1,4 +1,4 @@
-namespace CoreConsoleApp
+namespace CoreConsoleApp.Core.Variables
 {
     /// <summary>
     /// Primitive types are the one that are native runtime in the CPU
