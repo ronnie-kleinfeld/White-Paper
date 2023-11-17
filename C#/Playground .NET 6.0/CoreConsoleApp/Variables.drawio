@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" modified="2023-11-17T13:22:45.123Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15" etag="pRtnWDspvIted5GC-AbO" version="22.1.2" type="device">
+  <diagram name="Page-1" id="uCIaEqaVsT1KvWT5PgN6">
+    <mxGraphModel dx="611" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-3" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-1" target="ytuizGIeiQtNfvDpDzd5-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-5" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-1" target="ytuizGIeiQtNfvDpDzd5-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-1" value="System.Object" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-9" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-2" target="ytuizGIeiQtNfvDpDzd5-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-11" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-2" target="ytuizGIeiQtNfvDpDzd5-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-2" value="Value Types" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-14" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-4" target="ytuizGIeiQtNfvDpDzd5-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-16" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-4" target="ytuizGIeiQtNfvDpDzd5-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-18" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-4" target="ytuizGIeiQtNfvDpDzd5-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-4" value="Reference Types" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-10" value="enum:&lt;br&gt;System.Enum" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-12" value="class&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-15" value="interface" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-17" value="delegate" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="480" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-19" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-2" target="ytuizGIeiQtNfvDpDzd5-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="286" y="200" as="sourcePoint" />
+            <mxPoint x="174" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ytuizGIeiQtNfvDpDzd5-6" target="ytuizGIeiQtNfvDpDzd5-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-6" value="struct:&lt;br&gt;System.ValueType" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ytuizGIeiQtNfvDpDzd5-20" value="Boolean&lt;br&gt;Byte&lt;br&gt;SByte&lt;br&gt;Char&lt;br&gt;Int16,32,64&lt;br&gt;UInt16,32,64&lt;br&gt;Single&lt;br&gt;Double&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="120" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
