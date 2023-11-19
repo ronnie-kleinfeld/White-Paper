@@ -6,9 +6,9 @@
 # Date: Nov 11, 2023
 
 
+import csv
 import os
 import w2024062_progression_rule as pr
-import csv
 
 
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
