@@ -7,7 +7,7 @@
 
 
 import os
-import ProgressionRule as pr
+import w2024062_progression_rule as pr
 import csv
 
 
@@ -98,7 +98,8 @@ def print_outcome_log():
 
 # for part 3
 def delete_progression_data_file():
-    os.remove(path)
+    if os.path.exists(path):
+        os.remove(path)
 
 
 def write_progression_data_to_file(progression_rule):
