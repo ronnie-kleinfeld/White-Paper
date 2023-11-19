@@ -1,6 +1,6 @@
 # I declare that my work contains no examples of misconduct, such as plagiarism, or collusion.
 # Any code taken from other sources is referenced within my code solution.
-# I used the listed libraries which are common Python libraries
+# I import and used the listed libraries which are common Python libraries
 # I used https://stackoverflow.com to learn how to read and save data in file
 # Student ID: 20240602 Ronnie Kleinfeld
 # Date: Nov 11, 2023
@@ -113,8 +113,9 @@ def print_progression_data_from_file():
     with open(path) as file:
         reader = csv.reader(file)
         for row in reader:
-            print(row[0], row[1], row[2])
-            # print(f"{index}: {item}")
+            outcome_key = pr.generate_key(int(row[0]), int(row[1]), int(row[2]))
+            progression_rule = progression_rules[outcome_key]
+            print(f"{progression_rule}")
 
 
 def main():
