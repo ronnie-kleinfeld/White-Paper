@@ -8,6 +8,9 @@ class ProgressionRule:
     def __str__(self) -> str:
         return f"{self.message} - {self.pass_credits}, {self.defer_credits}, {self.fail_credits}"
 
+    def to_array(self):
+        return [self.pass_credits, self.defer_credits, self.fail_credits]
+
 
 def generate_key(pass_credits, defer_credits, fail_credits):
     return f"{pass_credits:03d}{defer_credits:03d}{fail_credits:03d}"

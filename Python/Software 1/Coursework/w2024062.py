@@ -7,8 +7,8 @@
 
 
 import os
-import pickle
 import ProgressionRule as pr
+import csv
 
 
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
@@ -20,7 +20,7 @@ progression_summary = {}
 current_directory = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__))
 )
-FILE_NAME = "progression_data.txt"
+FILE_NAME = "progression_data.csv"
 path = os.path.join(current_directory, FILE_NAME)
 
 
@@ -28,7 +28,7 @@ def add_to_progression_log(progression_rule):
     # for Part 2
     progression_log.append(progression_rule)
     # for Part 3
-    write_progression_data_to_file(progression_log)
+    write_progression_data_to_file(progression_rule)
 
 
 def init_progression_summary():
@@ -97,23 +97,29 @@ def print_outcome_log():
 
 
 # for part 3
+def delete_progression_data_file():
+    os.remove(path)
+
+
 def write_progression_data_to_file(progression_rule):
-    with open(path, "wb") as file:
-        pickle.dump(progression_rule, file, pickle.HIGHEST_PROTOCOL)
+    with open(path, "a") as file:
+        writer = csv.writer(file)
+        writer.writerow(progression_rule.to_array())
 
 
 def print_progression_data_from_file():
-    with open(path, "rb") as file:
-        items = pickle.load(file)
-
     print()
     print("Part 3:")
-    for index, item in enumerate(items):
-        print(f"{index}: {item}")
+    with open(path) as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row[0], row[1], row[2])
+            # print(f"{index}: {item}")
 
 
 def main():
     pr.init_progression_rules()
+    delete_progression_data_file()
     init_progression_summary()
     input_data()
     show_histogram()
