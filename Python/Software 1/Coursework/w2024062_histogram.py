@@ -1,4 +1,5 @@
 from graphics import *
+import random
 
 
 def add_title_text_box(win):
@@ -42,6 +43,21 @@ def add_bar_graph_frame(win):
     rect.draw(win)
 
 
+def get_random_color():
+    return color_rgb(
+        random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+    )
+
+
+def add_bar_graph_bar(win, bar_index, bar_width):
+    x = 50 + 50 + bar_index * (bar_width + 5)
+    y = 100
+    max_height = 400
+    rect = Rectangle(Point(x, 100), Point(x + bar_width, 100 + max_height))
+    rect.setFill(get_random_color())
+    rect.draw(win)
+
+
 def main():
     win = GraphWin("Histogram", 800, 600)
     win.setBackground("Mint Cream")
@@ -50,6 +66,15 @@ def main():
     add_sub_title_text_box(win)
 
     add_bar_graph_frame(win)
+
+    count = 5
+    bar_width = 605 / count - 5
+
+    add_bar_graph_bar(win, 0, bar_width)
+    add_bar_graph_bar(win, 1, bar_width)
+    add_bar_graph_bar(win, 2, bar_width)
+    add_bar_graph_bar(win, 3, bar_width)
+    add_bar_graph_bar(win, 4, bar_width)
 
     win.getMouse()
 
