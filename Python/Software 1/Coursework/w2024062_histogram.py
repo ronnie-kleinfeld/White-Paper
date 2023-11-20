@@ -1,46 +1,40 @@
-from graphics import *
 import random
+from graphics import GraphWin
+from graphics import Text
+from graphics import Point
+from graphics import Rectangle
+from graphics import color_rgb
 
 
-def create_window():
+def add_window():
     win = GraphWin("Histogram", 800, 600)
     win.setBackground("Mint Cream")
     return win
 
 
 def add_title_text_box(win):
-    text_box = Text(Point(180, 50), "Histogram Results")
-    text_box.setTextColor("grey")
-    text_box.setSize(24)
-    text_box.setStyle("bold")
-    text_box.setFace("helvetica")
-    text_box.draw(win)
+    add_text_box(win, 180, 50, "Histogram Results", "grey", 24, "bold", "helvetica")
 
 
 def add_sub_title_text_box(win, outcomes_count):
-    text_box = Text(Point(180, 560), f"{outcomes_count} outcomes in total.")
-    text_box.setTextColor("grey")
-    text_box.setSize(20)
-    text_box.setStyle("bold")
-    text_box.setFace("helvetica")
-    text_box.draw(win)
+    title = f"{outcomes_count} outcomes in total."
+    add_text_box(win, 180, 560, title, "grey", 20, "bold", "helvetica")
 
 
-def add_bar_count(win, x, y, count):
-    text_box = Text(Point(x, y), count)
-    text_box.setTextColor("grey")
-    text_box.setSize(18)
-    text_box.setStyle("bold")
-    text_box.setFace("helvetica")
-    text_box.draw(win)
+def add_bar_count_text_box(win, x, y, count):
+    add_text_box(win, x, y, count, "grey", 18, "bold", "helvetica")
 
 
-def add_bar_title(win, x, y, title):
+def add_bar_title_text_box(win, x, y, title):
+    add_text_box(win, x, y, title, "grey", 16, "bold", "helvetica")
+
+
+def add_text_box(win, x, y, title, text_color, size, style, face):
     text_box = Text(Point(x, y), title)
-    text_box.setTextColor("grey")
-    text_box.setSize(16)
-    text_box.setStyle("bold")
-    text_box.setFace("helvetica")
+    text_box.setTextColor(text_color)
+    text_box.setSize(size)
+    text_box.setStyle(style)
+    text_box.setFace(face)
     text_box.draw(win)
 
 
@@ -67,9 +61,7 @@ def get_random_color():
     )
 
 
-def add_bar_graph_bar(
-    win, bar_index, bar_width, bar_count, max_bar_count, bar_total, title
-):
+def add_bar_graph_bar(win, bar_index, bar_width, bar_count, max_bar_count, title):
     x = get_bar_x(bar_index, bar_width)
     y = 100
     height = get_bar_height(bar_count, max_bar_count)
@@ -77,8 +69,8 @@ def add_bar_graph_bar(
     rect.setFill(get_random_color())
     rect.draw(win)
 
-    add_bar_count(win, x + bar_width / 2, 420 - height + y - 12, bar_count)
-    add_bar_title(win, x + bar_width / 2, 533, title)
+    add_bar_count_text_box(win, x + bar_width / 2, 420 - height + y - 12, bar_count)
+    add_bar_title_text_box(win, x + bar_width / 2, 533, title)
 
 
 def main():
@@ -86,32 +78,20 @@ def main():
     bar_count = 5
     bar_width = get_bar_width(bar_count)
 
-    win = create_window()
+    win = add_window()
 
     add_title_text_box(win)
     add_sub_title_text_box(win, outcomes_count)
 
     add_bar_graph_frame(win)
 
-    add_bar_graph_bar(win, 0, bar_width, 14, 14, 40, "Progress")
-    add_bar_graph_bar(win, 1, bar_width, 10, 14, 40, "Trailer")
-    add_bar_graph_bar(win, 2, bar_width, 7, 14, 40, "Retre")
-    add_bar_graph_bar(win, 3, bar_width, 2, 14, 40, "Laso")
-    add_bar_graph_bar(win, 4, bar_width, 7, 14, 40, "Danny")
+    add_bar_graph_bar(win, 0, bar_width, 14, 14, "Progress")
+    add_bar_graph_bar(win, 1, bar_width, 10, 14, "Trailer")
+    add_bar_graph_bar(win, 2, bar_width, 7, 14, "Retre")
+    add_bar_graph_bar(win, 3, bar_width, 2, 14, "Laso")
+    add_bar_graph_bar(win, 4, bar_width, 7, 14, "Danny")
 
     win.getMouse()
 
 
 main()
-
-
-# aCircle = Circle(
-#     Point(150, 300), 100
-# )  # Define circle: centre at 150px 300px radius is 100px.
-# aCircle.draw(win)  # Render the circle to to the window
-
-
-# b_Circle = Circle(Point(400, 300), 120)  # define a second circle
-# b_Circle.setFill("Lime")
-# b_Circle.setWidth(0)
-# b_Circle.draw(win)  # Render the circle to to the window
