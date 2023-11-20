@@ -2,6 +2,7 @@
 # Any code taken from other sources is referenced within my code solution.
 # I import and used the listed libraries which are common Python libraries
 # I used https://stackoverflow.com to learn how to read and save data in file
+# I used this link to help with learning graphics.py https://mcsp.wartburg.edu/zelle/python/graphics/graphics.pdf
 # Student ID: 20240602 Ronnie Kleinfeld
 # Date: Nov 11, 2023
 
@@ -33,7 +34,7 @@ def add_to_progression_log(progression_rule):
 
 def init_progression_summary():
     for key, value in progression_rules.items():
-        progression_summary[value.message.upper()] = 0
+        progression_summary[value.description.upper()] = 0
 
 
 def check_if_has_more_input() -> bool:
@@ -59,8 +60,8 @@ def input_data():
         if total_credits == 120:
             outcome_key = pr.generate_key(pass_credits, defer_credits, fail_credits)
             progression_rule = progression_rules[outcome_key]
-            progression_summary[progression_rule.message.upper()] += 1
-            print(progression_rule.message)
+            progression_summary[progression_rule.description.upper()] += 1
+            print(progression_rule.description)
             add_to_progression_log(progression_rule)
             if check_if_has_more_input() is False:
                 break
