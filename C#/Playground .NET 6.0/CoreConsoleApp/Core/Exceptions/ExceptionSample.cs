@@ -2,26 +2,26 @@ namespace CoreConsoleApp.Core.Exceptions
 {
     public class ExceptionSample
     {
-        public static void Main()
-        {
-            try
-            {
-                DoSomething();
+        // public static void Main()
+        // {
+        //     try
+        //     {
+        //         DoSomething();
 
-            }
-            catch (CustomException ex)
-            {
-                Console.WriteLine("Exception " + ex.SomeData);
-            }
-            catch
-            {
+        //     }
+        //     catch (CustomException ex)
+        //     {
+        //         Console.WriteLine("Exception " + ex.SomeData);
+        //     }
+        //     catch
+        //     {
 
-            }
-            finally
-            {
-                // close connections..
-            }
-        }
+        //     }
+        //     finally
+        //     {
+        //         // close connections..
+        //     }
+        // }
 
         private static void DoSomething()
         {
