@@ -7,16 +7,16 @@ namespace CoreConsoleApp
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine("Hello, World!");
 
-            PrintTriangle();
-            PrimitiveTypes.DoUse();
-            Comparable.DoUse();
-            DelegatesLambdaSample.DoLinq();
-            NullableTypes.DoUse();
-        }
+        //    PrintTriangle();
+        //    PrimitiveTypes.DoUse();
+        //    Comparable.DoUse();
+        //    DelegatesLambdaSample.DoLinq();
+        //    NullableTypes.DoUse();
+        //}
 
         private static void PrintTriangle()
         {
