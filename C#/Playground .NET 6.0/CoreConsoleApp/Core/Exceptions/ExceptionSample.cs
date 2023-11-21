@@ -1,31 +1,34 @@
+using System.Reflection;
+using BE.Exceptions;
+
 namespace CoreConsoleApp.Core.Exceptions
 {
     public class ExceptionSample
     {
-        // public static void Main()
-        // {
-        //     try
-        //     {
-        //         DoSomething();
+        public static void Main()
+        {
+            try
+            {
+                DoSomething();
 
-        //     }
-        //     catch (CustomException ex)
-        //     {
-        //         Console.WriteLine("Exception " + ex.SomeData);
-        //     }
-        //     catch
-        //     {
+            }
+            catch (SwitchOutOfRangeException ex)
+            {
+                Console.WriteLine("Exception " + ex.ToString());
+            }
+            catch
+            {
 
-        //     }
-        //     finally
-        //     {
-        //         // close connections..
-        //     }
-        // }
+            }
+            finally
+            {
+                // close connections..
+            }
+        }
 
         private static void DoSomething()
         {
-            throw new CustomException(8);
+            throw new SwitchOutOfRangeException(MethodBase.GetCurrentMethod(), 15);
         }
     }
 }
