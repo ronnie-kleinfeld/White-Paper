@@ -73,9 +73,26 @@ def add_bar_graph_bar(win, bar_index, bar_width, bar_count, max_bar_count, title
     add_bar_title_text_box(win, x + bar_width / 2, 533, title)
 
 
-def main():
-    outcomes_count = 40
-    bar_count = 5
+def test_histogram():
+    progression_summary = {}
+    progression_summary["Progress"] = 9
+    progression_summary["Trailer"] = 3
+    progression_summary["Retriever"] = 6
+    progression_summary["Exclude"] = 2
+    progression_summary["Special"] = 0
+    show_histogram(progression_summary)
+
+
+def show_histogram(progression_summary):
+    outcomes_count = 0
+    bar_count = 0
+    max_bar_value = 0
+    for key, value in progression_summary.items():
+        if value > max_bar_value:
+            max_bar_value = value
+        outcomes_count += value
+        bar_count += 1
+
     bar_width = get_bar_width(bar_count)
 
     win = add_window()
@@ -85,13 +102,12 @@ def main():
 
     add_bar_graph_frame(win)
 
-    add_bar_graph_bar(win, 0, bar_width, 14, 14, "Progress")
-    add_bar_graph_bar(win, 1, bar_width, 10, 14, "Trailer")
-    add_bar_graph_bar(win, 2, bar_width, 7, 14, "Retre")
-    add_bar_graph_bar(win, 3, bar_width, 2, 14, "Laso")
-    add_bar_graph_bar(win, 4, bar_width, 7, 14, "Danny")
+    index = 0
+    for key, value in progression_summary.items():
+        add_bar_graph_bar(win, index, bar_width, value, max_bar_value, key)
+        index += 1
 
     win.getMouse()
 
 
-main()
+test_histogram()

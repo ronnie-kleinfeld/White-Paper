@@ -60,7 +60,7 @@ def input_data():
         if total_credits == 120:
             outcome_key = pr.generate_key(pass_credits, defer_credits, fail_credits)
             progression_rule = progression_rules[outcome_key]
-            progression_summary[progression_rule.description.upper()] += 1
+            progression_summary[progression_rule.status] += 1
             print(progression_rule.description)
             add_to_progression_log(progression_rule)
             if check_if_has_more_input() is False:
