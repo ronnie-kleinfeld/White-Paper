@@ -110,4 +110,4 @@ def show_histogram(progression_summary):
     win.getMouse()
 
 
-test_histogram()
+# test_histogram()

@@ -10,6 +10,7 @@
 import csv
 import os
 import w2024062_progression_rule as pr
+import w2024062_histogram as histogram
 
 
 VALID_VALUES = [0, 20, 40, 60, 80, 100, 120]
@@ -34,7 +35,7 @@ def add_to_progression_log(progression_rule):
 
 def init_progression_summary():
     for key, value in progression_rules.items():
-        progression_summary[value.description.upper()] = 0
+        progression_summary[value.status] = 0
 
 
 def check_if_has_more_input() -> bool:
@@ -87,6 +88,7 @@ def show_histogram():
     print("Part 1: Histogram data")
     for key, value in progression_summary.items():
         print(key, value)
+    histogram.show_histogram(progression_summary)
 
 
 # for Part 2
