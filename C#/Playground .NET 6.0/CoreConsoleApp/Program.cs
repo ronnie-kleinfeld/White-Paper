@@ -1,4 +1,5 @@
 ﻿using CoreConsoleApp.Core;
+using CoreConsoleApp.Core.DelegatesLambda;
 using CoreConsoleApp.Core.Interfaces;
 using CoreConsoleApp.Core.Variables;
 
@@ -13,6 +14,8 @@ namespace CoreConsoleApp
             PrintTriangle();
             PrimitiveTypes.DoUse();
             Comparable.DoUse();
+            DelegatesLambdaSample.DoLinq();
+            NullableTypes.DoUse();
         }
 
         private static void PrintTriangle()
