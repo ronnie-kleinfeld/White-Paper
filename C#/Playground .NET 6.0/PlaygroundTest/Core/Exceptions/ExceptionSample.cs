@@ -5,22 +5,19 @@ namespace CoreConsoleApp.Core.Exceptions
 {
     public class ExceptionSample
     {
-        public static void Main()
+        public static void Main1()
         {
             try
             {
                 DoSomething();
 
-            }
-            catch (SwitchOutOfRangeException ex)
+            } catch (SwitchOutOfRangeException ex)
             {
                 Console.WriteLine("Exception " + ex.ToString());
-            }
-            catch
+            } catch
             {
 
-            }
-            finally
+            } finally
             {
                 // close connections..
             }
