@@ -10,6 +10,7 @@ namespace CoreConsoleApp.Core.Variables
         public static void DoUse()
         {
             Boolean b1 = true; // {true,false}
+            b1 = default;
 
             Byte byte1 = 0; // [0,255]
             SByte sb = 0; // [-128,127]
