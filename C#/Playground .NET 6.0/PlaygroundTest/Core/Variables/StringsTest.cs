@@ -32,7 +32,7 @@
             foreach (Char ch in str1)
             {
                 Console.Write(ch);
-                if (ch == 'b')
+                if (ch == 'a')
                 {
                     Console.WriteLine();
                     break;
@@ -43,34 +43,23 @@
         [TestMethod]
         public void Search()
         {
-            // LinkedIn Learning Course .NET Programming with C# by Joe Marini
-            // Example file for searching string content
+            string str1 = "Ronnie";
 
-            string teststr = "The quick brown Fox jumps over the lazy Dog";
+            Assert.AreEqual(true, str1.Contains("onn"));
+            Assert.AreEqual(false, str1.Contains("Onn"));
+            Assert.AreEqual(true, str1.Contains("Onn", StringComparison.CurrentCultureIgnoreCase));
 
-            // Contains determines whether a string contains certain content
-            Console.WriteLine($"{teststr.Contains("fox")}");
-            Console.WriteLine($"{teststr.Contains("fox", StringComparison.CurrentCultureIgnoreCase)}");
+            Assert.AreEqual(true, str1.StartsWith("Ro"));
+            Assert.AreEqual(true, str1.EndsWith("ie"));
 
-            // StartsWith and EndsWith determine if a string starts 
-            // or ends with a given test string
-            Console.WriteLine($"{teststr.StartsWith("the")}");
-            Console.WriteLine($"{teststr.StartsWith("the", StringComparison.CurrentCultureIgnoreCase)}");
-            Console.WriteLine($"{teststr.EndsWith("dog")}");
-            Console.WriteLine($"{teststr.EndsWith("dog", StringComparison.CurrentCultureIgnoreCase)}");
+            Assert.AreEqual(2, str1.IndexOf("n"));
+            Assert.AreEqual(3, str1.LastIndexOf("n"));
 
-            // IndexOf, LastIndexOf finds the index of a substring
-            Console.WriteLine($"{teststr.IndexOf("the")}");
-            Console.WriteLine($"{teststr.IndexOf("the", StringComparison.CurrentCultureIgnoreCase)}");
-            Console.WriteLine($"{teststr.LastIndexOf("the")}");
-
-            // Determining empty, null, or whitespace
-            string str1 = null;
-            string str2 = "   ";
-            string str3 = String.Empty;
-            Console.WriteLine($"{String.IsNullOrEmpty(str1)}");
-            Console.WriteLine($"{String.IsNullOrEmpty(str3)}");
-            Console.WriteLine($"{String.IsNullOrWhiteSpace(str2)}");
+            Assert.AreEqual(true, String.IsNullOrEmpty(null));
+            Assert.AreEqual(true, String.IsNullOrEmpty(string.Empty));
+            Assert.AreEqual(true, String.IsNullOrEmpty(""));
+            Assert.AreEqual(false, String.IsNullOrEmpty(" "));
+            Assert.AreEqual(true, String.IsNullOrWhiteSpace(" "));
         }
 
         [TestMethod]
