@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core.IO.Directories
+﻿namespace PlaygroundTest.Core.IO
 {
     [TestClass]
     public class StreamWriterTest

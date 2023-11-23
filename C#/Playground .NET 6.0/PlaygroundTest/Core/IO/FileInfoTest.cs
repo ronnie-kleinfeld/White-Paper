@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core.IO.Directories
+﻿namespace PlaygroundTest.Core.IO
 {
     [TestClass]
     public class FileInfoTest
@@ -35,7 +35,8 @@
                 Console.WriteLine($"{fi.Length}");
                 Console.WriteLine($"{fi.Directory}");
                 Console.WriteLine($"{fi.IsReadOnly}");
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine($"Exception: {e}");
             }
