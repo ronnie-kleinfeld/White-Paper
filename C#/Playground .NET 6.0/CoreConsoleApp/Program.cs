@@ -6,6 +6,11 @@
         {
             Console.WriteLine("Hello, World!");
 
+            float f1 = 123.4f;
+            int i1 = 2000;
+            Console.WriteLine($"{f1,6} {i1,7}");
+
+
             PrintTriangle();
         }
 
