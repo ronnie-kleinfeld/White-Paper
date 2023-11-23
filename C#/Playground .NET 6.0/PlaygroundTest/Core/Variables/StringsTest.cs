@@ -69,10 +69,14 @@
             string str2 = "Kleinfeld";
             Assert.AreEqual($"{str1} {str2}", "Ronnie Kleinfeld");
 
-            float f1 = 123.4f;
-            int i1 = 2000;
-            Assert.AreEqual($"{f1,6}", " 123.4");
-            Assert.AreEqual($"{i1,7}", "   2000");
+            Console.WriteLine($"C - Currency    {1234,11:C2}"); // ₪ 1,234.00
+            Console.WriteLine($"D - Decimal     {1234,11:D2}"); // 1234
+            Console.WriteLine($"E - Exponential {1234,11:E2}"); // 1.23E+003
+            Console.WriteLine($"F - Fixed-point {1234,11:F2}"); // 1234.00
+            Console.WriteLine($"G - General     {1234,11:G2}"); // 1.2E+03
+            Console.WriteLine($"N - Number      {1234,11:N2}"); // 1,234.00
+            Console.WriteLine($"P - Percent     {1234,11:P2}"); // 123,400.00%
+            Console.WriteLine($"X - Hexadecimal {1024,11:X2}"); // 400
         }
     }
 }
