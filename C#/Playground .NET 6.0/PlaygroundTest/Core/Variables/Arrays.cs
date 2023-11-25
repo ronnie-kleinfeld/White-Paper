@@ -19,5 +19,20 @@ namespace PlaygroundTest.Core.Variables
             Assert.AreEqual('c', letters[2]);
             Assert.AreEqual('d', letters[3]);
         }
+
+        [TestMethod]
+        public void GroupBy()
+        {
+            string str = "a, b, a, a, c, d, e, e";
+            var foods = str.Split(", ");
+            Console.WriteLine(foods.Where(x => x.Contains('a')));
+
+            var countFoods = foods.GroupBy(x => x).Where(x => x.Count() > 1);
+
+            foreach (var food in countFoods)
+            {
+                Console.WriteLine($"{food.Key} {food.Count()}");
+            }
+        }
     }
 }
