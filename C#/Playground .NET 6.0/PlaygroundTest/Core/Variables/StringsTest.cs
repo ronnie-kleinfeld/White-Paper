@@ -8,27 +8,56 @@ namespace PlaygroundTest.Core.Variables
         [TestMethod]
         public void Init()
         {
-            string str0 = null;
-            Assert.AreEqual(null, str0);
-            str0 = default;
-            Assert.AreEqual(null, str0);
+            string str = null;
+            Assert.AreEqual(str, null);
+            str = default;
+            Assert.AreEqual(str, null);
+            str = "Ronnie";
+            Assert.AreEqual(str, "Ronnie");
+            str = string.Empty;
+            Assert.AreEqual(str, "");
 
-            string str1 = "Ronnie";
-            Assert.AreEqual(str1, "Ronnie");
+            Assert.AreEqual("aaaaa", new string('a', 5));
+        }
 
-            Assert.AreEqual(str1.Length, 6);
+        [TestMethod]
+        public void EscapeSequence()
+        {
+            string str = "First\"\'\\\rEnter\nNewLine\tTab\vVerticalTab";
+            Console.WriteLine(str);
+        }
 
-            Assert.AreEqual(str1[0], 'R');
-            Assert.AreEqual(str1[4], 'i');
+        [TestMethod]
+        public void Unicode()
+        {
+            Console.WriteLine("ঙ");
+            Assert.AreEqual("ঙ", "\u0999");
+        }
+
+        [TestMethod]
+        public void Basic()
+        {
+            Assert.AreEqual("Ronnie".Length, 6);
+
+            Assert.AreEqual("Ronnie"[0], 'R');
+            Assert.AreEqual("Ronnie"[4], 'i');
+
+            // "Ronnie"[0] = 'B'; this is IMPOSIBBLE, string are IMUTABLE
+
+            Assert.AreEqual("Ronnie".Replace("nn", "ll"), "Rollie");
 
             Assert.AreEqual(String.Concat("Ronnie", "Kleinfeld"), "RonnieKleinfeld");
+        }
 
+        [TestMethod]
+        public void StringVSArray()
+        {
             string[] strs = { "one", "two", "three", "four" };
 
             Assert.AreEqual(String.Join('.', strs), "one.two.three.four");
             Assert.AreEqual(String.Join(string.Empty, strs), "onetwothreefour");
 
-            Assert.AreEqual(str1.Replace("Ronn", "Coff"), "Coffie");
+            Assert.AreEqual("Ronnie".Replace("Ronn", "Coff"), "Coffie");
         }
 
         /// <summary>
@@ -91,7 +120,18 @@ namespace PlaygroundTest.Core.Variables
         }
 
         [TestMethod]
-        public void StringInterpolation()
+        public void Verbatim()
+        {
+            string str = @"Dear Ronnie,
+I hope this email finds you well.
+Regards,
+Ronnie";
+            Assert.AreEqual(str, "Dear Ronnie,\r\nI hope this email finds you well.\r\nRegards,\r\nRonnie");
+            Console.WriteLine(str);
+        }
+
+        [TestMethod]
+        public void Interpolation()
         {
             string str1 = "Ronnie";
             string str2 = "Kleinfeld";
