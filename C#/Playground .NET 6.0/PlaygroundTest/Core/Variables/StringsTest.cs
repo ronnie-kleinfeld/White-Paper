@@ -1,4 +1,6 @@
-﻿namespace PlaygroundTest.Core.Variables
+﻿using System.Runtime.Intrinsics.Arm;
+
+namespace PlaygroundTest.Core.Variables
 {
     [TestClass]
     public class StringsTest
@@ -6,6 +8,11 @@
         [TestMethod]
         public void Init()
         {
+            string str0 = null;
+            Assert.AreEqual(null, str0);
+            str0 = default;
+            Assert.AreEqual(null, str0);
+
             string str1 = "Ronnie";
             Assert.AreEqual(str1, "Ronnie");
 
@@ -22,6 +29,27 @@
             Assert.AreEqual(String.Join(string.Empty, strs), "onetwothreefour");
 
             Assert.AreEqual(str1.Replace("Ronn", "Coff"), "Coffie");
+        }
+
+        /// <summary>
+        /// string is a reference type but it is IMUTABLE so it does not behave like a class in this case
+        /// </summary>
+        [TestMethod]
+        public void StringIsImutable()
+        {
+            string s1 = "Ronnie";
+            string s2 = s1; // this create a new object for string s2 and not set a pointer to s1 object as any other reference type would
+            Assert.AreEqual(s1, s2);
+            Assert.AreEqual(s1, "Ronnie");
+            Assert.AreEqual(s2, "Ronnie");
+
+            s2 = "Kleinfeld";
+            Assert.AreEqual(s1, "Ronnie");
+            Assert.AreEqual(s2, "Kleinfeld");
+
+            s2 = "Shira";
+            Assert.AreEqual(s1, "Ronnie");
+            Assert.AreEqual(s2, "Shira");
         }
 
         [TestMethod]
