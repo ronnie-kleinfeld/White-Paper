@@ -46,16 +46,15 @@ namespace PlaygroundTest.Core.Variables
 
             Assert.AreEqual("Ronnie".Replace("nn", "ll"), "Rollie");
 
+            Assert.AreEqual("Ronnie" + "Kleinfeld", "RonnieKleinfeld");
             Assert.AreEqual(String.Concat("Ronnie", "Kleinfeld"), "RonnieKleinfeld");
-        }
 
-        [TestMethod]
-        public void StringVSArray()
-        {
             string[] strs = { "one", "two", "three", "four" };
 
             Assert.AreEqual(String.Join('.', strs), "one.two.three.four");
             Assert.AreEqual(String.Join(string.Empty, strs), "onetwothreefour");
+
+            Assert.AreEqual("Ronnie Shira Roy Yahli".Split(' ')[1], "Shira");
 
             Assert.AreEqual("Ronnie".Replace("Ronn", "Coff"), "Coffie");
         }
