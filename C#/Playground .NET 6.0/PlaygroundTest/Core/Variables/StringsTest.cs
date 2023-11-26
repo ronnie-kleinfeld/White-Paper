@@ -23,7 +23,7 @@ namespace PlaygroundTest.Core.Variables
         [TestMethod]
         public void EscapeSequence()
         {
-            string str = "First\"\'\\\rEnter\nNewLine\tTab\vVerticalTab";
+            string str = "First\"\'\\\rEnter\nNewLine\tTab\vVerticalTab\bbackspace\aAlert";
             Console.WriteLine(str);
         }
 
@@ -116,6 +116,24 @@ namespace PlaygroundTest.Core.Variables
             Assert.AreEqual(true, String.IsNullOrEmpty(""));
             Assert.AreEqual(false, String.IsNullOrEmpty(" "));
             Assert.AreEqual(true, String.IsNullOrWhiteSpace(" "));
+        }
+
+        [TestMethod]
+        public void Cast()
+        {
+            MyObject myObject = new MyObject();
+            myObject.ID = 7;
+
+            Assert.AreEqual("7", myObject.ToString());
+            Assert.AreEqual("a7", "a" + myObject.ToString());
+        }
+        private class MyObject : Object
+        {
+            public int ID;
+            public override string ToString()
+            {
+                return $"{ID}";
+            }
         }
 
         [TestMethod]
