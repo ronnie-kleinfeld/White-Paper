@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace PlaygroundTest.Core
+﻿namespace PlaygroundTest.Core
 {
     [TestClass]
     public class IfElseIIFSwitch
