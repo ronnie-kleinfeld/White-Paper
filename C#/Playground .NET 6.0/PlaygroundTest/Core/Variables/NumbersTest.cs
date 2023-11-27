@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace PlaygroundTest.Core.Variables
+﻿namespace PlaygroundTest.Core.Variables
 {
     [TestClass]
     public class NumbersTest
