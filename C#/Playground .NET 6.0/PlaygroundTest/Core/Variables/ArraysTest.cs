@@ -18,6 +18,25 @@ namespace PlaygroundTest.Core.Variables
             Assert.AreEqual('b', letters[1]);
             Assert.AreEqual('c', letters[2]);
             Assert.AreEqual('d', letters[3]);
+
+            var matrix1 = new int[3, 5];
+            var matrix2 = new int[3, 5]{
+                { 1, 2, 3, 4, 5 },
+                { 6, 7, 8, 9, 10 },
+                { 11, 12, 13, 14, 15 }
+            };
+            Assert.AreEqual(7, matrix2[1, 1]);
+        }
+
+        [TestMethod]
+        public void StaticArray()
+        {
+            int[] numbers = new int[8] { 0, 1, 1, 2, 3, 5, 8, 13 };
+            Assert.AreEqual(6, Array.IndexOf(numbers, 8));
+            //Array.Clear(numbers);
+            //Array.Copy(from, to, 2);
+            //Array.Sort(numbers);
+            //Array.Reverse(numbers);
         }
 
         [TestMethod]
