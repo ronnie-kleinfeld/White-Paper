@@ -73,3 +73,12 @@ print("a b c d c f".find("c"))  # 4
 
 list = ["a", "b", "c"]
 print(" ".join(list))  # a b c
+
+str = "012345"
+print(str[3])  # 3
+print(str[2:5])  # 234
+print(str[2:])  # 2345
+print(str[:2])  # 01
+print(str[-3])  # 3
+print(str[-3:])  # 345
+print(str[:-3])  # 012
