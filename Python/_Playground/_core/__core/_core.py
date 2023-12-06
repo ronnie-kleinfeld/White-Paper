@@ -4,6 +4,9 @@ type(True)  # bool
 type(1)  # int
 type("")  # str
 
+
+print(45 / 4)
+
 print("ASCII")
 print(ord(" "))
 print(ord("b"))
