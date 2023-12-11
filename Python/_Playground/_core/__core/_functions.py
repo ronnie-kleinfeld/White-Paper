@@ -21,10 +21,11 @@ print(do_something("Ronnie"))
 # pass list of arg
 def multiply(*numbers):
     for number in numbers:
-        print(number)
+        print(number, end=" ")
 
 
 multiply(2, 3, 4, 5)
+print()
 
 
 # pass dictionary of key=value

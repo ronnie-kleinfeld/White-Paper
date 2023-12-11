@@ -2,21 +2,24 @@
 num = 0
 while num < 5:  # 1 2 3 4 5
     num += 1
-    print(num)
+    print(num, end=" ")
+print()
 
 num = 0
 while num < 5:  # 1 2
     num += 1
     if num == 3:
         break
-    print(num)
+    print(num, end=" ")
+print()
 
 num = 0
 while num < 5:  # 1 2 4 5
     num += 1
     if num == 3:
         continue
-    print(num)
+    print(num, end=" ")
+print()
 
 import math
 
@@ -27,11 +30,13 @@ while i <= height:
     print("*" * (i * 2 - 1))
     i = i + 1
 print(" " * math.floor(height - 1), end="*\n")
-#       *
-#      ***
-#     *****
-#    *******
-#   *********
-#  ***********
-# *************
-#       *
+#         *
+#        ***
+#       *****
+#      *******
+#     *********
+#    ***********
+#   *************
+#  ***************
+# *****************
+#         *

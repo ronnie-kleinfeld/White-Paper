@@ -7,18 +7,25 @@ print(list(range(7, 0, -2)))  # list: [7, 5, 3, 1] - range: 7, 5, 3, 1
 
 # for
 for i in range(2, 6):  # iter range
-    print(i)  # 2 3 4 5
-for s in "Ronnie":  # iter string
-    print(s)  # R o n n i e
+    print(i, end=" ")  # 2 3 4 5
+print()
+
+for s in "Ronnie":  # iter string[]
+    print(s, end=" ")  # R o n n i e
+print()
 
 for i in [1, 3, 4, 7]:  # iter list
-    print(i)  # 1 3 4 7
+    print(i, end=" ")  # 1 3 4 7
+print()
 
 for i in range(0, 21, 2):
-    print(i)  # 0 2 4 6 8 10 12 14 16 18 20
+    print(i, end=" ")  # 0 2 4 6 8 10 12 14 16 18 20
+print()
+
 for i in range(0, 20):
     if i % 2 == 1:
-        print(i)  # 1 3 5 7 9 11 13 15 17 19
+        print(i, end=" ")  # 1 3 5 7 9 11 13 15 17 19
+print()
 
 # triangle
 # x
