@@ -1,10 +1,15 @@
 import math
 
+x = 5
+x += 3
+x -= 3
+x *= 3
+x /= 3
+
 print(10 / 3)  # 3.3333
 print(10 // 3)  # 3
 print(10 % 3)  # 1
-print(10**3)  # 1000
-print(10**3)  # 1000
+print(10**3)  # 10^3 = 1000
 
 print("ceil(4.4) = ", math.ceil(4.4))  # 5
 print("floor(4.4) = ", math.floor(4.4))  # 4

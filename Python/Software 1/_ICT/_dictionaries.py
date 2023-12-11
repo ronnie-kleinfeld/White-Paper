@@ -16,19 +16,29 @@ print("GETTER")
 print(dic.get("a"))  # None
 print("x" in dic)  # True
 
+##############################################################################
 print("KEYS and VALUES")
 print(dic.keys())
 print(dic.values())
 
+##############################################################################
 print("ITER")
+dic = dict(a=1, b=2, c=3, d=4)
+for key in dic.keys():
+    print(key, end=" ")
+print()
+
 for key in dic:
-    print(key, dic[key])
+    print(key, dic[key], end=" ")
+print()
 
 for item in dic.items():
-    print(item)
+    print(item, end=" ")
+print()
 
 for key, value in dic.items():
-    print(key, value)
+    print(key, value, end=" ")
+print()
 
 values = {x: x * 2 for x in range(5)}
 print(values)

@@ -43,8 +43,26 @@ print(path.stat())
 print(path.stat().st_ctime)
 
 print(path.read_bytes())
+
+##############################################################################
+# "r" - Read - Default value. Opens a file for reading, error if the file does not exist
+# "a" - Append - Opens a file for appending, creates the file if it does not exist
+# "w" - Write - Opens a file for writing, creates the file if it does not exist
+# "x" - Create - Creates the specified file, returns an error if the file exists
+# "+" - open for updating (reading and writing)
+
+# "t" - Text - Default value. Text mode
+# "b" - Binary - Binary mode (e.g. images)
+
+# f = open("demofile.txt") is like f = open("demofile.txt", "rt")
+##############################################################################
+
 with open(path) as file:
     pass
+
+file = open(path, "r")
+buffer = file.read()
+file.close()
 
 import shutil
 

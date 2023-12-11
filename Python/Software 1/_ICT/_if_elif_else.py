@@ -1,3 +1,21 @@
+planets = [
+    "venus",
+    "mercury",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+]
+
+print(planets)
+planets.remove("venus")
+planets.insert(1, "VENUS")
+planets.append("plutu")
+print(planets)
+
+
 # if elif else
 num1, operator, num2 = input("Enter Calculation:").split()
 
@@ -16,7 +34,6 @@ else:
     result = "Error"
 
 print(f"{num1} {operator} {num2} = {result}")
-
 
 # logical and or not
 age = int(input("Enter age:"))

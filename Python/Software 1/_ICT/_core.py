@@ -1,3 +1,9 @@
+# string - imutable
+# tuple - imutable
+# list - mutable
+# dictionary - mutable
+
+
 print("VARIABLES")
 type(1.1)  # float
 type(True)  # bool

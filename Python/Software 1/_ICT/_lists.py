@@ -15,6 +15,7 @@ print(
     [i for i in [random.randint(1, 1001) for i in range(50)] if i % 9 == 0]
 )  # [189, 324, 711, 819, 576]
 
+##############################################################################
 items = [
     ("Product1", 10),
     ("Product3", 9),
@@ -22,6 +23,7 @@ items = [
 ]
 print([item[1] for item in items])  # [10, 9, 12]
 print([item[0] for item in items if item[1] >= 10])  # ['Product1', 'Product2']
+##############################################################################
 
 print("MULTI_LIST")
 multi_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -79,6 +81,7 @@ for index, name in enumerate(names):
 for i in range(len(names)):
     print(i, names[i])
 
+##############################################################################
 print("ADD, DELETE")
 abc = ["a", "b", "c", "d"]
 print(abc)  # ['a', 'b', 'c', 'd']
@@ -96,6 +99,7 @@ del abc[0:2]
 print(abc)  # ['d']
 abc.clear()
 print(abc)  # []
+##############################################################################
 
 print("INDEX")
 abc = ["a", "b", "c", "c"]
@@ -149,3 +153,12 @@ print("ZIP")
 list1 = [1, 2, 3]
 list2 = [10, 20, 30]
 print(list(zip("abc", list1, list2)))  # [('a', 1, 10), ('b', 2, 20), ('c', 3, 30)]
+
+##############################################################################
+nested = ["hello", 2.0, 5, [10, 20]]
+print(nested[3])  # [10, 20]
+print(nested[3][1])  # 20
+
+mx = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(mx[1])  # [4, 5, 6]
+print(mx[1][2])  # 6

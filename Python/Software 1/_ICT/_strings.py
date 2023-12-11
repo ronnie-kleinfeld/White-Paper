@@ -12,9 +12,11 @@ print("CASTING")
 print(str((1, 2, 3)))  # tuple to [1, 2, 3]
 print("".join(list("Ronnie")))  # list to Ronnie
 
+##############################################################################
 print("LEN")
 print(len("Ronnie"))  # 6
 
+##############################################################################
 print("GETTER - LIKE STRING")
 letters = "abcdef"
 print(letters[0])  # a
@@ -33,6 +35,7 @@ print(letters[::-2])  # fdb
 print("SETTER")
 # letters[0] = "a"  # error - cannot set a string
 
+##############################################################################
 print("ITER")
 names = "Ronnie"
 for name in names:
@@ -55,6 +58,7 @@ print(string.digits)  # 0123456789
 print(string.punctuation)  #!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 print(string.hexdigits)  # 0123456789abcdefABCDEF
 
+##############################################################################
 print("SEARCH")
 "tho" in "Python"  # True
 "tho" not in "Python"  # False
@@ -70,6 +74,7 @@ print("a,b,c".split(","))  # ['a', 'b', 'c']
 
 print("a b c d c f".count("c"))  # 2
 print("a b c d c f".find("c"))  # 4
+print("a b c d c f".find("q"))  # -1
 
 list = ["a", "b", "c"]
 print(" ".join(list))  # a b c
