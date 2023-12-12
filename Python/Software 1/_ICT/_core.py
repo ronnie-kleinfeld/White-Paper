@@ -4,24 +4,10 @@
 # dictionary - mutable
 
 print("VARIABLES")
+type(1)  # int / numeric
 type(1.1)  # float
-type(True)  # bool
-type(1)  # int
-type("")  # str
-
-
-print(45 / 4)
-
-print("ASCII")
-print(ord(" "))
-print(ord("b"))
-print(ord("B"))
-# print(ord("Ba")) # error - can get only 1 character
-
-student_count = 1000  # numeric
-rating = 4.99  # float
-is_published = True  # boolean - True | False
-course_name = "Ronnie"  # string
+type("")  # string
+type(True)  # boolean - True | False
 message = """Dear John,
 I hope everything is goos
 
@@ -29,10 +15,17 @@ Regards,
 Ronnie
 """
 
+print("ASCII")
+print(ord(" "))
+print(ord("b"))
+print(ord("B"))
+# print(ord("Ba")) # error - can get only 1 character
+
 
 x = y = 1
 x, y = 1, 2
 
+print("ADDRESS")
 x = 1
 print(id(x))
 
