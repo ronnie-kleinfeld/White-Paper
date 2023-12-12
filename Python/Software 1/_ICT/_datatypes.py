@@ -1,5 +1,5 @@
 int1 = 5  # 5
-int2 = int(54)  # 45
+int2 = int(45)  # 45
 
 float1 = 5  # 5 (int)
 float2 = float(56)  # 56.0
