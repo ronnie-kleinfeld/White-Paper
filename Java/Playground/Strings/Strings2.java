@@ -57,11 +57,26 @@ public class Strings2 {
 
     }
 
+    public static void printString(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+            }
+        }
+    }
+
     // exercise 1
     // returns true if str if palindrome
     // abcdcba true, abccba true, abc false, abab false
     public static boolean palindromeStr(String str) {
-        return false;
+        boolean result = true;
+
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                return false;
+            }
+        }
+
+        return result;
     }
 
     // exercise 2

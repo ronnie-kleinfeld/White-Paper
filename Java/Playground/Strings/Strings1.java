@@ -168,8 +168,22 @@ public class Strings1 {
     // String where every character that appears more than once in a row is replaced
     // by an asterisk (*).
     public static String withoutDuplicateChars(String str) {
+        String result = "";
 
-        return null;
+        result = result + str.charAt(0);
+
+        for (int i = 1; i < str.length(); i++) {
+            char prev = str.charAt(i - 1);
+            char curr = str.charAt(i);
+
+            if (curr == prev) {
+                result = result + "*";
+            } else {
+                result = result + curr;
+            }
+        }
+
+        return result;
     }
 
     /* Ex9 */
@@ -178,8 +192,17 @@ public class Strings1 {
     // The order of the characters in the resulting string does not matter.
 
     public static String withoutDuplicates(String str) {
+        String result = "";
 
-        return null;
+        for (int i = 0; i < str.length(); i++) {
+            char temp = str.charAt(i);
+
+            if (result.indexOf(temp) == -1) {
+                result = result + temp;
+            }
+        }
+
+        return result;
     }
 
     /* Ex10 */
@@ -190,8 +213,9 @@ public class Strings1 {
     //
     // For example: "a1b2c3" should be converted to "012345"
     public static String letterToIndex(String str) {
+        System.out.println("0123456789".indexOf(temp));
 
-        return null;
+        return "";
     }
 
 }
