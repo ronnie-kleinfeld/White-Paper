@@ -1,4 +1,6 @@
-﻿namespace PlaygroundTest.Core.IO
+﻿using CoreConsoleApp.Core.Variables;
+
+namespace PlaygroundTest.Core.IO
 {
     [TestClass]
     public class FileTest
@@ -15,19 +17,19 @@
             // 1: WriteAllText overwrites a file with the given content
             if (!File.Exists(filename))
             {
-                File.WriteAllText(filename, "This is a text file. ");
+                File.WriteAllText(filename, "This is a text file.");
             }
 
             // 3: AppendAllText adds text to an existing file
-            File.AppendAllText(filename, "This text gets appended to the file. ");
+            //File.AppendAllText(filename, "This text gets appended to the file.");
 
             // 4: A FileStream can be opened and written to until closed
-            using (StreamWriter sw = File.AppendText(filename))
-            {
-                sw.WriteLine("Line 1");
-                sw.WriteLine("Line 2");
-                sw.WriteLine("Line 3");
-            }
+            //using (StreamWriter sw = File.AppendText(filename))
+            //{
+            //    sw.WriteLine("Line 1");
+            //    sw.WriteLine("Line 2");
+            //    sw.WriteLine("Line 3");
+            //}
 
             // 2: ReadAllText reads all the content from a file
             string content;

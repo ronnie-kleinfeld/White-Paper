@@ -13,10 +13,10 @@
 
             // Create a new file - this will overwrite any existing file
             // Use the "using" construct to automatically close the file stream
-            using (StreamWriter sw = File.CreateText(filename))
-            {
-                sw.WriteLine("This is a text file.");
-            }
+            //using (StreamWriter sw = File.CreateText(filename))
+            //{
+            //    sw.WriteLine("This is a text file.");
+            //}
 
             // Determine if a file exists
             Console.WriteLine(File.Exists(filename));
@@ -24,7 +24,8 @@
             {
                 // The Delete function deletes a file
                 File.Delete(filename);
-            } else
+            }
+            else
             {
                 using (StreamWriter sw = File.CreateText(filename))
                 {
