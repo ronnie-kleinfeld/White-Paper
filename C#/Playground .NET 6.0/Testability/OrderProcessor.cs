@@ -1,16 +1,16 @@
 ﻿
 namespace Testability
 {
-    internal class OrderProcessor
+    public class OrderProcessor
     {
-        private readonly ShiipingCaululcator _shiipingCaululcator;
+        private readonly IShiipingCalculator _shiipingCaululcator;
 
-        public OrderProcessor()
+        public OrderProcessor(IShiipingCalculator shiipingCalculator)
         {
-            _shiipingCaululcator = new ShiipingCaululcator();
+            _shiipingCaululcator = shiipingCalculator;
         }
 
-        internal void Process(Order order)
+        public void Process(Order order)
         {
             if (order.isShipped)
             {

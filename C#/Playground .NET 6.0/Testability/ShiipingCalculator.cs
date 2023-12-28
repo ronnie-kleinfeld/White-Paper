@@ -1,9 +1,9 @@
 ﻿
 namespace Testability
 {
-    internal class ShiipingCaululcator
+    public class ShiipingCalculator : IShiipingCalculator
     {
-        internal object CalculateShipping(Order order)
+        public float CalculateShipping(Order order)
         {
             if (order.TotalPrice < 30f)
             {

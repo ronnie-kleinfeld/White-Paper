@@ -1,12 +1,16 @@
 ﻿
 namespace Testability
 {
-    internal class Order
+    public class Order
     {
-        internal bool isShipped;
-
+        public int Id { get; set; }
         public DateTime DatePlaced { get; set; }
+        public Shipment Shipment { get; set; }
         public float TotalPrice { get; set; }
-        public Shipment Shipment { get; internal set; }
+
+        public bool isShipped
+        {
+            get => Shipment != null;
+        }
     }
 }
