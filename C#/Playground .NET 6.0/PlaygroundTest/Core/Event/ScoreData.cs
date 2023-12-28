@@ -4,6 +4,8 @@ namespace CoreConsoleApp.Core.Event
 {
     public class ScoreData
     {
+        public event EventHandler<ScoreChangedEventArgs> ScoreChanged;
+
         private int score = 0;
         public int Score
         {
@@ -14,10 +16,9 @@ namespace CoreConsoleApp.Core.Event
             set
             {
                 score = value;
-                
+
                 ScoreChanged(this, new ScoreChangedEventArgs(score));
             }
         }
-        public event EventHandler<ScoreChangedEventArgs> ScoreChanged;
     }
 }
