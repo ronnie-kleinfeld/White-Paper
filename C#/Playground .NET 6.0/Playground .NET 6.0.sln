@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreConsoleApp", "CoreConso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BE", "BE\BE.csproj", "{96F588F8-BC3E-4239-836E-F79D792D33DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundTest", "PlaygroundTest\PlaygroundTest.csproj", "{E32C0EB3-3317-41A6-B19E-6C79115DDE11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundTest", "PlaygroundTest\PlaygroundTest.csproj", "{E32C0EB3-3317-41A6-B19E-6C79115DDE11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testability", "Testability\Testability.csproj", "{FD7A3713-DBA5-4659-A9AD-F8FBF4B2D316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testability.UnitTests", "Testability.UnitTests\Testability.UnitTests.csproj", "{806A33BC-C475-416B-BC04-4AD137165E88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{E32C0EB3-3317-41A6-B19E-6C79115DDE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E32C0EB3-3317-41A6-B19E-6C79115DDE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E32C0EB3-3317-41A6-B19E-6C79115DDE11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD7A3713-DBA5-4659-A9AD-F8FBF4B2D316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD7A3713-DBA5-4659-A9AD-F8FBF4B2D316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD7A3713-DBA5-4659-A9AD-F8FBF4B2D316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7A3713-DBA5-4659-A9AD-F8FBF4B2D316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806A33BC-C475-416B-BC04-4AD137165E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806A33BC-C475-416B-BC04-4AD137165E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806A33BC-C475-416B-BC04-4AD137165E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806A33BC-C475-416B-BC04-4AD137165E88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
