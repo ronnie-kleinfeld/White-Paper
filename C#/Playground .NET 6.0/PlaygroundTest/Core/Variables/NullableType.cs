@@ -12,7 +12,8 @@ namespace CoreConsoleApp.Core.Variables
         public static void DoUse()
         {
             var taxRate = new Nullable<double>();
-            Console.WriteLine(taxRate.HasValue); // fals e
+            // onsole.WriteLine(taxRate.Value); // Exception
+            Console.WriteLine(taxRate.HasValue); // false
             Console.WriteLine(taxRate); // empty
             Console.WriteLine(taxRate.GetValueOrDefault()); // 0
             taxRate = null;
