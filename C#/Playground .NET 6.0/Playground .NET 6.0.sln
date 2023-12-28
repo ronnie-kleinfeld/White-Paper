@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testability", "Testability\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testability.UnitTests", "Testability.UnitTests\Testability.UnitTests.csproj", "{806A33BC-C475-416B-BC04-4AD137165E88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{7FB1DB8C-BC48-432E-95BA-EA5FC576C4F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{806A33BC-C475-416B-BC04-4AD137165E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{806A33BC-C475-416B-BC04-4AD137165E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{806A33BC-C475-416B-BC04-4AD137165E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB1DB8C-BC48-432E-95BA-EA5FC576C4F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB1DB8C-BC48-432E-95BA-EA5FC576C4F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB1DB8C-BC48-432E-95BA-EA5FC576C4F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB1DB8C-BC48-432E-95BA-EA5FC576C4F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
