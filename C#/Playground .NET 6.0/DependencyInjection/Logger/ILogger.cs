@@ -1,4 +1,4 @@
-﻿namespace DependencyInjection
+﻿namespace DependencyInjection.Logger
 {
     public interface ILogger
     {

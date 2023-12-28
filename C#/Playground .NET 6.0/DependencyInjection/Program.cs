@@ -1,4 +1,6 @@
-﻿namespace DependencyInjection
+﻿using DependencyInjection.Logger;
+
+namespace DependencyInjection
 {
     public class Program
     {
