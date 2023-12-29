@@ -12,9 +12,8 @@
             };
 
             var mapper = new CustomerToPersonMapper();
-            var p = c.Map<Person>(mapper);// mapper.Map(c);
-
-            Console.WriteLine(p.FirstName);
+            var p1 = mapper.Map(c);
+            var p2 = c.Map<Person>(mapper);
         }
     }
 
