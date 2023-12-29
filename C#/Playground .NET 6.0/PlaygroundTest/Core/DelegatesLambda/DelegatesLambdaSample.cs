@@ -37,6 +37,26 @@ namespace CoreConsoleApp.Core.DelegatesLambda
             Console.WriteLine(lambda2(6, 8)); // just call
         }
 
+        public static void DoLambda2()
+        {
+            var lambda3 = (string s) => Console.WriteLine(s);
+            var lambda4 = (string s) => s.Length;
+
+            lambda3("Hello");
+            lambda4("Hello");
+
+            var lambda5 = (string s) =>
+            {
+                return s.Length;
+            };
+
+            GetLambda(lambda4);
+        }
+        public static void GetLambda(Func<string, int> func)
+        {
+            func("Hi");
+        }
+
         public static void DoLinq()
         {
             var list = new List<double> { 1.1, 3.3, 5.5 };
