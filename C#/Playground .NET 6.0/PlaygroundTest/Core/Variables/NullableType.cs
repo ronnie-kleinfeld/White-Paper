@@ -1,15 +1,10 @@
-namespace CoreConsoleApp.Core.Variables
+namespace PlaygroundTest.Core.Variables
 {
-    /// <summary>
-    /// Nullable type
-    /// Converts a value type (struct) to be able to have a value of null | empty
-    ///     public struct Nullable<T> where T : struct
-    /// </summary> <summary>
-    /// 
-    /// </summary>
-    public class NullableTypes
+    [TestClass]
+    public class NullableTypesTest
     {
-        public static void DoUse()
+        [TestMethod]
+        public void DoUse()
         {
             var taxRate = new Nullable<double>();
             // onsole.WriteLine(taxRate.Value); // Exception
@@ -25,7 +20,8 @@ namespace CoreConsoleApp.Core.Variables
             Console.WriteLine(taxRate); // empty
         }
 
-        public static void DoUseQuestion()
+        [TestMethod]
+        public void DoUseQuestion()
         {
             double? taxRate = null;
             Console.WriteLine(taxRate.HasValue); // false
@@ -38,6 +34,20 @@ namespace CoreConsoleApp.Core.Variables
             Console.WriteLine(taxRate.Value); // 0.2
             taxRate = null;
             Console.WriteLine(taxRate); // empty
+        }
+
+        [TestMethod]
+        public void NullIfIf()
+        {
+            string a = null;
+
+            Assert.AreEqual("a is null", a ?? "a is null");
+
+            a ??= "some";
+            Assert.AreEqual("some", a ?? "a is null");
+
+            a = "Something";
+            Assert.AreEqual("Something", a ?? "a is NOT null");
         }
     }
 }

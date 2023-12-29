@@ -40,7 +40,8 @@
                     Console.WriteLine($"Parsed string \"{str}\" to float is {f1}");
                     i1 = int.Parse(str);
                     Console.WriteLine($"Parsed string \"{str}\" to int is {i1}");
-                } catch (FormatException e)
+                }
+                catch (FormatException e)
                 {
                     Console.WriteLine($"Could not parse \"{str}\" : {e.Message}");
                 }
