@@ -4,6 +4,7 @@ using System.Reflection;
 
 namespace BE.Exceptions
 {
+    [Serializable]
     public class ExceptionEx : ApplicationException
     {
         // members

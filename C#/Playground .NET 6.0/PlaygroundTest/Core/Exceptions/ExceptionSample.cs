@@ -11,13 +11,20 @@ namespace CoreConsoleApp.Core.Exceptions
             {
                 DoSomething();
 
-            } catch (SwitchOutOfRangeException ex)
+            }
+            catch (SwitchOutOfRangeException ex) when (ex.InnerException != null)
+            {
+                Console.WriteLine("check inside exception details with when");
+            }
+            catch (SwitchOutOfRangeException ex)
             {
                 Console.WriteLine("Exception " + ex.ToString());
-            } catch
+            }
+            catch
             {
 
-            } finally
+            }
+            finally
             {
                 // close connections..
             }

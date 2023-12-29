@@ -2,6 +2,7 @@ using System.Reflection;
 
 namespace BE.Exceptions
 {
+    [Serializable]
     public class SwitchOutOfRangeException : ExceptionEx
     {
         // class
