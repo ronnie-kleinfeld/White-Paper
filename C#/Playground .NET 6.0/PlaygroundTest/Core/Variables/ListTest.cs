@@ -25,6 +25,11 @@ namespace PlaygroundTest.Core.Variables
             numbers.IndexOf(4);
             numbers.Contains(4);
             numbers.Count();
+
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
         }
     }
 }
