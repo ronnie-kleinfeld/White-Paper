@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core
+﻿namespace PlaygroundTest.Core.Core
 {
     [TestClass]
     public class ForForeachDoWhile
