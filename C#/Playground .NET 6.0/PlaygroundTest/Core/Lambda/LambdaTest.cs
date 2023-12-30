@@ -1,6 +1,4 @@
-﻿using PlaygroundTest.Core.DelegatesLambda;
-
-namespace PlaygroundTest.Core.Lambda
+﻿namespace PlaygroundTest.Core.Lambda
 {
     [TestClass]
     public class LambdaTest
