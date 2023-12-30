@@ -1,7 +1,9 @@
-namespace CoreConsoleApp.Core.Interfaces
+namespace PlaygroundTest.Core.Interfaces
 {
-    public class Comparable
+    [TestClass]
+    public class IComparableTest
     {
+        [TestMethod]
         public static void DoUse()
         {
             Card card1 = new Card();
@@ -12,8 +14,8 @@ namespace CoreConsoleApp.Core.Interfaces
             card2.Suit = Suit.Spade;
             card2.Rank = Rank.King;
 
-            Console.WriteLine(card1.CompareTo(card2)); // -1
-            Console.WriteLine(card2.CompareTo(card1)); // +1
+            Assert.AreEqual(-1, card1.CompareTo(card2));
+            Assert.AreEqual(1, card2.CompareTo(card1));
         }
     }
 
@@ -25,10 +27,10 @@ namespace CoreConsoleApp.Core.Interfaces
         public int CompareTo(Card other)
         {
             int sortOrder = 0;
-            sortOrder = other.Rank.CompareTo(this.Rank);
+            sortOrder = other.Rank.CompareTo(Rank);
             if (sortOrder == 0)
             {
-                sortOrder = other.Suit.CompareTo(this.Suit);
+                sortOrder = other.Suit.CompareTo(Suit);
             }
 
             return sortOrder;
