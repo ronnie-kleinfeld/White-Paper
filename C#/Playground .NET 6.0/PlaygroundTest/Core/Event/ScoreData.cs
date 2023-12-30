@@ -1,6 +1,7 @@
 using System.ComponentModel;
+using PlaygroundTest.Core.Event;
 
-namespace CoreConsoleApp.Core.Event
+namespace PlaygroundTest.Core.Event
 {
     public class ScoreData
     {

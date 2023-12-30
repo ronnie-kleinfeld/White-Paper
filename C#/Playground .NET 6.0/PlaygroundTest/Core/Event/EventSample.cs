@@ -1,4 +1,5 @@
-﻿namespace CoreConsoleApp.Core.Event
+﻿using PlaygroundTest.Core.Event;
+namespace PlaygroundTest.Core.Event
 {
     internal class EventSample
     {

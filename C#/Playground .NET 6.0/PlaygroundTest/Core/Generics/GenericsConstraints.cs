@@ -1,4 +1,6 @@
-namespace CoreConsoleApp.Core.Generics
+using PlaygroundTest.Core.Generics;
+
+namespace PlaygroundTest.Core.Generics
 {
     /// <summary>
     /// restricts T to inherit from class or implement an interface

@@ -1,4 +1,6 @@
-namespace CoreConsoleApp.Core.Generics
+using PlaygroundTest.Core.Generics;
+
+namespace PlaygroundTest.Core.Generics
 {
     public static class GenericsObject
     {

@@ -1,6 +1,7 @@
 ﻿using BE.Helpers;
+using PlaygroundTest;
 
-namespace PlaygroundTest
+namespace PlaygroundTest.BE.Helpers
 {
     [TestClass]
     public class DeviceHelperTest

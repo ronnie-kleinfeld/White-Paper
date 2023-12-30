@@ -1,7 +1,7 @@
 using System.Reflection;
 using BE.Exceptions;
 
-namespace CoreConsoleApp.Core.Exceptions
+namespace PlaygroundTest.Core.Exceptions
 {
     public class ExceptionSample
     {

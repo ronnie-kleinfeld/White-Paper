@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core.DelegatesLambda
+﻿namespace PlaygroundTest.Core.Delegate
 {
     [TestClass]
     public class ActionAndFuncTest

@@ -1,4 +1,6 @@
-﻿namespace PlaygroundTest.Core.DelegatesLambda
+﻿using PlaygroundTest.Core.Delegate;
+
+namespace PlaygroundTest.Core.Delegate
 {
     [TestClass]
     public class Delegates

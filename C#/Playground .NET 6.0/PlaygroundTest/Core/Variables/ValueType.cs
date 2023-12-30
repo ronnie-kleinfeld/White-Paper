@@ -1,4 +1,6 @@
-namespace CoreConsoleApp.Core.Variables
+using PlaygroundTest.Core.Variables;
+
+namespace PlaygroundTest.Core.Variables
 {
     /// <summary>
     /// struct inherits from System.ValueType by default

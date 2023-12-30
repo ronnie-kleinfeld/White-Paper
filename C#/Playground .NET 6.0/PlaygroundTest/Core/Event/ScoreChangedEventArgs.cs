@@ -1,4 +1,4 @@
-namespace CoreConsoleApp.Core.Event
+namespace PlaygroundTest.Core.Event
 {
     public class ScoreChangedEventArgs : EventArgs
     {

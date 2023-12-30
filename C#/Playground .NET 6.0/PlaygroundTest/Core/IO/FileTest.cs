@@ -1,5 +1,4 @@
-﻿using CoreConsoleApp.Core.Variables;
-
+﻿
 namespace PlaygroundTest.Core.IO
 {
     [TestClass]
