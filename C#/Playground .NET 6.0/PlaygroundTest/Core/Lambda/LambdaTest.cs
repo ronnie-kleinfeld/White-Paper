@@ -1,29 +1,11 @@
-namespace CoreConsoleApp.Core.DelegatesLambda
+﻿namespace PlaygroundTest.Core.Lambda
 {
-    public class DelegatesLambdaSample
+    [TestClass]
+    public class LambdaTest
     {
-        public static void DoAction()
+        [TestMethod]
+        public void UsingADelegate()
         {
-            var action1 = new Action<int, int>(ActionMethod);
-
-            action1.Invoke(6, 8); // use invoke
-            action1(6, 8); // just call
-        }
-        private static void ActionMethod(int first, int second)
-        {
-            // do something
-        }
-
-        public static void DoFunc()
-        {
-            var func1 = new Func<int, int, bool>(FuncMethod);
-
-            Console.WriteLine(func1.Invoke(6, 8)); // use invoke
-            Console.WriteLine(func1(6, 8)); // just call
-        }
-        private static bool FuncMethod(int first, int second)
-        {
-            return first % 2 == 0 && second % 2 == 0;
         }
 
         public static void DoLambda()
@@ -64,6 +46,34 @@ namespace CoreConsoleApp.Core.DelegatesLambda
 
             Console.WriteLine(list.Count);
             Console.WriteLine(linq1.Count());
+        }
+    }
+
+    // declare the variable type as delegate string(int, int)
+    public delegate string MyDelegate(int arg1, int arg2);
+
+    // function to delegate to in an instance of a class
+    class MyClass
+    {
+        public string instanceMethod1(int arg1, int arg2)
+        {
+            Console.WriteLine("instanceMethod1");
+            return ((arg1 + arg2) * arg1).ToString();
+        }
+    }
+
+    // functions to delegate in a static class
+    public static class Utils
+    {
+        public static string Func1(int a, int b)
+        {
+            Console.WriteLine("Func1");
+            return (a + b).ToString();
+        }
+        public static string Func2(int a, int b)
+        {
+            Console.WriteLine("Func2");
+            return (a * b).ToString();
         }
     }
 }
