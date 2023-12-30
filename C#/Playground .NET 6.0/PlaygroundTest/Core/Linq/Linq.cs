@@ -2,7 +2,7 @@
 
 namespace PlaygroundTest.Core.Linq
 {
-    public class LinqS
+    public class Linq
     {
         public static void Test()
         {
@@ -29,6 +29,15 @@ namespace PlaygroundTest.Core.Linq
             points.Average(x => x.X);
 
             points.Skip(50).Take(10);
+        }
+
+        public static void DoLinq()
+        {
+            var list = new List<double> { 1.1, 3.3, 5.5 };
+            var linq1 = list.Where(num => num > 3);
+
+            Console.WriteLine(list.Count);
+            Console.WriteLine(linq1.Count());
         }
     }
 }

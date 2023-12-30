@@ -20,12 +20,17 @@
         [TestMethod]
         public void InlineDelegate()
         {
-            MyDelegate f = delegate (int a, int b)
+            var f1 = delegate (int a, int b)
             {
                 return (a - b).ToString();
             };
+            Assert.AreEqual("-10", f1(10, 20));
 
-            Assert.AreEqual("-10", f(10, 20));
+            var f2 = (int a, int b) => (a - b).ToString();
+            Assert.AreEqual("-10", f2(10, 20));
+
+            var f3 = (string a, string b) => (a + b).ToString();
+            Assert.AreEqual("ab", f3("a", "b"));
         }
 
         [TestMethod]

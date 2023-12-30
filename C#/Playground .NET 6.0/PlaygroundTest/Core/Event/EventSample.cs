@@ -7,7 +7,7 @@
         //    SampleDataUseage();
         //}
 
-        public static void SampleDataUseage()
+        public static void EventUsage()
         {
             var myData = new ScoreData();
             myData.ScoreChanged += MyData_ScoreChanged;
