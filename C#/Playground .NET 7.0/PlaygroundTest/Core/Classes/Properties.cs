@@ -1,4 +1,6 @@
-﻿namespace PlaygroundTest.Core.Classes
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace PlaygroundTest.Core.Classes
 {
     internal class Properties
     {
@@ -19,12 +21,13 @@
 
         public string InitProp { get; init; } // like readonly but can be assigned in a expresion initializer
 
-        public string RequiredProp { get; init; } // like readonly but can be assigned in a expresion initializer
+        public required string RequiredProp { get; init; } // like readonly but can be assigned in a expresion initializer
 
         public Book()
         {
             this.RequiredProp = "";
         }
+        [SetsRequiredMembers] // for the required prop
         public Book(string ReadonlyProp, string RequiredProp)
         {
             this.ReadonlyProp = ReadonlyProp; // readnonly can only be initialized here and
