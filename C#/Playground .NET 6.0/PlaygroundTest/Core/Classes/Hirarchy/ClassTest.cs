@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core.Classes
+﻿namespace PlaygroundTest.Core.Classes.Hirarchy
 {
     [TestClass]
     public class ClassTest

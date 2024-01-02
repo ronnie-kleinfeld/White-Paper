@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core.Classes
+﻿namespace PlaygroundTest.Core.Classes.Hirarchy
 {
     public class Customer
     {
@@ -47,12 +47,12 @@
         }
         public Customer(int id) : this()
         {
-            this.Id = id;
+            Id = id;
         }
         public Customer(int id, string name) : this()
         {
-            this.Id = id;
-            this.Name = name;
+            Id = id;
+            Name = name;
         }
 
         // methods

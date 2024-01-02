@@ -1,4 +1,4 @@
-﻿namespace PlaygroundTest.Core.Classes
+﻿namespace PlaygroundTest.Core.Classes.Hirarchy
 {
     public class Person
     {
@@ -12,12 +12,12 @@
         // ctor
         public Person()
         {
-            this.Name = string.Empty;
+            Name = string.Empty;
         }
         public Person(int id, string name)
         {
-            this.Id = id;
-            this.Name = name;
+            Id = id;
+            Name = name;
         }
 
         // methods
