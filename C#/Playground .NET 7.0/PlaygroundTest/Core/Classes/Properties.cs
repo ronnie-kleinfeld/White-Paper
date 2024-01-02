@@ -4,11 +4,11 @@
     {
         public void Usage()
         {
-            var book1 = new Book("123");
+            var book1 = new Book("123", "234");
             // var book2 = new Book { ReadonlyProp = "123" }; readonly value can not be assigned in an expersion initilizer
             // book2.ISBN = ""; readonly, can not be assigned
 
-            var book3 = new Book() { InitProp = "The Book" }; // init value can be assigned in an expersion initilizer
+            var book3 = new Book() { InitProp = "The Book", RequiredProp = "234" }; // init value can be assigned in an expersion initilizer
         }
     }
 
@@ -19,10 +19,16 @@
 
         public string InitProp { get; init; } // like readonly but can be assigned in a expresion initializer
 
-        public Book() { }
-        public Book(string ReadonlyProp)
+        public string RequiredProp { get; init; } // like readonly but can be assigned in a expresion initializer
+
+        public Book()
+        {
+            this.RequiredProp = "";
+        }
+        public Book(string ReadonlyProp, string RequiredProp)
         {
             this.ReadonlyProp = ReadonlyProp; // readnonly can only be initialized here and
+            this.RequiredProp = RequiredProp;
         }
 
         public void Update(string ReadonlyProp, string InitProp)

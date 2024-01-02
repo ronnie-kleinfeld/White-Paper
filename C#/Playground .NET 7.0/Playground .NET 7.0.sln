@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "Depe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BE", "BE\BE.csproj", "{BF068EC8-966A-4742-A8A8-C62F2B37A16C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreConsoleApp", "CoreConsoleApp\CoreConsoleApp.csproj", "{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundTest", "PlaygroundTest\PlaygroundTest.csproj", "{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testability", "Testability\Testability.csproj", "{CEEAB5B7-5B49-412B-B00E-8FC75E3D2B00}"
@@ -35,10 +33,6 @@ Global
 		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
