@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground .NET 7.0", "Playground .NET 7.0\Playground .NET 7.0.csproj", "{15FC06E0-5F29-4DCB-865C-85FBE3430A88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground .NET 7.0", "Playground .NET 7.0\Playground .NET 7.0.csproj", "{15FC06E0-5F29-4DCB-865C-85FBE3430A88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{22B5726B-B238-443C-8746-3FCEE563EE9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BE", "BE\BE.csproj", "{BF068EC8-966A-4742-A8A8-C62F2B37A16C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreConsoleApp", "CoreConsoleApp\CoreConsoleApp.csproj", "{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundTest", "PlaygroundTest\PlaygroundTest.csproj", "{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testability", "Testability\Testability.csproj", "{CEEAB5B7-5B49-412B-B00E-8FC75E3D2B00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testability.UnitTests", "Testability.UnitTests\Testability.UnitTests.csproj", "{22FB6334-3D6B-470C-9E7A-AEAB2F6B7C41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +27,30 @@ Global
 		{15FC06E0-5F29-4DCB-865C-85FBE3430A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15FC06E0-5F29-4DCB-865C-85FBE3430A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15FC06E0-5F29-4DCB-865C-85FBE3430A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B5726B-B238-443C-8746-3FCEE563EE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B5726B-B238-443C-8746-3FCEE563EE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B5726B-B238-443C-8746-3FCEE563EE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B5726B-B238-443C-8746-3FCEE563EE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF068EC8-966A-4742-A8A8-C62F2B37A16C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5694AB7F-E55D-4ACD-9748-21FF6FF799A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C05A2C-A838-43ED-BAE8-EED239D2F8D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEEAB5B7-5B49-412B-B00E-8FC75E3D2B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEAB5B7-5B49-412B-B00E-8FC75E3D2B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEAB5B7-5B49-412B-B00E-8FC75E3D2B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEAB5B7-5B49-412B-B00E-8FC75E3D2B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22FB6334-3D6B-470C-9E7A-AEAB2F6B7C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FB6334-3D6B-470C-9E7A-AEAB2F6B7C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FB6334-3D6B-470C-9E7A-AEAB2F6B7C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FB6334-3D6B-470C-9E7A-AEAB2F6B7C41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
