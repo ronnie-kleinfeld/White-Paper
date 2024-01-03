@@ -20,4 +20,10 @@
     <ProjectReference Include="..\BE\BE.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Core\Threads\Matt.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
