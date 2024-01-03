@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net;
+using System.Text.Json;
 
 namespace PlaygroundTest.Core.Threads
 {
@@ -36,6 +37,36 @@ namespace PlaygroundTest.Core.Threads
             }
 
             await Console.Out.WriteLineAsync("Read finished");
+        }
+
+        [TestMethod]
+        public void SyncTest()
+        {
+            Console.WriteLine("DownloadBigFile s");
+            DownloadBigFile("https://link.testfile.org/zwj7WO");
+            Console.WriteLine("DownloadBigFile d");
+        }
+        public void DownloadBigFile(string url)
+        {
+            Console.WriteLine("Downloading..");
+            var webClient = new WebClient();
+            var b = webClient.DownloadData(url);
+            Console.WriteLine($"Downloaded {b.Length}");
+        }
+
+        [TestMethod]
+        public async void AsyncTest()
+        {
+            Console.WriteLine("DownloadBigFileAsync s");
+            await DownloadBigFileAsync("https://link.testfile.org/zwj7WO");
+            Console.WriteLine("DownloadBigFileAsync d");
+        }
+        public async Task DownloadBigFileAsync(string url)
+        {
+            Console.WriteLine("Downloading..");
+            var webClient = new WebClient();
+            var b = await webClient.DownloadDataTaskAsync(url);
+            Console.WriteLine($"Downloaded {b.Length}");
         }
     }
 }

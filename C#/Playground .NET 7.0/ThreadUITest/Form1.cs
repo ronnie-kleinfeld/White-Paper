@@ -73,15 +73,18 @@ namespace ThreadUITest
         private async void downloadBigFileAsync_Click(object sender, EventArgs e)
         {
             textBoxDownloadBigFileAsync.Text += "DownloadBigFileAsync s" + Environment.NewLine;
-            await DownloadBigFileAsync("https://link.testfile.org/zwj7WO");
-            textBoxDownloadBigFileAsync.Text += "DownloadBigFileAsync d" + Environment.NewLine;
+            var t = DownloadBigFileAsync("https://link.testfile.org/zwj7WO");
+            textBoxDownloadBigFileAsync.Text += $"DownloadBigFileAsync b" + Environment.NewLine;
+            var str = await t;
+            textBoxDownloadBigFileAsync.Text += $"DownloadBigFileAsync d {str}" + Environment.NewLine;
         }
-        public async Task DownloadBigFileAsync(string url)
+        public async Task<string> DownloadBigFileAsync(string url)
         {
             textBoxDownloadBigFileAsync.Text += "Downloading.." + Environment.NewLine;
             var webClient = new WebClient();
             var b = await webClient.DownloadDataTaskAsync(url);
             textBoxDownloadBigFileAsync.Text += $"Finished {b.Length}" + Environment.NewLine;
+            return b.Length.ToString();
         }
     }
 }
