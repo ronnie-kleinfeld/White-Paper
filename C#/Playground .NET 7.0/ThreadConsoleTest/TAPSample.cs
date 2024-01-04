@@ -37,7 +37,7 @@
         {
             Console.WriteLine($"Start AwaitAndResult {Thread.CurrentThread.ManagedThreadId}");
 
-            Task<string> task = Task.Run<string>(ProcessData);
+            Task<string> task = Task.Run<string>(ProcessData1);
 
             // blocking
             //task.Wait();
@@ -50,11 +50,19 @@
             Console.ReadLine();
         }
 
-        public static Task<string> ProcessData()
+        public static Task<string> ProcessData1()
         {
-            Console.WriteLine($"Start Processing {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"Start Processing1 {Thread.CurrentThread.ManagedThreadId}");
             Thread.Sleep(3000);
-            Console.WriteLine("Finish Processing");
+            Console.WriteLine("Finish Processing1");
+            return Task.FromResult("014290985");
+        }
+
+        public static Task<string> ProcessData2()
+        {
+            Console.WriteLine($"Start Processing2 {Thread.CurrentThread.ManagedThreadId}");
+            Thread.Sleep(3000);
+            Console.WriteLine("Finish Processing2");
             return Task.FromResult("014290985");
         }
     }
