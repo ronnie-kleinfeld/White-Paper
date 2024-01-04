@@ -20,8 +20,8 @@ namespace ThreadConsoleTest
             ConsoleWriterHelper.Write("1");
             DoFileAsync();
             ConsoleWriterHelper.Write("2");
-            //DLBigFile("https://link.testfile.org/aYr11v");
-            //ConsoleWriterHelper.Write("3");
+            DLBigFile("https://link.testfile.org/aYr11v");
+            ConsoleWriterHelper.Write("3");
             DLBigFileAsync1("https://link.testfile.org/5RptC7");
             ConsoleWriterHelper.Write("4");
             DLBigFileAsync2("https://link.testfile.org/5RptC7");
