@@ -2,47 +2,27 @@
 {
     public class BreakfastAsync
     {
-        public static async Task Main()
+        static async Task Main(string[] args)
         {
             Coffee cup = PourCoffee();
             ConsoleWriterHelper.Write("coffee ready");
 
-            var eggsTask = FryEggsAsync(2);
-            var baconTask = FryBaconAsync(3);
-            var toastTask = MakeToastWithButterAndJamAsync(2);
+            Egg eggs = await FryEggsAsync(2);
+            ConsoleWriterHelper.Write("eggs ready");
 
-            var breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
-            while (breakfastTasks.Count > 0)
-            {
-                Task finishedTask = await Task.WhenAny(breakfastTasks);
-                if (finishedTask == eggsTask)
-                {
-                    ConsoleWriterHelper.Write("eggs ready");
-                }
-                else if (finishedTask == baconTask)
-                {
-                    ConsoleWriterHelper.Write("bacon ready");
-                }
-                else if (finishedTask == toastTask)
-                {
-                    ConsoleWriterHelper.Write("toast ready");
-                }
-                await finishedTask;
-                breakfastTasks.Remove(finishedTask);
-            }
+            Bacon bacon = await FryBaconAsync(3);
+            ConsoleWriterHelper.Write("bacon ready");
+
+            Toast toast = await ToastBreadAsync(2);
+            ApplyButter(toast);
+            ApplyJam(toast);
+            ConsoleWriterHelper.Write("toast ready");
 
             Juice oj = PourOJ();
             ConsoleWriterHelper.Write("oj ready");
             ConsoleWriterHelper.Write("Breakfast ready!");
-        }
 
-        static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
-        {
-            var toast = await ToastBreadAsync(number);
-            ApplyButter(toast);
-            ApplyJam(toast);
-
-            return toast;
+            ConsoleWriterHelper.WriteFinish();
         }
 
         private static Juice PourOJ()
@@ -90,7 +70,7 @@
         {
             ConsoleWriterHelper.Write("Warming pan...");
             await Task.Delay(3000);
-            ConsoleWriterHelper.Write($"cracking {howMany} eggs");
+            ConsoleWriterHelper.Write($"{howMany} eggs");
             ConsoleWriterHelper.Write("cooking eggs ...");
             await Task.Delay(3000);
             ConsoleWriterHelper.Write("eggs on plate");
