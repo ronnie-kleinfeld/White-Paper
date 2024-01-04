@@ -7,8 +7,18 @@
             Coffee cup = PourCoffee();
             ConsoleWriterHelper.Write("coffee ready");
 
-            //await CallTasksSequantialy();
-            await CallTasksWhenAll();
+            ConsoleWriterHelper.Write("making toast");
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(3);
+
+            ConsoleWriterHelper.Write("making eggs");
+            Task<Egg> eggsTask = FryEggsAsync(5);
+
+            ConsoleWriterHelper.Write("making bacon");
+            Task<Bacon> baconTask = FryBaconAsync(6);
+
+            //await CallTasksSequantialy(toastTask, eggsTask, baconTask);
+            //await CallTasksAwait(toastTask, eggsTask, baconTask);
+            await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
 
             Juice oj = PourOJ();
             ConsoleWriterHelper.Write("oj ready");
@@ -18,17 +28,8 @@
             ConsoleWriterHelper.WriteFinish();
         }
 
-        private static async Task CallTasksSequantialy()
+        private static async Task TasksSequantialy(Task<Toast> toastTask, Task<Egg> eggsTask, Task<Bacon> baconTask)
         {
-            ConsoleWriterHelper.Write("making toast");
-            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(3);
-
-            ConsoleWriterHelper.Write("making eggs");
-            Task<Egg> eggsTask = FryEggsAsync(5);
-
-            ConsoleWriterHelper.Write("making bacon");
-            Task<Bacon> baconTask = FryBaconAsync(6);
-
             Egg eggs = await eggsTask;
             ConsoleWriterHelper.Write("eggs ready");
 
@@ -38,21 +39,42 @@
             Toast toast = await toastTask;
             ConsoleWriterHelper.Write("toast ready");
         }
-        private static async Task CallTasksWhenAll()
+        private static async Task TasksAwait(Task<Toast> toastTask, Task<Egg> eggsTask, Task<Bacon> baconTask)
         {
-            ConsoleWriterHelper.Write("making toast");
-            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(3);
+            var tasks = new Task[] { eggsTask, baconTask, toastTask };
 
-            ConsoleWriterHelper.Write("making eggs");
-            Task<Egg> eggsTask = FryEggsAsync(5);
-
-            ConsoleWriterHelper.Write("making bacon");
-            Task<Bacon> baconTask = FryBaconAsync(6);
-
-            await Task.WhenAll(eggsTask, baconTask, toastTask);
+            //await Task.WhenAll(tasks);                        // wait until ALL tasks finished, current thread is RUNNING
+            //await Task.WhenAny(tasks);                        // wait until ONE tasks finished, current thread is RUNNING
+            //Task.WaitAll(eggsTask, baconTask, toastTask);     // wait until ALL tasks finished, current thread is BLOCKED
+            //Task.WaitAny(eggsTask, baconTask, toastTask);     // wait until ONE tasks finished, current thread is BLOCKED
             ConsoleWriterHelper.Write("Eggs ready");
             ConsoleWriterHelper.Write("Bacon ready");
             ConsoleWriterHelper.Write("Toast ready");
+        }
+        private static async Task TasksWhileWhenAny(Task<Toast> toastTask, Task<Egg> eggsTask, Task<Bacon> baconTask)
+        {
+            ConsoleWriterHelper.Write("tasks starting");
+            var tasks = new List<Task> { eggsTask, baconTask, toastTask };
+            while (tasks.Count > 0)
+            {
+                Task finishedTask = await Task.WhenAny(tasks);
+                if (finishedTask == eggsTask)
+                {
+                    ConsoleWriterHelper.Write("Eggs ready");
+                }
+                else if (finishedTask == baconTask)
+                {
+                    ConsoleWriterHelper.Write("Bacon ready");
+                }
+                else if (finishedTask == toastTask)
+                {
+                    ConsoleWriterHelper.Write("Toast ready");
+                }
+                await finishedTask;
+                ConsoleWriterHelper.Write($"{finishedTask.Id} removed");
+                tasks.Remove(finishedTask);
+            }
+            ConsoleWriterHelper.Write("tasks finished");
         }
 
         private static Juice PourOJ()
