@@ -1,4 +1,6 @@
-﻿namespace ThreadConsoleTest
+﻿using System.Runtime.InteropServices;
+
+namespace ThreadConsoleTest
 {
     public class TAPSample
     {
@@ -50,6 +52,22 @@
             Console.ReadLine();
         }
 
+        public static async Task Continuation()
+        {
+            Console.WriteLine($"Start Continuation {Thread.CurrentThread.ManagedThreadId}");
+
+            // not blocking, use ContinueWith to nest the a 2nd task/thread and there wait for the result
+            Task<string> task = Task.Run<string>(ProcessData1);
+            var task2 = task.ContinueWith(completedTask =>
+            {
+                var str = completedTask.Result;
+                Console.WriteLine(str);
+            });
+
+            Console.WriteLine("Finished Continuation");
+            Console.ReadLine();
+        }
+
         public static Task<string> ProcessData1()
         {
             Console.WriteLine($"Start Processing1 {Thread.CurrentThread.ManagedThreadId}");
@@ -58,7 +76,7 @@
             return Task.FromResult("014290985");
         }
 
-        public static Task<string> ProcessData2()
+        public static Task ProcessData2()
         {
             Console.WriteLine($"Start Processing2 {Thread.CurrentThread.ManagedThreadId}");
             Thread.Sleep(3000);
