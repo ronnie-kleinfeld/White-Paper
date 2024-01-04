@@ -7,8 +7,21 @@
             Coffee cup = PourCoffee();
             ConsoleWriterHelper.Write("coffee ready");
 
+            //await CallTasksSequantialy();
+            await CallTasksWhenAll();
+
+            Juice oj = PourOJ();
+            ConsoleWriterHelper.Write("oj ready");
+
+            ConsoleWriterHelper.Write("Breakfast ready!");
+
+            ConsoleWriterHelper.WriteFinish();
+        }
+
+        private static async Task CallTasksSequantialy()
+        {
             ConsoleWriterHelper.Write("making toast");
-            Task<Toast> toastTask = ToastBreadAsync(3);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(3);
 
             ConsoleWriterHelper.Write("making eggs");
             Task<Egg> eggsTask = FryEggsAsync(5);
@@ -23,16 +36,23 @@
             ConsoleWriterHelper.Write("bacon ready");
 
             Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
             ConsoleWriterHelper.Write("toast ready");
+        }
+        private static async Task CallTasksWhenAll()
+        {
+            ConsoleWriterHelper.Write("making toast");
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(3);
 
-            Juice oj = PourOJ();
-            ConsoleWriterHelper.Write("oj ready");
+            ConsoleWriterHelper.Write("making eggs");
+            Task<Egg> eggsTask = FryEggsAsync(5);
 
-            ConsoleWriterHelper.Write("Breakfast ready!");
+            ConsoleWriterHelper.Write("making bacon");
+            Task<Bacon> baconTask = FryBaconAsync(6);
 
-            ConsoleWriterHelper.WriteFinish();
+            await Task.WhenAll(eggsTask, baconTask, toastTask);
+            ConsoleWriterHelper.Write("Eggs ready");
+            ConsoleWriterHelper.Write("Bacon ready");
+            ConsoleWriterHelper.Write("Toast ready");
         }
 
         private static Juice PourOJ()
@@ -41,6 +61,14 @@
             return new Juice();
         }
 
+        static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
+        {
+            var toast = await ToastBreadAsync(number);
+            ApplyButter(toast);
+            ApplyJam(toast);
+
+            return toast;
+        }
         private static void ApplyJam(Toast toast) =>
             ConsoleWriterHelper.Write("jam on toast");
 
@@ -56,6 +84,8 @@
             }
             ConsoleWriterHelper.Write("toasting...");
             await Task.Delay(8000);
+            //throw new InvalidOperationException("The toaster is on fire");
+
             ConsoleWriterHelper.Write("Remove toast");
             await Task.Delay(1000);
             ConsoleWriterHelper.Write("bread toasted");
@@ -91,7 +121,7 @@
             await Task.Delay(4000);
             ConsoleWriterHelper.Write($"{howMany} eggs");
             ConsoleWriterHelper.Write("cooking eggs ...");
-            await Task.Delay(19000);
+            await Task.Delay(16000);
             ConsoleWriterHelper.Write("eggs ready");
             await Task.Delay(1000);
             ConsoleWriterHelper.Write("eggs on plate");
