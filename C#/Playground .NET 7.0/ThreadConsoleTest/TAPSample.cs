@@ -9,7 +9,8 @@ namespace ThreadConsoleTest
             //await StartATask();
             //await WaitAndResult();
             //await Continuation();
-            await Await();
+            //await Await();
+            await AggregateException();
         }
         public static async Task StartATask()
         {
@@ -80,6 +81,16 @@ namespace ThreadConsoleTest
             Console.WriteLine("Finished Await");
             Console.ReadLine();
         }
+        public static async Task AggregateException()
+        {
+            Console.WriteLine($"Start Await {Thread.CurrentThread.ManagedThreadId}");
+
+            // not blocking, call on same thread
+            Task t = ExceptionAsync();
+
+            Console.WriteLine("Finished Await");
+            Console.ReadLine();
+        }
 
         public static Task<string> ProcessData()
         {
@@ -96,6 +107,26 @@ namespace ThreadConsoleTest
             Console.WriteLine(response.StatusCode);
             Console.WriteLine("Finish ProcessDataAsync");
             return response.StatusCode.ToString();
+        }
+        public static async Task ExceptionAsync()
+        {
+            Console.WriteLine($"Start ExceptionAsync {Thread.CurrentThread.ManagedThreadId}");
+            try
+            {
+                var httpClient = new HttpClient();
+                var task = httpClient.GetAsync("http://expired.badssl.com");
+                var response = task.Result;
+                Console.WriteLine(response.StatusCode);
+            }
+            catch (AggregateException aex)
+            {
+                Console.WriteLine(aex.GetType());
+                foreach (Exception ex in aex.InnerExceptions)
+                {
+                    Console.WriteLine(ex.GetType());
+                }
+            }
+            Console.WriteLine("Finish ExceptionAsync");
         }
     }
 }
