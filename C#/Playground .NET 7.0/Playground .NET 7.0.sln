@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testability", "Testability\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testability.UnitTests", "Testability.UnitTests\Testability.UnitTests.csproj", "{22FB6334-3D6B-470C-9E7A-AEAB2F6B7C41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadUITest", "ThreadUITest\ThreadUITest.csproj", "{A70A3C77-24D2-4012-B55E-EBEBD1CAC02E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadUITest", "ThreadUITest\ThreadUITest.csproj", "{A70A3C77-24D2-4012-B55E-EBEBD1CAC02E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadConsoleTest", "ThreadConsoleTest\ThreadConsoleTest.csproj", "{B9BBAC91-BF6D-4F5A-B0DB-804A8030D087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A70A3C77-24D2-4012-B55E-EBEBD1CAC02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70A3C77-24D2-4012-B55E-EBEBD1CAC02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A70A3C77-24D2-4012-B55E-EBEBD1CAC02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9BBAC91-BF6D-4F5A-B0DB-804A8030D087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9BBAC91-BF6D-4F5A-B0DB-804A8030D087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9BBAC91-BF6D-4F5A-B0DB-804A8030D087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9BBAC91-BF6D-4F5A-B0DB-804A8030D087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
