@@ -2,19 +2,19 @@
 {
     public class BreakfastAsync
     {
-        static async Task Main(string[] args)
+        internal static async Task Cook(string[] args)
         {
             Coffee cup = PourCoffee();
             ConsoleWriterHelper.Write("coffee ready");
 
+            ConsoleWriterHelper.Write("making toast");
+            Task<Toast> toastTask = ToastBreadAsync(3);
+
             ConsoleWriterHelper.Write("making eggs");
-            Task<Egg> eggsTask = FryEggsAsync(6);
+            Task<Egg> eggsTask = FryEggsAsync(5);
 
             ConsoleWriterHelper.Write("making bacon");
-            Task<Bacon> baconTask = FryBaconAsync(7);
-
-            ConsoleWriterHelper.Write("making toast");
-            Task<Toast> toastTask = ToastBreadAsync(4);
+            Task<Bacon> baconTask = FryBaconAsync(6);
 
             Egg eggs = await eggsTask;
             ConsoleWriterHelper.Write("eggs ready");
@@ -29,7 +29,6 @@
 
             Juice oj = PourOJ();
             ConsoleWriterHelper.Write("oj ready");
-
 
             ConsoleWriterHelper.Write("Breakfast ready!");
 
@@ -50,30 +49,36 @@
 
         private static async Task<Toast> ToastBreadAsync(int slices)
         {
-            ConsoleWriterHelper.Write("Do toast");
+            ConsoleWriterHelper.Write($"Do {slices} toast");
             for (int slice = 0; slice < slices; slice++)
             {
                 ConsoleWriterHelper.Write("bread in toaster");
             }
             ConsoleWriterHelper.Write("toasting...");
-            await Task.Delay(3000);
+            await Task.Delay(8000);
             ConsoleWriterHelper.Write("Remove toast");
+            await Task.Delay(1000);
+            ConsoleWriterHelper.Write("bread toasted");
 
             return new Toast();
         }
 
         private static async Task<Bacon> FryBaconAsync(int slices)
         {
-            ConsoleWriterHelper.Write("Do bacon");
+            ConsoleWriterHelper.Write($"Do {slices} bacon");
+            ConsoleWriterHelper.Write("Warming pan...");
+            await Task.Delay(5000);
             ConsoleWriterHelper.Write($"{slices} bacon in pan");
             ConsoleWriterHelper.Write("first bacon...");
-            await Task.Delay(3000);
+            await Task.Delay(6000);
             for (int slice = 0; slice < slices; slice++)
             {
                 ConsoleWriterHelper.Write("flipping bacon");
             }
             ConsoleWriterHelper.Write("second bacon...");
-            await Task.Delay(3000);
+            await Task.Delay(6000);
+            ConsoleWriterHelper.Write("bacon ready");
+            await Task.Delay(1000);
             ConsoleWriterHelper.Write("bacon on plate");
 
             return new Bacon();
@@ -81,12 +86,14 @@
 
         private static async Task<Egg> FryEggsAsync(int howMany)
         {
-            ConsoleWriterHelper.Write("Do egg");
+            ConsoleWriterHelper.Write($"Do {howMany} egg");
             ConsoleWriterHelper.Write("Warming pan...");
-            await Task.Delay(3000);
+            await Task.Delay(4000);
             ConsoleWriterHelper.Write($"{howMany} eggs");
             ConsoleWriterHelper.Write("cooking eggs ...");
-            await Task.Delay(3000);
+            await Task.Delay(19000);
+            ConsoleWriterHelper.Write("eggs ready");
+            await Task.Delay(1000);
             ConsoleWriterHelper.Write("eggs on plate");
 
             return new Egg();

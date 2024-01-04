@@ -8,7 +8,7 @@
 
     public class BreakfastSync
     {
-        public static void Cook()
+        internal static async Task Cook(string[] args)
         {
             Coffee cup = PourCoffee();
             ConsoleWriterHelper.Write("coffee ready");
