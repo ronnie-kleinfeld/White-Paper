@@ -18,9 +18,9 @@
 
             //await TasksSequantialy(toastTask, eggsTask, baconTask);
             //await TasksAwait(toastTask, eggsTask, baconTask);
-            await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
+            //await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
 
-            //await TasksRun(toastTask, eggsTask, baconTask);
+            await TasksRun(toastTask, eggsTask, baconTask);
 
             Juice oj = PourOJ();
             ConsoleWriterHelper.Write("oj ready");
@@ -79,7 +79,7 @@
             ConsoleWriterHelper.Write("tasks finished");
         }
 
-        private static async Task CallTasksRun(Task<Toast> toastTask, Task<Egg> eggsTask, Task<Bacon> baconTask)
+        private static async Task TasksRun(Task<Toast> toastTask, Task<Egg> eggsTask, Task<Bacon> baconTask)
         {
             var tasks = new Task[] { eggsTask, baconTask, toastTask };
 
