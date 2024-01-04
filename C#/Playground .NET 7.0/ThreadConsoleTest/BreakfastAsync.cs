@@ -8,21 +8,29 @@
             ConsoleWriterHelper.Write("coffee ready");
 
             ConsoleWriterHelper.Write("making eggs");
-            Egg eggs = await FryEggsAsync(2);
-            ConsoleWriterHelper.Write("eggs ready");
+            Task<Egg> eggsTask = FryEggsAsync(6);
 
             ConsoleWriterHelper.Write("making bacon");
-            Bacon bacon = await FryBaconAsync(3);
-            ConsoleWriterHelper.Write("bacon ready");
+            Task<Bacon> baconTask = FryBaconAsync(7);
 
             ConsoleWriterHelper.Write("making toast");
-            Toast toast = await ToastBreadAsync(2);
+            Task<Toast> toastTask = ToastBreadAsync(4);
+
+            Egg eggs = await eggsTask;
+            ConsoleWriterHelper.Write("eggs ready");
+
+            Bacon bacon = await baconTask;
+            ConsoleWriterHelper.Write("bacon ready");
+
+            Toast toast = await toastTask;
             ApplyButter(toast);
             ApplyJam(toast);
             ConsoleWriterHelper.Write("toast ready");
 
             Juice oj = PourOJ();
             ConsoleWriterHelper.Write("oj ready");
+
+
             ConsoleWriterHelper.Write("Breakfast ready!");
 
             ConsoleWriterHelper.WriteFinish();
