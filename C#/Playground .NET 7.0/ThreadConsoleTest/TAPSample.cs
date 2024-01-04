@@ -7,7 +7,9 @@ namespace ThreadConsoleTest
         public static async Task Samples()
         {
             //await StartATask();
-            await AwaitAndResult();
+            //await WaitAndResult();
+            //await Continuation();
+            await Await();
         }
         public static async Task StartATask()
         {
@@ -35,11 +37,11 @@ namespace ThreadConsoleTest
             Console.ReadLine();
         }
 
-        public static async Task AwaitAndResult()
+        public static async Task WaitAndResult()
         {
             Console.WriteLine($"Start AwaitAndResult {Thread.CurrentThread.ManagedThreadId}");
 
-            Task<string> task = Task.Run<string>(ProcessData1);
+            Task<string> task = Task.Run<string>(ProcessData);
 
             // blocking
             //task.Wait();
@@ -57,7 +59,7 @@ namespace ThreadConsoleTest
             Console.WriteLine($"Start Continuation {Thread.CurrentThread.ManagedThreadId}");
 
             // not blocking, use ContinueWith to nest the a 2nd task/thread and there wait for the result
-            Task<string> task = Task.Run<string>(ProcessData1);
+            Task<string> task = Task.Run<string>(ProcessData);
             var task2 = task.ContinueWith(completedTask =>
             {
                 var str = completedTask.Result;
@@ -68,20 +70,32 @@ namespace ThreadConsoleTest
             Console.ReadLine();
         }
 
-        public static Task<string> ProcessData1()
+        public static async Task Await()
+        {
+            Console.WriteLine($"Start Await {Thread.CurrentThread.ManagedThreadId}");
+
+            // not blocking, call on same thread
+            Task t = DownloadDataAsync();
+
+            Console.WriteLine("Finished Await");
+            Console.ReadLine();
+        }
+
+        public static Task<string> ProcessData()
         {
             Console.WriteLine($"Start Processing1 {Thread.CurrentThread.ManagedThreadId}");
             Thread.Sleep(3000);
             Console.WriteLine("Finish Processing1");
             return Task.FromResult("014290985");
         }
-
-        public static Task ProcessData2()
+        public static async Task<string> DownloadDataAsync()
         {
-            Console.WriteLine($"Start Processing2 {Thread.CurrentThread.ManagedThreadId}");
-            Thread.Sleep(3000);
-            Console.WriteLine("Finish Processing2");
-            return Task.FromResult("014290985");
+            Console.WriteLine($"Start ProcessDataAsync {Thread.CurrentThread.ManagedThreadId}");
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync("https://www.linkedin.com/learning/asynchronous-programming-in-c-sharp/awaiting-a-task?autoSkip=true&resume=false&u=0");
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine("Finish ProcessDataAsync");
+            return response.StatusCode.ToString();
         }
     }
 }

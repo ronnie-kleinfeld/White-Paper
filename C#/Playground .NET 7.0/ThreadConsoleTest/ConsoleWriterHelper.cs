@@ -13,6 +13,7 @@ namespace ThreadConsoleTest
             if (!memberNames.Contains<string>(memberName))
             {
                 memberNames.Add(memberName);
+                Write(memberName + "()", memberName);
             }
             int index = memberNames.IndexOf(memberName);
 
