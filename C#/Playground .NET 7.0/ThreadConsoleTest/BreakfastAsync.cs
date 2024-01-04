@@ -1,15 +1,11 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace ThreadConsoleTest
+﻿namespace ThreadConsoleTest
 {
-    public class ASyncBreakfast
+    public class BreakfastAsync
     {
-        static DateTime now = DateTime.Now;
-
         public static async Task Main()
         {
             Coffee cup = PourCoffee();
-            Write("coffee is ready");
+            ConsoleWriterHelper.Write("coffee ready");
 
             var eggsTask = FryEggsAsync(2);
             var baconTask = FryBaconAsync(3);
@@ -21,23 +17,23 @@ namespace ThreadConsoleTest
                 Task finishedTask = await Task.WhenAny(breakfastTasks);
                 if (finishedTask == eggsTask)
                 {
-                    Write("eggs are ready");
+                    ConsoleWriterHelper.Write("eggs ready");
                 }
                 else if (finishedTask == baconTask)
                 {
-                    Write("bacon is ready");
+                    ConsoleWriterHelper.Write("bacon ready");
                 }
                 else if (finishedTask == toastTask)
                 {
-                    Write("toast is ready");
+                    ConsoleWriterHelper.Write("toast ready");
                 }
                 await finishedTask;
                 breakfastTasks.Remove(finishedTask);
             }
 
             Juice oj = PourOJ();
-            Write("oj is ready");
-            Write("Breakfast is ready!");
+            ConsoleWriterHelper.Write("oj ready");
+            ConsoleWriterHelper.Write("Breakfast ready!");
         }
 
         static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
@@ -51,67 +47,61 @@ namespace ThreadConsoleTest
 
         private static Juice PourOJ()
         {
-            Write("Pouring orange juice");
+            ConsoleWriterHelper.Write("Pouring OJ");
             return new Juice();
         }
 
         private static void ApplyJam(Toast toast) =>
-            Write("Putting jam on the toast");
+            ConsoleWriterHelper.Write("jam on toast");
 
         private static void ApplyButter(Toast toast) =>
-            Write("Putting butter on the toast");
+            ConsoleWriterHelper.Write("butter on toast");
 
         private static async Task<Toast> ToastBreadAsync(int slices)
         {
             for (int slice = 0; slice < slices; slice++)
             {
-                Write("Putting a slice of bread in the toaster");
+                ConsoleWriterHelper.Write("bread in toaster");
             }
-            Write("Start toasting...");
+            ConsoleWriterHelper.Write("toasting...");
             await Task.Delay(3000);
-            Write("Remove toast from toaster");
+            ConsoleWriterHelper.Write("Remove toast");
 
             return new Toast();
         }
 
         private static async Task<Bacon> FryBaconAsync(int slices)
         {
-            Write($"putting {slices} slices of bacon in the pan");
-            Write("cooking first side of bacon...");
+            ConsoleWriterHelper.Write($"{slices} bacon in pan");
+            ConsoleWriterHelper.Write("first bacon...");
             await Task.Delay(3000);
             for (int slice = 0; slice < slices; slice++)
             {
-                Write("flipping a slice of bacon");
+                ConsoleWriterHelper.Write("flipping bacon");
             }
-            Write("cooking the second side of bacon...");
+            ConsoleWriterHelper.Write("second bacon...");
             await Task.Delay(3000);
-            Write("Put bacon on plate");
+            ConsoleWriterHelper.Write("bacon on plate");
 
             return new Bacon();
         }
 
         private static async Task<Egg> FryEggsAsync(int howMany)
         {
-            Write("Warming the egg pan...");
+            ConsoleWriterHelper.Write("Warming pan...");
             await Task.Delay(3000);
-            Write($"cracking {howMany} eggs");
-            Write("cooking the eggs ...");
+            ConsoleWriterHelper.Write($"cracking {howMany} eggs");
+            ConsoleWriterHelper.Write("cooking eggs ...");
             await Task.Delay(3000);
-            Write("Put eggs on plate");
+            ConsoleWriterHelper.Write("eggs on plate");
 
             return new Egg();
         }
 
         private static Coffee PourCoffee()
         {
-            Write("Pouring coffee");
+            ConsoleWriterHelper.Write("Pouring coffee");
             return new Coffee();
-        }
-
-        private static void Write(string message, [CallerMemberName] string memberName = "")
-        {
-            double diff = (DateTime.Now - now).TotalSeconds;
-            Console.WriteLine($"{diff,11:F2} - {memberName}: {message}");
         }
     }
 }

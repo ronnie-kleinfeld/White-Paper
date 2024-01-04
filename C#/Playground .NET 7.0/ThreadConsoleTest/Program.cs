@@ -4,6 +4,6 @@ using ThreadConsoleTest;
 Console.WriteLine("Hello, World!");
 
 //FunctionInThreadSample.Usage();
-FunctionAsAsyncSample.Usage();
-//ThreadConsoleTest.SyncBreakfast.Main();
-//ThreadConsoleTest.ASyncBreakfast.Main();
+//FunctionAsAsyncSample.Usage();
+ThreadConsoleTest.BreakfastSync.Cook();
+//ThreadConsoleTest.BreakfastAsync.Main();
