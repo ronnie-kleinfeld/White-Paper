@@ -16,11 +16,11 @@
             ConsoleWriterHelper.Write("making bacon");
             Task<Bacon> baconTask = FryBaconAsync(6);
 
-            //await CallTasksSequantialy(toastTask, eggsTask, baconTask);
-            //await CallTasksAwait(toastTask, eggsTask, baconTask);
-            //await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
+            //await TasksSequantialy(toastTask, eggsTask, baconTask);
+            //await TasksAwait(toastTask, eggsTask, baconTask);
+            await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
 
-            await CallTasksRun(toastTask, eggsTask, baconTask);
+            //await TasksRun(toastTask, eggsTask, baconTask);
 
             Juice oj = PourOJ();
             ConsoleWriterHelper.Write("oj ready");
