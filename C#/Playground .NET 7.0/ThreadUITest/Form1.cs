@@ -1,4 +1,6 @@
+using System;
 using System.Net;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace ThreadUITest
@@ -15,6 +17,15 @@ namespace ThreadUITest
         private void Form1_Load(object sender, EventArgs e)
         {
             textBoxUI.Text = value.ToString();
+
+            // attach async anonymous function to event so the click event would not block the UI
+            downloadBigFileAsync2.Click += async (o, e) =>
+            {
+                textBoxDownloadBigFileAsync.Text += "Downloading.." + Environment.NewLine;
+                var webClient = new WebClient();
+                var b = await webClient.DownloadDataTaskAsync("https://link.testfile.org/zwj7WO");
+                textBoxDownloadBigFileAsync.Text += $"Finished {b.Length}" + Environment.NewLine;
+            };
         }
 
         private void uiPlus1_Click(object sender, EventArgs e)

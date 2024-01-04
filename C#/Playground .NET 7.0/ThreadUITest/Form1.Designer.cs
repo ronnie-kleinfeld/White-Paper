@@ -43,6 +43,7 @@
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
+            downloadBigFileAsync2 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -200,11 +201,21 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Mosh - Download big file";
             // 
+            // button1
+            // 
+            downloadBigFileAsync2.Location = new Point(627, 723);
+            downloadBigFileAsync2.Name = "button1";
+            downloadBigFileAsync2.Size = new Size(150, 120);
+            downloadBigFileAsync2.TabIndex = 15;
+            downloadBigFileAsync2.Text = "async Task Function";
+            downloadBigFileAsync2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1036, 907);
+            Controls.Add(downloadBigFileAsync2);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -240,5 +251,6 @@
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private GroupBox groupBox4;
+        private Button downloadBigFileAsync2;
     }
 }
