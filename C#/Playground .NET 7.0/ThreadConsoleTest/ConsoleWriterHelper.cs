@@ -8,12 +8,12 @@ namespace ThreadConsoleTest
         private static DateTime start = DateTime.Now;
         private static List<string> memberNames = new List<string>();
 
-        public static void Write(string message, [CallerMemberName] string memberName = "")
+        public static void WriteLine(string message, [CallerMemberName] string memberName = "")
         {
             if (!memberNames.Contains<string>(memberName))
             {
                 memberNames.Add(memberName);
-                Write(memberName + "()", memberName);
+                WriteLine(memberName + "()", memberName);
             }
             int index = memberNames.IndexOf(memberName);
 
@@ -30,9 +30,9 @@ namespace ThreadConsoleTest
             //Console.WriteLine($"{time}:{member}{padding}{message}");
             Console.WriteLine($"{time}:{padding}{message}");
         }
-        public static void Write(int threadId, [CallerMemberName] string memberName = "")
+        public static void WriteLine(int threadId, [CallerMemberName] string memberName = "")
         {
-            Write($"tid={threadId}", memberName);
+            WriteLine($"tid={threadId}", memberName);
         }
         public static void WriteFinish()
         {

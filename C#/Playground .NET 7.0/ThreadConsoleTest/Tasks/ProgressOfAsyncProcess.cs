@@ -4,11 +4,11 @@
     {
         public static async void ProgressSample()
         {
-            ConsoleWriterHelper.Write("Start sample");
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("Start sample");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
 
             string[] departments = { "Engineering", "Sales", "Marketing", "Support" };
-            IProgress<string> progress = new Progress<string>(d => { ConsoleWriterHelper.Write(d); });
+            IProgress<string> progress = new Progress<string>(d => { ConsoleWriterHelper.WriteLine(d); });
             var dataTask = ProcessData(departments, progress);
 
             ConsoleWriterHelper.WriteFinish();
@@ -19,19 +19,19 @@
 
         public static async Task ProcessData(string[] departments, IProgress<string> progress)
         {
-            ConsoleWriterHelper.Write("ProcessData1");
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("ProcessData1");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
             foreach (var department in departments)
             {
                 progress.Report($"{department} started");
-                ConsoleWriterHelper.Write($"{department} 1");
+                ConsoleWriterHelper.WriteLine($"{department} 1");
 
                 await Task.Delay(1000);
 
-                ConsoleWriterHelper.Write($"{department} 2");
+                ConsoleWriterHelper.WriteLine($"{department} 2");
                 progress.Report($"{department} finished");
             }
-            ConsoleWriterHelper.Write("ProcessData2");
+            ConsoleWriterHelper.WriteLine("ProcessData2");
         }
     }
 }

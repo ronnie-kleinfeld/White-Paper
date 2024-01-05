@@ -6,33 +6,33 @@ namespace ThreadConsoleTest.Tasks
     {
         public static void Usage()
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("Begin");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("Begin");
 
             DoCall();
 
-            ConsoleWriterHelper.Write("Finished");
+            ConsoleWriterHelper.WriteLine("Finished");
             ConsoleWriterHelper.WriteFinish();
         }
 
         public static void DoCall()
         {
-            ConsoleWriterHelper.Write("1");
+            ConsoleWriterHelper.WriteLine("1");
             DoFileAsync();
-            ConsoleWriterHelper.Write("2");
+            ConsoleWriterHelper.WriteLine("2");
             DLBigFile("https://link.testfile.org/aYr11v");
-            ConsoleWriterHelper.Write("3");
+            ConsoleWriterHelper.WriteLine("3");
             DLBigFileAsync1("https://link.testfile.org/5RptC7");
-            ConsoleWriterHelper.Write("4");
+            ConsoleWriterHelper.WriteLine("4");
             DLBigFileAsync2("https://link.testfile.org/5RptC7");
-            ConsoleWriterHelper.Write("5");
+            ConsoleWriterHelper.WriteLine("5");
             DLBigFile("https://link.testfile.org/zwj7WO");
-            ConsoleWriterHelper.Write("6");
+            ConsoleWriterHelper.WriteLine("6");
         }
 
         public static async Task DoFileAsync()
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
 
             string filePath = "matt.json";
             foreach (string s in Directory.GetFiles(Directory.GetCurrentDirectory()))
@@ -40,42 +40,42 @@ namespace ThreadConsoleTest.Tasks
                 if (s.Contains(".json"))
                 {
                     var employeeJson = await File.ReadAllTextAsync(s);
-                    ConsoleWriterHelper.Write("Json=" + employeeJson.Length.ToString());
+                    ConsoleWriterHelper.WriteLine("Json=" + employeeJson.Length.ToString());
                 }
             }
 
-            ConsoleWriterHelper.Write("Read finished");
+            ConsoleWriterHelper.WriteLine("Read finished");
         }
 
         public static void DLBigFile(string url)
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("1");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("1");
             var webClient = new WebClient();
-            ConsoleWriterHelper.Write("2");
+            ConsoleWriterHelper.WriteLine("2");
             var b = webClient.DownloadData(url);
-            ConsoleWriterHelper.Write($"3 {b.Length}");
+            ConsoleWriterHelper.WriteLine($"3 {b.Length}");
         }
 
         public static async Task DLBigFileAsync1(string url)
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("1");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("1");
             var webClient = new WebClient();
-            ConsoleWriterHelper.Write("2");
+            ConsoleWriterHelper.WriteLine("2");
             var b = await webClient.DownloadDataTaskAsync(url);
-            ConsoleWriterHelper.Write("3");
-            ConsoleWriterHelper.Write($"4 {b.Length}");
+            ConsoleWriterHelper.WriteLine("3");
+            ConsoleWriterHelper.WriteLine($"4 {b.Length}");
         }
         public static async Task DLBigFileAsync2(string url)
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("1");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("1");
             var webClient = new WebClient();
-            ConsoleWriterHelper.Write("2");
+            ConsoleWriterHelper.WriteLine("2");
             var b = await webClient.DownloadDataTaskAsync(url);
-            ConsoleWriterHelper.Write("3");
-            ConsoleWriterHelper.Write($"4 {b.Length}");
+            ConsoleWriterHelper.WriteLine("3");
+            ConsoleWriterHelper.WriteLine($"4 {b.Length}");
         }
     }
 }

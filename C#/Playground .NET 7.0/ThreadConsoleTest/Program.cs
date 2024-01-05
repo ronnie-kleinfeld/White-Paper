@@ -12,7 +12,9 @@ namespace ThreadConsoleTest
             //await ThreadConsoleTest.BreakfastAsync.Cook(args);
             //await TAPSample.Samples();
             //ProgressOfAsyncProcess.ProgressSample();
-            FunctionInThread.Start();
+            //FunctionInThread.Start();
+            //Lock.Sample();
+            ThreadSendAndCallback.Start();
         }
     }
 }

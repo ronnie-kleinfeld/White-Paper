@@ -11,82 +11,82 @@
         internal static async Task Cook(string[] args)
         {
             Coffee cup = PourCoffee();
-            ConsoleWriterHelper.Write("coffee ready");
+            ConsoleWriterHelper.WriteLine("coffee ready");
 
             Egg eggs = FryEggs(2);
-            ConsoleWriterHelper.Write("eggs ready");
+            ConsoleWriterHelper.WriteLine("eggs ready");
 
             Bacon bacon = FryBacon(3);
-            ConsoleWriterHelper.Write("bacon ready");
+            ConsoleWriterHelper.WriteLine("bacon ready");
 
             Toast toast = ToastBread(2);
             ApplyButter(toast);
             ApplyJam(toast);
-            ConsoleWriterHelper.Write("toast ready");
+            ConsoleWriterHelper.WriteLine("toast ready");
 
             Juice oj = PourOJ();
-            ConsoleWriterHelper.Write("oj ready");
-            ConsoleWriterHelper.Write("Breakfast ready!");
+            ConsoleWriterHelper.WriteLine("oj ready");
+            ConsoleWriterHelper.WriteLine("Breakfast ready!");
 
             ConsoleWriterHelper.WriteFinish();
         }
 
         private static Juice PourOJ()
         {
-            ConsoleWriterHelper.Write("Pouring OJ");
+            ConsoleWriterHelper.WriteLine("Pouring OJ");
             return new Juice();
         }
 
         private static void ApplyJam(Toast toast) =>
-            ConsoleWriterHelper.Write("jam on toast");
+            ConsoleWriterHelper.WriteLine("jam on toast");
 
         private static void ApplyButter(Toast toast) =>
-            ConsoleWriterHelper.Write("butter on toast");
+            ConsoleWriterHelper.WriteLine("butter on toast");
 
         private static Toast ToastBread(int slices)
         {
             for (int slice = 0; slice < slices; slice++)
             {
-                ConsoleWriterHelper.Write("bread in toaster");
+                ConsoleWriterHelper.WriteLine("bread in toaster");
             }
-            ConsoleWriterHelper.Write("toasting...");
+            ConsoleWriterHelper.WriteLine("toasting...");
             Task.Delay(3000).Wait();
-            ConsoleWriterHelper.Write("Remove toast");
+            ConsoleWriterHelper.WriteLine("Remove toast");
 
             return new Toast();
         }
 
         private static Bacon FryBacon(int slices)
         {
-            ConsoleWriterHelper.Write($"{slices} bacon in pan");
-            ConsoleWriterHelper.Write("first bacon...");
+            ConsoleWriterHelper.WriteLine($"{slices} bacon in pan");
+            ConsoleWriterHelper.WriteLine("first bacon...");
             Task.Delay(3000).Wait();
             for (int slice = 0; slice < slices; slice++)
             {
-                ConsoleWriterHelper.Write("flipping bacon");
+                ConsoleWriterHelper.WriteLine("flipping bacon");
             }
-            ConsoleWriterHelper.Write("second bacon...");
+            ConsoleWriterHelper.WriteLine("second bacon...");
             Task.Delay(3000).Wait();
-            ConsoleWriterHelper.Write("bacon on plate");
+            ConsoleWriterHelper.WriteLine("bacon on plate");
 
             return new Bacon();
         }
 
         private static Egg FryEggs(int howMany)
         {
-            ConsoleWriterHelper.Write("Warming pan...");
+            ConsoleWriterHelper.WriteLine("Warming pan...");
             Task.Delay(3000).Wait();
-            ConsoleWriterHelper.Write($"{howMany} eggs");
-            ConsoleWriterHelper.Write("cooking eggs ...");
+            ConsoleWriterHelper.WriteLine($"{howMany} eggs");
+            ConsoleWriterHelper.WriteLine("cooking eggs ...");
             Task.Delay(3000).Wait();
-            ConsoleWriterHelper.Write("eggs plate");
+            ConsoleWriterHelper.WriteLine("eggs plate");
 
             return new Egg();
         }
 
         private static Coffee PourCoffee()
         {
-            ConsoleWriterHelper.Write("Pouring coffee");
+            ConsoleWriterHelper.WriteLine("Pouring coffee");
             return new Coffee();
         }
     }

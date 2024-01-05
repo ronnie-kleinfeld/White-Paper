@@ -4,42 +4,42 @@
     {
         public static void Usage()
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("Begin");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("Begin");
             Thread t1 = new Thread(DoWork1);
 
-            ConsoleWriterHelper.Write("Start");
+            ConsoleWriterHelper.WriteLine("Start");
             t1.Start();
 
-            ConsoleWriterHelper.Write("Work");
+            ConsoleWriterHelper.WriteLine("Work");
 
             Thread t2 = new Thread(DoWork2);
-            ConsoleWriterHelper.Write("Start");
+            ConsoleWriterHelper.WriteLine("Start");
             t2.Start();
 
-            ConsoleWriterHelper.Write("Work");
+            ConsoleWriterHelper.WriteLine("Work");
 
-            ConsoleWriterHelper.Write("Join");
+            ConsoleWriterHelper.WriteLine("Join");
             t1.Join();
-            ConsoleWriterHelper.Write("Joined");
+            ConsoleWriterHelper.WriteLine("Joined");
 
-            ConsoleWriterHelper.Write("Join");
+            ConsoleWriterHelper.WriteLine("Join");
             t2.Join();
-            ConsoleWriterHelper.Write("Joined");
+            ConsoleWriterHelper.WriteLine("Joined");
 
-            ConsoleWriterHelper.Write("Finished");
+            ConsoleWriterHelper.WriteLine("Finished");
             ConsoleWriterHelper.WriteFinish();
         }
 
         public static void DoWork1()
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("Work");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("Work");
         }
         public static void DoWork2()
         {
-            ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
-            ConsoleWriterHelper.Write("Work");
+            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine("Work");
         }
     }
 }
