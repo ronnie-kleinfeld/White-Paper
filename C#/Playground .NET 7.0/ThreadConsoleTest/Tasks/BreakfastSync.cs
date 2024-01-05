@@ -1,4 +1,4 @@
-﻿namespace ThreadConsoleTest
+﻿namespace ThreadConsoleTest.Tasks
 {
     internal class Bacon { }
     internal class Coffee { }

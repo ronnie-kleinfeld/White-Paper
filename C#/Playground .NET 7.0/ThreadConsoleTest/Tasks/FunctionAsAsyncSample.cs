@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace ThreadConsoleTest
+namespace ThreadConsoleTest.Tasks
 {
     public class FunctionAsAsyncSample
     {
@@ -35,7 +35,7 @@ namespace ThreadConsoleTest
             ConsoleWriterHelper.Write($"tid={Thread.CurrentThread.ManagedThreadId}");
 
             string filePath = "matt.json";
-            foreach (String s in Directory.GetFiles(Directory.GetCurrentDirectory()))
+            foreach (string s in Directory.GetFiles(Directory.GetCurrentDirectory()))
             {
                 if (s.Contains(".json"))
                 {

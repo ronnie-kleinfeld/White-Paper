@@ -1,4 +1,4 @@
-﻿namespace ThreadConsoleTest
+﻿namespace ThreadConsoleTest.Threads
 {
     public class FunctionInThreadSample
     {

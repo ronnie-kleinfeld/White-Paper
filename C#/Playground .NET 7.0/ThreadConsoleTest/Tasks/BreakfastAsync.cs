@@ -1,4 +1,4 @@
-﻿namespace ThreadConsoleTest
+﻿namespace ThreadConsoleTest.Tasks
 {
     public class BreakfastAsync
     {

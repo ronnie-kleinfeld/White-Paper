@@ -1,4 +1,6 @@
-﻿namespace ThreadConsoleTest
+﻿using ThreadConsoleTest.Threads;
+
+namespace ThreadConsoleTest
 {
     public class Program
     {
