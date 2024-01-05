@@ -2,7 +2,7 @@
 {
     public class TAPSample
     {
-        public static async Task Samples()
+        public static async Task Start()
         {
             //await StartATask();
             //await WaitAndResult();

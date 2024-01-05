@@ -2,7 +2,7 @@
 {
     public class FunctionInThreadSample
     {
-        public static void Usage()
+        public static void Start()
         {
             ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
             ConsoleWriterHelper.WriteLine("Begin");

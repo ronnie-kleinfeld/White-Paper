@@ -5,7 +5,7 @@
         private static bool isCompleted;
         static readonly object lockCompleted = new object();
 
-        public static void Sample()
+        public static void Start()
         {
             ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 

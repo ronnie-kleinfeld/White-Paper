@@ -1,4 +1,5 @@
-﻿using ThreadConsoleTest.Threads;
+﻿using ThreadConsoleTest.Tasks;
+using ThreadConsoleTest.Threads;
 
 namespace ThreadConsoleTest
 {
@@ -6,17 +7,18 @@ namespace ThreadConsoleTest
     {
         static async Task Main(string[] args)
         {
-            //FunctionInThreadSample.Usage();
-            //FunctionAsAsyncSample.Usage();
-            //ThreadConsoleTest.BreakfastSync.Cook(args);
-            //await ThreadConsoleTest.BreakfastAsync.Cook(args);
-            //await TAPSample.Samples();
-            //ProgressOfAsyncProcess.ProgressSample();
+            //FunctionInThreadSample.Start();
+            //FunctionAsAsyncSample.Start();
+            //BreakfastSync.Cook(args);
+            await BreakfastAsync.Cook(args);
+            //await TAPSample.Start();
+            //ProgressOfAsyncProcess.Start();
             //FunctionInThread.Start();
-            //Lock.Sample();
+            //Lock.Start();
             //ThreadSendAndCallback.Start();
-            //TaskChaining.Sample();
-            MutexLock.Start();
+            //TaskChaining.Start();
+            //MutexLock.Start();
+            //SemaphoreSlimLock.Start();
         }
     }
 }

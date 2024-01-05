@@ -2,7 +2,7 @@
 {
     public class ProgressOfAsyncProcess
     {
-        public static async void ProgressSample()
+        public static async void Start()
         {
             ConsoleWriterHelper.WriteLine("Start sample");
             ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");

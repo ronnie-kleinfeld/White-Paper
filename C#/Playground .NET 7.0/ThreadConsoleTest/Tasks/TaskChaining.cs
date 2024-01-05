@@ -2,7 +2,7 @@
 {
     internal class TaskChaining
     {
-        public static void Sample()
+        public static void Start()
         {
             ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
