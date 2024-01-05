@@ -1,4 +1,5 @@
-﻿using ThreadConsoleTest.Tasks;
+﻿using ThreadConsoleTest.Parallels;
+using ThreadConsoleTest.Tasks;
 using ThreadConsoleTest.Threads;
 
 namespace ThreadConsoleTest
@@ -10,7 +11,7 @@ namespace ThreadConsoleTest
             //FunctionInThreadSample.Start();
             //FunctionAsAsyncSample.Start();
             //BreakfastSync.Cook(args);
-            await BreakfastAsync.Cook(args);
+            //await BreakfastAsync.Cook(args);
             //await TAPSample.Start();
             //ProgressOfAsyncProcess.Start();
             //FunctionInThread.Start();
@@ -19,6 +20,7 @@ namespace ThreadConsoleTest
             //TaskChaining.Start();
             //MutexLock.Start();
             //SemaphoreSlimLock.Start();
+            ParallelforImage.Start();
         }
     }
 }
