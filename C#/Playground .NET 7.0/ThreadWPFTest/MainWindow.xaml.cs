@@ -20,11 +20,11 @@ namespace ThreadWPFTest
         private void UpdateUIThreadFromAnotherThread()
         {
             //txtMessage.Text = "123"; excetion
+
             //Dispatcher.Invoke(() => txtMessage.Text = "234");
+            //Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => txtMessage.Text = "456"));
 
             //Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => txtMessage.Text = "345"));
-
-            //Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => txtMessage.Text = "456"));
         }
     }
 }
