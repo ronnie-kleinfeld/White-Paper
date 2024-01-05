@@ -1,5 +1,4 @@
-﻿using ThreadConsoleTest.Tasks;
-using ThreadConsoleTest.Threads;
+﻿using ThreadConsoleTest.Threads;
 
 namespace ThreadConsoleTest
 {
@@ -16,7 +15,8 @@ namespace ThreadConsoleTest
             //FunctionInThread.Start();
             //Lock.Sample();
             //ThreadSendAndCallback.Start();
-            TaskChaining.Sample();
+            //TaskChaining.Sample();
+            MutexLock.Start();
         }
     }
 }

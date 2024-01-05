@@ -40,5 +40,25 @@
             }
             ConsoleWriterHelper.WriteLine("post lock");
         }
+
+        private static void LockVsMonitor()
+        {
+            var lockObject = new Object();
+
+            lock (lockObject)
+            {
+                // action to lock
+            }
+
+            Monitor.Enter(lockObject);
+            try
+            {
+                // action to lock
+            }
+            finally
+            {
+                Monitor.Exit(lockObject);
+            }
+        }
     }
 }
