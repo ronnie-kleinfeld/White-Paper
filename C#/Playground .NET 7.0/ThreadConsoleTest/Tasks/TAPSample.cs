@@ -1,4 +1,4 @@
-﻿namespace ThreadConsoleTest.Tasks
+﻿namespace ThreadConsoleTest
 {
     public class TAPSample
     {
@@ -40,7 +40,7 @@
         {
             Console.WriteLine($"Start AwaitAndResult {Thread.CurrentThread.ManagedThreadId}");
 
-            Task<string> task = Task.Run(ProcessData);
+            Task<string> task = Task.Run<string>(ProcessData);
 
             // blocking
             //task.Wait();
@@ -58,7 +58,7 @@
             Console.WriteLine($"Start Continuation {Thread.CurrentThread.ManagedThreadId}");
 
             // not blocking, use ContinueWith to nest the a 2nd task/thread and there wait for the result
-            Task<string> task = Task.Run(ProcessData);
+            Task<string> task = Task.Run<string>(ProcessData);
             var task2 = task.ContinueWith(completedTask =>
             {
                 var str = completedTask.Result;

@@ -1,4 +1,5 @@
-﻿using ThreadConsoleTest.Threads;
+﻿using ThreadConsoleTest.Tasks;
+using ThreadConsoleTest.Threads;
 
 namespace ThreadConsoleTest
 {
@@ -14,7 +15,8 @@ namespace ThreadConsoleTest
             //ProgressOfAsyncProcess.ProgressSample();
             //FunctionInThread.Start();
             //Lock.Sample();
-            ThreadSendAndCallback.Start();
+            //ThreadSendAndCallback.Start();
+            TaskChaining.Sample();
         }
     }
 }
