@@ -8,7 +8,9 @@
             //FunctionAsAsyncSample.Usage();
             //ThreadConsoleTest.BreakfastSync.Cook(args);
             //await ThreadConsoleTest.BreakfastAsync.Cook(args);
-            await TAPSample.Samples();
+            //await TAPSample.Samples();
+            //ProgressOfAsyncProcess.ProgressSample();
+            FunctionInThread.Start();
         }
     }
 }
