@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace ThreadConsoleTest
+﻿namespace ThreadConsoleTest
 {
     public class TAPSample
     {
