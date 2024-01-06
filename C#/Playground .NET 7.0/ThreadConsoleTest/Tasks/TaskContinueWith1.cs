@@ -1,6 +1,6 @@
 ﻿namespace ThreadConsoleTest.Tasks
 {
-    internal class TaskChaining
+    internal class TaskContinueWith1
     {
         public static void Start()
         {
