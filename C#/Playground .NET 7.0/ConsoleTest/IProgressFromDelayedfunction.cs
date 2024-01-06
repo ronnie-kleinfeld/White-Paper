@@ -1,6 +1,6 @@
-﻿namespace ThreadConsoleTest.Tasks
+﻿namespace ConsoleTest
 {
-    public class TaskWithIProgress
+    public class IProgressFromDelayedFunction
     {
         public static void Start()
         {
