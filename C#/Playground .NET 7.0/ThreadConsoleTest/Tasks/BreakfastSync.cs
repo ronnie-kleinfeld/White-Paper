@@ -29,17 +29,39 @@
             ConsoleHelper.WriteLine("Breakfast ready!");
         }
 
-        private static Juice PourOJ()
+        private static Coffee PourCoffee()
         {
-            ConsoleHelper.WriteLine("Pouring OJ");
-            return new Juice();
+            ConsoleHelper.WriteLine("Pouring coffee");
+            return new Coffee();
         }
 
-        private static void ApplyJam(Toast toast) =>
-            ConsoleHelper.WriteLine("jam on toast");
+        private static Egg FryEggs(int howMany)
+        {
+            ConsoleHelper.WriteLine("Warming pan...");
+            Task.Delay(2000).Wait();
+            ConsoleHelper.WriteLine($"{howMany} eggs");
+            ConsoleHelper.WriteLine("cooking eggs ...");
+            Task.Delay(2000).Wait();
+            ConsoleHelper.WriteLine("eggs plate");
 
-        private static void ApplyButter(Toast toast) =>
-            ConsoleHelper.WriteLine("butter on toast");
+            return new Egg();
+        }
+
+        private static Bacon FryBacon(int slices)
+        {
+            ConsoleHelper.WriteLine($"{slices} bacon in pan");
+            ConsoleHelper.WriteLine("first bacon...");
+            Task.Delay(2000).Wait();
+            for (int slice = 0; slice < slices; slice++)
+            {
+                ConsoleHelper.WriteLine("flipping bacon");
+            }
+            ConsoleHelper.WriteLine("second bacon...");
+            Task.Delay(2000).Wait();
+            ConsoleHelper.WriteLine("bacon on plate");
+
+            return new Bacon();
+        }
 
         private static Toast ToastBread(int slices)
         {
@@ -48,44 +70,21 @@
                 ConsoleHelper.WriteLine("bread in toaster");
             }
             ConsoleHelper.WriteLine("toasting...");
-            Task.Delay(3000).Wait();
+            Task.Delay(2000).Wait();
             ConsoleHelper.WriteLine("Remove toast");
 
             return new Toast();
         }
+        private static void ApplyJam(Toast toast) =>
+            ConsoleHelper.WriteLine("jam on toast");
 
-        private static Bacon FryBacon(int slices)
+        private static void ApplyButter(Toast toast) =>
+            ConsoleHelper.WriteLine("butter on toast");
+
+        private static Juice PourOJ()
         {
-            ConsoleHelper.WriteLine($"{slices} bacon in pan");
-            ConsoleHelper.WriteLine("first bacon...");
-            Task.Delay(3000).Wait();
-            for (int slice = 0; slice < slices; slice++)
-            {
-                ConsoleHelper.WriteLine("flipping bacon");
-            }
-            ConsoleHelper.WriteLine("second bacon...");
-            Task.Delay(3000).Wait();
-            ConsoleHelper.WriteLine("bacon on plate");
-
-            return new Bacon();
-        }
-
-        private static Egg FryEggs(int howMany)
-        {
-            ConsoleHelper.WriteLine("Warming pan...");
-            Task.Delay(3000).Wait();
-            ConsoleHelper.WriteLine($"{howMany} eggs");
-            ConsoleHelper.WriteLine("cooking eggs ...");
-            Task.Delay(3000).Wait();
-            ConsoleHelper.WriteLine("eggs plate");
-
-            return new Egg();
-        }
-
-        private static Coffee PourCoffee()
-        {
-            ConsoleHelper.WriteLine("Pouring coffee");
-            return new Coffee();
+            ConsoleHelper.WriteLine("Pouring OJ");
+            return new Juice();
         }
     }
 }

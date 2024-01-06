@@ -18,7 +18,7 @@ namespace ThreadConsoleTest
 
             // Tasks
             //await BreakfastAsync.Cook(args);
-            //BreakfastSync.Cook(args);
+            BreakfastSync.Cook(args);
             //FunctionAsAsyncSample.Start();
             //ProgressOfAsyncProcess.Start();
             //await TAPSample.Start();
