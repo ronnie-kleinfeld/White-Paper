@@ -16,11 +16,11 @@ namespace ThreadConsoleTest
             //ProgressOfAsyncProcess.Start();
             //FunctionInThread.Start();
             //Lock.Start();
-            //ThreadSendAndCallback.Start();
+            ThreadSendDataCallback.Main();
             //TaskChaining.Start();
             //MutexLock.Start();
             //SemaphoreSlimLock.Start();
-            ParallelforImage.Start();
+            //ParallelforImage.Start();
         }
     }
 }

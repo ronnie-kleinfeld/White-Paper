@@ -1,7 +1,27 @@
-﻿namespace ThreadConsoleTest.Threads
+﻿namespace ThreadConsoleTest.Synchronization
 {
-    public class Lock
+    public class LockSample
     {
+        private static void LockVsMonitor()
+        {
+            var lockObject = new object();
+
+            lock (lockObject)
+            {
+                // action to lock
+            }
+
+            Monitor.Enter(lockObject);
+            try
+            {
+                // action to lock
+            }
+            finally
+            {
+                Monitor.Exit(lockObject);
+            }
+        }
+
         private static bool isCompleted;
         static readonly object lockCompleted = new object();
 
@@ -39,26 +59,6 @@
                 ConsoleWriterHelper.WriteLine("in lock 2");
             }
             ConsoleWriterHelper.WriteLine("post lock");
-        }
-
-        private static void LockVsMonitor()
-        {
-            var lockObject = new Object();
-
-            lock (lockObject)
-            {
-                // action to lock
-            }
-
-            Monitor.Enter(lockObject);
-            try
-            {
-                // action to lock
-            }
-            finally
-            {
-                Monitor.Exit(lockObject);
-            }
         }
     }
 }

@@ -1,7 +1,4 @@
-using System;
 using System.Net;
-using System.Security.Policy;
-using System.Windows.Forms;
 
 namespace ThreadUITest
 {
