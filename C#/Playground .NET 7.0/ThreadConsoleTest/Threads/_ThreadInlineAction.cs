@@ -1,5 +1,4 @@
-﻿
-namespace ThreadConsoleTest.Threads
+﻿namespace ThreadConsoleTest.Threads
 {
     public class _ThreadInlineAction
     {
