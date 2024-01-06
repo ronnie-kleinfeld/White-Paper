@@ -1,6 +1,6 @@
 ﻿namespace ThreadConsoleTest.Threads
 {
-    internal class FunctionInThread
+    internal class ThreadAFunction
     {
         public static void Start()
         {
@@ -17,7 +17,7 @@
             }
 
             ConsoleWriterHelper.WriteFinish();
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         private static void WriteUsingNewThread()

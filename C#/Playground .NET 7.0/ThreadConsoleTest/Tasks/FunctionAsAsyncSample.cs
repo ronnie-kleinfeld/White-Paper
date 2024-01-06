@@ -6,7 +6,7 @@ namespace ThreadConsoleTest.Tasks
     {
         public static void Start()
         {
-            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             ConsoleWriterHelper.WriteLine("Begin");
 
             DoCall();
@@ -32,7 +32,7 @@ namespace ThreadConsoleTest.Tasks
 
         public static async Task DoFileAsync()
         {
-            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             string filePath = "matt.json";
             foreach (string s in Directory.GetFiles(Directory.GetCurrentDirectory()))
@@ -49,7 +49,7 @@ namespace ThreadConsoleTest.Tasks
 
         public static void DLBigFile(string url)
         {
-            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             ConsoleWriterHelper.WriteLine("1");
             var webClient = new WebClient();
             ConsoleWriterHelper.WriteLine("2");
@@ -59,7 +59,7 @@ namespace ThreadConsoleTest.Tasks
 
         public static async Task DLBigFileAsync1(string url)
         {
-            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             ConsoleWriterHelper.WriteLine("1");
             var webClient = new WebClient();
             ConsoleWriterHelper.WriteLine("2");
@@ -69,7 +69,7 @@ namespace ThreadConsoleTest.Tasks
         }
         public static async Task DLBigFileAsync2(string url)
         {
-            ConsoleWriterHelper.WriteLine($"tid={Thread.CurrentThread.ManagedThreadId}");
+            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             ConsoleWriterHelper.WriteLine("1");
             var webClient = new WebClient();
             ConsoleWriterHelper.WriteLine("2");

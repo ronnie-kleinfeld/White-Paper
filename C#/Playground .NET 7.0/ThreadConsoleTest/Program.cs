@@ -8,15 +8,17 @@ namespace ThreadConsoleTest
     {
         static async Task Main(string[] args)
         {
-            //FunctionInThreadSample.Start();
+            ThreadAFunction.Start();
+            //ThreadAFunctionSample.Start();
+            //ThreadSendDataCallback.Start();
+
             //FunctionAsAsyncSample.Start();
+
             //BreakfastSync.Cook(args);
             //await BreakfastAsync.Cook(args);
             //await TAPSample.Start();
             //ProgressOfAsyncProcess.Start();
-            //FunctionInThread.Start();
             //Lock.Start();
-            ThreadSendDataCallback.Main();
             //TaskChaining.Start();
             //MutexLock.Start();
             //SemaphoreSlimLock.Start();

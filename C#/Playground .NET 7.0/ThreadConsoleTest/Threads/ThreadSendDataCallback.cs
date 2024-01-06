@@ -2,15 +2,15 @@
 {
     public class ThreadSendDataCallback
     {
-        public static void Main()
+        public static void Start()
         {
             var tsdc = new ThreadSendDataCallback();
-            tsdc.Start();
+            tsdc.Test();
         }
 
         private string message;
 
-        public void Start()
+        public void Test()
         {
             ConsoleWriterHelper.WriteLine("ThreadSendDataAndCallback 1");
             ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
