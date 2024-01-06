@@ -23,7 +23,6 @@ namespace ThreadConsoleTest
             //FunctionAsAsyncSample.Start();
             //await TAPSample.Start();
             //TaskChaining.Start();
-            TaskWithIProgress.Start();
 
             // Threads
             //_ThreadInlineAction.Start();

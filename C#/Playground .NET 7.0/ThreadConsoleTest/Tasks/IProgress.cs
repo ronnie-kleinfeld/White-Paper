@@ -2,7 +2,7 @@
 {
     public class TaskWithIProgress
     {
-        public static async void Start()
+        public static void Start()
         {
             ConsoleHelper.PAD = 30;
 
@@ -10,15 +10,14 @@
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             string[] stages = { "S0", "S1", "S2", "S3", "S4", "S5" };
-            IProgress<string> progress = new Progress<string>(d => { ConsoleHelper.WriteLine("IProgress=" + d); });
-            var dataTask = ProcessData(stages, progress);
+            IProgress<string> progress = new Progress<string>(stage => { ConsoleHelper.WriteLine("IProgress=" + stage); });
+            OnProgress(stages, progress);
 
             Console.ReadLine();
         }
 
-        public static async Task ProcessData(string[] stages, IProgress<string> progress)
+        public static async void OnProgress(string[] stages, IProgress<string> progress)
         {
-            ConsoleHelper.WriteLine("ProcessData1");
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             foreach (var stage in stages)
             {
@@ -30,7 +29,6 @@
                 progress.Report($"{stage} finished");
                 ConsoleHelper.WriteLine($"{stage} finished");
             }
-            ConsoleHelper.WriteLine("ProcessData2");
         }
     }
 }
