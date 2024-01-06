@@ -12,26 +12,24 @@
 
         public void Test()
         {
-            ConsoleWriterHelper.WriteLine("ThreadSendDataAndCallback 1");
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine("ThreadSendDataAndCallback 1");
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             WorkerWithState tws = new WorkerWithState("Ask", new WorkerWithState.WorkerCallback(ResultCallback)
             );
 
             Thread t = new Thread(new ThreadStart(tws.ThreadProc));
             t.Start();
-            ConsoleWriterHelper.WriteLine("Main thread ");
+            ConsoleHelper.WriteLine("Main thread ");
             t.Join();
-            ConsoleWriterHelper.WriteLine(this.message);
-            ConsoleWriterHelper.WriteLine("ThreadSendDataAndCallback 2");
-
-            ConsoleWriterHelper.WriteFinish();
+            ConsoleHelper.WriteLine(this.message);
+            ConsoleHelper.WriteLine("ThreadSendDataAndCallback 2");
         }
 
         public string ResultCallback(string message)
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            ConsoleWriterHelper.WriteLine(message);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(message);
             this.message = message;
             return message;
         }
@@ -47,21 +45,21 @@
 
         public WorkerWithState(string message, WorkerCallback callbackDelegate)
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            ConsoleWriterHelper.WriteLine(message);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(message);
             this.message = message;
             this.callback = callbackDelegate;
         }
 
         public void ThreadProc()
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            ConsoleWriterHelper.WriteLine(message);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(message);
             if (callback != null)
             {
-                ConsoleWriterHelper.WriteLine("Call callback");
+                ConsoleHelper.WriteLine("Call callback");
                 string str = callback("123456");
-                ConsoleWriterHelper.WriteLine(str);
+                ConsoleHelper.WriteLine(str);
             }
         }
     }

@@ -4,7 +4,7 @@
     {
         public static void Start()
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             Thread thread = new Thread(WriteUsingNewThread);
             thread.Name = "Cazton Worker";
@@ -13,19 +13,18 @@
             Thread.CurrentThread.Name = "Cazton main";
             for (int i = 100; i < 110; i++)
             {
-                ConsoleWriterHelper.WriteLine(" A" + i + " ");
+                ConsoleHelper.WriteLine(" A" + i + " ");
             }
 
-            ConsoleWriterHelper.WriteFinish();
             Console.ReadKey();
         }
 
         private static void WriteUsingNewThread()
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             for (int i = 200; i < 210; i++)
             {
-                ConsoleWriterHelper.WriteLine(" Z" + i + " ");
+                ConsoleHelper.WriteLine(" Z" + i + " ");
             }
         }
     }

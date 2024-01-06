@@ -27,38 +27,37 @@
 
         public static void Start()
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             Thread thread = new Thread(HelloWorld);
             thread.Start();
 
             HelloWorld();
 
-            ConsoleWriterHelper.WriteFinish();
             Console.ReadLine();
         }
 
         private static void HelloWorld()
         {
-            ConsoleWriterHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
-            ConsoleWriterHelper.WriteLine("pre lock");
+            ConsoleHelper.WriteLine("pre lock");
             lock (lockCompleted)
             {
-                ConsoleWriterHelper.WriteLine("in lock 1");
-                ConsoleWriterHelper.WriteLine(isCompleted.ToString());
+                ConsoleHelper.WriteLine("in lock 1");
+                ConsoleHelper.WriteLine(isCompleted.ToString());
                 if (isCompleted)
                 {
-                    ConsoleWriterHelper.WriteLine("Completed");
+                    ConsoleHelper.WriteLine("Completed");
                 }
                 else
                 {
                     isCompleted = true;
-                    ConsoleWriterHelper.WriteLine("MESSAGE 1");
+                    ConsoleHelper.WriteLine("MESSAGE 1");
                 }
-                ConsoleWriterHelper.WriteLine("in lock 2");
+                ConsoleHelper.WriteLine("in lock 2");
             }
-            ConsoleWriterHelper.WriteLine("post lock");
+            ConsoleHelper.WriteLine("post lock");
         }
     }
 }

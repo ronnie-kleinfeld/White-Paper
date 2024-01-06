@@ -2,7 +2,7 @@
 
 namespace ThreadConsoleTest
 {
-    public class ConsoleWriterHelper
+    public class ConsoleHelper
     {
         private static int PAD = 20;
         private static DateTime start = DateTime.Now;
@@ -33,15 +33,6 @@ namespace ThreadConsoleTest
         public static void WriteLine(int threadId, [CallerMemberName] string memberName = "")
         {
             WriteLine($"tid={threadId}", memberName);
-        }
-        public static void WriteFinish()
-        {
-            string line = "Time ".PadRight(7);// + ":" + "Member".PadRight(20);
-            foreach (string member in memberNames)
-            {
-                line += ":" + member.PadRight(PAD);
-            }
-            Console.WriteLine(line);
         }
     }
 }

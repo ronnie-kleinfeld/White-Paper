@@ -7,7 +7,7 @@ namespace ThreadConsoleTest.Threads
         {
             Thread thread = new Thread(() =>
             {
-                ConsoleWriterHelper.WriteLine("");
+                ConsoleHelper.WriteLine("");
                 Task.Delay(2000);
             });
             thread.Name = "Cazton Worker";
