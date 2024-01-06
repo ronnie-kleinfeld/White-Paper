@@ -1,6 +1,4 @@
-﻿using PlaygroundTest.Core.Delegate;
-
-namespace PlaygroundTest.Core.Delegate
+﻿namespace PlaygroundTest.Core.Delegate
 {
     [TestClass]
     public class Delegates

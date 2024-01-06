@@ -4,7 +4,7 @@ namespace ThreadConsoleTest
 {
     public class ConsoleHelper
     {
-        private static int PAD = 20;
+        public static int PAD = 20;
         private static DateTime start = DateTime.Now;
         private static List<string> memberNames = new List<string>();
 
