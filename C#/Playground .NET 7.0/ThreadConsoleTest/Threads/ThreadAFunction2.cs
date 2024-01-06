@@ -1,6 +1,6 @@
 ﻿namespace ThreadConsoleTest.Threads
 {
-    public class ThreadAFunctionSample
+    public class ThreadAFunction2
     {
         public static void Start()
         {
@@ -20,11 +20,11 @@
             ConsoleHelper.WriteLine("Work");
 
             ConsoleHelper.WriteLine("Join");
-            t1.Join();
+            t2.Join();
             ConsoleHelper.WriteLine("Joined");
 
             ConsoleHelper.WriteLine("Join");
-            t2.Join();
+            t1.Join();
             ConsoleHelper.WriteLine("Joined");
 
             ConsoleHelper.WriteLine("Finished");
@@ -34,10 +34,14 @@
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             ConsoleHelper.WriteLine("Work");
+            Thread.Sleep(3000);
+            ConsoleHelper.WriteLine("Work");
         }
         public static void DoWork2()
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            ConsoleHelper.WriteLine("Work");
+            Thread.Sleep(1000);
             ConsoleHelper.WriteLine("Work");
         }
     }

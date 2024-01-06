@@ -1,6 +1,6 @@
 ﻿namespace ThreadConsoleTest.Threads
 {
-    internal class ThreadAFunction
+    internal class ThreadAFunction1
     {
         public static void Start()
         {

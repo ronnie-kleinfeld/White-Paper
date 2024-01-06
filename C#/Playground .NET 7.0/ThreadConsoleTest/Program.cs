@@ -8,8 +8,9 @@ namespace ThreadConsoleTest
     {
         static async Task Main(string[] args)
         {
-            ThreadAFunction.Start();
-            //ThreadAFunctionSample.Start();
+            _ThreadInlineAction.Start();
+            //ThreadAFunction1.Start();
+            //ThreadAFunction2.Start();
             //ThreadSendDataCallback.Start();
 
             //FunctionAsAsyncSample.Start();
