@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ThreadConsoleTest.Tasks
+﻿namespace ThreadConsoleTest.Tasks
 {
-    internal class _Task
+    public class _Task
     {
+        public static void Start()
+        {
+
+        }
     }
 }
