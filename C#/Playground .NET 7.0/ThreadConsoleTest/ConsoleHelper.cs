@@ -34,5 +34,16 @@ namespace ThreadConsoleTest
         {
             WriteLine($"tid={threadId}", memberName);
         }
+        internal static void DoTitle()
+        {
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            int i = 0;
+            while (i < 1000000)
+            {
+                Console.Title = i.ToString();
+                i++;
+            }
+            ConsoleHelper.WriteLine("done");
+        }
     }
 }
