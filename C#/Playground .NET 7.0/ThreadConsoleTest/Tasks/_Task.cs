@@ -5,8 +5,8 @@
         public static async Task Start()
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            ConsoleHelper.WriteLine(DoWork0("000"));
             DoWork1Async();
+
             Task<string> work2Task = DoWork2Async("123");
             _ = work2Task.ContinueWith(x =>
             {
@@ -31,20 +31,11 @@
             ConsoleHelper.DoTitle();
         }
 
-        private static string DoWork0(string str)
-        {
-            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Thread.Sleep(800);
-            ConsoleHelper.WriteLine("Warming pan...");
-            Thread.Sleep(1000);
-            ConsoleHelper.WriteLine($"cooking steak ...");
-
-            return str + "apple";
-        }
         private static async Task<string> DoWork2Async(string str)
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             await Task.Delay(200);
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             ConsoleHelper.WriteLine("Warming pan...");
             await Task.Delay(1000);
             ConsoleHelper.WriteLine($"cooking {str} eggs ...");
