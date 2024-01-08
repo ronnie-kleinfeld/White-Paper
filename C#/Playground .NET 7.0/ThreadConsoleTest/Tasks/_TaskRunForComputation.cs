@@ -1,6 +1,6 @@
 ﻿namespace ThreadConsoleTest.Tasks
 {
-    public class _TaskRun
+    public class _TaskRunForComputation
     {
         public static void Start()
         {
@@ -10,35 +10,42 @@
             DoAsync();
             DoTitle();
             DoSync();
-            ConsoleHelper.WriteLine("done");
+            ConsoleHelper.WriteLine("==========");
         }
 
         private static void DoSync()
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             Thread.Sleep(2000);
-            ConsoleHelper.WriteLine("done");
+            ConsoleHelper.WriteLine("==========");
         }
         private static async void DoAsync()
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Task.Run(Do1Async);
-            Task.Run(Do2Async);
+            Task t1 = Task.Run(Do1Async);
+            Task t2 = Task.Run(Do2Async);
             Task<string> t3 = Task.Run(Do3Async);
             _ = t3.ContinueWith(x =>
             {
                 ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
                 ConsoleHelper.WriteLine(t3.Result);
             });
-            Task.Run(() => Do4Async("444"));
-            Task.Run(() => Do5Async("555"));
+            Task t4 = Task.Run(() => Do4Async("444"));
+            Task t5 = Task.Run(() => Do5Async("555"));
             Task<string> t6 = Task.Run(() => Do6Async("666"));
             _ = t6.ContinueWith(x =>
             {
                 ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
                 ConsoleHelper.WriteLine(t6.Result);
             });
-            ConsoleHelper.WriteLine("done");
+            ConsoleHelper.WriteLine("==========");
+
+            var tasks = new Task[] { t1, t2, t3, t4, t5, t6 };
+
+            ConsoleHelper.WriteLine("When All");
+            await Task.WhenAll(tasks);
+            ConsoleHelper.WriteLine("All");
+            ConsoleHelper.WriteLine("==========");
         }
         private static async void Do1Async()
         {
@@ -122,12 +129,13 @@
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             int i = 0;
-            while (i < 200000)
+            while (i < 350000)
             {
                 Console.Title = i.ToString();
                 i++;
             }
-            ConsoleHelper.WriteLine("done");
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine(i.ToString());
         }
     }
 }
