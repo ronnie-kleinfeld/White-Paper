@@ -17,7 +17,7 @@ namespace ThreadConsoleTest
             //SemaphoreSlimLock.Start();
 
             // Tasks
-            _Task2.Start();
+            _TaskRun.Start();
             //_Task.Start();
             //BreakfastAsync.Cook(args);
             //BreakfastSync.Cook(args);

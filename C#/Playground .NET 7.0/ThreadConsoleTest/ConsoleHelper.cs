@@ -63,7 +63,7 @@ namespace ThreadConsoleTest
         {
             lock (lockCompleted)
             {
-                Write(y, $"{counter,10:F0}", memberName);
+                Write(y, $"{counter,5:F0}", memberName);
             }
         }
         public static void Write(int y, string message, [CallerMemberName] string memberName = "")

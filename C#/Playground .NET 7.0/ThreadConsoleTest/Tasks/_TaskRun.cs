@@ -1,6 +1,6 @@
 ﻿namespace ThreadConsoleTest.Tasks
 {
-    public class _Task2
+    public class _TaskRun
     {
         public static void Start()
         {
@@ -24,10 +24,20 @@
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             Task.Run(Do1Async);
             Task.Run(Do2Async);
-            Task.Run(Do3Async);
-            Task.Run(() => Do4Async("abc"));
-            Task.Run(() => Do5Async("abc"));
-            Task.Run(() => Do6Async("abc"));
+            Task<string> t3 = Task.Run(Do3Async);
+            _ = t3.ContinueWith(x =>
+            {
+                ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+                ConsoleHelper.WriteLine(t3.Result);
+            });
+            Task.Run(() => Do4Async("444"));
+            Task.Run(() => Do5Async("555"));
+            Task<string> t6 = Task.Run(() => Do6Async("666"));
+            _ = t6.ContinueWith(x =>
+            {
+                ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+                ConsoleHelper.WriteLine(t6.Result);
+            });
             ConsoleHelper.WriteLine("done");
         }
         private static async void Do1Async()
@@ -39,6 +49,8 @@
                 ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(130);
             }
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine("AAA");
         }
         private static async Task Do2Async()
         {
@@ -49,6 +61,8 @@
                 ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(100);
             }
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine("BBB");
         }
         private static async Task<string> Do3Async()
         {
@@ -59,7 +73,9 @@
                 ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(80);
             }
-            return "123";
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine("CCC");
+            return "CCC";
         }
         private static async void Do4Async(string str)
         {
@@ -71,6 +87,8 @@
                 ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(110);
             }
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine("DDD");
         }
         private static async Task Do5Async(string str)
         {
@@ -82,6 +100,8 @@
                 ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(130);
             }
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine("EEE");
         }
         private static async Task<string> Do6Async(string str)
         {
@@ -93,7 +113,9 @@
                 ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(130);
             }
-            return "123";
+            ConsoleHelper.WriteLine("==========");
+            ConsoleHelper.WriteLine("FFF");
+            return "FFF";
         }
 
         internal static void DoTitle()
