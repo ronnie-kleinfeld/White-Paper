@@ -36,7 +36,7 @@
             int y = Console.GetCursorPosition().Top;
             for (int i = 0; i < 100; i += 2)
             {
-                ConsoleHelper.Write(y, i);
+                ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(130);
             }
         }
@@ -46,7 +46,7 @@
             int y = Console.GetCursorPosition().Top;
             for (int i = 0; i < 100; i++)
             {
-                ConsoleHelper.Write(y, i);
+                ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(100);
             }
         }
@@ -56,7 +56,7 @@
             int y = Console.GetCursorPosition().Top;
             for (int i = 0; i < 100; i += 1)
             {
-                ConsoleHelper.Write(y, i);
+                ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(80);
             }
             return "123";
@@ -68,7 +68,7 @@
             int y = Console.GetCursorPosition().Top;
             for (int i = 0; i < 100; i += 2)
             {
-                ConsoleHelper.Write(y, i);
+                ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(110);
             }
         }
@@ -79,7 +79,7 @@
             int y = Console.GetCursorPosition().Top;
             for (int i = 0; i < 100; i += 2)
             {
-                ConsoleHelper.Write(y, i);
+                ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(130);
             }
         }
@@ -90,7 +90,7 @@
             int y = Console.GetCursorPosition().Top;
             for (int i = 0; i < 100; i += 2)
             {
-                ConsoleHelper.Write(y, i);
+                ConsoleHelper.WriteProgress(y, i, 100);
                 await Task.Delay(130);
             }
             return "123";
@@ -100,7 +100,7 @@
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             int i = 0;
-            while (i < 1000000)
+            while (i < 200000)
             {
                 Console.Title = i.ToString();
                 i++;
