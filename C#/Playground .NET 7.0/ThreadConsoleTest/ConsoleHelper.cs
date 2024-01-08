@@ -20,6 +20,7 @@ namespace ThreadConsoleTest
             double diff = (DateTime.Now - start).TotalSeconds;
 
             string time = $"{diff,7:F4}".PadLeft(7);
+            string tid = Thread.CurrentThread.ManagedThreadId.ToString();
             //string member = $"{memberName}".PadRight(20);
             string padding = "";
             for (int i = 0; i < index; i++)
@@ -28,7 +29,7 @@ namespace ThreadConsoleTest
             }
 
             //Console.WriteLine($"{time}:{member}{padding}{message}");
-            Console.WriteLine($"{time}:{padding}{message}");
+            Console.WriteLine($"{time}:{tid,2:F0}:{padding}{message}");
         }
         public static void WriteLine(int threadId, [CallerMemberName] string memberName = "")
         {
@@ -38,7 +39,7 @@ namespace ThreadConsoleTest
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             int i = 0;
-            while (i < 1000000)
+            while (i < 500000)
             {
                 Console.Title = i.ToString();
                 i++;
