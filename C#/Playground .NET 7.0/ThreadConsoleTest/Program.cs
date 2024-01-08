@@ -18,8 +18,9 @@ namespace ThreadConsoleTest
 
             // Tasks
             //_TaskRunForComputation.Start();
-            _TaskNew.Start();
+            //_TaskNew.Start();
             //_TaskDeclare.Start();
+            _TaskAwaitDeclare.Start();
             //_Task.Start();
             //BreakfastAsync.Cook(args);
             //BreakfastSync.Cook(args);
