@@ -6,7 +6,7 @@ namespace ThreadConsoleTest
 {
     public class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             // Parallels
             //ParallelforImage.Start();
@@ -17,8 +17,9 @@ namespace ThreadConsoleTest
             //SemaphoreSlimLock.Start();
 
             // Tasks
-            _Task.Start();
-            //await BreakfastAsync.Cook(args);
+            _Task2.Start();
+            //_Task.Start();
+            //BreakfastAsync.Cook(args);
             //BreakfastSync.Cook(args);
 
             //FunctionAsAsyncSample.Start();
@@ -31,6 +32,20 @@ namespace ThreadConsoleTest
             //ThreadAFunction1.Start();
             //ThreadAFunction2.Start();
             //ThreadSendDataCallback.Start();
+
+            //DoTitle();
+        }
+
+        internal static void DoTitle()
+        {
+            ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            int i = 0;
+            while (i < 1000000)
+            {
+                Console.Title = i.ToString();
+                i++;
+            }
+            ConsoleHelper.WriteLine("done");
         }
     }
 }

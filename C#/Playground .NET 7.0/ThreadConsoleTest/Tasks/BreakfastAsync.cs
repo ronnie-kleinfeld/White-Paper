@@ -2,8 +2,10 @@
 {
     public class BreakfastAsync
     {
-        public static async Task Cook(string[] args)
+        public static async void Cook(string[] args)
         {
+            ConsoleHelper.PAD = 15;
+
             Coffee cup = PourCoffee();
             ConsoleHelper.WriteLine("coffee ready");
 
@@ -18,14 +20,15 @@
 
             //await TasksSequantialy(toastTask, eggsTask, baconTask);
             //await TasksAwait(toastTask, eggsTask, baconTask);
-            //await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
+            await TasksWhileWhenAny(toastTask, eggsTask, baconTask);
 
-            await TasksRun(toastTask, eggsTask, baconTask);
+            //TasksRun(toastTask, eggsTask, baconTask);
 
             Juice oj = PourOJ();
             ConsoleHelper.WriteLine("oj ready");
 
             ConsoleHelper.WriteLine("Breakfast ready!");
+            //ConsoleHelper.DoTitle();
         }
 
         private static async Task TasksSequantialy(Task<Toast> toastTask, Task<Egg> eggsTask, Task<Bacon> baconTask)

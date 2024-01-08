@@ -7,7 +7,24 @@ namespace ThreadConsoleTest
         public static int PAD = 20;
         private static DateTime start = DateTime.Now;
         private static List<string> memberNames = new List<string>();
+        static readonly object lockCompleted = new object();
 
+        public static int GetX([CallerMemberName] string memberName = "")
+        {
+            if (!memberNames.Contains<string>(memberName))
+            {
+                memberNames.Add(memberName);
+            }
+            int index = memberNames.IndexOf(memberName);
+
+            int padding = 0;
+            for (int i = 0; i < index; i++)
+            {
+                padding += PAD + 1;
+            }
+
+            return 7 + 1 + 2 + 1 + padding;
+        }
         public static void WriteLine(string message, [CallerMemberName] string memberName = "")
         {
             if (!memberNames.Contains<string>(memberName))
@@ -33,13 +50,33 @@ namespace ThreadConsoleTest
         }
         public static void WriteLine(int threadId, [CallerMemberName] string memberName = "")
         {
-            WriteLine($"tid={threadId}", memberName);
+            lock (lockCompleted)
+            {
+                WriteLine($"tid={threadId}", memberName);
+            }
         }
-        internal static void DoTitle()
+        public static void Write(int y, int counter, [CallerMemberName] string memberName = "")
+        {
+            Write(y, $"{counter,10:F0}", memberName);
+        }
+        public static void Write(int y, string message, [CallerMemberName] string memberName = "")
+        {
+            lock (lockCompleted)
+            {
+                var (left, top) = Console.GetCursorPosition();
+                int x = GetX(memberName);
+                Console.SetCursorPosition(x, y);
+                Console.Write("          ");
+                Console.SetCursorPosition(x, y);
+                Console.Write(message);
+                Console.SetCursorPosition(left, top);
+            }
+        }
+        internal static void DoTitleOLD()
         {
             ConsoleHelper.WriteLine(Thread.CurrentThread.ManagedThreadId);
             int i = 0;
-            while (i < 500000)
+            while (i < 1000000)
             {
                 Console.Title = i.ToString();
                 i++;

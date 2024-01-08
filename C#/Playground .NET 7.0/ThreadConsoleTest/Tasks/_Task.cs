@@ -31,7 +31,6 @@
             //await task;
 
             ConsoleHelper.WriteLine("Counting");
-            ConsoleHelper.DoTitle();
             ConsoleHelper.WriteLine("Done");
             Console.ReadKey();
         }
