@@ -22,13 +22,12 @@ namespace ThreadConsoleTest
             //_TaskDeclare.Start();
             //_TaskAwaitDeclare.Start();
             CancelationToken.Start();
-            //BreakfastAsync.Cook(args);
+
             //BreakfastSync.Cook(args);
+            //BreakfastAsync.Cook(args);
 
             //FunctionAsAsyncSample.Start();
             //await TAPSample.Start();
-            //TaskContinueWith1.Start();
-            //TaskContinueWith2.Start();
 
             // Threads
             //_ThreadInlineAction.Start();

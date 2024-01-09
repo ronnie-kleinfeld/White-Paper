@@ -8,7 +8,7 @@ namespace ThreadConsoleTest.Parallels
         public static void Start()
         {
             var path = Directory.GetCurrentDirectory();
-            var files = Directory.GetFiles(path + @"\pictures", "*.jpg");
+            var files = Directory.GetFiles(path + @"\parallels\pictures", "*.jpg");
             var alteredPath = path + @"\alteredPath";
             Directory.CreateDirectory(alteredPath);
             Console.WriteLine(alteredPath);
