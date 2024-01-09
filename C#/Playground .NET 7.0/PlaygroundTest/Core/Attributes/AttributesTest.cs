@@ -12,7 +12,10 @@ namespace PlaygroundTest.Core.Attributes
             Assert.AreEqual(1, 1);
         }
 
-        public void SomeMethod(string name, int id, [CallerArgumentExpression("name")] string arg = "",
+        public void SomeMethod(
+            string name,
+            int id,
+            [CallerArgumentExpression("name")] string arg = "",
             [CallerFilePath] string filePath = "",
             [CallerLineNumber] int lineNumber = 0,
             [CallerMemberName] string memberName = "")
