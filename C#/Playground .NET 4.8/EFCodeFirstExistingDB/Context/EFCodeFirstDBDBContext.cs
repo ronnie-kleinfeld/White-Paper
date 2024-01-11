@@ -1,9 +1,10 @@
+using EFCodeFirstExistingDB.Model;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace EFCodeFirstExistingDB
+namespace EFCodeFirstExistingDB.Context
 {
     public partial class EFCodeFirstDBDBContext : DbContext
     {

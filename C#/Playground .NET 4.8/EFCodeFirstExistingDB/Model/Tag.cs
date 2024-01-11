@@ -1,4 +1,4 @@
-namespace EFCodeFirstExistingDB
+namespace EFCodeFirstExistingDB.Model
 {
     using System;
     using System.Collections.Generic;
