@@ -14,6 +14,17 @@ namespace EFDatabaseFirst
                 Console.WriteLine(course.Title);
             }
 
+            var author = dbContext.Authors.FirstOrDefault();
+            var newCourse = new Course()
+            {
+                Title = "Entity Framework",
+                LevelString = "Extreme",
+                Author = author,
+                Description = "EF 6 and Code"
+            };
+            dbContext.Courses.Add(newCourse);
+            dbContext.SaveChanges();
+
             var count = dbContext.Courses.Count<Course>();
             Console.WriteLine(count);
 
