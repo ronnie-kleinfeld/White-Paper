@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDatabaseFirst", "EFDataba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCodeFirstNoDB", "EFCodeFirst\EFCodeFirstNoDB.csproj", "{17CEB540-D859-4BD1-9AFC-7113250709EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCodeFirstExistingDB", "EFCodeFirstExistingDB\EFCodeFirstExistingDB.csproj", "{4542F6F7-0C2B-4593-AABE-82A25AAFAD41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{17CEB540-D859-4BD1-9AFC-7113250709EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17CEB540-D859-4BD1-9AFC-7113250709EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17CEB540-D859-4BD1-9AFC-7113250709EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4542F6F7-0C2B-4593-AABE-82A25AAFAD41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4542F6F7-0C2B-4593-AABE-82A25AAFAD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4542F6F7-0C2B-4593-AABE-82A25AAFAD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4542F6F7-0C2B-4593-AABE-82A25AAFAD41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
