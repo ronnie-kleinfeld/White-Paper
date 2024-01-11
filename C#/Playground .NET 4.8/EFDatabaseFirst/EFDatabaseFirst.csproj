@@ -76,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EFDatabaseFirstDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="funcGetAuthorCourses_Result.cs">
+      <DependentUpon>EFDatabaseFirstDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCourses_Result.cs">
+      <DependentUpon>EFDatabaseFirstDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Post.cs">
       <DependentUpon>EFDatabaseFirstDBModel.tt</DependentUpon>
     </Compile>
