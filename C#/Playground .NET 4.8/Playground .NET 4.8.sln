@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground .NET 4.8", "Play
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDatabaseFirst", "EFDatabaseFirst\EFDatabaseFirst.csproj", "{B5CF9025-FB95-41AE-AF29-179527B54F86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCodeFirst", "EFCodeFirst\EFCodeFirst.csproj", "{17CEB540-D859-4BD1-9AFC-7113250709EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCodeFirstNoDB", "EFCodeFirst\EFCodeFirstNoDB.csproj", "{17CEB540-D859-4BD1-9AFC-7113250709EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
