@@ -158,7 +158,7 @@
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_Authors" FromRole="Authors" ToRole="Courses" />
         </EntityType>
-        <EntityType Name="Cours">
+        <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseID" />
           </Key>
@@ -211,7 +211,7 @@
           <End Role="Authors" Type="Self.Author" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Courses" Type="EFDatabaseFirstDBModel.Course" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Authors">
               <PropertyRef Name="AuthorID" />
@@ -222,7 +222,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CourseSections_Courses">
-          <End Role="Courses" Type="Self.Cours" Multiplicity="1">
+          <End Role="Courses" Type="EFDatabaseFirstDBModel.Course" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="CourseSections" Type="Self.CourseSection" Multiplicity="*" />
@@ -236,12 +236,12 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="CourseTags">
-          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Courses" Type="EFDatabaseFirstDBModel.Course" Multiplicity="*" />
           <End Role="Tags" Type="Self.Tag" Multiplicity="*" />
         </Association>
         <EntityContainer Name="EFDatabaseFirstDBDBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Authors" EntityType="Self.Author" />
-          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="Courses" EntityType="EFDatabaseFirstDBModel.Course" />
           <EntitySet Name="CourseSections" EntityType="Self.CourseSection" />
           <EntitySet Name="Posts" EntityType="Self.Post" />
           <EntitySet Name="Tags" EntityType="Self.Tag" />
@@ -274,7 +274,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="EFDatabaseFirstDBModel.Cours">
+            <EntityTypeMapping TypeName="EFDatabaseFirstDBModel.Course">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
                 <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />

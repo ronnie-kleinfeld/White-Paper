@@ -55,7 +55,7 @@
     <Compile Include="Author.cs">
       <DependentUpon>EFDatabaseFirstDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cours.cs">
+    <Compile Include="Course.cs">
       <DependentUpon>EFDatabaseFirstDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CourseSection.cs">

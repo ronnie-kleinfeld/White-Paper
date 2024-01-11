@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="29d91d96952f4c1db3e80be73505b49e" Name="Diagram1" ZoomLevel="85">
+      <Diagram DiagramId="29d91d96952f4c1db3e80be73505b49e" Name="Diagram1" ZoomLevel="111" DisplayType="true">
         <EntityTypeShape EntityType="EFDatabaseFirstDBModel.Author" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EFDatabaseFirstDBModel.Cours" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFDatabaseFirstDBModel.Course" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="EFDatabaseFirstDBModel.CourseSection" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="EFDatabaseFirstDBModel.Post" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EFDatabaseFirstDBModel.Tag" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />

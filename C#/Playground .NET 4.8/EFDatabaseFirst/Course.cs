@@ -12,10 +12,10 @@ namespace EFDatabaseFirst
     using System;
     using System.Collections.Generic;
     
-    public partial class Cours
+    public partial class Course
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cours()
+        public Course()
         {
             this.CourseSections = new HashSet<CourseSection>();
             this.Tags = new HashSet<Tag>();
