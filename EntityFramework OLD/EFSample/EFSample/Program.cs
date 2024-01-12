@@ -1,38 +1,49 @@
 ﻿using DLEF.Context;
 using DLEF.Handlers;
 using DLEF.UnitOfWork;
-using System.Data.Entity;
-using System.Linq;
+using System;
 
 namespace EFSample {
     class Program {
         static void Main(string[] args) {
-            // without repository
-            AuthorData author = new AuthorData();
-            author.Name = "name";
+            //// without repository
+            //AuthorData author = new AuthorData();
+            //author.Name = "John Grisham";
+            //author.CreatedDateTime = DateTime.Now;
 
-            var dlContext = new DLContext();
-            dlContext.Authors.Add(author);
-            dlContext.SaveChanges();
+            //var dlContext = new DLContext();
+            //dlContext.Authors.Add(author);
+            //dlContext.SaveChanges();
 
-            var users = dlContext.Users.Include(x => x.DepartmentID).ToList();
+            //foreach (AuthorData a in dlContext.Authors)
+            //{
+            //    Console.WriteLine(a.Name);
+            //}
+            //Console.ReadKey();
 
-            var user = dlContext.Users.FirstOrDefault(x => x.ID == 1);
-            dlContext.Departments.Where(x => x.ID == user.DepartmentID).Load();
+            //var users = dlContext.Users.Include(x => x.DepartmentID).ToList();
+
+            //var user = dlContext.Users.FirstOrDefault(x => x.ID == 1);
+            //dlContext.Departments.Where(x => x.ID == user.DepartmentID).Load();
 
             // with repository
             using (var unitOfWork = new UnitOfWork(new DLContext())) {
-                var user1 = unitOfWork.Users.Get(1);
-
-                var newUser = new UserData();
-                newUser.UserName = "userName";
-                unitOfWork.Users.Add(newUser);
+                AuthorData author = new AuthorData();
+                author.Name = "Emma";
+                unitOfWork.Authors.Add(author);
                 unitOfWork.Complete();
 
-                unitOfWork.Users.Remove(newUser);
-                unitOfWork.Complete();
+                //unitOfWork.Users.Remove(newUser);
+                //unitOfWork.Complete();
             }
 
+            var dlContext = new DLContext();
+            foreach (AuthorData a in dlContext.Authors) {
+                Console.WriteLine(a.Name);
+            }
+
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }

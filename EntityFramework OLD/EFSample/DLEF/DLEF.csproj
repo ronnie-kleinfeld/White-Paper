@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201911141430207_Groups.Designer.cs">
       <DependentUpon>201911141430207_Groups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401121903509_ef.cs" />
+    <Compile Include="Migrations\202401121903509_ef.Designer.cs">
+      <DependentUpon>202401121903509_ef.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork\Base\IUnitOfWork.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141430207_Groups.resx">
       <DependentUpon>201911141430207_Groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401121903509_ef.resx">
+      <DependentUpon>202401121903509_ef.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

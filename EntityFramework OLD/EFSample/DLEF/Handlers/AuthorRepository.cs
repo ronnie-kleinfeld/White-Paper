@@ -3,30 +3,23 @@ using DLEF.Handlers.Base.Data;
 using DLEF.Handlers.Base.Map;
 using DLEF.Handlers.Base.Repository;
 
-namespace DLEF.Handlers
-{
-    public interface IAuthorRepository : IRepository<AuthorData>
-    {
+namespace DLEF.Handlers {
+    public interface IAuthorRepository : IRepository<AuthorData> {
     }
-    public class AuthorRepository : Repository<AuthorData>, IAuthorRepository
-    {
-        public AuthorRepository(DLContext context) : base(context)
-        {
+    public class AuthorRepository : Repository<AuthorData>, IAuthorRepository {
+        public AuthorRepository(DLContext context) : base(context) {
         }
     }
 
-    internal class AuthorIDMap : BaseIDMap<AuthorData>
-    {
-        public AuthorIDMap() : base("Authors")
-        {
+    internal class AuthorIDMap : BaseIDMap<AuthorData> {
+        public AuthorIDMap() : base("Authors") {
             Property(v => v.Name)
-                .IsRequired()
-                .HasMaxLength(255);
+                 .IsRequired()
+                 .HasMaxLength(255);
         }
     }
 
-    public class AuthorData : BaseIDData
-    {
+    public class AuthorData : BaseIDData {
         public string Name { get; set; }
     }
 }

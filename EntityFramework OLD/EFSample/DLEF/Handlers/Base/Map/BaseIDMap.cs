@@ -6,7 +6,7 @@ namespace DLEF.Handlers.Base.Map {
             HasKey(t => t.ID);
 
             Property(t => t.CreatedDateTime)
-                .HasColumnName("CreatedDateTime")
+               .HasColumnName("CreatedDateTime")
                 .HasColumnType("DateTime")
                 .IsRequired();
         }

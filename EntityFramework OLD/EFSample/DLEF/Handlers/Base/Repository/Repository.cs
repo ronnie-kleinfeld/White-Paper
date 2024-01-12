@@ -47,10 +47,14 @@ namespace DLEF.Handlers.Base.Repository {
         }
 
         public void Add(TEntity entity) {
+            entity.CreatedDateTime = DateTime.Now;
             Context.Set<TEntity>().Add(entity);
         }
 
         public void AddRange(IEnumerable<TEntity> entities) {
+            foreach (TEntity tEntity in entities) {
+                tEntity.CreatedDateTime = DateTime.Now;
+            }
             Context.Set<TEntity>().AddRange(entities);
         }
 
