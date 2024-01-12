@@ -4,6 +4,7 @@ using EFCodeFirstSQLServer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCodeFirstSQLServer.Migrations
 {
     [DbContext(typeof(EFCodeFirstSQLServerDBContext))]
-    partial class EFCodeFirstSQLServerDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240112135523_addMobile")]
+    partial class addMobile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,8 +49,7 @@ namespace EFCodeFirstSQLServer.Migrations
 
                     b.Property<string>("Mobile")
                         .IsRequired()
-                        .HasMaxLength(144)
-                        .HasColumnType("nvarchar(144)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
