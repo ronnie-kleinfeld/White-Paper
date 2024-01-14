@@ -7,9 +7,11 @@ namespace EFCoreDL.BL.UnitOfWork {
 
         public UnitOfWork(DLContext context) {
             _context = context;
+            Departments = new DepartmentTypeRepository(_context);
             Users = new UserRepository(_context);
         }
 
+        public IDepartmentTypeRepository Departments { get; }
         public IUserRepository Users { get; }
 
         public int Complete() {

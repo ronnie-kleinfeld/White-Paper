@@ -13,6 +13,5 @@ namespace EFCoreDL.DL.Model {
         [MaxLength(255)]
         public string LastName { get; set; }
         public DepartmentTypeData DepartmentType { get; set; }
-        public int DepartmentID { get; set; }
     }
 }
