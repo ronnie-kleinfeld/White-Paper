@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadWPFTest", "ThreadWPFT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{725F58BB-9771-44F6-A80B-76D3160AB4FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCodeFirstSQLServer", "EFCodeFirstSQLServer\EFCodeFirstSQLServer.csproj", "{8ABDD4C0-E7B5-402C-B33A-44EEC8533AD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCodeFirstSQLServer", "EFCodeFirstSQLServer\EFCodeFirstSQLServer.csproj", "{8ABDD4C0-E7B5-402C-B33A-44EEC8533AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreSample", "EFCoreSample\EFCoreSample.csproj", "{A8153913-4D97-4C50-9B5D-9A8D04468553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDL", "EFCoreDL\EFCoreDL.csproj", "{145B7268-D65E-4D15-BED5-17BAF6E2B42C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{8ABDD4C0-E7B5-402C-B33A-44EEC8533AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ABDD4C0-E7B5-402C-B33A-44EEC8533AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ABDD4C0-E7B5-402C-B33A-44EEC8533AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8153913-4D97-4C50-9B5D-9A8D04468553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8153913-4D97-4C50-9B5D-9A8D04468553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8153913-4D97-4C50-9B5D-9A8D04468553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8153913-4D97-4C50-9B5D-9A8D04468553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
