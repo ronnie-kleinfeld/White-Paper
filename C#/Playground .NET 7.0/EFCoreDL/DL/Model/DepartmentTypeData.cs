@@ -2,6 +2,6 @@
 
 namespace EFCoreDL.DL.Model {
     public class DepartmentTypeData : BaseTypeIDData {
-        public ICollection<UserData> Users { get; set; }
+        public IList<UserData> Users { get; set; }
     }
 }

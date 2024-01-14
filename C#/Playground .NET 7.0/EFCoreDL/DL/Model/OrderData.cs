@@ -7,6 +7,6 @@ namespace EFCoreDL.DL.Model {
         public int CustomerId { get; set; }
 
         public CustomerData Customer { get; set; } = null!;
-        public ICollection<OrderDetailData> OrderDetails { get; set; } = null!;
+        public IList<OrderDetailData> OrderDetails { get; set; } = null!;
     }
 }

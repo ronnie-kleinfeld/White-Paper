@@ -9,6 +9,6 @@ namespace EFCoreDL.DL.Model {
         public string? Email { get; set; }
         public string? Mobile { get; set; }
 
-        public ICollection<OrderData> Orders { get; set; } = null!;
+        public IList<OrderData> Orders { get; set; } = null!;
     }
 }
