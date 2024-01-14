@@ -1,5 +1,8 @@
-﻿namespace EFCoreDL.DL.Model.Base {
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EFCoreDL.DL.Model.Base {
     public class BaseData {
-        public DateTime CreatedDateTime { get; set; }
+        [Required]
+        public DateTime CreatedDateTime { get; set; } = DateTime.Now;
     }
 }
