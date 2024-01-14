@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EFCoreDL.DL.Model.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace EFCoreDL.DL.Model {
-    public class UserData {
+    public class UserData : BaseIDData {
         [Required]
         [MaxLength(255)]
         public string UserName { get; set; }
