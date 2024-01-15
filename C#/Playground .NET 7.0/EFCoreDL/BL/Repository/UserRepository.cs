@@ -3,14 +3,14 @@ using EFCoreDL.DL.Context;
 using EFCoreDL.DL.Model;
 
 namespace EFCoreDL.BL.Repository {
-    public interface IUserRepository : IRepository<UserData> {
-        UserData GetUserByID(int ID);
+    public interface IUserRepository : IRepository<UserModel> {
+        UserModel GetUserByID(int ID);
     }
-    public class UserRepository : BaseRepository<UserData>, IUserRepository {
+    public class UserRepository : BaseRepository<UserModel>, IUserRepository {
         public UserRepository(DLContext context) : base(context) {
         }
 
-        public UserData GetUserByID(int ID) {
+        public UserModel GetUserByID(int ID) {
             return DLContext.Users.FirstOrDefault(x => x.ID == ID);
         }
     }

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace EFCoreDL.DL.Model.Base {
-    public abstract class BaseTypeIDData : BaseIDData {
+    public abstract class BaseTypeIDModel : BaseIDModel {
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }

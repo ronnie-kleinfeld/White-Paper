@@ -6,22 +6,22 @@ namespace EFCoreDL {
     internal class Program {
         static void Main(string[] args) {
             using (var unitOfWork = new UnitOfWork(new DLContext())) {
-                //DepartmentTypeData departmentType = new DepartmentTypeData() {
+                //DepartmentTypeModel departmentType = new DepartmentTypeData() {
                 //    Name = "IT",
                 //    Description = "Information Technology"
                 //};
                 //unitOfWork.Departments.Add(departmentType);
                 //unitOfWork.Complete();
 
-                DepartmentTypeData departmentType = unitOfWork.Departments.Get(2);
+                DepartmentTypeModel departmentType = unitOfWork.Departments.GetAll().First();
 
-                unitOfWork.Users.Add(new UserData() {
+                unitOfWork.Users.Add(new UserModel() {
                     UserName = "Emma",
                     FirstName = "Emma",
                     LastName = "Watson",
                     DepartmentType = departmentType
                 });
-                unitOfWork.Users.Add(new UserData() {
+                unitOfWork.Users.Add(new UserModel() {
                     UserName = "trump",
                     FirstName = "Trump",
                     LastName = "Donald",
@@ -34,7 +34,7 @@ namespace EFCoreDL {
             }
 
             var dlContext = new DLContext();
-            foreach (UserData user in dlContext.Users) {
+            foreach (UserModel user in dlContext.Users) {
                 Console.WriteLine($"{user.ID} {user.UserName} {user.CreatedDateTime}");
             }
 

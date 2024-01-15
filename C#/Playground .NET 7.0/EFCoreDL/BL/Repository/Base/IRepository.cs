@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 
 namespace EFCoreDL.BL.Repository.Base {
-    public interface IRepository<TEntity> where TEntity : BaseData {
+    public interface IRepository<TEntity> where TEntity : BaseModel {
         TEntity Get(int id);
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);

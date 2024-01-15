@@ -3,7 +3,7 @@ using EFCoreDL.DL.Model.Base;
 using System.Linq.Expressions;
 
 namespace EFCoreDL.BL.Repository.Base {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : BaseData {
+    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : BaseModel {
         protected readonly DLContext Context;
 
         public DLContext DLContext {

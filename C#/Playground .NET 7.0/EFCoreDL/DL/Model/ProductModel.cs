@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFCoreDL.DL.Model {
-    public class ProductData : BaseIDData {
+    public class ProductModel : BaseIDModel {
         public string Name { get; set; } = null!;
 
         [Column(TypeName = "decimal(6, 2)")]
