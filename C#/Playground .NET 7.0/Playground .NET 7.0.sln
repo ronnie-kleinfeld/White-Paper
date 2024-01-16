@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "ConsoleTest\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCodeFirstSQLServer", "EFCodeFirstSQLServer\EFCodeFirstSQLServer.csproj", "{8ABDD4C0-E7B5-402C-B33A-44EEC8533AD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDL", "EFCoreDL\EFCoreDL.csproj", "{145B7268-D65E-4D15-BED5-17BAF6E2B42C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDL", "EFCoreDL\EFCoreDL.csproj", "{145B7268-D65E-4D15-BED5-17BAF6E2B42C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIFramework", "WebAPIFramework\WebAPIFramework.csproj", "{767A0540-985E-4B01-968E-FA4FF8AA6DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPICore", "WebAPICore\WebAPICore.csproj", "{D96966C4-02B8-498D-B8BE-9B1EFE799348}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{145B7268-D65E-4D15-BED5-17BAF6E2B42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767A0540-985E-4B01-968E-FA4FF8AA6DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767A0540-985E-4B01-968E-FA4FF8AA6DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767A0540-985E-4B01-968E-FA4FF8AA6DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767A0540-985E-4B01-968E-FA4FF8AA6DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96966C4-02B8-498D-B8BE-9B1EFE799348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96966C4-02B8-498D-B8BE-9B1EFE799348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96966C4-02B8-498D-B8BE-9B1EFE799348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96966C4-02B8-498D-B8BE-9B1EFE799348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
