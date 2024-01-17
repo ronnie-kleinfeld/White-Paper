@@ -1,0 +1,21 @@
+# https://reqres.in/api/users
+# head https://reqres.in/api/users
+# options https://reqres.in/api/user/3
+# https://api.w.Org
+
+# options https://gorest.co.in/public/v2
+# https://restcountries.com/v3.1/all
+# 
+
+# options https://api.openweathermap.org/data/2.5/weather
+
+# https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=59364be9a90532635303b61185f76b96
+
+# https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={59364be9a90532635303b61185f76b96}
+
+# https://hplussprot.com/api/products
+
+# options https://official-joke-api.appspot.com/random_joke
+# options https://official-joke-api.appspot.com/jokes/random
+https://official-joke-api.appspot.com/jokes/programming/ten
+

@@ -1,5 +1,5 @@
 namespace WebAPICore {
-    public class WeatherForecast {
+    public record WeatherForecast {
         public DateOnly Date { get; set; }
 
         public int TemperatureC { get; set; }
