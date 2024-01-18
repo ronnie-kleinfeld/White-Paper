@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public static class ExpressionHelper
-    {
+namespace LandonApi.Infrastructure {
+    public static class ExpressionHelper {
         private static readonly MethodInfo LambdaMethod = typeof(Expression)
             .GetMethods()
             .First(x => x.Name == "Lambda" && x.ContainsGenericParameters && x.GetParameters().Length == 2);
@@ -17,8 +13,7 @@ namespace LandonApi.Infrastructure
             .GetMethods()
             .ToArray();
 
-        private static MethodInfo GetLambdaFuncBuilder(Type source, Type dest)
-        {
+        private static MethodInfo GetLambdaFuncBuilder(Type source, Type dest) {
             var predicateType = typeof(Func<,>).MakeGenericType(source, dest);
             return LambdaMethod.MakeGenericMethod(predicateType);
         }
@@ -36,14 +31,12 @@ namespace LandonApi.Infrastructure
         public static LambdaExpression GetLambda<TSource, TDest>(ParameterExpression obj, Expression arg)
             => GetLambda(typeof(TSource), typeof(TDest), obj, arg);
 
-        public static LambdaExpression GetLambda(Type source, Type dest, ParameterExpression obj, Expression arg)
-        {
+        public static LambdaExpression GetLambda(Type source, Type dest, ParameterExpression obj, Expression arg) {
             var lambdaBuilder = GetLambdaFuncBuilder(source, dest);
             return (LambdaExpression)lambdaBuilder.Invoke(null, new object[] { arg, new[] { obj } });
         }
 
-        public static IQueryable<T> CallWhere<T>(IQueryable<T> query, LambdaExpression predicate)
-        {
+        public static IQueryable<T> CallWhere<T>(IQueryable<T> query, LambdaExpression predicate) {
             var whereMethodBuilder = QueryableMethods
                 .First(x => x.Name == "Where" && x.GetParameters().Length == 2)
                 .MakeGenericMethod(new[] { typeof(T) });
@@ -57,8 +50,7 @@ namespace LandonApi.Infrastructure
             bool useThenBy,
             bool descending,
             Type propertyType,
-            LambdaExpression keySelector)
-        {
+            LambdaExpression keySelector) {
             var methodName = "OrderBy";
             if (useThenBy) methodName = "ThenBy";
             if (descending) methodName += "Descending";

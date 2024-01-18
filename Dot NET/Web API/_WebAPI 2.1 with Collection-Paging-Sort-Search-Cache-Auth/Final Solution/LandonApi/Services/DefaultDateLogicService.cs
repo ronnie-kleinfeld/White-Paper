@@ -2,17 +2,12 @@
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Services
-{
-    public class DefaultDateLogicService : IDateLogicService
-    {
+namespace LandonApi.Services {
+    public class DefaultDateLogicService : IDateLogicService {
         private readonly HotelOptions _hotelOptions;
 
-        public DefaultDateLogicService(IOptions<HotelOptions> optionsAccessor)
-        {
+        public DefaultDateLogicService(IOptions<HotelOptions> optionsAccessor) {
             _hotelOptions = optionsAccessor.Value;
         }
 
@@ -22,8 +17,7 @@ namespace LandonApi.Services
         public DateTimeOffset FurthestPossibleBooking(DateTimeOffset now)
             => AlignStartTime(now) + TimeSpan.FromDays(_hotelOptions.MaxAdvanceBookingDays);
 
-        public DateTimeOffset AlignStartTime(DateTimeOffset original)
-        {
+        public DateTimeOffset AlignStartTime(DateTimeOffset original) {
             var dateInServerOffset = original.ToOffset(
                 TimeSpan.FromHours(_hotelOptions.UtcOffsetHours));
             return new DateTimeOffset(
@@ -36,17 +30,14 @@ namespace LandonApi.Services
 
         public IEnumerable<BookingRange> GetAllSlots(
             DateTimeOffset start,
-            DateTimeOffset? end = null)
-        {
+            DateTimeOffset? end = null) {
             var newStart = AlignStartTime(start);
 
-            while (true)
-            {
+            while (true) {
                 if (end != null && newStart >= end) yield break;
 
                 var newEnd = newStart.Add(TimeSpan.FromHours(_hotelOptions.MinimumStayHours));
-                yield return new BookingRange
-                {
+                yield return new BookingRange {
                     StartAt = newStart,
                     EndAt = newEnd
                 };
@@ -55,8 +46,7 @@ namespace LandonApi.Services
             }
         }
 
-        public bool DoesConflict(BookingRange b, DateTimeOffset start, DateTimeOffset end)
-        {
+        public bool DoesConflict(BookingRange b, DateTimeOffset start, DateTimeOffset end) {
             return
                 // Bookings with the same start or end time
                 (b.StartAt == start || b.EndAt == end)

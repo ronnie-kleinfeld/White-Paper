@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
-namespace LandonApi
-{
-    public static class TypeInfoMemberExtensions
-    {
+namespace LandonApi {
+    public static class TypeInfoMemberExtensions {
         public static IEnumerable<ConstructorInfo> GetAllConstructors(this TypeInfo typeInfo)
             => typeInfo.GetAll(ti => ti.DeclaredConstructors);
 
@@ -29,12 +25,9 @@ namespace LandonApi
         public static IEnumerable<PropertyInfo> GetAllProperties(this TypeInfo typeInfo)
             => typeInfo.GetAll(ti => ti.DeclaredProperties);
 
-        private static IEnumerable<T> GetAll<T>(this TypeInfo typeInfo, Func<TypeInfo, IEnumerable<T>> accessor)
-        {
-            while (typeInfo != null)
-            {
-                foreach (var t in accessor(typeInfo))
-                {
+        private static IEnumerable<T> GetAll<T>(this TypeInfo typeInfo, Func<TypeInfo, IEnumerable<T>> accessor) {
+            while (typeInfo != null) {
+                foreach (var t in accessor(typeInfo)) {
                     yield return t;
                 }
 

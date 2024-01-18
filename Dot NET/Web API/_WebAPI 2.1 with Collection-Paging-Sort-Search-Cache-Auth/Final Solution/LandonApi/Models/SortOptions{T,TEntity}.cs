@@ -3,17 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class SortOptions<T, TEntity> : IValidatableObject
-    {
+namespace LandonApi.Models {
+    public class SortOptions<T, TEntity> : IValidatableObject {
         public string[] OrderBy { get; set; }
 
         // ASP.NET Core calls this validate incoming parameters
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
             var processor = new SortOptionsProcessor<T, TEntity>(OrderBy);
 
             var validTerms = processor.GetValidTerms().Select(x => x.Name);
@@ -21,8 +17,7 @@ namespace LandonApi.Models
             var invalidTerms = processor.GetAllTerms().Select(x => x.Name)
                 .Except(validTerms, StringComparer.OrdinalIgnoreCase);
 
-            foreach (var term in invalidTerms)
-            {
+            foreach (var term in invalidTerms) {
                 yield return new ValidationResult(
                     $"Invalid sort term '{term}'.",
                     new[] { nameof(OrderBy) });
@@ -30,8 +25,7 @@ namespace LandonApi.Models
         }
 
         // The service code will call this to apply these sort options to a database query
-        public IQueryable<TEntity> Apply(IQueryable<TEntity> query)
-        {
+        public IQueryable<TEntity> Apply(IQueryable<TEntity> query) {
             var processor = new SortOptionsProcessor<T, TEntity>(OrderBy);
             return processor.Apply(query);
         }

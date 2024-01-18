@@ -9,27 +9,22 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace LandonApi.Filters
-{
-    public class LinkRewritingFilter : IAsyncResultFilter
-    {
+namespace LandonApi.Filters {
+    public class LinkRewritingFilter : IAsyncResultFilter {
         private readonly IUrlHelperFactory _urlHelperFactory;
 
-        public LinkRewritingFilter(IUrlHelperFactory urlHelperFactory)
-        {
+        public LinkRewritingFilter(IUrlHelperFactory urlHelperFactory) {
             _urlHelperFactory = urlHelperFactory;
         }
 
         public Task OnResultExecutionAsync(
-            ResultExecutingContext context, ResultExecutionDelegate next)
-        {
+            ResultExecutingContext context, ResultExecutionDelegate next) {
             var asObjectResult = context.Result as ObjectResult;
             bool shouldSkip = asObjectResult?.StatusCode >= 400
                 || asObjectResult?.Value == null
                 || asObjectResult?.Value as Resource == null;
 
-            if (shouldSkip)
-            {
+            if (shouldSkip) {
                 return next();
             }
 
@@ -39,8 +34,7 @@ namespace LandonApi.Filters
             return next();
         }
 
-        private static void RewriteAllLinks(object model, LinkRewriter rewriter)
-        {
+        private static void RewriteAllLinks(object model, LinkRewriter rewriter) {
             if (model == null) return;
 
             var allProperties = model
@@ -52,8 +46,7 @@ namespace LandonApi.Filters
             var linkProperties = allProperties
                 .Where(p => p.CanWrite && p.PropertyType == typeof(Link));
 
-            foreach (var linkProperty in linkProperties)
-            {
+            foreach (var linkProperty in linkProperties) {
                 var rewritten = rewriter.Rewrite(linkProperty.GetValue(model) as Link);
                 if (rewritten == null) continue;
 
@@ -61,8 +54,7 @@ namespace LandonApi.Filters
 
                 // Special handling of the hidden Self property:
                 // unwrap into the root object
-                if (linkProperty.Name == nameof(Resource.Self))
-                {
+                if (linkProperty.Name == nameof(Resource.Self)) {
                     allProperties
                         .SingleOrDefault(p => p.Name == nameof(Resource.Href))
                         ?.SetValue(model, rewritten.Href);
@@ -89,18 +81,14 @@ namespace LandonApi.Filters
         private static void RewriteLinksInNestedObjects(
             IEnumerable<PropertyInfo> objectProperties,
             object model,
-            LinkRewriter rewriter)
-        {
-            foreach (var objectProperty in objectProperties)
-            {
-                if (objectProperty.PropertyType == typeof(string))
-                {
+            LinkRewriter rewriter) {
+            foreach (var objectProperty in objectProperties) {
+                if (objectProperty.PropertyType == typeof(string)) {
                     continue;
                 }
 
                 var typeInfo = objectProperty.PropertyType.GetTypeInfo();
-                if (typeInfo.IsClass)
-                {
+                if (typeInfo.IsClass) {
                     RewriteAllLinks(objectProperty.GetValue(model), rewriter);
                 }
             }
@@ -109,15 +97,12 @@ namespace LandonApi.Filters
         private static void RewriteLinksInArrays(
             IEnumerable<PropertyInfo> arrayProperties,
             object model,
-            LinkRewriter rewriter)
-        {
+            LinkRewriter rewriter) {
 
-            foreach (var arrayProperty in arrayProperties)
-            {
+            foreach (var arrayProperty in arrayProperties) {
                 var array = arrayProperty.GetValue(model) as Array ?? new Array[0];
 
-                foreach (var element in array)
-                {
+                foreach (var element in array) {
                     RewriteAllLinks(element, rewriter);
                 }
             }

@@ -1,24 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class ApiError
-    {
-        public ApiError()
-        {
+namespace LandonApi.Models {
+    public class ApiError {
+        public ApiError() {
         }
 
-        public ApiError(string message)
-        {
+        public ApiError(string message) {
             Message = message;
         }
 
-        public ApiError(ModelStateDictionary modelState)
-        {
+        public ApiError(ModelStateDictionary modelState) {
             Message = "Invalid parameters.";
             Detail = modelState
                 .FirstOrDefault(x => x.Value.Errors.Any()).Value.Errors

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LandonApi.Infrastructure
-{
-    public class SortTerm
-    {
+﻿namespace LandonApi.Infrastructure {
+    public class SortTerm {
         public string Name { get; set; }
 
         public string EntityName { get; set; }

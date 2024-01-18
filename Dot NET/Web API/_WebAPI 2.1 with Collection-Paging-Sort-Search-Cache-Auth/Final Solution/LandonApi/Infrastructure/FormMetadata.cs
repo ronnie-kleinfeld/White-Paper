@@ -4,18 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public static class FormMetadata
-    {
-        public static Form FromModel(object model, Link self)
-        {
+namespace LandonApi.Infrastructure {
+    public static class FormMetadata {
+        public static Form FromModel(object model, Link self) {
             var formFields = new List<FormField>();
 
-            foreach (var prop in model.GetType().GetTypeInfo().DeclaredProperties)
-            {
+            foreach (var prop in model.GetType().GetTypeInfo().DeclaredProperties) {
                 var value = prop.CanRead
                     ? prop.GetValue(model)
                     : null;
@@ -38,8 +33,7 @@ namespace LandonApi.Infrastructure
                 var maxLength = attributes.OfType<MaxLengthAttribute>()
                     .SingleOrDefault()?.Length;
 
-                formFields.Add(new FormField
-                {
+                formFields.Add(new FormField {
                     Name = name,
                     Required = required,
                     Secret = secret,
@@ -51,29 +45,25 @@ namespace LandonApi.Infrastructure
                 });
             }
 
-            return new Form()
-            {
+            return new Form() {
                 Self = self,
                 Value = formFields.ToArray()
             };
         }
 
-        public static Form FromResource<T>(Link self)
-        {
+        public static Form FromResource<T>(Link self) {
             var allProperties = typeof(T).GetTypeInfo().DeclaredProperties.ToArray();
             var sortableProperties = allProperties
                 .Where(p => p.GetCustomAttributes<SortableAttribute>().Any()).ToArray();
             var searchableProperties = allProperties
                 .Where(p => p.GetCustomAttributes<SearchableAttribute>().Any()).ToArray();
 
-            if (!sortableProperties.Any() && !searchableProperties.Any())
-            {
+            if (!sortableProperties.Any() && !searchableProperties.Any()) {
                 return new Form { Self = self };
             }
 
             var orderByOptions = new List<FormFieldOption>();
-            foreach (var prop in sortableProperties)
-            {
+            foreach (var prop in sortableProperties) {
                 var name = prop.Name.ToCamelCase();
 
                 orderByOptions.Add(
@@ -83,8 +73,7 @@ namespace LandonApi.Infrastructure
             }
 
             string searchPattern = null;
-            if (searchableProperties.Any())
-            {
+            if (searchableProperties.Any()) {
                 var applicableOperators = searchableProperties
                     .SelectMany(x => x
                         .GetCustomAttribute<SearchableAttribute>()
@@ -98,35 +87,29 @@ namespace LandonApi.Infrastructure
             }
 
             var formFields = new List<FormField>();
-            if (orderByOptions.Any())
-            {
-                formFields.Add(new FormField
-                {
+            if (orderByOptions.Any()) {
+                formFields.Add(new FormField {
                     Name = nameof(SortOptions<string, string>.OrderBy).ToCamelCase(),
                     Type = "set",
                     Options = orderByOptions.ToArray()
                 });
             }
 
-            if (!string.IsNullOrEmpty(searchPattern))
-            {
-                formFields.Add(new FormField
-                {
+            if (!string.IsNullOrEmpty(searchPattern)) {
+                formFields.Add(new FormField {
                     Name = nameof(SearchOptions<string, string>.Search).ToCamelCase(),
                     Type = "set",
                     Pattern = searchPattern
                 });
             }
 
-            return new Form()
-            {
+            return new Form() {
                 Self = self,
                 Value = formFields.ToArray()
             };
         }
 
-        private static string GetFriendlyType(PropertyInfo property, Attribute[] attributes)
-        {
+        private static string GetFriendlyType(PropertyInfo property, Attribute[] attributes) {
             var isEmail = attributes.OfType<EmailAddressAttribute>().Any();
             if (isEmail) return "email";
 

@@ -1,16 +1,9 @@
 ﻿using AutoMapper;
 using LandonApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public class MappingProfile : Profile
-    {
-        public MappingProfile()
-        {
+namespace LandonApi.Infrastructure {
+    public class MappingProfile : Profile {
+        public MappingProfile() {
             CreateMap<RoomEntity, Room>()
                 .ForMember(dest => dest.Rate, opt => opt.MapFrom(src => src.Rate / 100.0m))
                 .ForMember(dest => dest.Self, opt => opt.MapFrom(src =>
@@ -38,8 +31,7 @@ namespace LandonApi.Infrastructure
                         nameof(Controllers.RoomsController.GetRoomById),
                         new { roomId = src.RoomId })))
                 .ForMember(dest => dest.Book, opt => opt.MapFrom(src =>
-                    FormMetadata.FromModel(new BookingForm
-                    {
+                    FormMetadata.FromModel(new BookingForm {
                         StartAt = src.StartAt.ToUniversalTime(),
                         EndAt = src.EndAt.ToUniversalTime()
                     },
@@ -63,8 +55,7 @@ namespace LandonApi.Infrastructure
                         nameof(Controllers.RoomsController.GetRoomById),
                         new { roomId = src.Room.Id })))
                 .ForMember(dest => dest.Cancel, opt => opt.MapFrom(src =>
-                    new Link
-                    {
+                    new Link {
                         RouteName = nameof(Controllers.BookingsController.DeleteBookingById),
                         RouteValues = new { bookingId = src.Id },
                         Method = Link.DeleteMethod

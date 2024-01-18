@@ -1,14 +1,8 @@
 ﻿using LandonApi.Infrastructure;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class RegisterForm
-    {
+namespace LandonApi.Models {
+    public class RegisterForm {
         [Required]
         [Display(Name = "email", Description = "Email address")]
         [EmailAddress]

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace LandonApi.Models
-{
-    public class BookingRangeComparer : IEqualityComparer<BookingRange>
-    {
+namespace LandonApi.Models {
+    public class BookingRangeComparer : IEqualityComparer<BookingRange> {
         public bool Equals(BookingRange x, BookingRange y)
             => x.StartAt == y.StartAt && x.EndAt == y.EndAt;
 

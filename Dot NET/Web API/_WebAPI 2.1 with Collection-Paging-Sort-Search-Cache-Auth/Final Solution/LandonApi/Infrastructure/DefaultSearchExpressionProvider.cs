@@ -1,25 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public class DefaultSearchExpressionProvider : ISearchExpressionProvider
-    {
+namespace LandonApi.Infrastructure {
+    public class DefaultSearchExpressionProvider : ISearchExpressionProvider {
         protected const string EqualsOperator = "eq";
 
-        public virtual IEnumerable<string> GetOperators()
-        {
+        public virtual IEnumerable<string> GetOperators() {
             yield return EqualsOperator;
         }
 
         public virtual Expression GetComparison(
-            MemberExpression left, string op, ConstantExpression right)
-        {
-            switch (op.ToLower())
-            {
+            MemberExpression left, string op, ConstantExpression right) {
+            switch (op.ToLower()) {
                 case EqualsOperator: return Expression.Equal(left, right);
                 default: throw new ArgumentException($"Invalid operator '{op}'.");
             }

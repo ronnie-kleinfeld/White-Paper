@@ -3,19 +3,15 @@ using LandonApi.Models;
 using LandonApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LandonApi.Controllers
-{
+namespace LandonApi.Controllers {
     [Route("/[controller]")]
     [ApiController]
-    public class RoomsController : ControllerBase
-    {
+    public class RoomsController : ControllerBase {
         private readonly IRoomService _roomService;
         private readonly IOpeningService _openingService;
         private readonly IDateLogicService _dateLogicService;
@@ -29,8 +25,7 @@ namespace LandonApi.Controllers
             IDateLogicService dateLogicService,
             IBookingService bookingService,
             IUserService userService,
-            IOptions<PagingOptions> defaultPagingOptionsWrapper)
-        {
+            IOptions<PagingOptions> defaultPagingOptionsWrapper) {
             _roomService = roomService;
             _openingService = openingService;
             _dateLogicService = dateLogicService;
@@ -45,8 +40,7 @@ namespace LandonApi.Controllers
         public async Task<ActionResult<Collection<Room>>> GetAllRooms(
             [FromQuery] PagingOptions pagingOptions,
             [FromQuery] SortOptions<Room, RoomEntity> sortOptions,
-            [FromQuery] SearchOptions<Room, RoomEntity> searchOptions)
-        {
+            [FromQuery] SearchOptions<Room, RoomEntity> searchOptions) {
             pagingOptions.Offset = pagingOptions.Offset ?? _defaultPagingOptions.Offset;
             pagingOptions.Limit = pagingOptions.Limit ?? _defaultPagingOptions.Limit;
 
@@ -78,8 +72,7 @@ namespace LandonApi.Controllers
         public async Task<ActionResult<Collection<Opening>>> GetAllRoomOpenings(
             [FromQuery] PagingOptions pagingOptions,
             [FromQuery] SortOptions<Opening, OpeningEntity> sortOptions,
-            [FromQuery] SearchOptions<Opening, OpeningEntity> searchOptions)
-        {
+            [FromQuery] SearchOptions<Opening, OpeningEntity> searchOptions) {
             pagingOptions.Offset = pagingOptions.Offset ?? _defaultPagingOptions.Offset;
             pagingOptions.Limit = pagingOptions.Limit ?? _defaultPagingOptions.Limit;
 
@@ -109,13 +102,11 @@ namespace LandonApi.Controllers
         [ProducesResponseType(404)]
         [ResponseCache(CacheProfileName = "Resource")]
         [Etag]
-        public async Task<ActionResult<Room>> GetRoomById(Guid roomId)
-        {
+        public async Task<ActionResult<Room>> GetRoomById(Guid roomId) {
             var room = await _roomService.GetRoomAsync(roomId);
             if (room == null) return NotFound();
 
-            if (!Request.GetEtagHandler().NoneMatch(room))
-            {
+            if (!Request.GetEtagHandler().NoneMatch(room)) {
                 return StatusCode(304, room);
             }
 
@@ -130,8 +121,7 @@ namespace LandonApi.Controllers
         [ProducesResponseType(404)]
         [ProducesResponseType(201)]
         public async Task<ActionResult> CreateBookingForRoom(
-            Guid roomId, [FromBody] BookingForm form)
-        {
+            Guid roomId, [FromBody] BookingForm form) {
             var userId = await _userService.GetUserIdAsync(User);
             if (userId == null) return Unauthorized();
 
@@ -164,8 +154,7 @@ namespace LandonApi.Controllers
             Guid roomId,
             [FromQuery] PagingOptions pagingOptions,
             [FromQuery] SortOptions<Opening, OpeningEntity> sortOptions,
-            [FromQuery] SearchOptions<Opening, OpeningEntity> searchOptions)
-        {
+            [FromQuery] SearchOptions<Opening, OpeningEntity> searchOptions) {
             pagingOptions.Offset = pagingOptions.Offset ?? _defaultPagingOptions.Offset;
             pagingOptions.Limit = pagingOptions.Limit ?? _defaultPagingOptions.Limit;
 

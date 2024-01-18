@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public class DecimalToIntSearchExpressionProvider : ComparableSearchExpressionProvider
-    {
-        public override ConstantExpression GetValue(string input)
-        {
+namespace LandonApi.Infrastructure {
+    public class DecimalToIntSearchExpressionProvider : ComparableSearchExpressionProvider {
+        public override ConstantExpression GetValue(string input) {
             if (!decimal.TryParse(input, out var dec))
                 throw new ArgumentException("Invalid search value.");
 

@@ -1,14 +1,9 @@
 ﻿using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class PagedCollection<T> : Collection<T>
-    {
+namespace LandonApi.Models {
+    public class PagedCollection<T> : Collection<T> {
         public static PagedCollection<T> Create(
             Link self, T[] items, int size, PagingOptions pagingOptions)
             => Create<PagedCollection<T>>(self, items, size, pagingOptions);
@@ -16,8 +11,7 @@ namespace LandonApi.Models
         public static TResponse Create<TResponse>(
             Link self, T[] items, int size, PagingOptions pagingOptions)
             where TResponse : PagedCollection<T>, new()
-            => new TResponse
-            {
+            => new TResponse {
                 Self = self,
                 Value = items,
                 Size = size,
@@ -50,8 +44,7 @@ namespace LandonApi.Models
         public Link Last { get; set; }
 
         private static Link GetNextLink(
-            Link self, int size, PagingOptions pagingOptions)
-        {
+            Link self, int size, PagingOptions pagingOptions) {
             if (pagingOptions?.Limit == null) return null;
             if (pagingOptions?.Offset == null) return null;
 
@@ -59,13 +52,11 @@ namespace LandonApi.Models
             var offset = pagingOptions.Offset.Value;
 
             var nextPage = offset + limit;
-            if (nextPage >= size)
-            {
+            if (nextPage >= size) {
                 return null;
             }
 
-            var parameters = new RouteValueDictionary(self.RouteValues)
-            {
+            var parameters = new RouteValueDictionary(self.RouteValues) {
                 ["limit"] = limit,
                 ["offset"] = nextPage
             };
@@ -74,8 +65,7 @@ namespace LandonApi.Models
             return newLink;
         }
 
-        private static Link GetLastLink(Link self, int size, PagingOptions pagingOptions)
-        {
+        private static Link GetLastLink(Link self, int size, PagingOptions pagingOptions) {
             if (pagingOptions?.Limit == null) return null;
 
             var limit = pagingOptions.Limit.Value;
@@ -84,8 +74,7 @@ namespace LandonApi.Models
 
             var offset = Math.Ceiling((size - (double)limit) / limit) * limit;
 
-            var parameters = new RouteValueDictionary(self.RouteValues)
-            {
+            var parameters = new RouteValueDictionary(self.RouteValues) {
                 ["limit"] = limit,
                 ["offset"] = offset
             };
@@ -94,33 +83,28 @@ namespace LandonApi.Models
             return newLink;
         }
 
-        private static Link GetPreviousLink(Link self, int size, PagingOptions pagingOptions)
-        {
+        private static Link GetPreviousLink(Link self, int size, PagingOptions pagingOptions) {
             if (pagingOptions?.Limit == null) return null;
             if (pagingOptions?.Offset == null) return null;
 
             var limit = pagingOptions.Limit.Value;
             var offset = pagingOptions.Offset.Value;
 
-            if (offset == 0)
-            {
+            if (offset == 0) {
                 return null;
             }
 
-            if (offset > size)
-            {
+            if (offset > size) {
                 return GetLastLink(self, size, pagingOptions);
             }
 
             var previousPage = Math.Max(offset - limit, 0);
 
-            if (previousPage <= 0)
-            {
+            if (previousPage <= 0) {
                 return self;
             }
 
-            var parameters = new RouteValueDictionary(self.RouteValues)
-            {
+            var parameters = new RouteValueDictionary(self.RouteValues) {
                 ["limit"] = limit,
                 ["offset"] = previousPage
             };

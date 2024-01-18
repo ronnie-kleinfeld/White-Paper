@@ -4,14 +4,11 @@ using LandonApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LandonApi.Services
-{
-    public class DefaultBookingService : IBookingService
-    {
+namespace LandonApi.Services {
+    public class DefaultBookingService : IBookingService {
         private readonly HotelApiDbContext _context;
         private readonly IDateLogicService _dateLogicService;
         private readonly IConfigurationProvider _mappingConfiguration;
@@ -21,8 +18,7 @@ namespace LandonApi.Services
             HotelApiDbContext context,
             IDateLogicService dateLogicService,
             IConfigurationProvider mappingConfiguration,
-            UserManager<UserEntity> userManager)
-        {
+            UserManager<UserEntity> userManager) {
             _context = context;
             _dateLogicService = dateLogicService;
             _mappingConfiguration = mappingConfiguration;
@@ -33,8 +29,7 @@ namespace LandonApi.Services
             Guid userId,
             Guid roomId,
             DateTimeOffset startAt,
-            DateTimeOffset endAt)
-        {
+            DateTimeOffset endAt) {
             var user = await _userManager.Users.SingleOrDefaultAsync(u => u.Id == userId);
             if (user == null) throw new InvalidOperationException("You must be logged in.");
 
@@ -48,8 +43,7 @@ namespace LandonApi.Services
 
             var id = Guid.NewGuid();
 
-            var newBooking = _context.Bookings.Add(new BookingEntity
-            {
+            var newBooking = _context.Bookings.Add(new BookingEntity {
                 Id = id,
                 CreatedAt = DateTimeOffset.UtcNow,
                 ModifiedAt = DateTimeOffset.UtcNow,
@@ -66,8 +60,7 @@ namespace LandonApi.Services
             return id;
         }
 
-        public async Task DeleteBookingAsync(Guid bookingId)
-        {
+        public async Task DeleteBookingAsync(Guid bookingId) {
             var booking = await _context.Bookings
                 .SingleOrDefaultAsync(b => b.Id == bookingId);
             if (booking == null) return;
@@ -76,8 +69,7 @@ namespace LandonApi.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Booking> GetBookingAsync(Guid bookingId)
-        {
+        public async Task<Booking> GetBookingAsync(Guid bookingId) {
             var entity = await _context.Bookings
                 .Include(b => b.User)
                 .Include(b => b.Room)
@@ -89,8 +81,7 @@ namespace LandonApi.Services
             return mapper.Map<Booking>(entity);
         }
 
-        public async Task<Booking> GetBookingForUserIdAsync(Guid bookingId, Guid userId)
-        {
+        public async Task<Booking> GetBookingForUserIdAsync(Guid bookingId, Guid userId) {
             var entity = await _context.Bookings
                 .Include(b => b.User)
                 .Include(b => b.Room)
@@ -105,8 +96,7 @@ namespace LandonApi.Services
         public async Task<PagedResults<Booking>> GetBookingsAsync(
             PagingOptions pagingOptions,
             SortOptions<Booking, BookingEntity> sortOptions,
-            SearchOptions<Booking, BookingEntity> searchOptions)
-        {
+            SearchOptions<Booking, BookingEntity> searchOptions) {
             IQueryable<BookingEntity> query = _context.Bookings
                 .Include(b => b.User)
                 .Include(b => b.Room);
@@ -121,8 +111,7 @@ namespace LandonApi.Services
                 .ProjectTo<Booking>(_mappingConfiguration)
                 .ToArrayAsync();
 
-            return new PagedResults<Booking>
-            {
+            return new PagedResults<Booking> {
                 Items = items,
                 TotalSize = size
             };
@@ -132,8 +121,7 @@ namespace LandonApi.Services
             Guid userId,
             PagingOptions pagingOptions,
             SortOptions<Booking, BookingEntity> sortOptions,
-            SearchOptions<Booking, BookingEntity> searchOptions)
-        {
+            SearchOptions<Booking, BookingEntity> searchOptions) {
             IQueryable<BookingEntity> query = _context.Bookings
                 .Include(b => b.User)
                 .Include(b => b.Room)
@@ -149,8 +137,7 @@ namespace LandonApi.Services
                 .ProjectTo<Booking>(_mappingConfiguration)
                 .ToArrayAsync();
 
-            return new PagedResults<Booking>
-            {
+            return new PagedResults<Booking> {
                 Items = items,
                 TotalSize = size
             };

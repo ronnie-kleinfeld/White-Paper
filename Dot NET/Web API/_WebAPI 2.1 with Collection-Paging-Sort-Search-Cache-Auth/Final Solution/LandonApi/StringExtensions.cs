@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LandonApi
-{
-    public static class StringExtensions
-    {
-        public static string ToCamelCase(this string input)
-        {
+﻿namespace LandonApi {
+    public static class StringExtensions {
+        public static string ToCamelCase(this string input) {
             if (string.IsNullOrEmpty(input)) return input;
 
             var first = input.Substring(0, 1).ToLower();

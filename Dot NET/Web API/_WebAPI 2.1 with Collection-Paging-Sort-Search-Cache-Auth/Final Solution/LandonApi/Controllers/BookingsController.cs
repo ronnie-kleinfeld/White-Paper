@@ -4,16 +4,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LandonApi.Controllers
-{
+namespace LandonApi.Controllers {
     [Route("/[controller]")]
     [ApiController]
-    public class BookingsController : ControllerBase
-    {
+    public class BookingsController : ControllerBase {
         private readonly IBookingService _bookingService;
         private readonly IUserService _userService;
         private readonly IAuthorizationService _authzService;
@@ -23,8 +20,7 @@ namespace LandonApi.Controllers
             IBookingService bookingService,
             IUserService userService,
             IAuthorizationService authzService,
-            IOptions<PagingOptions> defaultPagingOptionsAccessor)
-        {
+            IOptions<PagingOptions> defaultPagingOptionsAccessor) {
             _bookingService = bookingService;
             _userService = userService;
             _authzService = authzService;
@@ -38,27 +34,21 @@ namespace LandonApi.Controllers
         public async Task<PagedCollection<Booking>> GetVisibleBookings(
             [FromQuery] PagingOptions pagingOptions,
             [FromQuery] SortOptions<Booking, BookingEntity> sortOptions,
-            [FromQuery] SearchOptions<Booking, BookingEntity> searchOptions)
-        {
+            [FromQuery] SearchOptions<Booking, BookingEntity> searchOptions) {
             pagingOptions.Offset = pagingOptions.Offset ?? _defaultPagingOptions.Offset;
             pagingOptions.Limit = pagingOptions.Limit ?? _defaultPagingOptions.Limit;
 
             var bookings = new PagedResults<Booking>();
 
-            if (User.Identity.IsAuthenticated)
-            {
+            if (User.Identity.IsAuthenticated) {
                 var userCanSeeAllBookings = await _authzService.AuthorizeAsync(
                     User, "ViewAllBookingsPolicy");
-                if (userCanSeeAllBookings.Succeeded)
-                {
+                if (userCanSeeAllBookings.Succeeded) {
                     bookings = await _bookingService.GetBookingsAsync(
                         pagingOptions, sortOptions, searchOptions);
-                }
-                else
-                {
+                } else {
                     var userId = await _userService.GetUserIdAsync(User);
-                    if (userId != null)
-                    {
+                    if (userId != null) {
                         bookings = await _bookingService.GetBookingsForUserIdAsync(
                             userId.Value, pagingOptions, sortOptions, searchOptions);
                     }
@@ -80,8 +70,7 @@ namespace LandonApi.Controllers
         [ProducesResponseType(401)]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]
-        public async Task<ActionResult<Booking>> GetBookingById(Guid bookingId)
-        {
+        public async Task<ActionResult<Booking>> GetBookingById(Guid bookingId) {
             var userId = await _userService.GetUserIdAsync(User);
             if (userId == null) return NotFound();
 
@@ -90,12 +79,9 @@ namespace LandonApi.Controllers
             var canViewAllBookings = await _authzService.AuthorizeAsync(
                 User, "ViewAllBookingsPolicy");
 
-            if (canViewAllBookings.Succeeded)
-            {
+            if (canViewAllBookings.Succeeded) {
                 booking = await _bookingService.GetBookingAsync(bookingId);
-            }
-            else
-            {
+            } else {
                 booking = await _bookingService.GetBookingForUserIdAsync(
                     bookingId, userId.Value);
             }
@@ -111,23 +97,20 @@ namespace LandonApi.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(401)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> DeleteBookingById(Guid bookingId)
-        {
+        public async Task<IActionResult> DeleteBookingById(Guid bookingId) {
             var userId = await _userService.GetUserIdAsync(User);
             if (userId == null) return NotFound();
 
             var booking = await _bookingService.GetBookingForUserIdAsync(
                 bookingId, userId.Value);
-            if (booking != null)
-            {
+            if (booking != null) {
                 await _bookingService.DeleteBookingAsync(bookingId);
                 return NoContent();
             }
 
             var canViewAllBookings = await _authzService.AuthorizeAsync(
                 User, "ViewAllBookingsPolicy");
-            if (!canViewAllBookings.Succeeded)
-            {
+            if (!canViewAllBookings.Succeeded) {
                 return NotFound();
             }
 

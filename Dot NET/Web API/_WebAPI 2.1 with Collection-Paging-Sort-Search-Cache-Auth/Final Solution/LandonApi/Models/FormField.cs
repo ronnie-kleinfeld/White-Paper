@@ -1,14 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class FormField
-    {
+namespace LandonApi.Models {
+    public class FormField {
         public string Name { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]

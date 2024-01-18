@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public interface ISearchExpressionProvider
-    {
+namespace LandonApi.Infrastructure {
+    public interface ISearchExpressionProvider {
         IEnumerable<string> GetOperators();
 
         ConstantExpression GetValue(string input);

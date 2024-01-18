@@ -1,14 +1,8 @@
 ﻿using LandonApi.Infrastructure;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class HotelInfo : Resource, IEtaggable
-    {
+namespace LandonApi.Models {
+    public class HotelInfo : Resource, IEtaggable {
         public string Title { get; set; }
 
         public string Tagline { get; set; }
@@ -19,15 +13,13 @@ namespace LandonApi.Models
 
         public Address Location { get; set; }
 
-        public string GetEtag()
-        {
+        public string GetEtag() {
             var serialized = JsonConvert.SerializeObject(this);
             return Md5Hash.ForString(serialized);
         }
     }
 
-    public class Address
-    {
+    public class Address {
         public string Street { get; set; }
 
         public string City { get; set; }

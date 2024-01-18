@@ -7,10 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LandonApi.Services
-{
-    public class DefaultOpeningService : IOpeningService
-    {
+namespace LandonApi.Services {
+    public class DefaultOpeningService : IOpeningService {
         private readonly HotelApiDbContext _context;
         private readonly IDateLogicService _dateLogicService;
         private readonly IConfigurationProvider _mappingConfiguration;
@@ -18,8 +16,7 @@ namespace LandonApi.Services
         public DefaultOpeningService(
             HotelApiDbContext context,
             IDateLogicService dateLogicService,
-            IConfigurationProvider mappingConfiguration)
-        {
+            IConfigurationProvider mappingConfiguration) {
             _context = context;
             _dateLogicService = dateLogicService;
             _mappingConfiguration = mappingConfiguration;
@@ -28,8 +25,7 @@ namespace LandonApi.Services
         public async Task<PagedResults<Opening>> GetOpeningsAsync(
             PagingOptions pagingOptions,
             SortOptions<Opening, OpeningEntity> sortOptions,
-            SearchOptions<Opening, OpeningEntity> searchOptions)
-        {
+            SearchOptions<Opening, OpeningEntity> searchOptions) {
             var rooms = await _context.Rooms.ToArrayAsync();
 
             return await GetOpeningsForRoomsAsync(
@@ -40,8 +36,7 @@ namespace LandonApi.Services
             Guid roomId,
             PagingOptions pagingOptions,
             SortOptions<Opening, OpeningEntity> sortOptions,
-            SearchOptions<Opening, OpeningEntity> searchOptions)
-        {
+            SearchOptions<Opening, OpeningEntity> searchOptions) {
             var room = await _context.Rooms.SingleOrDefaultAsync(r => r.Id == roomId);
             if (room == null) throw new ArgumentException("Invalid room id.");
 
@@ -53,12 +48,10 @@ namespace LandonApi.Services
             RoomEntity[] rooms,
             PagingOptions pagingOptions,
             SortOptions<Opening, OpeningEntity> sortOptions,
-            SearchOptions<Opening, OpeningEntity> searchOptions)
-        {
+            SearchOptions<Opening, OpeningEntity> searchOptions) {
             var allOpenings = new List<OpeningEntity>();
 
-            foreach (var room in rooms)
-            {
+            foreach (var room in rooms) {
                 // Generate a sequence of raw opening slots
                 var allPossibleOpenings = _dateLogicService.GetAllSlots(
                         DateTimeOffset.UtcNow,
@@ -73,8 +66,7 @@ namespace LandonApi.Services
                 // Remove the slots that have conflicts and project
                 var openings = allPossibleOpenings
                     .Except(conflictedSlots, new BookingRangeComparer())
-                    .Select(slot => new OpeningEntity
-                    {
+                    .Select(slot => new OpeningEntity {
                         RoomId = room.Id,
                         Rate = room.Rate,
                         StartAt = slot.StartAt,
@@ -96,8 +88,7 @@ namespace LandonApi.Services
                 .ProjectTo<Opening>(_mappingConfiguration)
                 .ToArray();
 
-            return new PagedResults<Opening>
-            {
+            return new PagedResults<Opening> {
                 Items = items,
                 TotalSize = size
             };
@@ -106,8 +97,7 @@ namespace LandonApi.Services
         public async Task<IEnumerable<BookingRange>> GetConflictingSlots(
             Guid roomId,
             DateTimeOffset start,
-            DateTimeOffset end)
-        {
+            DateTimeOffset end) {
             return await _context.Bookings
                 .Where(b => b.Room.Id == roomId && _dateLogicService.DoesConflict(b, start, end))
                 // Split each existing booking up into a set of atomic slots

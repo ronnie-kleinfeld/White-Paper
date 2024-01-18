@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public abstract class ComparableSearchExpressionProvider : DefaultSearchExpressionProvider
-    {
+namespace LandonApi.Infrastructure {
+    public abstract class ComparableSearchExpressionProvider : DefaultSearchExpressionProvider {
         private const string GreaterThanOperator = "gt";
         private const string GreaterThanEqualToOperator = "gte";
         private const string LessThanOperator = "lt";
@@ -26,10 +22,8 @@ namespace LandonApi.Infrastructure
         public override Expression GetComparison(
             MemberExpression left,
             string op,
-            ConstantExpression right)
-        {
-            switch (op.ToLower())
-            {
+            ConstantExpression right) {
+            switch (op.ToLower()) {
                 case GreaterThanOperator: return Expression.GreaterThan(left, right);
                 case GreaterThanEqualToOperator: return Expression.GreaterThanOrEqual(left, right);
                 case LessThanOperator: return Expression.LessThan(left, right);

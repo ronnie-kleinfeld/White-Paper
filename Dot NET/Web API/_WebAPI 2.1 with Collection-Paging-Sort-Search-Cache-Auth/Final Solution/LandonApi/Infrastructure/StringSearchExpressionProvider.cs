@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Threading.Tasks;
 
-namespace LandonApi.Infrastructure
-{
-    public class StringSearchExpressionProvider : DefaultSearchExpressionProvider
-    {
+namespace LandonApi.Infrastructure {
+    public class StringSearchExpressionProvider : DefaultSearchExpressionProvider {
         private const string StartsWithOperator = "sw";
         private const string ContainsOperator = "co";
 
@@ -35,10 +32,8 @@ namespace LandonApi.Infrastructure
                 ContainsOperator
             });
 
-        public override Expression GetComparison(MemberExpression left, string op, ConstantExpression right)
-        {
-            switch (op.ToLower())
-            {
+        public override Expression GetComparison(MemberExpression left, string op, ConstantExpression right) {
+            switch (op.ToLower()) {
                 case StartsWithOperator:
                     return Expression.Call(left, StartsWithMethod, right, IgnoreCase);
 

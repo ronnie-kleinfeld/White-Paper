@@ -1,21 +1,14 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LandonApi.Models
-{
-    public class Link
-    {
+namespace LandonApi.Models {
+    public class Link {
         public const string GetMethod = "GET";
         public const string PostMethod = "POST";
         public const string DeleteMethod = "DELETE";
 
         public static Link To(string routeName, object routeValues = null)
-            => new Link
-            {
+            => new Link {
                 RouteName = routeName,
                 RouteValues = routeValues,
                 Method = GetMethod,
@@ -23,8 +16,7 @@ namespace LandonApi.Models
             };
 
         public static Link ToCollection(string routeName, object routeValues = null)
-            => new Link
-            {
+            => new Link {
                 RouteName = routeName,
                 RouteValues = routeValues,
                 Method = GetMethod,
@@ -36,8 +28,7 @@ namespace LandonApi.Models
             object routeValues = null,
             string method = PostMethod,
             params string[] relations)
-            => new Link
-            {
+            => new Link {
                 RouteName = routeName,
                 RouteValues = routeValues,
                 Method = method,
