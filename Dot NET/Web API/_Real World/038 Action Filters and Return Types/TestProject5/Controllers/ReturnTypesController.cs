@@ -34,9 +34,6 @@ namespace TestProject5.Controllers {
             throw new InvalidOperationException("Error");
         }
 
-        /// <summary>
-        /// Returns an HttpResponseMessage
-        /// </summary>
         [HttpGet, Route("httpresponse")]
         [ResponseType(typeof(ComplexTypeDto))]
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
@@ -49,21 +46,24 @@ namespace TestProject5.Controllers {
                 Date1 = DateTime.Now
             };
 
-            //var response = new HttpResponseMessage(HttpStatusCode.OK)
-            //{
-            //    // note I am responsible for my own content negotiation!
-            //    // this content will confuse a caller wanting XML or other media type
-            //    Content = new StringContent(JsonConvert.SerializeObject(dto), Encoding.UTF8, "application/json")
-            //};
-
-            // or alternatively
+            // auto cast to JSON by content negotioator
             var response = Request.CreateResponse(dto);
+
+            //and not cast to JSON
+            //var response = new HttpResponseMessage(HttpStatusCode.OK);
+            //response.Content = new StringContent(JsonConvert.SerializeObject(dto), Encoding.UTF8, "application/json");
 
             response.Headers.Add("X-MyCustomHeader", "MyHeaderValue");
             response.ReasonPhrase = "Most Excellent!";
 
-            // error response
-            response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid something or other");
+            return response;
+        }
+        [HttpGet, Route("httpresponse_error")]
+        [ResponseType(typeof(ComplexTypeDto))]
+        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
+        [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(HttpError))]
+        public HttpResponseMessage GetAnHttpResponseError() {
+            var response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid something or other");
 
             return response;
         }
