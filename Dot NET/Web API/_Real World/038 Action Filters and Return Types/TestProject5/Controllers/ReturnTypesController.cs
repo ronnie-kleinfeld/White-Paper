@@ -10,7 +10,7 @@ using TestProject5.Models;
 
 namespace TestProject5.Controllers {
     [RoutePrefix("returntypes")]
-    [ClientCacheControlFilter(ClientCacheControl.NoCache)]
+    [ClientCacheControlFilter(ClientCacheControlEnum.NoCache)]
     public class ReturnTypesController : ApiController {
         #region Traditional return types
         /// <summary>
@@ -94,8 +94,5 @@ namespace TestProject5.Controllers {
 
             return response;
         }
-
-
-
     }
 }

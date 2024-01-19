@@ -19,6 +19,5 @@ namespace TestProject5.Controllers {
 
             return Ok("Posted data valid");
         }
-
     }
 }

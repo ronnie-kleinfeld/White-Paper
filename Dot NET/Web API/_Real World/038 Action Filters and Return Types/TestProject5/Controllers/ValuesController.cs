@@ -10,7 +10,7 @@ namespace TestProject5.Controllers {
     public class ValuesController : ApiController {
         // GET api/<controller>
         [HttpGet, Route("")]
-        [ClientCacheControlFilter(ClientCacheControl.Private, 10)]
+        [ClientCacheControlFilter(ClientCacheControlEnum.Private, 10)]
         [RouteTimerFilter("GetAction")]
         public IEnumerable<string> Get() {
             Trace.WriteLine(DateTime.Now.ToLongTimeString() + "  Get called");
