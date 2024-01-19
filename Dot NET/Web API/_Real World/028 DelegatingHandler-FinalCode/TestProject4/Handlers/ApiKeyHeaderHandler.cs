@@ -17,12 +17,8 @@ namespace TestProject4.Handlers {
 
         protected override Task<HttpResponseMessage> SendAsync(
             HttpRequestMessage request, CancellationToken cancellationToken) {
-            // STEP 1: Global message-level logic that must be executed BEFORE the request
-            //          is sent on to the action method
+            // STEP 1: Global message-level logic that must be executed BEFORE the request is sent on to the action method
             string apikey = null;
-
-            //if (request.RequestUri.Segments[1].ToLowerInvariant().StartsWith("swagger"))
-            //    return base.SendAsync(request, cancellationToken);
 
             if (request.Headers.Contains(_apiKeyHeader)) {
                 apikey = request.Headers.GetValues(_apiKeyHeader).FirstOrDefault();
@@ -33,18 +29,6 @@ namespace TestProject4.Handlers {
                 if (!string.IsNullOrEmpty(kvp.Value))
                     apikey = kvp.Value;
             }
-
-            // was any api key present?  If none, abort request
-            //if (string.IsNullOrEmpty(apikey))
-            //{
-            //    // Create the response.
-            //    var response = new HttpResponseMessage(HttpStatusCode.Forbidden)
-            //    {
-            //        Content = new StringContent("Missing API key")
-            //    };
-
-            //    return Task.FromResult(response);
-            //}
 
             // save the value to Properties; 
             request.Properties.Add(_apiKeyHeader, apikey);

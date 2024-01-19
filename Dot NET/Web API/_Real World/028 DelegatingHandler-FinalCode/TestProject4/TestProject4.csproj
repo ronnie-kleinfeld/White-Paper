@@ -104,7 +104,6 @@
     <Compile Include="Handlers\ApiKeyHeaderHandler.cs" />
     <Compile Include="Handlers\ForwardedHeadersHandler.cs" />
     <Compile Include="Handlers\FullPipelineTimerHandler.cs" />
-    <Compile Include="Handlers\RemoveBadHeadersHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
