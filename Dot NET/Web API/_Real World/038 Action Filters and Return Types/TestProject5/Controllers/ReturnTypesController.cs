@@ -12,17 +12,11 @@ namespace TestProject5.Controllers {
     [RoutePrefix("returntypes")]
     [ClientCacheControlFilter(ClientCacheControlEnum.NoCache)]
     public class ReturnTypesController : ApiController {
-        #region Traditional return types
-        /// <summary>
-        /// void returns get converted to a 204 No Content response message
-        /// </summary>
+        // void converted to a 204 No Content
         [HttpGet, Route("void")]
         public void ReturnVoid() {
         }
 
-        /// <summary>
-        /// the simple object instance return type, here a list of strings
-        /// </summary>
         [HttpGet, Route("object")]
         public ComplexTypeDto GetObject() {
             var dto = new ComplexTypeDto() {
@@ -32,10 +26,12 @@ namespace TestProject5.Controllers {
                 Date1 = DateTime.Now
             };
 
-            // error response:
-            throw new InvalidOperationException("I'm sorry, Dave, I'm afraid I can't do that.");
-
             return dto;
+        }
+
+        [HttpGet, Route("exception")]
+        public int GetException() {
+            throw new InvalidOperationException("Error");
         }
 
         /// <summary>
@@ -71,7 +67,6 @@ namespace TestProject5.Controllers {
 
             return response;
         }
-        #endregion
 
         /// <summary>
         /// Returns an IHttpActionResult
