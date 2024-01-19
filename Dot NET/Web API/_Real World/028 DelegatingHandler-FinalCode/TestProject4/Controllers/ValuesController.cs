@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using TestProject4.Handlers;
 
 namespace TestProject4.Controllers {
     [RoutePrefix("values")]
@@ -9,14 +7,7 @@ namespace TestProject4.Controllers {
         // GET api/<controller>
         [HttpGet, Route("")]
         public IEnumerable<string> Get() {
-            var getByIdUrl = Url.Link("GetById", new { id = 123 });
-
-            //return new string[] { "value1", "value2" };
-            return new string[] {
-                getByIdUrl,
-                Request.GetSelfReferenceBaseUrl().ToString(),
-                Request.RebaseUrlForClient(new Uri(getByIdUrl)).ToString()
-            };
+            return new string[] { "value1", "value2" };
         }
 
         // GET api/<controller>/5

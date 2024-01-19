@@ -7,8 +7,6 @@ namespace TestProject4 {
             // Web API configuration and services
             config.MessageHandlers.Add(new FullPipelineTimerHandler());
             config.MessageHandlers.Add(new ApiKeyHeaderHandler());
-            config.MessageHandlers.Add(new ForwardedHeadersHandler());
-
 
             // Web API routes
             config.MapHttpAttributeRoutes();

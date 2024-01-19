@@ -5,15 +5,8 @@ using System.Threading.Tasks;
 
 namespace TestProject4.Handlers {
     public class ApiKeyHeaderHandler : DelegatingHandler {
-        /// <summary>
-        /// Name of our custom header to look for
-        /// </summary>
         public const string _apiKeyHeader = "X-API-Key";
-
-        /// <summary>
-        ///  Name of api key query string key
-        /// </summary>
-        public const string _apiQueryString = "api_key";
+        public const string _apiQueryString = "api_key"; // for swagger
 
         protected override Task<HttpResponseMessage> SendAsync(
             HttpRequestMessage request, CancellationToken cancellationToken) {
@@ -23,7 +16,6 @@ namespace TestProject4.Handlers {
             if (request.Headers.Contains(_apiKeyHeader)) {
                 apikey = request.Headers.GetValues(_apiKeyHeader).FirstOrDefault();
             } else {
-                // let's see if it is on the query string instead
                 var queryString = request.GetQueryNameValuePairs();
                 var kvp = queryString.FirstOrDefault(a => a.Key.ToLowerInvariant().Equals(_apiQueryString));
                 if (!string.IsNullOrEmpty(kvp.Value))
@@ -39,17 +31,17 @@ namespace TestProject4.Handlers {
     }
 
     /// <summary>
-    /// http request extension for retrieving api key if present
+    /// http request extension for retrieving key-value pair from request
+    /// sample:
+    /// request.GetApiKey("key")
     /// </summary>
     public static class HttpRequestMessageApiKeyExtension {
-        /// <summary>
-        /// Retrieves the Api key present in the request, or null if none found. 
-        public static string GetApiKey(this HttpRequestMessage request) {
+        public static object GetValue(this HttpRequestMessage request, string key) {
             if (request == null)
                 return null;
 
-            if (request.Properties.TryGetValue(ApiKeyHeaderHandler._apiKeyHeader, out object apiKey)) {
-                return (string)apiKey;
+            if (request.Properties.TryGetValue(key, out object value)) {
+                return value;
             }
 
             return null;
