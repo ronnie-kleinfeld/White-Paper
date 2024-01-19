@@ -5,7 +5,7 @@ namespace TestProject4 {
     public static class WebApiConfig {
         public static void Register(HttpConfiguration config) {
             // Web API configuration and services
-            //config.MessageHandlers.Add(new FullPipelineTimerHandler());
+            config.MessageHandlers.Add(new FullPipelineTimerHandler());
             //config.MessageHandlers.Add(new ApiKeyHeaderHandler());
             //config.MessageHandlers.Add(new RemoveBadHeadersHandler());  // remember this one doesn't work!
             config.MessageHandlers.Add(new ForwardedHeadersHandler());

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TestProject4.Handlers {
     public class FullPipelineTimerHandler : DelegatingHandler {
-        const string _header = "X-API-Timer";
+        const string _header = "X-Ronnie-Timer";
 
         protected override async Task<HttpResponseMessage> SendAsync(
         HttpRequestMessage request, CancellationToken cancellationToken) {
@@ -24,7 +24,6 @@ namespace TestProject4.Handlers {
 
             // STEP 4:  Return the final HTTP response
             return response;
-
         }
     }
 }
