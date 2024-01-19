@@ -7,12 +7,12 @@ using System.Web.Http.Filters;
 
 namespace TestProject5.Filters {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public class RouteTimerFilterAttribute : ActionFilterAttribute {
+    public class RouteTimerActionFilterAttribute : ActionFilterAttribute {
         public const string Header = "X-ActionFilter-Timer";
         public const string TimerPropertyName = "RouteTimerFilter_";
         public string TimerName;
 
-        public RouteTimerFilterAttribute(string name) {
+        public RouteTimerActionFilterAttribute(string name) {
             TimerName = name;
         }
 

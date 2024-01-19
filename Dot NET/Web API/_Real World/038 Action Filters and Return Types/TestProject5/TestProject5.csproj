@@ -101,10 +101,10 @@
     <Compile Include="Controllers\ModelsController.cs" />
     <Compile Include="Controllers\ReturnTypesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Filters\ClientCacheControlEnum.cs" />
-    <Compile Include="Filters\ClientCacheControlFilter.cs" />
-    <Compile Include="Filters\RouteTimerFilter.cs" />
-    <Compile Include="Filters\ValidateModelState.cs" />
+    <Compile Include="Filters\ClientCacheEnum.cs" />
+    <Compile Include="Filters\ClientCacheActionFilterAttribute.cs" />
+    <Compile Include="Filters\RouteTimerActionFilterAttribute.cs" />
+    <Compile Include="Filters\ModelValidationActionFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

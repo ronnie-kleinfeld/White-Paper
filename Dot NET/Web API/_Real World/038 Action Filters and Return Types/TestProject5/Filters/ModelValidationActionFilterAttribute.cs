@@ -8,15 +8,16 @@ using System.Web.Http.Filters;
 
 namespace TestProject5.Filters {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class ValidateModelStateAttribute : ActionFilterAttribute {
-        // True if the bound FromBody parameter is required (disallow nulls)
+    public class ModelValidationActionFilterAttribute : ActionFilterAttribute {
         public bool BodyRequired { get; set; }
 
-        /// <summary>
-        /// Executed BEFORE the controller action method is called
-        /// </summary>
+        public ModelValidationActionFilterAttribute(bool bodyRequired) {
+            this.BodyRequired = bodyRequired;
+        }
+
         public override async Task OnActionExecutingAsync(HttpActionContext actionContext, CancellationToken cancellationToken) {
             // STEP 1:  Any logic you want to do BEFORE the rest of the action filter chain is called, and BEFORE the action method itself.
+            // validate model to data annotations
             if (!actionContext.ModelState.IsValid) {
                 actionContext.Response = actionContext.Request.CreateErrorResponse(
                     HttpStatusCode.BadRequest, actionContext.ModelState);
@@ -29,7 +30,6 @@ namespace TestProject5.Filters {
                         if (!actionContext.ActionArguments.ContainsKey(b.Descriptor.ParameterName) || actionContext.ActionArguments[b.Descriptor.ParameterName] == null) {
                             actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.BadRequest, b.Descriptor.ParameterName + " is required.");
                         }
-                        // since only one FromBody can exist, we can abort the loop after a body param is found
                         break;
                     }
                 }

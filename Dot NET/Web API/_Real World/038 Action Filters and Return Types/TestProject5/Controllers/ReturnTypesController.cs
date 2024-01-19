@@ -10,7 +10,7 @@ using TestProject5.Models;
 
 namespace TestProject5.Controllers {
     [RoutePrefix("returntypes")]
-    [ClientCacheControlFilter(ClientCacheControlEnum.NoCache)]
+    [ClientCacheActionFilter(ClientCacheEnum.NoCache)]
     public class ReturnTypesController : ApiController {
         // void converted to a 204 No Content
         [HttpGet, Route("void")]

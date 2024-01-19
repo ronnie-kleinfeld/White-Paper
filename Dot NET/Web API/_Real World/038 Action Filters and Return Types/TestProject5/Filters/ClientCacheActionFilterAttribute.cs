@@ -6,18 +6,18 @@ using System.Web.Http.Filters;
 
 namespace TestProject5.Filters {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class ClientCacheControlFilterAttribute : ActionFilterAttribute {
-        public ClientCacheControlEnum CacheType;
+    public class ClientCacheActionFilterAttribute : ActionFilterAttribute {
+        public ClientCacheEnum ClientCacheType;
         public double CacheSeconds;
 
-        public ClientCacheControlFilterAttribute(double seconds = 60.0) {
-            CacheType = ClientCacheControlEnum.Private;
+        public ClientCacheActionFilterAttribute(double seconds = 60.0) {
+            ClientCacheType = ClientCacheEnum.Private;
             CacheSeconds = seconds;
         }
-        public ClientCacheControlFilterAttribute(ClientCacheControlEnum cacheType, double seconds = 60.0) {
-            CacheType = cacheType;
+        public ClientCacheActionFilterAttribute(ClientCacheEnum cacheType, double seconds = 60.0) {
+            ClientCacheType = cacheType;
             CacheSeconds = seconds;
-            if (cacheType == ClientCacheControlEnum.NoCache) {
+            if (cacheType == ClientCacheEnum.NoCache) {
                 CacheSeconds = -1;
             }
         }
@@ -31,7 +31,7 @@ namespace TestProject5.Filters {
                 return;
             }
 
-            if (CacheType == ClientCacheControlEnum.NoCache) {
+            if (ClientCacheType == ClientCacheEnum.NoCache) {
                 actionExecutedContext.Response.Headers.CacheControl = new CacheControlHeaderValue {
                     NoStore = true
                 };
@@ -48,8 +48,8 @@ namespace TestProject5.Filters {
                 }
             } else {
                 actionExecutedContext.Response.Headers.CacheControl = new CacheControlHeaderValue {
-                    Public = (CacheType == ClientCacheControlEnum.Public),
-                    Private = (CacheType == ClientCacheControlEnum.Private),
+                    Public = (ClientCacheType == ClientCacheEnum.Public),
+                    Private = (ClientCacheType == ClientCacheEnum.Private),
                     NoCache = false,
                     MaxAge = TimeSpan.FromSeconds(CacheSeconds)
                 };
