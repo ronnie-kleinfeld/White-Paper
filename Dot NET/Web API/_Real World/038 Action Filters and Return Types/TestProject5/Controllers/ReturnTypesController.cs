@@ -49,7 +49,7 @@ namespace TestProject5.Controllers {
             // auto cast to JSON by content negotioator
             var response = Request.CreateResponse(dto);
 
-            //and not cast to JSON
+            // not auto cast to JSON
             //var response = new HttpResponseMessage(HttpStatusCode.OK);
             //response.Content = new StringContent(JsonConvert.SerializeObject(dto), Encoding.UTF8, "application/json");
 
@@ -68,9 +68,6 @@ namespace TestProject5.Controllers {
             return response;
         }
 
-        /// <summary>
-        /// Returns an IHttpActionResult
-        /// </summary>
         [HttpGet, Route("actionresult")]
         [ResponseType(typeof(ComplexTypeDto))]
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
@@ -82,10 +79,23 @@ namespace TestProject5.Controllers {
                 Date1 = DateTime.Now
             };
 
+            // not auto cast to JSON
             //var response = Json(dto);
+
+            // same as returning ComplexTypeDto type
+            //var response = Ok(dto);
+
+            // same as returning ComplexTypeDto type but can customize the response
             var response = Ok(dto).AddHeader("X-MyCustomHeader", "test value");
 
-            //var response = BadRequest("test test test").AddHeader("X-MyCustomHeader", "test value"); 
+            return response;
+        }
+        [HttpGet, Route("actionresult_badrequest")]
+        [ResponseType(typeof(ComplexTypeDto))]
+        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
+        public IHttpActionResult GetAnActionResultBadRequest() {
+            // returns a http response kind and can customize the response
+            var response = BadRequest("test test test").AddHeader("X-MyCustomHeader", "test value");
 
             return response;
         }

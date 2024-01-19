@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace TestProject5.ActionResults {
-
     public class AddHeaderResult<T> : IHttpActionResult
         where T : IHttpActionResult {
         public AddHeaderResult(T innerResult, string headerName, string headerValue) {
@@ -31,5 +30,4 @@ namespace TestProject5.ActionResults {
             return new AddHeaderResult<T>(actionResult, headerName, headerValue);
         }
     }
-
 }
