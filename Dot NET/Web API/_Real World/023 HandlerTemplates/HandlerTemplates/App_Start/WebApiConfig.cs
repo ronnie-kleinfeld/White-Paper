@@ -2,19 +2,13 @@
 using HandlerTemplates.ExceptionHandlers;
 using HandlerTemplates.Filters;
 using HandlerTemplates.Handlers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Routing;
 
-namespace HandlerTemplates
-{
-    public static class WebApiConfig
-    {
-        public static void Register(HttpConfiguration config)
-        {
+namespace HandlerTemplates {
+    public static class WebApiConfig {
+        public static void Register(HttpConfiguration config) {
             // see AuthenticationFilterTemplate notes for this setting
             config.SuppressHostPrincipal();
 
@@ -41,7 +35,7 @@ namespace HandlerTemplates
 
             // register our Constraints
             var constraintResolver = new DefaultInlineConstraintResolver();
-            constraintResolver.ConstraintMap.Add(ParameterConstraintTemplate.DefaultConstraintName, 
+            constraintResolver.ConstraintMap.Add(ParameterConstraintTemplate.DefaultConstraintName,
                                                     typeof(ParameterConstraintTemplate));
             constraintResolver.ConstraintMap.Add(RegexBasedConstraintTemplate.DefaultConstraintName,
                                                     typeof(RegexBasedConstraintTemplate));

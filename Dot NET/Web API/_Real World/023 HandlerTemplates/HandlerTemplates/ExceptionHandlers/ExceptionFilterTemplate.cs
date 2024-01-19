@@ -1,25 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http.Filters;
 
-namespace HandlerTemplates.ExceptionHandlers
-{
-    public class ExceptionFilterTemplateAttribute : ExceptionFilterAttribute
-    {
+namespace HandlerTemplates.ExceptionHandlers {
+    public class ExceptionFilterTemplateAttribute : ExceptionFilterAttribute {
         /// <summary>
         /// Web API exception filter template. Generally meant for action- or controller-
         /// specific exceptions where you want common processing to occur.
         /// </summary>
         public override async Task OnExceptionAsync(
-            HttpActionExecutedContext actionExecutedContext, 
-            CancellationToken cancellationToken)
-        {
+            HttpActionExecutedContext actionExecutedContext,
+            CancellationToken cancellationToken) {
             // STEP 1: Do any internal processing you want, for example
             //         trace logging, metrics gathering, etc. as a result
             //         of getting this exception. Do it async if it

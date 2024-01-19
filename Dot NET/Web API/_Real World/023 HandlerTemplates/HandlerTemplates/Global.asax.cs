@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
-using System.Web.Routing;
 
-namespace HandlerTemplates
-{
-    public class WebApiApplication : System.Web.HttpApplication
-    {
-        protected void Application_Start()
-        {
+namespace HandlerTemplates {
+    public class WebApiApplication : System.Web.HttpApplication {
+        protected void Application_Start() {
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
 
@@ -23,8 +15,7 @@ namespace HandlerTemplates
         /// outside the pipeline, the circumstances are unusual enough that you should
         /// at least log the error to some place that will get noticed.
         /// </remarks>
-        protected void Application_Error(object sender, EventArgs e)
-        {
+        protected void Application_Error(object sender, EventArgs e) {
             var ex = Server.GetLastError();
             // TODO: log the error somewhere
             //Trace.WriteLine("*** Global.Asax ERROR: " + ex.ToString());

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Net.Http.Headers;
-using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 
-namespace HandlerTemplates.Filters
-{
+namespace HandlerTemplates.Filters {
     /// <summary>
     /// Authentication filter template, with attribute support so it can be set per-controller or per-route.
     /// </summary>
@@ -22,8 +20,7 @@ namespace HandlerTemplates.Filters
     /// There's no harm in always adding that line, even for standalone web services, 
     /// just to be sure.
     /// </remarks>
-    public class AuthenticationFilterTemplateAttribute : Attribute, IAuthenticationFilter
-    {
+    public class AuthenticationFilterTemplateAttribute : Attribute, IAuthenticationFilter {
         /// <summary>
         /// Set to the Authorization header Scheme value that this filter is intended to support
         /// </summary>
@@ -53,9 +50,8 @@ namespace HandlerTemplates.Filters
         ///  -- set context.ErrorResult to an IHttpActionResult holding reason for invalid authentication.
         ///  -- set context.Principal to an IPrincipal if authenticated,
         /// </summary>
-        public async Task AuthenticateAsync(HttpAuthenticationContext context, 
-            CancellationToken cancellationToken)
-        {
+        public async Task AuthenticateAsync(HttpAuthenticationContext context,
+            CancellationToken cancellationToken) {
             // STEP 1: extract your credentials from the request.  Generally this should be the 
             //         Authorization header, which the rest of this template assumes, but
             //         could come from any part of the request headers.
@@ -71,8 +67,7 @@ namespace HandlerTemplates.Filters
 
             // STEP 3: Given a valid token scheme, verify credentials are present
             var credentials = authHeader.Parameter;
-            if (String.IsNullOrEmpty(credentials))
-            {
+            if (String.IsNullOrEmpty(credentials)) {
                 // no credentials sent with the scheme, abort out of the pipeline with an error result
                 context.ErrorResult = new AuthenticationFailureResult("Missing credentials", context.Request);
                 return;
@@ -81,12 +76,9 @@ namespace HandlerTemplates.Filters
             // STEP 4: validate the credentials.  Return an error if invalid, else set the IPrincipal 
             //         on the context.
             IPrincipal principal = await ValidateCredentialsAsync(credentials, cancellationToken);
-            if (principal == null)
-            {
+            if (principal == null) {
                 context.ErrorResult = new AuthenticationFailureResult("Invalid credentials", context.Request);
-            }
-            else
-            {
+            } else {
                 // We have a valid, authenticated user; save off the IPrincipal instance
                 context.Principal = principal;
             }
@@ -107,12 +99,10 @@ namespace HandlerTemplates.Filters
         /// scheme requested and can ask the user for credentials, it was not 
         /// meant for arbitrary custom tokens used by callers that are not browsers.
         /// </remarks>
-        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)
-        {
+        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken) {
             // if this filter wants to support WWW-Authenticate header challenges, add one to the
             // result
-            if (SendChallenge)
-            {
+            if (SendChallenge) {
                 context.Result = new AddChallengeOnUnauthorizedResult(
                     new AuthenticationHeaderValue(SupportedTokenScheme),
                     context.Result);
@@ -125,8 +115,7 @@ namespace HandlerTemplates.Filters
         /// Internal method to validate the credentials included in the request,
         /// returning an IPrincipal for the resulting authenticated entity.
         /// </summary>
-        private async Task<IPrincipal> ValidateCredentialsAsync(string credentials, CancellationToken cancellationToken)
-        {
+        private async Task<IPrincipal> ValidateCredentialsAsync(string credentials, CancellationToken cancellationToken) {
             // TODO: your credential validation logic here, hopefully async!!
 
             // TODO: Create an IPrincipal (generic or custom), holding an IIdentity (generic or custom)
