@@ -1,44 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http.Filters;
-using System.Net.Http.Headers;
 
-namespace TestProject5.Filters
-{
+namespace TestProject5.Filters {
     /// <summary>
     /// Enum for type of client side caching
     /// </summary>
     /// <remarks> See this article for details of each:
     /// https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
     /// </remarks>
-    public enum ClientCacheControl
-    {
+    public enum ClientCacheControl {
         Public,     // can be cached by intermediate devices even if authentication was used;
         Private,    // browser-only, no intermediate caching, typically for per-user data
         NoCache     // no caching by browser or intermediate devices
     };
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class ClientCacheControlFilterAttribute : ActionFilterAttribute
-    {
+    public class ClientCacheControlFilterAttribute : ActionFilterAttribute {
         // TODO: If you need constructor arguments, create properties to hold them
         //       and public constructors that accept them.
         public ClientCacheControl CacheType;
         public double CacheSeconds;
 
 
-        public ClientCacheControlFilterAttribute(double seconds = 60.0)
-        {
+        public ClientCacheControlFilterAttribute(double seconds = 60.0) {
             CacheType = ClientCacheControl.Private;
             CacheSeconds = seconds;
         }
 
-        public ClientCacheControlFilterAttribute(ClientCacheControl cacheType, double seconds = 60.0)
-        {
+        public ClientCacheControlFilterAttribute(ClientCacheControl cacheType, double seconds = 60.0) {
             CacheType = cacheType;
             CacheSeconds = seconds;
             if (cacheType == ClientCacheControl.NoCache)
@@ -46,8 +38,7 @@ namespace TestProject5.Filters
         }
 
 
-        public override async Task OnActionExecutedAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken)
-        {
+        public override async Task OnActionExecutedAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken) {
             // STEP 2: Call the rest of the action filter chain
             await base.OnActionExecutedAsync(actionExecutedContext, cancellationToken);
 
@@ -56,10 +47,8 @@ namespace TestProject5.Filters
             if (actionExecutedContext.Response == null)
                 return;
 
-            if (CacheType == ClientCacheControl.NoCache)
-            {
-                actionExecutedContext.Response.Headers.CacheControl = new CacheControlHeaderValue
-                {
+            if (CacheType == ClientCacheControl.NoCache) {
+                actionExecutedContext.Response.Headers.CacheControl = new CacheControlHeaderValue {
                     NoStore = true
                 };
 
@@ -71,13 +60,10 @@ namespace TestProject5.Filters
                     actionExecutedContext.Response.Headers.Date = DateTimeOffset.UtcNow;
 
                 if (actionExecutedContext.Response.Content != null)
-                    actionExecutedContext.Response.Content.Headers.Expires = 
+                    actionExecutedContext.Response.Content.Headers.Expires =
                         actionExecutedContext.Response.Headers.Date;
-            }
-            else
-            {
-                actionExecutedContext.Response.Headers.CacheControl = new CacheControlHeaderValue
-                {
+            } else {
+                actionExecutedContext.Response.Headers.CacheControl = new CacheControlHeaderValue {
                     Public = (CacheType == ClientCacheControl.Public),
                     Private = (CacheType == ClientCacheControl.Private),
                     NoCache = false,

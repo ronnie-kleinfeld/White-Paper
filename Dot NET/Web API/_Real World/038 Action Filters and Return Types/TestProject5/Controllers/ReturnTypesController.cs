@@ -1,40 +1,31 @@
-﻿using Newtonsoft.Json;
-using Swashbuckle.Swagger.Annotations;
+﻿using Swashbuckle.Swagger.Annotations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TestProject5.ActionResults;
 using TestProject5.Filters;
 using TestProject5.Models;
-using TestProject5.ActionResults;
 
-namespace TestProject5.Controllers
-{
+namespace TestProject5.Controllers {
     [RoutePrefix("returntypes")]
     [ClientCacheControlFilter(ClientCacheControl.NoCache)]
-    public class ReturnTypesController : ApiController
-    {
+    public class ReturnTypesController : ApiController {
         #region Traditional return types
         /// <summary>
         /// void returns get converted to a 204 No Content response message
         /// </summary>
         [HttpGet, Route("void")]
-        public void ReturnVoid()
-        {
+        public void ReturnVoid() {
         }
 
         /// <summary>
         /// the simple object instance return type, here a list of strings
         /// </summary>
         [HttpGet, Route("object")]
-        public ComplexTypeDto GetObject()
-        {
-            var dto = new ComplexTypeDto()
-            {
+        public ComplexTypeDto GetObject() {
+            var dto = new ComplexTypeDto() {
                 String1 = "This is string 1",
                 String2 = "This is string 2",
                 Int1 = 55,
@@ -54,10 +45,8 @@ namespace TestProject5.Controllers
         [ResponseType(typeof(ComplexTypeDto))]
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(HttpError))]
-        public HttpResponseMessage GetAnHttpResponse()
-        {
-            var dto = new ComplexTypeDto()
-            {
+        public HttpResponseMessage GetAnHttpResponse() {
+            var dto = new ComplexTypeDto() {
                 String1 = "This is string 1",
                 String2 = "This is string 2",
                 Int1 = 55,
@@ -90,10 +79,8 @@ namespace TestProject5.Controllers
         [HttpGet, Route("actionresult")]
         [ResponseType(typeof(ComplexTypeDto))]
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(ComplexTypeDto))]
-        public IHttpActionResult GetAnActionResult()
-        {
-            var dto = new ComplexTypeDto()
-            {
+        public IHttpActionResult GetAnActionResult() {
+            var dto = new ComplexTypeDto() {
                 String1 = "This is string 1",
                 String2 = "This is string 2",
                 Int1 = 55,
@@ -102,7 +89,7 @@ namespace TestProject5.Controllers
 
             //var response = Json(dto);
             var response = Ok(dto).AddHeader("X-MyCustomHeader", "test value");
-            
+
             //var response = BadRequest("test test test").AddHeader("X-MyCustomHeader", "test value"); 
 
             return response;
