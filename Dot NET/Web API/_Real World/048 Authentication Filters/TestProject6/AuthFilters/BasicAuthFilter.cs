@@ -8,8 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 
-namespace TestProject6.AuthFilters
-{
+namespace TestProject6.AuthFilters {
     /// <summary>
     /// Authentication filter template, with attribute support so it can be set per-controller or per-route.
     /// </summary>
@@ -24,8 +23,7 @@ namespace TestProject6.AuthFilters
     /// There's no harm in always adding that line, even for standalone web services, 
     /// just to be sure.
     /// </remarks>
-    public class BasicAuthFilterAttribute : Attribute, IAuthenticationFilter
-    {
+    public class BasicAuthFilterAttribute : Attribute, IAuthenticationFilter {
         /// <summary>
         /// Set to the Authorization header Scheme value that this filter is intended to support
         /// </summary>
@@ -52,8 +50,7 @@ namespace TestProject6.AuthFilters
         /// <summary>
         /// default constructor, for Basic tokens SendChallenge should normally be true
         /// </summary>
-        public BasicAuthFilterAttribute()
-        {
+        public BasicAuthFilterAttribute() {
             SendChallenge = true;
         }
 
@@ -64,8 +61,7 @@ namespace TestProject6.AuthFilters
         ///  -- set context.Principal to an IPrincipal if authenticated,
         /// </summary>
         public async Task AuthenticateAsync(HttpAuthenticationContext context,
-            CancellationToken cancellationToken)
-        {
+            CancellationToken cancellationToken) {
             // STEP 1: extract your credentials from the request.  Generally this should be the 
             //         Authorization header, which the rest of this template assumes, but
             //         could come from any part of the request headers.
@@ -81,8 +77,7 @@ namespace TestProject6.AuthFilters
 
             // STEP 3: Given a valid token scheme, verify credentials are present
             var credentials = authHeader.Parameter;
-            if (String.IsNullOrEmpty(credentials))
-            {
+            if (String.IsNullOrEmpty(credentials)) {
                 // no credentials sent with the scheme, abort out of the pipeline with an error result
                 context.ErrorResult = new AuthenticationFailureResult("Missing credentials", context.Request);
                 return;
@@ -91,12 +86,9 @@ namespace TestProject6.AuthFilters
             // STEP 4: validate the credentials.  Return an error if invalid, else set the IPrincipal 
             //         on the context.
             IPrincipal principal = await ValidateCredentialsAsync(credentials, cancellationToken);
-            if (principal == null)
-            {
+            if (principal == null) {
                 context.ErrorResult = new AuthenticationFailureResult("Invalid credentials", context.Request);
-            }
-            else
-            {
+            } else {
                 // We have a valid, authenticated user; save off the IPrincipal instance
                 context.Principal = principal;
             }
@@ -117,12 +109,10 @@ namespace TestProject6.AuthFilters
         /// scheme requested and can ask the user for credentials, it was not 
         /// meant for arbitrary custom tokens used by callers that are not browsers.
         /// </remarks>
-        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)
-        {
+        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken) {
             // if this filter wants to support WWW-Authenticate header challenges, add one to the
             // result
-            if (SendChallenge)
-            {
+            if (SendChallenge) {
                 context.Result = new AddChallengeOnUnauthorizedResult(
                     new AuthenticationHeaderValue(SupportedTokenScheme),
                     context.Result);
@@ -135,8 +125,7 @@ namespace TestProject6.AuthFilters
         /// Internal method to validate the credentials included in the request,
         /// returning an IPrincipal for the resulting authenticated entity.
         /// </summary>
-        private async Task<IPrincipal> ValidateCredentialsAsync(string credentials, CancellationToken cancellationToken)
-        {
+        private async Task<IPrincipal> ValidateCredentialsAsync(string credentials, CancellationToken cancellationToken) {
             // TODO: your credential validation logic here, hopefully async!!
             // crack open the basic auth credentials
             var subject = ParseBasicAuthCredential(credentials);
@@ -170,15 +159,13 @@ namespace TestProject6.AuthFilters
         /// parse a basic auth credential string into username and password
         /// </summary>
         /// <returns>Tuple<string, string> where first item is subject, second item is password</returns>
-        private Tuple<string, string> ParseBasicAuthCredential(string credential)
-        {
+        private Tuple<string, string> ParseBasicAuthCredential(string credential) {
             string password = null;
             var subject = (Encoding.GetEncoding("iso-8859-1").GetString(Convert.FromBase64String(credential)));
             if (String.IsNullOrEmpty(subject))
                 return new Tuple<string, string>(null, null);
 
-            if (subject.Contains(":"))
-            {
+            if (subject.Contains(":")) {
                 var index = subject.IndexOf(':');
                 password = subject.Substring(index + 1);
                 subject = subject.Substring(0, index);

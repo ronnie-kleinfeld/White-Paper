@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 using TestProject6.AuthFilters;
 using TestProject6.Handlers;
 
-namespace TestProject6
-{
-    public static class WebApiConfig
-    {
-        public static void Register(HttpConfiguration config)
-        {
+namespace TestProject6 {
+    public static class WebApiConfig {
+        public static void Register(HttpConfiguration config) {
+            // Add this to insure the IIS layer hasn't added some IPrincipal authentication
             config.SuppressHostPrincipal();
 
             // Web API configuration and services
