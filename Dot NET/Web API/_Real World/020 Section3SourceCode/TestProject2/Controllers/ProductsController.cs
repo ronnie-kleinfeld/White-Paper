@@ -1,25 +1,16 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TestProject2.Enum;
 
 namespace TestProject2.Controllers {
     [RoutePrefix("products")]
     public class ProductsController : ApiController {
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum Widgets {
-            Bolt,
-            Screw,
-            Nut,
-            Motor
-        };
-
         // GET: Products/widget/xxx
-        [HttpGet, Route("widget/{widget:enum(TestProject2.Controllers.ProductsController+Widgets)}")]
-        public string GetProductsWithWidget(Widgets widget) {
+        [HttpGet, Route("widget/{widget:enum(TestProject2.Enum.WidgetEnum)}")]
+        public string GetProductsWithWidget(WidgetEnum widget) {
             return "widget-" + widget.ToString();
         }
 
