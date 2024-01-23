@@ -3,10 +3,9 @@ using Newtonsoft.Json.Converters;
 
 namespace TestProject2.Enum {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum WidgetEnum {
-        Bolt,
-        Screw,
-        Nut,
-        Motor
-    };
+    public enum GenderEnum {
+        Male,
+        Female,
+        Other
+    }
 }

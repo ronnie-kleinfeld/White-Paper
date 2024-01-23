@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using TestProject2.Enum;
 
 namespace TestProject2.Controllers {
     [RoutePrefix("products")]
     public class ProductsController : ApiController {
-        // GET: Products/widget/xxx
-        [HttpGet, Route("widget/{widget:enum(TestProject2.Enum.WidgetEnum)}")]
-        public string GetProductsWithWidget(WidgetEnum widget) {
-            return "widget-" + widget.ToString();
-        }
-
         [HttpGet, Route("status/{status:alpha=}")]
         public string GetProductsWithStatus(string status) {
             return String.IsNullOrEmpty(status) ? "NULL" : status;
