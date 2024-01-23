@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Routing;
+using TestProject2.Enum;
 using TestProject2.Models;
 
 namespace TestProject2 {

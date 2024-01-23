@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http.Routing;
 
-namespace TestProject2 {
+namespace TestProject2.Enum {
     /// <summary>
     /// Custom Web API route constraint to validate a string value is in the list
     /// of an enumeration's members.
