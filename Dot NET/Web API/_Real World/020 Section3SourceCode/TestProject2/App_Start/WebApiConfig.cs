@@ -11,7 +11,7 @@ namespace TestProject2 {
             // Web API routes
             //config.MapHttpAttributeRoutes();
             var constraintResolver = new DefaultInlineConstraintResolver();
-            constraintResolver.ConstraintMap.Add("enum", typeof(EnumerationConstraint));
+            constraintResolver.ConstraintMap.Add("enum", typeof(EnumRouteConstraint));
             constraintResolver.ConstraintMap.Add("base64", typeof(Base64Constraint));
             config.MapHttpAttributeRoutes(constraintResolver);
 
