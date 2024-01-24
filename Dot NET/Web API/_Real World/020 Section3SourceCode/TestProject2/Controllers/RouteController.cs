@@ -95,7 +95,7 @@ namespace TestProject2.Controllers {
 
         // integer range
         // GET: /paramvalidationprefix/GetHighNumber/{id}
-        [HttpGet, Route("GetHighNumber/{id:int:range(1000, 2000)}")]
+        [HttpGet, Route("GetHighNumber/{id:int:range(1000, 3000)}")]
         public IEnumerable<string> GetHighNumber(int id) {
             return new string[] { id.ToString() };
         }
