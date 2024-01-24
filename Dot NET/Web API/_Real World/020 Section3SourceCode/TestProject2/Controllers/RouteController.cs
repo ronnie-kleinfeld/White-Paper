@@ -83,4 +83,21 @@ namespace TestProject2.Controllers {
             return new string[] { id.ToString(), value };
         }
     }
+
+    [RoutePrefix("paramvalidationprefix")]
+    public class ParamValidationController : ApiController {
+        // accept only integer, if string it will return 404 as not found
+        // GET: /paramvalidationprefix/{id}
+        [HttpGet, Route("{id:int}")]
+        public IEnumerable<string> Get(int id) {
+            return new string[] { id.ToString() };
+        }
+
+        // integer range
+        // GET: /paramvalidationprefix/GetHighNumber/{id}
+        [HttpGet, Route("GetHighNumber/{id:int:range(1000, 2000)}")]
+        public IEnumerable<string> GetHighNumber(int id) {
+            return new string[] { id.ToString() };
+        }
+    }
 }
