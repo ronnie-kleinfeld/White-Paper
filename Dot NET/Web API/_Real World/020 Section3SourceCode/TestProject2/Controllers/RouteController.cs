@@ -34,6 +34,16 @@ namespace TestProject2.Controllers {
         public IEnumerable<string> GetSomething() {
             return new string[] { "value1", "value2" };
         }
+
+        // overload
+        [HttpGet, Route("add2integers")]
+        public IEnumerable<string> Add(int i1, int i2) {
+            return new string[] { "value1", "value2" };
+        }
+        [HttpGet, Route("add3integers")]
+        public IEnumerable<string> Add(int i1, int i2, int i3) {
+            return new string[] { "value1", "value2" };
+        }
     }
 
     // BAD practice, this override other specific paths in same controller
