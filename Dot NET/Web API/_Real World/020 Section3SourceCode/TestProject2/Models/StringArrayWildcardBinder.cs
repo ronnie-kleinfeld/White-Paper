@@ -1,7 +1,7 @@
 ﻿using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
 
-namespace TestProject2.Models {
+namespace Routing.Models {
     /// <summary>
     /// Custom model binder for a string array
     /// </summary>

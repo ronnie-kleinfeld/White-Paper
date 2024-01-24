@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using TestProject2.Models;
+using Routing.Models;
 
-namespace TestProject2.Controllers {
+namespace Routing.Controllers {
     public class ValuesController : ApiController {
         // GET: api/Values
         [HttpGet, Route("values")]

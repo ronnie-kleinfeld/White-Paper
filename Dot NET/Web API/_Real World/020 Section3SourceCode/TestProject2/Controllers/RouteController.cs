@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 
-namespace TestProject2.Controllers {
+namespace Routing.Controllers {
     // annotate class for a controller prefix
     [RoutePrefix("routeprefix")]
     public class RoutePrefixController : ApiController {

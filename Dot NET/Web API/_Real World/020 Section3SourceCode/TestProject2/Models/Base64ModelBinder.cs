@@ -3,7 +3,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.Routing.Constraints;
 
-namespace TestProject2.Models {
+namespace Routing.Models {
     /// <summary>
     /// Simple regex constraint to verify the characters are from
     /// the modified base64 set

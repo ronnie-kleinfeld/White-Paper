@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace TestProject2.Controllers {
+namespace Routing.Controllers {
     [RoutePrefix("products")]
     public class ProductsController : ApiController {
         [HttpGet, Route("status/{status:alpha=}")]

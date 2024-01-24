@@ -4,19 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http.Routing;
 
-namespace TestProject2.Enum {
-    /// <summary>
-    /// Custom Web API route constraint to validate a string value is in the list of an enumeration's members.
-    /// </summary>
-    /// <remarks>
-    /// You will need to register the constraint in your WebApiConfig.cs file:
-    /// <code>
-    ///   var constraintResolver = new DefaultInlineConstraintResolver();
-    ///   constraintResolver.ConstraintMap.Add("enum", typeof(EnumerationConstraint));
-    ///   config.MapHttpAttributeRoutes(constraintResolver);
-    /// </code>
-    /// Then in your Route attribute you can use it like so; note the Enum type name must be fully qualified, and if the Enum is embedded in another class use the namespace-qualified
-    /// class name of the parent object "+" the Enum name (ex. My.NameSpace.MyClass+ColorsEnum):
+namespace Routing.Enum {
     /// <code>
     ///   [HttpGet, Route("colors/{color:enum(My.Namespace.ColorsEnum)}")]
     ///   public string GetColor(string color)

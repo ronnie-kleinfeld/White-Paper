@@ -1,11 +1,11 @@
 using Swashbuckle.Application;
 using System.Web.Http;
-using TestProject2;
+using Routing;
 using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace TestProject2 {
+namespace Routing {
     public class SwaggerConfig {
         public static void Register() {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
@@ -28,7 +28,7 @@ namespace TestProject2 {
                     // hold additional metadata for an API. Version and title are required but you can also provide
                     // additional fields by chaining methods off SingleApiVersion.
                     //
-                    c.SingleApiVersion("v1", "TestProject2");
+                    c.SingleApiVersion("v1", "Routing");
 
                     // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                     //

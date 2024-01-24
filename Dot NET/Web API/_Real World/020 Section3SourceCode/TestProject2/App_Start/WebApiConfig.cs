@@ -1,9 +1,9 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Routing;
-using TestProject2.Enum;
-using TestProject2.Models;
+using Routing.Enum;
+using Routing.Models;
 
-namespace TestProject2 {
+namespace Routing {
     public static class WebApiConfig {
         public static void Register(HttpConfiguration config) {
             // Web API configuration and services

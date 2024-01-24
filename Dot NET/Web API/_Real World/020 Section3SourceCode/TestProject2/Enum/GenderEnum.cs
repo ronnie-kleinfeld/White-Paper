@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace TestProject2.Enum {
+namespace Routing.Enum {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum GenderEnum {
         Male,
