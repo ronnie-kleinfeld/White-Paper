@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestProject2</RootNamespace>
-    <AssemblyName>TestProject2</AssemblyName>
+    <RootNamespace>Routing</RootNamespace>
+    <AssemblyName>Routing</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -87,11 +87,11 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EnumConstraintController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\OLD\OrdersController.cs" />
+    <Compile Include="Controllers\OLD\ProductsController.cs" />
     <Compile Include="Controllers\ParamAndConstraintsController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\OLD\ValuesController.cs" />
     <Compile Include="Enum\EnumRouteConstraint.cs" />
     <Compile Include="Enum\GenderEnum.cs" />
     <Compile Include="Global.asax.cs">

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 
-namespace Routing.Controllers {
+namespace Routing.Controllers.OLD {
     public class OrdersController : ApiController {
         // GET orders/<order Id>
         [HttpGet, Route("orders/{id:length(8)}", Order = 2)]

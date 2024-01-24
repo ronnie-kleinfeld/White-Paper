@@ -4,7 +4,7 @@ using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using Routing.Models;
 
-namespace Routing.Controllers {
+namespace Routing.Controllers.OLD {
     public class ValuesController : ApiController {
         // GET: api/Values
         [HttpGet, Route("values")]

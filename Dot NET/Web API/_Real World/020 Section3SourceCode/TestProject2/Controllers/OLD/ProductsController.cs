@@ -4,12 +4,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Routing.Controllers {
+namespace Routing.Controllers.OLD {
     [RoutePrefix("products")]
     public class ProductsController : ApiController {
         [HttpGet, Route("status/{status:alpha=}")]
         public string GetProductsWithStatus(string status) {
-            return String.IsNullOrEmpty(status) ? "NULL" : status;
+            return string.IsNullOrEmpty(status) ? "NULL" : status;
         }
 
         // GET: api/Products
