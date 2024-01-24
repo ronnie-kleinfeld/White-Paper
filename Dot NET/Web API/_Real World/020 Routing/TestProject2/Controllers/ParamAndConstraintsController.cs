@@ -17,6 +17,21 @@ namespace Routing.Controllers {
             return new string[] { street, city, zip };
         }
 
+        // optional
+        // GET: /paramsprefix/optional/{street}
+        [HttpGet, Route("optional/{street?}")]
+        public IEnumerable<string> Optional(string street = "My Street") {
+            return new string[] { street };
+        }
+
+        // default
+        // zip defaults to NULL
+        // GET: /paramsprefix/default/{street}/{number}/{zip}
+        [HttpGet, Route("default/{street=st}/{number:int}/{zip=}")]
+        public IEnumerable<string> DefaultValue(string street, int number, string zip) {
+            return new string[] { street, number.ToString(), zip };
+        }
+
         // body
         // POST: /paramsprefix/
         [HttpPost, Route("")]
