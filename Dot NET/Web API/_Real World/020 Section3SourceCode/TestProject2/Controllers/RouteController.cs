@@ -36,12 +36,12 @@ namespace TestProject2.Controllers {
         }
 
         // overload
-        [HttpGet, Route("add2integers")]
+        [HttpGet, Route("add/{i1}/{i2}")]
         public IEnumerable<string> Add(int i1, int i2) {
             return new string[] { "value1", "value2" };
         }
-        [HttpGet, Route("add3integers")]
-        public IEnumerable<string> Add(int i1, int i2, int i3) {
+        [HttpGet, Route("multiply/{i1}/{i2}")]
+        public IEnumerable<string> Multiply(int i1, int i2) {
             return new string[] { "value1", "value2" };
         }
     }
@@ -53,51 +53,6 @@ namespace TestProject2.Controllers {
         [HttpGet, Route("{param1}")]
         public IEnumerable<string> Get(string param1) {
             return new string[] { param1 };
-        }
-    }
-
-    [RoutePrefix("paramsprefix")]
-    public class RouteParamsController : ApiController {
-        // quesry string
-        // GET: /paramsprefix/{id}
-        [HttpGet, Route("{id}")]
-        public IEnumerable<string> Get(int id) {
-            return new string[] { id.ToString() };
-        }
-        // quesry string
-        // GET: /paramsprefix/street/{street}/city/{city}/zip/{zip}
-        [HttpGet, Route("street/{street}/city/{city}/zip/{zip}")]
-        public IEnumerable<string> GetAddress(string street, string city, string zip) {
-            return new string[] { street, city, zip };
-        }
-
-        // body
-        // POST: /paramsprefix/
-        [HttpPost, Route("")]
-        public string Post([FromBody] string value) {
-            return value;
-        }
-        // PUT: /paramsprefix/{id}
-        [HttpPut, Route("{id}")]
-        public IEnumerable<string> Put(int id, [FromBody] string value) {
-            return new string[] { id.ToString(), value };
-        }
-    }
-
-    [RoutePrefix("paramvalidationprefix")]
-    public class ParamValidationController : ApiController {
-        // accept only integer, if string it will return 404 as not found
-        // GET: /paramvalidationprefix/{id}
-        [HttpGet, Route("{id:int}")]
-        public IEnumerable<string> Get(int id) {
-            return new string[] { id.ToString() };
-        }
-
-        // integer range
-        // GET: /paramvalidationprefix/GetHighNumber/{id}
-        [HttpGet, Route("GetHighNumber/{id:int:range(1000, 3000)}")]
-        public IEnumerable<string> GetHighNumber(int id) {
-            return new string[] { id.ToString() };
         }
     }
 }
