@@ -90,7 +90,7 @@
     <Compile Include="Controllers\OLD\OrdersController.cs" />
     <Compile Include="Controllers\OLD\ProductsController.cs" />
     <Compile Include="Controllers\ParamAndConstraintsController.cs" />
-    <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\RouteVerbsController.cs" />
     <Compile Include="Controllers\OLD\ValuesController.cs" />
     <Compile Include="Enum\EnumRouteConstraint.cs" />
     <Compile Include="Enum\GenderEnum.cs" />

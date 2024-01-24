@@ -55,4 +55,21 @@ namespace Routing.Controllers {
             return new string[] { param1 };
         }
     }
+
+    [RoutePrefix("acceptvebs")]
+    public class AcceptVerbsController : ApiController {
+        // GET: /acceptvebs/verb
+        [Route("verb")]
+        [AcceptVerbs()] // defaults to POST verb
+        public IEnumerable<string> Verb() {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET|VIEW: /acceptvebs/multipleverbs
+        [Route("multipleverbs")]
+        [AcceptVerbs("GET", "VIEW", "PUT")] // view exists but is ignored by swagger
+        public IEnumerable<string> MultipleVerbs() {
+            return new string[] { "value1", "value2" };
+        }
+    }
 }
