@@ -7,7 +7,17 @@ namespace Routing.Controllers {
     public class RoutePrefixController : ApiController {
         // GET: /routeprefix/
         [HttpGet, Route("")]
-        public IEnumerable<string> Get() {
+        public IEnumerable<string> Get1() {
+            return new string[] { "value1", "value2" };
+        }
+        // GET: /routeprefix/verbprefix
+        [HttpGet, Route("verbprefix")]
+        public IEnumerable<string> Get2() {
+            return new string[] { "value1", "value2" };
+        }
+        // GET: /ignorerouteprefix
+        [HttpGet, Route("~/ignorerouteprefix")]
+        public IEnumerable<string> Get3() {
             return new string[] { "value1", "value2" };
         }
     }
@@ -28,10 +38,19 @@ namespace Routing.Controllers {
             return new string[] { "value1", "value2" };
         }
 
-        // annotate method with spesific path
+        // annotate method with specific path
         // GET: /verbsprefix/DoSomething
         [HttpGet, Route("DoSomething")]
         public IEnumerable<string> GetSomething() {
+            return new string[] { "value1", "value2" };
+        }
+
+        // annotate method with multiple paths
+        // GET: /verbsprefix/MultipleRoute1 & /verbsprefix/MultipleRoute2
+        [HttpGet]
+        [Route("MultipleRoute1")]
+        [Route("MultipleRoute2")]
+        public IEnumerable<string> MultipleRoute() {
             return new string[] { "value1", "value2" };
         }
 
