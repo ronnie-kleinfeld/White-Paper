@@ -39,8 +39,8 @@ namespace Routing.Controllers {
             return value;
         }
         // PUT: /paramsprefix/{id}
-        [HttpPut, Route("{id}")]
-        public IEnumerable<string> Put(int id, [FromBody] string value) {
+        [HttpPut, Route("{id:int:range(1000,3000)}")]
+        public IEnumerable<string> Put([FromUri] int id, [FromBody] string value) {
             return new string[] { id.ToString(), value };
         }
     }
@@ -62,6 +62,12 @@ namespace Routing.Controllers {
         [HttpGet, Route("GetHighNumber/{id:int:range(1000, 3000)}")]
         public IEnumerable<string> GetHighNumber(int id) {
             return new string[] { id.ToString() };
+        }
+
+        // GET /paramconstraints/{id}
+        [HttpGet, Route("paramconstraints/{id:alpha:length(8)}")]
+        public string GetOrderById(string id) {
+            return "order-" + id;
         }
     }
 }

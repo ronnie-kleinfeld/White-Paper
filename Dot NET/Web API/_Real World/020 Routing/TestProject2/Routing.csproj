@@ -87,18 +87,16 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EnumConstraintController.cs" />
-    <Compile Include="Controllers\OLD\OrdersController.cs" />
-    <Compile Include="Controllers\OLD\ProductsController.cs" />
+    <Compile Include="Controllers\WildcardParamsController.cs" />
     <Compile Include="Controllers\ParamAndConstraintsController.cs" />
     <Compile Include="Controllers\CustomDTOController.cs" />
     <Compile Include="Controllers\RouteVerbsController.cs" />
-    <Compile Include="Controllers\OLD\ValuesController.cs" />
     <Compile Include="Enum\EnumRouteConstraint.cs" />
     <Compile Include="Enum\GenderEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\StringArrayWildcardBinder.cs" />
+    <Compile Include="ModelBinder\StringArrayWildcardBinder.cs" />
     <Compile Include="Models\CustomDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

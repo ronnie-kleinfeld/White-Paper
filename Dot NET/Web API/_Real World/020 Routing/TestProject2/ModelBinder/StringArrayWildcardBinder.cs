@@ -1,10 +1,8 @@
 ﻿using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
 
-namespace Routing.Models {
-    /// <summary>
+namespace Routing.ModelBinder {
     /// Custom model binder for a string array
-    /// </summary>
     public class StringArrayWildcardBinder : IModelBinder {
         public bool BindModel(HttpActionContext actionContext, ModelBindingContext bindingContext) {
             var key = bindingContext.ModelName;
@@ -13,7 +11,6 @@ namespace Routing.Models {
                 var s = val.AttemptedValue;
                 if (s != null) {
                     try {
-                        // parse the elements on the forward slash
                         var array = s.Split('/');
                         bindingContext.Model = array;
                     } catch {
