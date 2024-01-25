@@ -107,10 +107,10 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="AuthFilters\OLD\AddChallengeOnUnauthorizedResult.cs" />
+    <Compile Include="AuthFilters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="AuthFilters\OLD\ApiKeyAuthenticationFilter.cs" />
     <Compile Include="AuthFilters\AuthenticationFailureResult.cs" />
-    <Compile Include="AuthFilters\OLD\BasicAuthFilter.cs" />
+    <Compile Include="AuthFilters\BasicAuthFilter.cs" />
     <Compile Include="AuthFilters\OLD\JwtAuthenticationFilter.cs" />
     <Compile Include="AuthFilters\OLD\RequireApiKey.cs" />
     <Compile Include="AuthFilters\OLD\RequireClaim.cs" />
