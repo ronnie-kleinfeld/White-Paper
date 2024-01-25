@@ -4,12 +4,25 @@ using TestProject6.AuthFilters;
 
 namespace TestProject6.Controllers {
     [RoutePrefix("values")]
-
     public class ValuesController : ApiController {
         // GET api/<controller>
-        [Route("")]
+        [Route("authorize")]
+        [Authorize]
+        public IEnumerable<string> GetAuthorize() {
+            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
+        }
+
+        // GET api/<controller>
+        [Route("basicauth")]
+        [BasicAuthFilter]
+        public IEnumerable<string> GetBasicAuthFilter() {
+            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
+        }
+
+        // GET api/<controller>
+        [Route("requireclaim")]
         [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
-        public IEnumerable<string> Get() {
+        public IEnumerable<string> GetRequireClaim() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
