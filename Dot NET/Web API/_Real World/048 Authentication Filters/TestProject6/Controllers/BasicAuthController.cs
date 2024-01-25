@@ -3,10 +3,10 @@ using System.Web.Http;
 using TestProject6.AuthFilters;
 
 namespace TestProject6.Controllers {
-    [RoutePrefix("authentication")]
+    [RoutePrefix("basicauth")]
     public class BasicAuthController : ApiController {
         // this get the authentication from WebApiConfig.cs
-        // GET /authentication
+        // GET /basicauth
         [Route("")]
         public IEnumerable<string> Get() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
@@ -26,17 +26,18 @@ namespace TestProject6.Controllers {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
-        // GET /authentication/basicauth
+        // GET /basicauth/basicauth
         [Route("basicauth")]
         [BasicAuthFilter]
         public IEnumerable<string> GetBasicAuthFilter() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
-        // GET /authentication/requireclaim
-        [Route("requireclaim")]
-        [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
-        public IEnumerable<string> GetRequireClaim() {
+        // GET /basicauth/jwtauth
+        [Route("jwtauth")]
+        [OverrideAuthentication]
+        [JWTAuthFilter]
+        public IEnumerable<string> GetJWTAuthFilter() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
     }

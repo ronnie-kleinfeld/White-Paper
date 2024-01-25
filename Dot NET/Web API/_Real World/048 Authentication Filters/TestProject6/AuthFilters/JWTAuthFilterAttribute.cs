@@ -26,7 +26,7 @@ namespace TestProject6.AuthFilters {
     /// There's no harm in always adding that line, even for standalone web services, 
     /// just to be sure.
     /// </remarks>
-    public class JwtAuthenticationFilterAttribute : Attribute, IAuthenticationFilter {
+    public class JWTAuthFilterAttribute : Attribute, IAuthenticationFilter {
         /// <summary>
         /// Set to the Authorization header Scheme value that this filter is intended to support
         /// </summary>
@@ -61,7 +61,7 @@ namespace TestProject6.AuthFilters {
         /// <summary>
         /// Default constructor creates signing credentials
         /// </summary>
-        public JwtAuthenticationFilterAttribute() {
+        public JWTAuthFilterAttribute() {
             // Create a signing token from the secret key
             // we'll load our certificate from a file for this example
             var filePath = HttpContext.Current.Server.MapPath("~/App_Data/CourseCert.cer");
