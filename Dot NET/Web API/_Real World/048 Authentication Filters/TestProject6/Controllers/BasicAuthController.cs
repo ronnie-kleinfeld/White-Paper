@@ -4,7 +4,7 @@ using TestProject6.AuthFilters;
 
 namespace TestProject6.Controllers {
     [RoutePrefix("authentication")]
-    public class AuthenticationController : ApiController {
+    public class BasicAuthController : ApiController {
         // this get the authentication from WebApiConfig.cs
         // GET /authentication
         [Route("")]
