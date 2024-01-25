@@ -115,7 +115,7 @@
     <Compile Include="AuthFilters\OLD\RequireApiKey.cs" />
     <Compile Include="AuthFilters\OLD\RequireClaim.cs" />
     <Compile Include="AuthFilters\OLD\RequireHttpsFilter.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

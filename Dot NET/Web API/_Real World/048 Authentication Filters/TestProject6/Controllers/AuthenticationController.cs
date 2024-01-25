@@ -3,44 +3,41 @@ using System.Web.Http;
 using TestProject6.AuthFilters;
 
 namespace TestProject6.Controllers {
-    [RoutePrefix("values")]
-    public class ValuesController : ApiController {
-        // GET api/<controller>
+    [RoutePrefix("authentication")]
+    public class AuthenticationController : ApiController {
+        // this get the authentication from WebApiConfig.cs
+        // GET /authentication
+        [Route("")]
+        public IEnumerable<string> Get() {
+            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
+        }
+
+        // GET /authentication/allowanonymous
+        [Route("allowanonymous")]
+        [AllowAnonymous]
+        public IEnumerable<string> GetAllowAnonymous() {
+            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
+        }
+
+        // GET /authentication/authorize
         [Route("authorize")]
         [Authorize]
         public IEnumerable<string> GetAuthorize() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
-        // GET api/<controller>
+        // GET /authentication/basicauth
         [Route("basicauth")]
         [BasicAuthFilter]
         public IEnumerable<string> GetBasicAuthFilter() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
-        // GET api/<controller>
+        // GET /authentication/requireclaim
         [Route("requireclaim")]
         [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
         public IEnumerable<string> GetRequireClaim() {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id) {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody] string value) {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value) {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id) {
         }
     }
 }
