@@ -29,16 +29,8 @@ namespace Routing.Controllers.OLD {
         public void Delete(int id) {
         }
 
-        // example base64 binary data, converts to a sample json object:  
-        // ew0KICAibnVtYmVyIjogMTIzLA0KICAib2JqZWN0Ijogew0KICAgICJhIjogImIiLA0KICAgICJjIjogImQiLA0KICAgICJlIjogImYiDQogIH0sDQogICJzdHJpbmciOiAiSGVsbG8gV29ybGQiDQp9
-        [HttpGet, Route("binary/{array:base64:maxlength(512)}")]
-        public string GetBinaryArray([ModelBinder(typeof(Base64ParameterModelBinder))] byte[] array) {
-            return System.Text.Encoding.UTF8.GetString(array);
-
-        }
-
         [HttpGet, Route("complex")]
-        public IHttpActionResult ComplexTest([FromUri] ComplexTypeDto obj) {
+        public IHttpActionResult ComplexTest([FromUri] CustomDTO obj) {
             return Json(obj);
         }
 
