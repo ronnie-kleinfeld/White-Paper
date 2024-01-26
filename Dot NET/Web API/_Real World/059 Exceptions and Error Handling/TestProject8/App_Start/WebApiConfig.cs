@@ -14,7 +14,6 @@ namespace TestProject8 {
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
         }
     }
 }

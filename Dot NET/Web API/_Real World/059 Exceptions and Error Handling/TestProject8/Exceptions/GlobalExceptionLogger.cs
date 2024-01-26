@@ -5,23 +5,10 @@ using System.Web.Http.ExceptionHandling;
 
 
 namespace TestProject8.Exceptions {
-    /// <summary>
     /// Global unhandled exception logging/analytics template
-    /// </summary>
-    /// <remarks>
-    /// To register one or more loggers:
-    /// <code>
-    /// config.Services.Add(typeof(IExceptionLogger), new GlobalExceptionLoggerTemplate());
-    /// </code>
-    /// </remarks>
     public class GlobalExceptionLogger : ExceptionLogger {
-        /// <summary>
         /// Required ExceptionLogger method to process an exception
-        /// </summary>
-        /// <remarks>
-        /// Important! Not every ExceptionLoggerContext field will be set depending on where
-        /// the exception occurs, but you can minimally count on the Exception and Request properties.
-        /// </remarks>
+        /// Important! Not every ExceptionLoggerContext field will be set depending on where the exception occurs, but you can minimally count on the Exception and Request properties.
         public override Task LogAsync(ExceptionLoggerContext context, CancellationToken cancellationToken) {
             //throw new ArgumentNullException();
 
