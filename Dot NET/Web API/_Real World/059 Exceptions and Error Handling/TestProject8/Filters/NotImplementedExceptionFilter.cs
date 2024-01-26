@@ -1,25 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http.Filters;
 
-namespace TestProject8.Filters
-{
-    public class NotImplementedExceptionFilter : ExceptionFilterAttribute
-    {
+namespace TestProject8.Filters {
+    public class NotImplementedExceptionFilter : ExceptionFilterAttribute {
         /// <summary>
         /// Web API exception filter template. Generally meant for action- or controller-
         /// specific exceptions where you want common processing to occur.
         /// </summary>
         public override async Task OnExceptionAsync(
             HttpActionExecutedContext actionExecutedContext,
-            CancellationToken cancellationToken)
-        {
+            CancellationToken cancellationToken) {
             // STEP 1: Do any internal processing you want, for example
             //         trace logging, metrics gathering, etc. as a result
             //         of getting this exception. Do it async if it
@@ -36,8 +30,7 @@ namespace TestProject8.Filters
             //{
             //    Content = ...etc.
             //};
-            if (ex is NotImplementedException)
-            {
+            if (ex is NotImplementedException) {
                 actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.NotImplemented);
             }
 
