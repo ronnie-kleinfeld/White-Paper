@@ -101,7 +101,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Exceptions\GlobalExceptionHandler.cs" />
+    <Compile Include="Exceptions\GlobalExceptionHandlerTemplate.cs" />
     <Compile Include="Exceptions\GlobalExceptionLogger.cs" />
+    <Compile Include="Exceptions\GlobalExceptionLoggerTemplate.cs" />
     <Compile Include="Filters\InvalidAccountIdExceptionFilter.cs" />
     <Compile Include="Filters\NotImplementedExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">

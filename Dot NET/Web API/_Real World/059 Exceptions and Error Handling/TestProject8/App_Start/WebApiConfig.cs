@@ -8,6 +8,8 @@ namespace TestProject8 {
         public static void Register(HttpConfiguration config) {
             // Web API configuration and services
             config.Services.Add(typeof(IExceptionLogger), new GlobalExceptionLogger());
+
+            // replace the default Exception handler
             config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
 
             config.Filters.Add(new NotImplementedExceptionFilter());
