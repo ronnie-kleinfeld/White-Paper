@@ -5,7 +5,7 @@ using TestProject6.AuthFilters.OLD;
 namespace TestProject6.Controllers {
     [RoutePrefix("values")]
 
-    public class ValuesController : ApiController {
+    public class AuthorizationController : ApiController {
         // GET api/<controller>
         [Route("")]
         [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
@@ -13,6 +13,8 @@ namespace TestProject6.Controllers {
             return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
 
+        //[Authorize] // validate that there is an IPrincipal
+        [Authorize()]
         // GET api/<controller>/5
         public string Get(int id) {
             return "value";
