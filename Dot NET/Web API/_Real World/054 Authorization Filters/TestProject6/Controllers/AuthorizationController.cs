@@ -3,33 +3,40 @@ using System.Web.Http;
 using TestProject6.AuthFilters.OLD;
 
 namespace TestProject6.Controllers {
-    [RoutePrefix("values")]
-
+    [RoutePrefix("authurization")]
     public class AuthorizationController : ApiController {
-        // GET api/<controller>
-        [Route("")]
-        [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
-        public IEnumerable<string> Get() {
-            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
-        }
-
-        //[Authorize] // validate that there is an IPrincipal
-        [Authorize()]
-        // GET api/<controller>/5
-        public string Get(int id) {
+        // GET /authurization/None
+        [HttpGet, Route("None")]
+        public string GetNone() {
             return "value";
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value) {
+        // GET /authurization/AllowAnonymous
+        [HttpGet, Route("AllowAnonymous")]
+        [AllowAnonymous] // override authentication and authorization in WebApiConfig.cs
+        public string GetAllowAnonymous() {
+            return "value";
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value) {
+        // GET /authurization/Authorize
+        [HttpGet, Route("Authorize")]
+        [Authorize] // validate that there is an IPrincipal
+        public string GetAuthorize() {
+            return "value";
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id) {
+        // GET /authurization/RolesUsers
+        [HttpGet, Route("RolesUsers")]
+        [Authorize(Roles = "Admin", Users = "userName")]
+        public string GetRolesUsers() {
+            return "value";
+        }
+
+        // GET /authurization/RequireClaim
+        [HttpGet, Route("RequireClaim")]
+        [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
+        public IEnumerable<string> GetRequireClaim() {
+            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
     }
 }

@@ -10,7 +10,8 @@ namespace TestProject6 {
             config.MessageHandlers.Add(new ForwardedHeadersHandler());
             config.MessageHandlers.Add(new ApiKeyHeaderHandler());
 
-            config.Filters.Add(new AuthorizeAttribute());
+            // add this to require all controller to be authorized
+            //config.Filters.Add(new AuthorizeAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
