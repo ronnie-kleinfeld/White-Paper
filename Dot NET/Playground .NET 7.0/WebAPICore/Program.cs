@@ -23,7 +23,6 @@ namespace WebAPICore {
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();
