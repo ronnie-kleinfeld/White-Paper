@@ -7,7 +7,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using TestProject6.Handlers;
 
-namespace TestProject6.AuthFilters {
+namespace TestProject6.AuthFilters.OLD {
     /// <summary>
     /// Authorization filter to require the client have used HTTPS protocol. 
     /// By working in conjunction with ForwardedHeadersHandler, works for load balancer

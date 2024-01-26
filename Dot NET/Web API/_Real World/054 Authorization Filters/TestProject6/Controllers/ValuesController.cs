@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using TestProject6.AuthFilters;
+using TestProject6.AuthFilters.OLD;
 
 namespace TestProject6.Controllers {
     [RoutePrefix("values")]

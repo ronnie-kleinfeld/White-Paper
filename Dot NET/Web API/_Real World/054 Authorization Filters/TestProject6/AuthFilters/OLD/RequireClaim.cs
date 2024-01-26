@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace TestProject6.AuthFilters {
+namespace TestProject6.AuthFilters.OLD {
     /// <summary>
     /// Authorization filter to require the IIdentity be a ClaimsIdentity  
     /// containing zero or more specific claim types.  If no claim types are in the list, then

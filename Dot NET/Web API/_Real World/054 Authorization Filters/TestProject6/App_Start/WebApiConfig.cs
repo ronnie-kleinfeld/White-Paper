@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-using TestProject6.AuthFilters;
 using TestProject6.Handlers;
 
 namespace TestProject6 {
@@ -10,9 +9,6 @@ namespace TestProject6 {
             // Web API configuration and services
             config.MessageHandlers.Add(new ForwardedHeadersHandler());
             config.MessageHandlers.Add(new ApiKeyHeaderHandler());
-
-            config.Filters.Add(new BasicAuthFilterAttribute());
-            config.Filters.Add(new JwtAuthenticationFilterAttribute());
 
             config.Filters.Add(new AuthorizeAttribute());
 

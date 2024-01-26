@@ -7,8 +7,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using TestProject6.Handlers;
 
-
-namespace TestProject6.AuthFilters {
+namespace TestProject6.AuthFilters.OLD {
     /// <summary>
     ///  Section 7 Excercise solution - AuthZ filter to require api key of a type
     /// </summary>

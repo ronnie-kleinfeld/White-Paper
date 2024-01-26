@@ -6,8 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace TestProject6.AuthFilters {
-    /// <summary>
+namespace TestProject6.AuthFilters.OLD {
+    /// <summary>w
     /// Generic WWW-Challenge IHttpActionResult implementation,
     /// from Microsoft's basic authentication example, see
     /// https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/authentication-filters
