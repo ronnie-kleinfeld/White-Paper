@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Security.Principal;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 
-namespace TestProject6.AuthFilters
-{
+namespace TestProject6.AuthFilters {
     /// <summary>
     /// Section 6 exercise solution - API key AuthN filter
     /// </summary>
@@ -25,8 +23,7 @@ namespace TestProject6.AuthFilters
     /// There's no harm in always adding that line, even for standalone web services, 
     /// just to be sure.
     /// </remarks>
-    public class ApiKeyAuthenticationFilterAttribute : Attribute, IAuthenticationFilter
-    {
+    public class ApiKeyAuthenticationFilterAttribute : Attribute, IAuthenticationFilter {
         /// <summary>
         /// Set to the Authorization header Scheme value that this filter is intended to support
         /// </summary>
@@ -59,8 +56,7 @@ namespace TestProject6.AuthFilters
         ///  -- set context.Principal to an IPrincipal if authenticated,
         /// </summary>
         public async Task AuthenticateAsync(HttpAuthenticationContext context,
-            CancellationToken cancellationToken)
-        {
+            CancellationToken cancellationToken) {
             string apiKey = null;
 
             // STEP 1: extract your credentials from the request.  Generally this should be the 
@@ -71,8 +67,7 @@ namespace TestProject6.AuthFilters
             if (context.Request.Headers.Contains(ApiKeyHeader))
                 apiKey = context.Request.Headers.GetValues(ApiKeyHeader).FirstOrDefault();
 
-            if (String.IsNullOrEmpty(apiKey))
-            {
+            if (String.IsNullOrEmpty(apiKey)) {
                 var authHeader = context.Request.Headers.Authorization;
                 // if there are no credentials, abort out
                 if (authHeader == null)
@@ -85,8 +80,7 @@ namespace TestProject6.AuthFilters
 
                 // STEP 3: Given a valid token scheme, verify credentials are present
                 apiKey = authHeader.Parameter;
-                if (String.IsNullOrEmpty(apiKey))
-                {
+                if (String.IsNullOrEmpty(apiKey)) {
                     // no credentials sent with the scheme, abort out of the pipeline with an error result
                     context.ErrorResult = new AuthenticationFailureResult("Missing credentials", context.Request);
                     return;
@@ -96,12 +90,9 @@ namespace TestProject6.AuthFilters
             // STEP 4: validate the credentials.  Return an error if invalid, else set the IPrincipal 
             //         on the context.
             IPrincipal principal = await ValidateCredentialsAsync(apiKey, cancellationToken);
-            if (principal == null)
-            {
+            if (principal == null) {
                 context.ErrorResult = new AuthenticationFailureResult("Invalid credentials", context.Request);
-            }
-            else
-            {
+            } else {
                 // We have a valid, authenticated user; save off the IPrincipal instance
                 context.Principal = principal;
             }
@@ -122,12 +113,10 @@ namespace TestProject6.AuthFilters
         /// scheme requested and can ask the user for credentials, it was not 
         /// meant for arbitrary custom tokens used by callers that are not browsers.
         /// </remarks>
-        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)
-        {
+        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken) {
             // if this filter wants to support WWW-Authenticate header challenges, add one to the
             // result
-            if (SendChallenge)
-            {
+            if (SendChallenge) {
                 context.Result = new AddChallengeOnUnauthorizedResult(
                     new AuthenticationHeaderValue(SupportedTokenScheme),
                     context.Result);
@@ -140,8 +129,7 @@ namespace TestProject6.AuthFilters
         /// Internal method to validate the credentials included in the request,
         /// returning an IPrincipal for the resulting authenticated entity.
         /// </summary>
-        private async Task<IPrincipal> ValidateCredentialsAsync(string credentials, CancellationToken cancellationToken)
-        {
+        private async Task<IPrincipal> ValidateCredentialsAsync(string credentials, CancellationToken cancellationToken) {
             // validate the 8 char length requirement
             if (credentials.Length != 8)
                 return null;

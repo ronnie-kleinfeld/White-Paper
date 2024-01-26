@@ -1,18 +1,17 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Http.Filters;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using System.Web.Http.Filters;
 
-namespace TestProject6.AuthFilters
-{
+namespace TestProject6.AuthFilters {
     /// <summary>
     /// JWT Json web token authentication filter 
     /// </summary>
@@ -27,8 +26,7 @@ namespace TestProject6.AuthFilters
     /// There's no harm in always adding that line, even for standalone web services, 
     /// just to be sure.
     /// </remarks>
-    public class JwtAuthenticationFilterAttribute : Attribute, IAuthenticationFilter
-    {
+    public class JwtAuthenticationFilterAttribute : Attribute, IAuthenticationFilter {
         /// <summary>
         /// Set to the Authorization header Scheme value that this filter is intended to support
         /// </summary>
@@ -63,8 +61,7 @@ namespace TestProject6.AuthFilters
         /// <summary>
         /// Default constructor creates signing credentials
         /// </summary>
-        public JwtAuthenticationFilterAttribute()
-        {
+        public JwtAuthenticationFilterAttribute() {
             // Create a signing token from the secret key
             // we'll load our certificate from a file for this example
             var filePath = HttpContext.Current.Server.MapPath("~/App_Data/CourseCert.cer");
@@ -79,8 +76,7 @@ namespace TestProject6.AuthFilters
         ///  -- set context.Principal to an IPrincipal if authenticated,
         /// </summary>
         public async Task AuthenticateAsync(HttpAuthenticationContext context,
-            CancellationToken cancellationToken)
-        {
+            CancellationToken cancellationToken) {
             // STEP 1: extract your credentials from the request.  Generally this should be the 
             //         Authorization header, which the rest of this template assumes, but
             //         could come from any part of the request headers.
@@ -96,8 +92,7 @@ namespace TestProject6.AuthFilters
 
             // STEP 3: Given a valid token scheme, verify credentials are present
             var credentials = authHeader.Parameter;
-            if (String.IsNullOrEmpty(credentials))
-            {
+            if (String.IsNullOrEmpty(credentials)) {
                 // no credentials sent with the scheme, abort out of the pipeline with an error result
                 context.ErrorResult = new AuthenticationFailureResult("Missing credentials", context.Request);
                 return;
@@ -105,28 +100,20 @@ namespace TestProject6.AuthFilters
 
             // STEP 4: validate the credentials.  Return an error if invalid, else set the IPrincipal 
             //         on the context.
-            try
-            {
+            try {
                 IPrincipal principal = await ValidateCredentialsAsync(credentials, context.Request, cancellationToken);
-                if (principal == null)
-                {
+                if (principal == null) {
                     context.ErrorResult = new AuthenticationFailureResult("Invalid security token", context.Request);
-                }
-                else
-                {
+                } else {
                     // We have a valid, authenticated user; save off the IPrincipal instance
                     context.Principal = principal;
                 }
-            }
-            catch (Exception stex) when (stex is SecurityTokenInvalidLifetimeException || 
-                                             stex is SecurityTokenExpiredException ||
-                                             stex is SecurityTokenNoExpirationException ||
-                                             stex is SecurityTokenNotYetValidException) 
-            {
+            } catch (Exception stex) when (stex is SecurityTokenInvalidLifetimeException ||
+                                               stex is SecurityTokenExpiredException ||
+                                               stex is SecurityTokenNoExpirationException ||
+                                               stex is SecurityTokenNotYetValidException) {
                 context.ErrorResult = new AuthenticationFailureResult("Security token lifetime error", context.Request);
-            }
-            catch (Exception)
-            {
+            } catch (Exception) {
                 context.ErrorResult = new AuthenticationFailureResult("Invalid security token", context.Request);
             }
         }
@@ -146,13 +133,11 @@ namespace TestProject6.AuthFilters
         /// scheme requested and can ask the user for credentials, it was not 
         /// meant for arbitrary custom tokens used by callers that are not browsers.
         /// </remarks>
-        public Task ChallengeAsync(HttpAuthenticationChallengeContext context, 
-            CancellationToken cancellationToken)
-        {
+        public Task ChallengeAsync(HttpAuthenticationChallengeContext context,
+            CancellationToken cancellationToken) {
             // if this filter wants to support WWW-Authenticate header challenges, add one to the
             // result
-            if (SendChallenge)
-            {
+            if (SendChallenge) {
                 // FYI: Azure AD does support challenges for JWT tokens... the header looks like 
                 // this, where authority looks like <instance>/<tenant> ex.
                 //  https://login.microsoftonline.com/my.company.com
@@ -176,9 +161,8 @@ namespace TestProject6.AuthFilters
         /// returning an IPrincipal for the resulting authenticated entity.
         /// </summary>
         private async Task<IPrincipal> ValidateCredentialsAsync(string credentials,
-            HttpRequestMessage request, 
-            CancellationToken cancellationToken)
-        {
+            HttpRequestMessage request,
+            CancellationToken cancellationToken) {
             var jwtHandler = new JwtSecurityTokenHandler();
             // verify this is a valid JWT token
             var isValidJwt = jwtHandler.CanReadToken(credentials);
@@ -189,8 +173,7 @@ namespace TestProject6.AuthFilters
             //   minimally signing key and lifetime, but probably issuer and 
             //   audience as well. Note some profiles of JWT require validating
             //   certain features (ex. OAuth).
-            TokenValidationParameters validationParameters = new TokenValidationParameters
-            {
+            TokenValidationParameters validationParameters = new TokenValidationParameters {
                 ValidateAudience = true,
                 ValidAudiences = new[] { _audience },
 
@@ -204,7 +187,7 @@ namespace TestProject6.AuthFilters
                 RequireExpirationTime = true,
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.FromSeconds(5),  // limit the lifetime padding
-                
+
                 NameClaimType = ClaimTypes.NameIdentifier,
                 AuthenticationType = SupportedTokenScheme
             };

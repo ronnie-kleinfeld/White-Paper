@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 
-namespace TestProject6.Handlers
-{
-    public class ForwardedHeadersHandler : DelegatingHandler
-    {
+namespace TestProject6.Handlers {
+    public class ForwardedHeadersHandler : DelegatingHandler {
         // new style header:   "Forwarded: by=<identifier>; for=<identifier>; host=<host>; proto=<http|https>"  
         //https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded
         const string _fwdHeader = "Forwarded";
@@ -44,8 +39,7 @@ namespace TestProject6.Handlers
         /// on HttpRequestMessage below.
         /// </remarks>
         protected override Task<HttpResponseMessage> SendAsync(
-              HttpRequestMessage request, CancellationToken cancellationToken)
-        {
+              HttpRequestMessage request, CancellationToken cancellationToken) {
             // first, let's start with a basic URI based on the server's view of the request
             UriBuilder builder = new UriBuilder(request.RequestUri.Scheme,
                                                 request.RequestUri.Host,
@@ -53,16 +47,14 @@ namespace TestProject6.Handlers
 
             // override host and protocol if found in headers
             // first check the legacy x-forwarded headers
-            if (request.Headers.Contains(_fwdProtoHeader))
-            {
+            if (request.Headers.Contains(_fwdProtoHeader)) {
                 // the protocol - http or https
                 var proto = request.Headers.GetValues(_fwdProtoHeader)
                         .FirstOrDefault(s => !String.IsNullOrEmpty(s));
                 if (proto != null)
                     builder.Scheme = proto;
             }
-            if (request.Headers.Contains(_fwdHostHeader))
-            {
+            if (request.Headers.Contains(_fwdHostHeader)) {
                 // the forwarded host string 
                 var host = request.Headers.GetValues(_fwdHostHeader)
                     .FirstOrDefault(s => !String.IsNullOrEmpty(s));
@@ -70,8 +62,7 @@ namespace TestProject6.Handlers
                     SetHostAndPort(builder, host);
             }
             // next try the newer Forwarded header
-            if (request.Headers.Contains(_fwdHeader))
-            {
+            if (request.Headers.Contains(_fwdHeader)) {
                 // grab the forward host string 
                 var fwd = request.Headers.GetValues(_fwdHeader)
                     .FirstOrDefault(s => !String.IsNullOrEmpty(s))
@@ -80,16 +71,14 @@ namespace TestProject6.Handlers
 
                 // syntax for the Forwarded header: Forwarded: by=<identifier>; for=<identifier>; host=<host>; proto=<http|https>
                 var proto = fwd.FirstOrDefault(s => s.ToLowerInvariant().StartsWith("proto="));
-                if (!String.IsNullOrEmpty(proto))
-                {
+                if (!String.IsNullOrEmpty(proto)) {
                     proto = proto.Substring(6).Trim();
                     if (!String.IsNullOrEmpty(proto))
                         builder.Scheme = proto;
                 }
 
                 var host = fwd.FirstOrDefault(s => s.ToLowerInvariant().StartsWith("host="));
-                if (!String.IsNullOrEmpty(host))
-                {
+                if (!String.IsNullOrEmpty(host)) {
                     host = host.Substring(5).Trim();
                     if (!String.IsNullOrEmpty(host))
                         SetHostAndPort(builder, host);
@@ -105,8 +94,7 @@ namespace TestProject6.Handlers
             return base.SendAsync(request, cancellationToken);
         }
 
-        private static void SetHostAndPort(UriBuilder builder, string host)
-        {
+        private static void SetHostAndPort(UriBuilder builder, string host) {
             var hostAndPort = host.Split(':');
             builder.Host = hostAndPort[0];
             if (hostAndPort.Length > 1)
@@ -119,8 +107,7 @@ namespace TestProject6.Handlers
     /// <summary>
     /// HttpRequestMessage extension to get the base URL of the service from the client's perspective
     /// </summary>
-    public static class HttpRequestMessageBaseUrlExtension
-    {
+    public static class HttpRequestMessageBaseUrlExtension {
         /// <summary>
         /// Retrieves the base URL to use in order to create a "self-referencing URL", a URL
         /// that points at this web service but from the client's perspective, taking into
@@ -137,14 +124,12 @@ namespace TestProject6.Handlers
         /// <param name="request">HttpRequestMessage object.</param>
         /// <returns>Self-referencing base URL for creating another URL that references the same service,
         /// from the original client caller's perspective.</returns>
-        public static Uri GetSelfReferenceBaseUrl(this HttpRequestMessage request)
-        {
+        public static Uri GetSelfReferenceBaseUrl(this HttpRequestMessage request) {
             if (request == null)
                 return null;
 
             if (request.Properties.TryGetValue(ForwardedHeadersHandler.MyClientBaseUrlProperty,
-                out object baseUrl))
-            {
+                out object baseUrl)) {
                 return (Uri)baseUrl;
             }
 
@@ -161,8 +146,7 @@ namespace TestProject6.Handlers
         /// <param name="request">HttpRequestMessage object.</param>
         /// <param name="serverUrl">Uri instance of the server-based URL</param>
         /// <returns>Re-based URL from the original client caller's perspective.</returns>
-        public static Uri RebaseUrlForClient(this HttpRequestMessage request, Uri serverUrl)
-        {
+        public static Uri RebaseUrlForClient(this HttpRequestMessage request, Uri serverUrl) {
             Uri clientBase = GetSelfReferenceBaseUrl(request);
             if (clientBase == null)
                 return null;
