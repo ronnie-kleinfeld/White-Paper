@@ -107,11 +107,10 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="AuthFilters\OLD\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="AuthFilters\AuthorizationFilterAttributeTemplate.cs" />
-    <Compile Include="AuthFilters\OLD\RequireApiKey.cs" />
-    <Compile Include="AuthFilters\OLD\RequireClaim.cs" />
-    <Compile Include="AuthFilters\OLD\RequireHttpsFilter.cs" />
+    <Compile Include="AuthFilters\RequireApiKeyAuthorizationFilterAttribute.cs" />
+    <Compile Include="AuthFilters\RequireHttpsAuthorizationFilterAttribute.cs" />
+    <Compile Include="Controllers\AuthorizationFiltersController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,9 +131,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

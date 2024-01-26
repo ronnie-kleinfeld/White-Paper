@@ -7,12 +7,12 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using TestProject6.Handlers;
 
-namespace TestProject6.AuthFilters.OLD {
+namespace TestProject6.AuthFilters {
     /// <summary>
     ///  Section 7 Excercise solution - AuthZ filter to require api key of a type
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class RequireApiKey : AuthorizationFilterAttribute {
+    public class RequireApiKeyAuthorizationFilterAttribute : AuthorizationFilterAttribute {
         /// <summary>
         /// Hold the type of key the action method requires
         /// </summary>
@@ -21,7 +21,7 @@ namespace TestProject6.AuthFilters.OLD {
         /// <summary>
         /// Constructor taking optional action method key type
         /// </summary>
-        public RequireApiKey(string sType = null) {
+        public RequireApiKeyAuthorizationFilterAttribute(string sType = null) {
             if (sType == "R" || sType == "W" || sType == null)
                 ApiKeyType = sType;
             else
@@ -32,9 +32,9 @@ namespace TestProject6.AuthFilters.OLD {
         /// Validate the api key according to the rules
         /// </summary>
         public static bool IsValidApiKey(string sKey) {
-            return (!String.IsNullOrEmpty(sKey) &&
+            return !string.IsNullOrEmpty(sKey) &&
                 (sKey.StartsWith("R") || sKey.StartsWith("W")) &&
-                sKey.Length == 6);
+                sKey.Length == 6;
         }
         /// <summary>
         /// Called when authorization must be checked; verify the api key is present and 
@@ -56,10 +56,10 @@ namespace TestProject6.AuthFilters.OLD {
             }
 
             // we only need to check for a specific key type if one was required
-            if (!String.IsNullOrEmpty(ApiKeyType)) {
+            if (!string.IsNullOrEmpty(ApiKeyType)) {
                 // check for the specific key type; really only need to check for W action using W key,
                 //  since R actions work with any key, R or W.
-                if ((ApiKeyType.Equals("W") && !sKey.StartsWith("W"))) {
+                if (ApiKeyType.Equals("W") && !sKey.StartsWith("W")) {
                     // return a 403 Forbidden, since the key was not valid for the action
                     actionContext.Response = new HttpResponseMessage(HttpStatusCode.Forbidden) {
                         ReasonPhrase = "Invalid API key"

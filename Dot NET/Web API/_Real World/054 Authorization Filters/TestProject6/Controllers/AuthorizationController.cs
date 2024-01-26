@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using TestProject6.AuthFilters.OLD;
+using TestProject6.AuthFilters;
 
 namespace TestProject6.Controllers {
     [RoutePrefix("authurization")]
@@ -30,13 +30,6 @@ namespace TestProject6.Controllers {
         [Authorize(Roles = "Admin", Users = "userName")]
         public string GetRolesUsers() {
             return "value";
-        }
-
-        // GET /authurization/RequireClaim
-        [HttpGet, Route("RequireClaim")]
-        [RequireClaim("MyCustomClaim", IncludeMissingInResponse = true)]
-        public IEnumerable<string> GetRequireClaim() {
-            return new string[] { User.Identity.Name, User.Identity.AuthenticationType };
         }
     }
 }
