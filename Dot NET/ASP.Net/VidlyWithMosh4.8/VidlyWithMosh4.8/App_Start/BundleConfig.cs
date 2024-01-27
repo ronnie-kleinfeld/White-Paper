@@ -20,7 +20,7 @@ namespace VidlyWithMosh4._8 {
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-vapor.css",
                       "~/Content/site.css"));
         }
     }
