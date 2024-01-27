@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Vidly.Models
-{
-    public class Genre
-    {
+namespace Vidly.Models {
+    public class Genre {
         public byte Id { get; set; }
 
         [Required]

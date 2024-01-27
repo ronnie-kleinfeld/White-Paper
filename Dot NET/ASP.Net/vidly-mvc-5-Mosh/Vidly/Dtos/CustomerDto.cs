@@ -1,10 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Vidly.Dtos
-{
-    public class CustomerDto
-    {
+namespace Vidly.Dtos {
+    public class CustomerDto {
         public int Id { get; set; }
 
         [Required]
@@ -17,7 +15,7 @@ namespace Vidly.Dtos
 
         public MembershipTypeDto MembershipType { get; set; }
 
-//        [Min18YearsIfAMember]
+        //        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
     }
 }

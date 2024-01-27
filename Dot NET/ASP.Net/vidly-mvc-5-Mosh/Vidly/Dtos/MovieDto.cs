@@ -1,10 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Vidly.Dtos
-{
-    public class MovieDto
-    {
+namespace Vidly.Dtos {
+    public class MovieDto {
         public int Id { get; set; }
 
         [Required]

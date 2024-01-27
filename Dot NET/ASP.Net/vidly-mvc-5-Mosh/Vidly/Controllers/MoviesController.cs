@@ -6,37 +6,30 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 
-namespace Vidly.Controllers
-{
-    public class MoviesController : Controller
-    {
+namespace Vidly.Controllers {
+    public class MoviesController : Controller {
         private ApplicationDbContext _context;
 
-        public MoviesController()
-        {
+        public MoviesController() {
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing)
-        {
+        protected override void Dispose(bool disposing) {
             _context.Dispose();
         }
 
-        public ViewResult Index()
-        {
+        public ViewResult Index() {
             if (User.IsInRole(RoleName.CanManageMovies))
                 return View("List");
-                
+
             return View("ReadOnlyList");
         }
 
         [Authorize(Roles = RoleName.CanManageMovies)]
-        public ViewResult New()
-        {
+        public ViewResult New() {
             var genres = _context.Genres.ToList();
 
-            var viewModel = new MovieFormViewModel
-            {
+            var viewModel = new MovieFormViewModel {
                 Genres = genres
             };
 
@@ -44,15 +37,13 @@ namespace Vidly.Controllers
         }
 
         [Authorize(Roles = RoleName.CanManageMovies)]
-        public ActionResult Edit(int id)
-        {
+        public ActionResult Edit(int id) {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel(movie)
-            {
+            var viewModel = new MovieFormViewModel(movie) {
                 Genres = _context.Genres.ToList()
             };
 
@@ -60,8 +51,7 @@ namespace Vidly.Controllers
         }
 
 
-        public ActionResult Details(int id)
-        {
+        public ActionResult Details(int id) {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
 
             if (movie == null)
@@ -73,8 +63,7 @@ namespace Vidly.Controllers
 
 
         // GET: Movies/Random
-        public ActionResult Random()
-        {
+        public ActionResult Random() {
             var movie = new Movie() { Name = "Shrek!" };
             var customers = new List<Customer>
             {
@@ -82,8 +71,7 @@ namespace Vidly.Controllers
                 new Customer { Name = "Customer 2" }
             };
 
-            var viewModel = new RandomMovieViewModel
-            {
+            var viewModel = new RandomMovieViewModel {
                 Movie = movie,
                 Customers = customers
             };
@@ -94,25 +82,19 @@ namespace Vidly.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = RoleName.CanManageMovies)]
-        public ActionResult Save(Movie movie)
-        {
-            if (!ModelState.IsValid)
-            {
-                var viewModel = new MovieFormViewModel(movie)
-                {
+        public ActionResult Save(Movie movie) {
+            if (!ModelState.IsValid) {
+                var viewModel = new MovieFormViewModel(movie) {
                     Genres = _context.Genres.ToList()
                 };
 
                 return View("MovieForm", viewModel);
             }
 
-            if (movie.Id == 0)
-            {
+            if (movie.Id == 0) {
                 movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);
-            }
-            else
-            {
+            } else {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
                 movieInDb.Name = movie.Name;
                 movieInDb.GenreId = movie.GenreId;

@@ -6,20 +6,16 @@ using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
 
-namespace Vidly.Controllers.Api
-{
-    public class CustomersController : ApiController
-    {
+namespace Vidly.Controllers.Api {
+    public class CustomersController : ApiController {
         private ApplicationDbContext _context;
 
-        public CustomersController()
-        {
+        public CustomersController() {
             _context = new ApplicationDbContext();
         }
 
         // GET /api/customers
-        public IHttpActionResult GetCustomers(string query = null)
-        {
+        public IHttpActionResult GetCustomers(string query = null) {
             var customersQuery = _context.Customers
                 .Include(c => c.MembershipType);
 
@@ -29,13 +25,12 @@ namespace Vidly.Controllers.Api
             var customerDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
-            
-            return Ok(customerDtos);    
+
+            return Ok(customerDtos);
         }
 
         // GET /api/customers/1
-        public IHttpActionResult GetCustomer(int id)
-        {
+        public IHttpActionResult GetCustomer(int id) {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
@@ -46,8 +41,7 @@ namespace Vidly.Controllers.Api
 
         // POST /api/customers
         [HttpPost]
-        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
-        {
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto) {
             if (!ModelState.IsValid)
                 return BadRequest();
 
@@ -61,8 +55,7 @@ namespace Vidly.Controllers.Api
 
         // PUT /api/customers/1
         [HttpPut]
-        public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto)
-        {
+        public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto) {
             if (!ModelState.IsValid)
                 return BadRequest();
 
@@ -80,8 +73,7 @@ namespace Vidly.Controllers.Api
 
         // DELETE /api/customers/1
         [HttpDelete]
-        public IHttpActionResult DeleteCustomer(int id)
-        {
+        public IHttpActionResult DeleteCustomer(int id) {
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)

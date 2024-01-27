@@ -1,10 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Vidly.Models
-{
-    public class Rental
-    {
+namespace Vidly.Models {
+    public class Rental {
         public int Id { get; set; }
 
         [Required]
