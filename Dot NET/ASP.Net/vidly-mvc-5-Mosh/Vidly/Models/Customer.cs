@@ -11,7 +11,7 @@ namespace Vidly.Models {
 
         public bool IsSubscribedToNewsletter { get; set; }
 
-        public MembershipTypeEnum MembershipType { get; set; }
+        public MembershipType MembershipType { get; set; }
 
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }

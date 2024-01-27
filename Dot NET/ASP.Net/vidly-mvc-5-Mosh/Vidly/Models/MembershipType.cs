@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models {
-    public class MembershipTypeEnum {
+    public class MembershipType {
         public byte Id { get; set; }
         [Required]
         public string Name { get; set; }
