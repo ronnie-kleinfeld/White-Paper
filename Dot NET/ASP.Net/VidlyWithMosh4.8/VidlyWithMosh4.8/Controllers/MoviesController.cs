@@ -8,5 +8,14 @@ namespace VidlyWithMosh4._8.Controllers {
             var movie = new Movie() { Name = "Shrek!" };
             return View(movie);
         }
+
+        // Get; Movies/Random
+        [Route("movies/GetByReleaseYearMonth/{year}/{month}")]
+        public ActionResult GetByReleaseYearMonth(int year, int month) {
+            var movie = new Movie() { Name = $"Shrek!{year}/{month}" };
+
+            ViewData["Movie"] = movie;
+            return View();
+        }
     }
 }
