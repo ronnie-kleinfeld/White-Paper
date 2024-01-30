@@ -1,0 +1,15 @@
+// create new project
+dotnet new webapp -n HelloCodespace1
+
+// create a certificate
+dotnet dev-certs https
+
+dotnet build
+
+dotnet run
+
+// run the application and if you change file and save it will refresh
+dotnet watch
+
+// create a page
+dotnet new page -n ShowDates --namespace BigStart.Pages.Binding
