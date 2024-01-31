@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  aspnetwebapplicationempty:
+    image: ${DOCKER_REGISTRY-}aspnetwebapplicationempty
+    build:
+      context: .\ASPNETWebApplicationEmpty
+      dockerfile: Dockerfile
+
+  aspnetwebapplicationall:
+    image: ${DOCKER_REGISTRY-}aspnetwebapplicationall
+    build:
+      context: .\ASPNETWebApplicationAll
+      dockerfile: Dockerfile
+
