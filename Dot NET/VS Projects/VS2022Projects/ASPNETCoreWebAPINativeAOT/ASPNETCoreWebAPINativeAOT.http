@@ -1,0 +1,11 @@
+@ASPNETCoreWebAPINativeAOT_HostAddress = http://localhost:5238
+
+GET {{ASPNETCoreWebAPINativeAOT_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{ASPNETCoreWebAPINativeAOT_HostAddress}}/todos/1
+Accept: application/json
+
+###
