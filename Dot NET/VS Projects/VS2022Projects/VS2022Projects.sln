@@ -61,6 +61,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{99BFBB87-2F0E-44B5-9560-705BBBDFA6E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppFramework", "ConsoleAppFramework\ConsoleAppFramework.csproj", "{B5852C31-082D-48E7-B8E3-C68B22D7C3BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +183,10 @@ Global
 		{ED8FFD82-0110-48AD-B84B-7BAB565F7818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8FFD82-0110-48AD-B84B-7BAB565F7818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8FFD82-0110-48AD-B84B-7BAB565F7818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5852C31-082D-48E7-B8E3-C68B22D7C3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5852C31-082D-48E7-B8E3-C68B22D7C3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5852C31-082D-48E7-B8E3-C68B22D7C3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5852C31-082D-48E7-B8E3-C68B22D7C3BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +219,7 @@ Global
 		{2FD96659-F692-4A8B-A5E2-FE5AE4D5E3DF} = {99BFBB87-2F0E-44B5-9560-705BBBDFA6E0}
 		{1FC9D464-3CE2-4072-9174-CFB6F332017A} = {99BFBB87-2F0E-44B5-9560-705BBBDFA6E0}
 		{ED8FFD82-0110-48AD-B84B-7BAB565F7818} = {99BFBB87-2F0E-44B5-9560-705BBBDFA6E0}
+		{B5852C31-082D-48E7-B8E3-C68B22D7C3BF} = {FB157FD2-E42B-4E55-A02E-124704D05D87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6262E8C8-E061-42BC-946C-8B7F84CD6750}
