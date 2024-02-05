@@ -1,4 +1,35 @@
 ﻿@page
 @model RazorPages.Pages.MoviesModel
 @{
+    ViewData["Title"] = "List of all movies";
 }
+
+<h3>@ViewData["Title"]</h3>
+<hr/>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model.Movies) {
+            <tr>
+                <th scope="col">@movie.Id</th>
+                <td>@movie.Title</td>
+                <td>@movie.Rate</td>
+                <td>
+                    <a href="/Movie/@movie.Id" class="btn btn-secondary">Show details></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="position: fixed; bottom: 70px; right: 25px;">
+    <a href="/AddMovie" class="btn btn-success">Add new</a>
+</div>
