@@ -4,8 +4,10 @@
     ViewData["Title"] = "List of all movies";
 }
 
-<h3>@ViewData["Title"]</h3>
+<h3>@ViewData["Title"] - @ViewData["Counter"]</h3>
 <hr/>
+
+<a asp-page-handler="MyMethod">Do something in CSharp</a>
 
 <table class="table table-striped">
     <thead>
