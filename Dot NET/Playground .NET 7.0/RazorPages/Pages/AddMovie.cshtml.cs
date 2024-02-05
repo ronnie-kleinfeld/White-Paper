@@ -18,8 +18,11 @@ namespace RazorPages.Pages {
         public IActionResult OnPost() {
             string value = $"{Title} - {Rate} - {Description}";
 
-            return Page();
-            return Redirect("Moviews");
+            if (!ModelState.IsValid) {
+                return Page();
+            } else {
+                return Redirect("Moviews");
+            }
         }
     }
 }
