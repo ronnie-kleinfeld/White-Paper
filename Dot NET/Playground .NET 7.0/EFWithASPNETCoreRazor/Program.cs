@@ -1,4 +1,5 @@
 using EFWithASPNETCoreRazor.Data;
+using EFWithASPNETCoreRazor.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFWithASPNETCoreRazor {
@@ -8,6 +9,11 @@ namespace EFWithASPNETCoreRazor {
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            //builder.Services.AddTransient // a new instance for each request
+            //builder.Services.AddScoped // a new instance for each page
+            //builder.Services.AddSingleton // a singleton instance
+            builder.Services.AddScoped<IMovieService, MovieService>();
 
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(connectionString));

@@ -1,5 +1,5 @@
-using EFWithASPNETCoreRazor.Data;
 using EFWithASPNETCoreRazor.Data.Model;
+using EFWithASPNETCoreRazor.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,10 +10,10 @@ namespace EFWithASPNETCoreRazor.Pages {
         public int Rate { get; set; }
         public string Description { get; set; }
 
-        private ApplicationDBContext dbContext;
+        private IMovieService movieService;
 
-        public AddMovieModel(ApplicationDBContext dbContext) {
-            this.dbContext = dbContext;
+        public AddMovieModel(IMovieService movieService) {
+            this.movieService = movieService;
         }
 
         public void OnGet() {
@@ -31,10 +31,9 @@ namespace EFWithASPNETCoreRazor.Pages {
                     Rate = Rate,
                     Description = Description
                 };
-                dbContext.Movies.Add(movie);
-                dbContext.SaveChanges();
+                movieService.Add(movie);
 
-                return Redirect("Moviews");
+                return Page();
             }
         }
     }

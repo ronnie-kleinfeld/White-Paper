@@ -7,13 +7,12 @@ namespace RazorPages.Pages {
     public class MovieModel : PageModel {
         public Movie Movie { get; set; }
 
-        //[Route({id})]
         public void OnGet(int id) {
             Movie = new Movie() {
-                Id = 1,
-                Title = "Test",
-                Rate = 100,
-                Description = "Test"
+                Id = id,
+                Title = "Title " + id,
+                Rate = 100 - id,
+                Description = "Description " + id
             };
         }
     }
