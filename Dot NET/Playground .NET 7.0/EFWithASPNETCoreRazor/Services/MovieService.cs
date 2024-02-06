@@ -18,6 +18,7 @@ namespace EFWithASPNETCoreRazor.Services {
             return dbContext.Movies.FirstOrDefault(x => x.Id == id);
         }
 
+
         public List<Movie> GetMovies() {
             return dbContext.Movies.ToList();
         }
