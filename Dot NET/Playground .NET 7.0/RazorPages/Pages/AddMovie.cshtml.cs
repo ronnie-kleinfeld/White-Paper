@@ -19,10 +19,15 @@ namespace RazorPages.Pages {
             string value = $"{Title} - {Rate} - {Description}";
 
             if (!ModelState.IsValid) {
+                tryme();
                 return Page();
             } else {
                 return Redirect("Moviews");
             }
+        }
+
+        public void tryme() {
+            string s = "";
         }
     }
 }

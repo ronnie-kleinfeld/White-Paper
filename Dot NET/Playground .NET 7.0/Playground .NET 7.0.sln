@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPICore", "WebAPICore\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETRazorPages", "ASPNETRazorPages\ASPNETRazorPages.csproj", "{014D3044-53BE-4BED-8517-5AD31EE831BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPages", "RazorPages\RazorPages.csproj", "{7DCC226B-A9F4-44EF-9AF0-8DB572AEC481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "RazorPages\RazorPages.csproj", "{7DCC226B-A9F4-44EF-9AF0-8DB572AEC481}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
