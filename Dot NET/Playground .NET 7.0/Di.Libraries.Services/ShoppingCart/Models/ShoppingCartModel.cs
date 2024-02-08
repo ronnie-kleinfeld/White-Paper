@@ -1,6 +1,6 @@
-﻿using DotNet6.Di.Libraries.Services.Product.Models;
+﻿using Di.Libraries.Services.Product.Models;
 
-namespace DotNet6.Di.Libraries.Services.ShoppingCart.Models {
+namespace Di.Libraries.Services.ShoppingCart.Models {
     public class ShoppingCartModel {
         public Guid Id { get; }
         public IList<ShoppingCartItemModel> Items { get; }

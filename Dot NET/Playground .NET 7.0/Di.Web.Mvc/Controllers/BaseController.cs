@@ -1,9 +1,9 @@
-﻿using DotNet6.Di.Libraries.Services.ShoppingCart;
-using DotNet6.Di.Libraries.Services.Storage;
+﻿using Di.Libraries.Services.ShoppingCart;
+using Di.Libraries.Services.Storage;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace DotNet6.Di.Web.Mvc.Controllers {
+namespace Di.Web.Mvc.Controllers {
     public class BaseController : Controller {
         const string SHOPPING_CART_ID_COOKIE_NAME = "shoppingCartId";
 

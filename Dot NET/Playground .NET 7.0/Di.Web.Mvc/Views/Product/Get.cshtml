@@ -1,5 +1,5 @@
-﻿@using DotNet6.Di.Libraries.Services.Product.Models
-@using DotNet6.Di.Libraries.Services.ShoppingCart
+﻿@using Di.Libraries.Services.Product.Models
+@using Di.Libraries.Services.ShoppingCart
 @model ProductModel
 @if (Model != null) {
     var shoppingCartService = ViewContext.HttpContext.RequestServices.GetRequiredService<IShoppingCartService>();

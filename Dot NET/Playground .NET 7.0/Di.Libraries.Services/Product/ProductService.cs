@@ -1,7 +1,7 @@
-﻿using DotNet6.Di.Libraries.Services.Product.Models;
-using DotNet6.Di.Libraries.Services.Storage;
+﻿using Di.Libraries.Services.Product.Models;
+using Di.Libraries.Services.Storage;
 
-namespace DotNet6.Di.Libraries.Services.Product {
+namespace Di.Libraries.Services.Product {
     public class ProductService : IProductService {
         private readonly IStorageService _storageService;
 

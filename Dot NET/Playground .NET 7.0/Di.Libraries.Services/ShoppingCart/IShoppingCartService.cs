@@ -1,7 +1,7 @@
-﻿using DotNet6.Di.Libraries.Services.Product.Models;
-using DotNet6.Di.Libraries.Services.ShoppingCart.Models;
+﻿using Di.Libraries.Services.Product.Models;
+using Di.Libraries.Services.ShoppingCart.Models;
 
-namespace DotNet6.Di.Libraries.Services.ShoppingCart {
+namespace Di.Libraries.Services.ShoppingCart {
     public interface IShoppingCartService {
         ShoppingCartModel Get();
         void AddProduct(ProductModel product, int quantity);

@@ -1,4 +1,4 @@
-﻿namespace DotNet6.Di.Libraries.Services.Product.Models {
+﻿namespace Di.Libraries.Services.Product.Models {
     public class ProductModel {
         public string Sku { get; }
         public string Name { get; }
