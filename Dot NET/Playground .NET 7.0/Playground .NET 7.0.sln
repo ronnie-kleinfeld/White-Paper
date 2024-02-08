@@ -43,6 +43,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreWebAppRazorPages"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreWebAPI", "ASPNETCoreWebAPI\ASPNETCoreWebAPI.csproj", "{543C526B-975E-40B3-81CA-DB8FCE4A5514}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Libraries.Services", "Di.Libraries.Services\Di.Libraries.Services.csproj", "{5B31ACE5-20D1-4BFE-9760-8B08346B11D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Web.Mvc", "Di.Web.Mvc\Di.Web.Mvc.csproj", "{7C315574-251B-4330-AF5F-45C8377532DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{543C526B-975E-40B3-81CA-DB8FCE4A5514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{543C526B-975E-40B3-81CA-DB8FCE4A5514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{543C526B-975E-40B3-81CA-DB8FCE4A5514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B31ACE5-20D1-4BFE-9760-8B08346B11D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B31ACE5-20D1-4BFE-9760-8B08346B11D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B31ACE5-20D1-4BFE-9760-8B08346B11D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B31ACE5-20D1-4BFE-9760-8B08346B11D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C315574-251B-4330-AF5F-45C8377532DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C315574-251B-4330-AF5F-45C8377532DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C315574-251B-4330-AF5F-45C8377532DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C315574-251B-4330-AF5F-45C8377532DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
