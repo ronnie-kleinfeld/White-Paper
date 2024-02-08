@@ -1,6 +1,6 @@
-﻿using DotNet6.Di.Libraries.Services.Product.Models;
+﻿using Di.Libraries.Services.Product.Models;
 
-namespace DotNet6.Di.Libraries.Services.ShoppingCart.Models {
+namespace Di.Libraries.Services.ShoppingCart.Models {
     public class ShoppingCartItemModel {
         public ProductModel Product { get; }
         public decimal Price { get; protected set; }

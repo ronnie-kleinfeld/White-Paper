@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace DotNet6.Di.Web.Mvc.Controllers {
+namespace Di.Web.Mvc.Controllers {
     public class HomeController : BaseController {
         public HomeController() {
         }

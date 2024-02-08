@@ -1,20 +1,7 @@
-using Di.Libraries.Services.Product;
-using Di.Libraries.Services.ShoppingCart;
-using Di.Libraries.Services.Storage;
-
-namespace Di.Web.Mvc {
-    internal class Program {
-        private static void Main(string[] args) {
+namespace ASPNETCoreWebAppMVC {
+    public class Program {
+        public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Add dependency injection.
-            builder.Services.AddSingleton<IStorageService, StorageService>();
-            builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>(
-                (serviceProvider) => {
-                    return new ShoppingCartService(serviceProvider.GetRequiredService<IStorageService>());
-                }
-                );
-            builder.Services.AddTransient<IProductService, ProductService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

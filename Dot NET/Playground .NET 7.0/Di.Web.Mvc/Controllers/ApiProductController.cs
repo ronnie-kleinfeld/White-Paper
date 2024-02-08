@@ -1,7 +1,7 @@
-﻿using DotNet6.Di.Libraries.Services.Product.Models;
+﻿using Di.Libraries.Services.Product.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotNet6.Di.Web.Mvc.Controllers {
+namespace Di.Web.Mvc.Controllers {
     [Route("api/product")]
     [ApiController]
     public class ApiProductController : ControllerBase {

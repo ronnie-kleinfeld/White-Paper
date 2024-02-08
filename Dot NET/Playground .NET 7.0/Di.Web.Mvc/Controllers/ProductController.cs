@@ -1,8 +1,8 @@
-﻿using DotNet6.Di.Libraries.Services.Product;
-using DotNet6.Di.Libraries.Services.ShoppingCart;
+﻿using Di.Libraries.Services.Product;
+using Di.Libraries.Services.ShoppingCart;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotNet6.Di.Web.Mvc.Controllers {
+namespace Di.Web.Mvc.Controllers {
     [Route("product")]
     public class ProductController : BaseController {
         private readonly IProductService _productService;

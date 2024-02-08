@@ -1,9 +1,9 @@
-﻿using DotNet6.Di.Libraries.Services.Product;
-using DotNet6.Di.Libraries.Services.Product.Models;
-using DotNet6.Di.Libraries.Services.ShoppingCart.Models;
-using DotNet6.Di.Libraries.Services.Storage;
+﻿using Di.Libraries.Services.Product;
+using Di.Libraries.Services.Product.Models;
+using Di.Libraries.Services.ShoppingCart.Models;
+using Di.Libraries.Services.Storage;
 
-namespace DotNet6.Di.Libraries.Services.ShoppingCart {
+namespace Di.Libraries.Services.ShoppingCart {
     public class ShoppingCartService : IShoppingCartService {
         private readonly IProductService _productService;
         private readonly IStorageService _storageService;

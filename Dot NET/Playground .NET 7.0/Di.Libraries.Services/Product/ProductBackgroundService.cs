@@ -1,11 +1,11 @@
-﻿using DotNet6.Di.Libraries.Services.Product.Models;
-using DotNet6.Di.Libraries.Services.Storage;
+﻿using Di.Libraries.Services.Product.Models;
+using Di.Libraries.Services.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace DotNet6.Di.Libraries.Services.Product {
+namespace Di.Libraries.Services.Product {
     public class ProductBackgroundService : IHostedService {
         private readonly IServiceProvider _serviceProvider;
         private readonly IStorageService _storageService;
