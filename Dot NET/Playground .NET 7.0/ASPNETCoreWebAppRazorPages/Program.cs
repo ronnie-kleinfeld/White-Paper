@@ -5,6 +5,9 @@ namespace ASPNETCoreWebAppRazorPages {
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            // add logging
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
 
             var app = builder.Build();
 

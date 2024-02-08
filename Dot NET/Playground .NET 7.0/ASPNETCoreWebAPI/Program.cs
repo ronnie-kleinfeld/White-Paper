@@ -1,10 +1,12 @@
-
 namespace ASPNETCoreWebAPI {
     public class Program {
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            // add logging
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -25,6 +27,8 @@ namespace ASPNETCoreWebAPI {
 
 
             app.MapControllers();
+
+            app.Logger.LogInformation("App ready to run");
 
             app.Run();
         }
