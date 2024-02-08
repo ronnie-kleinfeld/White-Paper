@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNETCoreWebAPI.Controllers {
+    [ApiController]
+    [Route("[controller]")]
     public class LogController : Controller {
         private readonly ILogger<LogController> _logger;
 
@@ -8,10 +10,11 @@ namespace ASPNETCoreWebAPI.Controllers {
             _logger = logger;
         }
 
-        public IActionResult Index() {
-            _logger.Log(LogLevel.Information, "Ronnie Kleinfled");
+        [HttpGet(Name = "Log")]
+        public IEnumerable<int> Get() {
+            _logger.LogInformation("Ronnie Kleinfeld");
 
-            return View();
+            return Enumerable.Range(1, 5);
         }
     }
 }
