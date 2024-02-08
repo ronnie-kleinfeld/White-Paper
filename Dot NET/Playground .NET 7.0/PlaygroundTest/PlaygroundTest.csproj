@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj" />
+    <ProjectReference Include="..\Playground .NET 7.0\Playground .NET 7.0.csproj" />
   </ItemGroup>
 
   <ItemGroup>
