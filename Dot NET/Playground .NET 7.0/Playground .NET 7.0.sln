@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "RazorPages\Ra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFWithASPNETCoreRazor", "EFWithASPNETCoreRazor\EFWithASPNETCoreRazor.csproj", "{186CAF40-46B2-462E-B9EB-565E3A5449EB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Libraries.Services", "\\Mac\AllFiles\Users\ronniekleinfeld\Dev\White-Paper\Dot NET\Playground .NET 7.0\Di.Libraries.Services\Di.Libraries.Services.csproj", "{8CFD9948-8572-467D-855B-3FDBB6BA5F2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Web.Mvc", "\\Mac\AllFiles\Users\ronniekleinfeld\Dev\White-Paper\Dot NET\Playground .NET 7.0\Di.Web.Mvc\Di.Web.Mvc.csproj", "{7B0F85CC-EB25-459C-8D04-A163AEC3E857}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{186CAF40-46B2-462E-B9EB-565E3A5449EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{186CAF40-46B2-462E-B9EB-565E3A5449EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186CAF40-46B2-462E-B9EB-565E3A5449EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CFD9948-8572-467D-855B-3FDBB6BA5F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CFD9948-8572-467D-855B-3FDBB6BA5F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CFD9948-8572-467D-855B-3FDBB6BA5F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CFD9948-8572-467D-855B-3FDBB6BA5F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B0F85CC-EB25-459C-8D04-A163AEC3E857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0F85CC-EB25-459C-8D04-A163AEC3E857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0F85CC-EB25-459C-8D04-A163AEC3E857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0F85CC-EB25-459C-8D04-A163AEC3E857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
