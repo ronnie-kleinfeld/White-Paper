@@ -37,21 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "RazorPages\Ra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFWithASPNETCoreRazor", "EFWithASPNETCoreRazor\EFWithASPNETCoreRazor.csproj", "{186CAF40-46B2-462E-B9EB-565E3A5449EB}"
 EndProject
-<<<<<<< HEAD
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Libraries.Services", "\\Mac\AllFiles\Users\ronniekleinfeld\Dev\White-Paper\Dot NET\Playground .NET 7.0\Di.Libraries.Services\Di.Libraries.Services.csproj", "{51F6B0E6-6588-4B2F-A856-E6BA8A84D7B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreWebAppMVC", "ASPNETCoreWebAppMVC\ASPNETCoreWebAppMVC.csproj", "{E73A9695-83BC-4B03-BACD-09A2BE51A57C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Web.Mvc", "\\Mac\AllFiles\Users\ronniekleinfeld\Dev\White-Paper\Dot NET\Playground .NET 7.0\Di.Web.Mvc\Di.Web.Mvc.csproj", "{80D23965-C01B-4522-902A-0374C97DDA3A}"
-=======
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Libraries.Services", "Di.Libraries.Services\Di.Libraries.Services.csproj", "{E02815DB-59DC-4FBC-97EC-0B26EEF407FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreWebAppRazorPages", "ASPNETCoreWebAppRazorPages\ASPNETCoreWebAppRazorPages.csproj", "{6C48FBB6-26C2-4659-88DD-F8AFAA4F0113}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Di.Web.Mvc", "Di.Web.Mvc\Di.Web.Mvc.csproj", "{B6C7EF11-8DF9-47A6-BA1D-3F44CB336465}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCoreWebAppMVC", "ASPNETCoreWebAppMVC\ASPNETCoreWebAppMVC.csproj", "{E73A9695-83BC-4B03-BACD-09A2BE51A57C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCoreWebAppRazorPages", "ASPNETCoreWebAppRazorPages\ASPNETCoreWebAppRazorPages.csproj", "{6C48FBB6-26C2-4659-88DD-F8AFAA4F0113}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCoreWebAPI", "ASPNETCoreWebAPI\ASPNETCoreWebAPI.csproj", "{543C526B-975E-40B3-81CA-DB8FCE4A5514}"
->>>>>>> 2a7efb743497ad60ed6cf8bea71377ebf3fd081a
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreWebAPI", "ASPNETCoreWebAPI\ASPNETCoreWebAPI.csproj", "{543C526B-975E-40B3-81CA-DB8FCE4A5514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,24 +117,6 @@ Global
 		{186CAF40-46B2-462E-B9EB-565E3A5449EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{186CAF40-46B2-462E-B9EB-565E3A5449EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186CAF40-46B2-462E-B9EB-565E3A5449EB}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
-		{51F6B0E6-6588-4B2F-A856-E6BA8A84D7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51F6B0E6-6588-4B2F-A856-E6BA8A84D7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51F6B0E6-6588-4B2F-A856-E6BA8A84D7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51F6B0E6-6588-4B2F-A856-E6BA8A84D7B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80D23965-C01B-4522-902A-0374C97DDA3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80D23965-C01B-4522-902A-0374C97DDA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80D23965-C01B-4522-902A-0374C97DDA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80D23965-C01B-4522-902A-0374C97DDA3A}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
-		{E02815DB-59DC-4FBC-97EC-0B26EEF407FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E02815DB-59DC-4FBC-97EC-0B26EEF407FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E02815DB-59DC-4FBC-97EC-0B26EEF407FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E02815DB-59DC-4FBC-97EC-0B26EEF407FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6C7EF11-8DF9-47A6-BA1D-3F44CB336465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6C7EF11-8DF9-47A6-BA1D-3F44CB336465}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6C7EF11-8DF9-47A6-BA1D-3F44CB336465}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6C7EF11-8DF9-47A6-BA1D-3F44CB336465}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E73A9695-83BC-4B03-BACD-09A2BE51A57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E73A9695-83BC-4B03-BACD-09A2BE51A57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73A9695-83BC-4B03-BACD-09A2BE51A57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -157,7 +129,6 @@ Global
 		{543C526B-975E-40B3-81CA-DB8FCE4A5514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{543C526B-975E-40B3-81CA-DB8FCE4A5514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{543C526B-975E-40B3-81CA-DB8FCE4A5514}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> 2a7efb743497ad60ed6cf8bea71377ebf3fd081a
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
