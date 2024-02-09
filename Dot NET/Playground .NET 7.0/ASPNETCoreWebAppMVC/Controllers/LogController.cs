@@ -8,8 +8,8 @@ namespace ASPNETCoreWebAppMVC.Controllers {
             _logger = logger;
         }
 
-        public IActionResult Index() {
-            _logger.Log(LogLevel.Information, "Ronnie Kleinfled");
+        public IActionResult LogInformation() {
+            _logger.LogInformation("Ronnie Kleinfeld");
 
             return View();
         }

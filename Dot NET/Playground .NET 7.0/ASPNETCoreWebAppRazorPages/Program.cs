@@ -27,6 +27,8 @@ namespace ASPNETCoreWebAppRazorPages {
 
             app.MapRazorPages();
 
+            app.Logger.LogInformation("App ready to run");
+
             app.Run();
         }
     }

@@ -29,6 +29,8 @@ namespace ASPNETCoreWebAppMVC {
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            app.Logger.LogInformation("App ready to run");
+
             app.Run();
         }
     }

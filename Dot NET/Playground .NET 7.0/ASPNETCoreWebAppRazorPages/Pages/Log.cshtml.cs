@@ -9,6 +9,7 @@ namespace ASPNETCoreWebAppRazorPages.Pages {
         }
 
         public void OnGet() {
+            _logger.LogInformation("Ronnie Kleinfeld");
         }
     }
 }
