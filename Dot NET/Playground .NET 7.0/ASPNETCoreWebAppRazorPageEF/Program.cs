@@ -1,9 +1,15 @@
+using ASPNETCoreWebAppRazorPageEF.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace ASPNETCoreWebAppRazorPageEF {
     public class Program {
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(connectionString));
+
             builder.Services.AddRazorPages();
 
             var app = builder.Build();

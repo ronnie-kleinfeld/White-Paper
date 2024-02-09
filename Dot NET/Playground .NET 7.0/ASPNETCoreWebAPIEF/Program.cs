@@ -1,3 +1,5 @@
+using ASPNETCoreWebAPIEF.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASPNETCoreWebAPIEF {
     public class Program {
@@ -5,6 +7,8 @@ namespace ASPNETCoreWebAPIEF {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(connectionString));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
