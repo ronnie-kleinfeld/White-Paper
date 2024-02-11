@@ -8,6 +8,7 @@ namespace ASPNETCoreWebAppMVC.Controllers {
             _logger = logger;
         }
 
+        // /Log/LogInformation
         public IActionResult LogInformation() {
             _logger.LogInformation("Ronnie Kleinfeld");
 
