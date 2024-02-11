@@ -1,0 +1,247 @@
+<html>
+
+<body>
+        <h1>מבנה</h1>
+        <table style="border: 2px solid;">
+                <tr>
+                        <td>main<br>
+                                פעולה חיצונית<br>
+                                פעולה חיצונית<br>
+                                <table>
+                                        <tr>
+                                                <td style="border: 2px solid;">
+                                                        מחלקה<br>
+                                                        תכונות<br>
+                                                        בנאי<br>
+                                                        פעולה פנימית<br>
+                                                        פעולה פנימית<br>
+                                                </td>
+                                                <td style="border: 2px solid;">
+                                                        מחלקה<br>
+                                                        תכונות<br>
+                                                        בנאי<br>
+                                                        פעולה פנימית<br>
+                                                        פעולה פנימית<br>
+                                                </td>
+                                                <td style="border: 2px solid;">
+                                                        מחלקה<br>
+                                                        תכונות<br>
+                                                        בנאי<br>
+                                                        פעולה פנימית<br>
+                                                        פעולה פנימית<br>
+                                                </td>
+                                        </tr>
+                                </table>
+                        </td>
+                </tr>
+        </table>
+        <hr>
+
+        <h1>משתנים</h1>
+        <code>
+                <pre>
+int i = 0;              // 0
+double i = 0;           // 0.0
+String str = "";
+char c = '';
+Booolean b = true;      // false;
+                </pre>
+        </code>
+        <hr>
+
+        <h1>מערך</h1>
+        <table border="1px">
+                <tr>
+                        <td>a</td>
+                        <td>b</td>
+                        <td>c</td>
+                        <td>d</td>
+                        <td>e</td>
+                        <td>f</td>
+                </tr>
+                <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                </tr>
+        </table>
+        <code>
+                <pre>
+arr.length = 6
+arr[0] = 'a'
+arr[3] = 'd'
+                </pre>
+        </code>
+        <code>
+                <h2>הגדרת מערך</h2>
+                <h3>TYPE[] arr = new TYPE[3];</h3>
+                <pre>
+int[] arri = new int[3];                // [0, 0, 0]
+String[] arrstr = new String[3];        // [null, null, null]
+char[] arrc = new char[3];              // [, , ]
+Boolean[] arrb = new Boolean[3];        // [null, null, null]
+
+Box[] arrbox = new Box[3];              // [null, null, null]
+                </pre>
+        </code>
+        <hr>
+
+        <h2>ריצה על מערך</h2>
+        <h3>ריצה קדימה על מערך</h3>
+        <code>
+                <pre>
+public static void ForOnArrayBeginToEnd(int[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+        int item = arr[i];
+        System.out.println(item);
+    }
+}
+                </pre>
+        </code>
+        <h3>ריצה רוורס על מערך</h3>
+        <code>
+                <pre>
+public static void ForOnArrayEndToBegin(int[] arr) {
+    for (int i = arr.length - 1; i >= 0; i--) {
+        int item = arr[i];
+        System.out.println(item);
+    }
+}
+                </pre>
+        </code>
+        <h3>ריצה זוגי/אי זוגי על מערך</h3>
+        <code>
+                <pre>
+public static void ForOnArrayEvenOdd(int[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+        int item=arr[index];
+        if (item % 2==0) {
+            System.out.println(item + " זוגי" );
+        } else {
+            System.out.println(item + " אי זוגי" );
+        }
+    }
+}
+                </pre>
+        </code>
+
+        <h3>ריצה חצי / חצי על מערך</h3>
+        <code>
+                <pre>
+public static void WhileOnArrayHalfAndHalf(int[] arr) {
+    int length = arr.length;
+    int index = 0;
+ 
+    while (index < length) {
+        int item=arr[index];
+        if (index < length / 2) {
+            System.out.println(item + " top" );
+        } else if (length%2 == 1 && index == length / 2) {
+            System.out.println(item + " middle" );
+        } else if (index >= length / 2) {
+            System.out.println(item + " bottom");
+        } 
+    
+        index++;
+    }
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h2>מחיקת איבר במערך</h2>
+        <code>
+                <pre>
+public static int[] RemoveByIndex(int[] arr, int removeIndex) {
+    int[] newArr = new int[arr.length - 1];
+    int newIndex = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+        if (i !=removeIndex) {
+            newArr[newIndex++]=arr[i];
+        }
+    }
+    return newArr;
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h2>מיון איברים</h2>
+        <hr>
+
+        <h2>חיפוש איבר</h2>
+        חיפוש לפי תכונה של איבר
+        <hr>
+
+        <h1>סיבוכיות</h1>
+        <ul>
+                <li>O - סיבוכיות</li>
+                <li>N - מספר העצמים</li>
+                <br>
+                <li> O(1) - ארון ספציפי</li>
+                <li> O(N) - חיפוש בכל הארונות</li>
+                <li> O(2N) - חיפוש כפול, לדוגמה מיון</li>
+                <li> O(N^2) -</li>
+        </ul>
+        <hr>
+
+        <h1>פעולה</h1>
+        כתוב פעולה חיצונית / פנימית המקבלת... ומחזירה...<br>
+        public<br>
+        חיצונית static<br>
+        מחזירה TYPE<br>
+        שם NAME<br>
+        מחזירה (TYPE name1, TYPE name2, TYPE name3);<br>
+
+        <code>
+                <pre>
+public static TYPE NAME(TYPE var1, TYPE, var2) {
+    TYPE result;
+
+
+
+    return result;
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h1>מחלקה</h1>
+        <h2>תכונות</h2>
+        <code>
+                <pre>
+public class CLASS_NAME {
+    public String color;
+    public int width;
+    public int height;
+}
+                </pre>
+        </code>
+
+        <h2>בנאי</h2>
+        <code>
+                <pre>
+public CLASS_NAME() {
+
+}
+
+public CLASS_NAME(String color, int width, int height) {
+    this.color = color;
+    this.width = width;
+    this.height = height;
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h1>מעקב אחרי משתנים בריצה של תוכנית</h1>
+
+        <hr>
+
+</body>
+
+</html>

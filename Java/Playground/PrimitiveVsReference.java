@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.awt.*;
 
-public class _PrimitiveVsReference {
+public class PrimitiveVsReference {
     public static void main(String[] args) {
         int x = 5;
         int y = x;

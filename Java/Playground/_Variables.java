@@ -1,29 +1,29 @@
-import java.util.Date;
+import java.util.Arrays;
 
 public class _Variables {
     public static void main(String[] args) {
-        System.out.println("Variables");
+        int i = 0;
+        double d = 0;
+        String str = "";
+        char c = ' ';
+        Boolean b = true; // false;
 
-        int age = 30;
-        System.out.println(age); // 30
+        System.out.println(i);
+        System.out.println(d);
+        System.out.println(str);
+        System.out.println(c);
+        System.out.println(b);
 
-        age = 35;
-        System.out.println(age); // 35
+        int[] arri = new int[3];
+        String[] arrstr = new String[3];
+        char[] arrc = new char[3];
+        Boolean[] arrb = new Boolean[3];
+        _Rect[] arrr = new _Rect[3];
 
-        int age2 = age;
-        System.out.println(age2); // 35
-
-        // primitive types
-        byte floor = 30;
-        int number = 12345;
-        long count = 3123456789L; // L
-        double multiple = 5.44;
-        float price = 10.99F; // F
-        char letter = 'R';
-        boolean canVote = true; // false
-
-        // reference types
-        Date now = new Date();
-        System.out.println(now); // Thu Nov 02 18:38:10 IST 2023
+        System.out.println(Arrays.toString(arri));
+        System.out.println(Arrays.toString(arrstr));
+        System.out.println(Arrays.toString(arrc));
+        System.out.println(Arrays.toString(arrb));
+        System.out.println(Arrays.toString(arrr));
     }
 }

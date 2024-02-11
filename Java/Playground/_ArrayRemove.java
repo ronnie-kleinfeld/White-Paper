@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ArrayRemove {
+public class _ArrayRemove {
     public static void main(String[] args) {
         RemoveByIndex(new int[] { 0 }, 0);
         RemoveByIndex(new int[] { 0, 1 }, 0);
@@ -19,8 +19,6 @@ public class ArrayRemove {
                 newArr[newIndex++] = arr[i];
             }
         }
-
-        System.out.println(Arrays.toString(arr) + " " + Arrays.toString(newArr));
 
         return newArr;
     }

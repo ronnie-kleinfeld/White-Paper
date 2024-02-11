@@ -1,4 +1,4 @@
-public class ArrayWhile {
+public class _ArrayLoop {
     public static void main(String[] args) {
         ForOnArrayBeginToEnd(new int[] { 1, 2, 3, 4, 5 });
         ForOnArrayEndToBegin(new int[] { 1, 2, 3, 4, 5 });

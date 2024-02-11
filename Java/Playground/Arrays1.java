@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class _Arrays {
+public class Arrays1 {
     public static void main(String[] args) {
         // array of int
         int[] numbers = new int[5];
@@ -25,6 +25,5 @@ public class _Arrays {
         // swap in array
         String[] kids = { "Yossi", "Danny" };
         System.out.println(Arrays.toString(kids));
-
     }
 }
