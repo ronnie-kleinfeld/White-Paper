@@ -1,90 +1,360 @@
-<html>
+<html lang="he" dir="rtl">
+
+<head>
+        <style>
+                table.b {
+                        border: 1px solid;
+                }
+
+                tr.b {
+                        border: 1px solid;
+                }
+
+                td.b {
+                        border: 1px solid;
+                }
+
+                td.b2 {
+                        border: 1px solid;
+                }
+
+                td.bc {
+                        border: 1px solid;
+                        text-align: center;
+                }
+
+                code {
+                        direction: ltr;
+                }
+        </style>
+</head>
 
 <body>
         <h1>מבנה</h1>
-        <table style="border: 2px solid;">
+        <table class="b">
                 <tr>
                         <td>main<br>
                                 פעולה חיצונית<br>
                                 פעולה חיצונית<br>
                                 <table>
-                                        <tr>
-                                                <td style="border: 2px solid;">
-                                                        מחלקה<br>
-                                                        תכונות<br>
-                                                        בנאי<br>
-                                                        פעולה פנימית<br>
-                                                        פעולה פנימית<br>
-                                                </td>
-                                                <td style="border: 2px solid;">
-                                                        מחלקה<br>
-                                                        תכונות<br>
-                                                        בנאי<br>
-                                                        פעולה פנימית<br>
-                                                        פעולה פנימית<br>
-                                                </td>
-                                                <td style="border: 2px solid;">
-                                                        מחלקה<br>
-                                                        תכונות<br>
-                                                        בנאי<br>
-                                                        פעולה פנימית<br>
-                                                        פעולה פנימית<br>
-                                                </td>
-                                        </tr>
-                                </table>
-                        </td>
+                                        <td class="b">
+                                                מחלקה<br>
+                                                תכונות<br>
+                                                בנאי<br>
+                                                פעולה פנימית<br>
+                                                פעולה פנימית<br>
+                                        </td>
+                                        <td class="b">
+                                                מחלקה<br>
+                                                תכונות<br>
+                                                בנאי<br>
+                                                פעולה פנימית<br>
+                                                פעולה פנימית<br>
+                                        </td>
+                                        <td class="b">
+                                                מחלקה<br>
+                                                תכונות<br>
+                                                בנאי<br>
+                                                פעולה פנימית<br>
+                                                פעולה פנימית<br>
+                                        </td>
                 </tr>
         </table>
+        </td>
+        </tr>
+        </table>
+        <hr>
+        <h1>מחלקה</h1>
+        <code>
+                <pre>
+public class CLASS_NAME {
+                </pre>
+        </code>
+        <hr>
+        <h2>תכונות</h2>
+        <code>
+                <pre>
+    public String color;
+    public int width;
+    public int height;
+                </pre>
+        </code>
         <hr>
 
-        <h1>משתנים</h1>
+        <h2>בנאי</h2>
+        <code>
+                <pre>
+    public CLASS_NAME() { 
+ 
+    }
+
+    public CLASS_NAME(String color, int width, int height) {
+        this.color = color;
+        this.width = width;
+        this.height = height;
+    }
+                </pre>
+        </code>
+        <hr>
+
+        <h2>בנאי</h2>
+        <code>
+                <pre>
+    public int add(int number1, int number2) {
+        return number1 + number2;
+    }
+                </pre>
+        </code>
+        <hr>
+
+        <h2>פעולה פנימית או חיצונית</h2>
+        כתוב פעולה חיצונית / פנימית המקבלת... ומחזירה...<br>
+
+        <code>
+                <pre>
+<table width="100%" class="b">
+        <tr>
+                <td>public</td>
+                <td>static</td>
+                <td>String</td>
+                <td>ToString</td>
+                <td>(TYPE var1, TYPE var2)</td>
+                <td>{ .. }</td>
+                <td dir="rtl" >פעולה חיצונית</td>
+        </tr>
+        <tr>
+                <td>public</td>
+                <td></td>
+                <td>String</td>
+                <td>toString</td>
+                <td>(TYPE var1, TYPE var2)</td>
+                <td>{ .. }</td>
+                <td dir="rtl">פעולה פנימית</td>
+        </tr>
+        <tr>
+                <td>public</td>
+                <td></td>
+                <td>void</td>
+                <td>do</td>
+                <td>(TYPE var1, TYPE var2)</td>
+                <td>{ .. }</td>
+                <td dir="rtl">מחזירה כלום</td>
+        </tr>
+</table>
+public TYPE NAME(TYPE var1, TYPE, var2) {
+    TYPE result;
+
+    .
+    .
+
+    return result;
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h2>מחלקה BOX</h2>
+        <code>
+                <pre>
+public class Box {
+    public String color;
+    public int width;
+    public int height;
+
+    public Box() {
+    }
+
+    public Box(String color, int width, int height) {
+        this.color = color;
+        this.width = width;
+        this.height = height;
+    }
+
+    public int Area() {
+        return width * height;
+    }
+
+    public String ToString() {
+        return "Rectangle, Color:" + color + " width:" + width + " height:" + height;
+    }
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h1>משתנים פרימיטיבים</h1>
+        <h2>הגדרת משתנה פרימיטיבי</h2>
         <code>
                 <pre>
 int i = 0;              // 0
-double i = 0;           // 0.0
+double d = 0;           // 0.0
 String str = "";
 char c = '';
 Booolean b = true;      // false;
                 </pre>
         </code>
         <hr>
-
-        <h1>מערך</h1>
-        <table border="1px">
-                <tr>
-                        <td>a</td>
-                        <td>b</td>
-                        <td>c</td>
-                        <td>d</td>
-                        <td>e</td>
-                        <td>f</td>
-                </tr>
-                <tr>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                </tr>
-        </table>
+        <h2>הגדרת אובייקט</h2>
         <code>
                 <pre>
-arr.length = 6
-arr[0] = 'a'
-arr[3] = 'd'
+Box box = new Box();
+Box box = new Box("blue", 10, 15);
                 </pre>
         </code>
-        <code>
-                <h2>הגדרת מערך</h2>
-                <h3>TYPE[] arr = new TYPE[3];</h3>
-                <pre>
-int[] arri = new int[3];                // [0, 0, 0]
-String[] arrstr = new String[3];        // [null, null, null]
-char[] arrc = new char[3];              // [, , ]
-Boolean[] arrb = new Boolean[3];        // [null, null, null]
+        <hr>
 
-Box[] arrbox = new Box[3];              // [null, null, null]
+        <h2>הגדרת מערך של משתנים פרימיטיביים</h2>
+        <code>
+                <h3>TYPE[] arr = new TYPE[length];</h3>
+                <pre>
+int[] arri = new int[2];                          // [0, 0]
+int[] arri = new int[2] {1, 2};                   // [1, 2]<br>
+double[] arrd = new double[2];                    // [0.0, 0.0]
+double[] arrd = new double[2] {1.2, 2.3};         // [1.2, 2.3]<br>
+String[] arrstr = new String[2];                  // [null, null]
+String[] arrstr = new String[2] {"ab", "cd"};     // ["ab", "cd"]<br>
+char[] arrc = new char[2];                        // [, ]
+char[] arrc = new char[2] {'a', 'b'}              // ['a', 'b']<br>
+Boolean[] arrb = new Boolean[2];                  // [null, null]
+Boolean[] arrb = new Boolean[2] {true, false};    // [true, false]<br>
+                </pre>
+        </code>
+        <hr>
+        <code>
+                <pre>
+String[] arrstr = new String[4] {"Pasta", "Steak", "Bread", "Bamba"};
+arr.length = 4
+arr[0] = "Pasta"
+arr[3] = "Bamba"
+arr[arr.length - 1] = "Bamba"
+                </pre>
+        </code>
+        <div dir="ltr">
+                <table class="b" width="50%">
+                        <tr>
+                                <td class="bc">"Pasta"</td>
+                                <td class="bc">"Steak"</td>
+                                <td class="bc">"Bread"</td>
+                                <td class="bc">"Bamba"</td>
+                        </tr>
+                        <tr>
+                                <td class="bc">0</td>
+                                <td class="bc">1</td>
+                                <td class="bc">2</td>
+                                <td class="bc">3</td>
+                        </tr>
+                </table>
+        </div>
+        <hr>
+
+        <h2>הגדרת מערך של אובייקטים</h2>
+        <code>
+                <h3>TYPE[] arr = new TYPE[length];</h3>
+                <pre>
+Box[] boxes = new Box[2];                          // [0, 0]
+Box[] boxes = new Box[2];                          // [Box.., Box..]
+                </pre>
+        </code>
+        <hr>
+        <code>
+                <pre>
+Box[] boxes = new Box[2] {
+        new Box("Red", 10, 15),
+        new Box("Green", 23, 76),
+        new Box("Blue", 43, 56),
+        new Box("Yellow", 12, 32)};
+boxes.length = 4
+boxes[0] = Box("Red", 10, 15)
+boxes[0].Color = Red
+boxes[0].Width = 10
+boxes[boxes.length - 1].Color = "Yellow"
+                </pre>
+        </code>
+        <div dir="ltr">
+                <table class="b" width="75%">
+                        <tr>
+                                <td class="b2">
+                                        <table style="width:100%;">
+                                                <tr>
+                                                        <td class="bc" style="border-bottom:0px;">Box
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td class="b2">Color = "Red"<br>
+                                                                Width = 10<br>
+                                                                Height = 15
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                </td>
+                                <td class="b2">
+                                        <table style="width:100%;">
+                                                <tr>
+                                                        <td class="bc" style="border-bottom:0px;">Box
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td class="b2">Color = "Green"<br>
+                                                                Width = 23<br>
+                                                                Height = 76
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                </td>
+                                <td class="b2">
+                                        <table style="width:100%;">
+                                                <tr>
+                                                        <td class="bc" style="border-bottom:0px;">Box
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td class="b2">Color = "Blue"<br>
+                                                                Width = 43<br>
+                                                                Height = 56
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                </td>
+                                <td class="b2">
+                                        <table style="width:100%;">
+                                                <tr>
+                                                        <td class="bc" style="border-bottom:0px;">Box
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td class="b2">Color = "Yellow"<br>
+                                                                Width = 12<br>
+                                                                Height = 32
+                                                        </td>
+                                                </tr>
+                                        </table>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td class="bc">0</td>
+                                <td class="bc">1</td>
+                                <td class="bc">2</td>
+                                <td class="bc">3</td>
+                        </tr>
+                </table>
+        </div>
+        <hr>
+
+        <h2>הגדרת מערך</h2>
+        <code>
+                <h3>TYPE[] arr = new TYPE[length];</h3>
+                <pre>
+int[] arri = new int[2];                          // [0, 0]
+int[] arri = new int[2] {1, 2};                   // [1, 2]<br>
+String[] arrstr = new String[2];                  // [null, null]
+String[] arrstr = new String[2] {"ab", "cd"};     // ["ab", "cd"]<br>
+char[] arrc = new char[2];                        // [, ]
+char[] arrc = new char[2] {'a', 'b'}              // ['a', 'b']<br>
+Boolean[] arrb = new Boolean[2];                  // [null, null]
+Boolean[] arrb = new Boolean[2] {true, false};    // [true, false]<br>
+
+Box[] arrbox = new Box[2];                        // [null, null]
+Box[] arrbox = new Box[2] {new Box(), new Box()}  // [Box.., Box..]
                 </pre>
         </code>
         <hr>
@@ -93,60 +363,57 @@ Box[] arrbox = new Box[3];              // [null, null, null]
         <h3>ריצה קדימה על מערך</h3>
         <code>
                 <pre>
-public static void ForOnArrayBeginToEnd(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-        int item = arr[i];
-        System.out.println(item);
-    }
+ for (int i = 0; i < arr.length; i++) {
+    int item = arr[i];
+    System.out.println(item);
 }
                 </pre>
         </code>
+        <hr>
+
         <h3>ריצה רוורס על מערך</h3>
         <code>
                 <pre>
-public static void ForOnArrayEndToBegin(int[] arr) {
-    for (int i = arr.length - 1; i >= 0; i--) {
-        int item = arr[i];
-        System.out.println(item);
-    }
+for (int i = arr.length - 1; i >= 0; i--) {
+    int item = arr[i];
+    System.out.println(item);
 }
                 </pre>
         </code>
+        <hr>
+
         <h3>ריצה זוגי/אי זוגי על מערך</h3>
         <code>
                 <pre>
-public static void ForOnArrayEvenOdd(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-        int item=arr[index];
-        if (item % 2==0) {
-            System.out.println(item + " זוגי" );
-        } else {
-            System.out.println(item + " אי זוגי" );
-        }
+for (int i = 0; i < arr.length; i++) {
+    int item=arr[index];
+    if (item % 2 == 0) {
+        System.out.println(item + " זוגי" );
+    } else {
+        System.out.println(item + " אי זוגי" );
     }
 }
                 </pre>
         </code>
+        <hr>
 
         <h3>ריצה חצי / חצי על מערך</h3>
         <code>
                 <pre>
-public static void WhileOnArrayHalfAndHalf(int[] arr) {
-    int length = arr.length;
-    int index = 0;
+int length = arr.length;
+int index = 0;
  
-    while (index < length) {
-        int item=arr[index];
-        if (index < length / 2) {
-            System.out.println(item + " top" );
-        } else if (length%2 == 1 && index == length / 2) {
-            System.out.println(item + " middle" );
-        } else if (index >= length / 2) {
-            System.out.println(item + " bottom");
-        } 
-    
-        index++;
-    }
+while (index < length) {
+    int item=arr[index];
+    if (index < length / 2) {
+        System.out.println(item + " top" );
+    } else if (length % 2 == 1 && index == length / 2) {
+        System.out.println(item + " middle" );
+    } else if (index >= length / 2) {
+        System.out.println(item + " bottom");
+    } 
+
+    index++;
 }
                 </pre>
         </code>
@@ -189,59 +456,8 @@ public static int[] RemoveByIndex(int[] arr, int removeIndex) {
         </ul>
         <hr>
 
-        <h1>פעולה</h1>
-        כתוב פעולה חיצונית / פנימית המקבלת... ומחזירה...<br>
-        public<br>
-        חיצונית static<br>
-        מחזירה TYPE<br>
-        שם NAME<br>
-        מחזירה (TYPE name1, TYPE name2, TYPE name3);<br>
-
-        <code>
-                <pre>
-public static TYPE NAME(TYPE var1, TYPE, var2) {
-    TYPE result;
-
-
-
-    return result;
-}
-                </pre>
-        </code>
-        <hr>
-
-        <h1>מחלקה</h1>
-        <h2>תכונות</h2>
-        <code>
-                <pre>
-public class CLASS_NAME {
-    public String color;
-    public int width;
-    public int height;
-}
-                </pre>
-        </code>
-
-        <h2>בנאי</h2>
-        <code>
-                <pre>
-public CLASS_NAME() {
-
-}
-
-public CLASS_NAME(String color, int width, int height) {
-    this.color = color;
-    this.width = width;
-    this.height = height;
-}
-                </pre>
-        </code>
-        <hr>
-
         <h1>מעקב אחרי משתנים בריצה של תוכנית</h1>
-
         <hr>
-
 </body>
 
 </html>
