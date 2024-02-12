@@ -45,11 +45,58 @@
 </head>
 
 <body>
+        <ul>
+                <li>שלבים</li>
+                <ul>
+                        <li>שלב 1 - מבנה פעולה</li>
+                        <li>שלב 2 - ריצה על המערך</li>
+                        <li>שלב 3 - לוגיקה על איבר במערך</li>
+                </ul>
+                <li>מבנה</li>
+                <ul>
+                        <li>מחלקה ראשית</li>
+                        <ul>
+                                <li>פעולה ראשית - main</li>
+                                <li>פעולה חיצונית</li>
+                        </ul>
+                        <li>מחלקות</li>
+                        <ul>
+                                <li>מחלקה - class</li>
+                                <ul>
+                                        <li>תכונות</li>
+                                        <li>בנאי/בונה</li>
+                                        <li>פעולה פנימית</li>
+                                </ul>
+                        </ul>
+                </ul>
+                <li>משתנים</li>
+                <ul>
+                        <li>משתנה פרימיטיבי</li>
+                        <li>אובייקט</li>
+                </ul>
+                <li>מערך</li>
+                <ul>
+                        <li>ריצה</li>
+                        <li>מחיקה</li>
+                        <li>חיפוש</li>
+                        <li>מיון</li>
+                        <li>סיבוכיות</li>
+                </ul>
+                <li>Math</li>
+                <ul>
+                        <li>עיגול</li>
+                        <li>אקראי - random</li>
+                </ul>
+        </ul>
+        <hr>
+        <div class="pagebreak"></div>
+
         <h1>מבנה</h1>
         <table class="b">
                 <tr>
-                        <td>
-                                main<br>
+                        <td style="padding:15px;">
+                                <b><u>מחלקה ראשית</u></b><br>
+                                פעולה ראשית - <b><u>Static</u></b> - main<br>
                                 פעולה חיצונית - <b><u>Static</u></b><br>
                                 פעולה חיצונית - <b><u>Static</u></b><br>
                         </td>
@@ -58,25 +105,28 @@
                         <td>
                                 <table style="border-spacing:15px;">
                                         <td class="b">
-                                                מחלקה<br>
+                                                <b><u>מחלקה</u></b><br>
                                                 תכונות<br>
-                                                בנאי<br>
+                                                בנאי/בונה<br>
                                                 פעולה פנימית<br>
                                                 פעולה פנימית<br>
+                                                <br>
                                         </td>
                                         <td class="b">
-                                                מחלקה<br>
+                                                <b><u>מחלקה</u></b><br>
                                                 תכונות<br>
-                                                בנאי<br>
+                                                בנאי/בונה<br>
                                                 פעולה פנימית<br>
                                                 פעולה פנימית<br>
+                                                <br>
                                         </td>
                                         <td class="b">
-                                                מחלקה<br>
+                                                <b><u>מחלקה</u></b><br>
                                                 תכונות<br>
-                                                בנאי<br>
+                                                בנאי/בונה<br>
                                                 פעולה פנימית<br>
                                                 פעולה פנימית<br>
+                                                פעולה חיצונית - <b><u>Static</u></b><br>
                                         </td>
                                 </table>
                         </td>
@@ -100,7 +150,7 @@ public class CLASS_NAME {
                 </pre>
         </code>
 
-        <h2>בנאי</h2>
+        <h2>בנאי / בונה</h2>
         <code>
                 <pre>
     public CLASS_NAME() { 
@@ -124,7 +174,38 @@ public class CLASS_NAME {
                 </pre>
         </code>
 
-        <h3>כתוב פעולה חיצונית / פנימית המקבלת... ומחזירה...</h3><br>
+        <h2>דוגמה - מחלקה Box</h2>
+        <code>
+                <pre>
+public class _Box {
+    public String color;
+    public int width;
+    public int height;
+    public int length;
+
+    public _Box() {
+    }
+    public _Box(String color, int width, int height, int length) {
+        this.color = color;
+        this.width = width;
+        this.height = height;
+        this.length = length;
+    }
+
+    public int area() {
+        return width * height * length;
+    }
+    public String ToString() {
+        return "Box, Color:" + color + " width:" + width + " height:" + height + " length:" + length;
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h1>שלב 1</h1>
+        <h3>כתוב פעולה חיצונית-ראשית או פנימית המקבלת... ומחזירה...</h3>
         <code>
                 <pre>
 <table width="100%" class="b">
@@ -164,93 +245,207 @@ public TYPE NAME(TYPE var1, TYPE, var2) {
 
     return result;
 }
-                </pre>
-        </code>
 
-        <h2>מחלקה Box</h2>
-        <code>
-                <pre>
-public class _Box {
-    public String color;
-    public int width;
-    public int height;
-    public int length;
+public void printHello() {
+    System.out.println("Hello");
+}
 
-    public _Box() {
-    }
-    public _Box(String color, int width, int height, int length) {
-        this.color = color;
-        this.width = width;
-        this.height = height;
-        this.length = length;
-    }
+public int add(int num1, int num2) {
+    int result;
+    result = num1 + num2;
+    return result;
+}
 
-    public int area() {
-        return width * height * length;
-    }
-    public String ToString() {
-        return "Box, Color:" + color + " width:" + width + " height:" + height + " length:" + length;
-    }
+public static int add(int num1, int num2) {
+    return num1 + num2;
 }
                 </pre>
         </code>
         <hr>
         <div class="pagebreak"></div>
 
+
+        <h1>שלב 2</h1>
+        <h2>ריצה על מערך</h2>
+        <h3>ריצה קדימה על מערך</h3>
+        <code>
+                <pre>
+for (int i = 0; i < arr.length; i++) {
+    int item = arr[i];
+    // item in index
+}
+                </pre>
+        </code>
+        <hr>
+
+        <h3>ריצה רוורס על מערך</h3>
+        <code>
+                <pre>
+for (int i = arr.length - 1; i >= 0; i--) {
+    int item = arr[i];
+    // item in index
+}
+</pre>
+</code>
+        <hr>
+
+        <h3>ריצה קדימה זוגי/אי זוגי על מערך</h3>
+        <code>
+        <pre>
+for (int i = 0; i < arr.length; i++) {
+    int item = arr[index];
+    if (item % 2 == 0) {
+            // זוגי - item in index
+        } else {
+                // אי זוגי - item in index
+        }
+}
+</pre>
+</code>
+        <hr>
+
+        <h3>ריצה רוורס זוגי/אי זוגי על מערך</h3>
+        <code>
+        <pre>
+for (int i = arr.length - 1; i >= 0; i--) {
+    int item = arr[index];
+    if (item % 2 == 0) {
+        // זוגי - item in index
+    } else {
+        // אי זוגי - item in index
+    }
+}
+        </pre>
+</code>
+        <hr>
+
+        <h3>ריצה חצי / חצי על מערך</h3>
+        <code>
+        <pre>
+int length = arr.length;
+int index = 0;
+
+while (index < length) {
+    int item = arr[index];
+    if (index < length / 2) {
+        // top items in index
+    } else if (length % 2 == 1 && index == length / 2) {
+        // middle items in index
+    } else if (index >= length / 2) {
+        // bottom items in index
+} 
+
+index++;
+}
+        </pre>
+</code>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h1>שלב 3</h1>
+        <h2>ביצוע פעולה על איבר במערך</h2>
+        <h3>מבנה</h3>
+        <code>
+        <pre>
+public .. (arr) {
+    for (index..) {
+        TYPE item = arr[index];
+
+        מקום להוסיף את הלוגיקה לאיבר
+        ..
+        ..
+    }
+}
+        </pre>
+</code>
+        <hr>
+        <ul>
+                <li>האם ממויין</li>
+                <li>האם הפרשים קבועים</li>
+                <li>האם החיוביים ממויינים</li>
+                <li>חיפוש איבר</li>
+        </ul>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h2>מחיקת איבר במערך</h2>
+        <code>
+        <pre>
+public static int[] RemoveByIndex(int[] arr, int removeIndex) {
+    int[] newArr = new int[arr.length - 1];
+    int newIndex = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+        if (i != removeIndex) {
+            newArr[newIndex++] = arr[i];
+        }
+    }
+    return newArr;
+}
+</pre>
+</code>
+        <hr>
+
+        <div class="pagebreak"></div>
+
         <h1>משתנים פרימיטיבים</h1>
         <h2>הגדרת משתנה פרימיטיבי</h2>
         <code>
-                <h3>TYPE NAME = VALUE;</h3>
-                <pre>
+        <h3>TYPE NAME = VALUE;</h3>
+        <pre>
 int i = 0;                                              // 0
 double d = 0;                                           // 0.0
 String str = "";
 char c = '';
 Booolean b = true;                                      // false
-                </pre>
-        </code>
+        </pre>
+</code>
         <hr>
         <h2>הגדרת אובייקט</h2>
         <code>
-                <h3>TYPE NAME = new TYPE();</h3>
-                <pre>
+        <h3>TYPE NAME = new TYPE();</h3>
+        <pre>
 Box box = new Box();
 Box box = new Box("blue", 10, 15, 4);
 box.area()                                              // 10 * 15 * 4 = 600
 
 box.length = 6;
 box.area()                                              // 10 * 15 * 6 = 900
-                </pre>
-        </code>
+        </pre>
+</code>
         <hr>
         <div class="pagebreak"></div>
 
         <h2>הגדרת מערך של משתנים פרימיטיביים</h2>
         <code>
-                <h3>TYPE[] arr = new TYPE[length];</h3>
-                <pre>
+        <h3>TYPE[] arr = new TYPE[length];</h3>
+        <pre>
 int[] arri = new int[2];                                // [0, 0]
-int[] arri = new int[2] {1, 2};                         // [1, 2]<br>
+int[] arri = new int[2] {1, 2};                         // [1, 2]
+
 double[] arrd = new double[2];                          // [0.0, 0.0]
-double[] arrd = new double[2] {1.2, 2.3};               // [1.2, 2.3]<br>
+double[] arrd = new double[2] {1.2, 2.3};               // [1.2, 2.3]
+
 String[] arrstr = new String[2];                        // [null, null]
-String[] arrstr = new String[2] {"ab", "cd"};           // ["ab", "cd"]<br>
+String[] arrstr = new String[2] {"ab", "cd"};           // ["ab", "cd"]
+
 char[] arrc = new char[2];                              // [, ]
-char[] arrc = new char[2] {'a', 'b'}                    // ['a', 'b']<br>
+char[] arrc = new char[2] {'a', 'b'}                    // ['a', 'b']
+
 Boolean[] arrb = new Boolean[2];                        // [null, null]
-Boolean[] arrb = new Boolean[2] {true, false};          // [true, false]<br>
-                </pre>
-        </code>
+Boolean[] arrb = new Boolean[2] {true, false};          // [true, false]
+        </pre>
+</code>
         <h2>דוגמא</h2>
         <code>
-                <pre>
+        <pre>
 String[] arrstr = new String[4] {"Pasta", "Steak", "Bread", "Bamba"};
 arr.length                                              // 4
 arr[0]                                                  // "Pasta"
 arr[3]                                                  // "Bamba"
 arr[arr.length - 1]                                     // "Bamba"
-                </pre>
-        </code>
+        </pre>
+</code>
         <div dir="ltr">
                 <table class="b" width="75%">
                         <tr>
@@ -271,28 +466,28 @@ arr[arr.length - 1]                                     // "Bamba"
 
         <h2>הגדרת מערך של אובייקטים</h2>
         <code>
-                <h3>TYPE[] arr = new TYPE[length];</h3>
-                <pre>
+        <h3>TYPE[] arr = new TYPE[length];</h3>
+        <pre>
 Box[] boxes = new Box[2];                               // [0, 0]
 Box[] boxes = new Box[2];                               // [Box.., Box..]
-                </pre>
-        </code>
+        </pre>
+</code>
 
         <h2>דוגמא</h2>
         <code>
-                <pre>
+        <pre>
 Box[] boxes = new Box[2] {
-        new Box("Red", 10, 15, 4),
-        new Box("Green", 23, 76, 5),
-        new Box("Blue", 43, 56, 6),
-        new Box("Yellow", 12, 32, 7)};
+new Box("Red", 10, 15, 4),
+new Box("Green", 23, 76, 5),
+new Box("Blue", 43, 56, 6),
+new Box("Yellow", 12, 32, 7)};
 boxes.length                                            // 4
 boxes[0]                                                // Box("Red", 10, 15, 4)
 boxes[0].Color                                          // Red
 boxes[0].Width                                          // 10
 boxes[boxes.length - 1].Color                           // "Yellow"
-                </pre>
-        </code>
+        </pre>
+</code>
         <div dir="ltr">
                 <table class="b" width="75%">
                         <tr>
@@ -365,128 +560,6 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                         </tr>
                 </table>
         </div>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h1>פעולות על מערכים</h1>
-        <h2>ריצה על מערך</h2>
-        <h3>ריצה קדימה על מערך</h3>
-        <code>
-                <pre>
- for (int i = 0; i < arr.length; i++) {
-    int item = arr[i];
-    // item in index
-}
-                </pre>
-        </code>
-        <hr>
-
-        <h3>ריצה רוורס על מערך</h3>
-        <code>
-                <pre>
-for (int i = arr.length - 1; i >= 0; i--) {
-    int item = arr[i];
-    // item in index
-}
-                </pre>
-        </code>
-        <hr>
-
-        <h3>ריצה קדימה זוגי/אי זוגי על מערך</h3>
-        <code>
-                <pre>
-for (int i = 0; i < arr.length; i++) {
-    int item = arr[index];
-    if (item % 2 == 0) {
-        // זוגי - item in index
-    } else {
-        // אי זוגי - item in index
-    }
-}
-                </pre>
-        </code>
-        <hr>
-
-        <h3>ריצה רוורס זוגי/אי זוגי על מערך</h3>
-        <code>
-                <pre>
-for (int i = arr.length - 1; i >= 0; i--) {
-    int item = arr[index];
-    if (item % 2 == 0) {
-        // זוגי - item in index
-    } else {
-        // אי זוגי - item in index
-    }
-}
-                </pre>
-        </code>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h3>ריצה חצי / חצי על מערך</h3>
-        <code>
-                <pre>
-int length = arr.length;
-int index = 0;
- 
-while (index < length) {
-    int item = arr[index];
-    if (index < length / 2) {
-        // top items in index
-    } else if (length % 2 == 1 && index == length / 2) {
-        // middle items in index
-    } else if (index >= length / 2) {
-        // bottom items in index
-    } 
-
-    index++;
-}
-                </pre>
-        </code>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h2>מחיקת איבר במערך</h2>
-        <code>
-                <pre>
-public static int[] RemoveByIndex(int[] arr, int removeIndex) {
-    int[] newArr = new int[arr.length - 1];
-    int newIndex = 0;
-
-    for (int i = 0; i < arr.length; i++) {
-        if (i != removeIndex) {
-            newArr[newIndex++] = arr[i];
-        }
-    }
-    return newArr;
-}
-                </pre>
-        </code>
-        <hr>
-
-        <h2>בדיקת אם תנאי מתקיים במערך</h2>
-        האם ממויין
-        האם הפרשים קבועים
-        האם החיוביים ממויינים
-        <hr>
-
-        <h2>חיפוש איבר</h2>
-        חיפוש לפי תכונה של איבר
-        <hr>
-
-        <h2>מיון איברים</h2>
-        <hr>
-
-        <div class="pagebreak"></div>
-
-        <h1>סיבוכיות</h1>
-        <ul>
-                <li>O - סיבוכיות</li>
-                <li>N - מספר העצמים</li>
-                <br>
-                <li> O(1) - ארון ספציפי</li>
-                <li> O(N) - חיפוש בכל הארונות</li>
-        </ul>
         <hr>
         <div class="pagebreak"></div>
 
@@ -603,6 +676,17 @@ Math.random() * 3 + 52                                  // 52 - 54.99999
 Math.random() * diff + start                            // start - start * diff
         </pre>
         </code>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h1>סיבוכיות</h1>
+        <ul>
+                <li>O - סיבוכיות</li>
+                <li>N - מספר העצמים</li>
+                <br>
+                <li> O(1) - ארון ספציפי</li>
+                <li> O(N) - חיפוש בכל הארונות</li>
+        </ul>
         <hr>
         <div class="pagebreak"></div>
 
