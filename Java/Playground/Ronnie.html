@@ -69,7 +69,7 @@
                                 </ul>
                         </ul>
                 </ul>
-                <li>משתנים</li>
+                <li>אתחול משתנים</li>
                 <ul>
                         <li>משתנה פרימיטיבי</li>
                         <li>אובייקט</li>
@@ -87,6 +87,12 @@
                         <li>עיגול</li>
                         <li>אקראי - random</li>
                 </ul>
+        </ul>
+        <hr>
+        <ul>
+                <li>האם ממויין</li>
+                <li>האם הפרשים קבועים</li>
+                <li>האם החיוביים ממויינים</li>
         </ul>
         <hr>
         <div class="pagebreak"></div>
@@ -327,15 +333,16 @@ int index = 0;
 
 while (index < length) {
     int item = arr[index];
+    
     if (index < length / 2) {
         // top items in index
     } else if (length % 2 == 1 && index == length / 2) {
         // middle items in index
     } else if (index >= length / 2) {
         // bottom items in index
-} 
+    }
 
-index++;
+    index++;
 }
         </pre>
 </code>
@@ -346,7 +353,7 @@ index++;
         <h2>ביצוע פעולה על איבר במערך</h2>
         <h3>מבנה</h3>
         <code>
-        <pre>
+                <pre>
 public .. (arr) {
     for (index..) {
         TYPE item = arr[index];
@@ -356,15 +363,56 @@ public .. (arr) {
         ..
     }
 }
-        </pre>
-</code>
+                </pre>
+        </code>
         <hr>
-        <ul>
-                <li>האם ממויין</li>
-                <li>האם הפרשים קבועים</li>
-                <li>האם החיוביים ממויינים</li>
-                <li>חיפוש איבר</li>
-        </ul>
+        <h3>חיפוש הערך הגבוה במערך של פרימיטיביים</h3>
+        <code>
+                <pre>
+public static int findHighValue(int[] arr) {
+    int highValue = arr[0];
+    for (int index = 0; index < arr.length; index++) {
+        int item = arr[index];
+        if (item > highValue) {
+            highValue = item;
+        }
+    }
+    return highValue;
+}
+                </pre>
+        </code>
+        <h3>חיפוש הערך הגבוה במערך של אובייקטים</h3>
+        <code>
+                <pre>
+public static int findBoxWithHighestLength(Box[] arr) {
+    Box box = arr[0];
+    for (int index = 0; index < arr.length; index++) {
+        Box item = arr[index];
+        if (item.length> box.length) {
+            box = item;
+        }
+    }
+    return box.length;
+}
+                </pre>
+        </code>
+        <h3>חיפוש האינדקס של הערך הגבוה במערך של פרימיטיביים</h3>
+        <code>
+                <pre>
+public static int findHighValueIndex(int[] arr) {
+    int result = -1;
+    int highValue = arr[0];
+    for (int index = 0; index < arr.length; index++) {
+        int item = arr[index];
+        if (item > highValue) {
+            highValue = item;
+            result = index;
+        }
+    }
+    return result;
+}
+                </pre>
+        </code>
         <hr>
         <div class="pagebreak"></div>
 
@@ -389,7 +437,7 @@ public static int[] RemoveByIndex(int[] arr, int removeIndex) {
         <div class="pagebreak"></div>
 
         <h1>משתנים פרימיטיבים</h1>
-        <h2>הגדרת משתנה פרימיטיבי</h2>
+        <h2>איתחול משתנה פרימיטיבי</h2>
         <code>
         <h3>TYPE NAME = VALUE;</h3>
         <pre>
@@ -401,7 +449,7 @@ Booolean b = true;                                      // false
         </pre>
 </code>
         <hr>
-        <h2>הגדרת אובייקט</h2>
+        <h2>איתחול אובייקט</h2>
         <code>
         <h3>TYPE NAME = new TYPE();</h3>
         <pre>
@@ -416,7 +464,7 @@ box.area()                                              // 10 * 15 * 6 = 900
         <hr>
         <div class="pagebreak"></div>
 
-        <h2>הגדרת מערך של משתנים פרימיטיביים</h2>
+        <h2>איתחול מערך של משתנים פרימיטיביים</h2>
         <code>
         <h3>TYPE[] arr = new TYPE[length];</h3>
         <pre>
@@ -464,7 +512,7 @@ arr[arr.length - 1]                                     // "Bamba"
         </div>
         <hr>
 
-        <h2>הגדרת מערך של אובייקטים</h2>
+        <h2>איתחול מערך של אובייקטים</h2>
         <code>
         <h3>TYPE[] arr = new TYPE[length];</h3>
         <pre>

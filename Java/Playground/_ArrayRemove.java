@@ -22,4 +22,39 @@ public class _ArrayRemove {
 
         return newArr;
     }
+
+    public static int findHighValue(int[] arr) {
+        int highValue = arr[0];
+        for (int index = 0; index < arr.length; index++) {
+            int item = arr[index];
+            if (item > highValue) {
+                highValue = item;
+            }
+        }
+        return highValue;
+    }
+
+    public static int findBoxWithHighestLength(_Box[] arr) {
+        _Box box = arr[0];
+        for (int index = 0; index < arr.length; index++) {
+            _Box item = arr[index];
+            if (item.length > box.length) {
+                box = item;
+            }
+        }
+        return box.length;
+    }
+
+    public static int findHighValueIndex(int[] arr) {
+        int result = -1;
+        int highValue = arr[0];
+        for (int index = 0; index < arr.length; index++) {
+            int item = arr[index];
+            if (item > highValue) {
+                highValue = item;
+                result = index;
+            }
+        }
+        return result;
+    }
 }
