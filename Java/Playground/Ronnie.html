@@ -50,8 +50,8 @@
                 <tr>
                         <td>
                                 main<br>
-                                פעולה חיצונית<br>
-                                פעולה חיצונית<br>
+                                פעולה חיצונית - <b><u>Static</u></b><br>
+                                פעולה חיצונית - <b><u>Static</u></b><br>
                         </td>
                 </tr>
                 <tr>
@@ -120,12 +120,11 @@ public class CLASS_NAME {
     public int add(int number1, int number2) {
         return number1 + number2;
     }
+}
                 </pre>
         </code>
 
-        <h2>פעולה פנימית או חיצונית</h2>
-        כתוב פעולה חיצונית / פנימית המקבלת... ומחזירה...<br>
-
+        <h3>כתוב פעולה חיצונית / פנימית המקבלת... ומחזירה...</h3><br>
         <code>
                 <pre>
 <table width="100%" class="b">
@@ -189,7 +188,6 @@ public class _Box {
     public int area() {
         return width * height * length;
     }
-
     public String ToString() {
         return "Box, Color:" + color + " width:" + width + " height:" + height + " length:" + length;
     }
@@ -254,7 +252,7 @@ arr[arr.length - 1]                                     // "Bamba"
                 </pre>
         </code>
         <div dir="ltr">
-                <table class="b" width="50%">
+                <table class="b" width="75%">
                         <tr>
                                 <td class="bc">"Pasta"</td>
                                 <td class="bc">"Steak"</td>
@@ -377,7 +375,7 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                 <pre>
  for (int i = 0; i < arr.length; i++) {
     int item = arr[i];
-    System.out.println(item);
+    // item in index
 }
                 </pre>
         </code>
@@ -388,26 +386,42 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                 <pre>
 for (int i = arr.length - 1; i >= 0; i--) {
     int item = arr[i];
-    System.out.println(item);
+    // item in index
 }
                 </pre>
         </code>
         <hr>
 
-        <h3>ריצה זוגי/אי זוגי על מערך</h3>
+        <h3>ריצה קדימה זוגי/אי זוגי על מערך</h3>
         <code>
                 <pre>
 for (int i = 0; i < arr.length; i++) {
     int item = arr[index];
     if (item % 2 == 0) {
-        System.out.println(item + " זוגי" );
+        // זוגי - item in index
     } else {
-        System.out.println(item + " אי זוגי" );
+        // אי זוגי - item in index
     }
 }
                 </pre>
         </code>
         <hr>
+
+        <h3>ריצה רוורס זוגי/אי זוגי על מערך</h3>
+        <code>
+                <pre>
+for (int i = arr.length - 1; i >= 0; i--) {
+    int item = arr[index];
+    if (item % 2 == 0) {
+        // זוגי - item in index
+    } else {
+        // אי זוגי - item in index
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <div class="pagebreak"></div>
 
         <h3>ריצה חצי / חצי על מערך</h3>
         <code>
@@ -418,11 +432,11 @@ int index = 0;
 while (index < length) {
     int item = arr[index];
     if (index < length / 2) {
-        System.out.println(item + " top" );
+        // top items in index
     } else if (length % 2 == 1 && index == length / 2) {
-        System.out.println(item + " middle" );
+        // middle items in index
     } else if (index >= length / 2) {
-        System.out.println(item + " bottom");
+        // bottom items in index
     } 
 
     index++;
@@ -430,6 +444,7 @@ while (index < length) {
                 </pre>
         </code>
         <hr>
+        <div class="pagebreak"></div>
 
         <h2>מחיקת איבר במערך</h2>
         <code>
@@ -448,7 +463,6 @@ public static int[] RemoveByIndex(int[] arr, int removeIndex) {
                 </pre>
         </code>
         <hr>
-        <div class="pagebreak"></div>
 
         <h2>בדיקת אם תנאי מתקיים במערך</h2>
         האם ממויין
@@ -496,7 +510,6 @@ public class Car {
     public void drive() {
         // do something
     }
-
     public String ToString() {
         return "Car, make:" + make + " color:" + color + " num wheels:" + wheels.length;
     }
@@ -518,7 +531,6 @@ public class Wheel {
     public double area() {
         return 3.1415 * radius * radius;
     }
-
     public String ToString() {
         return "Wheel, radius:" + radius;
     }

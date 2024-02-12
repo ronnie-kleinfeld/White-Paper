@@ -1,36 +1,58 @@
 public class _ArrayLoop {
     public static void main(String[] args) {
-        ForOnArrayBeginToEnd(new int[] { 1, 2, 3, 4, 5 });
-        ForOnArrayEndToBegin(new int[] { 1, 2, 3, 4, 5 });
+        ForOnArrayForward(new int[] { 1, 2, 3, 4, 5 });
+        System.out.println();
+        ForOnArrayReverse(new int[] { 1, 2, 3, 4, 5 });
+        System.out.println();
 
-        ForOnArrayEvenOdd(new int[] { 1, 2, 3, 4 });
-        ForOnArrayEvenOdd(new int[] { 1, 2, 3, 4, 5 });
+        ForOnArrayEvenOddForward(new int[] { 1, 2, 3, 4 });
+        System.out.println();
+        ForOnArrayEvenOddForward(new int[] { 1, 2, 3, 4, 5 });
+        System.out.println();
+
+        ForOnArrayEvenOddReverse(new int[] { 1, 2, 3, 4 });
+        System.out.println();
+        ForOnArrayEvenOddReverse(new int[] { 1, 2, 3, 4, 5 });
+        System.out.println();
 
         WhileOnArrayHalfAndHalf(new int[] { 1, 2, 3, 4 });
+        System.out.println();
         WhileOnArrayHalfAndHalf(new int[] { 1, 2, 3, 4, 5 });
+        System.out.println();
     }
 
-    public static void ForOnArrayBeginToEnd(int[] arr) {
+    public static void ForOnArrayForward(int[] arr) {
         for (int index = 0; index < arr.length; index++) {
             int item = arr[index];
-            System.out.println(item);
+            System.out.print(item + "-");
         }
     }
 
-    public static void ForOnArrayEndToBegin(int[] arr) {
+    public static void ForOnArrayReverse(int[] arr) {
         for (int index = arr.length - 1; index >= 0; index--) {
             int item = arr[index];
-            System.out.println(item);
+            System.out.print(item + "-");
         }
     }
 
-    public static void ForOnArrayEvenOdd(int[] arr) {
+    public static void ForOnArrayEvenOddForward(int[] arr) {
         for (int index = 0; index < arr.length; index++) {
             int item = arr[index];
             if (item % 2 == 0) {
-                System.out.println(item + " זוגי");
+                System.out.print(item + "זוגי -");
             } else {
-                System.out.println(item + " אי זוגי");
+                System.out.print(item + "אי זוגי -");
+            }
+        }
+    }
+
+    public static void ForOnArrayEvenOddReverse(int[] arr) {
+        for (int index = arr.length - 1; index >= 0; index--) {
+            int item = arr[index];
+            if (item % 2 == 0) {
+                System.out.print(item + "זוגי -");
+            } else {
+                System.out.print(item + "אי זוגי -");
             }
         }
     }
@@ -43,11 +65,11 @@ public class _ArrayLoop {
             int item = arr[index];
 
             if (index < length / 2) {
-                System.out.println(item + " top");
+                System.out.print(item + " top -");
             } else if (length % 2 == 1 && index == length / 2) {
-                System.out.println(item + " middle");
+                System.out.print(item + " middle - ");
             } else if (index >= length / 2) {
-                System.out.println(item + " bottom");
+                System.out.print(item + " bottom - ");
             }
 
             index++;
