@@ -88,6 +88,7 @@
                         <li>אקראי - random</li>
                 </ul>
         </ul>
+        <h1>לולאות - for - while - do</h1>
         <hr>
         <ul>
                 <li>האם ממויין</li>
@@ -173,8 +174,8 @@ public class CLASS_NAME {
         <h2>פעולה</h2>
         <code>
                 <pre>
-    public int add(int number1, int number2) {
-        return number1 + number2;
+    public int add() {
+        return width + height;
     }
 }
                 </pre>
@@ -183,25 +184,25 @@ public class CLASS_NAME {
         <h2>דוגמה - מחלקה Box</h2>
         <code>
                 <pre>
-public class _Box {
+public class Box {
     private String color;
     private int width;
     private int height;
     private int length;
 
-    public _Box() {
+    public Box() {
     }
-    public _Box(String color, int width, int height, int length) {
+    public Box(String color, int width, int height, int length) {
         this.color = color;
         this.width = width;
         this.height = height;
         this.length = length;
     }
 
-    public int area() {
+    public int volume() {
         return width * height * length;
     }
-    public String ToString() {
+    public String toString() {
         return "Box, Color:" + color + " width:" + width + " height:" + height + " length:" + length;
     }
 }
@@ -211,7 +212,7 @@ public class _Box {
         <div class="pagebreak"></div>
 
         <h1>שלב 1</h1>
-        <h3>כתוב פעולה חיצונית-ראשית או פנימית המקבלת... ומחזירה...</h3>
+        <h3>כתוב פעולה חיצונית או פנימית המקבלת... ומחזירה...</h3>
         <code>
                 <pre>
 <table width="100%" class="b">
@@ -243,7 +244,7 @@ public class _Box {
                 <td dir="rtl">מחזירה כלום</td>
         </tr>
 </table>
-public TYPE NAME(TYPE var1, TYPE, var2) {
+public TYPE NAME(TYPE var1, TYPE[] var2) {
     TYPE result;
 
     .
@@ -253,23 +254,23 @@ public TYPE NAME(TYPE var1, TYPE, var2) {
 }
 
 public void printHello() {
-    System.out.println("Hello");
+}
+
+public int doSomething() {
 }
 
 public int add(int num1, int num2) {
-    int result;
-    result = num1 + num2;
-    return result;
-}
+}        
+
+public int Q2(int num1, String[] arr, Box box, Box[] boxes) {
+}        
 
 public static int add(int num1, int num2) {
-    return num1 + num2;
 }
                 </pre>
         </code>
         <hr>
         <div class="pagebreak"></div>
-
 
         <h1>שלב 2</h1>
         <h2>ריצה על מערך</h2>
@@ -287,65 +288,87 @@ for (int i = 0; i < arr.length; i++) {
         <h3>ריצה רוורס על מערך</h3>
         <code>
                 <pre>
-for (int i = arr.length - 1; i >= 0; i--) {
+<b><em>for (int i = arr.length - 1; i >= 0; i--) {</em></b>
     int item = arr[i];
     // item in index
 }
-</pre>
-</code>
+                </pre>
+        </code>
         <hr>
 
         <h3>ריצה קדימה זוגי/אי זוגי על מערך</h3>
         <code>
-        <pre>
+                <pre>
 for (int i = 0; i < arr.length; i++) {
-    int item = arr[index];
-    if (item % 2 == 0) {
-            // זוגי - item in index
-        } else {
-                // אי זוגי - item in index
-        }
-}
-</pre>
-</code>
-        <hr>
-
-        <h3>ריצה רוורס זוגי/אי זוגי על מערך</h3>
-        <code>
-        <pre>
-for (int i = arr.length - 1; i >= 0; i--) {
-    int item = arr[index];
-    if (item % 2 == 0) {
+    int item = arr[i];
+<b><em>    if (i % 2 == 0) {
         // זוגי - item in index
     } else {
         // אי זוגי - item in index
-    }
+    }</em></b>
 }
-        </pre>
-</code>
+                </pre>
+        </code>
+        <hr>
+
+        <h3>ריצה קדימה כל 3 איברים על מערך</h3>
+        <code>
+                <pre>
+for (int i = 0; i < arr.length; i++) {
+    int item = arr[i];
+<b><em>    if (i % 3 == 1) {
+        // item in index 1/3
+    } else if (i % 3 == 2) {
+        // item in index 2/3
+    } else {
+        // item in index 3/3
+    }</em></b>
+}
+                </pre>
+        </code>
         <hr>
 
         <h3>ריצה חצי / חצי על מערך</h3>
         <code>
-        <pre>
+                <pre>
 int length = arr.length;
 int index = 0;
-
 while (index < length) {
     int item = arr[index];
-    
     if (index < length / 2) {
-        // top items in index
+        // items on left in index
     } else if (length % 2 == 1 && index == length / 2) {
         // middle items in index
     } else if (index >= length / 2) {
-        // bottom items in index
+        // items on right in index
     }
-
     index++;
 }
-        </pre>
-</code>
+                </pre>
+        </code>
+        <div dir="ltr">
+                <table class="b" width="75%">
+                        <tr>
+                                <td class="bc" width="20%">a</td>
+                                <td class="bc" width="20%">b</td>
+                                <td class="bc" width="20%">c</td>
+                                <td class="bc" width="20%">d</td>
+                                <td class="bc" width="20%">e</td>
+                        </tr>
+                        <tr>
+                                <td class="bc">0</td>
+                                <td class="bc">1</td>
+                                <td class="bc">2</td>
+                                <td class="bc">3</td>
+                                <td class="bc">5</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2" class="bc">left</td>
+                                <td class="bc">middle</td>
+                                <td colspan="2" class="bc">right</td>
+                        </tr>
+                </table>
+        </div>
         <hr>
         <div class="pagebreak"></div>
 
@@ -418,7 +441,7 @@ public static int findHighValueIndex(int[] arr) {
 
         <h2>מחיקת איבר במערך</h2>
         <code>
-        <pre>
+                <pre>
 public static int[] RemoveByIndex(int[] arr, int removeIndex) {
     int[] newArr = new int[arr.length - 1];
     int newIndex = 0;
@@ -430,8 +453,8 @@ public static int[] RemoveByIndex(int[] arr, int removeIndex) {
     }
     return newArr;
 }
-</pre>
-</code>
+                </pre>
+        </code>
         <hr>
 
         <div class="pagebreak"></div>
@@ -439,35 +462,35 @@ public static int[] RemoveByIndex(int[] arr, int removeIndex) {
         <h1>משתנים פרימיטיבים</h1>
         <h2>איתחול משתנה פרימיטיבי</h2>
         <code>
-        <h3>TYPE NAME = VALUE;</h3>
-        <pre>
-int i = 0;                                              // 0
-double d = 0;                                           // 0.0
-String str = "";
-char c = '';
-Booolean b = true;                                      // false
-        </pre>
-</code>
+                <h3>TYPE NAME = VALUE;</h3>
+                <pre>
+int i = 0;                                              // 0             מספר שלם
+double d = 0;                                           // 0.0          מספר ממשי
+String str = "";                                        //                 מחרוזת
+char c = '';                                            //                    אות          
+Booolean b = true;                                      // false          בוליאני
+                </pre>
+        </code>
         <hr>
         <h2>איתחול אובייקט</h2>
         <code>
-        <h3>TYPE NAME = new TYPE();</h3>
-        <pre>
+                <h3>TYPE NAME = new TYPE();</h3>
+                <pre>
 Box box = new Box();
 Box box = new Box("blue", 10, 15, 4);
 box.area()                                              // 10 * 15 * 4 = 600
 
 box.length = 6;
 box.area()                                              // 10 * 15 * 6 = 900
-        </pre>
-</code>
+                </pre>
+        </code>
         <hr>
         <div class="pagebreak"></div>
 
         <h2>איתחול מערך של משתנים פרימיטיביים</h2>
         <code>
-        <h3>TYPE[] arr = new TYPE[length];</h3>
-        <pre>
+                <h3>TYPE[] arr = new TYPE[length];</h3>
+                <pre>
 int[] arri = new int[2];                                // [0, 0]
 int[] arri = new int[2] {1, 2};                         // [1, 2]
 
@@ -482,18 +505,18 @@ char[] arrc = new char[2] {'a', 'b'}                    // ['a', 'b']
 
 Boolean[] arrb = new Boolean[2];                        // [null, null]
 Boolean[] arrb = new Boolean[2] {true, false};          // [true, false]
-        </pre>
-</code>
+                </pre>
+        </code>
         <h2>דוגמא</h2>
         <code>
-        <pre>
+                <pre>
 String[] arrstr = new String[4] {"Pasta", "Steak", "Bread", "Bamba"};
 arr.length                                              // 4
 arr[0]                                                  // "Pasta"
 arr[3]                                                  // "Bamba"
 arr[arr.length - 1]                                     // "Bamba"
-        </pre>
-</code>
+                </pre>
+        </code>
         <div dir="ltr">
                 <table class="b" width="75%">
                         <tr>
@@ -514,16 +537,16 @@ arr[arr.length - 1]                                     // "Bamba"
 
         <h2>איתחול מערך של אובייקטים</h2>
         <code>
-        <h3>TYPE[] arr = new TYPE[length];</h3>
-        <pre>
+                <h3>TYPE[] arr = new TYPE[length];</h3>
+                <pre>
 Box[] boxes = new Box[2];                               // [0, 0]
 Box[] boxes = new Box[2];                               // [Box.., Box..]
-        </pre>
-</code>
+                </pre>
+        </code>
 
         <h2>דוגמא</h2>
         <code>
-        <pre>
+                <pre>
 Box[] boxes = new Box[2] {
 new Box("Red", 10, 15, 4),
 new Box("Green", 23, 76, 5),
@@ -534,8 +557,8 @@ boxes[0]                                                // Box("Red", 10, 15, 4)
 boxes[0].Color                                          // Red
 boxes[0].Width                                          // 10
 boxes[boxes.length - 1].Color                           // "Yellow"
-        </pre>
-</code>
+                </pre>
+        </code>
         <div dir="ltr">
                 <table class="b" width="75%">
                         <tr>
@@ -679,7 +702,98 @@ car3.wheels[3] = new Wheel(6);
         <hr>
         <div class="pagebreak"></div>
 
+        <h2>מחלקה ראשית + מחלקה + static</h2>
+        <h3>מחלקה ראשית</h3>
+        <code>
+                <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("1-Main.main: start");                       // 1-Main.main: start
+
+        static111("Blue");
+        Airplane.static222();
+
+        Airplane airplane = new Airplane("Ronnie");
+        airplane.func();                                                // 5-Airplane.func: name=Ronnie
+
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        Airplane airplane2 = new Airplane(name);
+        airplane2.func();                                               // 6-Airplane.func: name=TheScanner
+
+        System.out.println("6-Main.main: end");                         // 7-Main.main: end
+    }
+
+    public static void static111(String color) {
+        System.out.println("2-Main.static111: color=" + color);         // 2-Main.static111: color=Blue
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <h3>מחלקה Airplane</h3>
+        <code>
+                <pre>
+public class Airplane {
+    private String name;
+
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Airplane(String name) {
+        this.name = name;
+    }
+
+    public void func() {
+        System.out.println(" -Airplane.func: name=" + this.name);
+
+        // Airplane airplane = new Airplane("Yahli");
+        // airplane.func();
+
+        // func();
+    }
+
+    public static void static222() {
+        System.out.println("3-Airplane.static222");                     // 3-Airplane.static222
+        Airplane airplane = new Airplane("Yahli");
+        airplane.func();                                                // 4-Airplane.func: name=Yahli
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <div class="pagebreak"></div>
+
         <h1 dir="ltr">Math</h1>
+        <code>
+                <pre>
+a == b
+a != b
+a > b
+a >= b
+a < b
+a <= b
+
+a > b && b > 0                                          // and
+a > b || b < 0                                          // or
+                </pre>
+        </code>
+        <h2>אופרטורים</h2>
+        <code>
+                <pre>
+++      num++           num + 1
+--      num--           num - 1
++=      num+=2          num + 2
+-=      num-=3          num - 3
+*=      num*=4          num * 4
+/=      num/=5          num / 5
+%=      num%=6          num % 6
+                </pre>
+        </code>
         <code>
                 <pre>
 Math.Pi                                                 // 3.1415...
@@ -722,7 +836,7 @@ Math.random() * 10                                      // 0 - 9.99999
 Math.random() * 10 + 50                                 // 50 - 59.99999
 Math.random() * 3 + 52                                  // 52 - 54.99999
 Math.random() * diff + start                            // start - start * diff
-        </pre>
+                </pre>
         </code>
         <hr>
         <div class="pagebreak"></div>
