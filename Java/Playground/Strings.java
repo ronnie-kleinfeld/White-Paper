@@ -7,11 +7,15 @@ public class Strings {
 
         System.out.println(message.length()); // 11
 
+        System.out.println(message.charAt(0)); // H
+        System.out.println(message.charAt(4)); // o
+
         System.out.println(message.startsWith("H"));
         System.out.println(message.startsWith("Yahli")); // false
 
-        System.out.println(message.indexOf("Y")); // -1
+        System.out.println(message.indexOf("Y")); // -1 לא נמצא
         System.out.println(message.indexOf("o")); // 4
+        System.out.println(message.lastIndexOf("o")); // 7
 
         System.out.println(message.toUpperCase());
         System.out.println(message.indexOf("HELLO"));

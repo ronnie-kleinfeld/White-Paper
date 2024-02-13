@@ -94,6 +94,8 @@
                 <li>האם החיוביים ממויינים</li>
         </ul>
         <hr>
+        <h1>טבלת מעקב</h1>
+        <hr>
         <div class="pagebreak"></div>
 
         <h1>מבנה</h1>
@@ -807,6 +809,45 @@ public class Airplane {
         airplane.func();                                                // 4-Airplane.func: name=Yahli
     }
 }
+                </pre>
+        </code>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h1 dir="ltr">Strings</h1>
+        <code>
+                <pre>
+String message = "Hello World";
+System.out.println(message); // Hello World
+
+System.out.println(message + " Ronnie"); // Hello World Ronnie
+
+System.out.println(message.length()); // 11
+
+System.out.println(message.charAt(0)); // H
+System.out.println(message.charAt(4)); // o
+
+System.out.println(message.startsWith("H"));
+System.out.println(message.startsWith("Yahli")); // false
+
+System.out.println(message.indexOf("Y")); // -1 לא נמצא
+System.out.println(message.indexOf("o")); // 4
+System.out.println(message.lastIndexOf("o")); // 7
+
+System.out.println(message.toUpperCase());
+System.out.println(message.indexOf("HELLO"));
+System.out.println(message.toUpperCase().indexOf("HELLO"));
+
+System.out.println(message); // Hello World
+
+System.out.println(message.substring(3, 5)); // lo
+System.out.println(message.substring(6, 9)); // wor
+
+System.out.println("Yahli: \"Kleinfeld\""); // Yahli: "Kleinfeld"
+// \" - "
+// \\ - \
+// \n - new line
+// \t - tab
                 </pre>
         </code>
         <hr>
