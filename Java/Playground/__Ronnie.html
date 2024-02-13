@@ -34,6 +34,13 @@
                         direction: ltr;
                 }
 
+                .center {
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 75%;
+                }
+
                 @media print {
                         .pagebreak {
                                 page-break-before: always;
@@ -77,11 +84,13 @@
                 <li>מערך</li>
                 <ul>
                         <li>ריצה</li>
+                        <li>לולאות</li>
                         <li>מחיקה</li>
                         <li>חיפוש</li>
                         <li>מיון</li>
                         <li>סיבוכיות</li>
                 </ul>
+                <li>String</li>
                 <li>Math</li>
                 <ul>
                         <li>עיגול</li>
@@ -93,8 +102,9 @@
                 <li>האם הפרשים קבועים</li>
                 <li>האם החיוביים ממויינים</li>
         </ul>
-        <hr>
-        <h1>טבלת מעקב</h1>
+        <ul>
+                <li>טבלת מעקב</li>
+        </ul>
         <hr>
         <div class="pagebreak"></div>
 
@@ -677,6 +687,139 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                 </table>
         </div>
         <hr>
+
+        <h1>סיבוכיות</h1>
+        <ul>
+                <li>O - סיבוכיות</li>
+                <li>N - מספר העצמים</li>
+                <br>
+                <li> O(1) - ארון ספציפי</li>
+                <li> O(N) - חיפוש בכל הארונות</li>
+        </ul>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h1 dir="ltr">Strings</h1>
+        <code>
+                <pre>
+String message = "Hello World";
+System.out.println(message);                                    // Hello World
+
+System.out.println(message + " Ronnie");                        // Hello World Ronnie
+
+System.out.println(message.length());                           // 11
+
+System.out.println(message.charAt(0));                          // H
+System.out.println(message.charAt(4));                          // o
+
+System.out.println(message.startsWith("H"));
+System.out.println(message.startsWith("Yahli"));                // false
+
+System.out.println(message.indexOf("Y"));                       // -1 לא נמצא
+System.out.println(message.indexOf("o"));                       // 4
+System.out.println(message.lastIndexOf("o"));                   // 7
+
+System.out.println(message.toUpperCase());
+System.out.println(message.indexOf("HELLO"));
+System.out.println(message.toUpperCase().indexOf("HELLO"));
+
+System.out.println(message);                                    // Hello World
+
+System.out.println(message.substring(3, 5));                    // lo
+System.out.println(message.substring(6, 9));                    // wor
+
+System.out.println("Yahli: \"Kleinfeld\"");                     // Yahli: "Kleinfeld"
+// \" - "
+// \\ - \
+// \n - new line
+// \t - tab
+                </pre>
+        </code>
+        <hr>
+        <h1 dir="ltr">ASCII</h1>
+        <code>
+                <pre>
+char c1 = 'a';
+System.out.println(c1);                 // a
+System.out.println((int) c1);           // 97
+System.out.println((char) 98);          // b
+                </pre>
+        </code>
+        <img src="_ascii.png" class="center" />
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h1 dir="ltr">Math</h1>
+        <code>
+                <pre>
+a == b
+a != b
+a > b
+a >= b
+a < b
+a <= b
+
+a > b && b > 0                                          // and
+a > b || b < 0                                          // or
+                </pre>
+        </code>
+        <h2>אופרטורים</h2>
+        <code>
+                <pre>
+++      num++           num + 1
+--      num--           num - 1
++=      num+=2          num + 2
+-=      num-=3          num - 3
+*=      num*=4          num * 4
+/=      num/=5          num / 5
+%=      num%=6          num % 6
+                </pre>
+        </code>
+        <code>
+                <pre>
+Math.Pi                                                 // 3.1415...
+Math.pow(3, 2)                                          // 9.0
+Math.sqrt(9)                                            // 3.0
+                </pre>
+        </code>
+        <h2>עיגול מספר</h2>
+        <code>
+                <pre>
+int i1 = 5;                                             // 5
+double d1 = 5.0;                                        // 5.0
+
+5 / 2                                                   // 2
+5.0 / 2                                                 // 2.5
+5 / 2.0                                                 // 2.5
+5.0 / 2.0                                               // 2.5
+
+Math.floor(3.4)                                         // 3.0
+Math.floor(3.5)                                         // 3.0
+Math.floor(3.6)                                         // 3.0
+
+Math.ceil(3.4)                                          // 4.0
+Math.ceil(3.5)                                          // 4.0
+Math.ceil(3.6)                                          // 4.0
+
+Math.round(3.4)                                         // 3
+Math.round(3.5)                                         // 4
+Math.round(3.6)                                         // 4
+
+Math.round(3.4564 * 10) / 10.0                          // 3.5
+Math.round(3.4564 * 100) / 100.0                        // 3.46
+                </pre>
+        </code>
+        <h2>מספר אקראי</h2>
+        <code>
+                <pre>
+Math.random()                                           // 0 - 0.99999
+Math.random() * 10                                      // 0 - 9.99999
+Math.random() * 10 + 50                                 // 50 - 59.99999
+Math.random() * 3 + 52                                  // 52 - 54.99999
+Math.random() * diff + start                            // start - start * diff
+                </pre>
+        </code>
+        <hr>
         <div class="pagebreak"></div>
 
         <h1>מחלקות</h1>
@@ -761,7 +904,7 @@ public class Main {
 
         Airplane airplane = new Airplane("Ronnie");
         airplane.func();                                                // 5-Airplane.func: name=Ronnie
-
+        
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         Airplane airplane2 = new Airplane(name);
@@ -811,133 +954,6 @@ public class Airplane {
 }
                 </pre>
         </code>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h1 dir="ltr">Strings</h1>
-        <code>
-                <pre>
-String message = "Hello World";
-System.out.println(message); // Hello World
-
-System.out.println(message + " Ronnie"); // Hello World Ronnie
-
-System.out.println(message.length()); // 11
-
-System.out.println(message.charAt(0)); // H
-System.out.println(message.charAt(4)); // o
-
-System.out.println(message.startsWith("H"));
-System.out.println(message.startsWith("Yahli")); // false
-
-System.out.println(message.indexOf("Y")); // -1 לא נמצא
-System.out.println(message.indexOf("o")); // 4
-System.out.println(message.lastIndexOf("o")); // 7
-
-System.out.println(message.toUpperCase());
-System.out.println(message.indexOf("HELLO"));
-System.out.println(message.toUpperCase().indexOf("HELLO"));
-
-System.out.println(message); // Hello World
-
-System.out.println(message.substring(3, 5)); // lo
-System.out.println(message.substring(6, 9)); // wor
-
-System.out.println("Yahli: \"Kleinfeld\""); // Yahli: "Kleinfeld"
-// \" - "
-// \\ - \
-// \n - new line
-// \t - tab
-                </pre>
-        </code>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h1 dir="ltr">Math</h1>
-        <code>
-                <pre>
-a == b
-a != b
-a > b
-a >= b
-a < b
-a <= b
-
-a > b && b > 0                                          // and
-a > b || b < 0                                          // or
-                </pre>
-        </code>
-        <h2>אופרטורים</h2>
-        <code>
-                <pre>
-++      num++           num + 1
---      num--           num - 1
-+=      num+=2          num + 2
--=      num-=3          num - 3
-*=      num*=4          num * 4
-/=      num/=5          num / 5
-%=      num%=6          num % 6
-                </pre>
-        </code>
-        <code>
-                <pre>
-Math.Pi                                                 // 3.1415...
-Math.pow(3, 2)                                          // 9.0
-Math.sqrt(9)                                            // 3.0
-                </pre>
-        </code>
-        <h2>עיגול מספר</h2>
-        <code>
-                <pre>
-int i1 = 5;                                             // 5
-double d1 = 5.0;                                        // 5.0
-
-5 / 2                                                   // 2
-5.0 / 2                                                 // 2.5
-5 / 2.0                                                 // 2.5
-5.0 / 2.0                                               // 2.5
-
-Math.floor(3.4)                                         // 3.0
-Math.floor(3.5)                                         // 3.0
-Math.floor(3.6)                                         // 3.0
-
-Math.ceil(3.4)                                          // 4.0
-Math.ceil(3.5)                                          // 4.0
-Math.ceil(3.6)                                          // 4.0
-
-Math.round(3.4)                                         // 3
-Math.round(3.5)                                         // 4
-Math.round(3.6)                                         // 4
-
-Math.round(3.4564 * 10) / 10.0                          // 3.5
-Math.round(3.4564 * 100) / 100.0                        // 3.46
-                </pre>
-        </code>
-        <h2>מספר אקראי</h2>
-        <code>
-                <pre>
-Math.random()                                           // 0 - 0.99999
-Math.random() * 10                                      // 0 - 9.99999
-Math.random() * 10 + 50                                 // 50 - 59.99999
-Math.random() * 3 + 52                                  // 52 - 54.99999
-Math.random() * diff + start                            // start - start * diff
-                </pre>
-        </code>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h1>סיבוכיות</h1>
-        <ul>
-                <li>O - סיבוכיות</li>
-                <li>N - מספר העצמים</li>
-                <br>
-                <li> O(1) - ארון ספציפי</li>
-                <li> O(N) - חיפוש בכל הארונות</li>
-        </ul>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h1>מעקב אחרי משתנים בריצה של תוכנית</h1>
         <hr>
 </body>
 
