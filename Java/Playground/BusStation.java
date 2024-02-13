@@ -10,8 +10,4 @@ public class BusStation {
         this.busNumbers = busNumbers;
         stationsCount++;
     }
-
-    public static int[] moveToStation(BusStation busStation1, BusStation busStation1) {
-        for ()
-    }
 }

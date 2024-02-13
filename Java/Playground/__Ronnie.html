@@ -88,8 +88,6 @@
                         <li>אקראי - random</li>
                 </ul>
         </ul>
-        <h1>לולאות - for - while - do</h1>
-        <hr>
         <ul>
                 <li>האם ממויין</li>
                 <li>האם הפרשים קבועים</li>
@@ -180,6 +178,7 @@ public class CLASS_NAME {
 }
                 </pre>
         </code>
+        <hr>
 
         <h2>דוגמה - מחלקה Box</h2>
         <code>
@@ -369,6 +368,50 @@ while (index < length) {
                         </tr>
                 </table>
         </div>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h2>לולאות</h2>
+        <h3 dir="ltr">For</h3>
+        <code>
+<pre>
+for (int i = 0; i < 10; i++) {
+    // 0 1 2 3 4 5 6 7 8 9
+}
+
+for (int i = 0; i < 10; i += 2) {
+    // 0 2 4 6 8
+}
+
+for (int i = 10 - 1; i >= 0; i--) {
+    // 9 8 7 6 5 4 3 2 1 0
+}
+</pre>
+</code>
+        <hr>
+
+        <h3 dir="ltr">while - הבדיקה בהתחלה, יתכן שלא יבוצע בכלל</h3>
+        <code>
+<pre>
+int count = 0;
+while (count < 10) {
+    // 0 1 2 3 4 5 6 7 8 9
+    count++;
+}
+</pre>
+</code>
+        <hr>
+
+        <h3 dir="ltr">do - בטוח שיבוצע פעם אחת לפחות, הבדיקה בסוף</h3>
+        <code>
+                <pre>
+int count = 0;
+do {
+    // 0 1 2 3 4 5 6 7 8 9
+    count++;
+} while (count < 10);
+</pre>
+</code>
         <hr>
         <div class="pagebreak"></div>
 
@@ -634,6 +677,7 @@ boxes[boxes.length - 1].Color                           // "Yellow"
         <hr>
         <div class="pagebreak"></div>
 
+        <h1>מחלקות</h1>
         <h2>Car & Wheel</h2>
         <h3>מחלקה Car</h3>
         <code>
