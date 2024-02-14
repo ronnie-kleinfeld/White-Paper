@@ -192,7 +192,7 @@ public class CLASS_NAME {
         </code>
         <hr>
 
-        <h2>דוגמה - מחלקה Box</h2>
+        <h2>דוגמא - Box</h2>
         <code>
                 <pre>
 public class Box {
@@ -219,6 +219,141 @@ public class Box {
 }
                 </pre>
         </code>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h2>דוגמא - Car & Wheel</h2>
+        <h3>מחלקה Car</h3>
+        <code>
+                <pre>
+public class Car {
+    private String make;
+    private String color;
+    private Wheel[] wheels;
+
+    public Car() {
+    }
+    public Car(String make, String color, Wheel[] wheels) {
+        this.make = make;
+        this.color = color;
+        this.wheels = wheels;
+    }
+
+    public void drive() {
+        // do something
+    }
+    public String ToString() {
+        return "Car, make:" + make + " color:" + color + " num wheels:" + wheels.length;
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <h3>מחלקה Wheel</h3>
+        <code>
+                <pre>
+public class Wheel {
+    private int radius;
+
+    public Wheel() {
+    }
+    public Wheel(int radius) {
+        this.radius = radius;
+    }
+    
+    public double area() {
+        return 3.1415 * radius * radius;
+    }
+    public String ToString() {
+        return "Wheel, radius:" + radius;
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <h3>שימוש ב Car ו Wheel</h3>
+        <code>
+                <pre>
+Car car1 = new Car();
+
+Car car2 = new Car("Toyota", "Blue", new Wheel[4]);
+
+Car car3 = new Car();
+car3.make = "Honda";
+car3.color = "White";
+car3.wheels = new Wheels[4];
+car3.wheels[0] = new Wheel(5);
+car3.wheels[1] = new Wheel(5);
+car3.wheels[2] = new Wheel(6);
+car3.wheels[3] = new Wheel(6);
+                </pre>
+        </code>
+        <hr>
+        <div class="pagebreak"></div>
+
+        <h2>דוגמא - מחלקה ראשית + מחלקה + static</h2>
+        <h3>מחלקה ראשית</h3>
+        <code>
+                <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("1-Main.main: start");                       // 1-Main.main: start
+
+        static111("Blue");
+        Airplane.static222();
+
+        Airplane airplane = new Airplane("Ronnie");
+        airplane.func();                                                // 5-Airplane.func: name=Ronnie
+
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        Airplane airplane2 = new Airplane(name);
+        airplane2.func();                                               // 6-Airplane.func: name=TheScanner
+
+        System.out.println("6-Main.main: end");                         // 7-Main.main: end
+    }
+
+    public static void static111(String color) {
+        System.out.println("2-Main.static111: color=" + color);         // 2-Main.static111: color=Blue
+    }
+}
+                </pre>
+        </code>
+        <hr>
+        <h3>מחלקה Airplane</h3>
+        <code>
+                <pre>
+public class Airplane {
+    private String name;
+
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Airplane(String name) {
+        this.name = name;
+    }
+
+    public void func() {
+        System.out.println(" -Airplane.func: name=" + this.name);
+
+        // Airplane airplane = new Airplane("Yahli");
+        // airplane.func();
+
+        // func();
+    }
+
+    public static void static222() {
+        System.out.println("3-Airplane.static222");                     // 3-Airplane.static222
+        Airplane airplane = new Airplane("Yahli");
+        airplane.func();                                                // 4-Airplane.func: name=Yahli
+    }
+}
+</pre>
+</code>
         <hr>
         <div class="pagebreak"></div>
 
@@ -511,38 +646,38 @@ public static int[] RemoveByIndex(int[] arr, int removeIndex) {
                 </pre>
         </code>
         <hr>
-
         <div class="pagebreak"></div>
 
-        <h1>משתנים פרימיטיבים</h1>
-        <h2>איתחול משתנה פרימיטיבי</h2>
+        <h1>משתנה פרימיטיבי</h1>
+        <h2>יצירת משתנה פרימיטיבי</h2>
         <code>
                 <h3>TYPE NAME = VALUE;</h3>
                 <pre>
 int i = 0;                                              // 0             מספר שלם
-double d = 0;                                           // 0.0          מספר ממשי
+double d = 0.0;                                         // 0.0          מספר ממשי
 String str = "";                                        //                 מחרוזת
 char c = '';                                            //                    אות          
 Booolean b = true;                                      // false          בוליאני
                 </pre>
         </code>
-        <hr>
-        <h2>איתחול אובייקט</h2>
+        <h3>דוגמא</h3>
         <code>
-                <h3>TYPE NAME = new TYPE();</h3>
                 <pre>
-Box box = new Box();
-Box box = new Box("blue", 10, 15, 4);
-box.area()                                              // 10 * 15 * 4 = 600
-
-box.length = 6;
-box.area()                                              // 10 * 15 * 6 = 900
+String str = "Pasta";
                 </pre>
         </code>
+        <div dir="ltr">
+                <table class="b" width="18%">
+                        <tr>
+                                <td class="b2">
+                                        <p style="text-align: center;"><b>String</b></p>
+                                        "Pasta"
+                                </td>
+                        </tr>
+                </table>
+        </div>
         <hr>
-        <div class="pagebreak"></div>
-
-        <h2>איתחול מערך של משתנים פרימיטיביים</h2>
+        <h2>יצירת מערך של משתנים פרימיטיביים</h2>
         <code>
                 <h3>TYPE[] arr = new TYPE[length];</h3>
                 <pre>
@@ -562,23 +697,36 @@ Boolean[] arrb = new Boolean[2];                        // [null, null]
 Boolean[] arrb = new Boolean[2] {true, false};          // [true, false]
                 </pre>
         </code>
-        <h2>דוגמא</h2>
+        <h3>דוגמא</h3>
         <code>
                 <pre>
 String[] arrstr = new String[4] {"Pasta", "Steak", "Bread", "Bamba"};
 arr.length                                              // 4
 arr[0]                                                  // "Pasta"
+arr[2] = "Milki";
 arr[3]                                                  // "Bamba"
 arr[arr.length - 1]                                     // "Bamba"
                 </pre>
         </code>
         <div dir="ltr">
-                <table class="b" width="75%">
+                <table class="b" width="80%">
                         <tr>
-                                <td class="bc">"Pasta"</td>
-                                <td class="bc">"Steak"</td>
-                                <td class="bc">"Bread"</td>
-                                <td class="bc">"Bamba"</td>
+                                <td class="b2">
+                                        <p style="text-align: center;"><b>String</b></p>
+                                        "Pasta"
+                                </td>
+                                <td class="b2">
+                                        <p style="text-align: center;"><b>String</b></p>
+                                        "Steak"
+                                </td>
+                                <td class="b2">
+                                        <p style="text-align: center;"><b>String</b></p>
+                                        "Milki"
+                                </td>
+                                <td class="b2">
+                                        <p style="text-align: center;"><b>String</b></p>
+                                        "Bamba"
+                                </td>
                         </tr>
                         <tr>
                                 <td class="bc">0</td>
@@ -589,8 +737,42 @@ arr[arr.length - 1]                                     // "Bamba"
                 </table>
         </div>
         <hr>
+        <div class="pagebreak"></div>
 
-        <h2>איתחול מערך של אובייקטים</h2>
+        <h1>משתנה אובייקט</h1>
+        <h2>יצירת משתנה אובייקט</h2>
+        <code>
+                <h3>TYPE NAME = new TYPE();</h3>
+                <pre>
+Box box = new Box();
+Box box = new Box("blue", 10, 15, 4);
+box.area()                                              // 10 * 15 * 4 = 600
+
+box.length = 6;
+box.area()                                              // 10 * 15 * 6 = 900
+                </pre>
+        </code>
+        <h3>דוגמא</h3>
+        <code>
+                <pre>
+Box box = new Box("Red", 10, 15, 4);
+                </pre>
+        </code>
+        <div dir="ltr">
+                <table class="b" width="18%">
+                        <tr>
+                                <td class="b2">
+                                        <p style="text-align: center;"><b>Box</b></p>
+                                        Color = "Red"<br>
+                                        Width = 10<br>
+                                        Height = 15<br>
+                                        Length = 4
+                                </td>
+                        </tr>
+                </table>
+        </div>
+        <hr>
+        <h2>יצירת מערך של אובייקטים</h2>
         <code>
                 <h3>TYPE[] arr = new TYPE[length];</h3>
                 <pre>
@@ -599,7 +781,7 @@ Box[] boxes = new Box[2];                               // [Box.., Box..]
                 </pre>
         </code>
 
-        <h2>דוגמא</h2>
+        <h3>דוגמא</h3>
         <code>
                 <pre>
 Box[] boxes = new Box[2] {
@@ -615,16 +797,14 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                 </pre>
         </code>
         <div dir="ltr">
-                <table class="b" width="75%">
+                <table class="b" width="80%">
                         <tr>
                                 <td class="b2">
                                         <table style="width:100%;">
                                                 <tr>
-                                                        <td class="bc" style="border-bottom:0px;">Box
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td class="b2">Color = "Red"<br>
+                                                        <td>
+                                                                <p style="text-align: center;"><b>Box</b></p>
+                                                                Color = "Red"<br>
                                                                 Width = 10<br>
                                                                 Height = 15<br>
                                                                 Length = 4
@@ -635,11 +815,9 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                                 <td class="b2">
                                         <table style="width:100%;">
                                                 <tr>
-                                                        <td class="bc" style="border-bottom:0px;">Box
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td class="b2">Color = "Green"<br>
+                                                        <td>
+                                                                <p style="text-align: center;"><b>Box</b></p>
+                                                                Color = "Green"<br>
                                                                 Width = 23<br>
                                                                 Height = 76<br>
                                                                 Length = 5
@@ -650,11 +828,9 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                                 <td class="b2">
                                         <table style="width:100%;">
                                                 <tr>
-                                                        <td class="bc" style="border-bottom:0px;">Box
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td class="b2">Color = "Blue"<br>
+                                                        <td>
+                                                                <p style="text-align: center;"><b>Box</b></p>
+                                                                Color = "Blue"<br>
                                                                 Width = 43<br>
                                                                 Height = 56<br>
                                                                 Length = 6
@@ -665,11 +841,9 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                                 <td class="b2">
                                         <table style="width:100%;">
                                                 <tr>
-                                                        <td class="bc" style="border-bottom:0px;">Box
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td class="b2">Color = "Yellow"<br>
+                                                        <td>
+                                                                <p style="text-align: center;"><b>Box</b></p>
+                                                                Color = "Yellow"<br>
                                                                 Width = 12<br>
                                                                 Height = 32<br>
                                                                 Length = 7
@@ -686,16 +860,6 @@ boxes[boxes.length - 1].Color                           // "Yellow"
                         </tr>
                 </table>
         </div>
-        <hr>
-
-        <h1>סיבוכיות</h1>
-        <ul>
-                <li>O - סיבוכיות</li>
-                <li>N - מספר העצמים</li>
-                <br>
-                <li> O(1) - ארון ספציפי</li>
-                <li> O(N) - חיפוש בכל הארונות</li>
-        </ul>
         <hr>
         <div class="pagebreak"></div>
 
@@ -740,9 +904,9 @@ System.out.println("Yahli: \"Kleinfeld\"");                     // Yahli: "Klein
         <code>
                 <pre>
 char c1 = 'a';
-System.out.println(c1);                 // a
-System.out.println((int) c1);           // 97
-System.out.println((char) 98);          // b
+System.out.println(c1);                                         // a
+System.out.println((int) c1);                                   // 97
+System.out.println((char) 98);                                  // b
                 </pre>
         </code>
         <img src="_ascii.png" class="center" />
@@ -822,138 +986,14 @@ Math.random() * diff + start                            // start - start * diff
         <hr>
         <div class="pagebreak"></div>
 
-        <h1>מחלקות</h1>
-        <h2>Car & Wheel</h2>
-        <h3>מחלקה Car</h3>
-        <code>
-                <pre>
-public class Car {
-    private String make;
-    private String color;
-    private Wheel[] wheels;
-
-    public Car() {
-    }
-    public Car(String make, String color, Wheel[] wheels) {
-        this.make = make;
-        this.color = color;
-        this.wheels = wheels;
-    }
-
-    public void drive() {
-        // do something
-    }
-    public String ToString() {
-        return "Car, make:" + make + " color:" + color + " num wheels:" + wheels.length;
-    }
-}
-                </pre>
-        </code>
-        <h3>מחלקה Wheel</h3>
-        <code>
-                <pre>
-public class Wheel {
-    private int radius;
-
-    public Wheel() {
-    }
-    public Wheel(int radius) {
-        this.radius = radius;
-    }
-
-    public double area() {
-        return 3.1415 * radius * radius;
-    }
-    public String ToString() {
-        return "Wheel, radius:" + radius;
-    }
-}
-                </pre>
-        </code>
-        <hr>
-        <h2>שימוש ב Car ו Wheel</h2>
-        <code>
-                <pre>
-Car car1 = new Car();
-
-Car car2 = new Car("Toyota", "Blue", new Wheel[4]);
-
-Car car3 = new Car();
-car3.make = "Honda";
-car3.color = "White";
-car3.wheels = new Wheels[4];
-car3.wheels[0] = new Wheel(5);
-car3.wheels[1] = new Wheel(5);
-car3.wheels[2] = new Wheel(6);
-car3.wheels[3] = new Wheel(6);
-                </pre>
-        </code>
-        <hr>
-        <div class="pagebreak"></div>
-
-        <h2>מחלקה ראשית + מחלקה + static</h2>
-        <h3>מחלקה ראשית</h3>
-        <code>
-                <pre>
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("1-Main.main: start");                       // 1-Main.main: start
-
-        static111("Blue");
-        Airplane.static222();
-
-        Airplane airplane = new Airplane("Ronnie");
-        airplane.func();                                                // 5-Airplane.func: name=Ronnie
-        
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        Airplane airplane2 = new Airplane(name);
-        airplane2.func();                                               // 6-Airplane.func: name=TheScanner
-
-        System.out.println("6-Main.main: end");                         // 7-Main.main: end
-    }
-
-    public static void static111(String color) {
-        System.out.println("2-Main.static111: color=" + color);         // 2-Main.static111: color=Blue
-    }
-}
-                </pre>
-        </code>
-        <hr>
-        <h3>מחלקה Airplane</h3>
-        <code>
-                <pre>
-public class Airplane {
-    private String name;
-
-    public String getName() {
-        return this.name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Airplane(String name) {
-        this.name = name;
-    }
-
-    public void func() {
-        System.out.println(" -Airplane.func: name=" + this.name);
-
-        // Airplane airplane = new Airplane("Yahli");
-        // airplane.func();
-
-        // func();
-    }
-
-    public static void static222() {
-        System.out.println("3-Airplane.static222");                     // 3-Airplane.static222
-        Airplane airplane = new Airplane("Yahli");
-        airplane.func();                                                // 4-Airplane.func: name=Yahli
-    }
-}
-                </pre>
-        </code>
+        <h1>סיבוכיות</h1>
+        <ul>
+                <li>O - סיבוכיות</li>
+                <li>N - מספר העצמים</li>
+                <br>
+                <li> O(1) - ארון ספציפי</li>
+                <li> O(N) - חיפוש בכל הארונות</li>
+        </ul>
         <hr>
 </body>
 
