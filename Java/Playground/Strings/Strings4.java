@@ -1,14 +1,8 @@
 package Strings;
 
-/**
- * Main class of the Java program.
- * 
- */
-
 public class Strings4 {
 
     public static void main(String[] args) {
-
         String str1 = "2+5";
         System.out.println(str1 + " = " + solveDigitsMathString(str1));
         String str2 = "2*5";
@@ -73,5 +67,4 @@ public class Strings4 {
     public static int solveMathString(String mathStr) {
         return -898;
     }
-
 }

@@ -1,9 +1,7 @@
 package Strings;
 
 public class Strings5 {
-
     public static void main(String[] args) {
-
         Necklace n1 = new Necklace();
         Necklace n2 = new Necklace("RRRYYYGGG");
         Necklace n3 = new Necklace("GRRRYYYGG", 3);
@@ -60,17 +58,13 @@ public class Strings5 {
         n2.setTimes(3);
         System.out.println("sameOrder?" + "\n\t" + n2 + "\n\t" + n3 + "\n\t" + sameOrder(n2, n3));
         System.out.println("sameOrder?" + "\n\t" + n8 + "\n\t" + n3 + "\n\t" + sameOrder(n8, n3));
-
     }
 
     public static boolean isGrouped(Necklace n1) {
-
         return false;
     }
 
     public static boolean sameOrder(Necklace n1, Necklace n2) {
-
         return false;
     }
-
 }

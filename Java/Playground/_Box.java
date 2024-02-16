@@ -4,6 +4,14 @@ public class _Box {
     public int height;
     public int length;
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public _Box() {
     }
 
