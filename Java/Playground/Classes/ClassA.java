@@ -12,6 +12,6 @@ public class ClassA {
     }
 
     public static void Static() {
-        System.out.println("ClassC");
+        System.out.println("ClassA");
     }
 }

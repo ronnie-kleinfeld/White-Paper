@@ -7,8 +7,17 @@ public class ClassesMain {
         ClassA classA = new ClassA("Yahli");
         classA.ToString();
 
+        Static();
+        ClassA.Static();
         ClassC.Static();
 
+        ClassB classB = new ClassB(17);
+        classB.ToString();
+
         System.out.println("ClassesMain end");
+    }
+
+    public static void Static() {
+        System.out.println("ClassesMain");
     }
 }
