@@ -22,7 +22,7 @@ public class Airplane {
         // func();
     }
 
-    public static void static222() {
+    public static void static111() {
         System.out.println("3-Airplane.static222"); // 3-Airplane.static222
         Airplane airplane = new Airplane("Yahli");
         airplane.func(); // 4-Airplane.func: name=Yahli
