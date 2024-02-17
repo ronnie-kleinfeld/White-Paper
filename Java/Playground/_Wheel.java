@@ -1,5 +1,3 @@
-import java.utils.Math;
-
 public class _Wheel {
     private int radius;
 

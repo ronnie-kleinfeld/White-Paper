@@ -35,14 +35,4 @@ public class _ArrayIter {
         }
         return -1;
     }
-
-    public static int FindByHighLength(_Rect[] arr) {
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].width == width) {
-                return i;
-            }4
-        }
-        return -1;
-    }
 }

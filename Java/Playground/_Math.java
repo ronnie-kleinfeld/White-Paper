@@ -1,5 +1,3 @@
-import java.utils.Math;
-
 public class _Math {
     public static void main(String[] args) {
         int i1 = 5;
