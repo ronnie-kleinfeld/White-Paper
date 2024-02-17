@@ -213,7 +213,7 @@ public class Strings1 {
     //
     // For example: "a1b2c3" should be converted to "012345"
     public static String letterToIndex(String str) {
-        System.out.println("0123456789".indexOf(temp));
+        System.out.println("0123456789".indexOf(str));
 
         return "";
     }
