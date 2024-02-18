@@ -1,4 +1,3 @@
-package Test202418;
 
 public class IfSwitch {
     public static void main(String[] args) {
