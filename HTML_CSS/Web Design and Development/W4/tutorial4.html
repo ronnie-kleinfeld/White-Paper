@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Reservation</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+    <div class="center">
+        <h1>Hotel Reservation</h1>
+    </div>
+
+    <form method="get" action="tutorial4.html">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="firstName">First name:</label>
+            <input type="text" name="firstName" id="firstName" autofocus placeholder="Enter your first name"><br>
+            <label for="surname">Surname:</label>
+            <input type="text" name="surname" id="surname" placeholder="Enter your surname"><br>
+            <label for="email">Email address:</label>
+            <input type="email" name="email" id="email"><br>
+            <label for="password">Setup a password:</label>
+            <input type="password" name="password" id="password" size="60"
+                placeholder="Min 8 characters, use at least 1 caps, no special characters"><br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Booking Details</legend>
+            <label for="checkinDay">Checkin Day:</label>
+            <input type="date" name="checkinDay" id="checkinDay"><br>
+            <label for="numberOfDays">Number odf days:</label>
+            <input type="number" name="numberOfDays" id="numberOfDays"><br>
+            <input type="radio" name="singleRoom" id="singleRoom" value="singleRoom">
+            <label for="singleRoom">Single Room</label>
+            <br>
+            <input type="radio" name="doubleRoom" id="doubleRoom" value="doubleRoom">
+            <label for="doubleRoom">Double Room</label>
+            <br>
+            <input type="radio" name="kingRoom" id="kingRoom" value="kingRoom">
+            <label for="kingRoom">King Room</label>
+            <br>
+            <label for="breakfast">Breakfast:</label>
+            <select name="breakfast" id="breakfast">
+                <option value="Include">Include</option>
+                <option value="Not Include">Not Include</option>
+            </select>
+            <br>
+            <label for="specialRequirements">Special Requirements:</label>
+            <textarea name="specialRequirements" id="specialRequirements" rows="5"></textarea>
+        </fieldset>
+        <br>
+        <div style="width: auto; text-align: right;">
+            <fieldset>
+                <input type="reset" name="reset" value="Reset">
+                <input type="submit" name="submit" value="Submit">
+            </fieldset>
+        </div>
+    </form>
+
+    <hr>
+    <p>Ronnie Kleinfeld</p>
+    <address>w2024062@westminster.ac.uk</address>
+    <sub>Last modfied date 13<sup>th</sup> Feb 2024</sub>
+</body>
+
+</html>

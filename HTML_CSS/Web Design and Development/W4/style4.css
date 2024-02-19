@@ -1,0 +1,30 @@
+h1 {
+    align-content: center;
+}
+
+label {
+    float: left;
+    width: 20%;
+    margin-right: 0.5em;
+    text-align: left;
+    color: black;
+    font-weight: normal;
+}
+
+fieldset {
+    background-color: beige;
+    padding: lem;
+    font: 80%/1 sans-serif;
+    border-color: black;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+div.center {
+    text-align: center;
+}
+
+div.bottomBar {
+    width: auto;
+    text-align: right;
+}

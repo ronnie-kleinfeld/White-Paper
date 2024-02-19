@@ -1,0 +1,145 @@
+<!-- https://w2024062.users.ecs.westminster.ac.uk/webDev/tuturial2.html -->
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial 2</title>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px ridge blue;
+        }
+
+        th,
+        td {
+            border: 2px ridge blue;
+        }
+
+        caption {
+            text-align: center;
+            padding: 80px 0;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+
+        th {
+            font-size: 16px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .Day {
+            font-weight: bold;
+        }
+
+        .SwimFit {
+            background-color: aqua;
+        }
+
+        .LaneSwim {
+            background-color: aquamarine;
+        }
+
+        .ParentsAndTots {
+            background-color: blanchedalmond;
+        }
+
+        .AdultSwimClub {
+            background-color: cadetblue;
+        }
+
+        .JuniorSwimClub {
+            background-color: cadetblue;
+        }
+
+        .PublicSwim {
+            background-color: chartreuse;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <caption>
+            <h1>Tutorial 2 - Pool Schedule</h1>
+            <h2>Ronnie Kleinfeld</h2>
+        </caption>
+        <tr>
+            <td colspan="6">
+                Prices:
+                <ul>
+                    <li>Free - Infants (0-3)</li>
+                    <li>&#163;3 - Child (4-12)</li>
+                    <li>&#163;3 - Youth (13-17)</li>
+                    <li>&#163;3 - Adult</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <th>7:00-8:00</th>
+            <th>8:00-9:00</th>
+            <th>9:00-11:00</th>
+            <th>11:00-5:00</th>
+            <th>5:00-7:00</th>
+        </tr>
+        <tr>
+            <td class="Day">Monday</td>
+            <td class="SwimFit">SwimFit</td>
+            <td class="LaneSwim" colspan="2">Lane Swim</td>
+            <td class="PublicSwim" rowspan="7">Public Swim</td>
+            <td class="AdultSwimClub">Adult Swim Club</td>
+        </tr>
+        <tr>
+            <td class="Day">Tuesday</td>
+            <td class="LaneSwim" colspan="2">Lane Swim</td>
+            <td class="ParentsAndTots">Parents and Tots</td>
+            <td class="JuniorSwimClub">Junior Swim Club</td>
+        </tr>
+        <tr>
+            <td class="Day">Wednesday</td>
+            <td class="SwimFit">SwimFit</td>
+            <td class="LaneSwim" colspan="2">Lane Swim</td>
+            <td class="AdultSwimClub">Adult Swim Club</td>
+        </tr>
+        <tr>
+            <td class="Day">Thursday</td>
+            <td class="LaneSwim" colspan="2">Lane Swim</td>
+            <td class="ParentsAndTots">Parents and Tots</td>
+            <td class="JuniorSwimClub">Junior Swim Club</td>
+        </tr>
+        <tr>
+            <td class="Day">Friday</td>
+            <td class="SwimFit">SwimFit</td>
+            <td class="LaneSwim" colspan="2">Lane Swim</td>
+            <td rowspan="3">Closed</td>
+        </tr>
+        <tr>
+            <td class="Day">Saturday</td>
+            <td class="PublicSwim" colspan="3">Public Swim</td>
+        </tr>
+        <tr>
+            <td class="Day">Sunday</td>
+            <td class="PublicSwim" colspan="3">Public Swim</td>
+        </tr>
+    </table>
+    <hr>
+    <address>w2024062@westminster.ac.uk</address>
+    <p>Last modfied date 30/01/2024</p>
+
+</body>
+
+</html>
