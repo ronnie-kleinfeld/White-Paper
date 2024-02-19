@@ -1,11 +1,11 @@
 public class Boxes {
-    public _Box[] boxes;
+    public Box[] boxes;
 
     public Boxes() {
-        boxes = new _Box[0];
+        boxes = new Box[0];
     }
 
-    public void Add(_Box box) {
+    public void Add(Box box) {
         boxes[0] = box;
     }
 
@@ -13,11 +13,11 @@ public class Boxes {
         int length = boxes.length;
         int index = 0;
 
-        _Box myBox;
+        Box myBox;
         int myBoxIndex;
 
         while (index < length) {
-            _Box item = boxes[index];
+            Box item = boxes[index];
 
             index++;
         }

@@ -34,10 +34,10 @@ public class _ArrayRemove {
         return highValue;
     }
 
-    public static int findBoxWithHighestLength(_Box[] arr) {
-        _Box box = arr[0];
+    public static int findBoxWithHighestLength(Box[] arr) {
+        Box box = arr[0];
         for (int index = 0; index < arr.length; index++) {
-            _Box item = arr[index];
+            Box item = arr[index];
             if (item.length > box.length) {
                 box = item;
             }

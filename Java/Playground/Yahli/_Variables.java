@@ -31,7 +31,7 @@ public class _Variables {
         Boolean[] arrb = new Boolean[3];
         System.out.println(Arrays.toString(arrb));
 
-        _Box[] arrr = new _Box[3];
+        Box[] arrr = new Box[3];
         System.out.println(Arrays.toString(arrr));
 
         char c1 = 'a';
