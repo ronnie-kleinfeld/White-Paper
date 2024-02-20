@@ -10,6 +10,14 @@ public class Chair {
     private boolean sold;
     private ExistsEnum exists;
 
+    public int getSeat() {
+        return seat;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
     public PriceLevelEnum getPriceLevel() {
         return priceLevel;
     }
@@ -26,7 +34,7 @@ public class Chair {
         return -1;
     }
 
-    public char getRow() {
+    public char getRowLetter() {
         switch (row) {
             case 0:
                 return 'A';
@@ -78,6 +86,6 @@ public class Chair {
     }
 
     public String toString() {
-        return "Chair " + (seat + 1) + getRow();
+        return "Chair " + (seat + 1) + getRowLetter();
     }
 }

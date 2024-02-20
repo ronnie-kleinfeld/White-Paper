@@ -36,8 +36,10 @@ public class Person {
     }
 
     public String toString() {
-        String message = String.format("Person name: %1, surname: %2, email: %3", getName(), getSurname(), getEmail());
-        ConsoleHelper.println(message);
+        String message = String.format(
+                "Person name: " + getName() +
+                        ", surname: " + getSurname() +
+                        ", email: " + getEmail());
         return message;
     }
 }

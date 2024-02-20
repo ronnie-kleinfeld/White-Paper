@@ -8,9 +8,10 @@ public class PlaneManagement {
 
     public PlaneManagement() throws Exception {
         chairs = new Chair[4][14];
+        tickets = new Ticket[0];
 
-        for (int row = 0; row < 4; row++) {
-            for (int seat = 0; seat < 14; seat++) {
+        for (int row = 0; row < chairs.length; row++) {
+            for (int seat = 0; seat < chairs[row].length; seat++) {
                 PriceLevelEnum priceEnum;
                 switch (seat) {
                     case 0, 1, 2, 3, 4:
@@ -59,42 +60,41 @@ public class PlaneManagement {
     }
 
     private void askForOption() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            int choice;
-            do {
-                ConsoleHelper.printBlue("Please select an option: ");
-                choice = scanner.nextInt();
-                ConsoleHelper.println();
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        do {
+            ConsoleHelper.printBlue("Please select an option: ");
+            choice = scanner.nextInt();
+            ConsoleHelper.println();
 
-                switch (choice) {
-                    case 1:
-                        buy_seat();
-                        break;
-                    case 2:
-                        cancel_seat();
-                        break;
-                    case 3:
-                        find_first_available();
-                        break;
-                    case 4:
-                        show_seating_plan();
-                        break;
-                    case 5:
-                        // printTickets();
-                        break;
-                    case 6:
-                        // searchTicket();
-                        break;
-                    default:
-                        ConsoleHelper.println();
-                        ConsoleHelper.printlnRed("Please enter a valid option from the list.");
+            switch (choice) {
+                case 1:
+                    buy_seat();
+                    break;
+                case 2:
+                    cancel_seat();
+                    break;
+                case 3:
+                    find_first_available();
+                    break;
+                case 4:
+                    show_seating_plan();
+                    break;
+                case 5:
+                    print_tickets_info();
+                    break;
+                case 6:
+                    // searchTicket();
+                    break;
+                default:
+                    ConsoleHelper.println();
+                    ConsoleHelper.printlnRed("Please enter a valid option from the list.");
 
-                        ConsoleHelper.println();
-                }
+                    ConsoleHelper.println();
+            }
 
-                ConsoleHelper.println();
-            } while (choice != 0);
-        }
+            ConsoleHelper.println();
+        } while (choice != 0);
     }
 
     public void buy_seat() {
@@ -105,8 +105,11 @@ public class PlaneManagement {
         if (chair == null) {
             ConsoleHelper.printlnRed("Invalid seat");
         } else {
+            Ticket ticket = ask_for_ticket(chair.getSeat(), chair.getRow(), chair.getPriceLevel());
+
             try {
                 chair.setAsSold();
+                tickets = Ticket.addTicket(tickets, ticket);
                 ConsoleHelper.printlnGreen(chair.toString() + " sold to you");
             } catch (Exception ex) {
                 ConsoleHelper.printlnRed(ex.getMessage());
@@ -122,6 +125,8 @@ public class PlaneManagement {
         if (chair == null) {
             ConsoleHelper.printlnRed("Invalid seat");
         } else {
+            Ticket.removeTicketByRowSeat(tickets, chair.getRow(), chair.getSeat());
+
             try {
                 chair.setAsAvailable();
                 ConsoleHelper.printlnGreen(chair.toString() + " set as available");
@@ -135,8 +140,8 @@ public class PlaneManagement {
         ConsoleHelper.println("Seating Plan:");
         ConsoleHelper.println("=============");
 
-        for (int row = 0; row < 4; row++) {
-            for (int seat = 0; seat < 14; seat++) {
+        for (int row = 0; row < chairs.length; row++) {
+            for (int seat = 0; seat < chairs[row].length; seat++) {
                 Chair chair = chairs[row][seat];
                 if (chair.getExists() == ExistsEnum.exists) {
                     String str = chair.getSold() ? "X" : "O";
@@ -164,13 +169,12 @@ public class PlaneManagement {
         ConsoleHelper.println("Find first available:");
         ConsoleHelper.println("=====================");
 
-        for (int row = 0; row < 4; row++) {
-            for (int seat = 0; seat < 14; seat++) {
+        for (int row = 0; row < chairs.length; row++) {
+            for (int seat = 0; seat < chairs[row].length; seat++) {
                 Chair chair = chairs[row][seat];
                 if (chair.getExists() == ExistsEnum.exists && !chair.getSold()) {
                     try {
-                        chair.setAsSold();
-                        ConsoleHelper.printlnGreen(chair.toString() + " sold to you");
+                        ConsoleHelper.printlnGreen(chair.toString() + " is available");
                         return;
                     } catch (Exception e) {
                         // try catch is not needed here, I validate the exception cause in the
@@ -180,7 +184,27 @@ public class PlaneManagement {
             }
         }
 
-        ConsoleHelper.printRed("This plane is fully sold out");
+        ConsoleHelper.printlnRed("This plane is fully sold out");
+        ConsoleHelper.println();
+    }
+
+    private void print_tickets_info() {
+        ConsoleHelper.println("Tickets:");
+        ConsoleHelper.println("========");
+
+        if (tickets == null || tickets.length == 0) {
+            ConsoleHelper.printlnRed("No tickets");
+        } else {
+            int sum = 0;
+
+            for (int i = 0; i < tickets.length; i++) {
+                ConsoleHelper.println(tickets[i].toString());
+                sum += tickets[i].getPrice();
+            }
+
+            ConsoleHelper.println("Total amount:" + sum);
+        }
+
         ConsoleHelper.println();
     }
 
@@ -214,5 +238,24 @@ public class PlaneManagement {
         }
 
         return chairs[row][seat - 1];
+    }
+
+    private Ticket ask_for_ticket(int seat, int row, PriceLevelEnum priceLevel) {
+        Scanner scanner = new Scanner(System.in);
+
+        ConsoleHelper.printBlue("Enter Name: ");
+        String name = scanner.next();
+
+        ConsoleHelper.printBlue("Enter Surname: ");
+        String surname = scanner.next();
+
+        ConsoleHelper.printBlue("Enter eMail: ");
+        String email = scanner.next();
+
+        Person person = new Person(name, surname, email);
+
+        Ticket ticket = new Ticket(seat, row, priceLevel, person);
+
+        return ticket;
     }
 }
