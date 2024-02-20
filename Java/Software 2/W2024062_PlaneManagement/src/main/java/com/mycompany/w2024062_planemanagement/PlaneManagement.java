@@ -47,7 +47,7 @@ public class PlaneManagement {
                         plane.cancel_seat();
                         break;
                     case 3:
-                        findFirstAvailableSeat();
+                        plane.find_first_available();
                         break;
                     case 4:
                         plane.show_seating_plan();
@@ -68,9 +68,6 @@ public class PlaneManagement {
                 ConsoleHelper.println();
             } while (choice != 0);
         }
-    }
-
-    private static void findFirstAvailableSeat() {
     }
 
     private static void printTickets() {

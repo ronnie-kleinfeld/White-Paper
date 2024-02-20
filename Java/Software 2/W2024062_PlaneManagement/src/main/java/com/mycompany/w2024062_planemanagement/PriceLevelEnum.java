@@ -1,6 +1,6 @@
 package com.mycompany.w2024062_planemanagement;
 
-public enum PriceEnum {
+public enum PriceLevelEnum {
     firstClass,
     business,
     tourist

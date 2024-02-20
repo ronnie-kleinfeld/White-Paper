@@ -6,12 +6,24 @@ package com.mycompany.w2024062_planemanagement;
 public class Chair {
     private int seat;
     private int row;
-    private PriceEnum price;
+    private PriceLevelEnum priceLevel;
     private boolean sold;
     private ExistsEnum exists;
 
-    public PriceEnum getPrice() {
-        return price;
+    public PriceLevelEnum getPriceLevel() {
+        return priceLevel;
+    }
+
+    public int getPrice() {
+        switch (getPriceLevel()) {
+            case PriceLevelEnum.firstClass:
+                return 200;
+            case PriceLevelEnum.business:
+                return 180;
+            case PriceLevelEnum.tourist:
+                return 150;
+        }
+        return -1;
     }
 
     public char getRow() {
@@ -33,7 +45,7 @@ public class Chair {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
         } else if (getSold()) {
-            throw new Exception("Seat is not available");
+            throw new Exception("Seat is not available, can not buy a sold seat.");
         } else {
             this.sold = true;
         }
@@ -43,7 +55,7 @@ public class Chair {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
         } else if (!getSold()) {
-            throw new Exception("Seat is available");
+            throw new Exception("Seat is available, can not cancel an available seat.");
         } else {
             this.sold = false;
         }
@@ -57,10 +69,10 @@ public class Chair {
         return exists;
     }
 
-    public Chair(int seat, int row, PriceEnum price, boolean sold, ExistsEnum exists) {
+    public Chair(int seat, int row, PriceLevelEnum price, boolean sold, ExistsEnum exists) {
         this.seat = seat;
         this.row = row;
-        this.price = price;
+        this.priceLevel = price;
         this.sold = sold;
         this.exists = exists;
     }

@@ -13,16 +13,16 @@ public class Plane {
 
         for (int row = 0; row < 4; row++) {
             for (int seat = 0; seat < 14; seat++) {
-                PriceEnum priceEnum;
+                PriceLevelEnum priceEnum;
                 switch (seat) {
                     case 0, 1, 2, 3, 4:
-                        priceEnum = PriceEnum.firstClass;
+                        priceEnum = PriceLevelEnum.firstClass;
                         break;
                     case 5, 6, 7, 8:
-                        priceEnum = PriceEnum.business;
+                        priceEnum = PriceLevelEnum.business;
                         break;
                     case 9, 10, 11, 12, 13:
-                        priceEnum = PriceEnum.tourist;
+                        priceEnum = PriceLevelEnum.tourist;
                         break;
                     default:
                         throw new Exception("Index out of bound");
@@ -82,14 +82,14 @@ public class Plane {
                 if (chair.getExists() == ExistsEnum.exists) {
                     String str = chair.getSold() ? "X" : "O";
 
-                    switch (chair.getPrice()) {
-                        case PriceEnum.firstClass:
+                    switch (chair.getPriceLevel()) {
+                        case PriceLevelEnum.firstClass:
                             ConsoleHelper.printYellow(str);
                             break;
-                        case PriceEnum.business:
+                        case PriceLevelEnum.business:
                             ConsoleHelper.printBlue(str);
                             break;
-                        case PriceEnum.tourist:
+                        case PriceLevelEnum.tourist:
                             ConsoleHelper.printGreen(str);
                             break;
                     }
@@ -99,6 +99,30 @@ public class Plane {
             }
             ConsoleHelper.println();
         }
+    }
+
+    public void find_first_available() {
+        ConsoleHelper.println("Find first available:");
+        ConsoleHelper.println("=====================");
+
+        for (int row = 0; row < 4; row++) {
+            for (int seat = 0; seat < 14; seat++) {
+                Chair chair = chairs[row][seat];
+                if (chair.getExists() == ExistsEnum.exists && !chair.getSold()) {
+                    try {
+                        chair.setAsSold();
+                        ConsoleHelper.printlnGreen(chair.toString() + " sold to you");
+                        return;
+                    } catch (Exception e) {
+                        // try catch is not needed here, I validate the exception cause in the
+                        // preceeding if to validate the it is a valid chair
+                    }
+                }
+            }
+        }
+
+        ConsoleHelper.printRed("This plane is fully sold out");
+        ConsoleHelper.println();
     }
 
     private Chair ask_for_seat() {
