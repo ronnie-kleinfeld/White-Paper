@@ -109,7 +109,7 @@ public class PlaneManagement {
 
             try {
                 chair.setAsSold();
-                tickets = Ticket.addTicket(tickets, ticket);
+                tickets = TicketsHelper.addTicket(tickets, ticket);
                 ConsoleHelper.printlnGreen(chair.toString() + " sold to you");
             } catch (Exception ex) {
                 ConsoleHelper.printlnRed(ex.getMessage());
@@ -125,7 +125,7 @@ public class PlaneManagement {
         if (chair == null) {
             ConsoleHelper.printlnRed("Invalid seat");
         } else {
-            Ticket.removeTicketByRowSeat(tickets, chair.getRow(), chair.getSeat());
+            TicketsHelper.removeTicketByRowSeat(tickets, chair.getRow(), chair.getSeat());
 
             try {
                 chair.setAsAvailable();
