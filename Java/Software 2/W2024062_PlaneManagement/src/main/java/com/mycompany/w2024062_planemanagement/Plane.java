@@ -43,16 +43,16 @@ public class Plane {
         }
     }
 
-    public void buyASeat() {
+    public void buy_seat() {
         ConsoleHelper.println("Buy a Seat:");
         ConsoleHelper.println("===========");
 
-        Seat seat = askForSeat();
+        Seat seat = ask_for_seat();
         if (seat == null) {
             ConsoleHelper.printlnRed("Invalid seat");
         } else {
             try {
-                seat.setSold();
+                seat.setSold(true);
                 ConsoleHelper.printlnGreen(seat.toString() + " sold to you");
             } catch (Exception ex) {
                 ConsoleHelper.printlnRed(ex.getMessage());
@@ -60,7 +60,24 @@ public class Plane {
         }
     }
 
-    public void printSeatingPlan() {
+    public void cancel_seat() {
+        ConsoleHelper.println("Cancel a Seat:");
+        ConsoleHelper.println("==============");
+
+        Seat seat = ask_for_seat();
+        if (seat == null) {
+            ConsoleHelper.printlnRed("Invalid seat");
+        } else {
+            try {
+                seat.setSold(false);
+                ConsoleHelper.printlnGreen(seat.toString() + " set as available");
+            } catch (Exception ex) {
+                ConsoleHelper.printlnRed(ex.getMessage());
+            }
+        }
+    }
+
+    public void show_seating_plan() {
         ConsoleHelper.println("Seating Plan:");
         ConsoleHelper.println("=============");
 
@@ -89,7 +106,7 @@ public class Plane {
         }
     }
 
-    private Seat askForSeat() {
+    private Seat ask_for_seat() {
         Scanner scanner = new Scanner(System.in);
 
         ConsoleHelper.printBlue("Enter a Row: ");

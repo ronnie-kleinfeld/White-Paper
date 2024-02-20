@@ -47,16 +47,16 @@ public class W2024062_PlaneManagement {
             ConsoleHelper.println();
             switch (choice) {
                 case 1:
-                    plane.buyASeat();
+                    plane.buy_seat();
                     break;
                 case 2:
-                    cancelASeat();
+                    plane.cancel_seat();
                     break;
                 case 3:
                     findFirstAvailableSeat();
                     break;
                 case 4:
-                    plane.printSeatingPlan();
+                    plane.show_seating_plan();
                     break;
                 case 5:
                     printTickets();
@@ -75,9 +75,6 @@ public class W2024062_PlaneManagement {
         } while (choice != 0);
 
         scanner.close();
-    }
-
-    private static void cancelASeat() {
     }
 
     private static void findFirstAvailableSeat() {

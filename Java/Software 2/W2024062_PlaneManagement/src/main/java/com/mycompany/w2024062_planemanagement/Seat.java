@@ -34,13 +34,13 @@ public class Seat {
         }
     }
 
-    public void setSold() throws Exception {
+    public void setSold(boolean sold) throws Exception {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
         } else if (getSold()) {
             throw new Exception("Seat is not available");
         } else {
-            sold = true;
+            this.sold = sold;
         }
     }
 
