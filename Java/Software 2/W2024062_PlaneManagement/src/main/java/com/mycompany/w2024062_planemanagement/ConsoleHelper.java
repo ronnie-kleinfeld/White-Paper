@@ -40,18 +40,18 @@ public class ConsoleHelper {
     }
 
     public static void printlnRed(String message) {
-        System.out.print(RED + message + RESET);
+        System.out.println(RED + message + RESET);
     }
 
     public static void printlnGreen(String message) {
-        System.out.print(GREEN + message + RESET);
+        System.out.println(GREEN + message + RESET);
     }
 
     public static void printlnBlue(String message) {
-        System.out.print(BLUE + message + RESET);
+        System.out.println(BLUE + message + RESET);
     }
 
     public static void printlnYellow(String message) {
-        System.out.print(YELLOW + message + RESET);
+        System.out.println(YELLOW + message + RESET);
     }
 }
