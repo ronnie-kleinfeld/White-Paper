@@ -1,6 +1,7 @@
 package com.mycompany.w2024062_planemanagement;
 
-import java.util.Arrays;
+import java.io.FileWriter;
+import java.io.IOException;
 
 // seat 12B - seat 12, row B
 // row A,B,C,D
@@ -84,5 +85,28 @@ public class Ticket {
                         ", price: " + getPrice() +
                         ", person: " + person.toString());
         return message;
+    }
+
+    public String toCSV() {
+        // row,seat,priceLevel,name,surname,email
+        return getRowLetter() + "," + (getSeat() + 1) + "," + getPrice() + "," + person.getName() + ","
+                + person.getSurname() + "," + person.getEmail();
+    }
+
+    public void save() throws IOException {
+        // convert the char to string, without this the concatenation below will convert
+        // the char to ascii code A2->65+1=66.txt
+        String rowLetter = getRowLetter() + "";
+
+        String filename = rowLetter + (getSeat() + 1) + ".txt";
+
+        try {
+            FileWriter fileWriter = new FileWriter(filename);
+            fileWriter.write(toCSV());
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }

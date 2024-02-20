@@ -7,7 +7,7 @@ public class Chair {
     private int seat;
     private int row;
     private PriceLevelEnum priceLevel;
-    private boolean sold;
+    private boolean isSold;
     private ExistsEnum exists;
 
     public int getSeat() {
@@ -52,25 +52,25 @@ public class Chair {
     public void setAsSold() throws Exception {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
-        } else if (getSold()) {
+        } else if (getIsSold()) {
             throw new Exception("Seat is not available, can not buy a sold seat.");
         } else {
-            this.sold = true;
+            this.isSold = true;
         }
     }
 
     public void setAsAvailable() throws Exception {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
-        } else if (!getSold()) {
+        } else if (!getIsSold()) {
             throw new Exception("Seat is available, can not cancel an available seat.");
         } else {
-            this.sold = false;
+            this.isSold = false;
         }
     }
 
-    public boolean getSold() {
-        return sold;
+    public boolean getIsSold() {
+        return isSold;
     }
 
     public ExistsEnum getExists() {
@@ -81,7 +81,7 @@ public class Chair {
         this.seat = seat;
         this.row = row;
         this.priceLevel = price;
-        this.sold = sold;
+        this.isSold = sold;
         this.exists = exists;
     }
 

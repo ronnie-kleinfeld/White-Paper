@@ -16,14 +16,23 @@ public class TicketsHelper {
         return newTickets;
     }
 
-    public static Ticket[] removeTicketByRowSeat(Ticket[] tickets, int row, int seat) {
+    public static int findTicketByRowSeat(Ticket[] tickets, int row, int seat) {
         for (int i = 0; i < tickets.length; i++) {
             if (tickets[i].getRow() == row && tickets[i].getSeat() == seat) {
-                return TicketsHelper.removeByIndex(tickets, i);
+                return i;
             }
         }
 
-        return null;
+        return -1;
+    }
+
+    public static Ticket[] removeTicketByRowSeat(Ticket[] tickets, int row, int seat) {
+        int index = findTicketByRowSeat(tickets, row, seat);
+        if (index == -1) {
+            return null;
+        } else {
+            return TicketsHelper.removeByIndex(tickets, index);
+        }
     }
 
     public static Ticket[] removeByIndex(Ticket[] arr, int removeIndex) {

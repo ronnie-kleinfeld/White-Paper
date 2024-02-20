@@ -84,7 +84,7 @@ public class PlaneManagement {
                     print_tickets_info();
                     break;
                 case 6:
-                    // searchTicket();
+                    search_ticket();
                     break;
                 default:
                     ConsoleHelper.println();
@@ -110,6 +110,7 @@ public class PlaneManagement {
             try {
                 chair.setAsSold();
                 tickets = TicketsHelper.addTicket(tickets, ticket);
+                ticket.save();
                 ConsoleHelper.printlnGreen(chair.toString() + " sold to you");
             } catch (Exception ex) {
                 ConsoleHelper.printlnRed(ex.getMessage());
@@ -144,7 +145,7 @@ public class PlaneManagement {
             for (int seat = 0; seat < chairs[row].length; seat++) {
                 Chair chair = chairs[row][seat];
                 if (chair.getExists() == ExistsEnum.exists) {
-                    String str = chair.getSold() ? "X" : "O";
+                    String str = chair.getIsSold() ? "X" : "O";
 
                     switch (chair.getPriceLevel()) {
                         case PriceLevelEnum.firstClass:
@@ -172,7 +173,7 @@ public class PlaneManagement {
         for (int row = 0; row < chairs.length; row++) {
             for (int seat = 0; seat < chairs[row].length; seat++) {
                 Chair chair = chairs[row][seat];
-                if (chair.getExists() == ExistsEnum.exists && !chair.getSold()) {
+                if (chair.getExists() == ExistsEnum.exists && !chair.getIsSold()) {
                     try {
                         ConsoleHelper.printlnGreen(chair.toString() + " is available");
                         return;
@@ -203,6 +204,29 @@ public class PlaneManagement {
             }
 
             ConsoleHelper.println("Total amount:" + sum);
+        }
+
+        ConsoleHelper.println();
+    }
+
+    private void search_ticket() {
+        ConsoleHelper.println("Search Tickets:");
+        ConsoleHelper.println("===============");
+
+        Chair chair = ask_for_seat();
+        if (chair == null) {
+            ConsoleHelper.printlnRed("Invalid seat");
+        } else {
+            if (chair.getIsSold()) {
+                int index = TicketsHelper.findTicketByRowSeat(tickets, chair.getRow(), chair.getSeat());
+                if (index == -1) {
+                    ConsoleHelper.printlnRed("Error: seat without a ticket.");
+                } else {
+                    ConsoleHelper.println(tickets[index].toString());
+                }
+            } else {
+                ConsoleHelper.printGreen("This seat is available");
+            }
         }
 
         ConsoleHelper.println();
