@@ -13,13 +13,11 @@ public class W2024062_PlaneManagement {
     private static Plane plane;
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the Plane Management application");
-
         try {
             plane = new Plane();
             showMenuAndGetOption();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            ConsoleHelper.printlnRed(e.getMessage());
         }
     }
 
@@ -28,23 +26,28 @@ public class W2024062_PlaneManagement {
 
         int choice;
         do {
-            System.out.println("*************************************************");
-            System.out.println("*                MENU OPTIONS                   *");
-            System.out.println("*************************************************");
-            System.out.println("     1) Buy a seat");
-            System.out.println("     2) Cancel a seat");
-            System.out.println("     3) Find first available seat");
-            System.out.println("     4) Show seating plan");
-            System.out.println("     5) Print tickets information and total sales");
-            System.out.println("     6) Search ticket");
-            System.out.println("     0) Quit");
-            System.out.println("*************************************************");
-            System.out.println("Please select an option:");
+            ConsoleHelper.println();
+            ConsoleHelper.println();
+            ConsoleHelper.printlnGreen("Welcome to the Plane Management application");
+            ConsoleHelper.println();
+            ConsoleHelper.println("*************************************************");
+            ConsoleHelper.println("*                MENU OPTIONS                   *");
+            ConsoleHelper.println("*************************************************");
+            ConsoleHelper.println("     1) Buy a seat");
+            ConsoleHelper.println("     2) Cancel a seat");
+            ConsoleHelper.println("     3) Find first available seat");
+            ConsoleHelper.println("     4) Show seating plan");
+            ConsoleHelper.println("     5) Print tickets information and total sales");
+            ConsoleHelper.println("     6) Search ticket");
+            ConsoleHelper.println("     0) Quit");
+            ConsoleHelper.println("*************************************************");
+            ConsoleHelper.printlnBlue("Please select an option:");
 
             choice = scanner.nextInt();
+            ConsoleHelper.println();
             switch (choice) {
                 case 1:
-                    buyASeat();
+                    plane.buyASeat();
                     break;
                 case 2:
                     cancelASeat();
@@ -62,14 +65,16 @@ public class W2024062_PlaneManagement {
                     searchTicket();
                     break;
                 default:
-                    System.out.println("Please enter a valid option from the list.");
+                    ConsoleHelper.println();
+                    ConsoleHelper.printlnRed("Please enter a valid option from the list.");
+
+                    ConsoleHelper.println();
             }
+
+            ConsoleHelper.println();
         } while (choice != 0);
 
         scanner.close();
-    }
-
-    private static void buyASeat() {
     }
 
     private static void cancelASeat() {

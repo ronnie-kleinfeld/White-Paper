@@ -9,30 +9,58 @@ package com.mycompany.w2024062_planemanagement;
  * @author ronniekleinfeld
  */
 public class Seat {
-
     private int row;
-    private int column;
+    private int col;
     private PriceEnum price;
-    private StatusEnum status;
+    private boolean sold;
     private ExistsEnum exists;
 
     public PriceEnum getPrice() {
         return price;
     }
 
-    public StatusEnum getStatus() {
-        return status;
+    public char getCol() {
+        switch (col) {
+            case 0:
+                return 'A';
+            case 1:
+                return 'B';
+            case 2:
+                return 'C';
+            case 3:
+                return 'D';
+            default:
+                return ' ';
+        }
+    }
+
+    public void setSold() throws Exception {
+        if (getExists() == ExistsEnum.notExists) {
+            throw new Exception("Invalid seat");
+        } else if (getSold()) {
+            throw new Exception("Seat is not available");
+        } else {
+            sold = true;
+        }
+    }
+
+    public boolean getSold() {
+        return sold;
     }
 
     public ExistsEnum getExists() {
         return exists;
     }
 
-    public Seat(int row, int column, PriceEnum price, StatusEnum status, ExistsEnum exists) {
+    public Seat(int row, int col, PriceEnum price, boolean sold, ExistsEnum exists) {
         this.row = row;
-        this.column = column;
+        this.col = col;
         this.price = price;
-        this.status = status;
+        this.sold = sold;
         this.exists = exists;
+    }
+
+    public String toString() {
+        return "Seat " + (row + 1) + getCol();
     }
 }
