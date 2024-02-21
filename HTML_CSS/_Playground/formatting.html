@@ -1,0 +1,629 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic HTML Tags</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #3387EB,
+                border-left: 1px solid #3387EB;
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>.active:hover>a,
+        .bs-docs-sidebar .nav>.active:focus>a {
+            padding-left: 18px;
+            font-weight: bold;
+            color: #3387EB;
+            background-color: transparent;
+            border-left: 2px solid #3387EB;
+        }
+
+        .back-to-top:hover,
+        .bs-docs-theme-toggle:hover {
+            color: #563d7c;
+            text-decoration: none;
+        }
+
+        .dropdown-menu>.active>a,
+        .dropdown-menu>.active>a:focus,
+        .dropdown-menu>.active>a:hover {
+            background-image: none;
+            background-color: #3387EB;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-html">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Module Info<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="general.html">General Information</a></li>
+                            <li><a href="schedule.html">Schedule</a></li>
+                            <li><a href="team.html">Module Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="unix.html">Introduction to Unix</a></li>
+                            <li class="active video"><a href="basicTags.html">Basic HTML tags</a></li>
+                            <li><a href="lists.html">Lists</a></li>
+                            <li><a href="tables.html">Tables</a></li>
+                            <li><a href="colours.html">Colours</a></li>
+                            <li><a href="images.html">Images</a></li>
+                            <li><a href="links.html">Links & iframes</a></li>
+                            <li><a href="special.html">Special Characters</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+                            <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+                            <li><a href="cssElements.html">Styling Elements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">JavaScript<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="js1.html">Introduction to JavaScript</a></li>
+                            <li><a href="js2.html">Objects, Methods and Functions</a></li>
+                            <li><a href="js3.html">JavaScript and Forms</a></li>
+                            <li><a href="js4.html">JavaScript and the DOM</a></li>
+                            <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+
+
+    <main class="container language-html">
+        <div class="col-md-9" role="main">
+            <h1>Basic HTML tags</h1>
+            <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+                        aria-hidden="true"></span></strong> HTML5 does not require the following. However, it is
+                <strong>recommended</strong> that:
+                <ul>
+                    <li>tags are written in lower-case</li>
+                    <li>all tags, should be followed by their corresponding end delimiter tag e.g. paragraphs should be
+                        delimited by <code>&lt;p&gt; ... &lt;/p&gt;</code> except for empty tags e.g.
+                        <code>&lt;hr></code> and <code>&lt;br></code>
+                    </li>
+                    <li>all tag attributes should be enclosed between quotes e.g.
+                        <code>&lt;input type="text" name="surname"&gt;</code>
+                    </li>
+                    <li>tag delimiters should be given in order
+                        e.g.<br><code>&lt;p&gt;&lt;strong&gt;&lt;em&gt;My strongly emphasized paragraph&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</code>
+                    </li>
+                </ul>
+                <p>In addition, indentation should be used to make the code readable and hence maintainable.
+            </div>
+
+            <h2 id="Introduction" class="group">Introduction</h2>
+            <p>HTML (HyperText Markup Language) is a markup language which consists of tags embedded in the text of a
+                document. The browser reading the document interprets these markup tags to help format the document for
+                subsequent display to a reader. However, many of the decisions about layout are made by the browser.
+                Remember, web browsers are available for a wide variety of computer systems.</p>
+
+            <p>The browser displays the document with regard to features that the viewer selects either explicitly or
+                implicitly. Factors affecting the layout and presentation include:
+            <ul>
+                <li>The markup tags used.</li>
+                <li>The physical page width.</li>
+                <li>The fonts used to display the text.</li>
+                <li>The colour depth of the display.</li>
+            </ul>
+            <p>The browser, ignores extra spaces and new lines between words and markup tags when reading the document.
+                Thus, the following three text fragments will be formatted identically
+
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Fragment 1</th>
+                    <th>Fragment 2</th>
+                    <th>Fragment 3</th>
+                </tr>
+                <tr>
+                    <td>The browser will ignore<br> new lines and extra<br> spaces in the text.</td>
+                    <td>The browser will<br> ignore new lines and<br> extra spaces in the text.</td>
+                    <td>The browser will<br> ignore new lines and<br> extra &nbsp;&nbsp;&nbsp; spaces in the text.</td>
+                </tr>
+            </table>
+
+            to produce the following:
+
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <td>The browser will ignore new lines and extra spaces in the text.</td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <p>The html content then begins with the tag <code>&lt;html&gt;</code> and ends with the tag
+                <code>&lt;/html&gt;</code>. The document is the divided into two sections:
+            <ul>
+                <li>the <strong>head</strong>, bracketed by <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code>
+                </li>
+                <li>the <strong>body</strong>, bracketed by <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>
+                </li>
+            </ul>
+            </p>
+            <p>The <strong>head</strong> of an HTML document contains identifying and control information that is not
+                part of the displayed text. Such information can be the document title, bracketed by the
+                <code>&lt;title&gt;</code> and <code>&lt;title&gt;</code> tags.
+            </p>
+
+            <p>The <strong>body</strong> of the document is where the user-readable text is stored and usually accounts
+                for the bulk of the document. Various control tags are there to tell the browser where to insert line
+                breaks and how to format the document.</p>
+
+            <hr>
+            <p>The markup language is made up of tags such as <code>&lt;b&gt;</code> which requests text that follows to
+                be drawn attention to (usually by displaying hte text in bold face) without marking it up as important.
+                This formatting is turned off by the inverse markup tag <code>&lt;/b&gt;</code>.</p>
+
+            <p>The basic layout of an HTML document and the resultant information displayed by a browser such as
+                Firefox, Chrome, Safari or Opera is shown below:
+
+            <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-hand-right"
+                    aria-hidden="true"></span> The meaning of the <code>&lt;b&gt;</code> changed with HTML5. Prior to
+                HTML5, <code>&lt;b&gt;</code> was a simple formatting tag used to turn text to bold. The new definition
+                for the <code>&lt;b&gt;</code> element is: "The <code>b</code> element represents a span of text to
+                which attention is being drawn for utilitarian purposes without conveying any extra importance and with
+                no implication of an alternate voice or mood, such as key words in a document abstract, product names in
+                a review, actionable words in interactive text-driven software, or an article lede" <a
+                    href="https://html.spec.whatwg.org/multipage/semantics.html#the-b-element"><span
+                        class="glyphicon glyphicon-education" aria-hidden="true"></span></a>. A similar redefinition
+                took place for the <code>i</code> element. The <code>&lt;i&gt;</code> tag that used to specify a span of
+                text to be displayed in italic now "represents a span of text in an alternate voice or mood, or
+                otherwise offset from the normal prose in a manner indicating a different quality of text, such as a
+                taxonomic designation, a technical term, an idiomatic phrase from another language, transliteration, a
+                thought, or a ship name in Western texts." <a
+                    href="https://html.spec.whatwg.org/multipage/semantics.html#the-i-element"><span
+                        class="glyphicon glyphicon-education" aria-hidden="true"></span></a>.</div>
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>Displayed by browser</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td style="vertical-align:middle">An example of a simple web page.</td>
+                    <td>
+                        <pre><code>&lt;!doctype html>
+&lt;html lang="en">
+ 
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>Title of the web page &lt;/title>
+&lt;/head>
+  
+&lt;body>
+  &lt;!-- this is a comment that will not be displayed -->
+  An example of a simple web page.
+&lt;/body>
+
+&lt;/html></code></pre>
+                    </td>
+                </tr>
+            </table>
+
+            The tags used are:
+
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">HTML Markup</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td><code>&lt;!doctype html></code></td>
+                    <td>Indicates that this is an HTML5 document</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;html&gt; &lt;/html&gt;</code><br><br>
+                        <code>&lt;html lang='en'&gt; &lt;/html&gt;</code>
+                    </td>
+                    <td>Defines the extent of the HTML markup text.
+                        <br>
+                        <br>The lang attribute specifies which language is used to write the content of a web page:
+                        &lt;html lang='en'&gt;
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>&lt;head> &lt;/head></code></td>
+                    <td>Contains descriptions of the HTML page. This meta information is not displayed as part of the
+                        web page.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;title> &lt;/title></code></td>
+                    <td>Describes the title of the page. This description is usually displayed by the browser as the
+                        title of the window in which the web page is displayed. This information is also used by some
+                        search engines to compile an index of web pages.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;body> &lt;/body></code></td>
+                    <td>Delimits the body of the web page. In the body is the text to be displayed as well as HTML
+                        markup tags to hint at the format of the text.</td>
+                </tr>
+                <!--
+<tr><td><code>&lt;b> &lt;/b></code></td><td>Shows the importance of the enclosed text, usually by presenting it in a bold typeface.</td></tr>
+-->
+                <tr>
+                    <td><code>&lt;!-- some text --></code></td>
+                    <td>Represent HTML comments. They can be used as in programming, and will not be displayed on the
+                        web page.</td>
+                </tr>
+            </table>
+
+            <h2 id="simpleFormatting" class="group">Simple Formatting Tags</h2>
+            <p>The following are some of the simple physical formatting tags available in HTML.</p>
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td><i>Italic</i> font.</td>
+                    <td><code>&lt;i>Italic&lt;/i> font.</code></td>
+                </tr>
+                <tr>
+                    <td><b>Bold</b> font.</td>
+                    <td><code>&lt;b>Bold&lt;/b> font.</code></td>
+                </tr>
+                <tr>
+                    <td><small>Small</small> font.</td>
+                    <td><code>&lt;small>Small&lt;/small> font.</code></td>
+                </tr>
+                <tr>
+                    <td><sub>Subscript</sub> font.</td>
+                    <td><code>&lt;sub>Subscript&lt;/sub></code></td>
+                </tr>
+                <tr>
+                    <td><sup>Superscript</sup> font.</td>
+                    <td><code>&lt;sup>Superscript&lt;/sup></code></td>
+                </tr>
+                <!--
+	<tr><td>The <span style="color:red">text</span> is red.</td><td><code>The &lt;span style="color:red">text&lt;/span> is red.</code><br>
+ The <code>&lt;span></code> tag represents an inline element. <br>
+ The style attribute allows CSS rules to be applied to the element.</td></tr> -->
+            </table>
+
+            <!--
+<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This site makes use of a CSS Library as well as additional custom CSS for styling, hence the styles above may not have been overridden by CSS rules. See in the window what these tags look like without any CSS. Note that the code is interactive. Feel free to make changes and view how these affect the rendered text:</div>
+<a class="jsbin-embed" href="https://jsbin.com/qajoji/3/embed?html,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.39.15"></script>
+-->
+            <p></p>
+
+            <h2 id="logicalFormatting" class="group">Logical Formatting Tags</h2>
+            <p>The following are some of the logical formatting tags in HTML. These should be used to describe a logical
+                unit of your document. The formatting of this logical unit may in some cases be the same as produced by
+                other formatting tags. Remember, the tags specify logical units of the document, software other than the
+                web browser may need this information.</p>
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td>The following <em>text</em> is emphasized.</td>
+                    <td><code>The following &lt;em>text&lt;/em> is emphasized.</code>
+                        <ul>
+                            <li>Screen readers will change their voice for &lt;em>.</li>
+                            <li>The em element represents stress emphasis of its contents.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The following <strong>text</strong> is strongly emphasized.
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        Before proceeding, <strong>make sure you put on your safety goggles</strong>.
+
+                    </td>
+                    <td><code>The following &lt;strong>text&lt;/strong> is strongly emphasized.</code>
+
+                        <ul>
+                            <li>Screen readers will change their voice for &lt;strong>.</li>
+                            <li>Can be used to mark up a warning or caution. E.g.,</li>
+                        </ul>
+                        <code>Before proceeding, &lt;strong>make sure you put on your safety goggles&lt;/strong>.</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The following <var>name</var> is a program variable</td>
+                    <td><code>The following &lt;var>name&lt;/var> is a program variable</code></td>
+                </tr>
+                <tr>
+                    <td>The following is <dfn>a definition</dfn></td>
+                    <td><code>The following is &lt;dfn>a definition&lt;/dfn></code></td>
+                </tr>
+                <tr>
+                    <td>The following is <cite>a citation.</cite></td>
+                    <td><code>The following is &lt;cite>a citation.&lt;/cite></code></td>
+                </tr>
+                <tr>
+                    <td>Use the e-mail address <address>coloma@wmin.ac.uk</address> to contact me.</td>
+                    <td><code>Use the e-mail address &lt;address>coloma@wmin.ac.uk&lt;/address> to contact me.</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Represents computer code</code></td>
+                    <td><code>&lt;code>Represents computer code&lt;/code></code></td>
+                </tr>
+                <tr>
+                    <td>A sequence of <samp>sample computer output</samp></td>
+                    <td><code>A sequence of &lt;samp>sample computer output&lt;/samp></code></td>
+                </tr>
+                <tr>
+                    <td><kbd>keyboard characters</kbd></td>
+                    <td><code>&lt;kbd>keyboard characters&lt;/kbd></code></td>
+                </tr>
+            </table>
+
+            <p>See the rendering of the code bove without any CSS in the iframe below:</p>
+            <a class="jsbin-embed" href="https://jsbin.com/hehili/embed?html,output">JS Bin on jsbin.com</a>
+            <script src="https://static.jsbin.com/js/embed.min.js?3.39.15"></script>
+
+            <p></p>
+            <h2 id="Headings" class="group">Headings</h2>
+            <p>A heading in the text is created with the <code>&lt;h1></code> tag. There are in fact six heading tags,
+                going from <code>&lt;h1></code> the largest to <code>&lt;h6></code> the smallest.
+
+            </p>
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1>A H1 heading</h1>
+                    </td>
+                    <td><code>&lt;h1>A H1 heading&lt;/h1></code></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>A H2 heading</h2>
+                    </td>
+                    <td><code>&lt;h2>A H2 heading&lt;/h2></code></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>A H3 heading</h3>
+                    </td>
+                    <td><code>&lt;h3>A H3 heading&lt;/h3></code></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>A H4 heading</h4>
+                    </td>
+                    <td><code>&lt;h4>A H4 heading&lt;/h4></code></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>A H5 heading</h5>
+                    </td>
+                    <td><code>&lt;h5>A H5 heading&lt;/h5></code></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>A H6 heading</h6>
+                    </td>
+                    <td><code>&lt;h6>A H6 heading&lt;/h6></code></td>
+                </tr>
+            </table>
+            <p>See the rendering of the code above without any CSS in the iframe below:</p>
+            <a class="jsbin-embed" href="https://jsbin.com/dedipez/embed?html,output">JS Bin on jsbin.com</a>
+            <script src="https://static.jsbin.com/js/embed.min.js?3.39.15"></script>
+
+            <p>A heading tag generates line break(s) before and after the heading text. For example:
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td>Just before the heading.
+                        <h4>A H4 heading</h4>
+                        Just after the heading.
+                    </td>
+                    <td><code>Just before the heading.<br>
+ &lt;h4>A H4 heading&lt;/h4>
+ Just after the heading.</code></td>
+                </tr>
+            </table>
+            </p>
+            <h2 id="Paragraphs" class="group">Paragraphs</h2>
+            <p>A paragraph is created with the <code>&lt;p></code> tag, and closed with the <code>&lt;/p></code> tag
+
+            </p>
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>A first paragraph</p>
+                        <p>A second paragraph</p>
+                    </td>
+                    <td><code>&lt;p>A first paragraph&lt;/p>&lt;p>A second paragraph&lt;/p></code></td>
+                </tr>
+            </table>
+
+            <p>It is possible to break a paragraph to force a line break using the <code>&lt;br></code> tag:</p>
+
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>A paragraph with <br>a line break </p>
+                    </td>
+                    <td><code>&lt;p>A paragraph with &lt;br>a line break &lt;/p></code></td>
+                </tr>
+            </table>
+
+            <p></p>
+            <h2 id="Rulers" class="group">Rulers</h2>
+            <p>A horizontal ruler across the page can be created with the <code>&lt;hr></code> tag. For example:</p>
+
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="min-width: 170px;">Formatted text</th>
+                    <th>HTML markup required</th>
+                </tr>
+                <tr>
+                    <td>End of a section
+                        <hr> New section
+                    </td>
+                    <td><code>End of a section &lt;hr> New section</code></td>
+                </tr>
+                <!-- <tr><td>Only 40% of width <hr style="width: 40%;"> New section</td><td><code>Only 40% of width &lt;hr style="width: 40%"> New section</code></td></tr> -->
+                <!-- <tr><td>The size of the ruler <hr style="height: 10px;"> New section</td><td><code>The size of the ruler &lt;hr style="height: 10px;"> New section</code></td></tr> -->
+            </table>
+
+            <!--
+<p>See the rendering of the code bove without any CSS in the iframe below:</p>
+<a class="jsbin-embed" href="https://jsbin.com/zuzozip/edit?html,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.39.15"></script>
+-->
+
+            <hr>
+            <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+                        aria-hidden="true"></span></strong> Final Note: As it is good practice to separate content from
+                style we have avoided the use of styling attributes and styling elements in this Lecture. It is also
+                recommended to avoid using CSS inline styles inside elements. Instead, CSS rules should be created and
+                applied. Check the <a href="cssSyntax.html">Introduction to CSS Lecture</a> to see how to do this.</div>
+        </div>
+        <div class="row">
+            <!--Nav Bar -->
+
+            <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+                <ul id="sidebar" class="nav nav-stacked">
+                    <li>
+                        <a href="#Introduction">Introduction</a>
+                    </li>
+                    <li>
+                        <a href="#simpleFormatting">Simple Formatting Tags</a>
+                    </li>
+                    <li>
+                        <a href="#logicalFormatting">Logical Formatting Tags</a>
+                    </li>
+                    <li>
+                        <a href="#Headings">Headings</a>
+                    </li>
+                    <li>
+                        <a href="#Paragraphs">Paragraphs</a>
+                    </li>
+                    <li>
+                        <a href="#Rulers">Rulers</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <nav class="navbar navbar-default no-margin-bottom">
+        <div class="container">
+            <p class="navbar-text navbar-right">&copy; Copyright 2016-2022 <a href="https://www.westminster.ac.uk"
+                    class="navbar-link">University of Westminster</a></p>
+        </div>
+    </nav>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+    <script src="prism/prism.js"></script>
+    <script src="prism/prism-line-numbers.js"></script>
+    <script src="prism/prism-line-highlight.js"></script>
+    <script>
+        $('body').scrollspy({
+            target: '.bs-docs-sidebar',
+            offset: 60
+        });
+        $("#sidebar").affix({
+            offset: {
+                top: 80
+            }
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RRNL1F43P4');
+    </script>
+    <br>
+    <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>
