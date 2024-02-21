@@ -7,9 +7,9 @@ namespace ASPNETCoreWebAPIEF.Controllers {
     [Route("api/[controller]")]
     public class MoviesController : ControllerBase {
         private ApplicationDBContext dbContext;
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<MoviesController> _logger;
 
-        public MoviesController(ApplicationDBContext dbContext, ILogger<WeatherForecastController> logger) {
+        public MoviesController(ApplicationDBContext dbContext, ILogger<MoviesController> logger) {
             this.dbContext = dbContext;
             _logger = logger;
         }
@@ -56,11 +56,13 @@ namespace ASPNETCoreWebAPIEF.Controllers {
             Movie? movie = dbContext.Movies.FirstOrDefault<Movie>(m => m.Id == id);
 
             if (movie == null) {
+                _logger.LogInformation($"Movie id {id} not found.");
                 return NotFound();
             } else {
                 dbContext.Movies.Remove(movie);
                 dbContext.SaveChanges();
 
+                _logger.LogInformation($"Movie id {id} deleted.");
                 return Ok();
             }
         }
