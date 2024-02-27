@@ -66,7 +66,6 @@
 
 <body>
 
-  <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top navbar-html">
     <div class="container">
       <div class="navbar-header">
@@ -140,38 +139,29 @@
     </div>
   </nav>
 
-
-
-
   <main class="container language-html">
     <div class="col-md-9" role="main">
-      <h1>Colours</h1>
+      <h1>Colors</h1>
 
-      <p>In HTML, it is possible to specify a colour by using its name or RGB value using a decimal or Hex value.</p>
-      <h2 id="colourName" class="group">Specifying a colour by name</h2>
+      <h2>Usinge colors</h2>
+      <code>&lt;style="color:#000000"></code>
+      <h3>RGB</h3>
+      <h4 style="color:#000000">&lt;h4 style="color:#000000">black&lt;/h4></h4>
+      <h4 style="color:#FF0000">&lt;h4 style="color:#FF0000">red&lt;/h4></h4>
+      <h4 style="color:#00FF00">&lt;h4 style="color:#00FF00">green&lt;/h4></h4>
+      <h4 style="color:#0000FF">&lt;h4 style="color:#0000FF">blue&lt;/h4></h4>
+      <h4 style="color:#FFFFFF; background-color:#000000">&lt;h4 style="color:#FFFFFF">white&lt;/h4></h4>
+      <h3>rgb()</h3>
+      <h4 style="color:rgb(0, 0, 255)">&lt;h4 style="color:rgb(255, 0, 0)">blue&lt;/h4></h4>
+      <h4 style="color:rgb(0%, 100%, 0%)">&lt;h4 style="color:rgb(0%, 100%, 0%)">blue&lt;/h4></h4>
+      <h3>Opacity</h3>
+      <h4 style="color:rgba(0, 0, 255, 1)">&lt;h4 style="color:rgb(255, 0, 0, 1)">blue&lt;/h4></h4>
+      <h4 style="color:rgba(0, 0, 255, 0.7)">&lt;h4 style="color:rgb(255, 0, 0, 0.7)">blue&lt;/h4></h4>
+      <h4 style="color:rgba(0, 0, 255, 0.4)">&lt;h4 style="color:rgb(255, 0, 0, 0.4)">blue&lt;/h4></h4>
+      <h4 style="color:rgba(0, 0, 255, 0.1)">&lt;h4 style="color:rgb(255, 0, 0, 0.1)">blue&lt;/h4></h4>
+      <hr>
 
-      <p>In HMTL5, you will use CSS to change the colour of various elements. You can for example change the text colour
-        by adding inline styles: <code>&lt;style="color:red"></code>
-      <table class="table table-hover table-bordered">
-        <tr>
-          <th style="min-width: 170px;">Formatted text</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">*
-            <span style="color:red;">Red</span>*
-            <span style="color:green;">Green</span>*
-            <span style="color:blue;">Blue</span>*
-          </td>
-          <td>
-            <pre><code>* &lt;span style="color:red;">Red&lt;/span>
-* &lt;span style="color:green;">Green&lt;/span>
-* &lt;span style="color:blue;">Blue&lt;/span> *</code></pre>
-          </td>
-        </tr>
-      </table>
-      <p>Possible values for named colours are:</p>
-      <p>
+      <h2>Named colors</h2>
       <div class="col-sm-4">AliceBlue [<span style="color:AliceBlue;">###</span>]</div>
       <div class="col-sm-4">AntiqueWhite [<span style="color:AntiqueWhite;">###</span>]</div>
       <div class="col-sm-4">Aqua [<span style="color:Aqua;">###</span>]</div>
@@ -319,8 +309,6 @@
       <div class="col-sm-4">WhiteSmoke[<span style="color:WhiteSmoke;">###</span>]</div>
       <div class="col-sm-4">Yellow[<span style="color:Yellow;">###</span>]</div>
       <div class="col-sm-4">YellowGreen[<span style="color:YellowGreen;">###</span>]</div>
-      </p>
-      <p></p>
 
       <div>
         <style scoped>
@@ -364,385 +352,25 @@
             border-color: #729fcf;
           }
         </style>
-        <br><br>
+        <hr>
 
-        <p style="clear:both;">
-        <p style="height: 20px;"></p>
-        <h2 id="colourValues" class="group">Specifying a colour by value</h2>
-        <h3 class="subgroup" id="hexRGB">Hexadecimal RGB color values</h3>
-        <p>The format of an RGB value in hexadecimal notation is a <code>#</code> immediately followed by either three
-          or six hexadecimal characters. A general colour is specified in terms of the three primary colours red, blue
-          and green. Each primary colour is defined as a one or two digit Hexadecimal number that representing the
-          strength of that primary colour. The three-digit RGB notation (<code>#rgb</code>) is converted into six-digit
-          form (<code>#rrggbb</code>) by replicating digits, not by adding zeros. For example, <code>#fb0</code> expands
-          to <code>#ffbb00</code>, and <code>#fff</code> expands to <code>#ffffff</code></p>
+        <h2>Background color</h2>
+        <pre><code>&lt;body style="background-color:#ccc; color:pink"></code></pre>
+        <hr>
 
-        <p>In this specification hexadecimal <code>00</code> means 0% of the colour and hexadecimal <code>ff</code>
-          means 100% of the colour.</p>
-
-        <p>For example, to specify red the hexadecimal number <code>#ff0000</code> is used. In this number:</p>
-        <ul>
-          <li>The first two digits after the <code>#</code> symbol <code>ff</code> define 100% of red</li>
-          <li>The second two digits after the <code>#</code> symbol <code>00</code> define 0% of green</li>
-          <li>The third two digits after the <code>#</code> symbol <code>00</code> define 0% of blue</li>
-        </ul>
-
-        Note that you could also use the three-digit form <code>#f00</code> to specify the red colour.</p>
-
-
-        <table class="table table-hover table-bordered">
-          <tr>
-            <th style="min-width: 200px;">Formatted text</th>
-            <th>HTML markup required</th>
-          </tr>
-          <tr>
-            <td style="vertical-align:middle">*
-              <span style="color:#ff0000;">Red</span>*
-              <span style="color:#00ff00;">Green</span>*
-              <span style="color:#0000ff;">Blue</span>*
-            </td>
-            <td>
-              <pre><code>* &lt;span style="color:#ff0000;">Red&lt;/span>
-* &lt;span style="color:#00ff00;">Green&lt;/span>
-* &lt;span style="color:#0000ff;">Blue&lt;/span> *</code></pre>
-            </td>
-          </tr>
-          <tr>
-            <td style="vertical-align:middle">*
-              <span style="color:#ffff00;">Yellow</span>*
-              <span style="color:#00ffff;">Aqua</span>*
-              <span style="color:#ff00ff;">Purple</span>*
-            </td>
-            <td>
-              <pre><code>* &lt;span style="color:#ffff00;">Yellow&lt;/span>
-* &lt;span style="color:#00ffff;">Aqua&lt;/span>
-* &lt;span style="color:#ff00ff;">Purple&lt;/span> *</code></pre>
-            </td>
-          </tr>
-          <tr>
-            <td style="vertical-align:middle">*
-              <span style="color:#ffffff;">White</span>*
-              <span style="color:#000000;">Black</span>*
-            </td>
-            <td>
-              <pre><code>* &lt;span style="color:#ffffff;">White&lt;/span>
-* &lt;span style="color:#000000;">Black&lt;/span> *</code></pre>
-            </td>
-          </tr>
-
-        </table>
-
-
-        <p>To convert an <strong>RGB color to its hexadecimal representation</strong>, you'll need to convert each of
-          the Red, Green, and Blue components from decimal to hexadecimal and then combine them.</p>
-
-        <p>The formula to convert a decimal value to a two-digit hexadecimal value is often expressed as follows:</p>
-
-        <ol>
-          <li>Divide the decimal value by 16 to get the quotient and remainder.</li>
-          <li>The remainder is the least significant digit (rightmost digit).</li>
-          <li>The quotient is the most significant digit (leftmost digit).</li>
-          <li>If the quotient or remainder is greater than 9, represent it using letters A-F (A for 10, B for 11, ..., F
-            for 15).</li>
-        </ol>
-
-        <p>Let's go through an example with the RGB color (135, 206, 250):</p>
-
-        <ol>
-          <li>Red Component (135):</li>
+        <div class="alert alert-warning" role="alert">
+          <h2 id="review" class="group">Review Questions</h2>
           <ul>
-            <li>Quotient: 135 ÷ 16 = 8 with a remainder of 7.</li>
-            <li>The hexadecimal representation is 87.</li>
+            <li>Question 1 - What is the colour code for a light blue in RGB using hexademical notation?</li>
+            <li>Question 2 - What is the colour code for a light blue in RGB using functional notation?</li>
+            <li>Question 3 - What is the colour code for a very transparent dark blue?</li>
+            <li>Question 4 - What colour is #000080?</li>
+            <li>Question 5 - Is #000080 exactly identical to #008?</li>
+            <li>Question 6 - What is the six-digit hexadecimal colour code for #369?</li>
           </ul>
-          <li>Green Component (206):</li>
-          <ul>
-            <li>Quotient: 206 ÷ 16 = 12 with a remainder of 14.</li>
-            <li>The hexadecimal representation is CE.</li>
-          </ul>
-          <li>Blue Component (250):</li>
-          <ul>
-            <li>Quotient: 250 ÷ 16 = 15 with a remainder of 10.</li>
-            <li>The hexadecimal representation is FA.</li>
-          </ul>
-        </ol>
-        <p>Combine these results, and you get the hexadecimal representation for the RGB color (135, 206, 250) as
-          <strong>#87CEFA.</strong></p>
-
-        <p>To convert <strong>Hexadecimal to Decimal, for example the #87CEFA</strong>:
-        <ul>
-          <li>Red: 87 in hexadecimal is (8 * 16 + 7 * 1) = 135 in decimal.</li>
-          <li>Green: CE in hexadecimal is (12 * 16 + 14 * 1) = 206 in decimal.</li>
-          <li>Blue: FA in hexadecimal is (15 * 16 + 10 * 1) = 250 in decimal.</li>
-        </ul>
-        </p>
-
-
-        <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
-              aria-hidden="true"></span> Note: </strong> You can find lists of colour codes and names in books or on the
-          Internet. An example is: <a href="http://htmlcolorcodes.com/color-picker/">HTML color codes</a></div>
-
-
-        <h3 class="subgroup" id="hexMixer">Hexadecimal color mixer</h3>
-        <p>Experiment with the color mixer by changing the red, green and blue values using the corresponding sliders.
-        </p>
-        <label for="valRedHex" style="margin-left: 20px; margin-top: -10px;">Colour Hex Value: #</label>
-        <input type="text" id="valHex" readonly style="border:0; font-weight: bold; margin-top: 20px;">
-        <div id="red"></div>
-        <div id="green"></div>
-        <div id="blue"></div>
-
-        <div id="swatch" class="ui-widget-content ui-corner-all"></div>
+        </div>
       </div>
-
-
-
-      <h3 class="subgroup" id="functionalRGB">Functional RGB color values</h3>
-
-      <p>The format of an RGB value in the functional notation is <code>rgb(</code> followed by a comma-separated list
-        of three numerical values (either three integer values or three percentage values) followed by <code>)</code>.
-        The integer value 255 corresponds to 100%, and to F or FF in the hexadecimal notation:
-        <code>rgb(255,255,255)</code> = <code>rgb(100%,100%,100%)</code> = <code>#FFF</code> = <code>#FFFFFF</code>.
-        White space characters are allowed around the numerical values.</p>
-
-      <table class="table table-hover table-bordered">
-        <tr>
-          <th style="min-width: 200px;">Formatted text</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <span style="color:rgb(100%, 65%, 0%);">Orange</span> and
-            <span style="color:rgb(255, 165, 0);">Orange</span> again.
-          </td>
-          <td>
-            <pre><code>&lt;span style="color:rgb(100%, 65%, 0%);">Orange&lt;/span> and
-&lt;span style="color:rgb(255, 165, 0);">Orange&lt;/span> again.</code></pre>
-          </td>
-        </tr>
-      </table>
-
-      <h3 class="subgroup" id="RGBA">RGBA color values</h3>
-
-      <p>The RGB color model is extended in this specification to include "alpha" to allow specification of the opacity
-        of a color. Unlike RGB values, there is no hexadecimal notation for an RGBA value.</p>
-      <p>The format of an RGBA value in the functional notation is <code>rgba(</code> followed by a comma-separated list
-        of three numerical values (either three integer values or three percentage values), followed by an alphavalue,
-        followed by <code>)</code>. The integer value 255 corresponds to 100%, <code>rgba(255,255,255,0.8)</code> =
-        <code>rgba(100%,100%,100%,0.8)</code>. White space characters are allowed around the numerical values.</p>
-
-      <table class="table table-hover table-bordered">
-        <tr>
-          <th style="min-width: 200px;">Formatted text</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle; text-align:right;">
-            100% opacity: <span style="color:rgba(100%, 65%, 0%, 1);">Orange</span> <br>
-            90% opacity: <span style="color:rgba(100%, 65%, 0%, 0.9);">Orange</span> <br>
-            80% opacity: <span style="color:rgba(100%, 65%, 0%, 0.8);">Orange</span> <br>
-            70% opacity: <span style="color:rgba(100%, 65%, 0%, 0.7);">Orange</span> <br>
-            60% opacity: <span style="color:rgba(100%, 65%, 0%, 0.6);">Orange</span> <br>
-            50% opacity: <span style="color:rgba(100%, 65%, 0%, 0.5);">Orange</span> <br>
-            40% opacity: <span style="color:rgba(100%, 65%, 0%, 0.4);">Orange</span> <br>
-            30% opacity: <span style="color:rgba(100%, 65%, 0%, 0.3);">Orange</span> <br>
-            20% opacity: <span style="color:rgba(100%, 65%, 0%, 0.2);">Orange</span> <br>
-            10% opacity: <span style="color:rgba(100%, 65%, 0%, 0.1);">Orange</span> <br>
-            0% opacity: <span style="color:rgba(100%, 65%, 0%, 0);">Orange</span> <br>
-          </td>
-          <td>
-            <pre><code>&lt;span style="color:rgb(100%, 65%, 0%, 1);">
- Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.9);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.8);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.7);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.6);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.5);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.4);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.3);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.2);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0.1);">
-Orange&lt;/span>&lt;br>
-&lt;span style="color:rgba(100%, 65%, 0%, 0);">
-Orange&lt;/span>&lt;br></code></pre>
-          </td>
-        </tr>
-      </table>
-      <p>
-      </p>
-
-      <h2 id="global" class="group">Changing colours of your page</h2>
-      <p>You can change the global colors of the background and text by adding CSS rules. You will have detailed
-        information in the CSS lecture. Until then, you can use some inline style attributes
-        <code>background-color:</code> to specifies the background colour of the element, and <code>color:</code> to
-        specifies the colour of the text. Adding these to the <code>body</code> tag will apply the colours specified to
-        the whole document. For example:
-      <pre><code>&lt;body style="background-color:#ccc; color:pink"></code></pre>.
-
-      <hr>
-      <div class="alert alert-warning" role="alert">
-        <h2 id="review" class="group">Review Questions</h2>
-
-        <ul>
-          <li>Question 1 - What is the colour code for a light blue in RGB using hexademical notation?</li>
-          <li>Question 2 - What is the colour code for a light blue in RGB using functional notation?</li>
-          <li>Question 3 - What is the colour code for a very transparent dark blue?</li>
-          <li>Question 4 - What colour is #000080?</li>
-          <li>Question 5 - Is #000080 exactly identical to #008?</li>
-          <li>Question 6 - What is the six-digit hexadecimal colour code for #369?</li>
-        </ul>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <!--Nav Bar -->
-
-      <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
-        <ul id="sidebar" class="nav nav-stacked">
-          <li>
-            <a href="#colourName">Specifying a colour by name</a>
-          </li>
-          <li>
-            <a href="#colourValues">Specifying a colour by value</a>
-            <ul class="nav nav-stacked">
-              <li><a href="#hexRGB">Hexadecimal RGB color values</a></li>
-              <li><a href="#hexMixer">Hexadecimal color mixer</a></li>
-              <li><a href="#functionalRGB">Functional RGB color values</a></li>
-              <li><a href="#RGBA">RGBA color values</a></li>
-            </ul>
-
-          </li>
-          <li>
-            <a href="#global">Changing colours of your page</a>
-          </li>
-          <li><a href="#review">Review Questions</a></li>
-        </ul>
-      </nav>
-    </div>
   </main>
-
-  <nav class="navbar navbar-default no-margin-bottom">
-    <div class="container">
-      <p class="navbar-text navbar-right">&copy; Copyright 2016-2021 <a href="https://www.westminster.ac.uk"
-          class="navbar-link">University of Westminster</a></p>
-    </div>
-  </nav>
-  <script type="text/javascript">
-    // Change JQueryUI plugin names to fix name collision with Bootstrap.
-    $.widget.bridge('uislider', $.ui.slider);
-  </script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-    crossorigin="anonymous"></script>
-
-  <script src="prism/prism.js"></script>
-  <script src="prism/prism-line-numbers.js"></script>
-  <script src="prism/prism-line-highlight.js"></script>
-  <script>
-    $('body').scrollspy({
-      target: '.bs-docs-sidebar',
-      offset: 60
-    });
-    $("#sidebar").affix({
-      offset: {
-        top: 80
-      }
-    });
-  </script>
-  <script>
-    $(function () {
-      function hexFromRGB(r, g, b) {
-        var hex = [
-          r.toString(16),
-          g.toString(16),
-          b.toString(16)
-        ];
-        $.each(hex, function (nr, val) {
-          if (val.length === 1) {
-            hex[nr] = "0" + val;
-          }
-        });
-        return hex.join("").toUpperCase();
-      }
-      function refreshSwatch() {
-        var red = $("#red").slider("value"),
-          green = $("#green").slider("value"),
-          blue = $("#blue").slider("value"),
-          hex = hexFromRGB(red, green, blue);
-        $("#swatch").css("background-color", "#" + hex);
-      }
-
-      $("#red, #green, #blue").slider({
-        orientation: "horizontal",
-        range: "min",
-        max: 255,
-        value: 127,
-        slide: refreshSwatch,
-        change: refreshSwatch
-      });
-      $("#red").slider("value", 255);
-      $("#green").slider("value", 140);
-      $("#blue").slider("value", 60);
-    });
-  </script>
-  <script>
-    $(function () {
-      function hexFromRGB(r, g, b) {
-        var hex = [
-          r.toString(16),
-          g.toString(16),
-          b.toString(16)
-        ];
-        $.each(hex, function (nr, val) {
-          if (val.length === 1) {
-            hex[nr] = "0" + val;
-          }
-        });
-        return hex.join("").toUpperCase();
-      }
-      function refreshSwatch() {
-        var red = $("#red").slider("value"),
-          green = $("#green").slider("value"),
-          blue = $("#blue").slider("value"),
-          hex = hexFromRGB(red, green, blue);
-        $("#swatch").css("background-color", "#" + hex);
-        $("#valHex").val(hex);
-      }
-
-      $("#red, #green, #blue").slider({
-        orientation: "horizontal",
-        range: "min",
-        max: 255,
-        value: 127,
-        slide: refreshSwatch,
-        change: refreshSwatch
-      });
-      $("#red").slider("value", 255);
-
-      $("#green").slider("value", 140);
-      $("#blue").slider("value", 60);
-    });
-  </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-RRNL1F43P4');
-  </script>
-  <br>
-  <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
 </body>
 
 </html>
