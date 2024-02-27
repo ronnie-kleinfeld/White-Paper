@@ -1,194 +1,218 @@
 <!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Styling & CSS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
-	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+  <meta charset="utf-8">
+  <title>Styling & CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
 
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <link href="prism/prism.css" rel="stylesheet" />
-    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
-    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
-     
-<link rel="stylesheet" href="style.css" /> 
-<style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-.bs-docs-sidebar .nav > li > a:hover,
-.bs-docs-sidebar .nav > li > a:focus {
-  color: #800080,
-  border-left: 1px solid #800080;
-}
-.bs-docs-sidebar .nav > .active > a,
-.bs-docs-sidebar .nav > .active:hover > a,
-.bs-docs-sidebar .nav > .active:focus > a {
-  padding-left: 18px;
-  font-weight: bold;
-  color: #800080;
-  background-color: transparent;
-  border-left: 2px solid #800080;
-}
-.back-to-top:hover,
-.bs-docs-theme-toggle:hover {
-  color: #800080;
-  text-decoration: none;
-}
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link href="prism/prism.css" rel="stylesheet" />
+  <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+  <link href="prism/prism-line-highlight.css" rel="stylesheet" />
 
-.dropdown-menu>.active>a, 
-.dropdown-menu>.active>a:focus, 
-.dropdown-menu>.active>a:hover {
-  background-image: none;
-  background-color: #800080;
-}
-th { text-align:center;}
-</style>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+      color: #800080,
+        border-left: 1px solid #800080;
+    }
 
-<style type="text/css">
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+      padding-left: 18px;
+      font-weight: bold;
+      color: #800080;
+      background-color: transparent;
+      border-left: 2px solid #800080;
+    }
 
-#radiusBorder {
-    border:2px solid blue;
-	padding:30px; 
-	width:275px;
-	-moz-border-radius:20px; /* Old Firefox */
-	border-radius: 20px;  /* for current browsers */
-}
+    .back-to-top:hover,
+    .bs-docs-theme-toggle:hover {
+      color: #800080;
+      text-decoration: none;
+    }
 
-   #radiusBG{
-    background:aqua;
-	padding:30px;
-	width:275px;
-	-moz-border-radius:20px; /* Old Firefox */
-	border-radius: 20px;  /* for current browsers */ 
-   }
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:focus,
+    .dropdown-menu>.active>a:hover {
+      background-image: none;
+      background-color: #800080;
+    }
 
-#bs {
-width:300px;
-height:100px;
-background-color:lightblue;
--moz-box-shadow: 10px 10px 5px #888888; /* Old Firefox */
-box-shadow: 10px 10px 5px #888888;
-padding: 10px;
-}
+    th {
+      text-align: center;
+    }
+  </style>
 
-   .official {color:blue;}
-   #intro {color: green;}
-pre { 
-	font-size: 16px !important;
-	}
+  <style type="text/css">
+    #radiusBorder {
+      border: 2px solid blue;
+      padding: 30px;
+      width: 275px;
+      -moz-border-radius: 20px;
+      /* Old Firefox */
+      border-radius: 20px;
+      /* for current browsers */
+    }
 
-	.addedPadding td, 
-	.addedPadding th {
-		padding: 10px;
-	}
-</style>
+    #radiusBG {
+      background: aqua;
+      padding: 30px;
+      width: 275px;
+      -moz-border-radius: 20px;
+      /* Old Firefox */
+      border-radius: 20px;
+      /* for current browsers */
+    }
+
+    #bs {
+      width: 300px;
+      height: 100px;
+      background-color: lightblue;
+      -moz-box-shadow: 10px 10px 5px #888888;
+      /* Old Firefox */
+      box-shadow: 10px 10px 5px #888888;
+      padding: 10px;
+    }
+
+    .official {
+      color: blue;
+    }
+
+    #intro {
+      color: green;
+    }
+
+    pre {
+      font-size: 16px !important;
+    }
+
+    .addedPadding td,
+    .addedPadding th {
+      padding: 10px;
+    }
+  </style>
 
 </head>
 
 <body>
 
-<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-css" >
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Home</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-css">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Module Info<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="general.html">General Information</a></li>
-              	<li><a href="schedule.html">Schedule</a></li>
-              	<li><a href="team.html">Module Team</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intro & HTML<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="unix.html">Introduction to Unix</a></li>
-              	<li><a href="basicTags.html">Basic HTML tags</a></li>
-              	<li><a href="lists.html">Lists</a></li>
-              	<li><a href="tables.html">Tables</a></li>
-              	<li><a href="colours.html">Colours</a></li>
-                <li><a href="images.html">Images</a></li>
-              	<li><a href="links.html">Links &amp; iframes</a></li>
-                <li><a href="special.html">Special Characters</a></li>
-                <li><a href="forms.html">Forms</a></li>
-              </ul>
-            </li>
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styling & CSS<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              	<!--<li class="active html"><a href="addStyle.html">Adding a Style</a></li>-->
-              	<li class="active css"><a href="cssSyntax.html">CSS Syntax</a></li>
-				  <li><a href="cssElements.html">Styling Elements</a></li>
-              	<!--<li><a href="generalStyling.html">General Page Styling</a></li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Module Info<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">General Information</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="team.html">Module Team</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="unix.html">Introduction to Unix</a></li>
+              <li><a href="basicTags.html">Basic HTML tags</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="tables.html">Tables</a></li>
+              <li><a href="colours.html">Colours</a></li>
+              <li><a href="images.html">Images</a></li>
+              <li><a href="links.html">Links &amp; iframes</a></li>
+              <li><a href="special.html">Special Characters</a></li>
+              <li><a href="forms.html">Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li class="active html"><a href="addStyle.html">Adding a Style</a></li>-->
+              <li class="active css"><a href="cssSyntax.html">CSS Syntax</a></li>
+              <li><a href="cssElements.html">Styling Elements</a></li>
+              <!--<li><a href="generalStyling.html">General Page Styling</a></li>
                 <li><a href="stylingLinks.html">Styling Links</a></li>
               	<li><a href="styling Lists.html">Styling Lists</a></li>
                 <li><a href="cssBoxModel.html">CSS Box Model</a></li>
               	<li><a href="stylingTables.html">Styling Tables</a></li>
                 <li><a href="cssPositioning.html">CSS Positioning</a></li>
                 <li><a href="css3.html">CSS3</a></li>-->
-              </ul>
-            </li>
-			
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="js1.html">Introduction to JavaScript</a></li>
-                <li><a href="js2.html">Objects, Methods and Functions</a></li>
-                <li><a href="js3.html">JavaScript and Forms</a></li>
-                <li><a href="js4.html">JavaScript and the DOM</a></li>
-                <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
-              </ul>
-            </li>
-            
-          </ul>
-          
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">JavaScript<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="js1.html">Introduction to JavaScript</a></li>
+              <li><a href="js2.html">Objects, Methods and Functions</a></li>
+              <li><a href="js3.html">JavaScript and Forms</a></li>
+              <li><a href="js4.html">JavaScript and the DOM</a></li>
+              <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
 
 
 
-<main class="container language-html">
-<div class="col-md-9" role="main"><h1>Styling &amp; CSS</h1>
+  <main class="container language-html">
+    <div class="col-md-9" role="main">
+      <h1>Styling &amp; CSS</h1>
 
 
 
-<!---  --->
-<h2 id="cssSyntax" class="group">CSS Syntax</h2>
+      <!---  --->
+      <h2 id="cssSyntax" class="group">CSS Syntax</h2>
 
-<p>
-CSS works with HTML to define the way content is presented.  Styles can be specified:
-<ul>
-<li>in the head of a HTML document - embedded style sheet;</li>
-<li>in a separate style sheet - external style sheet;</li>
-<li>directly into individual HTML elements - inline styles.</li>
-</ul>
-</p>
+      <p>
+        CSS works with HTML to define the way content is presented. Styles can be specified:
+      <ul>
+        <li>in the head of a HTML document - embedded style sheet;</li>
+        <li>in a separate style sheet - external style sheet;</li>
+        <li>directly into individual HTML elements - inline styles.</li>
+      </ul>
+      </p>
 
-<h3 class="subgroup" id="embedded">Embedded Style Sheets</h3>
+      <h3 class="subgroup" id="embedded">Embedded Style Sheets</h3>
 
-<p>The styles are included within <strong><tt>style</tt></strong> elements inside the head of an HTML document.
-
-
-<h4>HTML &amp; CSS:</h4>
+      <p>The styles are included within <strong><tt>style</tt></strong> elements inside the head of an HTML document.
 
 
-<pre><code>&lt;!doctype html>
+      <h4>HTML &amp; CSS:</h4>
+
+
+      <pre><code>&lt;!doctype html>
 &lt;html>
 &lt;head>&lt;title>An Introduction to Style Sheets&lt;/title>
 &lt;style>
@@ -222,110 +246,120 @@ styles).&lt;/p>
 &lt;/body>
 &lt;/html></code></pre>
 
-<br><h4>Displayed by browser:</h4>
+      <br>
+      <h4>Displayed by browser:</h4>
 
-<style>
-   .head2 { color: #800080;
-         font-style: italic; }
+      <style>
+        .head2 {
+          color: #800080;
+          font-style: italic;
+        }
 
-   .para { text-indent: 2em;         
-         text-align: justify; }
-	.displaydiv {
-		border: 1px solid #ccc;
-    	border-radius: 4px;
-		padding: 1em;
-    	margin: .5em 0;
-    	overflow: auto;
-	}
-</style>
-<div class="displaydiv">
-<h2 class="head2">An Introduction to CSS</h2>
-<p class="para">We have been using HTML to define the basic structure of our 
-web pages. We will now use Cascading Style Sheets (CSS) to define 
-the appearance of our web pages.</p> 
-<p class="para">We will review three different methods for incorporating style 
-into HTML documents (embedded style sheets, external style sheets 
-	and inline styles).</p></div>
-<br>
-<p>
-HTML5 only requires <tt>style</tt> for the opening tag of an embedded style sheet:<pre><code>&lt;style&gt;  </code></pre>
+        .para {
+          text-indent: 2em;
+          text-align: justify;
+        }
 
-<br>Earlier versions of HTML require an additional attribute in the opening tag: <pre><code>&lt;style <strong>type="text/css"</strong>&gt;  </code></pre>
-</p>
+        .displaydiv {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 1em;
+          margin: .5em 0;
+          overflow: auto;
+        }
+      </style>
+      <div class="displaydiv">
+        <h2 class="head2">An Introduction to CSS</h2>
+        <p class="para">We have been using HTML to define the basic structure of our
+          web pages. We will now use Cascading Style Sheets (CSS) to define
+          the appearance of our web pages.</p>
+        <p class="para">We will review three different methods for incorporating style
+          into HTML documents (embedded style sheets, external style sheets
+          and inline styles).</p>
+      </div>
+      <br>
+      <p>
+        HTML5 only requires <tt>style</tt> for the opening tag of an embedded style sheet:
+      <pre><code>&lt;style&gt;  </code></pre>
 
-<p>Note that this method is used for styles that are to be applied to a single HTML document. </p>
+      <br>Earlier versions of HTML require an additional attribute in the opening tag:
+      <pre><code>&lt;style <strong>type="text/css"</strong>&gt;  </code></pre>
+      </p>
 
-<h3 class="subgroup" id="external">External Style Sheets</h3>
+      <p>Note that this method is used for styles that are to be applied to a single HTML document. </p>
 
-<p>An external style sheet is a separate text file containing all your CSS rules.  Note that the text file does not contain the &lt;style&gt; tag and you 
-	need to end the file name with the extension <code>.css</code>.</p>
+      <h3 class="subgroup" id="external">External Style Sheets</h3>
 
-<p>The style sheet can be applied to any number of HTML files.  When you make a change to an external style sheet, all the pages that reference it are 
-automatically updated as well.</p>
+      <p>An external style sheet is a separate text file containing all your CSS rules. Note that the text file does not
+        contain the &lt;style&gt; tag and you
+        need to end the file name with the extension <code>.css</code>.</p>
 
-HTML5 example:
+      <p>The style sheet can be applied to any number of HTML files. When you make a change to an external style sheet,
+        all the pages that reference it are
+        automatically updated as well.</p>
+
+      HTML5 example:
       <pre><code>&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;link rel="stylesheet" href="style1.css"&gt;
 &lt;/head&gt; </code></pre>
-<br>
-Earlier versions of HTML require an additional attribute in the opening tag: 
+      <br>
+      Earlier versions of HTML require an additional attribute in the opening tag:
 
-<pre><code>&lt;head&gt;
+      <pre><code>&lt;head&gt;
   &lt;link rel="stylesheet" <strong>type="text/css"</strong> href="style1.css"&gt;
 &lt;/head&gt; </code></pre>
 
-<br>
-<h3 class="subgroup" id="keywords">Keywords </h3>
+      <br>
+      <h3 class="subgroup" id="keywords">Keywords </h3>
 
-<strong>Style sheets:</strong>
-<ul>
-  <li>A set of instructions for rendering HTML elements </li>
-  <li>The browser's default style is overridden. </li>
-</ul>
-<strong>Keywords:</strong>
-<ul>
-  <li> <u><b>Rule:</b></u> a single instruction. E.g.<b> <code class="language-css">p
+      <strong>Style sheets:</strong>
+      <ul>
+        <li>A set of instructions for rendering HTML elements </li>
+        <li>The browser's default style is overridden. </li>
+      </ul>
+      <strong>Keywords:</strong>
+      <ul>
+        <li> <u><b>Rule:</b></u> a single instruction. E.g.<b> <code class="language-css">p
 {text-indent: 2em;}</code></b>. The Rule contains two parts: the Selector and
-the Declaration </li>
-<ul>
-  <li><u><b>Selector:</b></u> the HTML element to which
-author-specified effects are to be applied </li>
-  <li><u><b>Declaration:</b></u> specifies how the Selector should be
-rendered. The Declaration contains two parts: the Property and the Value,
-always separated by a colon. </li>
- <ul>
-  <li><u><b>Property:</b></u> the aspect of a Selector to be affected. </li>
-  <li><u><b>Value:</b></u> how the property aspect should be rendered. </li>
- </ul>
-</ul>
-</ul>
-Note that a <b>Selector</b> can have <u>multiple</u> <b>Declarations</b>,
-separated by semi-colons as in the example:
+          the Declaration </li>
+        <ul>
+          <li><u><b>Selector:</b></u> the HTML element to which
+            author-specified effects are to be applied </li>
+          <li><u><b>Declaration:</b></u> specifies how the Selector should be
+            rendered. The Declaration contains two parts: the Property and the Value,
+            always separated by a colon. </li>
+          <ul>
+            <li><u><b>Property:</b></u> the aspect of a Selector to be affected. </li>
+            <li><u><b>Value:</b></u> how the property aspect should be rendered. </li>
+          </ul>
+        </ul>
+      </ul>
+      Note that a <b>Selector</b> can have <u>multiple</u> <b>Declarations</b>,
+      separated by semi-colons as in the example:
 
-<pre><code class="language-css">h2 {
+      <pre><code class="language-css">h2 {
    color: #800080;
    font-style: italic; 
 }</code></pre>
 
 
-<br>
-<h3 class="subgroup" id="inline">Inline Styles</h3>
+      <br>
+      <h3 class="subgroup" id="inline">Inline Styles</h3>
 
-It only applies to the element that contains the inline style.
+      It only applies to the element that contains the inline style.
 
-This method can also be used to override any previously
-declared styles.  For example:<br>
-<pre><code>&lt;h2 style="color: green;"&gt; A green H2 &lt;/h2&gt;<br> </code></pre>
-      <form><input
- value="View result of this line added at the end of the previous example"
- onclick='window.open("examples/style_example0_inline.html")' type="button"></form>
- 
+      This method can also be used to override any previously
+      declared styles. For example:<br>
+      <pre><code>&lt;h2 style="color: green;"&gt; A green H2 &lt;/h2&gt;<br> </code></pre>
+      <form><input value="View result of this line added at the end of the previous example"
+          onclick='window.open("examples/style_example0_inline.html")' type="button"></form>
 
-<p>The earlier embedded example rewritten with inline styles would be as follows:</p>
 
-<pre><code>&lt;!doctype html&gt;
+      <p>The earlier embedded example rewritten with inline styles would be as follows:</p>
+
+      <pre><code>&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
 	&lt;title&gt;An Introduction to Style Sheets&lt;/title&gt;
@@ -342,16 +376,17 @@ declared styles.  For example:<br>
 &lt;/html&gt;</code></pre>
 
 
-<p>Inline styles are good for testing. However, inline styles are rarely used for final versions of a website. Why?</p>
+      <p>Inline styles are good for testing. However, inline styles are rarely used for final versions of a website.
+        Why?</p>
 
 
-<!---  --->
+      <!---  --->
 
-<h2 id="generalStyling" class="group">General Page Styling </h2>
+      <h2 id="generalStyling" class="group">General Page Styling </h2>
 
 
 
-<pre><code>&lt;!doctype html&gt;
+      <pre><code>&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
 	&lt;title&gt;An Introduction to Style Sheets&lt;/title>
@@ -395,175 +430,186 @@ The paragraph has text indent, text-align jusify and text-transform capitalize.&
 &lt;/html&gt;
 </code></pre>
 
- <form><input value="View result"
- onclick='window.open("examples/style_example0_general.html")' type="button"></form>
-      
+      <form><input value="View result" onclick='window.open("examples/style_example0_general.html")' type="button">
+      </form>
 
 
-</p>
-<table class="table-hover addedPadding">
-  <tbody>
-    <tr>
-      <th align="left" valign="top">text-indent </th>
-      <td align="left" valign="top">(shown in first example) indents the first line of a block of text.  Value can be a length or percentage of element's width. Can be a
-negative length. </td>
-    </tr>
+
+      </p>
+      <table class="table-hover addedPadding">
+        <tbody>
+          <tr>
+            <th align="left" valign="top">text-indent </th>
+            <td align="left" valign="top">(shown in first example) indents the first line of a block of text. Value can
+              be a length or percentage of element's width. Can be a
+              negative length. </td>
+          </tr>
 
 
-    <tr>
-      <th align="left" valign="top">font-family </th>
-      <td align="left" valign="top">specifies an element's font set. Values can be
-		  of 2 types: family-name (e.g. <code>Times</code>, <code>Arial</code>, <code>Garamond</code>) and generic-name
-	  (<code>serif</code>,<code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>, <code>fantasy</code>). Usually more
-than one font-family is specified to let the browser work through a
-list of choices until it finds a font it is able to display. </td>
-    </tr>
-    <tr>
-      <th align="left" valign="top">font-style </th>
-      <td align="left" valign="top">sets the display of a font to oblique or italic. </td>
-    </tr>
-    <tr>
-      <th align="left" valign="top">font-weight </th>
-      <td align="left" valign="top">sets the heaviness of a font. Values will
-produce different results depending on font-family selected. Absolute
-values are <code>100</code>, <code>200</code>, <code>300</code>, ... <code>900</code>, <code>400</code> being same
-as <code>normal</code>. Relative values are <code>bold</code>, <code>bolder</code>, <code>lighter</code>.
-      </td>
-    </tr>
+          <tr>
+            <th align="left" valign="top">font-family </th>
+            <td align="left" valign="top">specifies an element's font set. Values can be
+              of 2 types: family-name (e.g. <code>Times</code>, <code>Arial</code>, <code>Garamond</code>) and
+              generic-name
+              (<code>serif</code>,<code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>,
+              <code>fantasy</code>). Usually more
+              than one font-family is specified to let the browser work through a
+              list of choices until it finds a font it is able to display. </td>
+          </tr>
+          <tr>
+            <th align="left" valign="top">font-style </th>
+            <td align="left" valign="top">sets the display of a font to oblique or italic. </td>
+          </tr>
+          <tr>
+            <th align="left" valign="top">font-weight </th>
+            <td align="left" valign="top">sets the heaviness of a font. Values will
+              produce different results depending on font-family selected. Absolute
+              values are <code>100</code>, <code>200</code>, <code>300</code>, ... <code>900</code>, <code>400</code>
+              being same
+              as <code>normal</code>. Relative values are <code>bold</code>, <code>bolder</code>, <code>lighter</code>.
+            </td>
+          </tr>
 
-    <tr>
-      <th align="left" valign="top">text-align </th>
-      <td align="left" valign="top">sets the text alignment for an element (<code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>). </td>
-    </tr>
+          <tr>
+            <th align="left" valign="top">text-align </th>
+            <td align="left" valign="top">sets the text alignment for an element (<code>left</code>, <code>right</code>,
+              <code>center</code>, <code>justify</code>). </td>
+          </tr>
 
-    <tr>
-      <th align="left" valign="top">font-size </th>
-      <td align="left" valign="top">sets the size of a font. Values can be absolute,
-relative, length and percentage. </td>
-    </tr>
-    <tr>
-      <th align="left" valign="top">text-decoration </th>
-      <td align="left" valign="top">adds underlining, overlining, strike-out or
-blink to text. Values can be <code>none</code>, <code>overline</code>, <code>line-through</code>, <code>underline</code> and <code>blink</code>.  </td>
-    </tr>
-    <tr>
-      <th align="left" valign="top">text-transform </th>
-      <td align="left" valign="top">changes the case of text. Values are <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>. </td>
-    </tr>
-  </tbody>
-</table>
-<br>
-<h3>Selectors (to include classes and ids)</h3>
+          <tr>
+            <th align="left" valign="top">font-size </th>
+            <td align="left" valign="top">sets the size of a font. Values can be absolute,
+              relative, length and percentage. </td>
+          </tr>
+          <tr>
+            <th align="left" valign="top">text-decoration </th>
+            <td align="left" valign="top">adds underlining, overlining, strike-out or
+              blink to text. Values can be <code>none</code>, <code>overline</code>, <code>line-through</code>,
+              <code>underline</code> and <code>blink</code>. </td>
+          </tr>
+          <tr>
+            <th align="left" valign="top">text-transform </th>
+            <td align="left" valign="top">changes the case of text. Values are <code>capitalize</code>,
+              <code>uppercase</code>, <code>lowercase</code>. </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <h3>Selectors (to include classes and ids)</h3>
 
-<p>The following shows different ways of defining selectors (some can be combined).</p>
-<ol>
-<li>Selecting elements by name:</li>
-<pre><code class="language-css">h1 { color: blue; }
+      <p>The following shows different ways of defining selectors (some can be combined).</p>
+      <ol>
+        <li>Selecting elements by name:</li>
+        <pre><code class="language-css">h1 { color: blue; }
 </code></pre>
 
-<li>To add additional rules use semi-colon:</li>
-<pre><code class="language-css">h1 { 
+        <li>To add additional rules use semi-colon:</li>
+        <pre><code class="language-css">h1 { 
 	background: white; 
     color: blue; 
 }</code></pre>
-<li>Selecting groups of elements.  Note group selectors are separated by a comma: </li>
-	<pre><code class="language-css">h1, h2 { color: blue; } </code>
+        <li>Selecting groups of elements. Note group selectors are separated by a comma: </li>
+        <pre><code class="language-css">h1, h2 { color: blue; } </code>
 
    Same as:   
 
 <code class="language-css">h1 { color: blue; }
 h2 { color:blue; }</code></pre>
 
-<li>Selecting elements by context (descendant selector) to select a tag that is nested inside another specified tag. Note contextual selectors are separated by whitespace: </li>
-	<pre><code class="language-css">p em { color: green; }</code></pre>
-E.g.; this selects only em tags when nested within p tags:
-<pre><code class="language-html">&lt;body> 
+        <li>Selecting elements by context (descendant selector) to select a tag that is nested inside another specified
+          tag. Note contextual selectors are separated by whitespace: </li>
+        <pre><code class="language-css">p em { color: green; }</code></pre>
+        E.g.; this selects only em tags when nested within p tags:
+        <pre><code class="language-html">&lt;body> 
 &lt;h1>Heading &lt;em>text1&lt;/em> &lt;/h1>
 &lt;p>Paragraph &lt;em>text2 green&lt;/em>&lt;/p>
 &lt;/body></code></pre>
 
-<li>Selecting elements by class.  When you want to give <b>one or more elements</b> a style that is different to related tags on a web page:</li>
-	<pre><code class="language-css">.official { color: blue; }</code></pre>
-Example use in html follows.  Note classes can be used in your webpage multiple times:
-<pre><code class="language-html">&lt;body> 
+        <li>Selecting elements by class. When you want to give <b>one or more elements</b> a style that is different to
+          related tags on a web page:</li>
+        <pre><code class="language-css">.official { color: blue; }</code></pre>
+        Example use in html follows. Note classes can be used in your webpage multiple times:
+        <pre><code class="language-html">&lt;body> 
 &lt;h1 class="official"&gt;Some heading &lt;/h1&gt;
 &lt;p class="official"&gt;Some text &lt;/p&gt;
 &lt;p&gt;Some more text &lt;/p&gt;
 &lt;/body>
 </code></pre>
 
-<li>Selecting elements by id.   When you want to give <b>one element</b> a style that is different to related tags on a web page:</li>
-<pre><code class="language-css">#intro { color: green; }</code></pre>
-Example use in html follows.  Note ids are used to identify one unique part of a page.
-<pre><code class="language-html">&lt;body> 
+        <li>Selecting elements by id. When you want to give <b>one element</b> a style that is different to related tags
+          on a web page:</li>
+        <pre><code class="language-css">#intro { color: green; }</code></pre>
+        Example use in html follows. Note ids are used to identify one unique part of a page.
+        <pre><code class="language-html">&lt;body> 
 &lt;p&gt;Some text &lt;/p&gt;
 &lt;p id="intro"&gt;Some more text &lt;/p&gt;
 &lt;/body>
 </code></pre>
-</ol>
+      </ol>
 
-<ol start="7">
-<li>Combining selectors.  </li>
-<pre><code class="language-css">div.summary { color: green; }</code></pre>
-The above selects a div element only if it contains a class named summary:
+      <ol start="7">
+        <li>Combining selectors. </li>
+        <pre><code class="language-css">div.summary { color: green; }</code></pre>
+        The above selects a div element only if it contains a class named summary:
 
-<pre><code class="language-html">&lt;div class="summary"&gt;Some div text that should be green&lt;/div&gt;
+        <pre><code class="language-html">&lt;div class="summary"&gt;Some div text that should be green&lt;/div&gt;
 </code></pre>
 
-The following will select a p element only if it contains an id named new:
-	<pre><code class="language-css">p#new { ... }</code></pre>
+        The following will select a p element only if it contains an id named new:
+        <pre><code class="language-css">p#new { ... }</code></pre>
 
 
-</ol>
-</p>
+      </ol>
+      </p>
 
 
 
-<ol start="8">
+      <ol start="8">
 
-<li>Universal selector - targets all elements on the page.</li>
-	<pre><code class="language-css">* { color: blue; }</code></pre>
+        <li>Universal selector - targets all elements on the page.</li>
+        <pre><code class="language-css">* { color: blue; }</code></pre>
 
-<li>Link pseudo-classes:  selecting elements based on their state (see next section):</li>
-	<pre><code class="language-css">a: hover { background-color: silver; }</code></pre>
-</ol>
+        <li>Link pseudo-classes: selecting elements based on their state (see next section):</li>
+        <pre><code class="language-css">a: hover { background-color: silver; }</code></pre>
+      </ol>
 
-<br>
+      <br>
 
-<h3>&lt;span&gt; and &lt;div&gt; elements</h3>
+      <h3>&lt;span&gt; and &lt;div&gt; elements</h3>
 
-<ul>
-<li>&lt;span&gt; element is a grouping element. Its primary purpose is to
-apply CSS rules or id attributes to a block of text. It is an in-line
-level element, which means it is displayed in line with other text
-and with no line breaks.</li>
-<li>&lt;div&gt; is a similar element but displayed on its own line, with
-margins above and below. It is a block-level element</li>
-</ul>
+      <ul>
+        <li>&lt;span&gt; element is a grouping element. Its primary purpose is to
+          apply CSS rules or id attributes to a block of text. It is an in-line
+          level element, which means it is displayed in line with other text
+          and with no line breaks.</li>
+        <li>&lt;div&gt; is a similar element but displayed on its own line, with
+          margins above and below. It is a block-level element</li>
+      </ul>
 
 
-<!--  -->
+      <!--  -->
 
-<hr>
-<div class="alert alert-warning" role="alert">
-<h2 id="review" class="group">Review Questions</h2>
-<ol>
-<li>What tag is used to  embed a style sheet? </li>
-<li>What tag is used to link to an external style sheet?</li>
-<li>How do you define and use a CSS class?</li>
-<li>How do you define and use a CSS id?</li>
-<li>What is the difference between:<pre class="language-css"><code>p, b { color: blue; }
+      <hr>
+      <div class="alert alert-warning" role="alert">
+        <h2 id="review" class="group">Review Questions</h2>
+        <ol>
+          <li>What tag is used to embed a style sheet? </li>
+          <li>What tag is used to link to an external style sheet?</li>
+          <li>How do you define and use a CSS class?</li>
+          <li>How do you define and use a CSS id?</li>
+          <li>What is the difference between:
+            <pre class="language-css"><code>p, b { color: blue; }
 p b { color: red; } </code></pre>
-</li>
-<li>What would the following select?<br>
-	<pre class="language-css"><code>div.important h2 { color: green; }</code></pre>
-</li>
-</ol>
-</div>
-</div>
+          </li>
+          <li>What would the following select?<br>
+            <pre class="language-css"><code>div.important h2 { color: green; }</code></pre>
+          </li>
+        </ol>
+      </div>
+    </div>
 
 
-<!--
+    <!--
 
 
 
@@ -574,64 +620,70 @@ p b { color: red; } </code></pre>
 
 
 
-<div class="row">
+    <div class="row">
 
-    <!--Nav Bar -->
-    
-    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+      <!--Nav Bar -->
+
+      <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
         <ul id="sidebar" class="nav nav-stacked">
 
-            <li>
-                <a href="#cssSyntax">CSS Syntax</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#embedded">Embedded Style Sheets</a></li>
-                    <li><a href="#external">External Style Sheets</a></li>
-                    <li><a href="#keywords">Keywords</a></li>
-					 <li><a href="#inline">Inline Styles</a></li>
-                </ul>
-            </li>	
-		 
-              	<li><a href="#generalStyling">General Page Styling</a></li>
-                
+          <li>
+            <a href="#cssSyntax">CSS Syntax</a>
+            <ul class="nav nav-stacked">
+              <li><a href="#embedded">Embedded Style Sheets</a></li>
+              <li><a href="#external">External Style Sheets</a></li>
+              <li><a href="#keywords">Keywords</a></li>
+              <li><a href="#inline">Inline Styles</a></li>
+            </ul>
+          </li>
 
-            <li><a href="#review">Review Questions</a></li>
-		
+          <li><a href="#generalStyling">General Page Styling</a></li>
+
+
+          <li><a href="#review">Review Questions</a></li>
+
         </ul>
-    </nav>
-</div>
-</main>
+      </nav>
+    </div>
+  </main>
 
-<nav class="navbar navbar-default no-margin-bottom">
-<div class="container">
-<p class="navbar-text navbar-right">&copy; Copyright 2016-2021 <a href="https://www.westminster.ac.uk" class="navbar-link">University of Westminster</a></p>
-</div>
-</nav>
+  <nav class="navbar navbar-default no-margin-bottom">
+    <div class="container">
+      <p class="navbar-text navbar-right">&copy; Copyright 2016-2021 <a href="https://www.westminster.ac.uk"
+          class="navbar-link">University of Westminster</a></p>
+    </div>
+  </nav>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
 
-<script src="prism/prism.js"></script>
-<script src="prism/prism-line-numbers.js"></script>
-<script src="prism/prism-line-highlight.js"></script>
-<script>
-$('body').scrollspy({
-  target: '.bs-docs-sidebar',
-  offset: 60
-});
-$("#sidebar").affix({
-  offset: {
-    top: 80
-  }
-});
-</script>
-<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+  <script src="prism/prism.js"></script>
+  <script src="prism/prism-line-numbers.js"></script>
+  <script src="prism/prism-line-highlight.js"></script>
+  <script>
+    $('body').scrollspy({
+      target: '.bs-docs-sidebar',
+      offset: 60
+    });
+    $("#sidebar").affix({
+      offset: {
+        top: 80
+      }
+    });
+  </script>
+  <br>
+  <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-RRNL1F43P4');
 </script>
+
 </html>

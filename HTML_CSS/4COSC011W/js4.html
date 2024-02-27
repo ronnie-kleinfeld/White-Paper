@@ -1,100 +1,112 @@
 <!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>JavaScript and the DOM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
-	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+  <meta charset="utf-8">
+  <title>JavaScript and the DOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
 
-    <link href="prism/prism.css" rel="stylesheet" />
-    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
-    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="prism/prism.css" rel="stylesheet" />
+  <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+  <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-     
-<link rel="stylesheet" href="style.css" /> 
-<style>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-.bs-docs-sidebar .nav > li > a:hover,
-.bs-docs-sidebar .nav > li > a:focus {
-  color: #ff0099,
-  border-left: 1px solid #ff0099;
-}
-.bs-docs-sidebar .nav > .active > a,
-.bs-docs-sidebar .nav > .active:hover > a,
-.bs-docs-sidebar .nav > .active:focus > a {
-  padding-left: 18px;
-  font-weight: bold;
-  color: #ff0099;
-  background-color: transparent;
-  border-left: 2px solid #ff0099;
-}
-.back-to-top:hover,
-.bs-docs-theme-toggle:hover {
-  color: #563d7c;
-  text-decoration: none;
-}
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+      color: #ff0099,
+        border-left: 1px solid #ff0099;
+    }
 
-.dropdown-menu>.active>a, 
-.dropdown-menu>.active>a:focus, 
-.dropdown-menu>.active>a:hover {
-  background-image: none;
-  background-color: #ff0099;
-}
-th { text-align:center;}
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+      padding-left: 18px;
+      font-weight: bold;
+      color: #ff0099;
+      background-color: transparent;
+      border-left: 2px solid #ff0099;
+    }
 
-nav.navbar-js {
-	border-top: 4px solid #ff0099;
-}
-</style>
+    .back-to-top:hover,
+    .bs-docs-theme-toggle:hover {
+      color: #563d7c;
+      text-decoration: none;
+    }
+
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:focus,
+    .dropdown-menu>.active>a:hover {
+      background-image: none;
+      background-color: #ff0099;
+    }
+
+    th {
+      text-align: center;
+    }
+
+    nav.navbar-js {
+      border-top: 4px solid #ff0099;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-js" >
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Home</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-js">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Module Info<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="general.html">General Information</a></li>
-              	<li><a href="schedule.html">Schedule</a></li>
-              	<li><a href="team.html">Module Team</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intro & HTML<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="unix.html">Introduction to Unix</a></li>
-              	<li><a href="basicTags.html">Basic HTML tags</a></li>
-              	<li><a href="lists.html">Lists</a></li>
-              	<li><a href="tables.html">Tables</a></li>
-              	<li><a href="colours.html">Colours</a></li>
-                <li><a href="images.html">Images</a></li>
-              	<li><a href="links.html">Links & iframes</a></li>
-                <li><a href="special.html">Special Characters</a></li>
-                <li><a href="forms.html">Forms</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styling & CSS<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              	<!--<li><a href="addStyle.html">Addind a Style</a></li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Module Info<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">General Information</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="team.html">Module Team</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="unix.html">Introduction to Unix</a></li>
+              <li><a href="basicTags.html">Basic HTML tags</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="tables.html">Tables</a></li>
+              <li><a href="colours.html">Colours</a></li>
+              <li><a href="images.html">Images</a></li>
+              <li><a href="links.html">Links & iframes</a></li>
+              <li><a href="special.html">Special Characters</a></li>
+              <li><a href="forms.html">Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li><a href="addStyle.html">Addind a Style</a></li>
               	<li><a href="cssSyntax.html">CSS Syntax</a></li>
               	<li><a href="generalStyling.html">General Page Styling</a></li>
                 <li><a href="stylingLinks.html">Styling Links</a></li>
@@ -103,153 +115,179 @@ nav.navbar-js {
               	<li><a href="stylingTables.html">Styling Tables</a></li>
                 <li><a href="cssPositioning.html">CSS Positioning</a></li>
                 <li><a href="css3.html">CSS3</a></li>-->
-                <li><a href="cssSyntax.html">Introduction to CSS</a></li>
-				   <li><a href="cssElements.html">Styling Elements</a></li>
-				  
-              </ul>
-            </li>
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="js1.html">Introduction to JavaScript</a></li>
-                <li><a href="js2.html">Objects, Methods and Functions</a></li>
-                <li><a href="js3.html">JavaScript and Forms</a></li>
-                <li class="active js"><a href="js4.html">JavaScript and the DOM</a></li>
-                <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
-              </ul>
-            </li>
-            
-          </ul>
-          
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+              <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+              <li><a href="cssElements.html">Styling Elements</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">JavaScript<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="js1.html">Introduction to JavaScript</a></li>
+              <li><a href="js2.html">Objects, Methods and Functions</a></li>
+              <li><a href="js3.html">JavaScript and Forms</a></li>
+              <li class="active js"><a href="js4.html">JavaScript and the DOM</a></li>
+              <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
 
 
 
 
-<main class="container language-html">
-<div class="col-md-9" role="main"><h1>JavaScript and the DOM</h1>
+  <main class="container language-html">
+    <div class="col-md-9" role="main">
+      <h1>JavaScript and the DOM</h1>
 
-<br><br>  
-<h2 id="DOM" class="group">Introduction to the HTML DOM (Document Object Model)</h2>
-<p>We will only cover aspects of the DOM that we need to read/change form element values/settings, document content and document style attributes, so we will not cover the DOM in full</p>
+      <br><br>
+      <h2 id="DOM" class="group">Introduction to the HTML DOM (Document Object Model)</h2>
+      <p>We will only cover aspects of the DOM that we need to read/change form element values/settings, document
+        content and document style attributes, so we will not cover the DOM in full</p>
 
-<p>The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure and style of documents. The document can be further processed and the results of that processing can be incorporated back into the presented page. This is an overview of DOM-related materials here at W3C and around the web. (<a href="http://www.w3.org/DOM/">W3C</a>)</p>
-
-
-<p>The HTML DOM model is constructed as a tree of Objects, created by the browser, so we can quickly find HTML elements using JavaScript</p>
-
-<br /><br />
-  <img src="DOM.png" width="600" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-<br><br><h3 id="JSandDOM" class="subgroup">JavaScript and the DOM</h3>
-<p>JavaScript can be used to:
-<ul class="build"><li>change HTML elements in the page</li>
-<li>change HTML attributes in the page</li>
-<li>change the CSS styles in the page</li>
-<li>react to the events in the page</li></ul></p>
-
-<br><br><h3 id="findingElem" class="subgroup">Finding HTML Elements</h3>
-<p>JavaScript is often used to manipulate HTML elements.</p>
-<p>To do so, you have to find the elements first. You can do this by:
-<ul class="build"><li>finding HTML elements by id</li>
-<li>finding HTML elements by tag name</li>
-<li>finding HTML elements by class name</li></ul></p>
+      <p>The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to
+        dynamically access and update the content, structure and style of documents. The document can be further
+        processed and the results of that processing can be incorporated back into the presented page. This is an
+        overview of DOM-related materials here at W3C and around the web. (<a href="http://www.w3.org/DOM/">W3C</a>)</p>
 
 
-<br><br><h3 id="DOMethods" class="subgroup">Document Object Methods</h3>
-<table class="table table-bordered table-striped ">
+      <p>The HTML DOM model is constructed as a tree of Objects, created by the browser, so we can quickly find HTML
+        elements using JavaScript</p>
 
-  <tbody><tr>
-    <th align="left" width="28%">Method</th>
-    <th align="left" width="66%">Description</th>
-    <th align="left" width="6%">W3C</th>
-  </tr>
-  <tr>
-    <td>close()</td>
-    <td>Closes the output stream previously opened with document.open()</td>
-    <td>Yes</td>
-    </tr>
-  <tr>
-    <td>getElementsByName()</td>
-    <td>Accesses all elements with a specified name</td>
-    <td>Yes</td>
-    </tr>
-    <tr>
-    <td>getElementById()</a></td>
-    <td>Accesses the element with the specified id</td>
-    <td>Yes</td>
-    </tr>
-    <tr>
-    <td>getElementsByClassName()</td>
-    <td>Accesses all elements with a specified class name</td>
-    <td>Yes</td>
-    </tr>
-    <tr>
-    <td>getElementsByTagName()</td>
-    <td>Accesses all elements with a specified tag name</td>
-    <td>Yes</td>
-    </tr>
-  <tr>
-    <td>open()</td>
-    <td>Opens an output stream to collect the output from document.write() or document.writeln()</td>
-    <td>Yes</td>
-    </tr>
-  <tr>
-    <td>write()</td>
-    <td>Writes HTML expressions or JavaScript code to a document</td>
-    <td>Yes</td>
-    </tr>
-  <tr>
-    <td>writeln()</td>
-    <td>Same as write(), but adds a newline character after each statement</td>
-    <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+      <br /><br />
+      <img src="DOM.png" width="600" style="display: block; margin-left: auto; margin-right: auto;" />
+
+      <br><br>
+      <h3 id="JSandDOM" class="subgroup">JavaScript and the DOM</h3>
+      <p>JavaScript can be used to:
+      <ul class="build">
+        <li>change HTML elements in the page</li>
+        <li>change HTML attributes in the page</li>
+        <li>change the CSS styles in the page</li>
+        <li>react to the events in the page</li>
+      </ul>
+      </p>
+
+      <br><br>
+      <h3 id="findingElem" class="subgroup">Finding HTML Elements</h3>
+      <p>JavaScript is often used to manipulate HTML elements.</p>
+      <p>To do so, you have to find the elements first. You can do this by:
+      <ul class="build">
+        <li>finding HTML elements by id</li>
+        <li>finding HTML elements by tag name</li>
+        <li>finding HTML elements by class name</li>
+      </ul>
+      </p>
 
 
-<br><h4 id="findingById" class="subsubgroup">Finding an HTML Element by <code>id</code></h3>
-<pre class="language-javascript"><code>var x = document.getElementById( "id1" );
+      <br><br>
+      <h3 id="DOMethods" class="subgroup">Document Object Methods</h3>
+      <table class="table table-bordered table-striped ">
+
+        <tbody>
+          <tr>
+            <th align="left" width="28%">Method</th>
+            <th align="left" width="66%">Description</th>
+            <th align="left" width="6%">W3C</th>
+          </tr>
+          <tr>
+            <td>close()</td>
+            <td>Closes the output stream previously opened with document.open()</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>getElementsByName()</td>
+            <td>Accesses all elements with a specified name</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>getElementById()</a></td>
+            <td>Accesses the element with the specified id</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>getElementsByClassName()</td>
+            <td>Accesses all elements with a specified class name</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>getElementsByTagName()</td>
+            <td>Accesses all elements with a specified tag name</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>open()</td>
+            <td>Opens an output stream to collect the output from document.write() or document.writeln()</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>write()</td>
+            <td>Writes HTML expressions or JavaScript code to a document</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>writeln()</td>
+            <td>Same as write(), but adds a newline character after each statement</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <br>
+      <h4 id="findingById" class="subsubgroup">Finding an HTML Element by <code>id</code></h3>
+        <pre class="language-javascript"><code>var x = document.getElementById( "id1" );
 </code></pre>
-<br><br><h4 id="findingByTag" class="subsubgroup">Finding HTML Elements by tag name</h3>
-<pre class="language-javascript"><code>var x = document.getElementsByTagName( "p" );
+        <br><br>
+        <h4 id="findingByTag" class="subsubgroup">Finding HTML Elements by tag name</h3>
+          <pre class="language-javascript"><code>var x = document.getElementsByTagName( "p" );
 </code></pre>
-<br><br><h4 id="findingByClass" class="subsubgroup">Finding HTML Elements by <code>class</code></h3>
-<pre class="language-javascript"><code>var x = document.getElementsByClassName( "myClass" );
+          <br><br>
+          <h4 id="findingByClass" class="subsubgroup">Finding HTML Elements by <code>class</code></h3>
+            <pre class="language-javascript"><code>var x = document.getElementsByClassName( "myClass" );
 </code></pre>
 
-<br><br><h3  id="settingProps" class="subgroup">Setting Style Properties to HTML Elements</h3>
-<h4>Syntax</h4>
-<pre class="language-javascript"><code>document.getElementById( "id1" ).style.property = new style;</code></pre>
-<h4>Example</h4>
-<pre class="language-javascript"><code>&lt;p id="id2"&gt;Hello World!&lt;/p&gt;
+            <br><br>
+            <h3 id="settingProps" class="subgroup">Setting Style Properties to HTML Elements</h3>
+            <h4>Syntax</h4>
+            <pre
+              class="language-javascript"><code>document.getElementById( "id1" ).style.property = new style;</code></pre>
+            <h4>Example</h4>
+            <pre class="language-javascript"><code>&lt;p id="id2"&gt;Hello World!&lt;/p&gt;
 
 &lt;script&gt;
 document.getElementById( "id2" ).style.color = "blue";
 &lt;/script&gt;
 </code></pre>
 
-<p>If you are going to get the same element more than once, it is more efficient to store the requested element in a variable and use that variable instead. 
+            <p>If you are going to get the same element more than once, it is more efficient to store the requested
+              element in a variable and use that variable instead.
 
-<h4>Example</h4>
-<pre class="language-javascript"><code>&lt;p id="id3"&gt;Hello World!&lt;/p&gt;
+            <h4>Example</h4>
+            <pre class="language-javascript"><code>&lt;p id="id3"&gt;Hello World!&lt;/p&gt;
 
 &lt;script&gt;
 var myParagraph = document.getElementById( "id3" );
 myParagraph.style.color = "blue";
 myParagraph.style.fontSize = "30";
 &lt;/script&gt;
-</code></pre> 
-  
-<br><br><h3  id="DOProps" class="subgroup">Document Object Properties</h3>
-<br /><br />
-<img src="DocumentProp.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+</code></pre>
 
-<br><br><h4>Object Properties Can Be Other Objects</h4>
-<p>Objects can be partly made up of, or contain, other objects. Here is part of the browser's heirarchy of ready made JavaScript objects:</p>
-<pre>
+            <br><br>
+            <h3 id="DOProps" class="subgroup">Document Object Properties</h3>
+            <br /><br />
+            <img src="DocumentProp.png" style="display: block; margin-left: auto; margin-right: auto;" />
+
+            <br><br>
+            <h4>Object Properties Can Be Other Objects</h4>
+            <p>Objects can be partly made up of, or contain, other objects. Here is part of the browser's heirarchy of
+              ready made JavaScript objects:</p>
+            <pre>
 window
    |
    <strong>.</strong> parent              //the &quot;parent&quot; window or frame
@@ -268,361 +306,385 @@ window
              |
              <strong>.</strong> elements  //an array reflecting all the elements in a form</pre>
 
-<br><br><h3 id="dotNotation" class="subgroup">Dot Notation</h3>
-<pre class="language-javascript"><code>return = awindow.document.aform.elements[ 2 ].value;</code></pre>
-<p>Statements such as this are common in JavaScript programming.</p><p> <code>awindow</code> refers by name to a window, document is the <code>document</code> in that window, <code>aform</code> is the name of a form in the document, <code class="language-javascript">elements[ 2 ]</code> refers to the <em>third</em> element in the form and <code>value</code> will return the value of that element.</p>
+            <br><br>
+            <h3 id="dotNotation" class="subgroup">Dot Notation</h3>
+            <pre class="language-javascript"><code>return = awindow.document.aform.elements[ 2 ].value;</code></pre>
+            <p>Statements such as this are common in JavaScript programming.</p>
+            <p> <code>awindow</code> refers by name to a window, document is the <code>document</code> in that window,
+              <code>aform</code> is the name of a form in the document, <code
+                class="language-javascript">elements[ 2 ]</code> refers to the <em>third</em> element in the form and
+              <code>value</code> will return the value of that element.</p>
 
 
-<br><br><h2 id="changeStyle" class="group">Changing HTML Style with the HTML DOM Style Object</h2>
+            <br><br>
+            <h2 id="changeStyle" class="group">Changing HTML Style with the HTML DOM Style Object</h2>
 
-<br><br><h3 id="textProp" class="subgroup">Text properties</h3>
-<table class="table table-bordered table-striped ">
-  <tbody><tr>
-    <th align="left" width="30%">Property</th>
-    <th align="left" width="63%">Description</th>
-    <th align="left" width="7%">W3C</th>
-  </tr>
-  <tr>
-    <td>color</td>
-    <td>Sets or returns the color of the text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>direction</td>
-    <td>Sets or returns the text direction</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>font</td>
-    <td>Sets or returns font-style, font-variant, font-weight, font-size, 
-	line-height, and font-family in one declaration</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>fontFamily</td>
-    <td>Sets or returns the font face for text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>fontSize</td>
-    <td>Sets or returns the font size of the text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>fontSizeAdjust</td>
-    <td>Sets or returns the font aspect value</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>fontStyle</td>
-    <td>Sets or returns whether the style of the font is normal, italic or 
-	oblique</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>fontVariant</td>
-    <td>Sets or returns whether the font should be displayed in small capital 
-	letters</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>fontWeight</td>
-    <td>Sets or returns the boldness of the font</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>letterSpacing</td>
-    <td>Sets or returns the space between characters in a text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>lineHeight</td>
-    <td>Sets or returns the distance between lines in a text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>quotes</td>
-    <td>Sets or returns the type of quotation marks for embedded quotations</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>textAlign</td>
-    <td>Sets or returns the horizontal alignment of text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>textDecoration</td>
-    <td>Sets or returns the decoration of a text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>textIndent</td>
-    <td>Sets or returns the indentation of the first line of text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>textShadow</td>
-    <td>Sets or returns the shadow effect of a text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>textTransform</td>
-    <td>Sets or returns the case of a text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>whiteSpace</td>
-    <td>Sets or returns how to handle tabs, line breaks and whitespace in a text</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>wordSpacing</td>
-    <td>Sets or returns the spacing between words in a text</td>
-    <td>Yes</td>
-  </tr>
-</tbody></table>
+            <br><br>
+            <h3 id="textProp" class="subgroup">Text properties</h3>
+            <table class="table table-bordered table-striped ">
+              <tbody>
+                <tr>
+                  <th align="left" width="30%">Property</th>
+                  <th align="left" width="63%">Description</th>
+                  <th align="left" width="7%">W3C</th>
+                </tr>
+                <tr>
+                  <td>color</td>
+                  <td>Sets or returns the color of the text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>direction</td>
+                  <td>Sets or returns the text direction</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>font</td>
+                  <td>Sets or returns font-style, font-variant, font-weight, font-size,
+                    line-height, and font-family in one declaration</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>fontFamily</td>
+                  <td>Sets or returns the font face for text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>fontSize</td>
+                  <td>Sets or returns the font size of the text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>fontSizeAdjust</td>
+                  <td>Sets or returns the font aspect value</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>fontStyle</td>
+                  <td>Sets or returns whether the style of the font is normal, italic or
+                    oblique</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>fontVariant</td>
+                  <td>Sets or returns whether the font should be displayed in small capital
+                    letters</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>fontWeight</td>
+                  <td>Sets or returns the boldness of the font</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>letterSpacing</td>
+                  <td>Sets or returns the space between characters in a text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>lineHeight</td>
+                  <td>Sets or returns the distance between lines in a text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>quotes</td>
+                  <td>Sets or returns the type of quotation marks for embedded quotations</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>textAlign</td>
+                  <td>Sets or returns the horizontal alignment of text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>textDecoration</td>
+                  <td>Sets or returns the decoration of a text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>textIndent</td>
+                  <td>Sets or returns the indentation of the first line of text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>textShadow</td>
+                  <td>Sets or returns the shadow effect of a text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>textTransform</td>
+                  <td>Sets or returns the case of a text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>whiteSpace</td>
+                  <td>Sets or returns how to handle tabs, line breaks and whitespace in a text</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>wordSpacing</td>
+                  <td>Sets or returns the spacing between words in a text</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
 
-<br><br><h3 id="bgProp" class="subgroup">Background properties</h3>
-<table class="table table-bordered table-striped ">
-  <tbody><tr>
-    <th align="left" width="30%">Property</th>
-    <th align="left" width="63%">Description</th>
-    <th align="left" width="7%">W3C</th>
-  </tr>
-  <tr>
-    <td>background</td>
-    <td>Sets or returns all the background properties in one declaration</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>backgroundAttachment</td>
-    <td>Sets or returns whether a background-image is fixed or scrolls with the page</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>backgroundColor</td>
-    <td>Sets or returns the background-color of an element</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>backgroundImage</td>
-    <td>Sets or returns the background-image for an element</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>backgroundPosition</td>
-    <td>Sets or returns the starting position of a background-image</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td>backgroundRepeat</td>
-    <td>Sets or returns how to repeat (tile) a background-image</td>
-    <td>Yes</td>
-  </tr>
-</tbody>
-</table>
+            <br><br>
+            <h3 id="bgProp" class="subgroup">Background properties</h3>
+            <table class="table table-bordered table-striped ">
+              <tbody>
+                <tr>
+                  <th align="left" width="30%">Property</th>
+                  <th align="left" width="63%">Description</th>
+                  <th align="left" width="7%">W3C</th>
+                </tr>
+                <tr>
+                  <td>background</td>
+                  <td>Sets or returns all the background properties in one declaration</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>backgroundAttachment</td>
+                  <td>Sets or returns whether a background-image is fixed or scrolls with the page</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>backgroundColor</td>
+                  <td>Sets or returns the background-color of an element</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>backgroundImage</td>
+                  <td>Sets or returns the background-image for an element</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>backgroundPosition</td>
+                  <td>Sets or returns the starting position of a background-image</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>backgroundRepeat</td>
+                  <td>Sets or returns how to repeat (tile) a background-image</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
 
-<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/changeStyle.html" width="670px" height="250px"></iframe>
-<h2 id="DOMEvents" class="group">HTML DOM Events</h2>
-<p>HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.</p>
+            <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/changeStyle.html" width="670px"
+              height="250px"></iframe>
+            <h2 id="DOMEvents" class="group">HTML DOM Events</h2>
+            <p>HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.
+            </p>
 
-<p>Events are normally used in combination with functions, and the function will not be executed before the event occurs (such as when a user clicks a button).</p>
-</article>
-<article>
- <h3 id="useful" class="subgroup">Some common uses of events</h3>
- <ul class="build">
- <li>When a user clicks the mouse</li>
-    <li>When a web page has loaded</li>
-    <li>When an image has been loaded</li>
-    <li>When the mouse moves over an element</li>
-    <li>When an input field is changed</li>
-    <li>When an HTML form is submitted</li>
-    <li>When a user strokes a key</li>
-</ul>
- </article>
-<article>
-<h3 id="mouseEvents" class="subgroup">Mouse Events</h3>
-<table class="table table-bordered table-striped ">  <tbody><tr>
-    <th align="left" width="20%">Property</th>
-    <th align="left" width="74%">Description</th>
-  </tr>
-  <tr>
-	<td>onclick</td>
-	<td>The event occurs when the user clicks on an element</td>
-    
-  </tr>
-  <tr>
-	<td>ondblclick</td>
-	<td>The event occurs when the user double-clicks on an element</td>
-    
-  </tr>
-  <tr>
-	<td>onmousedown</td>
-	<td>The event occurs when a user presses a mouse button over an element</td>
-    
-  </tr>
-  <tr>
-	<td>onmousemove</td>
-	<td>The event occurs when the pointer is moving while it is over an element</td>
-    
-  </tr>
-  <tr>
-	<td>onmouseover</td>
-	<td>The event occurs when the pointer is moved onto an element</td>
-    
-  </tr>
-  <tr>
-	<td>onmouseout</td>
-	<td>The event occurs when a user moves the mouse pointer out of an element</td>
-    
-  </tr>
-  <tr>
-	<td>onmouseup</td>
-	<td>The event occurs when a user releases a mouse button over an element</td>
-    
-  </tr>
-  </tbody>
-  </table>
+            <p>Events are normally used in combination with functions, and the function will not be executed before the
+              event occurs (such as when a user clicks a button).</p>
+            </article>
+            <article>
+              <h3 id="useful" class="subgroup">Some common uses of events</h3>
+              <ul class="build">
+                <li>When a user clicks the mouse</li>
+                <li>When a web page has loaded</li>
+                <li>When an image has been loaded</li>
+                <li>When the mouse moves over an element</li>
+                <li>When an input field is changed</li>
+                <li>When an HTML form is submitted</li>
+                <li>When a user strokes a key</li>
+              </ul>
+            </article>
+            <article>
+              <h3 id="mouseEvents" class="subgroup">Mouse Events</h3>
+              <table class="table table-bordered table-striped ">
+                <tbody>
+                  <tr>
+                    <th align="left" width="20%">Property</th>
+                    <th align="left" width="74%">Description</th>
+                  </tr>
+                  <tr>
+                    <td>onclick</td>
+                    <td>The event occurs when the user clicks on an element</td>
 
-</article>
-<article>
-<h3 id="keyboardEvents" class="subgroup">Keyboard Events</h3>
-<table class="table table-bordered table-striped ">
-  <tbody><tr>
-    <th align="left" width="20%">Attribute</th>
-    <th align="left" width="74%">Description</th>
-    
-  </tr>
-  <tr>
-	<td>onkeydown</td>
-	<td>The event occurs when the user is pressing a key</td>
-    
-  </tr>
-  <tr>
-	<td>onkeypress</td>
-	<td>The event occurs when the user presses a key</td>
-    
-  </tr>
-  <tr>
-	<td>onkeyup</td>
-	<td>The event occurs when the user releases a key</td>
-    
-  </tr>
-  </tbody>
-  </table>
-</article>
-<article>
-<h3 id="formEvents" class="subgroup">Form Events</h3>
-<table class="table table-bordered table-striped ">
-  <tbody><tr>
-    <th align="left" width="20%">Attribute</th>
-    <th align="left" width="74%">Description</th>
-    
-  </tr>
-  <tr>
-	<td>onblur</td>
-	<td>The event occurs when a form element loses focus</td>
-    
-  </tr>
-  <tr>
-	<td>onchange</td>
-	<td>The event occurs when the content of a form element, the selection, or the 
-	checked state have changed (for &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt;)</td>
-    
-  </tr>
-  <tr>
-	<td>onfocus</td>
-	<td>The event occurs when an element gets focus (for &lt;label&gt;, &lt;input&gt;, 
-	&lt;select&gt;, &lt;textarea&gt;, and &lt;button&gt;)</td>
-    
-  </tr>
-  <tr>
-	<td>onreset</td>
-	<td>The event occurs when a form is reset</td>
-    
-  </tr>
-  <tr>
-	<td>onselect</td>
-	<td>The event occurs when a user selects some&nbsp; text (for &lt;input&gt; and &lt;textarea&gt;)</td>
-    
-  </tr>
-  <tr>
-	<td>onsubmit</td>
-	<td>The event occurs when a form is submitted</td>
-    
-  </tr>
-</tbody>
-</table>
-</article>
+                  </tr>
+                  <tr>
+                    <td>ondblclick</td>
+                    <td>The event occurs when the user double-clicks on an element</td>
 
-<article>
-<h3 id="objectEvents" class="subgroup">Object Events</h3>
-<table class="table table-bordered table-striped ">  
-  <tbody><tr>
-    <th width="20%" align="left">Attribute</th>
-    <th width="74%" align="left">Description</th>
-    
-  </tr>
-  <tr>
-	<td>onabort</td>
-	<td>The event occurs when an image is stopped from loading before 
-	completely loaded (for &lt;object&gt;)</td>
-    
-  </tr>
-  <tr>
-	<td>onerror</td>
-	<td>The event occurs when an image does not load properly (for &lt;object&gt;, 
-	&lt;body&gt; and &lt;frameset&gt;)</td>
-    
-  </tr>
-  <tr>
-	<td>onload</td>
-	<td>The event occurs when a document, frameset, or &lt;object&gt; has been loaded</td>
-    
-  </tr>
-  <tr>
-	<td>onresize</td>
-	<td>The event occurs when a document view is resized</td>
-    
-  </tr>
-  <tr>
-	<td>onscroll</td>
-	<td>The event occurs when a document view is scrolled</td>
-    
-  </tr>
-  <tr>
-	<td>onunload</td>
-	<td>The event occurs once a page has unloaded (for 
-	&lt;body&gt; and &lt;frameset&gt;)</td>
-    
-  </tr>
-</tbody>
+                  </tr>
+                  <tr>
+                    <td>onmousedown</td>
+                    <td>The event occurs when a user presses a mouse button over an element</td>
 
-</table>
-</article>
+                  </tr>
+                  <tr>
+                    <td>onmousemove</td>
+                    <td>The event occurs when the pointer is moving while it is over an element</td>
 
-<article>
-<h3 id="reactingToEvents" class="subgroup">Reacting to Events</h3>
-<p>A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.</p>
+                  </tr>
+                  <tr>
+                    <td>onmouseover</td>
+                    <td>The event occurs when the pointer is moved onto an element</td>
 
-<p>To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:
-<pre class="language-javascript"><code>onclick = <em>JavaScript</em></code></pre> </p>
- </article>
-<article>
-<h3>Reacting to Events - Example</h3>
-<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/events.html" width="830px" height="200px"></iframe>
- </article>
- <article>
-<h3>A JavaScripted Frog</h3>
-<iframe src="https://intranet.ecs.westminster.ac.uk/modules/3sfe407/lect03/javascriptevent.html" width="830px" height="400px"></iframe>
- </article>
-  <article>
-<h3>A JavaScripted Frog</h3>
-<iframe src="https://intranet.ecs.westminster.ac.uk/modules/3sfe407/lect03/javascriptevent2.html" width="830px" height="400px"></iframe>
- </article>
-  
-<article>
-<pre><code>&lt;form name="myForm"&gt;
+                  </tr>
+                  <tr>
+                    <td>onmouseout</td>
+                    <td>The event occurs when a user moves the mouse pointer out of an element</td>
+
+                  </tr>
+                  <tr>
+                    <td>onmouseup</td>
+                    <td>The event occurs when a user releases a mouse button over an element</td>
+
+                  </tr>
+                </tbody>
+              </table>
+
+            </article>
+            <article>
+              <h3 id="keyboardEvents" class="subgroup">Keyboard Events</h3>
+              <table class="table table-bordered table-striped ">
+                <tbody>
+                  <tr>
+                    <th align="left" width="20%">Attribute</th>
+                    <th align="left" width="74%">Description</th>
+
+                  </tr>
+                  <tr>
+                    <td>onkeydown</td>
+                    <td>The event occurs when the user is pressing a key</td>
+
+                  </tr>
+                  <tr>
+                    <td>onkeypress</td>
+                    <td>The event occurs when the user presses a key</td>
+
+                  </tr>
+                  <tr>
+                    <td>onkeyup</td>
+                    <td>The event occurs when the user releases a key</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+            <article>
+              <h3 id="formEvents" class="subgroup">Form Events</h3>
+              <table class="table table-bordered table-striped ">
+                <tbody>
+                  <tr>
+                    <th align="left" width="20%">Attribute</th>
+                    <th align="left" width="74%">Description</th>
+
+                  </tr>
+                  <tr>
+                    <td>onblur</td>
+                    <td>The event occurs when a form element loses focus</td>
+
+                  </tr>
+                  <tr>
+                    <td>onchange</td>
+                    <td>The event occurs when the content of a form element, the selection, or the
+                      checked state have changed (for &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt;)</td>
+
+                  </tr>
+                  <tr>
+                    <td>onfocus</td>
+                    <td>The event occurs when an element gets focus (for &lt;label&gt;, &lt;input&gt;,
+                      &lt;select&gt;, &lt;textarea&gt;, and &lt;button&gt;)</td>
+
+                  </tr>
+                  <tr>
+                    <td>onreset</td>
+                    <td>The event occurs when a form is reset</td>
+
+                  </tr>
+                  <tr>
+                    <td>onselect</td>
+                    <td>The event occurs when a user selects some&nbsp; text (for &lt;input&gt; and &lt;textarea&gt;)
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td>onsubmit</td>
+                    <td>The event occurs when a form is submitted</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+            <article>
+              <h3 id="objectEvents" class="subgroup">Object Events</h3>
+              <table class="table table-bordered table-striped ">
+                <tbody>
+                  <tr>
+                    <th width="20%" align="left">Attribute</th>
+                    <th width="74%" align="left">Description</th>
+
+                  </tr>
+                  <tr>
+                    <td>onabort</td>
+                    <td>The event occurs when an image is stopped from loading before
+                      completely loaded (for &lt;object&gt;)</td>
+
+                  </tr>
+                  <tr>
+                    <td>onerror</td>
+                    <td>The event occurs when an image does not load properly (for &lt;object&gt;,
+                      &lt;body&gt; and &lt;frameset&gt;)</td>
+
+                  </tr>
+                  <tr>
+                    <td>onload</td>
+                    <td>The event occurs when a document, frameset, or &lt;object&gt; has been loaded</td>
+
+                  </tr>
+                  <tr>
+                    <td>onresize</td>
+                    <td>The event occurs when a document view is resized</td>
+
+                  </tr>
+                  <tr>
+                    <td>onscroll</td>
+                    <td>The event occurs when a document view is scrolled</td>
+
+                  </tr>
+                  <tr>
+                    <td>onunload</td>
+                    <td>The event occurs once a page has unloaded (for
+                      &lt;body&gt; and &lt;frameset&gt;)</td>
+
+                  </tr>
+                </tbody>
+
+              </table>
+            </article>
+
+            <article>
+              <h3 id="reactingToEvents" class="subgroup">Reacting to Events</h3>
+              <p>A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.</p>
+
+              <p>To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:
+              <pre class="language-javascript"><code>onclick = <em>JavaScript</em></code></pre>
+              </p>
+            </article>
+            <article>
+              <h3>Reacting to Events - Example</h3>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/events.html" width="830px"
+                height="200px"></iframe>
+            </article>
+            <article>
+              <h3>A JavaScripted Frog</h3>
+              <iframe src="https://intranet.ecs.westminster.ac.uk/modules/3sfe407/lect03/javascriptevent.html"
+                width="830px" height="400px"></iframe>
+            </article>
+            <article>
+              <h3>A JavaScripted Frog</h3>
+              <iframe src="https://intranet.ecs.westminster.ac.uk/modules/3sfe407/lect03/javascriptevent2.html"
+                width="830px" height="400px"></iframe>
+            </article>
+
+            <article>
+              <pre><code>&lt;form name="myForm"&gt;
 &lt;a href="#" onmouseover="document.myForm.message.value='You are over link 1'";&gt;Link 1&lt;/a&gt; | 
 &lt;a href="#" onmouseover="document.myForm.message.value='This is link 2'";&gt;Link 2&lt;/a&gt; | 
 &lt;a href="#" onmouseover="document.myForm.message.value='And now... link 3'";&gt;Link 3&lt;/a&gt; | 
@@ -630,12 +692,14 @@ window
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;input type="text" name="message" size="40" &gt;
 &lt;/form&gt;</code></pre>
- </article>
- <article>
- <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/mouseover1.html" width="830px" height="400px"></iframe></article>
- </article>
- <article>
- <pre><code>&lt;head&gt;
+            </article>
+            <article>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/mouseover1.html" width="830px"
+                height="400px"></iframe>
+            </article>
+            </article>
+            <article>
+              <pre><code>&lt;head&gt;
 &lt;script&gt;
 var MessageArray = [];
 MessageArray[1] = "You are over link 1";
@@ -652,9 +716,9 @@ function showMessage( n ) {
 &lt;/script&gt;
 &lt;/head&gt;
 </code></pre>
-</article>
-<article>
-<pre><code>
+            </article>
+            <article>
+              <pre><code>
 &lt;body&gt;
 &lt;form name="myForm"&gt;
 &lt;a href="#" onmouseover="showMessage(1)";&gt;Link 1&lt;/a&gt; | 
@@ -665,94 +729,101 @@ function showMessage( n ) {
 &lt;/form&gt;
 &lt;/body&gt;
  </code></pre>
- </article>
- <article>
- <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/mouseover3.html" width="830px" height="400px" ></iframe></article>
- </article>
- <article>
- <br><br>
- <h2 id="imageReplacement" class="group">Image replacement</h2>
- </article>
- <article>
- <h3 id="imageProps" class="subgroup">Image Properties</h3>
- <table class="table table-bordered table-striped ">
-  <tbody><tr>
-    <th width="20%" align="left">Property</th>
-    <th width="73%" align="left">Description</th>
-    
-  </tr>
-  <tr>
-    <td>align</td>
-    <td>Sets or returns the value of the align attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>alt</td>
-    <td>Sets or returns the value of the alt attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>border</td>
-    <td>Sets or returns the value of the border attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>complete</td>
-    <td>Returns whether or not the browser is finished loading an image</td>
-    
-  </tr>
-  <tr>
-    <td>height</td>
-    <td>Sets or returns the value of the height attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>hspace</td>
-    <td>Sets or returns the value of the hspace attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>longDesc</td>
-    <td>Sets or returns the value of the longdesc attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>lowsrc</td>
-    <td>Sets or returns a URL to a low-resolution version of an image</td>
-    
-  </tr>
-  <tr>
-    <td>name</td>
-    <td>Sets or returns the name of an image</td>
-    
-  </tr>
+            </article>
+            <article>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/mouseover3.html" width="830px"
+                height="400px"></iframe>
+            </article>
+            </article>
+            <article>
+              <br><br>
+              <h2 id="imageReplacement" class="group">Image replacement</h2>
+            </article>
+            <article>
+              <h3 id="imageProps" class="subgroup">Image Properties</h3>
+              <table class="table table-bordered table-striped ">
+                <tbody>
+                  <tr>
+                    <th width="20%" align="left">Property</th>
+                    <th width="73%" align="left">Description</th>
 
-   <tr>
-    <td>src</td>
-    <td>Sets or returns the value of the src attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>useMap</td>
-    <td>Sets or returns the value of the usemap attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>vspace</td>
-    <td>Sets or returns the value of the vspace attribute of an image</td>
-    
-  </tr>
-  <tr>
-    <td>width</td>
-    <td>Sets or returns the value of the width attribute of an image</td>
-    
-  </tr>
-  </tbody></table>
- </article>
- <article>
- <p>Replacing an image already loaded onto a page is done by changing the image object's src attribute to either the URL of another image file or to the src of another image object. Here are two code examples:</p>
- <pre class="language-javascript"><code>document.images[0].src = "http://www.somehost.co.uk/images/myImg.gif";</code></pre>
- <pre class="language-javascript"><code>cacheimage = new Image();
+                  </tr>
+                  <tr>
+                    <td>align</td>
+                    <td>Sets or returns the value of the align attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>alt</td>
+                    <td>Sets or returns the value of the alt attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>border</td>
+                    <td>Sets or returns the value of the border attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>complete</td>
+                    <td>Returns whether or not the browser is finished loading an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>height</td>
+                    <td>Sets or returns the value of the height attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>hspace</td>
+                    <td>Sets or returns the value of the hspace attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>longDesc</td>
+                    <td>Sets or returns the value of the longdesc attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>lowsrc</td>
+                    <td>Sets or returns a URL to a low-resolution version of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>name</td>
+                    <td>Sets or returns the name of an image</td>
+
+                  </tr>
+
+                  <tr>
+                    <td>src</td>
+                    <td>Sets or returns the value of the src attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>useMap</td>
+                    <td>Sets or returns the value of the usemap attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>vspace</td>
+                    <td>Sets or returns the value of the vspace attribute of an image</td>
+
+                  </tr>
+                  <tr>
+                    <td>width</td>
+                    <td>Sets or returns the value of the width attribute of an image</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+            <article>
+              <p>Replacing an image already loaded onto a page is done by changing the image object's src attribute to
+                either the URL of another image file or to the src of another image object. Here are two code examples:
+              </p>
+              <pre
+                class="language-javascript"><code>document.images[0].src = "http://www.somehost.co.uk/images/myImg.gif";</code></pre>
+              <pre class="language-javascript"><code>cacheimage = new Image();
 cacheimage.src = "http://www.somehost.co.uk/images/myImg.gif";
 firstimage = new Image();
 firstimage.src = document.images[0].src;
@@ -761,28 +832,33 @@ document.images[0].src = cacheimage.src;
 .
 .
 document.images[0].src = firstimage.src;</code></pre>
- </article>
- <article>
- <h3>A Simple Example</h3>
- <p>Changing the URL of the image using the src property causes the new image to be loaded gradually onto the page. Replacement is not immediate.</p>
- 
- 
- <pre><code>&lt;img src="simple0.jpg" width="257" height="75" name="sample" alt="simple image"&gt;
+            </article>
+            <article>
+              <h3>A Simple Example</h3>
+              <p>Changing the URL of the image using the src property causes the new image to be loaded gradually onto
+                the page. Replacement is not immediate.</p>
+
+
+              <pre><code>&lt;img src="simple0.jpg" width="257" height="75" name="sample" alt="simple image"&gt;
 
 &lt;form&gt;
 &lt;input type="button" value="simple0.jpg" onclick="document.images[0].src = 'simple0.jpg'"&gt;
 &ltinput type="button" value="simple1.jpg" onclick="document.images[0].src = 'simple1.jpg'"&gt;
-&lt/form&gt;</code></pre></article>
- <article>
-<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/simple1.html" width="830px" height="200px" ></iframe>
-</article>
-  <article>
- <h3  id="preloadInCache" class="subgroup">Preloading Images into Cache</h3>
- <p>Using the image object it is possible to begin loading both images as the page loads. Page loading is slowed down as both images are loaded and so the first image may take longer to appear. Once they are both loaded image replacement is very fast.</p>
- 
- 
- 
- <pre><code>&lt;script&gt;
+&lt/form&gt;</code></pre>
+            </article>
+            <article>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/simple1.html" width="830px"
+                height="200px"></iframe>
+            </article>
+            <article>
+              <h3 id="preloadInCache" class="subgroup">Preloading Images into Cache</h3>
+              <p>Using the image object it is possible to begin loading both images as the page loads. Page loading is
+                slowed down as both images are loaded and so the first image may take longer to appear. Once they are
+                both loaded image replacement is very fast.</p>
+
+
+
+              <pre><code>&lt;script&gt;
 cache0 = new Image(257,75)
 cache0.src = "cache0.jpg"
 cache1 = new Image(257,75)
@@ -800,17 +876,21 @@ cache1.src = "cache1.jpg"
   onclick="document.images[0].src = cache0.src"&gt;
 &ltinput type="button" value="simple1.jpg" 
   onclick="document.images[0].src = cache1.src"&gt;
-&lt/form&gt;</code></pre></article>
-<article>
-<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/simple2.html" width="830px" height="200px" ></iframe>
-</article>
- <article>
- <h3>A different Syntax</h3>
- <p>Since the <code>&lt;img&gt;</code> has a name attribute set to "sample" it is possible to refer to the image in the page using document.sample and avoid using the images array and indexes into it entirely.</p>
- </article>
- <article>
- <h3>Preloading Images into Cache</h3>
- <pre><code>&lt;script&gt;
+&lt/form&gt;</code></pre>
+            </article>
+            <article>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/simple2.html" width="830px"
+                height="200px"></iframe>
+            </article>
+            <article>
+              <h3>A different Syntax</h3>
+              <p>Since the <code>&lt;img&gt;</code> has a name attribute set to "sample" it is possible to refer to the
+                image in the page using document.sample and avoid using the images array and indexes into it entirely.
+              </p>
+            </article>
+            <article>
+              <h3>Preloading Images into Cache</h3>
+              <pre><code>&lt;script&gt;
 cache0 = new Image(257,75)
 cache0.src = "cache0.jpg"
 cache1 = new Image(257,75)
@@ -828,18 +908,26 @@ cache1.src = "cache1.jpg"
   onclick="document.sample.src = cache0.src"&gt;
 &ltinput type="button" value="simple1.jpg" 
   onclick="document.sample.src = cache1.src"&gt;
-&lt/form&gt;</code></pre></article>
-<article>
-<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/simple3.html" width="830px" height="200px"></iframe>
-</article>
+&lt/form&gt;</code></pre>
+            </article>
+            <article>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/simple3.html" width="830px"
+                height="200px"></iframe>
+            </article>
 
-<article>
- <h3>Using DOM selectors</h3>
-    <p>We can use DOM selectors to select the <code>&lt;img&gt;</code>, using it's <code>id</code> or <code>name</code> for example, and attaching an event listener that will change the <code>src</code> attribute. This notation allows full separation of concern, by keeping JavaScript and HTML separate. Since the example above uses a <code>name</code> attribute, let's just use this. Note that since <code>getElementsByName</code> will return an array of all the elements with this name, we will use the index 0 to reach the element we need in this array. In this example, only one element will have this name, and the array will have a size of 1.</p>
- 
- 
+            <article>
+              <h3>Using DOM selectors</h3>
+              <p>We can use DOM selectors to select the <code>&lt;img&gt;</code>, using it's <code>id</code> or
+                <code>name</code> for example, and attaching an event listener that will change the <code>src</code>
+                attribute. This notation allows full separation of concern, by keeping JavaScript and HTML separate.
+                Since the example above uses a <code>name</code> attribute, let's just use this. Note that since
+                <code>getElementsByName</code> will return an array of all the elements with this name, we will use the
+                index 0 to reach the element we need in this array. In this example, only one element will have this
+                name, and the array will have a size of 1.</p>
 
-<pre><code>&lt;img 
+
+
+              <pre><code>&lt;img 
  src   ="cache0.jpg"
  width ="257"
  height="75"
@@ -867,15 +955,17 @@ document.getElementById("button1").addEventListener("click", function(){
 });
 
 &lt;/script&gt;
-    </code></pre></article>
+    </code></pre>
+            </article>
 
 
-<article>
-<h3 id="rollOver" class="subgroup">A Simple RollOver</h3>
-<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/rollover.html" width="830px" height="200px"></iframe>
-</article>
-<article>
-<pre><code>&lt;body&gt;
+            <article>
+              <h3 id="rollOver" class="subgroup">A Simple RollOver</h3>
+              <iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/rollover.html" width="830px"
+                height="200px"></iframe>
+            </article>
+            <article>
+              <pre><code>&lt;body&gt;
 
 &lt;script&gt;
 normal = new Image();
@@ -896,42 +986,51 @@ onMouseUp="document.sample.src = up.src" &gt;
 
 &lt;/body&gt;
 </code></pre>
-    
-    
-</article>
-<article>
-<br><h2 id="setTimeOut" class="group">the setTimeout() method</h2>
-<h4>Syntax</h4>
-<pre class="language-javascript"><code>window.setTimeout( "<em>javascript function", milliseconds</em> );</code></pre>
-<p>The <code>window.setTimeout()</code> method can be written without the window prefix.</p>
 
-<p>The <code>setTimeout()</code> method will wait the specified number of milliseconds, and then execute the specified function.</p>
 
-<p>The first parameter of <code>setTimeout()</code> should be a function.</p>
+            </article>
+            <article>
+              <br>
+              <h2 id="setTimeOut" class="group">the setTimeout() method</h2>
+              <h4>Syntax</h4>
+              <pre
+                class="language-javascript"><code>window.setTimeout( "<em>javascript function", milliseconds</em> );</code></pre>
+              <p>The <code>window.setTimeout()</code> method can be written without the window prefix.</p>
 
-<p>The second parameter indicates how many milliseconds, from now, you want to execute the first parameter.</p>
-</article>
-<article>
-<h4>Example</h4><p>Wait 3 seconds, then alert "Hello":</p>
-<pre class="language-javascript"><code>setTimeout( function() { 
+              <p>The <code>setTimeout()</code> method will wait the specified number of milliseconds, and then execute
+                the specified function.</p>
+
+              <p>The first parameter of <code>setTimeout()</code> should be a function.</p>
+
+              <p>The second parameter indicates how many milliseconds, from now, you want to execute the first
+                parameter.</p>
+            </article>
+            <article>
+              <h4>Example</h4>
+              <p>Wait 3 seconds, then alert "Hello":</p>
+              <pre class="language-javascript"><code>setTimeout( function() { 
    alert( "Hello" ) 
    }, 3000 
 );</code></pre>
-</article>
-<article>
-<h3 id="clearTimeout" class="subgroup">How to Stop the Execution?</h3>
-<p>The <code>clearTimeout()</code> method is used to stop the execution of the function specified in the setTimeout() method.</p>
-<h4>Syntax</h4>
-<pre class="language-javascript"><code>window.clearTimeout(timeoutVariable)</code></pre>
-<p>The window.clearTimeout() method can be written without the window prefix.
+            </article>
+            <article>
+              <h3 id="clearTimeout" class="subgroup">How to Stop the Execution?</h3>
+              <p>The <code>clearTimeout()</code> method is used to stop the execution of the function specified in the
+                setTimeout() method.</p>
+              <h4>Syntax</h4>
+              <pre class="language-javascript"><code>window.clearTimeout(timeoutVariable)</code></pre>
+              <p>The window.clearTimeout() method can be written without the window prefix.
 
-To be able to use the clearTimeout() method, you must use a global variable when creating the timeout method:</p>
-<pre class="language-javascript"><code>myVar = setTimeout( "javascript function", milliseconds );</code></pre>
-<p>Then, if the function has not already been executed, you will be able to stop the execution by calling the <code>clearTimeout()</code> method.</p>
-</article>
-<article>
-<h4>Example</h4>
-<pre class="language-javascript"><code>var myVar;
+                To be able to use the clearTimeout() method, you must use a global variable when creating the timeout
+                method:</p>
+              <pre
+                class="language-javascript"><code>myVar = setTimeout( "javascript function", milliseconds );</code></pre>
+              <p>Then, if the function has not already been executed, you will be able to stop the execution by calling
+                the <code>clearTimeout()</code> method.</p>
+            </article>
+            <article>
+              <h4>Example</h4>
+              <pre class="language-javascript"><code>var myVar;
 
 function myFunction() {
   myVar = setTimeout( function() {
@@ -942,124 +1041,131 @@ function myFunction() {
 function myStopFunction() {
    clearTimeout( myVar );
 }</code></pre>
-</article>
-<article>
-<iframe src="timer.html" width="830px" height="500px"></iframe>
+            </article>
+            <article>
+              <iframe src="timer.html" width="830px" height="500px"></iframe>
 
-<h3>A JavaScripted Frog</h3>
-<iframe src="../3sfe407/lect03/javascriptevent5.html" width="830px" height="400px"></iframe>
+              <h3>A JavaScripted Frog</h3>
+              <iframe src="../3sfe407/lect03/javascriptevent5.html" width="830px" height="400px"></iframe>
 
 
-<hr>
-<div class="alert alert-warning" role="alert">
-<br><br><h2 id="review" class="group">Review Questions</h2>
+              <hr>
+              <div class="alert alert-warning" role="alert">
+                <br><br>
+                <h2 id="review" class="group">Review Questions</h2>
 
-<ul>
-<li>Question 1 - </li>
-<li>Question 2 - </li>
-<li>Question 3 - </li>
+                <ul>
+                  <li>Question 1 - </li>
+                  <li>Question 2 - </li>
+                  <li>Question 3 - </li>
 
-</ul>
+                </ul>
 
-</div>
-</div>
+              </div>
+    </div>
 
-<div class="row">
-    <!--Nav Bar -->
-    
-    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+    <div class="row">
+      <!--Nav Bar -->
+
+      <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
         <ul id="sidebar" class="nav nav-stacked">
-            <li>
-                <a href="#DOM">Introduction to the HTML DOM (Document Object Model)</a>
-                <ul class="nav nav-stacked">
+          <li>
+            <a href="#DOM">Introduction to the HTML DOM (Document Object Model)</a>
+            <ul class="nav nav-stacked">
 
-                    <li><a href="#JSandDOM">JavaScript and the DOM</a></li>
-                    <li><a href="#findingElem">Finding HTML Elements</a></li>
-                    <li><a href="#DOMethods">Document Object Methods</a></li>
-                    <li><a href="#settingProps">Setting Style Properties HTML Elements</a></li>
-                    <li><a href="#DOProps">Document Object Properties</a></li>
-                    <li><a href="#dotNotation">Document Object Properties</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#changeStyle">Changing HTML Style with the HTML DOM Style Object</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#textProp">Text Properties</a></li>
-                    <li><a href="#bgProp">Background Properties</a></li>
-                    
-                </ul>
-            </li>
-            <li>
-                <a href="#DOMEvents">HTML DOM Events</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#useful">Some common uses of events</a></li>
-                    <li><a href="#mouseEvents">Mouse Events</a></li>
-                    <li><a href="#keyboardEvents">Keyboard Events</a></li>
-                    <li><a href="#formEvents">Form Events</a></li>
-                    <li><a href="#objectEvents">Object Events</a></li>
-                    <li><a href="#reactingToEvents">Reacting to Events</a></li>
-                    
-                </ul>
-            </li>
-            <li>
-                <a href="#imageReplacement">Image Replacement</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#imageProps">Image Properties</a></li>
-                    <li><a href="#preloadInCache">Preloading Images into Cache</a></li>
-                    
-                    
-                </ul>
-            </li>
-            <li>
-                <a href="#setTimeOut">the setTimeout() method</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#clearTimeout">How to Stop the execution</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
-           <!-- <li>
+              <li><a href="#JSandDOM">JavaScript and the DOM</a></li>
+              <li><a href="#findingElem">Finding HTML Elements</a></li>
+              <li><a href="#DOMethods">Document Object Methods</a></li>
+              <li><a href="#settingProps">Setting Style Properties HTML Elements</a></li>
+              <li><a href="#DOProps">Document Object Properties</a></li>
+              <li><a href="#dotNotation">Document Object Properties</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#changeStyle">Changing HTML Style with the HTML DOM Style Object</a>
+            <ul class="nav nav-stacked">
+              <li><a href="#textProp">Text Properties</a></li>
+              <li><a href="#bgProp">Background Properties</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="#DOMEvents">HTML DOM Events</a>
+            <ul class="nav nav-stacked">
+              <li><a href="#useful">Some common uses of events</a></li>
+              <li><a href="#mouseEvents">Mouse Events</a></li>
+              <li><a href="#keyboardEvents">Keyboard Events</a></li>
+              <li><a href="#formEvents">Form Events</a></li>
+              <li><a href="#objectEvents">Object Events</a></li>
+              <li><a href="#reactingToEvents">Reacting to Events</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="#imageReplacement">Image Replacement</a>
+            <ul class="nav nav-stacked">
+              <li><a href="#imageProps">Image Properties</a></li>
+              <li><a href="#preloadInCache">Preloading Images into Cache</a></li>
+
+
+            </ul>
+          </li>
+          <li>
+            <a href="#setTimeOut">the setTimeout() method</a>
+            <ul class="nav nav-stacked">
+              <li><a href="#clearTimeout">How to Stop the execution</a></li>
+
+
+
+            </ul>
+          </li>
+          <!-- <li>
                 <a href="#DOM">Document Object Model</a>
             </li>
             
             <li><a href="#review">Review Questions</a></li>-->
         </ul>
-    </nav>
-</div>
-</main>
+      </nav>
+    </div>
+  </main>
 
-<nav class="navbar navbar-default no-margin-bottom">
-<div class="container">
-<p class="navbar-text navbar-right">&copy; Copyright 2016-2023 <a href="https://www.westminster.ac.uk" class="navbar-link">University of Westminster</a></p>
-</div>
-</nav>
+  <nav class="navbar navbar-default no-margin-bottom">
+    <div class="container">
+      <p class="navbar-text navbar-right">&copy; Copyright 2016-2023 <a href="https://www.westminster.ac.uk"
+          class="navbar-link">University of Westminster</a></p>
+    </div>
+  </nav>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
 
-<script src="prism/prism.js"></script>
-<script src="prism/prism-line-numbers.js"></script>
-<script src="prism/prism-line-highlight.js"></script>
-<script>
-$('body').scrollspy({
-  target: '.bs-docs-sidebar',
-  offset: 60
-});
-$("#sidebar").affix({
-  offset: {
-    top: 80
-  }
-});
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script src="prism/prism.js"></script>
+  <script src="prism/prism-line-numbers.js"></script>
+  <script src="prism/prism-line-highlight.js"></script>
+  <script>
+    $('body').scrollspy({
+      target: '.bs-docs-sidebar',
+      offset: 60
+    });
+    $("#sidebar").affix({
+      offset: {
+        top: 80
+      }
+    });
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-RRNL1F43P4');
-</script>
-<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+    gtag('config', 'G-RRNL1F43P4');
+  </script>
+  <br>
+  <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
 </html>

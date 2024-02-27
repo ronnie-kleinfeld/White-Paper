@@ -1,109 +1,124 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>HTML Forms</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
-	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
 
-    <link href="prism/prism.css" rel="stylesheet" />
-    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
-    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="prism/prism.css" rel="stylesheet" />
+	<link href="prism/prism-line-numbers.css" rel="stylesheet" />
+	<link href="prism/prism-line-highlight.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-     
-<link rel="stylesheet" href="style.css" /> 
-<style>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-.bs-docs-sidebar .nav > li > a:hover,
-.bs-docs-sidebar .nav > li > a:focus {
-  color: #3387EB,
-  border-left: 1px solid #3387EB;
-}
-.bs-docs-sidebar .nav > .active > a,
-.bs-docs-sidebar .nav > .active:hover > a,
-.bs-docs-sidebar .nav > .active:focus > a {
-  padding-left: 18px;
-  font-weight: bold;
-  color: #3387EB;
-  background-color: transparent;
-  border-left: 2px solid #3387EB;
-}
-.back-to-top:hover,
-.bs-docs-theme-toggle:hover {
-  color: #563d7c;
-  text-decoration: none;
-}
+	<link rel="stylesheet" href="style.css" />
+	<style>
+		.bs-docs-sidebar .nav>li>a:hover,
+		.bs-docs-sidebar .nav>li>a:focus {
+			color: #3387EB,
+				border-left: 1px solid #3387EB;
+		}
 
-.dropdown-menu>.active>a, 
-.dropdown-menu>.active>a:focus, 
-.dropdown-menu>.active>a:hover {
-  background-image: none;
-  background-color: #3387EB;
-}
-th { text-align:center;}
-	pre { 
-	font-size: 16px !important;
-	}
-dt {
-		margin-top: 10px;
-	}
-	
-	label {
-		font-weight: 400;
-	}
-	.moduleClearedStyle {
-  all: unset !important;
-}
-</style>
+		.bs-docs-sidebar .nav>.active>a,
+		.bs-docs-sidebar .nav>.active:hover>a,
+		.bs-docs-sidebar .nav>.active:focus>a {
+			padding-left: 18px;
+			font-weight: bold;
+			color: #3387EB;
+			background-color: transparent;
+			border-left: 2px solid #3387EB;
+		}
+
+		.back-to-top:hover,
+		.bs-docs-theme-toggle:hover {
+			color: #563d7c;
+			text-decoration: none;
+		}
+
+		.dropdown-menu>.active>a,
+		.dropdown-menu>.active>a:focus,
+		.dropdown-menu>.active>a:hover {
+			background-image: none;
+			background-color: #3387EB;
+		}
+
+		th {
+			text-align: center;
+		}
+
+		pre {
+			font-size: 16px !important;
+		}
+
+		dt {
+			margin-top: 10px;
+		}
+
+		label {
+			font-weight: 400;
+		}
+
+		.moduleClearedStyle {
+			all: unset !important;
+		}
+	</style>
 </head>
 
 <body>
 
-<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-html" >
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Home</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Module Info<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="general.html">General Information</a></li>
-              	<li><a href="schedule.html">Schedule</a></li>
-              	<li><a href="team.html">Module Team</a></li>
-              </ul>
-            </li>
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intro & HTML<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="unix.html">Introduction to Unix</a></li>
-              	<li><a href="basicTags.html">Basic HTML tags</a></li>
-              	<li><a href="lists.html">Lists</a></li>
-              	<li><a href="tables.html">Tables</a></li>
-              	<li><a href="colours.html">Colours</a></li>
-                <li><a href="images.html">Images</a></li>
-              	<li><a href="links.html">Links & iframes</a></li>
-                <li><a href="special.html">Special Characters</a></li>
-                <li class="active video"><a href="forms.html">Forms</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styling & CSS<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              	<!--<li><a href="addStyle.html">Addind a Style</a></li>
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-html">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Home</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Module Info<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="general.html">General Information</a></li>
+							<li><a href="schedule.html">Schedule</a></li>
+							<li><a href="team.html">Module Team</a></li>
+						</ul>
+					</li>
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="unix.html">Introduction to Unix</a></li>
+							<li><a href="basicTags.html">Basic HTML tags</a></li>
+							<li><a href="lists.html">Lists</a></li>
+							<li><a href="tables.html">Tables</a></li>
+							<li><a href="colours.html">Colours</a></li>
+							<li><a href="images.html">Images</a></li>
+							<li><a href="links.html">Links & iframes</a></li>
+							<li><a href="special.html">Special Characters</a></li>
+							<li class="active video"><a href="forms.html">Forms</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<!--<li><a href="addStyle.html">Addind a Style</a></li>
               	<li><a href="cssSyntax.html">CSS Syntax</a></li>
               	<li><a href="generalStyling.html">General Page Styling</a></li>
                 <li><a href="stylingLinks.html">Styling Links</a></li>
@@ -112,67 +127,107 @@ dt {
               	<li><a href="stylingTables.html">Styling Tables</a></li>
                 <li><a href="cssPositioning.html">CSS Positioning</a></li>
                 <li><a href="css3.html">CSS3</a></li>-->
-                <li><a href="cssSyntax.html">Introduction to CSS</a></li>
-				  <li><a href="cssElements.html">Styling Elements</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="js1.html">Introduction to JavaScript</a></li>
-                <li><a href="js2.html">Objects, Methods and Functions</a></li>
-                <li><a href="js3.html">JavaScript and Forms</a></li>
-                <li><a href="js4.html">JavaScript and the DOM</a></li>
-                <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
-              </ul>
-            </li>
-            
-          </ul>
-          
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+							<li><a href="cssSyntax.html">Introduction to CSS</a></li>
+							<li><a href="cssElements.html">Styling Elements</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">JavaScript<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="js1.html">Introduction to JavaScript</a></li>
+							<li><a href="js2.html">Objects, Methods and Functions</a></li>
+							<li><a href="js3.html">JavaScript and Forms</a></li>
+							<li><a href="js4.html">JavaScript and the DOM</a></li>
+							<li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+						</ul>
+					</li>
+
+				</ul>
+
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
 
 
 
 
-<main class="container language-html">
-<div class="col-md-9" role="main"><h1>HTML Forms</h1>
+	<main class="container language-html">
+		<div class="col-md-9" role="main">
+			<h1>HTML Forms</h1>
 
 
-<h2 id="Introduction" class="group">Form Filling</h2>
-    <p>It is possible to create forms as Web Pages, to request a user to enter some information. When he/she has finished filling in the form, the entered data can be sent to a server-side script or to someone by email for processing. The scripts resides and runs on the machine running the web server from which web pages are delivered.
-		A form is introduced by the tag <code>&lt;form></code> and terminated by the inverse tag <code>&lt;/form></code>. The attributes of the <code>&lt;form></code> tag include:
+			<h2 id="Introduction" class="group">Form Filling</h2>
+			<p>It is possible to create forms as Web Pages, to request a user to enter some information. When he/she has
+				finished filling in the form, the entered data can be sent to a server-side script or to someone by
+				email for processing. The scripts resides and runs on the machine running the web server from which web
+				pages are delivered.
+				A form is introduced by the tag <code>&lt;form></code> and terminated by the inverse tag
+				<code>&lt;/form></code>. The attributes of the <code>&lt;form></code> tag include:
 
-<table class="table table-hover table-bordered">
-  <tr><th style="min-width: 170px;">form attribute</th><th>Description</th></tr>
-  <tr><td><code>action="http://host/cgi-bin/script_name"</code></td><td>After the form has been filled in, the entered data is sent to the named (by the action attribute) server-side script for processing.</td></tr>
-  <tr><td><code>action="mailto:name@site"</code></td><td>After the form has been filled in, the entered data is sent to the named (by the ACTION attribute) person by email.</td></tr>
-  <tr><td><code>method="get"</code></td><td>The browser tacks the query string onto the end of the script's URL, and fetches it from the HTTP server using the usual get request. 
-	  Fill in the box below, hit return and check out our browser location window:<form><label>Name: <input type="text" name="name" size="20"></label></form></td></tr>
-  <tr><td><code>method="post"</code></td><td>The browser uses the post method to submit the content of the form to the server. In this mode, the HTTP server opens up a communication channel between the browser and the executable script, and the browser sends the query string directly.</td></tr>
-</table>
-	
-	
-	<div class="alert alert-success" role="alert"><strong><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Review Question</strong> - which is the default method?</div>
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th style="min-width: 170px;">form attribute</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>action="http://host/cgi-bin/script_name"</code></td>
+					<td>After the form has been filled in, the entered data is sent to the named (by the action
+						attribute) server-side script for processing.</td>
+				</tr>
+				<tr>
+					<td><code>action="mailto:name@site"</code></td>
+					<td>After the form has been filled in, the entered data is sent to the named (by the ACTION
+						attribute) person by email.</td>
+				</tr>
+				<tr>
+					<td><code>method="get"</code></td>
+					<td>The browser tacks the query string onto the end of the script's URL, and fetches it from the
+						HTTP server using the usual get request.
+						Fill in the box below, hit return and check out our browser location window:<form><label>Name:
+								<input type="text" name="name" size="20"></label></form>
+					</td>
+				</tr>
+				<tr>
+					<td><code>method="post"</code></td>
+					<td>The browser uses the post method to submit the content of the form to the server. In this mode,
+						the HTTP server opens up a communication channel between the browser and the executable script,
+						and the browser sends the query string directly.</td>
+				</tr>
+			</table>
 
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: server-side scripts will be covered next year.</div>
-	
-	</p>
-	
-	<h2 id="Simple" class="subgroup" >Text input</h2>
-	
-	<p>A form to request the user to enter some text is shown below. A simple text window which consists of a single line of 20 characters is introduced by the <code>&lt;input></code> tag as illustrated below:</p>
 
-	
+			<div class="alert alert-success" role="alert"><strong><span class="glyphicon glyphicon-education"
+						aria-hidden="true"></span> Review Question</strong> - which is the default method?</div>
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: server-side scripts will be covered next year.
+			</div>
 
-	  <label>Name: <input type="text" name="name" size="20"></label>
+			</p>
 
-</form></td><td><pre data-line="9-11"><code>&lt;!doctype html>
+			<h2 id="Simple" class="subgroup">Text input</h2>
+
+			<p>A form to request the user to enter some text is shown below. A simple text window which consists of a
+				single line of 20 characters is introduced by the <code>&lt;input></code> tag as illustrated below:</p>
+
+
+
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<label>Name: <input type="text" name="name" size="20"></label>
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="9-11"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -185,18 +240,29 @@ dt {
 	&lt;/label>
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
-	<p>The data in the input field can be initialized to a particular value using the <code>value</code> attribute:</p>
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
+			<p>The data in the input field can be initialized to a particular value using the <code>value</code>
+				attribute:</p>
 
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-	  <label>Name: <input type="text" name="name" size="20" value="Your name"></label>
+							<label>Name: <input type="text" name="name" size="20" value="Your name"></label>
 
-</form></td><td><pre data-line="9-12"><code>&lt;!doctype html>
+						</form>
+					</td>
+					<td>
+						<pre data-line="9-12"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -210,22 +276,33 @@ dt {
 	&lt;/label>
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
-<p>
-The input data is sent in the form:
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
+			<p>
+				The input data is sent in the form:
 
-	<samp>name=Your+name</samp></p>
-	
-	<p>It is also possible to specify the <strong>maximum length</strong> for a text to be entered:</p>
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+				<samp>name=Your+name</samp>
+			</p>
 
-	  <label>Registration:<br><input type="text" name="registration" size="8" 
-	  				maxlength="8" value="w1234567"></label>
+			<p>It is also possible to specify the <strong>maximum length</strong> for a text to be entered:</p>
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-</form></td><td><pre data-line="9-12"><code>&lt;!doctype html>
+							<label>Registration:<br><input type="text" name="registration" size="8" maxlength="8"
+									value="w1234567"></label>
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="9-12"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -239,50 +316,105 @@ The input data is sent in the form:
 	&lt;/label>
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
-	The attributes of the <code>&lt;input></code> tag include:
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
+			The attributes of the <code>&lt;input></code> tag include:
 
-<table class="table table-hover table-bordered">
-  <tr><th style="min-width: 170px;">input attribute</th><th>Description</th></tr>
-  <tr><td><code>type="text"</code></td><td>Defines a one line text input field</td></tr>
-  <tr><td><code>name="registration"</code></td><td>Names the argument which is sent</td></tr>
-  <tr><td><code>value="w1234567"</code></td><td>The value of the argument.</td></tr>
-  <tr><td><code>size="8"</code></td><td>The width of the input area.</td></tr>
-  <tr><td><code>maxlength="8"</code></td><td>The maximum number of characters which can be entered in the field.</td></tr>
-</table>
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th style="min-width: 170px;">input attribute</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>type="text"</code></td>
+					<td>Defines a one line text input field</td>
+				</tr>
+				<tr>
+					<td><code>name="registration"</code></td>
+					<td>Names the argument which is sent</td>
+				</tr>
+				<tr>
+					<td><code>value="w1234567"</code></td>
+					<td>The value of the argument.</td>
+				</tr>
+				<tr>
+					<td><code>size="8"</code></td>
+					<td>The width of the input area.</td>
+				</tr>
+				<tr>
+					<td><code>maxlength="8"</code></td>
+					<td>The maximum number of characters which can be entered in the field.</td>
+				</tr>
+			</table>
 
-	<p>In sending the data there are various character mappings of the input data to ease later processing. For example:</p>
-<table class="table table-hover table-bordered table-striped">
-	<tr><th>Input Character</th><th>Sent</th></tr>
-	<tr><td>space</td><td>+</td></tr>
-	<tr><td>=</td><td>%3D</td></tr>
-	<tr><td>Line Feed</td><td>%0A</td></tr>
-	<tr><td>%</td><td>%25</td></tr>
-	<tr><td>&amp;</td><td>%38</td></tr>
-	<tr><td>Carriage Return</td><td>%0D</td></tr>
-</table>
+			<p>In sending the data there are various character mappings of the input data to ease later processing. For
+				example:</p>
+			<table class="table table-hover table-bordered table-striped">
+				<tr>
+					<th>Input Character</th>
+					<th>Sent</th>
+				</tr>
+				<tr>
+					<td>space</td>
+					<td>+</td>
+				</tr>
+				<tr>
+					<td>=</td>
+					<td>%3D</td>
+				</tr>
+				<tr>
+					<td>Line Feed</td>
+					<td>%0A</td>
+				</tr>
+				<tr>
+					<td>%</td>
+					<td>%25</td>
+				</tr>
+				<tr>
+					<td>&amp;</td>
+					<td>%38</td>
+				</tr>
+				<tr>
+					<td>Carriage Return</td>
+					<td>%0D</td>
+				</tr>
+			</table>
 
-<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: How some input characters are represented by their hexadecimal representation. Which is indicated by the sequence %HH, where H is a hexadecimal digit.
-</div>
-<h2 id="label" class="subgroup">Labels</h2>
-	<p>The <code>&lt;label></code> element represents a caption for the form element it is associated with. The <code>&lt;label></code> can also add as an accessibility aid to forms: 
-	<ul>
-		<li>they can widen the element clickable area</li>
-		<li>they help screen readers identify fields on a web page</li>
-	</ul>
-	</p>
-	
-	<h3 id="implicit" class="subgroup">Implicit Labels</h3>
-	<p>Implicit labels are wrapped around a form control. Implicit labels are not well suported in older screen readers, and are harder to style with CSS</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: How some input characters are represented by
+				their hexadecimal representation. Which is indicated by the sequence %HH, where H is a hexadecimal
+				digit.
+			</div>
+			<h2 id="label" class="subgroup">Labels</h2>
+			<p>The <code>&lt;label></code> element represents a caption for the form element it is associated with. The
+				<code>&lt;label></code> can also add as an accessibility aid to forms:
+			<ul>
+				<li>they can widen the element clickable area</li>
+				<li>they help screen readers identify fields on a web page</li>
+			</ul>
+			</p>
 
-	  <label>Name: <input type="text" name="name"></label>
+			<h3 id="implicit" class="subgroup">Implicit Labels</h3>
+			<p>Implicit labels are wrapped around a form control. Implicit labels are not well suported in older screen
+				readers, and are harder to style with CSS</p>
 
-</form></td><td><pre data-line="4-6"><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<label>Name: <input type="text" name="name"></label>
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="4-6"><code>...
 &lt;form>
 	...
 	&lt;label>Name: 
@@ -290,52 +422,86 @@ The input data is sent in the form:
 	&lt;/label>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	 
-	<h3 id="explicit" class="subgroup">Explicit Labels</h3>
-	<p>Explicit labels are separate from the form control, and linked to their form control via the <code>for</code> attribute. The <code>for</code> attribute of the label has to match the <code>id</code> attribute of the form control it is linked to. Explicit labels are well supported by screen readers and are easy to style using CSS. We will be using explicit labels in the notes.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-	  <label for="name">Name:</label>
-	  <input type="text" name="name" id="name">
+			<h3 id="explicit" class="subgroup">Explicit Labels</h3>
+			<p>Explicit labels are separate from the form control, and linked to their form control via the
+				<code>for</code> attribute. The <code>for</code> attribute of the label has to match the <code>id</code>
+				attribute of the form control it is linked to. Explicit labels are well supported by screen readers and
+				are easy to style using CSS. We will be using explicit labels in the notes.
+			</p>
 
-</form></td><td><pre data-line="4-5"><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<label for="name">Name:</label>
+							<input type="text" name="name" id="name">
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="4-5"><code>...
 &lt;form>
 	...
 	&lt;label for="name">Name: &lt;/label>
 	&lt;input type="text" name="name" id="name"> 
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
 
 
 
 
-<h2 id="textarea" class="subgroup">Multiple lines of text input - Textarea</h2>
-	
-	<p>A form to request the user to input multiple lines of input uses the <code>&lt;textarea></code> and its corresponding <code>&lt;/textarea></code> tag. So that the user can enter multiple lines the <code>&lt;input type="submit"></code> tag is used to signal when the form has been completed. For example:
+			<h2 id="textarea" class="subgroup">Multiple lines of text input - Textarea</h2>
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<p>A form to request the user to input multiple lines of input uses the <code>&lt;textarea></code> and its
+				corresponding <code>&lt;/textarea></code> tag. So that the user can enter multiple lines the
+				<code>&lt;input type="submit"></code> tag is used to signal when the form has been completed. For
+				example:
 
-   <label for="feedback1">Notes:</label><textarea name="feedback1" id="feedback1" rows="5" cols="20">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<label for="feedback1">Notes:</label><textarea name="feedback1" id="feedback1" rows="5"
+								cols="20">
     Textareas can have default text, and the rows and cols attributes define their size
 	   </textarea>
 
- 
-	   <label for="feedback2">More notes:</label><textarea name="feedback2" id="feedback2">  </textarea>
 
-</form>
-<br>
-	  <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: If no <code>rows</code> or <code>cols</code> attribute values are specified, the default values of <code>2</code> and <code>20</code> will be used for <code>rows</code> and <code>cols</code> respectively. The size of the <code>textarea</code> can also be defined in CSS using <code>height</code> and <code>width</code>.</div>
-</td><td><pre data-line="8-18"><code>&lt;!doctype html>
+							<label for="feedback2">More notes:</label><textarea name="feedback2"
+								id="feedback2">  </textarea>
+
+						</form>
+						<br>
+						<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+									aria-hidden="true"></span> Please note</strong>: If no <code>rows</code> or
+							<code>cols</code> attribute values are specified, the default values of <code>2</code> and
+							<code>20</code> will be used for <code>rows</code> and <code>cols</code> respectively. The
+							size of the <code>textarea</code> can also be defined in CSS using <code>height</code> and
+							<code>width</code>.
+						</div>
+					</td>
+					<td>
+						<pre data-line="8-18"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -354,30 +520,53 @@ The input data is sent in the form:
 	&lt;/textarea>
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
 
-	The attributes of the <code>&lt;textarea></code> tag include:
+			The attributes of the <code>&lt;textarea></code> tag include:
 
-<table class="table table-hover table-bordered">
-  <tr><th style="min-width: 170px;">input attribute</th><th>Description</th></tr>
-  <tr><td><code>name="feedback"</code></td><td>Specifies a name for the parameter to be passed to the form-processing application.</td></tr>
-  <tr><td><code>rows="5"</code></td><td>Defines the number of rows visible (by defult 2).</td></tr>
-  <tr><td><code>cols="30"</code></td><td>Defines the number of columns visible (by defult 20).</td></tr>
-</table>
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th style="min-width: 170px;">input attribute</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>name="feedback"</code></td>
+					<td>Specifies a name for the parameter to be passed to the form-processing application.</td>
+				</tr>
+				<tr>
+					<td><code>rows="5"</code></td>
+					<td>Defines the number of rows visible (by defult 2).</td>
+				</tr>
+				<tr>
+					<td><code>cols="30"</code></td>
+					<td>Defines the number of columns visible (by defult 20).</td>
+				</tr>
+			</table>
 
 
-	<h2 id="passwordfield" class="subgroup">Password</h2>
-<p>A form to request a password or any secret text to be entered is:</p>
+			<h2 id="passwordfield" class="subgroup">Password</h2>
+			<p>A form to request a password or any secret text to be entered is:</p>
 
-<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-	 <label for="password">PIN Number: <input type="password" name="pin" id="password" size="5"></label>
+							<label for="password">PIN Number: <input type="password" name="pin" id="password"
+									size="5"></label>
 
-	  
-</form></td><td><pre data-line="9-10"><code>&lt;!doctype html>
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="9-10"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -389,27 +578,43 @@ The input data is sent in the form:
 	&lt;input type="password" name="pin" id="password" size="5">
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
-<div class="alert alert-warning" role="alert"><strong><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning</strong>: This is not secure, and mainly used only to prevent passwords to be read over users' shoulders, unless the data is encrypted before being sent over the Internet. Even if it is encrypted, the encryption may still be broken.
-	  </div>
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
+			<div class="alert alert-warning" role="alert"><strong><span class="glyphicon glyphicon-warning-sign"
+						aria-hidden="true"></span> Warning</strong>: This is not secure, and mainly used only to prevent
+				passwords to be read over users' shoulders, unless the data is encrypted before being sent over the
+				Internet. Even if it is encrypted, the encryption may still be broken.
+			</div>
 
-<h2 id="radio" class="subgroup">Radio buttons</h2>
-	<p>A form to request the user to select from one of a series of radio buttons uses the <code>&lt;input></code> tag with an attribute of <code>type="radio"</code>. Only one radio button per group of radio buttons <strong>with the same name</strong> can be checked. An example of a radio button input form to select the delivery time is shown below:</p>
+			<h2 id="radio" class="subgroup">Radio buttons</h2>
+			<p>A form to request the user to select from one of a series of radio buttons uses the
+				<code>&lt;input></code> tag with an attribute of <code>type="radio"</code>. Only one radio button per
+				group of radio buttons <strong>with the same name</strong> can be checked. An example of a radio button
+				input form to select the delivery time is shown below:
+			</p>
 
-<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-  
-	<input type="radio" name="delivery" id="amDelivery" value="am">
-	<label for="amDelivery">Morning</label><br>
-	<input type="radio" name="delivery" id="pmDelivery" value="pm">
-	<label for="pmDelivery">Afternoon</label><br>
-	<input type="radio" name="delivery" id="eveDelivery" value="eve">
-	<label for="eveDelivery">Evening</label><br>
-	
-</form>
-	  </td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<input type="radio" name="delivery" id="amDelivery" value="am">
+							<label for="amDelivery">Morning</label><br>
+							<input type="radio" name="delivery" id="pmDelivery" value="pm">
+							<label for="pmDelivery">Afternoon</label><br>
+							<input type="radio" name="delivery" id="eveDelivery" value="eve">
+							<label for="eveDelivery">Evening</label><br>
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;input type="radio" name="delivery" id="am" value="am">
@@ -420,26 +625,38 @@ The input data is sent in the form:
 	&lt;label for="eve">Evening&lt;/label><br>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	
-<div class="alert alert-success" role="alert"><strong><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Review Question</strong>: Radio buttons allow only one selection per group. How do we create a group of radio buttons?</div>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-	<p>The optional attribute <code>checked</code> can be added to one of the <code>input type="radio"</code>  tags to set a default selection. For example:</p>
-	
-<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-  
-	<input type="radio" name="delivery" id="amDelivery2" value="am" checked>
-	<label for="amDelivery2">Morning</label><br>
-	<input type="radio" name="delivery" id="pmDelivery2" value="pm">
-	<label for="pmDelivery2">Afternoon</label><br>
-	<input type="radio" name="delivery" id="eveDelivery2" value="eve">
-	<label for="eveDelivery2">Evening</label><br>
-	
-</form>
-	  </td><td><pre><code>...
+			<div class="alert alert-success" role="alert"><strong><span class="glyphicon glyphicon-education"
+						aria-hidden="true"></span> Review Question</strong>: Radio buttons allow only one selection per
+				group. How do we create a group of radio buttons?</div>
+
+			<p>The optional attribute <code>checked</code> can be added to one of the <code>input type="radio"</code>
+				tags to set a default selection. For example:</p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<input type="radio" name="delivery" id="amDelivery2" value="am" checked>
+							<label for="amDelivery2">Morning</label><br>
+							<input type="radio" name="delivery" id="pmDelivery2" value="pm">
+							<label for="pmDelivery2">Afternoon</label><br>
+							<input type="radio" name="delivery" id="eveDelivery2" value="eve">
+							<label for="eveDelivery2">Evening</label><br>
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;input type="radio" name="delivery" id="amDelivery" 
@@ -453,26 +670,37 @@ The input data is sent in the form:
 	&lt;label for="eveDelivery">Evening&lt;/label><br>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h2 id="checkbox" class="subgroup">Checkboxes</h2>
-	<p>A form to request the user to select from one one or more check boxes uses the <code>&lt;input></code> tag with an attribute of <code>type="checkbox"</code>. An example of a checkbox form is shown below:</p>
 
-<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-  Drink:<br>
-	<input type="checkbox" name="drink" id="coffee" value="coffee" checked>
-	<label for="coffee">Coffee</label><br>
-	<input type="checkbox" name="drink" id="cappuccino" value="cappuccino" checked>
-	<label for="cappuccino">Cappuccino</label><br>
-	<input type="checkbox" name="drink" id="chocolate" value="chocolate">
-	<label for="chocolate">Chocolate</label><br>
-	
-</form>
-	  <br></td><td><pre><code>...
+			<h2 id="checkbox" class="subgroup">Checkboxes</h2>
+			<p>A form to request the user to select from one one or more check boxes uses the <code>&lt;input></code>
+				tag with an attribute of <code>type="checkbox"</code>. An example of a checkbox form is shown below:</p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							Drink:<br>
+							<input type="checkbox" name="drink" id="coffee" value="coffee" checked>
+							<label for="coffee">Coffee</label><br>
+							<input type="checkbox" name="drink" id="cappuccino" value="cappuccino" checked>
+							<label for="cappuccino">Cappuccino</label><br>
+							<input type="checkbox" name="drink" id="chocolate" value="chocolate">
+							<label for="chocolate">Chocolate</label><br>
+
+						</form>
+						<br>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	Drink:&lt;br>
@@ -487,26 +715,37 @@ The input data is sent in the form:
 	&lt;label for="chocolate">Chocolate&lt;/label><br>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h2 id="popuplist" class="subgroup">Pop up List</h2>
-	<p>A form to allow the user to select an item from a pop-up list uses the <code>&lt;select></code> tag. An example of a pop-up list is shown below:
-	</p>
-	
-	<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	  <label for="topping">Topping:</label><br>
- <select name="Topping" id="topping">
-         <option value="cinnamon"> Cinnamon </option>
-         <option value="chocolate" selected> Chocolate </option>
-         <option value="vanilla"> Vanilla </option>
- </select>
-	
-</form>
-	  <br></td><td><pre><code>...
+
+			<h2 id="popuplist" class="subgroup">Pop up List</h2>
+			<p>A form to allow the user to select an item from a pop-up list uses the <code>&lt;select></code> tag. An
+				example of a pop-up list is shown below:
+			</p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="topping">Topping:</label><br>
+							<select name="Topping" id="topping">
+								<option value="cinnamon"> Cinnamon </option>
+								<option value="chocolate" selected> Chocolate </option>
+								<option value="vanilla"> Vanilla </option>
+							</select>
+
+						</form>
+						<br>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="topping">Topping:&lt;/label>&lt;br>
@@ -517,33 +756,48 @@ The input data is sent in the form:
  	&lt;/select>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-	<p>The <code>&lt;select></code> tag encloses the tag:
+			<p>The <code>&lt;select></code> tag encloses the tag:
 
-	<dl><dt><code>&lt;option>&lt;/option></code></dt>
-		<dd>Which names a value in the pop-up list.</dd>
-		The <code>&lt;option></code> tag may have an attribute of <code>selected</code> to define the initial value of the pop-up list.</dl></p>
+			<dl>
+				<dt><code>&lt;option>&lt;/option></code></dt>
+				<dd>Which names a value in the pop-up list.</dd>
+				The <code>&lt;option></code> tag may have an attribute of <code>selected</code> to define the initial
+				value of the pop-up list.
+			</dl>
+			</p>
 
-	<h2 id="scrollinglist" class="subgroup">Scrolling List</h2>
-	<p>A form to allow the user to select one or more item from a list uses the <code>&lt;select></code> tag with the <code>multiple</code> attribute. An example of a scrolling list is shown below:
-	</p>
-	
-	<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	  <label for="topping2">Topping:</label><br>
- <select name="Topping" id="topping2" multiple size="3">
-         <option value="cinnamon"> Cinnamon </option>
-         <option value="chocolate" selected> Chocolate </option>
-         <option value="vanilla"> Vanilla </option>
- </select>
- <br>
- 
-	
-</form>
-	  <br></td><td><pre><code>...
+			<h2 id="scrollinglist" class="subgroup">Scrolling List</h2>
+			<p>A form to allow the user to select one or more item from a list uses the <code>&lt;select></code> tag
+				with the <code>multiple</code> attribute. An example of a scrolling list is shown below:
+			</p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="topping2">Topping:</label><br>
+							<select name="Topping" id="topping2" multiple size="3">
+								<option value="cinnamon"> Cinnamon </option>
+								<option value="chocolate" selected> Chocolate </option>
+								<option value="vanilla"> Vanilla </option>
+							</select>
+							<br>
+
+
+						</form>
+						<br>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="topping">Topping:&lt;/label>&lt;br>
@@ -554,30 +808,49 @@ The input data is sent in the form:
  	&lt;/select>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-	<p>The optional <code>size</code> attribute defines the size of the displayed list. If the specified <code>size</code> is smaller than the number of <code>option</code> items, a vertical scroll bar will automatically be displayed, to allow the user to view all the different items. If <code>multiple</code> is used and no <code>size</code> is specified, the default size is usually 4 (or will automatically fit the number of items in the option list).
-</p>
+			<p>The optional <code>size</code> attribute defines the size of the displayed list. If the specified
+				<code>size</code> is smaller than the number of <code>option</code> items, a vertical scroll bar will
+				automatically be displayed, to allow the user to view all the different items. If <code>multiple</code>
+				is used and no <code>size</code> is specified, the default size is usually 4 (or will automatically fit
+				the number of items in the option list).
+			</p>
 
-<h2 id="datalist" class="subgroup">Datalist </h2>
-	<p><span class="alert-warning">datalist is an HTML5 element.</span> The <code>datalist</code> represents a list of options available for its parent element. The <code>datalist</code> can be paired up with an <code>&lt;input type="text" <strong>list="idOfList"</strong>&gt;</code> for example, and the datalist may be displayed by the browser and/or be used for autocompletion as the user types into the input field.</p>
-	<p><a href="https://caniuse.com/#feat=datalist">Current Browser Support for <code>datalist</code></a></p>
+			<h2 id="datalist" class="subgroup">Datalist </h2>
+			<p><span class="alert-warning">datalist is an HTML5 element.</span> The <code>datalist</code> represents a
+				list of options available for its parent element. The <code>datalist</code> can be paired up with an
+				<code>&lt;input type="text" <strong>list="idOfList"</strong>&gt;</code> for example, and the datalist
+				may be displayed by the browser and/or be used for autocompletion as the user types into the input
+				field.
+			</p>
+			<p><a href="https://caniuse.com/#feat=datalist">Current Browser Support for <code>datalist</code></a></p>
 
 
-<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	  <label for="toppingInput">Topping:</label><br>
- <input name="Topping" list="topping3" id="toppingInput">
-        <datalist id="topping3">
-         <option value="cinnamon"> 
-         <option value="chocolate"> 
-         <option value="vanilla"> 
- </datalist>
-	
-</form>
-	  <br></td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="toppingInput">Topping:</label><br>
+							<input name="Topping" list="topping3" id="toppingInput">
+							<datalist id="topping3">
+								<option value="cinnamon">
+								<option value="chocolate">
+								<option value="vanilla">
+							</datalist>
+
+						</form>
+						<br>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="topping">Topping:&lt;/label>&lt;br>
@@ -589,24 +862,44 @@ The input data is sent in the form:
  	&lt;/datalist>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong> how the <code>input</code> is linked to the <code>datalist</code> via the <code>list</code> attribute which matches the <code>id</code> of the <code>datalist</code>.</div>
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please also note</strong> how the <code>option</code> elements in the <code>datalist</code> do not require a closing tag.</div>
-	
-		
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong> how the <code>input</code> is linked to the
+				<code>datalist</code> via the <code>list</code> attribute which matches the <code>id</code> of the
+				<code>datalist</code>.
+			</div>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please also note</strong> how the <code>option</code> elements in the
+				<code>datalist</code> do not require a closing tag.
+			</div>
 
-	<h2 id="email" class="subgroup">Email input field </h2>
-	<p><span class="alert-warning">email is an HTML5 input type.</span> This input type is designed to let the user enter an email address. Browsers that support this input type will automatically check the validity of the format of the data entered and alert the user if the format is invalid. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="emailentry">Email address: </label>
-	 <input type="email" id="emailentry" name="email"><br>
-	 <input type="submit" name="send" value="Send">
 
-</form></td><td><pre><code>...
+
+			<h2 id="email" class="subgroup">Email input field </h2>
+			<p><span class="alert-warning">email is an HTML5 input type.</span> This input type is designed to let the
+				user enter an email address. Browsers that support this input type will automatically check the validity
+				of the format of the data entered and alert the user if the format is invalid. If the browser doesn't
+				support this input type, it will automatically fall back to the <code>type="text"</code></p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="emailentry">Email address: </label>
+							<input type="email" id="emailentry" name="email"><br>
+							<input type="submit" name="send" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="email">Email address: &lt;/label>
@@ -614,21 +907,38 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile devices, as the <code>email</code> soft keyboard will be launched when filling in this input field rather than the default <code>text</code> keyboard, which will enhance the user experience and speed of data entry.</div>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile
+				devices, as the <code>email</code> soft keyboard will be launched when filling in this input field
+				rather than the default <code>text</code> keyboard, which will enhance the user experience and speed of
+				data entry.</div>
 
-<h2 id="url" class="subgroup">URL input field</h2>
-	<p><span class="alert-warning">url is an HTML5 input type.</span> This input type is designed to let the user enter a URL. Browsers that support this input type will automatically check the validity of the format of the data entered and alert the user if the format is invalid. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="urlentry">URL: </label>
-	 <input type="url" id="urlentry" name="url"><br>
-	 <input type="submit" name="send" value="Send">
+			<h2 id="url" class="subgroup">URL input field</h2>
+			<p><span class="alert-warning">url is an HTML5 input type.</span> This input type is designed to let the
+				user enter a URL. Browsers that support this input type will automatically check the validity of the
+				format of the data entered and alert the user if the format is invalid. If the browser doesn't support
+				this input type, it will automatically fall back to the <code>type="text"</code></p>
 
-</form></td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="urlentry">URL: </label>
+							<input type="url" id="urlentry" name="url"><br>
+							<input type="submit" name="send" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="url">URL: &lt;/label>
@@ -636,21 +946,40 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile devices, as the <code>url</code> soft keyboard will be launched when filling in this input field rather than the default <code>text</code> keyboard, which will enhance the user experience and speed of data entry.</div>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile
+				devices, as the <code>url</code> soft keyboard will be launched when filling in this input field rather
+				than the default <code>text</code> keyboard, which will enhance the user experience and speed of data
+				entry.</div>
 
-<h2 id="tel" class="subgroup">Tel input field</h2>
-	<p><span class="alert-warning">tel is an HTML5 input type.</span> This input type is designed to let the user enter a telephone number. Browsers <strong>will not</strong> automatically check the validity of the format of the data entered as the format of telephone numbers varies so much around the world. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="telephone">Telephone number: </label>
-	 <input type="tel" id="telephone" name="tel"><br>
-	 <input type="submit" name="send" value="Send">
+			<h2 id="tel" class="subgroup">Tel input field</h2>
+			<p><span class="alert-warning">tel is an HTML5 input type.</span> This input type is designed to let the
+				user enter a telephone number. Browsers <strong>will not</strong> automatically check the validity of
+				the format of the data entered as the format of telephone numbers varies so much around the world. If
+				the browser doesn't support this input type, it will automatically fall back to the
+				<code>type="text"</code>
+			</p>
 
-</form></td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="telephone">Telephone number: </label>
+							<input type="tel" id="telephone" name="tel"><br>
+							<input type="submit" name="send" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="tel">Telephone number: &lt;/label>
@@ -658,21 +987,39 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile devices, as the <code>tel</code> soft keyboard will be launched when filling in this input field rather than the default <code>text</code> keyboard, which will enhance the user experience and speed of data entry.</div>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile
+				devices, as the <code>tel</code> soft keyboard will be launched when filling in this input field rather
+				than the default <code>text</code> keyboard, which will enhance the user experience and speed of data
+				entry.</div>
 
-<h2 id="number" class="subgroup">Number input field</h2>
-	<p><span class="alert-warning">number is an HTML5 input type.</span> This input type is designed to let the user enter a number. Browsers that support this input type will automatically check the validity of the format of the data entered and alert the user if the format is invalid. The browser may also display up and down arrows for the user to click on to increase and decrease the value entered. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="quantity">Quantity: </label>
-	 <input type="number" id="quantity" name="quantity"><br>
-	 <input type="submit" name="send" value="Send">
+			<h2 id="number" class="subgroup">Number input field</h2>
+			<p><span class="alert-warning">number is an HTML5 input type.</span> This input type is designed to let the
+				user enter a number. Browsers that support this input type will automatically check the validity of the
+				format of the data entered and alert the user if the format is invalid. The browser may also display up
+				and down arrows for the user to click on to increase and decrease the value entered. If the browser
+				doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
 
-</form></td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="quantity">Quantity: </label>
+							<input type="number" id="quantity" name="quantity"><br>
+							<input type="submit" name="send" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="quantity">Quantity: &lt;/label>
@@ -680,31 +1027,58 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
 
-	<p>You can also allow decimal values by adding a value with a decimal point or a step with decimal point.</p>
-	The attributes of the <code>&lt;input type="number"></code> element include:
+			<p>You can also allow decimal values by adding a value with a decimal point or a step with decimal point.
+			</p>
+			The attributes of the <code>&lt;input type="number"></code> element include:
 
-<table class="table table-hover table-bordered">
-  <tr><th style="min-width: 170px;">input attribute</th><th>Description</th></tr>
-  <tr><td><code>value="10"</code></td><td>Defines the default value</td></tr>
-  <tr><td><code>step=".1"</code></td><td>Defines the step between values and as a result defines valid values</td></tr>
-  <tr><td><code>min="0"</code></td><td>Defines the minimum value allowed</td></tr>
-  <tr><td><code>max="100"</code></td><td>Defines the maximum value allowed</td></tr>
-</table>
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th style="min-width: 170px;">input attribute</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>value="10"</code></td>
+					<td>Defines the default value</td>
+				</tr>
+				<tr>
+					<td><code>step=".1"</code></td>
+					<td>Defines the step between values and as a result defines valid values</td>
+				</tr>
+				<tr>
+					<td><code>min="0"</code></td>
+					<td>Defines the minimum value allowed</td>
+				</tr>
+				<tr>
+					<td><code>max="100"</code></td>
+					<td>Defines the maximum value allowed</td>
+				</tr>
+			</table>
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="quantity10">Multiples of 10:</label>
-	 <input type="number" id="quantity10" name="quantity10" min="0" max="100" step="10" value="10"><br>
-	 <label for="quantitydec">Multiples of .1:</label>
-	 <input type="number" id="quantitydec" name="quantitydec" min="0" max="10" step=".1"><br>
-	 <input type="submit" name="send" value="Send">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="quantity10">Multiples of 10:</label>
+							<input type="number" id="quantity10" name="quantity10" min="0" max="100" step="10"
+								value="10"><br>
+							<label for="quantitydec">Multiples of .1:</label>
+							<input type="number" id="quantitydec" name="quantitydec" min="0" max="10" step=".1"><br>
+							<input type="submit" name="send" value="Send">
 
-</form></td><td><pre><code>...
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="quantity10">Multiples of 10:&lt;/label>
@@ -716,22 +1090,39 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile devices, as the <code>number</code> soft keyboard will be launched when filling in this input field rather than the default <code>text</code> keyboard, which will enhance the user experience and speed of data entry.</div>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h2 id="searchfield" class="subgroup">Search input field</h2>
-	<p><span class="alert-warning">search is an HTML5 input type.</span> This input type is designed to let the user enter a search query. Browsers that support this input type may style it differently from the text input and may automatically offer the possibility to clear the input field. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="search">Search: </label>
-	 <input type="search" id="search" name="search" ><br>
-	 <input type="button" name="send" value="Search">
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: This input type is particularly handy on mobile
+				devices, as the <code>number</code> soft keyboard will be launched when filling in this input field
+				rather than the default <code>text</code> keyboard, which will enhance the user experience and speed of
+				data entry.</div>
 
-</form></td><td><pre><code>...
+			<h2 id="searchfield" class="subgroup">Search input field</h2>
+			<p><span class="alert-warning">search is an HTML5 input type.</span> This input type is designed to let the
+				user enter a search query. Browsers that support this input type may style it differently from the text
+				input and may automatically offer the possibility to clear the input field. If the browser doesn't
+				support this input type, it will automatically fall back to the <code>type="text"</code></p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="search">Search: </label>
+							<input type="search" id="search" name="search"><br>
+							<input type="button" name="send" value="Search">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="search">Search: &lt;/label>
@@ -739,27 +1130,46 @@ The input data is sent in the form:
 	&lt;input type="button" name="send" value="Search">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	<p>Here's a version with no CSS as the Bootstrap Library removes the delete icon from the search field:
-	<a class="jsbin-embed" href="https://jsbin.com/nipelin/embed?html,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script></p>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<p>Here's a version with no CSS as the Bootstrap Library removes the delete icon from the search field:
+				<a class="jsbin-embed" href="https://jsbin.com/nipelin/embed?html,output">JS Bin on jsbin.com</a>
+				<script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
+			</p>
 
-<h2 id="datefield" class="subgroup">Date picker</h2>
-	<p>There are a number of attributes that will create a date picker using the <code>input</code> element:</p>
-	<h3 id="datefield">Date</h3>
-	<p><span class="alert-warning">date is an HTML5 input type.</span> This input type is designed to let the user enter a date. Browsers that support this input type will automatically check the validity of the format of the data entered and alert the user if the format is invalid. The browser may also display a date picker. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code>. You can provide a default value in the format <code>yyyy-mm-dd</code>, and you may use <code>min</code> and <code>max</code> date values if you want to retrict the valid date.</p>
-	<p><a href="https://caniuse.com/#feat=input-datetime">Current Browser Support for <code>date and time input</code></a></p>
+			<h2 id="datefield" class="subgroup">Date picker</h2>
+			<p>There are a number of attributes that will create a date picker using the <code>input</code> element:</p>
+			<h3 id="datefield">Date</h3>
+			<p><span class="alert-warning">date is an HTML5 input type.</span> This input type is designed to let the
+				user enter a date. Browsers that support this input type will automatically check the validity of the
+				format of the data entered and alert the user if the format is invalid. The browser may also display a
+				date picker. If the browser doesn't support this input type, it will automatically fall back to the
+				<code>type="text"</code>. You can provide a default value in the format <code>yyyy-mm-dd</code>, and you
+				may use <code>min</code> and <code>max</code> date values if you want to retrict the valid date.
+			</p>
+			<p><a href="https://caniuse.com/#feat=input-datetime">Current Browser Support for
+					<code>date and time input</code></a></p>
 
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	<label for="dob">Enter your date of birth:</label>
-    <input type="date" id="dob" name="dob" value="1999-01-01" required> 
-	<label for="jan">Pick a date in January 2018</label>
-	<input type="date" id="jan" name="jandate" min="2018-01-01" max="2018-01-31" required>
-	<input type="button" name="send" value="Send">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="dob">Enter your date of birth:</label>
+							<input type="date" id="dob" name="dob" value="1999-01-01" required>
+							<label for="jan">Pick a date in January 2018</label>
+							<input type="date" id="jan" name="jandate" min="2018-01-01" max="2018-01-31" required>
+							<input type="button" name="send" value="Send">
 
-</form></td><td><pre><code>...
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="dob">Enter your date of birth:&lt;/label>
@@ -771,21 +1181,38 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h3>Datetime-local</h3>
-	<p><span class="alert-warning">datetime-local is an HTML5 input type.</span> This input type is designed to let the user enter a date and time in the user's local time zone. Browsers that support this input type will automatically check the validity of the format of the data entered and alert the user if the format is invalid. The browser may also display a date and time picker. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code>. You can provide a default value in the format <code>yyyy-mm-ddThh:mm</code>, and you may use <code>min</code> and <code>max</code> date and time values if you want to retrict the valid date/time.</p>
-	<p><a href="https://caniuse.com/#feat=input-datetime">Current Browser Support for <code>date and time input</code></a></p>
+			<h3>Datetime-local</h3>
+			<p><span class="alert-warning">datetime-local is an HTML5 input type.</span> This input type is designed to
+				let the user enter a date and time in the user's local time zone. Browsers that support this input type
+				will automatically check the validity of the format of the data entered and alert the user if the format
+				is invalid. The browser may also display a date and time picker. If the browser doesn't support this
+				input type, it will automatically fall back to the <code>type="text"</code>. You can provide a default
+				value in the format <code>yyyy-mm-ddThh:mm</code>, and you may use <code>min</code> and <code>max</code>
+				date and time values if you want to retrict the valid date/time.</p>
+			<p><a href="https://caniuse.com/#feat=input-datetime">Current Browser Support for
+					<code>date and time input</code></a></p>
 
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	<label for="dob2">Enter your date and time of birth:</label>
-    <input type="datetime-local" id="dob2" name="dob2" value="1999-01-01T00:00" required> 
-	<input type="button" name="send" value="Send">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="dob2">Enter your date and time of birth:</label>
+							<input type="datetime-local" id="dob2" name="dob2" value="1999-01-01T00:00" required>
+							<input type="button" name="send" value="Send">
 
-</form></td><td><pre><code>...
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="dob">Enter your date of birth:&lt;/label>
@@ -794,20 +1221,37 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h3>Week</h3>
-	<p><span class="alert-warning">week is an HTML5 input type.</span> This input type is designed to let the user enter the week in a particular year. Browsers that support this input type will automatically check the validity of the format of the data entered and alert the user if the format is invalid. The browser may also display a date picker. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code>. You can provide a default value in the format <code>yyyy-Www</code>, and you may use <code>min</code> and <code>max</code> date and time values if you want to retrict the valid week.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	<label for="dob3">Enter the week you were born:</label>
-    <input type="week" id="dob3" name="dob3" value="1999-W01" required> 
-	<input type="button" name="send" value="Send">
+			<h3>Week</h3>
+			<p><span class="alert-warning">week is an HTML5 input type.</span> This input type is designed to let the
+				user enter the week in a particular year. Browsers that support this input type will automatically check
+				the validity of the format of the data entered and alert the user if the format is invalid. The browser
+				may also display a date picker. If the browser doesn't support this input type, it will automatically
+				fall back to the <code>type="text"</code>. You can provide a default value in the format
+				<code>yyyy-Www</code>, and you may use <code>min</code> and <code>max</code> date and time values if you
+				want to retrict the valid week.
+			</p>
 
-</form></td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="dob3">Enter the week you were born:</label>
+							<input type="week" id="dob3" name="dob3" value="1999-W01" required>
+							<input type="button" name="send" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="dob">Enter the week you were born:&lt;/label>
@@ -816,42 +1260,84 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h2 id="rangeInput" class="subgroup">Range input field</h2>
-	<p><span class="alert-warning">range is an HTML5 input type.</span> This input type is designed to let the user enter a numerical value. Browsers that support this input type may style it differently from the text input and offer a slider. If the browser doesn't support this input type, it will automatically fall back to the <code>type="text"</code></p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="volume">Volume: </label>
-	 <input type="range" id="volume" name="volume" ><br>
-</form></td><td><pre><code>...
+			<h2 id="rangeInput" class="subgroup">Range input field</h2>
+			<p><span class="alert-warning">range is an HTML5 input type.</span> This input type is designed to let the
+				user enter a numerical value. Browsers that support this input type may style it differently from the
+				text input and offer a slider. If the browser doesn't support this input type, it will automatically
+				fall back to the <code>type="text"</code></p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="volume">Volume: </label>
+							<input type="range" id="volume" name="volume"><br>
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="volume">Volume: &lt;/label>
 	&lt;input type="range" id="volume" name="volume">&lt;br>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-				
-	<p>You can use the <code>min</code>, <code>max</code> and <code>step</code> attributes to specify authorised values and define the granularity of the slider:</p>
-	<table class="table table-hover table-bordered">
-  <tr><th style="min-width: 170px;">input attribute</th><th>Description</th></tr>
-  <tr><td><code>value="60"</code></td><td>Defines the default value</td></tr>
-  <tr><td><code>step="10"</code></td><td>Defines the step between values and as a result defines valid values. The default <code>step</code> value is <code>1</code></td></tr>
-		<tr><td><code>min="0"</code></td><td>Defines the minimum value allowed. The default <code>min</code> value is <code>0</code></td></tr>
-  <tr><td><code>max="100"</code></td><td>Defines the maximum value allowed. The default <code>max</code> value is <code>100</code></td></tr>
-</table>	
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	 <label for="temperature">Oven Temperature:</label>
-	 <input type="range" id="temperature" name="temperature" value="180" min="0" max="240" step="10"><br>
-</form></td><td><pre><code>...
+			<p>You can use the <code>min</code>, <code>max</code> and <code>step</code> attributes to specify authorised
+				values and define the granularity of the slider:</p>
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th style="min-width: 170px;">input attribute</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>value="60"</code></td>
+					<td>Defines the default value</td>
+				</tr>
+				<tr>
+					<td><code>step="10"</code></td>
+					<td>Defines the step between values and as a result defines valid values. The default
+						<code>step</code> value is <code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td><code>min="0"</code></td>
+					<td>Defines the minimum value allowed. The default <code>min</code> value is <code>0</code></td>
+				</tr>
+				<tr>
+					<td><code>max="100"</code></td>
+					<td>Defines the maximum value allowed. The default <code>max</code> value is <code>100</code></td>
+				</tr>
+			</table>
+
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="temperature">Oven Temperature:</label>
+							<input type="range" id="temperature" name="temperature" value="180" min="0" max="240"
+								step="10"><br>
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="temperature">Oven Temperature:&lt;/label>
@@ -859,20 +1345,34 @@ The input data is sent in the form:
 		value="180" min="0" max="240" step="10">&lt;br>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>								
-<h2 id="colorfield" class="subgroup">Color input field</h2>
-	<p><span class="alert-warning">color is an HTML5 input type.</span> This input type is designed to let the user enter a color in hexadecimal format. Browsers that support this input type may style it differently from the text input and may automatically present a colour picker. If no default value is specified, the default <code>#000000</code> is used.</p>
-	<p><a href="https://caniuse.com/#feat=input-color">Current Browser Support for <code>input type="color"</code></a></p>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<h2 id="colorfield" class="subgroup">Color input field</h2>
+			<p><span class="alert-warning">color is an HTML5 input type.</span> This input type is designed to let the
+				user enter a color in hexadecimal format. Browsers that support this input type may style it differently
+				from the text input and may automatically present a colour picker. If no default value is specified, the
+				default <code>#000000</code> is used.</p>
+			<p><a href="https://caniuse.com/#feat=input-color">Current Browser Support for
+					<code>input type="color"</code></a></p>
 
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	<label for="colour">Colour:</label>
-	<input type="color" id="colour" name="colour"><br>
-	<input type="submit" name="send" value="Send">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<label for="colour">Colour:</label>
+							<input type="color" id="colour" name="colour"><br>
+							<input type="submit" name="send" value="Send">
 
-</form></td><td><pre><code>...
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="colour">Colour:&lt;/label>
@@ -880,23 +1380,35 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>																
-																																
-<h2 id="hidden" class="subgroup">Hidden field in a form</h2>
-	<p>Hidden fields are used to send parameters you don't want to appear in the displayed form. The name and value of the hidden field are incorporated into the parameter list sent, but do not have any visible counterpart on the form.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	  <input type="hidden" name="postId" value="1234">
-	  <label for="title">Post Title: </label>
-	  <input type="text" id="title" name="title">   <br>
-	  <label for="content">Post Content: </label>
-	  <textarea id="content" name="content" rows="5" cols="20"></textarea> 
-	  <input type="submit" name="send" value="Send Post">
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-</form></td><td><pre data-line="4"><code>...
+			<h2 id="hidden" class="subgroup">Hidden field in a form</h2>
+			<p>Hidden fields are used to send parameters you don't want to appear in the displayed form. The name and
+				value of the hidden field are incorporated into the parameter list sent, but do not have any visible
+				counterpart on the form.</p>
+
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<input type="hidden" name="postId" value="1234">
+							<label for="title">Post Title: </label>
+							<input type="text" id="title" name="title"> <br>
+							<label for="content">Post Content: </label>
+							<textarea id="content" name="content" rows="5" cols="20"></textarea>
+							<input type="submit" name="send" value="Send Post">
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="4"><code>...
 &lt;form>
 	...
 	&lt;input type="hidden" name="postId" value="1234">
@@ -909,42 +1421,74 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send Post">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-<div class="alert alert-warning" role="alert"><strong><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning</strong>: You musn't rely on hidden inputs as a form of security. The hidden element is not displayed on the page, but the user could still acess this data by viewing the page source code or any browser developer tools. They could even change the value or hidden elements before page submission.</div>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<div class="alert alert-warning" role="alert"><strong><span class="glyphicon glyphicon-warning-sign"
+						aria-hidden="true"></span> Warning</strong>: You musn't rely on hidden inputs as a form of
+				security. The hidden element is not displayed on the page, but the user could still acess this data by
+				viewing the page source code or any browser developer tools. They could even change the value or hidden
+				elements before page submission.</div>
 
-<h2 id="button" class="subgroup">Buttons</h2>
-	<p>There are several ways to create a button on a form, and there are several types of buttons available. You can create a button by adding the <code>type="button"</code> attribute to the <code>input</code> element, or by using the <code>button</code> element. These two types of button will have no default behaviour, other than being a clickable button, and you will need to add some JavaScript to add event listeners to these buttons and add behaviour (for example calculating the total price of an order). Please see in the last section of this document for details on <a href="#submit">Submit buttons</a> and <a href="#reset">Reset buttons</a>.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-	
-	<input type="button" value="I'm a button" name="button1"><br><br>
-	  <button name="button2"> I'm a button </button>
+			<h2 id="button" class="subgroup">Buttons</h2>
+			<p>There are several ways to create a button on a form, and there are several types of buttons available.
+				You can create a button by adding the <code>type="button"</code> attribute to the <code>input</code>
+				element, or by using the <code>button</code> element. These two types of button will have no default
+				behaviour, other than being a clickable button, and you will need to add some JavaScript to add event
+				listeners to these buttons and add behaviour (for example calculating the total price of an order).
+				Please see in the last section of this document for details on <a href="#submit">Submit buttons</a> and
+				<a href="#reset">Reset buttons</a>.
+			</p>
 
-</form></td><td><pre><code>...
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+
+							<input type="button" value="I'm a button" name="button1"><br><br>
+							<button name="button2"> I'm a button </button>
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;input type="button" value="I'm a button" name="button1">&lt;br>&lt;br>
 	&lt;button name="button2">I'm a button&lt;/button>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>			
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h2 id="Attributes" class="group">Useful Attributes</h2>
-<h3 id="readonly" class="subgroup">Readonly</h3>
-	<p>It is possible to make fields read only by adding the <code>readonly</code> attribute in the form element's tag.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<h2 id="Attributes" class="group">Useful Attributes</h2>
+			<h3 id="readonly" class="subgroup">Readonly</h3>
+			<p>It is possible to make fields read only by adding the <code>readonly</code> attribute in the form
+				element's tag.</p>
 
-	  <label for="name2">Name:</label>
-	  <input type="text" name="name" id="name2" value="Anne" readonly>
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-</form></td><td><pre><code>...
+							<label for="name2">Name:</label>
+							<input type="text" name="name" id="name2" value="Anne" readonly>
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="name">Name: &lt;/label>
@@ -952,22 +1496,34 @@ The input data is sent in the form:
 		value="Anne" readonly> 
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
 
-<h3 id="required" class="subgroup">Required</h3>
-	<p>It is possible to make fields mandatory by adding the <code>required</code> attribute in the form element's tag. The browser may style the element differently to indicate that the field is mandatory.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<h3 id="required" class="subgroup">Required</h3>
+			<p>It is possible to make fields mandatory by adding the <code>required</code> attribute in the form
+				element's tag. The browser may style the element differently to indicate that the field is mandatory.
+			</p>
 
-	  <label for="name4">Name:</label>
-	  <input type="text" name="name" id="name4" required>
-	  <input type="submit" name="send" value="Send">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-</form></td><td><pre><code>...
+							<label for="name4">Name:</label>
+							<input type="text" name="name" id="name4" required>
+							<input type="submit" name="send" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="name">Name: &lt;/label>
@@ -975,40 +1531,65 @@ The input data is sent in the form:
 	&lt;input type="submit" name="send" value="Send">
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h3 id="autofocus" class="subgroup">Autofocus</h3>
-	<p>It is possible to make fields be selected by default by adding the <code>autofocus</code> attribute in the form element's tag.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<h3 id="autofocus" class="subgroup">Autofocus</h3>
+			<p>It is possible to make fields be selected by default by adding the <code>autofocus</code> attribute in
+				the form element's tag.</p>
 
-	  <label for="name3">Name:</label>
-	  <input type="text" name="name" id="name3" autofocus>
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-</form></td><td><pre><code>...
+							<label for="name3">Name:</label>
+							<input type="text" name="name" id="name3" autofocus>
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="name">Name: &lt;/label>
 	&lt;input type="text" name="name" id="name" autofocus> 
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h3 id="placeholder" class="subgroup">Placeholder</h3>
-	<p>It is possible to add a placeholder in the input field by adding the <code>placeholder</code> attribute and spacifying a value in the form element's tag. The advantage of the <code>placeholder</code> over a default value, is that the placeholder automatically disappears when the user starts entering text, and will be displayed again if the user deletes what they entered, hence the information is never lost, and never needs additional user interaction to be removed.</p>
-	
-	<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<h3 id="placeholder" class="subgroup">Placeholder</h3>
+			<p>It is possible to add a placeholder in the input field by adding the <code>placeholder</code> attribute
+				and spacifying a value in the form element's tag. The advantage of the <code>placeholder</code> over a
+				default value, is that the placeholder automatically disappears when the user starts entering text, and
+				will be displayed again if the user deletes what they entered, hence the information is never lost, and
+				never needs additional user interaction to be removed.</p>
 
-	  <label for="name5">Name:</label>
-	  <input type="text" name="name" id="name5" placeholder="Enter your full name">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-</form></td><td><pre><code>...
+							<label for="name5">Name:</label>
+							<input type="text" name="name" id="name5" placeholder="Enter your full name">
+
+						</form>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;label for="name">Name: &lt;/label>
@@ -1016,37 +1597,48 @@ The input data is sent in the form:
 	placeholder="Enter your full name"> 
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-<h2 id="altogether" class="group">Putting it altogether</h2>
+			<h2 id="altogether" class="group">Putting it altogether</h2>
 
-<h3 id="fieldset" class="subgroup">Fieldset and Legend</h3>
-	<p>The <code>fieldset</code> element together with its corresponding <code>legend</code> are used to group several form controls and <code>labels</code> together.</p>
-	
-	
-	<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-  <fieldset>
-	<legend>Personal Details:</legend>
-	<label for="name7">Name:</label>
-	<input type="text" name="name" id="name7"><br>
-	<label for="email7">Email:</label>
-	<input type="email" name="email7" id="email7">
-	  </fieldset>
-  <fieldset>
-	  <legend>My Interests:</legend>
-	<input type="checkbox" name="interests" id="html2" value="HTML" checked>
-	<label for="html2">HTML</label><br>
-	<input type="checkbox" name="interests" id="javascript2" value="JavaScript">
-	<label for="javascript2">JavaScript</label><br>
-	<input type="checkbox" name="interests" id="css2" value="CSS">
-	<label for="css2">CSS</label><br>
-	  </fieldset>
-	
-</form>
-	  <br></td><td><pre><code>...
+			<h3 id="fieldset" class="subgroup">Fieldset and Legend</h3>
+			<p>The <code>fieldset</code> element together with its corresponding <code>legend</code> are used to group
+				several form controls and <code>labels</code> together.</p>
+
+
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							<fieldset>
+								<legend>Personal Details:</legend>
+								<label for="name7">Name:</label>
+								<input type="text" name="name" id="name7"><br>
+								<label for="email7">Email:</label>
+								<input type="email" name="email7" id="email7">
+							</fieldset>
+							<fieldset>
+								<legend>My Interests:</legend>
+								<input type="checkbox" name="interests" id="html2" value="HTML" checked>
+								<label for="html2">HTML</label><br>
+								<input type="checkbox" name="interests" id="javascript2" value="JavaScript">
+								<label for="javascript2">JavaScript</label><br>
+								<input type="checkbox" name="interests" id="css2" value="CSS">
+								<label for="css2">CSS</label><br>
+							</fieldset>
+
+						</form>
+						<br>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	&lt;fieldset>
@@ -1070,30 +1662,44 @@ The input data is sent in the form:
 	&lt;/fieldset>
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
-	<p>Here's a version with no CSS as the Bootstrap Library changes the styling of the <code>fieldset</code>:
-		<a class="jsbin-embed" href="https://jsbin.com/xuvamih/2/embed?html,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script></p>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
+			<p>Here's a version with no CSS as the Bootstrap Library changes the styling of the <code>fieldset</code>:
+				<a class="jsbin-embed" href="https://jsbin.com/xuvamih/2/embed?html,output">JS Bin on jsbin.com</a>
+				<script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
+			</p>
 
-<h3 id="reset" class="subgroup">Reset</h3>
-	<p>The <code>&lt;input></code> tag with an attribute of <code>type="reset"</code> is used to reset the values in a form back to their default value. For example, the following form may be reset to its initial values by pressing the "reset" button.</p>
-	
-	
-<table class="table table-bordered">
-  <tr><th style="min-width: 150px;">Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
-  My Interests:<br>
-	<input type="checkbox" name="interests" id="html" value="HTML" checked>
-	<label for="html">HTML</label><br>
-	<input type="checkbox" name="interests" id="javascript" value="JavaScript">
-	<label for="javascript">JavaScript</label><br>
-	<input type="checkbox" name="interests" id="css" value="CSS">
-	<label for="css">CSS</label><br>
-	<input type="reset" name="button" value="Reset"> 
-	
-	
-</form>
-	  <br></td><td><pre><code>...
+			<h3 id="reset" class="subgroup">Reset</h3>
+			<p>The <code>&lt;input></code> tag with an attribute of <code>type="reset"</code> is used to reset the
+				values in a form back to their default value. For example, the following form may be reset to its
+				initial values by pressing the "reset" button.</p>
+
+
+			<table class="table table-bordered">
+				<tr>
+					<th style="min-width: 150px;">Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
+							My Interests:<br>
+							<input type="checkbox" name="interests" id="html" value="HTML" checked>
+							<label for="html">HTML</label><br>
+							<input type="checkbox" name="interests" id="javascript" value="JavaScript">
+							<label for="javascript">JavaScript</label><br>
+							<input type="checkbox" name="interests" id="css" value="CSS">
+							<label for="css">CSS</label><br>
+							<input type="reset" name="button" value="Reset">
+
+
+						</form>
+						<br>
+					</td>
+					<td>
+						<pre><code>...
 &lt;form>
 	...
 	My Interests:&lt;br>
@@ -1110,26 +1716,39 @@ The input data is sent in the form:
 	&lt;input type="submit" name="button" value="Send"> 
 	...
 &lt;/form>
-...</code></pre></td></tr>
-</table>
+...</code></pre>
+					</td>
+				</tr>
+			</table>
 
-	<h3 id="submit" class="subgroup">Submit button</h3>
-	<p>When a form contains a single entry field, the information is sent as soon as the user presses the "return" key. However, most forms will contain multiple form elements and therefore require a "submit button", generated by an additional tag <code>&lt;input type="submit"></code> to cause the submission of the input data:
-</p>
+			<h3 id="submit" class="subgroup">Submit button</h3>
+			<p>When a form contains a single entry field, the information is sent as soon as the user presses the
+				"return" key. However, most forms will contain multiple form elements and therefore require a "submit
+				button", generated by an additional tag <code>&lt;input type="submit"></code> to cause the submission of
+				the input data:
+			</p>
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form>
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form>
 
-	<label for="firstname">First Name: </label>
-	<input type="text" name="firstName" id="firstname" >
-	
-	<label for="lastname">Last Name: </label>
-	<input type="text" name="lastName" id="lastname">
-	
-	<input type="submit" name="button" value="Send"> 
+							<label for="firstname">First Name: </label>
+							<input type="text" name="firstName" id="firstname">
 
-</form></td><td><pre data-line="13"><code>&lt;!doctype html>
+							<label for="lastname">Last Name: </label>
+							<input type="text" name="lastName" id="lastname">
+
+							<input type="submit" name="button" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="13"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -1144,36 +1763,63 @@ The input data is sent in the form:
 	&lt;input type="submit" name="button" value="Send"> 
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
 
-	<p>Which when pressed will send in addition to any information entered in the form the additional message <samp>button=Send</samp>.</p>
+			<p>Which when pressed will send in addition to any information entered in the form the additional message
+				<samp>button=Send</samp>.
+			</p>
 
-	<p>When there are several elements in a form the data sent to the server-side script is composed of the individual elements concatenated together with an <code>&amp;</code>. For example, when the <em>Send button</em> is pressed and the name <strong>Jane Smith</strong> is entered, then the following information will be sent: <samp>firstName=Jane&amp;lastName=Smith&amp;button=Send</samp></p>
+			<p>When there are several elements in a form the data sent to the server-side script is composed of the
+				individual elements concatenated together with an <code>&amp;</code>. For example, when the <em>Send
+					button</em> is pressed and the name <strong>Jane Smith</strong> is entered, then the following
+				information will be sent: <samp>firstName=Jane&amp;lastName=Smith&amp;button=Send</samp></p>
 
 
-	<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Please note</strong>: In order for all your form elements to be sent, you must make sure that all your elements are within the <code>&lt;form></code> and <code>&lt;/form></code> tags. If your submit button is not within those tags, the filled in elements will not be sent and any element outside those tags will not be submitted either. Make sure that if all your elements are to be dealt with as a single form, you should only have one <code>&lt;form></code> tag to start the form and one <code>&lt;/form></code> tag to end the form.</div>
+			<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+						aria-hidden="true"></span> Please note</strong>: In order for all your form elements to be sent,
+				you must make sure that all your elements are within the <code>&lt;form></code> and
+				<code>&lt;/form></code> tags. If your submit button is not within those tags, the filled in elements
+				will not be sent and any element outside those tags will not be submitted either. Make sure that if all
+				your elements are to be dealt with as a single form, you should only have one <code>&lt;form></code> tag
+				to start the form and one <code>&lt;/form></code> tag to end the form.
+			</div>
 
-<h3 id="styling" class="subgroup">Styling the content of a form</h3>
-	You can add some styling to the <code>fieldset</code> and <code>labels</code> to ensure that the labels are well aligned to ensure readability of the form, see below:
-<a class="jsbin-embed" href="https://jsbin.com/hafoqah/embed?html,css,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
+			<h3 id="styling" class="subgroup">Styling the content of a form</h3>
+			You can add some styling to the <code>fieldset</code> and <code>labels</code> to ensure that the labels are
+			well aligned to ensure readability of the form, see below:
+			<a class="jsbin-embed" href="https://jsbin.com/hafoqah/embed?html,css,output">JS Bin on jsbin.com</a>
+			<script src="https://static.jsbin.com/js/embed.min.js?4.1.0"></script>
 
-<h3 id="emailing" class="subgroup">Emailing the content of a form</h3>
-	<p>By adding the following attributes: <code>method="post" action="mailto:Your e-mail address" enctype="text/plain"</code> to your form element, when a user fills in and submits the form, the content of the form is posted to your e-mail address. Of course for this to work, the mail preferences must be set up in the users browser.
+			<h3 id="emailing" class="subgroup">Emailing the content of a form</h3>
+			<p>By adding the following attributes:
+				<code>method="post" action="mailto:Your e-mail address" enctype="text/plain"</code> to your form
+				element, when a user fills in and submits the form, the content of the form is posted to your e-mail
+				address. Of course for this to work, the mail preferences must be set up in the users browser.
 
-<table class="table table-bordered">
-  <tr><th>Displayed by browser</th><th>HTML markup required</th></tr>
-  <tr><td style="vertical-align:middle"><form action="mailto:user@email.com" method="post" enctype="text/plain">
+			<table class="table table-bordered">
+				<tr>
+					<th>Displayed by browser</th>
+					<th>HTML markup required</th>
+				</tr>
+				<tr>
+					<td style="vertical-align:middle">
+						<form action="mailto:user@email.com" method="post" enctype="text/plain">
 
-	<label for="firstname2">First Name: </label>
-	<input type="text" name="firstName" id="firstname2">
-	
-	<label for="lastname2">Last Name: </label>
-	<input type="text" name="lastName" id="lastname2"><br><br>
-	<input type="reset" name="reset" value="Reset"> 
-	<input type="submit" name="submit" value="Send">
+							<label for="firstname2">First Name: </label>
+							<input type="text" name="firstName" id="firstname2">
 
-</form></td><td><pre data-line="8"><code>&lt;!doctype html>
+							<label for="lastname2">Last Name: </label>
+							<input type="text" name="lastName" id="lastname2"><br><br>
+							<input type="reset" name="reset" value="Reset">
+							<input type="submit" name="submit" value="Send">
+
+						</form>
+					</td>
+					<td>
+						<pre data-line="8"><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="UTF-8">
@@ -1191,130 +1837,138 @@ The input data is sent in the form:
 	&lt;input type="submit" name="submit" value="Send"> 
 &lt;/form>
 &lt;/body>
-&lt;/html></code></pre></td></tr>
-</table>
+&lt;/html></code></pre>
+					</td>
+				</tr>
+			</table>
 
-<hr>
-<div class="alert alert-warning" role="alert">
-<h2 id="review" class="group">Review Questions</h2>
-<ul>
-<li>Question 1 - How to create a checkbox in HTML?  </li>
-<ol style="list-style-type: lower-alpha;">
-  <li>  &lt;input type="checkbox"></li>
-  <li>  &lt;input type="button"></li>
-  <li>  &lt;checkbox>&lt;/checkbox></li>
-  <li>  &lt;input type="check"></li>
-</ol><br>
-<li> Question 2 - How to create a radio button in HTML? 
-</li>
-<ol style="list-style-type: lower-alpha;">
-  <li>  &lt;input type="radiobutton"></li>
-  <li>  &lt;input type="button"></li>
-  <li>  &lt;radio>&lt;/radio></li>
-  <li>  &lt;input type="radio"></li>
-</ol><br>
-<li> Question 3 - How to create a textarea
-  for multiple lines of comments in HTML? 
-</li>
-<ol style="list-style-type: lower-alpha;">
-  <li>  &lt;input type="textarea"></li>
-  <li>  &lt;input type="text" multiple></li>
-  <li>  &lt;textarea>&lt;/textarea></li>
-  <li>  &lt;input type="text"></li>
-</ol>
+			<hr>
+			<div class="alert alert-warning" role="alert">
+				<h2 id="review" class="group">Review Questions</h2>
+				<ul>
+					<li>Question 1 - How to create a checkbox in HTML? </li>
+					<ol style="list-style-type: lower-alpha;">
+						<li> &lt;input type="checkbox"></li>
+						<li> &lt;input type="button"></li>
+						<li> &lt;checkbox>&lt;/checkbox></li>
+						<li> &lt;input type="check"></li>
+					</ol><br>
+					<li> Question 2 - How to create a radio button in HTML?
+					</li>
+					<ol style="list-style-type: lower-alpha;">
+						<li> &lt;input type="radiobutton"></li>
+						<li> &lt;input type="button"></li>
+						<li> &lt;radio>&lt;/radio></li>
+						<li> &lt;input type="radio"></li>
+					</ol><br>
+					<li> Question 3 - How to create a textarea
+						for multiple lines of comments in HTML?
+					</li>
+					<ol style="list-style-type: lower-alpha;">
+						<li> &lt;input type="textarea"></li>
+						<li> &lt;input type="text" multiple></li>
+						<li> &lt;textarea>&lt;/textarea></li>
+						<li> &lt;input type="text"></li>
+					</ol>
 
-</ul>
-</div>  
-
-</div>
-<div class="row">
-    <!--Nav Bar -->
-    
-    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
-        <ul id="sidebar" class="nav nav-stacked">
-            <li>
-                <a href="#Introduction">Form filling</a>
-            </li>
-            <li>
-                <a href="#Simple">Form Elements</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#Simple">Text input</a></li>
-                    <li><a href="#label">Labels</a></li>
-                    <li><a href="#textarea">Textarea</a></li>
-					<li><a href="#passwordfield">Password</a></li>
-              		<li><a href="#radio">Radio button</a></li>
-              		<li><a href="#checkbox">Checkboxes</a></li>
-              		<li><a href="#popuplist">Popup list</a></li>
-              		<li><a href="#scrollinglist">Scrolling list</a></li>
-              		<li><a href="#datalist">Datalist</a></li>
-              		<li><a href="#email">Email input field</a></li>	
-              		<li><a href="#url">URL input field</a></li>
-              		<li><a href="#tel">Tel input field</a></li>
-              		<li><a href="#number">Number input field</a></li>
-              		<li><a href="#searchfield">Search input field</a></li>
-              		<li><a href="#datefield">Date picker</a></li>
-              		<li><a href="#rangeInput">Range input field</a></li>
-              		<li><a href="#colorfield">Colour picker</a></li>
-              		<li><a href="#hidden">Hidden input field</a></li>
-              		<li><a href="#button">Button</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#Attributes">Useful Attributes</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#readonly">Readonly</a></li>
-                    <li><a href="#required">Required</a></li>
-                    <li><a href="#autofocus">Autofocus</a></li>
-                    <li><a href="#placeholder">Placeholder</a></li>
 				</ul>
-            </li>
-               <li>
-                <a href="#altogether">Putting it altogether</a>
-                <ul class="nav nav-stacked">
-                   	<li><a href="#fieldset">Fieldset and Legend</a></li>
-                    <li><a href="#reset">Reset</a></li>
-                    <li><a href="#submit">Submit</a></li>
-                    <li><a href="#styling">Styling the form</a></li>
-                    <li><a href="#emailing">Emailing the form</a></li>
-				   </ul>
-            </li>
-            
-        </ul>
-    </nav>
-</div>
-</main>
+			</div>
 
-<nav class="navbar navbar-default no-margin-bottom">
-<div class="container">
-<p class="navbar-text navbar-right">&copy; Copyright 2016-2021 <a href="https://www.westminster.ac.uk" class="navbar-link">University of Westminster</a></p>
-</div>
-</nav>
+		</div>
+		<div class="row">
+			<!--Nav Bar -->
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+				<ul id="sidebar" class="nav nav-stacked">
+					<li>
+						<a href="#Introduction">Form filling</a>
+					</li>
+					<li>
+						<a href="#Simple">Form Elements</a>
+						<ul class="nav nav-stacked">
+							<li><a href="#Simple">Text input</a></li>
+							<li><a href="#label">Labels</a></li>
+							<li><a href="#textarea">Textarea</a></li>
+							<li><a href="#passwordfield">Password</a></li>
+							<li><a href="#radio">Radio button</a></li>
+							<li><a href="#checkbox">Checkboxes</a></li>
+							<li><a href="#popuplist">Popup list</a></li>
+							<li><a href="#scrollinglist">Scrolling list</a></li>
+							<li><a href="#datalist">Datalist</a></li>
+							<li><a href="#email">Email input field</a></li>
+							<li><a href="#url">URL input field</a></li>
+							<li><a href="#tel">Tel input field</a></li>
+							<li><a href="#number">Number input field</a></li>
+							<li><a href="#searchfield">Search input field</a></li>
+							<li><a href="#datefield">Date picker</a></li>
+							<li><a href="#rangeInput">Range input field</a></li>
+							<li><a href="#colorfield">Colour picker</a></li>
+							<li><a href="#hidden">Hidden input field</a></li>
+							<li><a href="#button">Button</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#Attributes">Useful Attributes</a>
+						<ul class="nav nav-stacked">
+							<li><a href="#readonly">Readonly</a></li>
+							<li><a href="#required">Required</a></li>
+							<li><a href="#autofocus">Autofocus</a></li>
+							<li><a href="#placeholder">Placeholder</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#altogether">Putting it altogether</a>
+						<ul class="nav nav-stacked">
+							<li><a href="#fieldset">Fieldset and Legend</a></li>
+							<li><a href="#reset">Reset</a></li>
+							<li><a href="#submit">Submit</a></li>
+							<li><a href="#styling">Styling the form</a></li>
+							<li><a href="#emailing">Emailing the form</a></li>
+						</ul>
+					</li>
 
-<script src="prism/prism.js"></script>
-<script src="prism/prism-line-numbers.js"></script>
-<script src="prism/prism-line-highlight.js"></script>
-<script>
-$('body').scrollspy({
-  target: '.bs-docs-sidebar',
-  offset: 60
-});
-$("#sidebar").affix({
-  offset: {
-    top: 80
-  }
-});
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+				</ul>
+			</nav>
+		</div>
+	</main>
 
-  gtag('config', 'G-RRNL1F43P4');
-</script>
-<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+	<nav class="navbar navbar-default no-margin-bottom">
+		<div class="container">
+			<p class="navbar-text navbar-right">&copy; Copyright 2016-2021 <a href="https://www.westminster.ac.uk"
+					class="navbar-link">University of Westminster</a></p>
+		</div>
+	</nav>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+
+	<script src="prism/prism.js"></script>
+	<script src="prism/prism-line-numbers.js"></script>
+	<script src="prism/prism-line-highlight.js"></script>
+	<script>
+		$('body').scrollspy({
+			target: '.bs-docs-sidebar',
+			offset: 60
+		});
+		$("#sidebar").affix({
+			offset: {
+				top: 80
+			}
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-RRNL1F43P4');
+	</script>
+	<br>
+	<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
 </html>

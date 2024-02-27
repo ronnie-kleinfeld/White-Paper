@@ -1,129 +1,186 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Web Design and Development - Tutorial 1</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-     
-<style>
-	
-	h1, h2 {
-		text-align: center;
-		color: #3387EB;
-		font-family: 'Open Sans', sans-serif;
-    	font-weight: 300;	
-	}
-	h3 {
-		color: #3387EB;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 18px;
-    	font-weight: 400;
-		margin-top: 30px;
-	}
-	
-	body {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-	font-weight: 200;
-    font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
-}
-	.myinfo {
-		background-color: #f5f2f0;
-		border: 1px solid #ccc;
-    	border-radius: 4px;
-		padding: 15px;
-    	margin-bottom: 20px;
-	}
-	strong {
-		font-weight: 500;
-	}
+<head>
+	<meta charset="UTF-8">
+	<title>Web Design and Development - Tutorial 1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<style>
+		h1,
+		h2 {
+			text-align: center;
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		h3 {
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			margin-top: 30px;
+		}
+
+		body {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			font-weight: 200;
+			font-size: 16px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.myinfo {
+			background-color: #f5f2f0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			font-weight: 500;
+		}
 	</style>
-	
+
 </head>
 
 <body>
 
-<h1>Web Design and Development</h1>
-<h2>Tutorial 1 - Basic HTML and CSS elements</h2>
-<br><br>
-	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This is the <strong>first page of a full Portfolio</strong> that you will create and upload on the University Web Server. <strong>This Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark</strong>.</div>
-	<h3>Task 1 - Create your Web Page content</h3> 
-	
-	<p>Download <a href="tut_examples/Tutorial1_startup.html" target="_blank">Tutorial1_startup.html</a>, open it in the text editor of your choice, and in a browser. Notice that the browser does not recognise the documents structure. Save the file on your home <strong>h:</strong> drive as <strong>tutorial1.html</strong> <div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Important Notes:</strong> <ul><li>No space in the filename</li><li>If you save your work outside of your h: drive, it will be deleted</li></ul> </div>
+	<h1>Web Design and Development</h1>
+	<h2>Tutorial 1 - Basic HTML and CSS elements</h2>
+	<br><br>
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+				aria-hidden="true"></span></strong> This is the <strong>first page of a full Portfolio</strong> that you
+		will create and upload on the University Web Server. <strong>This Portfolio will help you prepare for the
+			tutorial test that will count towards your final Coursework mark</strong>.</div>
+	<h3>Task 1 - Create your Web Page content</h3>
+
+	<p>Download <a href="tut_examples/Tutorial1_startup.html" target="_blank">Tutorial1_startup.html</a>, open it in the
+		text editor of your choice, and in a browser. Notice that the browser does not recognise the documents
+		structure. Save the file on your home <strong>h:</strong> drive as <strong>tutorial1.html</strong>
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Notes:</strong>
+		<ul>
+			<li>No space in the filename</li>
+			<li>If you save your work outside of your h: drive, it will be deleted</li>
+		</ul>
+	</div>
 
 	The web page you create should resemble Fig. 1 below. To achieve this, follow the steps outlined below:
 
-<ul>
-	<li>Use appropriate HTML tags to establish the correct structure for an HTML document. Begin by defining the document as HTML and create the basic structure with a head and body. Ensure that the text intended for formatting is placed within the body of the document <code>&lt;body&gt;&lt;&sol;body&gt;</code> tag. </li>
-	<li>Create the appropriate html tags
-		<code>&lt;html lang="en"&gt;</code>, specify the correct head tags, <code> &lt;meta charset="UTF-8"&gt;, and &lt;title&gt;&lt;&sol;title&gt;</code>.
-		The document title should be "Tutorial 1".</li>
-	<li>Adjust the text to incorporate your personal details, including your name and student ID, and update the content under the provided headings. Utilize suitable HTML tags to organize the content with headings and paragraphs, aiming for a layout similar to that depicted in Fig. 1. While it may not be an exact match, strive for a similar appearance. Consider when you need to use <b>block</b> and <b>inline</b> tags.</li>
-	<li>Use 3 headings.</li>
-	<li>Create at least 3 different HTML formating tags to styles the text content.</li>
-	<li>Use embedded style sheet to further modify the HTML content. Specifically, set the following:
-		<ul>
-			<li>document background colour to <code>background-color: WhiteSmoke;</code>, or specify a colour you prefer</li>
-			<li>document text to <code>font-family: 'Arial', sans-serif;</code></li>
-			<li>text margin to <code>margin: 20px;</code></li>
-			<li>h1 <code>padding: 80px 0;</code> <code>height: 2px;</code> to create the wide Turquoise box around the heading, and <code>background-color: DarkTurquoise;</code>, or specify a colour or width of your choice for the heading box</li>
-			<li>h3 background colour <code>PaleTurquoise</code>, while the <code>&lt;p&gt;&lt;&sol;p&gt;, and &lt;address&gt;&lt;&sol;address&gt; </code>text colour to <code>color: DarkSlateGrey;</code>, or specify a colour you prefer</li>
-			<li>the first heading, 'Profile Summary,' and the corresponding paragraph should be centered on the page. Utilize a CSS class to target the appropriate heading and paragraph tag attributes.</li>
-			<li>the provisional text where in the future you could create links to real projects of your portfolio should appear as <code>color: lightgray;</code> indicating that the links are inactive. Use CSS style ID to do this</li>
-			<li>in the project links area to create the empty space between the projects use the following special characters <code>&#38;#124;&#38;nbsp;&#38;nbsp;&#38;nbsp;&#38;nbsp;</code> </li>
-		</ul>
-	<li>Create a ruler acting as a separator at the end of the document</li>
-	<li>Your email address inside an address element</li>
-	<li>The last modified date (just as hard coded date), use the <code>&lt;sup&gt;&lt;&sol;sup&gt;</code>HTML tag to create Superscript text formating. </li>
-</ul>
-	</p>
-	
-<figure>
-  <img src="tutorial1Snapshot.png" alt="example of the page layout" style="width: 1200px;">
-  <figcaption>Fig.1 - A snapshot of the expected layout for tutorial 1.</figcaption>
-</figure>
-	
-	
-<h3>Task 2 - Validate your code</h3>
 	<ul>
-		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank" style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your code is correct before uploading it to the webserver. If it is not consult the validator's comments to correct your code. Keep checking until the code is 100% correct.
+		<li>Use appropriate HTML tags to establish the correct structure for an HTML document. Begin by defining the
+			document as HTML and create the basic structure with a head and body. Ensure that the text intended for
+			formatting is placed within the body of the document <code>&lt;body&gt;&lt;&sol;body&gt;</code> tag. </li>
+		<li>Create the appropriate html tags
+			<code>&lt;html lang="en"&gt;</code>, specify the correct head tags,
+			<code> &lt;meta charset="UTF-8"&gt;, and &lt;title&gt;&lt;&sol;title&gt;</code>.
+			The document title should be "Tutorial 1".
+		</li>
+		<li>Adjust the text to incorporate your personal details, including your name and student ID, and update the
+			content under the provided headings. Utilize suitable HTML tags to organize the content with headings and
+			paragraphs, aiming for a layout similar to that depicted in Fig. 1. While it may not be an exact match,
+			strive for a similar appearance. Consider when you need to use <b>block</b> and <b>inline</b> tags.</li>
+		<li>Use 3 headings.</li>
+		<li>Create at least 3 different HTML formating tags to styles the text content.</li>
+		<li>Use embedded style sheet to further modify the HTML content. Specifically, set the following:
+			<ul>
+				<li>document background colour to <code>background-color: WhiteSmoke;</code>, or specify a colour you
+					prefer</li>
+				<li>document text to <code>font-family: 'Arial', sans-serif;</code></li>
+				<li>text margin to <code>margin: 20px;</code></li>
+				<li>h1 <code>padding: 80px 0;</code> <code>height: 2px;</code> to create the wide Turquoise box around
+					the heading, and <code>background-color: DarkTurquoise;</code>, or specify a colour or width of your
+					choice for the heading box</li>
+				<li>h3 background colour <code>PaleTurquoise</code>, while the
+					<code>&lt;p&gt;&lt;&sol;p&gt;, and &lt;address&gt;&lt;&sol;address&gt; </code>text colour to
+					<code>color: DarkSlateGrey;</code>, or specify a colour you prefer
+				</li>
+				<li>the first heading, 'Profile Summary,' and the corresponding paragraph should be centered on the
+					page. Utilize a CSS class to target the appropriate heading and paragraph tag attributes.</li>
+				<li>the provisional text where in the future you could create links to real projects of your portfolio
+					should appear as <code>color: lightgray;</code> indicating that the links are inactive. Use CSS
+					style ID to do this</li>
+				<li>in the project links area to create the empty space between the projects use the following special
+					characters <code>&#38;#124;&#38;nbsp;&#38;nbsp;&#38;nbsp;&#38;nbsp;</code> </li>
+			</ul>
+		<li>Create a ruler acting as a separator at the end of the document</li>
+		<li>Your email address inside an address element</li>
+		<li>The last modified date (just as hard coded date), use the <code>&lt;sup&gt;&lt;&sol;sup&gt;</code>HTML tag
+			to create Superscript text formating. </li>
+	</ul>
+	</p>
+
+	<figure>
+		<img src="tutorial1Snapshot.png" alt="example of the page layout" style="width: 1200px;">
+		<figcaption>Fig.1 - A snapshot of the expected layout for tutorial 1.</figcaption>
+	</figure>
+
+
+	<h3>Task 2 - Validate your code</h3>
+	<ul>
+		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+				style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your
+			code is correct before uploading it to the webserver. If it is not consult the validator's comments to
+			correct your code. Keep checking until the code is 100% correct.
 		</li>
 	</ul>
 
-<h3>Task 3 - Upload your page to the Web server and set the correct permissions</h3>
+	<h3>Task 3 - Upload your page to the Web server and set the correct permissions</h3>
 	<ul>
-		<li>Connect to <strong>compute0.westminster.ac.uk</strong> using sftp using WinSCP, FileZilla, CyberDuck (or any other ftp tool you prefer).</li>
-		<li>Check that your public_html folder has been created for you. 
+		<li>Connect to <strong>compute0.westminster.ac.uk</strong> using sftp using WinSCP, FileZilla, CyberDuck (or any
+			other ftp tool you prefer).</li>
+		<li>Check that your public_html folder has been created for you.
 			<ul>
-				<li><strong>If your folder is there</strong>, go inside that folder, and create a new folder for your Web Development work (You may for example call this folder webDev). </li>
-				<li><strong>If your folder is not there</strong>, you will carry out the following tasks of uploading your file to the Web Server next week. Just make sure that your work is saved in your h: drive, and you may also save it on a memory stick for extra safety. Please also <a href="https://servicedesk.westminster.ac.uk/support/home" target="_blank">log an IT Ticket (Log a Call) using the online Service Desk.</a></li>
+				<li><strong>If your folder is there</strong>, go inside that folder, and create a new folder for your
+					Web Development work (You may for example call this folder webDev). </li>
+				<li><strong>If your folder is not there</strong>, you will carry out the following tasks of uploading
+					your file to the Web Server next week. Just make sure that your work is saved in your h: drive, and
+					you may also save it on a memory stick for extra safety. Please also <a
+						href="https://servicedesk.westminster.ac.uk/support/home" target="_blank">log an IT Ticket (Log
+						a Call) using the online Service Desk.</a></li>
 			</ul>
 		</li>
 		<li>Upload your work to the webDev folder</li>
-		<li>Check that your work is accessible online. The URL for the page will be <strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial1.html</strong> where <strong>wxxxxxxx</strong> is your registration number.</li>
+		<li>Check that your work is accessible online. The URL for the page will be
+			<strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial1.html</strong> where
+			<strong>wxxxxxxx</strong> is your registration number.
+		</li>
 	</ul>
-	
+
 	<h3>Task 4 - Share your design with your peers and comment on other's work.</h3>
 	<ul>
 		<li>
-			Let's become co-creators. Share your designs with the rest of the class and take the opportunity to exchange ideas and receive feedback. To do so go to the module <b><a href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9" target="_blank">Padlet</a></b>, upload a screenshoot of your page, and provide the URL of the page from your Unix account.
+			Let's become co-creators. Share your designs with the rest of the class and take the opportunity to exchange
+			ideas and receive feedback. To do so go to the module <b><a
+					href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9"
+					target="_blank">Padlet</a></b>, upload a screenshoot of your page, and provide the URL of the page
+			from your Unix account.
 		</li>
 	</ul>
-	
-<h3>Task 5 - Complete the Practice Test on Blackboard</h3>
+
+	<h3>Task 5 - Complete the Practice Test on Blackboard</h3>
 	<ul>
-		<li>Go to <a href="https://learning.westminster.ac.uk/ultra/courses/_95466_1/outline" target="_blank">Practice Tests -> Week 1 Practice Test</a> and complete the test. You can have up to five attempts to get the maximum score of 2 marks.</li>
-		
+		<li>Go to <a href="https://learning.westminster.ac.uk/ultra/courses/_95466_1/outline" target="_blank">Practice
+				Tests -> Week 1 Practice Test</a> and complete the test. You can have up to five attempts to get the
+			maximum score of 2 marks.</li>
+
 	</ul>
 	<hr>
 	Prepared by Anne-Gaelle Colom, 2019.<br>
 	Last modified, January 2024 by <a href="mailto:D.Economou@westminster.ac.uk">Daphne Economou</a>
-		
-<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+
+	<br>
+	<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
 </html>

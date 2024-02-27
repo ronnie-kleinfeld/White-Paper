@@ -1,138 +1,206 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Web Design and Development - Tutorial 1</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-     
-<style>
-	
-	h1, h2 {
-		text-align: center;
-		color: #3387EB;
-		font-family: 'Open Sans', sans-serif;
-    	font-weight: 300;	
-	}
-	h3 {
-		color: #3387EB;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 18px;
-    	font-weight: 400;
-		margin-top: 30px;
-	}
-	
-	body {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-	font-weight: 200;
-    font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
-}
-	.myinfo {
-		background-color: #f5f2f0;
-		border: 1px solid #ccc;
-    	border-radius: 4px;
-		padding: 15px;
-    	margin-bottom: 20px;
-	}
-	strong {
-		font-weight: 500;
-	}
+<head>
+	<meta charset="UTF-8">
+	<title>Web Design and Development - Tutorial 1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<style>
+		h1,
+		h2 {
+			text-align: center;
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		h3 {
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			margin-top: 30px;
+		}
+
+		body {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			font-weight: 200;
+			font-size: 16px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.myinfo {
+			background-color: #f5f2f0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			font-weight: 500;
+		}
 	</style>
-	
+
 </head>
 
 <body>
 
-<h1>Web Design and Development</h1>
-<h2>Tutorial 2 - Lists and Tables</h2>
-<br><br>
-	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This is the <strong>second page of a full Portfolio</strong> that you will create and upload on the University Web Server. <strong>This Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark</strong>.</div>
-	<h3>Task 1 - Create your Web Page content</h3> 
-	
-	<p>Create a file and save it on your home <strong>h:</strong> drive as <strong>tutorial2.html</strong> 
-<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Important Notes:</strong> <ul><li>No space in the filename</li><li>If you save your work outside of your h: drive, it will be deleted</li></ul> </div>
-Your Web Page should follow the following specifications:
+	<h1>Web Design and Development</h1>
+	<h2>Tutorial 2 - Lists and Tables</h2>
+	<br><br>
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+				aria-hidden="true"></span></strong> This is the <strong>second page of a full Portfolio</strong> that
+		you will create and upload on the University Web Server. <strong>This Portfolio will help you prepare for the
+			tutorial test that will count towards your final Coursework mark</strong>.</div>
+	<h3>Task 1 - Create your Web Page content</h3>
 
-<ul>
-	<li>Tutorial 2 for the title</li> 
-	<li>Your Name in bold </li>
-	<li>Create a table displaying the price list and schedule for the pool. Organize the layout using tables to achieve a format similar to Fig.1 below. Ensure the table has 9 rows to accommodate the content.</li>
-	<li>Within the first row of the table create a 'nested' list to outline the various price options. To ensure that special characters like the pound symbol (£) work consistently across different browsers when writing HTML, you should use the appropriate HTML entity code for the character. For the pound symbol, the HTML entity code is <code>&pound;</code>. This code represents the pound sign and ensures proper rendering in all browsers.<dr>
-		Here's an example of how to use it in your HTML: <code>&lt;p&gt;The price is <code>&amp;#163;</code>10.00 &lt;&sol;p&gt;</code> </dr> </li>
-	<li>Proceed to the creation of the first row of the pool schedule. What type of cell it contains? Is it a normal table cell or a heading cell? Use the appropriate HTML tag <code>&lt;tr&gt;&lt;&sol;tr&gt;</code> , <code>&lt;th&gt;&lt;&sol;th&gt;</code> for the browser to format it correctly as emphasized. Consider als the text alignment. </li>
-	<li>Create the pool schedule. Use pen and paper to thoughtfully determine the required number of rows and columns. Consider the type of table cells and the span of each cell. Implement table cell attributes <code>colspan="n" </code>and <code>rowspan="n"</code> where needed. Certain rows and columns will be generated based on the specified values that particular table cells occupy. Be attentive to correct definitions, as inaccuracies can disrupt the table's appearance. If issues arise, you can easily recreate it by carefully considering the cell spans.</li>
-	<li>After the table content create a ruler acting as a separator after the table.</li>
-	<li>Provide your email address inside an address element.</li>
-	<li>Present the last modified date (just as hard coded date).</li>
-</ul>
-	<p>If you've reached this far, you should be proud of yourself for having worked that hard! You are not done though, you still need to style the page.</p>
-	
+	<p>Create a file and save it on your home <strong>h:</strong> drive as <strong>tutorial2.html</strong>
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Notes:</strong>
+		<ul>
+			<li>No space in the filename</li>
+			<li>If you save your work outside of your h: drive, it will be deleted</li>
+		</ul>
+	</div>
+	Your Web Page should follow the following specifications:
 
-</p>
-	
-<h3>Task 2 - Format the table content</h3> 
-	
 	<ul>
-		<li>Format the text of the entire document as <code>font-family: 'Open Sans', sans-serif;</code> and <code>font-size: 14px;</code></li>
-		<li>Make the text of the first table row that contains the prices for different ages groups to  <strong>16px</strong>, while the font style to italics and the font-weight to bold.</li>
-		<li>Change the table cells' background using the <code>background-color: </code> tag. Use the same background colour to identify slots that belong to the same category (SwimFit, Lane Swim, Parents and Tots etc.). Use CSS classes to create those.</li>
-		<li>Create some space between the text contained in the table cells and the table border by changing the <code>td</code>, <code>th</code>,  <code>padding: 5px;</code>. Apply this declaration to both HTML table tags simultaneously.</li>
-		<li>Create a border for the table. The example in Fig.1 uses <code>border: 2px ridge blue;</code>. You can create any other border you like.</li>
-		<li>Center the heading and the table in the middle of the page, use <code>margin-left: auto;</code>, <code>margin-right: auto;</code>. Similarly you can centre the text in the heading table cells that contain the schedule dates and time slots. </li>
-		
+		<li>Tutorial 2 for the title</li>
+		<li>Your Name in bold </li>
+		<li>Create a table displaying the price list and schedule for the pool. Organize the layout using tables to
+			achieve a format similar to Fig.1 below. Ensure the table has 9 rows to accommodate the content.</li>
+		<li>Within the first row of the table create a 'nested' list to outline the various price options. To ensure
+			that special characters like the pound symbol (£) work consistently across different browsers when writing
+			HTML, you should use the appropriate HTML entity code for the character. For the pound symbol, the HTML
+			entity code is <code>&pound;</code>. This code represents the pound sign and ensures proper rendering in all
+			browsers.<dr>
+				Here's an example of how to use it in your HTML:
+				<code>&lt;p&gt;The price is <code>&amp;#163;</code>10.00 &lt;&sol;p&gt;</code>
+			</dr>
+		</li>
+		<li>Proceed to the creation of the first row of the pool schedule. What type of cell it contains? Is it a normal
+			table cell or a heading cell? Use the appropriate HTML tag <code>&lt;tr&gt;&lt;&sol;tr&gt;</code> ,
+			<code>&lt;th&gt;&lt;&sol;th&gt;</code> for the browser to format it correctly as emphasized. Consider als
+			the text alignment.
+		</li>
+		<li>Create the pool schedule. Use pen and paper to thoughtfully determine the required number of rows and
+			columns. Consider the type of table cells and the span of each cell. Implement table cell attributes
+			<code>colspan="n" </code>and <code>rowspan="n"</code> where needed. Certain rows and columns will be
+			generated based on the specified values that particular table cells occupy. Be attentive to correct
+			definitions, as inaccuracies can disrupt the table's appearance. If issues arise, you can easily recreate it
+			by carefully considering the cell spans.
+		</li>
+		<li>After the table content create a ruler acting as a separator after the table.</li>
+		<li>Provide your email address inside an address element.</li>
+		<li>Present the last modified date (just as hard coded date).</li>
+	</ul>
+	<p>If you've reached this far, you should be proud of yourself for having worked that hard! You are not done though,
+		you still need to style the page.</p>
+
+
+	</p>
+
+	<h3>Task 2 - Format the table content</h3>
+
+	<ul>
+		<li>Format the text of the entire document as <code>font-family: 'Open Sans', sans-serif;</code> and
+			<code>font-size: 14px;</code>
+		</li>
+		<li>Make the text of the first table row that contains the prices for different ages groups to
+			<strong>16px</strong>, while the font style to italics and the font-weight to bold.
+		</li>
+		<li>Change the table cells' background using the <code>background-color: </code> tag. Use the same background
+			colour to identify slots that belong to the same category (SwimFit, Lane Swim, Parents and Tots etc.). Use
+			CSS classes to create those.</li>
+		<li>Create some space between the text contained in the table cells and the table border by changing the
+			<code>td</code>, <code>th</code>, <code>padding: 5px;</code>. Apply this declaration to both HTML table tags
+			simultaneously.
+		</li>
+		<li>Create a border for the table. The example in Fig.1 uses <code>border: 2px ridge blue;</code>. You can
+			create any other border you like.</li>
+		<li>Center the heading and the table in the middle of the page, use <code>margin-left: auto;</code>,
+			<code>margin-right: auto;</code>. Similarly you can centre the text in the heading table cells that contain
+			the schedule dates and time slots.
+		</li>
+
 	</ul>
 
 
 	See Below for an example of your page layout: <br>
-<br>
-	
-<figure>
-  <img src="tutorial2Snapshot.png" alt="example of the page layout" style="width: 600px;">
-  <figcaption>Fig.1 - A snapshot of the expected layout for tutorial 2.</figcaption>
-</figure>
-	
+	<br>
 
-<h3>Task 3 - Validate your code</h3>
+	<figure>
+		<img src="tutorial2Snapshot.png" alt="example of the page layout" style="width: 600px;">
+		<figcaption>Fig.1 - A snapshot of the expected layout for tutorial 2.</figcaption>
+	</figure>
+
+
+	<h3>Task 3 - Validate your code</h3>
 	<ul>
-		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank" style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your code is correct before uploading it to the webserver. If it is not consult the validator's comments to correct your code. Keep checking until the code is 100% correct.
+		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+				style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your
+			code is correct before uploading it to the webserver. If it is not consult the validator's comments to
+			correct your code. Keep checking until the code is 100% correct.
 		</li>
 	</ul>
 
-<h3>Task 4 - Upload your page to the Web server and set the correct permissions</h3>
+	<h3>Task 4 - Upload your page to the Web server and set the correct permissions</h3>
 	<ul>
-		<li>Connect to <strong>compute0.westminster.ac.uk</strong> using sftp using WinSCP, FileZilla, CyberDuck (or any other ftp tool you prefer).</li>
-		<li>Check that your public_html folder has been created for you. 
+		<li>Connect to <strong>compute0.westminster.ac.uk</strong> using sftp using WinSCP, FileZilla, CyberDuck (or any
+			other ftp tool you prefer).</li>
+		<li>Check that your public_html folder has been created for you.
 			<ul>
-				<li><strong>If your folder is there</strong>, go inside that folder, and create a new folder for your Web Development work (You may for example call this folder webDev). </li>
-				<li><strong>If your folder is not there</strong>, you will carry out the following tasks of uploading your file to the Web Server next week. Just make sure that your work is saved in your h: drive, and you may also save it on a memory stick for extra safety. Please also <a href="https://servicedesk.westminster.ac.uk/support/home" target="_blank">log an IT Ticket (Log a Call) using the online Service Desk.</a></li>
+				<li><strong>If your folder is there</strong>, go inside that folder, and create a new folder for your
+					Web Development work (You may for example call this folder webDev). </li>
+				<li><strong>If your folder is not there</strong>, you will carry out the following tasks of uploading
+					your file to the Web Server next week. Just make sure that your work is saved in your h: drive, and
+					you may also save it on a memory stick for extra safety. Please also <a
+						href="https://servicedesk.westminster.ac.uk/support/home" target="_blank">log an IT Ticket (Log
+						a Call) using the online Service Desk.</a></li>
 			</ul>
 		</li>
 		<li>Upload your work to the webDev folder</li>
-		<li>Check that your work is accessible online. The URL for the page will be <strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial1.html</strong> where <strong>wxxxxxxx</strong> is your registration number.</li>
+		<li>Check that your work is accessible online. The URL for the page will be
+			<strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial1.html</strong> where
+			<strong>wxxxxxxx</strong> is your registration number.
+		</li>
 	</ul>
-	
+
 	<h3>Task 5 - Share your design with your peers and comment on other's work.</h3>
 	<ul>
 		<li>
-			Let's become co-creators. Share your designs with the rest of the class and take the opportunity to exchange ideas and receive feedback. To do so go to the module <b><a href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9" target="_blank">Padlet</a></b>, upload a screenshoot of your page, and provide the URL of the page from your Unix account.
+			Let's become co-creators. Share your designs with the rest of the class and take the opportunity to exchange
+			ideas and receive feedback. To do so go to the module <b><a
+					href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9"
+					target="_blank">Padlet</a></b>, upload a screenshoot of your page, and provide the URL of the page
+			from your Unix account.
 		</li>
-		
-	</ul>
-	
-	<h3>Task 6 - Complete the Practice Test on Blackboard</h3>
-		<ul>
-			<li>Go to <a href="https://learning.westminster.ac.uk/ultra/courses/_95466_1/outline" target="_blank">Practice Tests -> Week 2 Practice Test</a> and complete the test. You can have up to five attempts to get the maximum score of 2 marks.</li>
 
-		</ul>
+	</ul>
+
+	<h3>Task 6 - Complete the Practice Test on Blackboard</h3>
+	<ul>
+		<li>Go to <a href="https://learning.westminster.ac.uk/ultra/courses/_95466_1/outline" target="_blank">Practice
+				Tests -> Week 2 Practice Test</a> and complete the test. You can have up to five attempts to get the
+			maximum score of 2 marks.</li>
+
+	</ul>
 	<hr>
 	Prepared by Anne-Gaelle Colom, 2019.<br>
 	Last modified, January 2024 by <a href="mailto:D.Economou@westminster.ac.uk">Daphne Economou</a>
-		
-<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+
+	<br>
+	<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
 </html>

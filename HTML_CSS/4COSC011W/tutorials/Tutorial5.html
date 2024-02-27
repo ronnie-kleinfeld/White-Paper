@@ -1,168 +1,224 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Web Design and Development - Tutorial 5</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-     
-<style>
-	
-	h1, h2 {
-		text-align: center;
-		color: #3387EB;
-		font-family: 'Open Sans', sans-serif;
-    	font-weight: 300;	
-	}
-	h3 {
-		color: #3387EB;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 18px;
-    	font-weight: 400;
-		margin-top: 30px;
-	}
-	
-	body {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-	font-weight: 200;
-    font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
-}
-	.myinfo {
-		background-color: #f5f2f0;
-		border: 1px solid #ccc;
-    	border-radius: 4px;
-		padding: 15px;
-    	margin-bottom: 20px;
-	}
-	strong {
-		font-weight: 500;
-	}
-	
-	img{
-		border: thin solid #333;
-        margin: 5px;
-	}
-	
-	figcation {
-		text-align: center;
-	}
+<head>
+	<meta charset="UTF-8">
+	<title>Web Design and Development - Tutorial 5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<style>
+		h1,
+		h2 {
+			text-align: center;
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		h3 {
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			margin-top: 30px;
+		}
+
+		body {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			font-weight: 200;
+			font-size: 16px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.myinfo {
+			background-color: #f5f2f0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			font-weight: 500;
+		}
+
+		img {
+			border: thin solid #333;
+			margin: 5px;
+		}
+
+		figcation {
+			text-align: center;
+		}
 	</style>
-	
+
 </head>
 
 <body>
 
-<h1>Web Design and Development</h1>
-<h2>Tutorial 5 - A simple maths game Part 1</h2>
-<br>
+	<h1>Web Design and Development</h1>
+	<h2>Tutorial 5 - A simple maths game Part 1</h2>
+	<br>
 	<!--<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This is the <strong>third page of a full Portfolio</strong> that you will create and upload on the University Web Server. <strong>This Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark</strong>.</div>-->
-	
-<!--	
+
+	<!--	
 <div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This is the <strong>fifth page of a full Portfolio</strong>. This Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark</strong>.</div>-->
-	
-<h3>Task 1 - Create your Web Page content</h3> 
-	
+
+	<h3>Task 1 - Create your Web Page content</h3>
+
 	<!-- <p>Create a file and save it on your home <strong>h:</strong> drive as <strong>tutorial3.html</strong> for page 1 and another suitable file name for page 2. <div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Important Notes:</strong> <ul><li>No space in the filename</li><li>both files must have the .html extension</li><li>If you save your work outside of your h: drive, it will be deleted</li></ul> </div>
 	-->
 
-	
-    <p>Create a file and save it as tutorial5.html.</p>
 
-<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> 
-Important Notes:</strong> <ul><li>No space in the filename</li><li>File must have the .html extension</li>
+	<p>Create a file and save it as tutorial5.html.</p>
 
-<li>
- Use an embedded or external style sheet and do NOT use inline styles.</li>
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Notes:</strong>
+		<ul>
+			<li>No space in the filename</li>
+			<li>File must have the .html extension</li>
 
-</ul> </div>
+			<li>
+				Use an embedded or external style sheet and do NOT use inline styles.</li>
 
-
-<h4>HTML</h4>
-
-Your Web Pages should follow the following specifications.
-
-<ul>
-	<li>Tutorial 5 for the title.</li> 
-	<li>'A Simple Maths Game' as the page heading. </li>
-    <li>Create the placeholder on your page for one maths question, followed by the placeholder for the user's answer to that question, and then another place holder for the feedback for that question: For example, use a span with the id="question1", a span with the id="answer1" and a span with the id="feedback1". </li>
-    <li>You may put all this inside a separate paragraph, so that one question block looks like this: <br><img src="Tutorial5&6_images/HTMLQuestion.png" alt="HTML code for one question block" width="300px"></li>
-    <li>Repeat this 10 times, and update the id so that they match the question numbers (question2, answer2 and feedback2 for the second question, etc.).     </li>
-    
-</ul>
-<h4>CSS</h4>
-    You will declare rules for 2 classes: correct and incorrect as follow:
-    <ul><li>the correct class will display text in green colour and bold font</li>
-        <li>the incorrect class will display text in red colour and bold font</li>
-        
-    </ul>
-    
-<h4>JavaScript</h4>
-    <h5>Overview</h5>
-<ul>
-	<li>Using JavaScript, you will prompt the user to answer 10 maths questions of your choice (e.g. 12 x 6, 26 - 7, etc. ) You should prompt the user 10 times with a different question each time.</li>
-	<li>Record the answers and compare them to the correct answers.</li>
-    <li>After each answer or once the user has answered all 10 questions, display on the page each question in the question placeholders, the users's answer in the answer's placeholders and a message saying whether the answer was correct or not in the feedback's placeholders. In addition, use a tick symbol (&checkmark;) using the <code>&amp;checkmark;</code> sequence if the answer is correct, and a cross symbol (&cross;) using the <code>&amp;cross;</code> sequence if it is incorrect</li>
-	<li>In case of an incorrect answer, also display what the correct answer is.</li>
-    <li>The symbols and feedback to the user need to be in a different colours. Use 2 CSS classes that you declared earlier for this. </li>
-See the images below to get an idea of the sequence: <br>
-<div class="center">
-<img src="Tutorial5&6_images/JS1.png" width="400px" alt=""> <img src="Tutorial5&6_images/JS2.png" width="400px" alt=""><br>
-<img src="Tutorial5&6_images/JS3.png" width="400px" alt=""> <img src="Tutorial5&6_images/JS4.png" width="400px" alt=""><br>
-<img src="Tutorial5&6_images/TutJS1.png" alt="" width="400px">
+		</ul>
 	</div>
-</ul>
 
-    <h5>Process</h5>
-    <ol>
-        <li>Let's start with 1 question... <ol>
-            <li>Prompt the user with your first question, and store their answer in a variable.</li>
-            <li>Display the text of that question in the question1 span, and the user's answer in the answer1 span. For example, if your first question is "8 + 7 = ... ", you can add the question to the question1 span by typing <code>document.getElementById("question1").innerHTML="8 + 7 = ... ";</code></li>
-            <li>Compare the answer with the correct answer</li>
-            <li>If the answer was correct, add a tick symbol (<code>&amp;checkmark;</code>) in the feedback1 span and add the class "correct" to that span (you can use <code>document.getElementById("feedback1").classList.add("correct")</code> for this</li>. If the answer was incorrect, add the cross symbol (<code>&amp;cross;</code>) in the feedback1 span and add the class "incorrect" to that span
-            </ol> </li>
-        <li>Test your code once with a correct answer and once with an incorrect answer</li>
-        <li>If your code works as expected, repeat this for the second question.</li>
-        <li>Test your code with a combination of correct and incorrect answers, then all correct and then all incorrect. </li>
-        <li>If your code works, you could carry on and copy the same code for the 8 remaining questions... but before that, let's make a few optimisations...
-            <ul><li>You're asking the browser to select the same element (feedback1) 4 times. That's inefficient, as each time the browser has to navigate the DOM and find the element. Let's improve that by storing that element into a variable and calling that variable each time instead.</li>
-                <li>We can see that we're writing the question text twice also. Let's imrpove that by also storing this in a variable and using this variable instead.</li></ul>
-        </li>
-        <li>Once all the optimisations are in, copy your code for the remaining 8 questions, updating the ids to match the question numbers to make sure the code all works fine.</li>
-        <li>Test that you code works with a combination of correct and incorrect answers</li>
-        <li>Let's make the game a little bit more interesting and declare a variable that will count how many questions were answered correctly. Let's start by giving this a value of 0, and increment it each time the user gives a correct answer.</li>
-        <li>Now that you have the number of correct answers, let's multiply this by 10 to get a mark out of 100, and display this score in the total score placeholder. Oh wait! There isn't a score placeholder! Let's jump to the HTML section, and add this placeholder, for example, you can create a new paragraph with some text such as "You Score:" followed by a span with id="score"</li>
-        <li>Now add the score to the score placeholder and test your code a number of times.</li>
-        <li>Make sure you understand everything in your code as we will continue with improving this in week 7, by developing the 2nd part of this game. Also feel free to add more CSS to improve the look and feel.</li>
-    </ol>
-    
+
+	<h4>HTML</h4>
+
+	Your Web Pages should follow the following specifications.
+
+	<ul>
+		<li>Tutorial 5 for the title.</li>
+		<li>'A Simple Maths Game' as the page heading. </li>
+		<li>Create the placeholder on your page for one maths question, followed by the placeholder for the user's
+			answer to that question, and then another place holder for the feedback for that question: For example, use
+			a span with the id="question1", a span with the id="answer1" and a span with the id="feedback1". </li>
+		<li>You may put all this inside a separate paragraph, so that one question block looks like this: <br><img
+				src="Tutorial5&6_images/HTMLQuestion.png" alt="HTML code for one question block" width="300px"></li>
+		<li>Repeat this 10 times, and update the id so that they match the question numbers (question2, answer2 and
+			feedback2 for the second question, etc.). </li>
+
+	</ul>
+	<h4>CSS</h4>
+	You will declare rules for 2 classes: correct and incorrect as follow:
+	<ul>
+		<li>the correct class will display text in green colour and bold font</li>
+		<li>the incorrect class will display text in red colour and bold font</li>
+
+	</ul>
+
+	<h4>JavaScript</h4>
+	<h5>Overview</h5>
+	<ul>
+		<li>Using JavaScript, you will prompt the user to answer 10 maths questions of your choice (e.g. 12 x 6, 26 - 7,
+			etc. ) You should prompt the user 10 times with a different question each time.</li>
+		<li>Record the answers and compare them to the correct answers.</li>
+		<li>After each answer or once the user has answered all 10 questions, display on the page each question in the
+			question placeholders, the users's answer in the answer's placeholders and a message saying whether the
+			answer was correct or not in the feedback's placeholders. In addition, use a tick symbol (&checkmark;) using
+			the <code>&amp;checkmark;</code> sequence if the answer is correct, and a cross symbol (&cross;) using the
+			<code>&amp;cross;</code> sequence if it is incorrect</li>
+		<li>In case of an incorrect answer, also display what the correct answer is.</li>
+		<li>The symbols and feedback to the user need to be in a different colours. Use 2 CSS classes that you declared
+			earlier for this. </li>
+		See the images below to get an idea of the sequence: <br>
+		<div class="center">
+			<img src="Tutorial5&6_images/JS1.png" width="400px" alt=""> <img src="Tutorial5&6_images/JS2.png"
+				width="400px" alt=""><br>
+			<img src="Tutorial5&6_images/JS3.png" width="400px" alt=""> <img src="Tutorial5&6_images/JS4.png"
+				width="400px" alt=""><br>
+			<img src="Tutorial5&6_images/TutJS1.png" alt="" width="400px">
+		</div>
+	</ul>
+
+	<h5>Process</h5>
+	<ol>
+		<li>Let's start with 1 question... <ol>
+				<li>Prompt the user with your first question, and store their answer in a variable.</li>
+				<li>Display the text of that question in the question1 span, and the user's answer in the answer1 span.
+					For example, if your first question is "8 + 7 = ... ", you can add the question to the question1
+					span by typing <code>document.getElementById("question1").innerHTML="8 + 7 = ... ";</code></li>
+				<li>Compare the answer with the correct answer</li>
+				<li>If the answer was correct, add a tick symbol (<code>&amp;checkmark;</code>) in the feedback1 span
+					and add the class "correct" to that span (you can use
+					<code>document.getElementById("feedback1").classList.add("correct")</code> for this</li>. If the
+				answer was incorrect, add the cross symbol (<code>&amp;cross;</code>) in the feedback1 span and add the
+				class "incorrect" to that span
+			</ol>
+		</li>
+		<li>Test your code once with a correct answer and once with an incorrect answer</li>
+		<li>If your code works as expected, repeat this for the second question.</li>
+		<li>Test your code with a combination of correct and incorrect answers, then all correct and then all incorrect.
+		</li>
+		<li>If your code works, you could carry on and copy the same code for the 8 remaining questions... but before
+			that, let's make a few optimisations...
+			<ul>
+				<li>You're asking the browser to select the same element (feedback1) 4 times. That's inefficient, as
+					each time the browser has to navigate the DOM and find the element. Let's improve that by storing
+					that element into a variable and calling that variable each time instead.</li>
+				<li>We can see that we're writing the question text twice also. Let's imrpove that by also storing this
+					in a variable and using this variable instead.</li>
+			</ul>
+		</li>
+		<li>Once all the optimisations are in, copy your code for the remaining 8 questions, updating the ids to match
+			the question numbers to make sure the code all works fine.</li>
+		<li>Test that you code works with a combination of correct and incorrect answers</li>
+		<li>Let's make the game a little bit more interesting and declare a variable that will count how many questions
+			were answered correctly. Let's start by giving this a value of 0, and increment it each time the user gives
+			a correct answer.</li>
+		<li>Now that you have the number of correct answers, let's multiply this by 10 to get a mark out of 100, and
+			display this score in the total score placeholder. Oh wait! There isn't a score placeholder! Let's jump to
+			the HTML section, and add this placeholder, for example, you can create a new paragraph with some text such
+			as "You Score:" followed by a span with id="score"</li>
+		<li>Now add the score to the score placeholder and test your code a number of times.</li>
+		<li>Make sure you understand everything in your code as we will continue with improving this in week 7, by
+			developing the 2nd part of this game. Also feel free to add more CSS to improve the look and feel.</li>
+	</ol>
+
 	<h3>Task 2 - Validate your code</h3>
 	<ul>
-		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank" style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your code is correct before uploading it to the webserver. If it is not consult the validator's comments to correct your code. Keep checking until the code is 100% correct.
+		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+				style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your
+			code is correct before uploading it to the webserver. If it is not consult the validator's comments to
+			correct your code. Keep checking until the code is 100% correct.
 		</li>
 	</ul>
 
-<h3>Task 3 - Upload your page to the Web server and set the correct permissions</h3>
+	<h3>Task 3 - Upload your page to the Web server and set the correct permissions</h3>
 	<ul>
 		<li>Upload your work to the webDev folder</li>
-		<li>Check that your work is accessible online. The URL for the page will be <strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial5.html</strong> where <strong>wxxxxxxx</strong> is your registration number.</li>
+		<li>Check that your work is accessible online. The URL for the page will be
+			<strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial5.html</strong> where
+			<strong>wxxxxxxx</strong> is your registration number.</li>
 	</ul>
-	
+
 	<h3>Task 4 - Share your design with your peers and comment on other's work.</h3>
 	<ul>
 		<li>
-			There are different ways you can implement the required interactivity. Share your solution with the rest of the class and take the opportunity to exchange ideas and receive feedback. <b>To do so go to the module <a href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9" target="_blank">Padlet</a>, upload a screenshoot of your page, and provide the URL of the page on your Unix account on the server</b>.
+			There are different ways you can implement the required interactivity. Share your solution with the rest of
+			the class and take the opportunity to exchange ideas and receive feedback. <b>To do so go to the module <a
+					href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9"
+					target="_blank">Padlet</a>, upload a screenshoot of your page, and provide the URL of the page on
+				your Unix account on the server</b>.
 		</li>
 	</ul>
-	
+
 	<hr>
 	<address>Prepared by <a href="mailto:A.Colom@westminster.ac.uk">Anne-Gaelle Colom</a>,<br>
-	Last modified, February 2024 by <a href="mailto:D.Economou@westminster.ac.uk">Daphne Economou</a>
-		
-<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+		Last modified, February 2024 by <a href="mailto:D.Economou@westminster.ac.uk">Daphne Economou</a>
+
+		<br>
+		<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
 </html>
