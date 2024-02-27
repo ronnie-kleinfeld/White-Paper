@@ -1,0 +1,636 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Colours</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+     
+<link rel="stylesheet" href="style.css" /> 
+<style>
+
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+  color: #3387EB,
+  border-left: 1px solid #3387EB;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+  padding-left: 18px;
+  font-weight: bold;
+  color: #3387EB;
+  background-color: transparent;
+  border-left: 2px solid #3387EB;
+}
+.back-to-top:hover,
+.bs-docs-theme-toggle:hover {
+  color: #563d7c;
+  text-decoration: none;
+}
+
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:focus, 
+.dropdown-menu>.active>a:hover {
+  background-image: none;
+  background-color: #3387EB;
+}
+th { text-align:center;}
+
+
+</style>
+
+
+ 
+  
+  </head>
+
+<body>
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-html" >
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Module Info<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="general.html">General Information</a></li>
+              	<li><a href="schedule.html">Schedule</a></li>
+              	<li><a href="team.html">Module Team</a></li>
+              </ul>
+            </li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="unix.html">Introduction to Unix</a></li>
+              	<li><a href="basicTags.html">Basic HTML tags</a></li>
+              	<li><a href="lists.html">Lists</a></li>
+              	<li><a href="tables.html">Tables</a></li>
+              	<li class="active video"><a href="colours.html">Colours</a></li>
+                <li><a href="images.html">Images</a></li>
+              	<li><a href="links.html">Links & iframes</a></li>
+                <li><a href="special.html">Special Characters</a></li>
+                <li><a href="forms.html">Forms</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              	<!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+                <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+				  <li><a href="cssElements.html">Styling Elements</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="js1.html">Introduction to JavaScript</a></li>
+                <li><a href="js2.html">Objects, Methods and Functions</a></li>
+                <li><a href="js3.html">JavaScript and Forms</a></li>
+                <li><a href="js4.html">JavaScript and the DOM</a></li>
+                <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+<main class="container language-html">
+<div class="col-md-9" role="main"><h1>Colours</h1>
+
+<p>In HTML, it is possible to specify a colour by using its name or RGB value using a decimal or Hex value.</p>
+<h2 id="colourName" class="group">Specifying a colour by name</h2>
+
+<p>In HMTL5, you will use CSS to change the colour of various elements. You can for example change the text colour by adding inline styles: <code>&lt;style="color:red"></code>
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 170px;">Formatted text</th><th>HTML markup required</th></tr>
+  <tr><td style="vertical-align:middle">*
+ <span style="color:red;">Red</span>*
+ <span style="color:green;">Green</span>*
+ <span style="color:blue;">Blue</span>*</td><td><pre><code>* &lt;span style="color:red;">Red&lt;/span>
+* &lt;span style="color:green;">Green&lt;/span>
+* &lt;span style="color:blue;">Blue&lt;/span> *</code></pre></td></tr>
+</table>
+    <p>Possible values for named colours are:</p>
+<p>    
+<div class="col-sm-4">AliceBlue [<span style="color:AliceBlue;">###</span>]</div>
+<div class="col-sm-4">AntiqueWhite [<span style="color:AntiqueWhite;">###</span>]</div>
+<div class="col-sm-4">Aqua [<span style="color:Aqua;">###</span>]</div>
+<div class="col-sm-4">Aquamarine [<span style="color:Aquamarine;">###</span>]</div>
+<div class="col-sm-4">Azure [<span style="color:Azure;">###</span>]</div>
+<div class="col-sm-4">Beige [<span style="color:Beige;">###</span>]</div>
+<div class="col-sm-4">Bisque [<span style="color:Bisque;">###</span>]</div>
+<div class="col-sm-4">Black[<span style="color:Black;">###</span>]</div>
+<div class="col-sm-4">BlanchedAlmond[<span style="color:BlanchedAlmond;">###</span>]</div>
+<div class="col-sm-4">Blue[<span style="color:Blue;">###</span>]</div>
+<div class="col-sm-4">BlueViolet[<span style="color:BlueViolet;">###</span>]</div>
+<div class="col-sm-4">Brown[<span style="color:Brown;">###</span>]</div>
+<div class="col-sm-4">BurlyWood[<span style="color:BurlyWood;">###</span>]</div>
+<div class="col-sm-4">CadetBlue[<span style="color:CadetBlue;">###</span>]</div>
+<div class="col-sm-4">Chartreuse[<span style="color:Chartreuse;">###</span>]</div>
+<div class="col-sm-4">Chocolate[<span style="color:Chocolate;">###</span>]</div>
+<div class="col-sm-4">Coral[<span style="color:Coral;">###</span>]</div>
+<div class="col-sm-4">CornflowerBlue[<span style="color:CornflowerBlue;">###</span>]</div>
+<div class="col-sm-4">Cornsilk[<span style="color:Cornsilk;">###</span>]</div>
+<div class="col-sm-4">Crimson[<span style="color:Crimson;">###</span>]</div>
+<div class="col-sm-4">Cyan[<span style="color:Cyan;">###</span>]</div>
+<div class="col-sm-4">DarkBlue[<span style="color:DarkBlue;">###</span>]</div>
+<div class="col-sm-4">DarkCyan[<span style="color:DarkCyan;">###</span>]</div>
+<div class="col-sm-4">DarkGoldenRod[<span style="color:DarkGoldenRod;">###</span>]</div>
+<div class="col-sm-4">DarkGray[<span style="color:DarkGray;">###</span>]</div>
+<div class="col-sm-4">DarkGrey[<span style="color:DarkGrey;">###</span>]</div>
+<div class="col-sm-4">DarkGreen[<span style="color:DarkGreen;">###</span>]</div>
+<div class="col-sm-4">DarkKhaki[<span style="color:DarkKhaki;">###</span>]</div>
+<div class="col-sm-4">DarkMagenta[<span style="color:DarkMagenta;">###</span>]</div>
+<div class="col-sm-4">DarkOliveGreen[<span style="color:DarkOliveGreen;">###</span>]</div>
+<div class="col-sm-4">Darkorange[<span style="color:Darkorange;">###</span>]</div>
+<div class="col-sm-4">DarkOrchid[<span style="color:DarkOrchid;">###</span>]</div>
+<div class="col-sm-4">DarkRed[<span style="color:DarkRed;">###</span>]</div>
+<div class="col-sm-4">DarkSalmon[<span style="color:DarkSalmon;">###</span>]</div>
+<div class="col-sm-4">DarkSeaGreen[<span style="color:DarkSeaGreen;">###</span>]</div>
+<div class="col-sm-4">DarkSlateBlue[<span style="color:DarkSlateBlue;">###</span>]</div>
+<div class="col-sm-4">DarkSlateGray[<span style="color:DarkSlateGray;">###</span>]</div>
+<div class="col-sm-4">DarkSlateGrey[<span style="color:DarkSlateGrey;">###</span>]</div>
+<div class="col-sm-4">DarkTurquoise[<span style="color:DarkTurquoise;">###</span>]</div>
+<div class="col-sm-4">DarkViolet[<span style="color:DarkViolet;">###</span>]</div>
+<div class="col-sm-4">DeepPink[<span style="color:DeepPink;">###</span>]</div>
+<div class="col-sm-4">DeepSkyBlue[<span style="color:DeepSkyBlue;">###</span>]</div>
+<div class="col-sm-4">DimGray[<span style="color:DimGray;">###</span>]</div>
+<div class="col-sm-4">DimGrey[<span style="color:DimGrey;">###</span>]</div>
+<div class="col-sm-4">DodgerBlue[<span style="color:DodgerBlue;">###</span>]</div>
+<div class="col-sm-4">FireBrick[<span style="color:FireBrick;">###</span>]</div>
+<div class="col-sm-4">FloralWhite[<span style="color:FloralWhite;">###</span>]</div>
+<div class="col-sm-4">ForestGreen[<span style="color:ForestGreen;">###</span>]</div>
+<div class="col-sm-4">Fuchsia[<span style="color:Fuchsia;">###</span>]</div>
+<div class="col-sm-4">Gainsboro[<span style="color:Gainsboro;">###</span>]</div>
+<div class="col-sm-4">GhostWhite[<span style="color:GhostWhite;">###</span>]</div>
+<div class="col-sm-4">Gold[<span style="color:Gold;">###</span>]</div>
+<div class="col-sm-4">GoldenRod[<span style="color:GoldenRod;">###</span>]</div>
+<div class="col-sm-4">Gray[<span style="color:Gray;">###</span>]</div>
+<div class="col-sm-4">Grey[<span style="color:Grey;">###</span>]</div>
+<div class="col-sm-4">Green[<span style="color:Green;">###</span>]</div>
+<div class="col-sm-4">GreenYellow[<span style="color:GreenYellow;">###</span>]</div>
+<div class="col-sm-4">HoneyDew[<span style="color:HoneyDew;">###</span>]</div>
+<div class="col-sm-4">HotPink[<span style="color:HotPink;">###</span>]</div>
+<div class="col-sm-4">IndianRed[<span style="color:IndianRed;">###</span>]</div>
+<div class="col-sm-4">Indigo[<span style="color:Indigo;">###</span>]</div>
+<div class="col-sm-4">Ivory[<span style="color:Ivory;">###</span>]</div>
+<div class="col-sm-4">Khaki[<span style="color:Khaki;">###</span>]</div>
+<div class="col-sm-4">Lavender[<span style="color:Lavender;">###</span>]</div>
+<div class="col-sm-4">LavenderBlush[<span style="color:LavenderBlush;">###</span>]</div>
+<div class="col-sm-4">LawnGreen[<span style="color:LawnGreen;">###</span>]</div>
+<div class="col-sm-4">LemonChiffon[<span style="color:LemonChiffon;">###</span>]</div>
+<div class="col-sm-4">LightBlue[<span style="color:LightBlue;">###</span>]</div>
+<div class="col-sm-4">LightCoral[<span style="color:LightCoral;">###</span>]</div>
+<div class="col-sm-4">LightCyan[<span style="color:LightCyan;">###</span>]</div>
+<div class="col-sm-4">LightGoldenRodYellow[<span style="color:LightGoldenRodYellow;">###</span>]</div>
+<div class="col-sm-4">LightGray[<span style="color:LightGray;">###</span>]</div>
+<div class="col-sm-4">LightGrey[<span style="color:LightGrey;">###</span>]</div>
+<div class="col-sm-4">LightGreen[<span style="color:LightGreen;">###</span>]</div>
+<div class="col-sm-4">LightPink[<span style="color:LightPink;">###</span>]</div>
+<div class="col-sm-4">LightSalmon[<span style="color:LightSalmon;">###</span>]</div>
+<div class="col-sm-4">LightSeaGreen[<span style="color:LightSeaGreen;">###</span>]</div>
+<div class="col-sm-4">LightSkyBlue[<span style="color:LightSkyBlue;">###</span>]</div>
+<div class="col-sm-4">LightSlateGray[<span style="color:LightSlateGray;">###</span>]</div>
+<div class="col-sm-4">LightSlateGrey[<span style="color:LightSlateGrey;">###</span>]</div>
+<div class="col-sm-4">LightSteelBlue[<span style="color:LightSteelBlue;">###</span>]</div>
+<div class="col-sm-4">LightYellow[<span style="color:LightYellow;">###</span>]</div>
+<div class="col-sm-4">Lime[<span style="color:Lime;">###</span>]</div>
+<div class="col-sm-4">LimeGreen[<span style="color:LimeGreen;">###</span>]</div>
+<div class="col-sm-4">Linen[<span style="color:Linen;">###</span>]</div>
+<div class="col-sm-4">Magenta[<span style="color:Magenta;">###</span>]</div>
+<div class="col-sm-4">Maroon[<span style="color:Maroon;">###</span>]</div>
+<div class="col-sm-4">MediumAquaMarine[<span style="color:MediumAquaMarine;">###</span>]</div>
+<div class="col-sm-4">MediumBlue[<span style="color:MediumBlue;">###</span>]</div>
+<div class="col-sm-4">MediumOrchid[<span style="color:MediumOrchid;">###</span>]</div>
+<div class="col-sm-4">MediumPurple[<span style="color:MediumPurple;">###</span>]</div>
+<div class="col-sm-4">MediumSeaGreen[<span style="color:MediumSeaGreen;">###</span>]</div>
+<div class="col-sm-4">MediumSlateBlue[<span style="color:MediumSlateBlue;">###</span>]</div>
+<div class="col-sm-4">MediumSpringGreen[<span style="color:MediumSpringGreen;">###</span>]</div>
+<div class="col-sm-4">MediumTurquoise[<span style="color:MediumTurquoise;">###</span>]</div>
+<div class="col-sm-4">MediumVioletRed[<span style="color:MediumVioletRed;">###</span>]</div>
+<div class="col-sm-4">MidnightBlue[<span style="color:MidnightBlue;">###</span>]</div>
+<div class="col-sm-4">MintCream[<span style="color:MintCream;">###</span>]</div>
+<div class="col-sm-4">MistyRose[<span style="color:MistyRose;">###</span>]</div>
+<div class="col-sm-4">Moccasin[<span style="color:Moccasin;">###</span>]</div>
+<div class="col-sm-4">NavajoWhite[<span style="color:NavajoWhite;">###</span>]</div>
+<div class="col-sm-4">Navy[<span style="color:Navy;">###</span>]</div>
+<div class="col-sm-4">OldLace[<span style="color:OldLace;">###</span>]</div>
+<div class="col-sm-4">Olive[<span style="color:Olive;">###</span>]</div>
+<div class="col-sm-4">OliveDrab[<span style="color:OliveDrab;">###</span>]</div>
+<div class="col-sm-4">Orange[<span style="color:Orange;">###</span>]</div>
+<div class="col-sm-4">OrangeRed[<span style="color:OrangeRed;">###</span>]</div>
+<div class="col-sm-4">Orchid[<span style="color:Orchid;">###</span>]</div>
+<div class="col-sm-4">PaleGoldenRod[<span style="color:PaleGoldenRod;">###</span>]</div>
+<div class="col-sm-4">PaleGreen[<span style="color:PaleGreen;">###</span>]</div>
+<div class="col-sm-4">PaleTurquoise[<span style="color:PaleTurquoise;">###</span>]</div>
+<div class="col-sm-4">PaleVioletRed[<span style="color:PaleVioletRed;">###</span>]</div>
+<div class="col-sm-4">PapayaWhip[<span style="color:PapayaWhip;">###</span>]</div>
+<div class="col-sm-4">PeachPuff[<span style="color:PeachPuff;">###</span>]</div>
+<div class="col-sm-4">Peru[<span style="color:Peru;">###</span>]</div>
+<div class="col-sm-4">Pink[<span style="color:Pink;">###</span>]</div>
+<div class="col-sm-4">Plum[<span style="color:Plum;">###</span>]</div>
+<div class="col-sm-4">PowderBlue[<span style="color:PowderBlue;">###</span>]</div>
+<div class="col-sm-4">Purple[<span style="color:Purple;">###</span>]</div>
+<div class="col-sm-4">Red[<span style="color:Red;">###</span>]</div>
+<div class="col-sm-4">RosyBrown[<span style="color:RosyBrown;">###</span>]</div>
+<div class="col-sm-4">RoyalBlue[<span style="color:RoyalBlue;">###</span>]</div>
+<div class="col-sm-4">SaddleBrown[<span style="color:SaddleBrown;">###</span>]</div>
+<div class="col-sm-4">Salmon[<span style="color:Salmon;">###</span>]</div>
+<div class="col-sm-4">SandyBrown[<span style="color:SandyBrown;">###</span>]</div>
+<div class="col-sm-4">SeaGreen[<span style="color:SeaGreen;">###</span>]</div>
+<div class="col-sm-4">SeaShell[<span style="color:SeaShell;">###</span>]</div>
+<div class="col-sm-4">Sienna[<span style="color:Sienna;">###</span>]</div>
+<div class="col-sm-4">Silver[<span style="color:Silver;">###</span>]</div>
+<div class="col-sm-4">SkyBlue[<span style="color:SkyBlue;">###</span>]</div>
+<div class="col-sm-4">SlateBlue[<span style="color:SlateBlue;">###</span>]</div>
+<div class="col-sm-4">SlateGray[<span style="color:SlateGray;">###</span>]</div>
+<div class="col-sm-4">SlateGrey[<span style="color:SlateGrey;">###</span>]</div>
+<div class="col-sm-4">Snow[<span style="color:Snow;">###</span>]</div>
+<div class="col-sm-4">SpringGreen[<span style="color:SpringGreen;">###</span>]</div>
+<div class="col-sm-4">SteelBlue[<span style="color:SteelBlue;">###</span>]</div>
+<div class="col-sm-4">Tan[<span style="color:Tan;">###</span>]</div>
+<div class="col-sm-4">Teal[<span style="color:Teal;">###</span>]</div>
+<div class="col-sm-4">Thistle[<span style="color:Thistle;">###</span>]</div>
+<div class="col-sm-4">Tomato[<span style="color:Tomato;">###</span>]</div>
+<div class="col-sm-4">Turquoise[<span style="color:Turquoise;">###</span>]</div>
+<div class="col-sm-4">Violet[<span style="color:Violet;">###</span>]</div>
+<div class="col-sm-4">Wheat[<span style="color:Wheat;">###</span>]</div>
+<div class="col-sm-4">White[<span style="color:White;">###</span>]</div>
+<div class="col-sm-4">WhiteSmoke[<span style="color:WhiteSmoke;">###</span>]</div>
+<div class="col-sm-4">Yellow[<span style="color:Yellow;">###</span>]</div>
+<div class="col-sm-4">YellowGreen[<span style="color:YellowGreen;">###</span>]</div>
+</p>
+<p></p>
+    
+<div>
+<style scoped>
+  #red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #swatch {
+    width: 140px;
+    height: 140px;
+    margin-left: 350px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ff0000; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #00ff00; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #0000ff; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+  </style>
+<br><br>
+
+<p style="clear:both;">
+<p style="height: 20px;"></p>
+<h2 id="colourValues" class="group">Specifying a colour by value</h2>
+<h3 class="subgroup" id="hexRGB">Hexadecimal RGB color values</h3>
+    <p>The format of an RGB value in hexadecimal notation is a <code>#</code> immediately followed by either three or six hexadecimal characters. A general colour is specified in terms of the three primary colours red, blue and green. Each primary colour is defined as a one or two digit Hexadecimal number that representing the strength of that primary colour. The three-digit RGB notation (<code>#rgb</code>) is converted into six-digit form (<code>#rrggbb</code>) by replicating digits, not by adding zeros. For example, <code>#fb0</code> expands to <code>#ffbb00</code>, and <code>#fff</code> expands to <code>#ffffff</code></p>
+
+<p>In this specification hexadecimal <code>00</code> means 0% of the colour and hexadecimal <code>ff</code> means 100% of the colour.</p>
+
+<p>For example, to specify red the hexadecimal number <code>#ff0000</code> is used. In this number:</p>
+<ul>
+<li>The first two digits after the <code>#</code> symbol <code>ff</code> define 100% of red</li>
+<li>The second two digits after the <code>#</code> symbol <code>00</code> define 0% of green</li>
+<li>The third two digits after the <code>#</code> symbol <code>00</code> define 0% of blue</li>
+</ul>
+
+Note that you could also use the three-digit form <code>#f00</code> to specify the red colour.</p>
+
+
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 200px;">Formatted text</th><th>HTML markup required</th></tr>
+  <tr><td style="vertical-align:middle">*
+<span style="color:#ff0000;">Red</span>*
+<span style="color:#00ff00;">Green</span>*
+<span style="color:#0000ff;">Blue</span>*</td><td><pre><code>* &lt;span style="color:#ff0000;">Red&lt;/span>
+* &lt;span style="color:#00ff00;">Green&lt;/span>
+* &lt;span style="color:#0000ff;">Blue&lt;/span> *</code></pre></td></tr>
+ <tr><td style="vertical-align:middle">*
+ <span style="color:#ffff00;">Yellow</span>*
+ <span style="color:#00ffff;">Aqua</span>*
+ <span style="color:#ff00ff;">Purple</span>*</td><td><pre><code>* &lt;span style="color:#ffff00;">Yellow&lt;/span>
+* &lt;span style="color:#00ffff;">Aqua&lt;/span>
+* &lt;span style="color:#ff00ff;">Purple&lt;/span> *</code></pre></td></tr>
+ <tr><td style="vertical-align:middle">*
+ <span style="color:#ffffff;">White</span>*
+ <span style="color:#000000;">Black</span>*</td><td><pre><code>* &lt;span style="color:#ffffff;">White&lt;/span>
+* &lt;span style="color:#000000;">Black&lt;/span> *</code></pre></td></tr>
+ 
+</table>
+
+
+<p>To convert an <strong>RGB color to its hexadecimal representation</strong>, you'll need to convert each of the Red, Green, and Blue components from decimal to hexadecimal and then combine them.</p>
+
+<p>The formula to convert a decimal value to a two-digit hexadecimal value is often expressed as follows:</p>
+
+<ol>
+	<li>Divide the decimal value by 16 to get the quotient and remainder.</li>
+	<li>The remainder is the least significant digit (rightmost digit).</li>
+	<li>The quotient is the most significant digit (leftmost digit).</li>
+	<li>If the quotient or remainder is greater than 9, represent it using letters A-F (A for 10, B for 11, ..., F for 15).</li>
+</ol>
+
+<p>Let's go through an example with the RGB color (135, 206, 250):</p>
+
+<ol>
+	<li>Red Component (135):</li>
+		<ul>
+			<li>Quotient: 135 ÷ 16 = 8 with a remainder of 7.</li>
+			<li>The hexadecimal representation is 87.</li>
+		</ul>
+	<li>Green Component (206):</li>
+		<ul>
+			<li>Quotient: 206 ÷ 16 = 12 with a remainder of 14.</li>
+			<li>The hexadecimal representation is CE.</li>
+		</ul>
+	<li>Blue Component (250):</li>
+		<ul>
+			<li>Quotient: 250 ÷ 16 = 15 with a remainder of 10.</li>
+			<li>The hexadecimal representation is FA.</li>
+		</ul>
+</ol>
+<p>Combine these results, and you get the hexadecimal representation for the RGB color (135, 206, 250) as <strong>#87CEFA.</strong></p>
+
+<p>To convert <strong>Hexadecimal to Decimal, for example the #87CEFA</strong>:
+	<ul>
+		<li>Red: 87 in hexadecimal is (8 * 16 + 7 * 1) = 135 in decimal.</li>
+		<li>Green: CE in hexadecimal is (12 * 16 + 14 * 1) = 206 in decimal.</li>
+		<li>Blue: FA in hexadecimal is (15 * 16 + 10 * 1) = 250 in decimal.</li>
+	</ul>
+</p>
+
+
+<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Note: </strong> You can find lists of colour codes and names in books or on the Internet. An example is: <a href="http://htmlcolorcodes.com/color-picker/">HTML color codes</a></div>
+
+
+<h3 class="subgroup" id="hexMixer">Hexadecimal color mixer</h3>
+<p>Experiment with the color mixer by changing the red, green and blue values using the corresponding sliders.</p>
+<label for="valRedHex" style="margin-left: 20px; margin-top: -10px;">Colour Hex Value: #</label>
+<input type="text" id="valHex" readonly style="border:0; font-weight: bold; margin-top: 20px;"> 
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+ 
+<div id="swatch" class="ui-widget-content ui-corner-all"></div>
+</div>
+
+
+
+<h3 class="subgroup" id="functionalRGB">Functional RGB color values</h3>
+
+<p>The format of an RGB value in the functional notation is <code>rgb(</code> followed by a comma-separated list of three numerical values (either three integer values or three percentage values) followed by <code>)</code>. The integer value 255 corresponds to 100%, and to F or FF in the hexadecimal notation: <code>rgb(255,255,255)</code> = <code>rgb(100%,100%,100%)</code> = <code>#FFF</code> = <code>#FFFFFF</code>. White space characters are allowed around the numerical values.</p>
+
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 200px;">Formatted text</th><th>HTML markup required</th></tr>
+  <tr><td style="vertical-align:middle">
+ <span style="color:rgb(100%, 65%, 0%);">Orange</span> and 
+ <span style="color:rgb(255, 165, 0);">Orange</span> again.
+ </td><td><pre><code>&lt;span style="color:rgb(100%, 65%, 0%);">Orange&lt;/span> and
+&lt;span style="color:rgb(255, 165, 0);">Orange&lt;/span> again.</code></pre></td></tr>
+ </table>
+
+<h3 class="subgroup" id="RGBA">RGBA color values</h3>
+
+<p>The RGB color model is extended in this specification to include "alpha" to allow specification of the opacity of a color. Unlike RGB values, there is no hexadecimal notation for an RGBA value.</p>
+<p>The format of an RGBA value in the functional notation is <code>rgba(</code> followed by a comma-separated list of three numerical values (either three integer values or three percentage values), followed by an alphavalue, followed by <code>)</code>. The integer value 255 corresponds to 100%, <code>rgba(255,255,255,0.8)</code> = <code>rgba(100%,100%,100%,0.8)</code>. White space characters are allowed around the numerical values.</p>
+
+<table class="table table-hover table-bordered">
+  <tr><th style="min-width: 200px;">Formatted text</th><th>HTML markup required</th></tr>
+  <tr><td style="vertical-align:middle; text-align:right;">
+  100% opacity: <span style="color:rgba(100%, 65%, 0%, 1);">Orange</span> <br> 
+  90% opacity: <span style="color:rgba(100%, 65%, 0%, 0.9);">Orange</span> <br> 
+  80% opacity: <span style="color:rgba(100%, 65%, 0%, 0.8);">Orange</span> <br> 
+  70% opacity: <span style="color:rgba(100%, 65%, 0%, 0.7);">Orange</span> <br> 
+  60% opacity: <span style="color:rgba(100%, 65%, 0%, 0.6);">Orange</span> <br> 
+  50% opacity: <span style="color:rgba(100%, 65%, 0%, 0.5);">Orange</span> <br> 
+  40% opacity: <span style="color:rgba(100%, 65%, 0%, 0.4);">Orange</span> <br> 
+  30% opacity: <span style="color:rgba(100%, 65%, 0%, 0.3);">Orange</span> <br> 
+  20% opacity: <span style="color:rgba(100%, 65%, 0%, 0.2);">Orange</span> <br> 
+  10% opacity: <span style="color:rgba(100%, 65%, 0%, 0.1);">Orange</span> <br> 
+  0% opacity: <span style="color:rgba(100%, 65%, 0%, 0);">Orange</span> <br> 
+ </td><td><pre><code>&lt;span style="color:rgb(100%, 65%, 0%, 1);">
+ Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.9);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.8);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.7);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.6);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.5);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.4);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.3);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.2);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0.1);">
+Orange&lt;/span>&lt;br>
+&lt;span style="color:rgba(100%, 65%, 0%, 0);">
+Orange&lt;/span>&lt;br></code></pre></td></tr>
+ </table>
+<p>
+</p>
+
+<h2 id="global" class="group">Changing colours of your page</h2>
+<p>You can change the global colors of the background and text by adding CSS rules. You will have detailed information in the CSS lecture. Until then, you can use some inline style attributes <code>background-color:</code> to specifies the background colour of the element, and <code>color:</code> to specifies the colour of the text. Adding these to the <code>body</code> tag will apply the colours specified to the whole document. For example: <pre><code>&lt;body style="background-color:#ccc; color:pink"></code></pre>.
+
+<hr>
+<div class="alert alert-warning" role="alert">
+<h2 id="review" class="group">Review Questions</h2>
+
+<ul>
+<li>Question 1 - What is the colour code for a light blue in RGB using hexademical notation?</li>
+<li>Question 2 - What is the colour code for a light blue in RGB using functional notation?</li>
+<li>Question 3 - What is the colour code for a very transparent dark blue?</li>
+<li>Question 4 - What colour is #000080?</li>
+<li>Question 5 - Is #000080 exactly identical to #008?</li>
+<li>Question 6 - What is the six-digit hexadecimal colour code for #369?</li>
+</ul>
+
+</div>
+</div>
+
+<div class="row">
+    <!--Nav Bar -->
+    
+    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+        <ul id="sidebar" class="nav nav-stacked">
+            <li>
+                <a href="#colourName">Specifying a colour by name</a>
+            </li>
+            <li>
+                <a href="#colourValues">Specifying a colour by value</a>
+                <ul class="nav nav-stacked">
+                    <li><a href="#hexRGB">Hexadecimal RGB color values</a></li> 
+                    <li><a href="#hexMixer">Hexadecimal color mixer</a></li>
+                    <li><a href="#functionalRGB">Functional RGB color values</a></li>
+                    <li><a href="#RGBA">RGBA color values</a></li>
+                </ul>
+
+            </li>
+            <li>
+                <a href="#global">Changing colours of your page</a>
+            </li>
+            <li><a href="#review">Review Questions</a></li>
+        </ul>
+    </nav>
+</div>
+</main>
+
+<nav class="navbar navbar-default no-margin-bottom">
+<div class="container">
+<p class="navbar-text navbar-right">&copy; Copyright 2016-2021 <a href="https://www.westminster.ac.uk" class="navbar-link">University of Westminster</a></p>
+</div>
+</nav>
+<script type="text/javascript">
+// Change JQueryUI plugin names to fix name collision with Bootstrap.
+$.widget.bridge('uislider', $.ui.slider);
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="prism/prism.js"></script>
+<script src="prism/prism-line-numbers.js"></script>
+<script src="prism/prism-line-highlight.js"></script>
+<script>
+$('body').scrollspy({
+  target: '.bs-docs-sidebar',
+  offset: 60
+});
+$("#sidebar").affix({
+  offset: {
+    top: 80
+  }
+});
+</script>
+<script>
+  $( function() {
+    function hexFromRGB(r, g, b) {
+      var hex = [
+        r.toString( 16 ),
+        g.toString( 16 ),
+        b.toString( 16 )
+      ];
+      $.each( hex, function( nr, val ) {
+        if ( val.length === 1 ) {
+          hex[ nr ] = "0" + val;
+        }
+      });
+      return hex.join( "" ).toUpperCase();
+    }
+    function refreshSwatch() {
+      var red = $( "#red" ).slider( "value" ),
+        green = $( "#green" ).slider( "value" ),
+        blue = $( "#blue" ).slider( "value" ),
+        hex = hexFromRGB( red, green, blue );
+      $( "#swatch" ).css( "background-color", "#" + hex );
+    }
+ 
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  } );
+  </script><script>
+  $( function() {
+    function hexFromRGB(r, g, b) {
+      var hex = [
+        r.toString( 16 ),
+        g.toString( 16 ),
+        b.toString( 16 )
+      ];
+      $.each( hex, function( nr, val ) {
+        if ( val.length === 1 ) {
+          hex[ nr ] = "0" + val;
+        }
+      });
+      return hex.join( "" ).toUpperCase();
+    }
+    function refreshSwatch() {
+      var red = $( "#red" ).slider( "value" ),
+        green = $( "#green" ).slider( "value" ),
+        blue = $( "#blue" ).slider( "value" ),
+        hex = hexFromRGB( red, green, blue );
+      $( "#swatch" ).css( "background-color", "#" + hex );
+	  $( "#valHex" ).val( hex );
+    }
+ 
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+	
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  } );
+  </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRNL1F43P4');
+</script>
+<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+</html>
