@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <title>Title of the web page </title>
+
+
+  <style>
+    #wrapper{
+        width: 600px;
+        margin-left: auto;
+		margin-right: auto;
+    }
+	
+	 h1{
+		font-size: 30px;
+		font-family:"Lucida Grande",  "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+		text-align: center;
+	  }
+
+    form{
+        font-family: Verdana;
+        font-size: 14px;
+    }
+
+    label{
+        float: left;
+        width: 20%;
+		font-size: 14px;
+		font-family:"Lucida Grande",  "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+		padding: 1px;
+    }
+	  input, textarea, select {
+		  margin-top:2px;
+		  margin-bottom:2px;
+	  }
+	  
+	  fieldset{
+		  	border-radius: 15px;
+			margin-bottom: 10px;
+	  }
+
+    legend{
+     	font-weight: 900; 
+     	background-color: rgba(88%, 88%, 219%, 0.5);
+		
+    }
+
+    #filed1{
+    	background-color: #c4d7f5;
+    }
+
+    #filed2{
+    	background-color: #f5dfc4;
+    }
+
+    #filed3{
+   	 	background-color: #b08856;
+    }
+	  
+	.rounded-button {
+		padding: 10px 20px;
+		background-color: #86ABD4; /* Change the color as needed */
+		color: white;
+		border: solid 1px;
+		border-radius: 5px; /* Adjust the value to control the roundness of the corners */
+		cursor: pointer;
+		float: right;
+		margin-right: 10px;
+	}
+
+    
+  </style>
+
+
+</head>
+  
+<body>
+  <!-- this is a comment that will not be displayed -->
+
+  <div id="wrapper">
+ 
+  <h1>Hotel Reservation</h1>
+  <form>
+
+    <fieldset id="filed1">
+        <legend>Personal Details</legend>
+	
+            <label for="firstname">First name: </label>
+                <input type="text" name="firstname" id="firstname" size="20"
+                placeholder="Enter your first name" required> 
+        <br>
+            <label for="surname">Surname: </label>
+                <input type="text" name="surname" id="surname" size="20" 
+                placeholder="Enter your surname" required> 
+        <br>
+            <label for="email">Email address: </label>
+                <input type="email" id="email" name="email">
+        <br>
+            <label for="password">Setup a password: </label>
+                <input type="password" name="pin" id="password" size="50" 
+                placeholder="Min 8 characters, use at least 1 caps, no special characters"
+                required>
+
+    </fieldset>
+
+    <fieldset id="filed2">
+        <legend>Booking Details</legend>
+
+            <label for="checkIn">CheckIn day:</label>
+                <input type="date" id="checkIn" name="checkIn" value="2023-02-14" 
+                required> 
+        	<br>
+            <label for="quantity">Number of days: </label>
+                <input type="number" id="quantity" name="quantity">
+        	<br><br>
+            <input type="radio" name="roomType" id="single" value="single">
+            	<label for="single">Single Room</label><br><br>
+            <input type="radio" name="roomType" id="double" value="double">
+           		<label for="double">Double Room</label><br><br>
+            <input type="radio" name="roomType" id="king" value="king">
+           		<label for="king">King Room</label><br><br>
+
+            <label for="breakfast">Breakfast:</label>
+            <select name="breakfast" id="breakfast">
+                <option value="yes">Include</option>
+                <option value="no">Not Include</option>
+            </select>
+			<br>
+            <label for="requirements">Special Requirements: </label>
+            <textarea name="requirements" id="requirements" 
+                rows="5" cols="20">Please provide any special requirements
+            </textarea>
+</fieldset>
+
+<fieldset id="filed3">
+	<input type="submit" name="button" value="Send" class="rounded-button">
+    <input type="reset" name="button" value="Reset" class="rounded-button">
+
+</fieldset>
+    
+	
+</form>
+
+</div>
+<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+
+</html>
