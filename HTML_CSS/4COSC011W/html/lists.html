@@ -133,455 +133,82 @@
     </div>
   </nav>
 
-
-
-
   <main class="container language-html">
     <div class="col-md-9" role="main">
       <h1>Lists</h1>
 
-      <h2 id="unordered" class="group">Unordered Lists</h2>
-      <p>There are several types of list, an un-ordered list can be created by the following markup:
-
-
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul>
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-            </ul>
-          </td>
-          <td>
-            <pre><code>&lt;ul>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-&lt;/ul></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      <p>Nested lists can be done as follows. Note that mark nested lists up correctly
-        you need to understand that any nested list is actually a child of a list item.
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul>
-              <li>Item one of list </li>
-              <li>Item two of list
-                <ul>
-                  <li>Subitem one of item two </li>
-                  <li>Subitem two of item two </li>
-                </ul>
-              </li>
-              <li>Item three of list </li>
-            </ul>
-          </td>
-          <td>
-            <pre><code>&lt;ul>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list 
-	&lt;!-- Closing &lt;/li> tag not placed here! -->
+      <h2>Unordered Lists</h2>
+      <ul>
+        <li style="list-style-type: disc">Item 1</li>
+        <ul>
+          <li style="list-style-type: disc">Item 1.1</li>
+          <li style="list-style-type: circle">Item 1.2</li>
+          <li style="list-style-type: square">Item 1.3</li>
+          <li style="list-style-type: none">Item 1.4</li>
+          <li>Item 1.5</li>
+        </ul>
+        <li style="list-style-type: square">Item 2</li>
+        <li style="list-style-type: none">Item 3</li>
+      </ul>
+      <pre><code>&lt;ul>
+    &lt;li style="list-style-type: disc">Item 1</li>
     &lt;ul>
-        &lt;li>Subitem one of item two &lt;/li>
-        &lt;li>Subitem two of item two &lt;/li>
+        &lt;li style="list-style-type: disc">Item 1.1</li>
+        &lt;li style="list-style-type: circle">Item 1.2</li>
+        &lt;li style="list-style-type: square">Item 1.3</li>
+        &lt;li style="list-style-type: none">Item 1.4</li>
+        &lt;li>Item 1.5</li>
     &lt;/ul>
-    &lt;/li>   &lt;!-- Closing &lt;/li> for item two here -->
-    &lt;li>Item three of list &lt;/li>
+    &lt;li style="list-style-type: square">Item 2</li>
+    &lt;li style="list-style-type: none">Item 3</li>
 &lt;/ul></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      <p>It is also possible to specify the appearance of unordered lists:
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul>
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-            </ul>
-          </td>
-          <td>
-            <pre><code>&lt;ul>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-&lt;/ul></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul style="list-style-type: circle;">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-            </ul>
-          </td>
-          <td>
-
-            <pre><code class="language-css">ul { 
- list-style-type: circle;
-}</code></pre>
-            <pre><code>&lt;ul>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-&lt;/ul></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul style="list-style-type: square;">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-            </ul>
-          </td>
-          <td>
-            <pre><code class="language-css">ul { 
- list-style-type: square;
-}</code></pre>
-            <pre><code>&lt;ul>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-&lt;/ul></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul>
-              <li style="list-style-type: disc;">Item one of list </li>
-              <li style="list-style-type: circle;">Item two of list</li>
-              <li style="list-style-type: square;">Item three </li>
-              <li style="list-style-type: none;">Item four </li>
-            </ul>
-          </td>
-          <td>
-            <pre><code class="language-css">ul.a {list-style-type: disc;}
-ul.b {list-style-type: circle;}
-ul.c {list-style-type: square;}
-ul.d {list-style-type: none; }
-</code></pre>
-
-            <pre><code>&lt;ul>
-    &lt;li class="a">Item one of list &lt;/li>
-    &lt;li class="b">Item two of list &lt;/li>
-    &lt;li class="c">Item three &lt;/li>
-    &lt;li class="d">Item four &lt;/li>
-&lt;/ul></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      <h2 id="ordered" class="group">Ordered Lists</h2>
-      <p>An ordered list is similar to an un-ordered list, except that each entry is consecutively numbered.
-
-
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol>
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      <p>Nested lists can be done as follows:
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol>
-              <li>Item one of list </li>
-              <li>Item two of list
-                <ol>
-                  <li>Subitem one of item two </li>
-                  <li>Subitem two of item two </li>
-                </ol>
-              </li>
-              <li>Item three of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list 
-    &lt;ol>
-        &lt;li>Subitem one of item two &lt;/li>
-        &lt;li>Subitem two of item two &lt;/li>
-    &lt;/ol>
-    &lt;/li> 
-    &lt;li>Item three of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-
-      <p>It is also possible to specify the appearance of unordered lists:
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol>
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li>Item three of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li>Item three of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol style="list-style-type: upper-alpha;">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li>Item three of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code  class="language-css">ol {
-   list-style-type: upper-alpha;
-}</code></pre>
-
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li>Item three of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol style="list-style-type: lower-alpha;">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li>Item three of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code  class="language-css">ol {
-   list-style-type: lower-alpha;
-}</code></pre>
-
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li>Item three of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol style="list-style-type: upper-roman;">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li>Item three of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code class="language-css">ol {
-   list-style-type: upper-roman;
-}</code></pre>
-
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li>Item three of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol style="list-style-type: lower-roman;">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li>Item three of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code class="language-css">ol {
-   list-style-type: lower-roman;
-}</code></pre>
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li>Item three of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      <p>It is possible to give a start value to the ordered list or to reset the counter:
-
-
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol start="3">
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li>Item three of list </li>
-              <li>Item four of list </li>
-            </ol>
-          </td>
-          <td>
-
-            <pre><code>&lt;ol start="3">
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li>Item three of list &lt;/li>
-    &lt;li>Item four of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ol>
-              <li>Item one of list </li>
-              <li>Item two of list </li>
-              <li value="1">Item three of list </li>
-              <li>Item four of list </li>
-            </ol>
-          </td>
-          <td>
-            <pre><code>&lt;ol>
-    &lt;li>Item one of list &lt;/li>
-    &lt;li>Item two of list &lt;/li>
-    &lt;li value="1">Item three of list &lt;/li>
-    &lt;li>Item four of list &lt;/li>
-&lt;/ol></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-      <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
-            aria-hidden="true"></span> Note:</strong> <code>start</code> and <code>value</code> attributes were
-        deprecated in HTML 4.01, but now SUPPORTED in HTML5.</div>
-
-      <h2 id="description" class="group">Description Lists</h2>
-      <p>A description list is used to display name/value pairs such as terms and their definitions.
-
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <dl>
-              <dt>Definition tag.</dt>
-              <dd>Text of the definition list. Which may
-                stretch over several lines.</dd>
-              <dt>Another definition tag.</dt>
-              <dd>Text of the definition list.</dd>
-            </dl>
-          </td>
-          <td>
-            <pre><code>&lt;dl>
-    &lt;dt>Definition tag.&lt;/dt>
-        &lt;dd>Text of the definition list. Which may 
-        stretch over several lines.&lt;/dd>
-    &lt;dt>Another definition tag.&lt;/dt>
-        &lt;dd>Text of the definition list.&lt;/dd>
-&lt;/dl></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      and the same example without any styling:
-      <a class="jsbin-embed" href="https://jsbin.com/tuyubi/1/embed?html,output">JS Bin on jsbin.com</a>
-      <script src="https://static.jsbin.com/js/embed.min.js?3.39.15"></script>
-      <p></p>
-
-      <!--
-<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> It is a common practice for the definition tag to be prefixed with an image, see next example.</div>
-
--->
-
-      <h3 class="subgroup" id="descriptionCustom">Lists with image bullets</h3>
-      <p>It is possible to use your own graphics as bullets in an unordered list:
-      <table class="table table-bordered">
-        <tr>
-          <th>Displayed by browser</th>
-          <th>HTML markup required</th>
-        </tr>
-        <tr>
-          <td style="vertical-align:middle">
-            <ul>
-              <li style=" list-style-image: url('claretball.gif');"> Item 1 </li>
-              <li style=" list-style-image: url('claretball.gif');"> Item 2 </li>
-              <li style=" list-style-image: url('claretball.gif');"> Item 3 </li>
-              <li style=" list-style-image: url('claretball.gif');"> Item 4 </li>
-            </ul>
-          </td>
-          <td>
-            <pre><code class="language-css">ul {
-  list-style-image: url('claretball.gif');
-}</code></pre>
-            <pre><code>&lt;ul>
-     &lt;li> Item 1 &lt;/li>
-     &lt;li> Item 2 &lt;/li>
-     &lt;li> Item 3 &lt;/li>
-     &lt;li> Item 4 &lt;/li>
-&lt;/ul></code></pre>
-          </td>
-        </tr>
-      </table>
-      </p>
-
-      <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
-            aria-hidden="true"></span></strong>
-        Images will be discussed in more details in Lecture 3. </div>
-
       <hr>
+
+      <h2>Ordered Lists</h2>
+      <ol>
+        <li>Item 1</li>
+        <ol>
+          <li style="list-style-type: upper-alpha">Item 1.1</li>
+          <li style="list-style-type: lower-alpha">Item 1.2</li>
+          <li style="list-style-type: upper-roman" start="4">Item 1.3</li>
+          <li style="list-style-type: lower-roman" value="7">Item 1.4</li>
+          <li>Item 1.5</li>
+        </ol>
+        <li style="list-style-type: upper-alpha">Item 2</li>
+        <li style="list-style-type: upper-roman">Item 3</li>
+      </ol>
+      <pre><code>&lt;ul>
+    &lt;li style="list-style-type: disc">Item 1</li>
+    &lt;ul>
+        &lt;li style="list-style-type: disc">Item 1.1</li>
+        &lt;li style="list-style-type: circle">Item 1.2</li>
+        &lt;li style="list-style-type: square" start="4">Item 1.3</li>
+        &lt;li style="list-style-type: none" value="7">Item 1.4</li>
+        &lt;li>Item 1.5</li>
+    &lt;/ul>
+    &lt;li style="list-style-type: square">Item 2</li>
+    &lt;li style="list-style-type: none">Item 3</li>
+&lt;/ul></code></pre>
+      <hr>
+
+      <h2>Description Lists</h2>
+      <dl>
+        <dt>Definition tag.</dt>
+        <dd>Text of the definition list. Which may
+          stretch over several lines.</dd>
+        <dt>Another definition tag.</dt>
+        <dd>Text of the definition list.</dd>
+      </dl>
+      <pre><code>&lt;dl>
+    &lt;dt>Description Tag&lt;/dt>
+    &lt;dd>Description Data&lt;/dd>
+    &lt;dt>Another definition tag.&lt;/dt>
+    &lt;dd>Text of the definition list.&lt;/dd>
+&lt;/dl></code></pre>
+      <hr>
+
       <div class="alert alert-warning" role="alert">
         <h2 id="review" class="group">Review Questions</h2>
-
         <ul>
           <li>Question 1 - Which HTML tags are used to create an unordered list</li>
           <li>Question 2 - Which HTML tags are used to create an ordered list</li>
@@ -600,70 +227,6 @@ ul.d {list-style-type: none; }
         </ol>
       </div>
     </div>
-
-    <div class="row">
-      <!--Nav Bar -->
-
-      <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
-        <ul id="sidebar" class="nav nav-stacked">
-          <li>
-            <a href="#unordered">Unordered Lists</a>
-          </li>
-          <li>
-            <a href="#ordered">Ordered Lists</a>
-          </li>
-          <li>
-            <a href="#description">Description Lists</a>
-          </li>
-          <li>
-            <a href="#descriptionCustom">Lists with image bullets</a>
-          </li>
-          <li><a href="#review">Review Questions</a></li>
-        </ul>
-      </nav>
-    </div>
-  </main>
-
-  <nav class="navbar navbar-default no-margin-bottom">
-    <div class="container">
-      <p class="navbar-text navbar-right">&copy; Copyright 2016-2022 <a href="https://www.westminster.ac.uk"
-          class="navbar-link">University of Westminster</a></p>
-    </div>
-  </nav>
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-    crossorigin="anonymous"></script>
-
-  <script src="prism/prism.js"></script>
-  <script src="prism/prism-line-numbers.js"></script>
-  <script src="prism/prism-line-highlight.js"></script>
-  <script>
-    $('body').scrollspy({
-      target: '.bs-docs-sidebar',
-      offset: 60
-    });
-    $("#sidebar").affix({
-      offset: {
-        top: 80
-      }
-    });
-  </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-RRNL1F43P4');
-  </script>
-  <br>
-
-
-  <br>
-  <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
 </body>
 
 </html>
