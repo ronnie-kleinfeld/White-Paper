@@ -190,56 +190,50 @@
 		<div class="col-md-9" role="main">
 			<h1>Styling &amp; CSS</h1>
 
-
-			<!---  --->
-			<h2 id="stylingLinks" class="group">Styling Links</h2>
-			Link pseudo-classes - you can also style links differently depending on what state they are in. There are
-			four states:
-			<pre><code class="language-css">a:link {}</code> - Defines style for unvisited links
+			<h2>Styling Links</h2>
+			<h3>4 style_example9_position_absolute</h3>
+			<pre>
+<code class="language-css">a:link {}</code> - Defines style for unvisited links
 <code class="language-css">a:visited {}</code> - Defines style for visited links
 <code class="language-css">a:hover {}</code> - Style for hovered links (mouse over)
-<code class="language-css">a:active {}</code> - Defines style for active links (moment clicked)
-</pre>
-			Need the order – link-visited-hover-active.
+<code class="language-css">a:active {}</code> - Defines style for active links (moment clicked)</pre>
 
+			<h3>color</h3>
 			<pre><code class="language-css">a:link { color: green; } 
 a:visited { color: aqua; } 
 a:hover { color: blue; }
 a:active { color: red; }</code></pre>
-			E.g, the link changes colour depending on its current state. Can also change the text-decoration (none,
-			underline, overline).
+
+			<h3>underline decoration</h3>
 			<pre><code class="language-css">a { text-decoration: none; }</code></pre>
-			Can also create rollover effect with:
+
+			<h3>rollover effect</h3>
 			<pre><code class="language-css">a:hover { color: blue; background-color: magenta; }</code></pre>
 
-			<pre data-line="6-7"><code class="language-html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-	&lt;title&gt;An Introduction to Style Sheets&lt;/title&gt; 
-	&lt;style&gt;      
-	a:link { color: green; } 
+			<h3>sample</h3>
+			<a href="nopage.html">this is a hyper link</a>
+			<pre><code>&lt;a href=&quot;nopage.html&quot;&gt;this is a hyper link&lt;/a&gt;
+&lt;style&gt;
+	a:link { color: green; }
 	a:hover { color: blue; background-color: magenta; }
-	&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;An example of links:&lt;/h1&gt;    
-&lt;p&gt;CSS can be used to modify the way links are displayed:
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href="nopage.html"&gt;link1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="nopage.html"&gt;link2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="nopage.html"&gt;link3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-			<form><input value="View result" onclick='window.open("examples/link_style.html")' type="button"> </form>
+&lt;/style&gt;</code></pre>
+			<style>
+				a:link {
+					color: green;
+				}
 
+				a:hover {
+					color: blue;
+					background-color: magenta;
+				}
+			</style>
 
-			<br>
+			<h2>Styling Lists</h2>
 
 
 			<!--  -->
 
-			<h2 id="stylingLists" class="group">Styling Lists</h2>
+			<h2 id="stylingLists" class="group"></h2>
 
 			CSS can be applied to lists.
 			<ul>
@@ -919,7 +913,8 @@ z-index: -1;
 
 			<p>When using CSS float for layouts it is common to float a block-level element such as
 				<code>&lt;div&gt;</code> (or one of the HTML5 new elements like <code>article</code>,
-				<code>section</code>, <code>aside</code>). The floated elements will require a width.</p>
+				<code>section</code>, <code>aside</code>). The floated elements will require a width.
+			</p>
 
 
 			<pre><code>&lt;!doctype html&gt;
