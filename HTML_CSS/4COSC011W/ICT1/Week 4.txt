@@ -1,0 +1,37 @@
+Week 4
+
+Question 1
+Which is an example of a label that is explicitly associated with a form input ?
+<label for="firstname">First name:</label> 
+<input type="text" name="firstname" id="firstname" > 
+
+Question 2
+How do we create a group of radio buttons?
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+
+Question 3
+Which HTML5 attribute is used to specify that an input field must be filled out?
+required
+
+Question 4
+What will happen if the user enters a name and surname in the appropriate text fields and then presses the submit button?
+<form action="some_page.php">
+    Name: < input type="text" name="name">
+</form > 
+<form action="some_page.php">
+    Surname: < input type="text" name="surname">
+    <input type="submit">
+</form >
+The data entered in the surnamefield will besubmitted to 'some_page.php'
+
+Question 5
+Which tags are used to create a pull-down menu:
+<select> and <option>
+
+Question 6
+Which of the following form controls are valid input types?
+<input type="number">
+<input type="reset">
+<input type="checkbox">
+<input type="email">

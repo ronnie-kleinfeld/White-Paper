@@ -1,0 +1,45 @@
+Week 1
+
+Question 1
+Which doctype is correct for HTML 5?
+<!DOCTYPE html>
+
+Question 2
+Which snippet of code is correct?
+<body>
+<h1>Testing</h1>
+</body>
+
+Question 3
+Which snippet of code is correct?
+<head>
+<title>Testing</title>
+</head>
+
+Question 4
+HTML tags and HTML elements the same thing. 
+False
+
+Question 5
+Which html tag would you use to define an embedded style sheet?
+<style>
+
+Question 6
+Which property do you need to change the text color of an element?
+color
+
+Question 7
+Match the CSS style to the correct description.
+1 .p {}         a class named p
+2 #p {}         an id named p
+3 p {}          all <p> tags
+4 div  p { }    <p> tags nested inside <div> tags
+5 div, p { }    both <p> and <div> tags  
+
+Question 8
+Match the following colour to the corrsponding HTML Hexadecimal RGB color values.
+1 Red           #FF0000
+2 Green         #00FF00
+3 Blue          #0000FF
+4 White         #FFFFFF
+5 Black         #000000
