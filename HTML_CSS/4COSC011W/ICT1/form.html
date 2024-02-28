@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tables</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        fieldset {
+            background-color: beige;
+            margin-bottom: 5px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        legend {
+            color: blueviolet;
+        }
+
+        label {
+            float: left;
+            width: 20%;
+        }
+
+        [type="reset"],
+        [type="submit"] {
+            border-radius: 5px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="file.asp" method="post">
+        <fieldset>
+            <legend>Details</legend>
+            <label for="nameid">Name:</label>
+            <input type="text" name="name" id="nameid" size="20" value="value" maxlength="8">
+            <br>
+
+            <label for="pin">Password:</label>
+            <input type="password" id="pin" name="pin" size="5">
+            <br>
+
+            <textarea name="name" rows="5" cols="20">text</textarea>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>More Details</legend>
+            <input type="radio" name="delivery" id="am" value="am">
+            <input type="radio" name="delivery" id="pm" value="pm">
+            <br>
+
+            <input type="checkbox" value="coffee" checked>
+            <input type="checkbox" value="coke">
+            <br>
+
+            <select name="topping">
+                <option value="cinnamon">Cinnamon</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="vanila">Vanila</option>
+            </select>
+            <br>
+
+            <select name="topping" multiple>
+                <option value="cinnamon">Cinnamon</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="vanila">Vanila</option>
+            </select>
+            <br>
+
+            <input list="termsList">
+            <datalist id="tempList">
+                <option value="1st">
+                <option value="2nd">
+            </datalist>
+            <br>
+
+            <input type="tel">
+        </fieldset>
+
+        <fieldset>
+            <input type="reset">
+            <input type="submit">
+        </fieldset>
+    </form>
+</body>
+
+</html>
