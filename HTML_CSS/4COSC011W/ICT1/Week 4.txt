@@ -1,7 +1,7 @@
 Week 4
 
 Question 1
-Which is an example of a label that is explicitly associated with a form input ?
+Which is an example of a label that is explicitly associated with a form input?
 <label for="firstname">First name:</label> 
 <input type="text" name="firstname" id="firstname" > 
 
