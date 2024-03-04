@@ -38,13 +38,12 @@ public class PlaneManagement {
     }
 
     public void start() {
-        showMenu();
+        ConsoleHelper.println();
+        ConsoleHelper.printlnGreen("Welcome to the Plane Management application");
         askForOption();
     }
 
     private void showMenu() {
-        ConsoleHelper.println();
-        ConsoleHelper.printlnGreen("Welcome to the Plane Management application");
         ConsoleHelper.println();
         ConsoleHelper.println("*************************************************");
         ConsoleHelper.println("*                MENU OPTIONS                   *");
@@ -63,6 +62,7 @@ public class PlaneManagement {
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
+            showMenu();
             ConsoleHelper.printBlue("Please select an option: ");
             choice = scanner.nextInt();
             ConsoleHelper.println();
