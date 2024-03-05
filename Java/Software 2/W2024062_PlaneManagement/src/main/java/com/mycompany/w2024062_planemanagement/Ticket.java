@@ -7,6 +7,7 @@ import java.io.IOException;
 // row A,B,C,D
 // seat 1-12
 public class Ticket {
+
     private int seat;
     private int row;
     private PriceLevelEnum priceLevel;
@@ -49,11 +50,11 @@ public class Ticket {
 
     public int getPrice() {
         switch (getPriceLevel()) {
-            case PriceLevelEnum.firstClass:
+            case firstClass:
                 return 200;
-            case PriceLevelEnum.business:
+            case business:
                 return 180;
-            case PriceLevelEnum.tourist:
+            case tourist:
                 return 150;
         }
         return -1;
@@ -80,10 +81,10 @@ public class Ticket {
 
     public String toString() {
         String message = String.format(
-                "Ticket seat: " + (seat + 1) +
-                        ", row: " + getRowLetter() +
-                        ", price: " + getPrice() +
-                        ", person: " + person.toString());
+                "Ticket seat: " + (seat + 1)
+                        + ", row: " + getRowLetter()
+                        + ", price: " + getPrice()
+                        + ", person: " + person.toString());
         return message;
     }
 
