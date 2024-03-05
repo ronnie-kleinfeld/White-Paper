@@ -11,6 +11,10 @@ public class PlaneManagement {
         chairs = new Chair[4][14];
         tickets = new Ticket[0];
 
+        initChairs();
+    }
+
+    private void initChairs() throws Exception {
         for (int row = 0; row < chairs.length; row++) {
             for (int seat = 0; seat < chairs[row].length; seat++) {
                 PriceLevelEnum priceEnum;
@@ -103,7 +107,7 @@ public class PlaneManagement {
         } while (choice != 0);
     }
 
-    public void buy_seat() {
+    private void buy_seat() {
         ConsoleHelper.println("Buy a Seat:");
         ConsoleHelper.println("===========");
 
@@ -120,7 +124,7 @@ public class PlaneManagement {
         }
     }
 
-    public void cancel_seat() {
+    private void cancel_seat() {
         ConsoleHelper.println("Cancel a Seat:");
         ConsoleHelper.println("==============");
 
@@ -136,7 +140,7 @@ public class PlaneManagement {
         }
     }
 
-    public void show_seating_plan() {
+    private void show_seating_plan() {
         ConsoleHelper.println("Seating Plan:");
         ConsoleHelper.println("=============");
 
@@ -165,7 +169,7 @@ public class PlaneManagement {
         }
     }
 
-    public void find_first_available() {
+    private void find_first_available() {
         ConsoleHelper.println("Find first available:");
         ConsoleHelper.println("=====================");
 

@@ -4,7 +4,6 @@ package com.mycompany.w2024062_planemanagement;
 // row A,B,C,D
 // seat 1-12
 public class Chair {
-
     private int seat;
     private int row;
     private PriceLevelEnum priceLevel;

@@ -7,7 +7,6 @@ import java.io.IOException;
 // row A,B,C,D
 // seat 1-12
 public class Ticket {
-
     private int seat;
     private int row;
     private PriceLevelEnum priceLevel;
