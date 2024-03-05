@@ -129,6 +129,7 @@ public class PlaneManagement {
 
         try {
             chair.setAsAvailable();
+            tickets = TicketsHelper.removeTicketByRowSeat(tickets, chair.getRow(), chair.getSeat());
             ConsoleHelper.printlnGreen(chair.toString() + " set as available");
         } catch (Exception ex) {
             ConsoleHelper.printlnRed(ex.getMessage());
