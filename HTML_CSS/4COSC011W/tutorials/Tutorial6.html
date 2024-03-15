@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Web Design and Development - Tutorial 5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<style>
+		h1,
+		h2 {
+			text-align: center;
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		h3 {
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			margin-top: 30px;
+		}
+
+		body {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			font-weight: 200;
+			font-size: 16px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.myinfo {
+			background-color: #f5f2f0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			font-weight: 500;
+		}
+
+		img {
+			border: thin solid #333;
+			margin: 5px;
+		}
+
+		figcation {
+			text-align: center;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<h1>Web Design and Development</h1>
+	<h2>Tutorial 6 - A simple maths game Part 2</h2>
+	<br>
+	<!--<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This is the <strong>third page of a full Portfolio</strong> that you will create and upload on the University Web Server. <strong>This Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark</strong>.</div>-->
+
+	<!--	
+<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></strong> This is the <strong>fifth page of a full Portfolio</strong>. This Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark</strong>.</div>-->
+
+	<h3>Task 1 - Create your Web Page content</h3>
+
+	<!-- <p>Create a file and save it on your home <strong>h:</strong> drive as <strong>tutorial3.html</strong> for page 1 and another suitable file name for page 2. <div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Important Notes:</strong> <ul><li>No space in the filename</li><li>both files must have the .html extension</li><li>If you save your work outside of your h: drive, it will be deleted</li></ul> </div>
+	-->
+
+	<p>You might want to copy your previous JavaScript solution (tutorial 5) to a new file and save it on your home
+		<strong>h:</strong> drive as <strong>tutorial6.html</strong>.
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Notes:</strong>
+		<ul>
+			<li>No space in the filename</li>
+			<li>Your file must have the .html extension</li>
+			<li>If you save your work outside of your h: drive, it will be deleted</li>
+		</ul>
+	</div>
+	Your Web Pages should follow the following specifications:</p>
+
+	<h4>HTML (identical to tutorial 5)</h4>
+
+	Your Web Pages should follow the following specifications.
+
+	<ul>
+		<li>Tutorial 6 for the title.</li>
+		<li>'A Simple Maths Game' as the page heading. </li>
+		<li>Create the placeholder on your page for one maths question, followed by the placeholder for the user's
+			answer to that question, and then another place holder for the feedback for that question: For example, use
+			a span with the id="question1", a span with the id="answer1" and a span with the id="feedback1". </li>
+		<li>You may put all this inside a separate paragraph, so that one question block looks like this: <br><img
+				src="Tutorial5&6_images/HTMLQuestion.png" alt="HTML code for one question block" width="300px"></li>
+		<li>Repeat this 10 times, and update the id so that they match the question numbers (question2, answer2 and
+			feedback2 for the second question, etc.). </li>
+
+	</ul>
+	<h4>CSS (identical to tutorial 5)</h4>
+	You will declare rules for 2 classes: correct and incorrect as follow:
+	<ul>
+		<li>the correct class will display text in green colour and bold font</li>
+		<li>the incorrect class will display text in red colour and bold font</li>
+	</ul>
+
+	<h4>JavaScript</h4>
+	<h5>Overview</h5>
+	<p>The overview is identical to tutorial 5 except that this time the questions are generated randonmly see Process
+		section</p>
+	<ul>
+		<li>Using JavaScript, you will prompt the user to answer 10 maths questions. You should prompt the user 10 times
+			with a different question each time.</li>
+		<li>Record the answers and compare them to the correct answers.</li>
+		<li>After each answer or once the user has answered all 10 questions, display on the page each question in the
+			question placeholders, the users's answer in the answer's placeholders and a message saying whether the
+			answer was correct or not in the feedback's placeholders. In addition, use a tick symbol (&checkmark;) using
+			the <code>&amp;checkmark;</code> sequence if the answer is correct, and a cross symbol (&cross;) using the
+			<code>&amp;cross;</code> sequence if it is incorrect</li>
+		<li>In case of an incorrect answer, also display what the correct answer is.</li>
+		<li>The symbols and feedback to the user need to be in a different colours. Use 2 CSS classes that you declared
+			earlier for this. </li>
+		See the images below to get an idea of the sequence: <br>
+		<div class="center">
+			<img src="Tutorial5&6_images/JS1.png" alt="" width="400px"> <img src="Tutorial5&6_images/JS2.png" alt=""
+				width="400px"><br>
+			<img src="Tutorial5&6_images/JS3.png" alt="" width="400px"> <img src="Tutorial5&6_images/JS4.png" alt=""
+				width="400px"><br>
+			<img src="Tutorial5&6_images/TutJS1.png" alt="" width="400px">
+		</div>
+	</ul>
+
+	<h5>Process</h5>
+	<p>We now want to generate the questions randomly. The questions are composed of 2 random numbers, and 3 possible
+		operators (+, -, *). <br>
+		<b>hint 1: </b> <code>let x = Math.floor(Math.random()*101);</code> will declare a variable x and initialise it
+		with a random number between 0 and 100.<br><br>
+	<ol>
+		<li>Let's start with 1 question... <ol>
+				<li>Remove all but one question from the JavaScript code you wrote for tutorial 5. </li>
+				<li>We will need two random numbers for that question. Let's call them <code>x</code> and <code>y</code>
+				</li>
+				<li>Identify in your code where <code>x</code> and <code>y</code> will be used. Let's take a pen and
+					paper for this. Write the code for your 1st question and annotate it with where the variables will
+					need to replace fixed numbers.
+				<li>Prompt the user with your first question, and store their answer in a variable.</li>
+				<li>You will now need to calculate what the correct answer is</li>
+				<li>Display the text of that question in the question1 span, and the user's answer in the answer1 span.
+				</li>
+				<li>Compare the answer with the correct answer</li>
+				<li>If the answer was correct, add a tick symbol (<code>&amp;checkmark;</code>) in the feedback1 span
+					and add the class "correct" to that span (you can use
+					<code>document.getElementById("feedback1").classList.add("correct")</code> for this</li>. If the
+				answer was incorrect, add the cross symbol (<code>&amp;cross;</code>) in the feedback1 span and add the
+				class "incorrect" to that span
+		</li>
+	</ol>
+	</li>
+	<li>Test your code once with a correct answer and once with an incorrect answer</li>
+	<li>If your code works as expected, ideally, we would want to repeat this 10 times... But let's only repeat it once
+		for now, so we cover 2 questions...</li>
+	<li>As for tutorial 5, calculate the score and add it to the score placeholder and test your code a number of times.
+	</li>
+	<li>Now let's change the background colour of the page based on the score. For example, change the background to
+		light red in case of a score below 20.<br><b>hint 3:</b> you will need to change the background within
+		JavaScript using the HTML DOM Style Object. E.g. <code>document.body.style.backgroundColor="purple"</code></li>
+	<li>If you are struggling with the code, then just repeat this for your 10 questions. If you feel confortable with
+		the code and you're after some challenges, move on to the additional challenges instead where we will use a loop
+		instead. In this case remove your javaScript code for the second question, and start the "Additional Challenges"
+	</li>
+	</ol>
+
+	<br>
+	<b>Additional Challenges</b> - Consider generating the questions and associated display within a loop. However, you
+	will need to experiment with how you will
+	generate the different operators (+, -, *) within the loop: <ol>
+
+		<li>Actually it will prove complicated to create 10 separate variables for each of the ones that are needed for
+			one question. It will make a lot more sense to use arrays for these, so got ahead and replace your variables
+			with arrays (you can declare an empty array using <code>const questionText = []</code>. </li>
+		<li>Likewise, we need to use arrays for the elements on the page. So we will use classes instead of ids for all
+			the spans that relate to questions. So go ahead and replace <code>id="question1"</code> with
+			<code>class="question"</code>, etc.</li>
+
+
+		<li>Now, instead of using <code>getElementById</code> to access an element, we will use
+			<code>getElementsByClassName</code> to retrieve an array of elements with the same class name.</li>
+		<li>Whereever you use arrays, you can use the array methods or use the index used as part of the for loop. </li>
+		<li>Test your code with a combination of correct and incorrect answers, then all correct and then all incorrect.
+		</li>
+		<li>Add a button to your webpage and allow the user to start the quiz by clicking the form button.<br> <b>hint
+				4:</b> you will need to place your JavaScript code into a function.</li>
+
+
+	</ol>
+
+	<h3>Task 2 - Validate your code</h3>
+	<ul>
+		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+				style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your
+			code is correct before uploading it to the webserver. If it is not consult the validator's comments to
+			correct your code. Keep checking until the code is 100% correct.
+		</li>
+	</ul>
+
+	<h3>Task 3 - Upload your page to the Web server and set the correct permissions</h3>
+	<ul>
+		<li>Upload your work to the webDev folder</li>
+		<li>Check that your work is accessible online. The URL for the page will be
+			<strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial5.html</strong> where
+			<strong>wxxxxxxx</strong> is your registration number.</li>
+	</ul>
+
+	<h3>Task 4 - Share your design with your peers and comment on other's work.</h3>
+	<ul>
+		<li>
+			There are different ways you can implement the required interactivity. Share your solution with the rest of
+			the class and take the opportunity to exchange ideas and receive feedback. <b>To do so go to the module <a
+					href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9"
+					target="_blank">Padlet</a>, upload a screenshoot of your page, and provide the URL of the page on
+				your Unix account on the server</b>.
+		</li>
+	</ul>
+
+	<hr>
+	<address>Prepared by <a href="mailto:A.Colom@westminster.ac.uk">Anne-Gaelle Colom</a>,<br>
+		Last modified, February 2024 by <a href="mailto:D.Economou@westminster.ac.uk">Daphne Economou</a>
+
+		<br>
+		<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>

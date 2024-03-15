@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Colours</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link href="prism/prism.css" rel="stylesheet" />
+  <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+  <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+      color: #3387EB,
+        border-left: 1px solid #3387EB;
+    }
+
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+      padding-left: 18px;
+      font-weight: bold;
+      color: #3387EB;
+      background-color: transparent;
+      border-left: 2px solid #3387EB;
+    }
+
+    .back-to-top:hover,
+    .bs-docs-theme-toggle:hover {
+      color: #563d7c;
+      text-decoration: none;
+    }
+
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:focus,
+    .dropdown-menu>.active>a:hover {
+      background-image: none;
+      background-color: #3387EB;
+    }
+
+    th {
+      text-align: center;
+    }
+  </style>
+
+
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top navbar-html">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Module Info<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">General Information</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="team.html">Module Team</a></li>
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="unix.html">Introduction to Unix</a></li>
+              <li><a href="basicTags.html">Basic HTML tags</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="tables.html">Tables</a></li>
+              <li class="active video"><a href="colours.html">Colours</a></li>
+              <li><a href="images.html">Images</a></li>
+              <li><a href="links.html">Links & iframes</a></li>
+              <li><a href="special.html">Special Characters</a></li>
+              <li><a href="forms.html">Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+              <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+              <li><a href="cssElements.html">Styling Elements</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">JavaScript<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="js1.html">Introduction to JavaScript</a></li>
+              <li><a href="js2.html">Objects, Methods and Functions</a></li>
+              <li><a href="js3.html">JavaScript and Forms</a></li>
+              <li><a href="js4.html">JavaScript and the DOM</a></li>
+              <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <main class="container language-html">
+    <div class="col-md-9" role="main">
+      <h1>Colors</h1>
+
+      <h2>Usinge colors</h2>
+      <code>&lt;style="color:#000000"></code>
+      <h3>RGB</h3>
+      <h4 style="color:#000000">&lt;h4 style="color:#000000">black&lt;/h4></h4>
+      <h4 style="color:#FF0000">&lt;h4 style="color:#FF0000">red&lt;/h4></h4>
+      <h4 style="color:#00FF00">&lt;h4 style="color:#00FF00">green&lt;/h4></h4>
+      <h4 style="color:#0000FF">&lt;h4 style="color:#0000FF">blue&lt;/h4></h4>
+      <h4 style="color:#FFFFFF; background-color:#000000">&lt;h4 style="color:#FFFFFF">white&lt;/h4></h4>
+      <h3>rgb()</h3>
+      <h4 style="color:rgb(0, 0, 255)">&lt;h4 style="color:rgb(255, 0, 0)">blue&lt;/h4></h4>
+      <h4 style="color:rgb(0%, 100%, 0%)">&lt;h4 style="color:rgb(0%, 100%, 0%)">blue&lt;/h4></h4>
+      <h3>Opacity</h3>
+      <h4 style="color:rgba(0, 0, 255, 1)">&lt;h4 style="color:rgb(255, 0, 0, 1)">blue&lt;/h4></h4>
+      <h4 style="color:rgba(0, 0, 255, 0.7)">&lt;h4 style="color:rgb(255, 0, 0, 0.7)">blue&lt;/h4></h4>
+      <h4 style="color:rgba(0, 0, 255, 0.4)">&lt;h4 style="color:rgb(255, 0, 0, 0.4)">blue&lt;/h4></h4>
+      <h4 style="color:rgba(0, 0, 255, 0.1)">&lt;h4 style="color:rgb(255, 0, 0, 0.1)">blue&lt;/h4></h4>
+      <hr>
+
+      <h2>Named colors</h2>
+      <div class="col-sm-4">AliceBlue [<span style="color:AliceBlue;">###</span>]</div>
+      <div class="col-sm-4">AntiqueWhite [<span style="color:AntiqueWhite;">###</span>]</div>
+      <div class="col-sm-4">Aqua [<span style="color:Aqua;">###</span>]</div>
+      <div class="col-sm-4">Aquamarine [<span style="color:Aquamarine;">###</span>]</div>
+      <div class="col-sm-4">Azure [<span style="color:Azure;">###</span>]</div>
+      <div class="col-sm-4">Beige [<span style="color:Beige;">###</span>]</div>
+      <div class="col-sm-4">Bisque [<span style="color:Bisque;">###</span>]</div>
+      <div class="col-sm-4">Black[<span style="color:Black;">###</span>]</div>
+      <div class="col-sm-4">BlanchedAlmond[<span style="color:BlanchedAlmond;">###</span>]</div>
+      <div class="col-sm-4">Blue[<span style="color:Blue;">###</span>]</div>
+      <div class="col-sm-4">BlueViolet[<span style="color:BlueViolet;">###</span>]</div>
+      <div class="col-sm-4">Brown[<span style="color:Brown;">###</span>]</div>
+      <div class="col-sm-4">BurlyWood[<span style="color:BurlyWood;">###</span>]</div>
+      <div class="col-sm-4">CadetBlue[<span style="color:CadetBlue;">###</span>]</div>
+      <div class="col-sm-4">Chartreuse[<span style="color:Chartreuse;">###</span>]</div>
+      <div class="col-sm-4">Chocolate[<span style="color:Chocolate;">###</span>]</div>
+      <div class="col-sm-4">Coral[<span style="color:Coral;">###</span>]</div>
+      <div class="col-sm-4">CornflowerBlue[<span style="color:CornflowerBlue;">###</span>]</div>
+      <div class="col-sm-4">Cornsilk[<span style="color:Cornsilk;">###</span>]</div>
+      <div class="col-sm-4">Crimson[<span style="color:Crimson;">###</span>]</div>
+      <div class="col-sm-4">Cyan[<span style="color:Cyan;">###</span>]</div>
+      <div class="col-sm-4">DarkBlue[<span style="color:DarkBlue;">###</span>]</div>
+      <div class="col-sm-4">DarkCyan[<span style="color:DarkCyan;">###</span>]</div>
+      <div class="col-sm-4">DarkGoldenRod[<span style="color:DarkGoldenRod;">###</span>]</div>
+      <div class="col-sm-4">DarkGray[<span style="color:DarkGray;">###</span>]</div>
+      <div class="col-sm-4">DarkGrey[<span style="color:DarkGrey;">###</span>]</div>
+      <div class="col-sm-4">DarkGreen[<span style="color:DarkGreen;">###</span>]</div>
+      <div class="col-sm-4">DarkKhaki[<span style="color:DarkKhaki;">###</span>]</div>
+      <div class="col-sm-4">DarkMagenta[<span style="color:DarkMagenta;">###</span>]</div>
+      <div class="col-sm-4">DarkOliveGreen[<span style="color:DarkOliveGreen;">###</span>]</div>
+      <div class="col-sm-4">Darkorange[<span style="color:Darkorange;">###</span>]</div>
+      <div class="col-sm-4">DarkOrchid[<span style="color:DarkOrchid;">###</span>]</div>
+      <div class="col-sm-4">DarkRed[<span style="color:DarkRed;">###</span>]</div>
+      <div class="col-sm-4">DarkSalmon[<span style="color:DarkSalmon;">###</span>]</div>
+      <div class="col-sm-4">DarkSeaGreen[<span style="color:DarkSeaGreen;">###</span>]</div>
+      <div class="col-sm-4">DarkSlateBlue[<span style="color:DarkSlateBlue;">###</span>]</div>
+      <div class="col-sm-4">DarkSlateGray[<span style="color:DarkSlateGray;">###</span>]</div>
+      <div class="col-sm-4">DarkSlateGrey[<span style="color:DarkSlateGrey;">###</span>]</div>
+      <div class="col-sm-4">DarkTurquoise[<span style="color:DarkTurquoise;">###</span>]</div>
+      <div class="col-sm-4">DarkViolet[<span style="color:DarkViolet;">###</span>]</div>
+      <div class="col-sm-4">DeepPink[<span style="color:DeepPink;">###</span>]</div>
+      <div class="col-sm-4">DeepSkyBlue[<span style="color:DeepSkyBlue;">###</span>]</div>
+      <div class="col-sm-4">DimGray[<span style="color:DimGray;">###</span>]</div>
+      <div class="col-sm-4">DimGrey[<span style="color:DimGrey;">###</span>]</div>
+      <div class="col-sm-4">DodgerBlue[<span style="color:DodgerBlue;">###</span>]</div>
+      <div class="col-sm-4">FireBrick[<span style="color:FireBrick;">###</span>]</div>
+      <div class="col-sm-4">FloralWhite[<span style="color:FloralWhite;">###</span>]</div>
+      <div class="col-sm-4">ForestGreen[<span style="color:ForestGreen;">###</span>]</div>
+      <div class="col-sm-4">Fuchsia[<span style="color:Fuchsia;">###</span>]</div>
+      <div class="col-sm-4">Gainsboro[<span style="color:Gainsboro;">###</span>]</div>
+      <div class="col-sm-4">GhostWhite[<span style="color:GhostWhite;">###</span>]</div>
+      <div class="col-sm-4">Gold[<span style="color:Gold;">###</span>]</div>
+      <div class="col-sm-4">GoldenRod[<span style="color:GoldenRod;">###</span>]</div>
+      <div class="col-sm-4">Gray[<span style="color:Gray;">###</span>]</div>
+      <div class="col-sm-4">Grey[<span style="color:Grey;">###</span>]</div>
+      <div class="col-sm-4">Green[<span style="color:Green;">###</span>]</div>
+      <div class="col-sm-4">GreenYellow[<span style="color:GreenYellow;">###</span>]</div>
+      <div class="col-sm-4">HoneyDew[<span style="color:HoneyDew;">###</span>]</div>
+      <div class="col-sm-4">HotPink[<span style="color:HotPink;">###</span>]</div>
+      <div class="col-sm-4">IndianRed[<span style="color:IndianRed;">###</span>]</div>
+      <div class="col-sm-4">Indigo[<span style="color:Indigo;">###</span>]</div>
+      <div class="col-sm-4">Ivory[<span style="color:Ivory;">###</span>]</div>
+      <div class="col-sm-4">Khaki[<span style="color:Khaki;">###</span>]</div>
+      <div class="col-sm-4">Lavender[<span style="color:Lavender;">###</span>]</div>
+      <div class="col-sm-4">LavenderBlush[<span style="color:LavenderBlush;">###</span>]</div>
+      <div class="col-sm-4">LawnGreen[<span style="color:LawnGreen;">###</span>]</div>
+      <div class="col-sm-4">LemonChiffon[<span style="color:LemonChiffon;">###</span>]</div>
+      <div class="col-sm-4">LightBlue[<span style="color:LightBlue;">###</span>]</div>
+      <div class="col-sm-4">LightCoral[<span style="color:LightCoral;">###</span>]</div>
+      <div class="col-sm-4">LightCyan[<span style="color:LightCyan;">###</span>]</div>
+      <div class="col-sm-4">LightGoldenRodYellow[<span style="color:LightGoldenRodYellow;">###</span>]</div>
+      <div class="col-sm-4">LightGray[<span style="color:LightGray;">###</span>]</div>
+      <div class="col-sm-4">LightGrey[<span style="color:LightGrey;">###</span>]</div>
+      <div class="col-sm-4">LightGreen[<span style="color:LightGreen;">###</span>]</div>
+      <div class="col-sm-4">LightPink[<span style="color:LightPink;">###</span>]</div>
+      <div class="col-sm-4">LightSalmon[<span style="color:LightSalmon;">###</span>]</div>
+      <div class="col-sm-4">LightSeaGreen[<span style="color:LightSeaGreen;">###</span>]</div>
+      <div class="col-sm-4">LightSkyBlue[<span style="color:LightSkyBlue;">###</span>]</div>
+      <div class="col-sm-4">LightSlateGray[<span style="color:LightSlateGray;">###</span>]</div>
+      <div class="col-sm-4">LightSlateGrey[<span style="color:LightSlateGrey;">###</span>]</div>
+      <div class="col-sm-4">LightSteelBlue[<span style="color:LightSteelBlue;">###</span>]</div>
+      <div class="col-sm-4">LightYellow[<span style="color:LightYellow;">###</span>]</div>
+      <div class="col-sm-4">Lime[<span style="color:Lime;">###</span>]</div>
+      <div class="col-sm-4">LimeGreen[<span style="color:LimeGreen;">###</span>]</div>
+      <div class="col-sm-4">Linen[<span style="color:Linen;">###</span>]</div>
+      <div class="col-sm-4">Magenta[<span style="color:Magenta;">###</span>]</div>
+      <div class="col-sm-4">Maroon[<span style="color:Maroon;">###</span>]</div>
+      <div class="col-sm-4">MediumAquaMarine[<span style="color:MediumAquaMarine;">###</span>]</div>
+      <div class="col-sm-4">MediumBlue[<span style="color:MediumBlue;">###</span>]</div>
+      <div class="col-sm-4">MediumOrchid[<span style="color:MediumOrchid;">###</span>]</div>
+      <div class="col-sm-4">MediumPurple[<span style="color:MediumPurple;">###</span>]</div>
+      <div class="col-sm-4">MediumSeaGreen[<span style="color:MediumSeaGreen;">###</span>]</div>
+      <div class="col-sm-4">MediumSlateBlue[<span style="color:MediumSlateBlue;">###</span>]</div>
+      <div class="col-sm-4">MediumSpringGreen[<span style="color:MediumSpringGreen;">###</span>]</div>
+      <div class="col-sm-4">MediumTurquoise[<span style="color:MediumTurquoise;">###</span>]</div>
+      <div class="col-sm-4">MediumVioletRed[<span style="color:MediumVioletRed;">###</span>]</div>
+      <div class="col-sm-4">MidnightBlue[<span style="color:MidnightBlue;">###</span>]</div>
+      <div class="col-sm-4">MintCream[<span style="color:MintCream;">###</span>]</div>
+      <div class="col-sm-4">MistyRose[<span style="color:MistyRose;">###</span>]</div>
+      <div class="col-sm-4">Moccasin[<span style="color:Moccasin;">###</span>]</div>
+      <div class="col-sm-4">NavajoWhite[<span style="color:NavajoWhite;">###</span>]</div>
+      <div class="col-sm-4">Navy[<span style="color:Navy;">###</span>]</div>
+      <div class="col-sm-4">OldLace[<span style="color:OldLace;">###</span>]</div>
+      <div class="col-sm-4">Olive[<span style="color:Olive;">###</span>]</div>
+      <div class="col-sm-4">OliveDrab[<span style="color:OliveDrab;">###</span>]</div>
+      <div class="col-sm-4">Orange[<span style="color:Orange;">###</span>]</div>
+      <div class="col-sm-4">OrangeRed[<span style="color:OrangeRed;">###</span>]</div>
+      <div class="col-sm-4">Orchid[<span style="color:Orchid;">###</span>]</div>
+      <div class="col-sm-4">PaleGoldenRod[<span style="color:PaleGoldenRod;">###</span>]</div>
+      <div class="col-sm-4">PaleGreen[<span style="color:PaleGreen;">###</span>]</div>
+      <div class="col-sm-4">PaleTurquoise[<span style="color:PaleTurquoise;">###</span>]</div>
+      <div class="col-sm-4">PaleVioletRed[<span style="color:PaleVioletRed;">###</span>]</div>
+      <div class="col-sm-4">PapayaWhip[<span style="color:PapayaWhip;">###</span>]</div>
+      <div class="col-sm-4">PeachPuff[<span style="color:PeachPuff;">###</span>]</div>
+      <div class="col-sm-4">Peru[<span style="color:Peru;">###</span>]</div>
+      <div class="col-sm-4">Pink[<span style="color:Pink;">###</span>]</div>
+      <div class="col-sm-4">Plum[<span style="color:Plum;">###</span>]</div>
+      <div class="col-sm-4">PowderBlue[<span style="color:PowderBlue;">###</span>]</div>
+      <div class="col-sm-4">Purple[<span style="color:Purple;">###</span>]</div>
+      <div class="col-sm-4">Red[<span style="color:Red;">###</span>]</div>
+      <div class="col-sm-4">RosyBrown[<span style="color:RosyBrown;">###</span>]</div>
+      <div class="col-sm-4">RoyalBlue[<span style="color:RoyalBlue;">###</span>]</div>
+      <div class="col-sm-4">SaddleBrown[<span style="color:SaddleBrown;">###</span>]</div>
+      <div class="col-sm-4">Salmon[<span style="color:Salmon;">###</span>]</div>
+      <div class="col-sm-4">SandyBrown[<span style="color:SandyBrown;">###</span>]</div>
+      <div class="col-sm-4">SeaGreen[<span style="color:SeaGreen;">###</span>]</div>
+      <div class="col-sm-4">SeaShell[<span style="color:SeaShell;">###</span>]</div>
+      <div class="col-sm-4">Sienna[<span style="color:Sienna;">###</span>]</div>
+      <div class="col-sm-4">Silver[<span style="color:Silver;">###</span>]</div>
+      <div class="col-sm-4">SkyBlue[<span style="color:SkyBlue;">###</span>]</div>
+      <div class="col-sm-4">SlateBlue[<span style="color:SlateBlue;">###</span>]</div>
+      <div class="col-sm-4">SlateGray[<span style="color:SlateGray;">###</span>]</div>
+      <div class="col-sm-4">SlateGrey[<span style="color:SlateGrey;">###</span>]</div>
+      <div class="col-sm-4">Snow[<span style="color:Snow;">###</span>]</div>
+      <div class="col-sm-4">SpringGreen[<span style="color:SpringGreen;">###</span>]</div>
+      <div class="col-sm-4">SteelBlue[<span style="color:SteelBlue;">###</span>]</div>
+      <div class="col-sm-4">Tan[<span style="color:Tan;">###</span>]</div>
+      <div class="col-sm-4">Teal[<span style="color:Teal;">###</span>]</div>
+      <div class="col-sm-4">Thistle[<span style="color:Thistle;">###</span>]</div>
+      <div class="col-sm-4">Tomato[<span style="color:Tomato;">###</span>]</div>
+      <div class="col-sm-4">Turquoise[<span style="color:Turquoise;">###</span>]</div>
+      <div class="col-sm-4">Violet[<span style="color:Violet;">###</span>]</div>
+      <div class="col-sm-4">Wheat[<span style="color:Wheat;">###</span>]</div>
+      <div class="col-sm-4">White[<span style="color:White;">###</span>]</div>
+      <div class="col-sm-4">WhiteSmoke[<span style="color:WhiteSmoke;">###</span>]</div>
+      <div class="col-sm-4">Yellow[<span style="color:Yellow;">###</span>]</div>
+      <div class="col-sm-4">YellowGreen[<span style="color:YellowGreen;">###</span>]</div>
+
+      <div>
+        <style scoped>
+          #red,
+          #green,
+          #blue {
+            float: left;
+            clear: left;
+            width: 300px;
+            margin: 15px;
+          }
+
+          #swatch {
+            width: 140px;
+            height: 140px;
+            margin-left: 350px;
+            background-image: none;
+          }
+
+          #red .ui-slider-range {
+            background: #ff0000;
+          }
+
+          #red .ui-slider-handle {
+            border-color: #ef2929;
+          }
+
+          #green .ui-slider-range {
+            background: #00ff00;
+          }
+
+          #green .ui-slider-handle {
+            border-color: #8ae234;
+          }
+
+          #blue .ui-slider-range {
+            background: #0000ff;
+          }
+
+          #blue .ui-slider-handle {
+            border-color: #729fcf;
+          }
+        </style>
+        <hr>
+
+        <h2>Background color</h2>
+        <pre><code>&lt;body style="background-color:#ccc; color:pink"></code></pre>
+        <hr>
+
+        <div class="alert alert-warning" role="alert">
+          <h2 id="review" class="group">Review Questions</h2>
+          <ul>
+            <li>Question 1 - What is the colour code for a light blue in RGB using hexademical notation?</li>
+            <li>Question 2 - What is the colour code for a light blue in RGB using functional notation?</li>
+            <li>Question 3 - What is the colour code for a very transparent dark blue?</li>
+            <li>Question 4 - What colour is #000080?</li>
+            <li>Question 5 - Is #000080 exactly identical to #008?</li>
+            <li>Question 6 - What is the six-digit hexadecimal colour code for #369?</li>
+          </ul>
+        </div>
+      </div>
+  </main>
+</body>
+
+</html>

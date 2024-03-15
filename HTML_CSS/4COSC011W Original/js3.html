@@ -1,0 +1,446 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript and Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+     
+<link rel="stylesheet" href="style.css" /> 
+<style>
+
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+  color: #ff0099,
+  border-left: 1px solid #ff0099;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+  padding-left: 18px;
+  font-weight: bold;
+  color: #ff0099;
+  background-color: transparent;
+  border-left: 2px solid #ff0099;
+}
+.back-to-top:hover,
+.bs-docs-theme-toggle:hover {
+  color: #563d7c;
+  text-decoration: none;
+}
+
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:focus, 
+.dropdown-menu>.active>a:hover {
+  background-image: none;
+  background-color: #ff0099;
+}
+th { text-align:center;}
+
+nav.navbar-js {
+	border-top: 4px solid #ff0099;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-js" >
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Module Info<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="general.html">General Information</a></li>
+              	<li><a href="schedule.html">Schedule</a></li>
+              	<li><a href="team.html">Module Team</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="unix.html">Introduction to Unix</a></li>
+              	<li><a href="basicTags.html">Basic HTML tags</a></li>
+              	<li><a href="lists.html">Lists</a></li>
+              	<li><a href="tables.html">Tables</a></li>
+              	<li><a href="colours.html">Colours</a></li>
+                <li><a href="images.html">Images</a></li>
+              	<li><a href="links.html">Links & iframes</a></li>
+                <li><a href="special.html">Special Characters</a></li>
+                <li><a href="forms.html">Forms</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              	<!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+                <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+				  <li><a href="cssElements.html">Styling Elements</a></li>
+              </ul>
+            </li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="js1.html">Introduction to JavaScript</a></li>
+                <li><a href="js2.html">Objects, Methods and Functions</a></li>
+                <li class="active js"><a href="js3.html">JavaScript and Forms</a></li>
+                <li><a href="js4.html">JavaScript and the DOM</a></li>
+                <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+<main class="container language-html">
+<div class="col-md-9" role="main"><h1>JavaScript and Forms</h1>
+
+  
+ <br><br><h2 id="gettingSetting" class="subgroup">Getting and Setting input text field values</h2>
+
+<p>A function to check the length of a student username</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+    function checkUserName( form ) {
+       if ( form.reg.value.length != 8 ) {
+          alert( "You have not entered an eight character string" );
+          return false;
+       } else {
+          alert( "This is correct" );
+          return true;
+       }
+    }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;p&gt; Please enter your student username: &lt;input type="text" name="reg" /&gt;
+   &lt;input type="button" onclick="checkUserName(form);" value="check validity"/&gt; 
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<a href="jsLect2xample1.html">Example 1 Built in class</a> 
+<br><br>
+<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/forms.html" height="2000px" width="830px"></iframe>
+<br><br>
+<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/checkReg.html"  width="830px"></iframe>
+<br><br>
+<iframe src="https://coloma.users.ecs.westminster.ac.uk/ecsc407/usefulFunctionsExample.html"  width="830px" height="600px" ></iframe>
+
+<br><br><h2 id="functionsRadio" class="subgroup">Functions and Forms - Radio buttons</h2>
+<h3>Get the currently selected radio button value from a radio array.</h3>
+<p><code>getRadioValue</code> is passed a reference to a radio button array and returns the
+value of the radio button that is checked or returns a null string. This is
+only useful if each radio button has a value defined for it in the html tag
+that creates the radio button.</p>
+
+<h4>Example</h4> 
+<pre><code>&lt;input type="radio" name="r" value="y"&gt;
+&lt;input type="radio" name="r" value="z"&gt;
+</code></pre></p>
+<pre class="language-javascript"><code>function getRadioValue( radioArray ) {
+   for ( let i = 0; i < radioArray.length; i++ ) {
+      if ( radioArray[ i ].checked ) { 
+         return radioArray[ i ].value;
+      }
+   }
+   return "";
+}</code></pre>
+
+<br><br><h2 id="functionsCheckbox" class="subgroup">Functions and Forms - Checkboxes</h2>
+<h3 id="functionsCheckbox1" class="subsubgroup">Get an array with the Checked Values</h3>
+<p><code>getCheckValuesA</code> is passed a reference to a checkbox array. Since no checkbox,
+one checkbox, or several checkboxes may be checked this function returns an array
+of the values of the checked boxes. If none are checked, the array has a length
+of zero. This is only useful if each checkbox has a value defined for it in the
+html tag that creates the checkbox button.</p>
+
+<h4>Example</h4>
+<pre><code>&lt;input type="checkbox" name="c" value="y"&gt;
+&lt;input type="checkbox" name="c" value="z"&gt;</pre></code></p>
+<pre class="language-javascript"><code>function getCheckValuesA( checkBoxArray ) {
+   const values = [];
+   for ( let i = 0; i < checkBoxArray.length; i++ ) {
+      if ( checkBoxArray[ i ].checked ) {
+          values[ values.length ] = checkBoxArray[ i ].value;
+      }
+   }
+   return values;
+}</code></pre>
+
+<h3>Get a String with the Checked Values</h3>
+<p><code>getCheckValuesS</code> is passed a reference to a check box array. Since no checkbox,
+one checkbox, or several checkboxes may be checked this function returns a
+string of the values of the checked boxes separated by the value passed in the
+separator parameter. If none are checked, the string will be empty.
+This is only useful if each checkbox has a value defined for it in the
+html tag that creates the checkbox button.</p>
+
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getCheckValuesS( checkBoxArray, separator ) {
+   let tempString = "";
+   let count = 0;
+   for ( let i = 0; i < checkBoxArray.length; i++ ) {
+      if (checkBoxArray[ i ].checked) {
+         if ( count > 0 ) { 
+            tempString += separator;   //don't put the separator 
+                                       //before the first value
+         }
+         tempString += checkBoxArray[ i ].value;
+         count++;
+      }
+   }
+   return tempString;
+}</code></pre>
+
+<br><br><h2 id="functionsSelect" class="subgroup">Functions and Forms - Select</h2>
+<h3>Get the Selected Value</h3>
+<p><code>getSelectedValue</code> returns the value of the currently selected option in a single
+item select list. For this to work the value of the option items must be set.
+For example the function would return "x" or "y" here:</p>
+<pre><code>&lt;select name="s"&gt;
+  &lt;option value="x"&gt;the variable x&lt;/option&gt;
+  &lt;option value="y"&gt;the variable y&lt;/option&gt;
+&lt;select&gt;</code></pre>
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getSelectedValue( selectList ) {
+  return selectList[ selectList.selectedIndex ].value;
+}</code></pre>
+
+
+<h3>Get the Selected Text</h3>
+<p><code>getSelectedText</code> returns the text of the currently selected option in a single
+item selection list. In the example below either "the variable x" or
+"the variable y" would be returned.</p>
+<pre><code>&lt;select name="s"&gt;
+  &lt;option value="x"&gt;the variable x&lt;/option&gt;
+  &lt;option value="y"&gt;the variable y&lt;/option&gt;
+&lt;select&gt;</code></pre>
+
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getSelectedText( selectList ) {
+   return selectList.options[ selectList.selectedIndex ].text;
+}</code></pre>
+   
+<br><br><h2 id="functionsSelectMultiple" class="subgroup">Functions and Forms - Select Multiple</h2>
+<h3>Get an array of Selected Values</h3>
+<p>The function <code>getMSelectValuesA( selectList )</code> receives a reference to a multiple
+selection list and returns an array of the values selected in the list.
+In the HTML selection list below, depending on the options selected, this
+function would return an empty array (if no items were selected) or the values
+"x" and or "y". <strong>Note:</strong> for this to work the VALUE attribute of the option tag
+must be used.</p>
+<pre><code>&lt;select name="s" multiple&gt;
+  &lt;option value="x"&gt;the variable x&lt;/option&gt;
+  &lt;option value="y"&gt;the variable y&lt;/option&gt;
+&lt;select&gt;</code></pre>
+
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getMSelectValuesA( selectList ) {
+   const values = [];
+   for ( let i = 0; i < selectList.length; i++ ) {
+      if ( selectList.options[ i ].selected ) {
+         values[ values.length ] = selectList.options[ i ].value;
+      }
+   }
+   return values;
+}</code></pre>
+
+<h3>Get the Selected Value</h3>
+<p>The function <code>getMSelectValuesS( selectList, separator )</code> receives a reference to a
+multiple selection list and returns string of the values selected in the list.
+Each value is separated by the character or string passed in the separator
+parameter.
+In the HTML selection list below, depending on the options selected, this
+function would return an empty string (if no items were selected) or the values
+"x" and or "y". Note: for this to work the VALUE attribute of the option tag
+must be used.</p>
+<pre><code>&lt;select name="s" multiple&gt;
+  &lt;option value="x"&gt;the variable x&lt;/option&gt;
+  &lt;option value="y"&gt;the variable y&lt;/option&gt;
+&lt;select&gt;</code></pre>
+
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getMSelectValuesS( selectList, separator ) {
+   let count = 0;
+   let tempString = "";
+   
+   for ( let i = 0; i < selectList.length; i++ ) {
+      if ( selectList.options[ i ].selected ) {
+         if ( count > 0 ) {
+            tempString += separator;
+         }
+         tempString += selectList.options[i].value;
+         count++;
+      }
+   }
+   return tempString;
+}</code></pre>
+<h3>Get an Array of the Selected Text</h3>
+<p>The function <code>getMSelectTextA( selectList )</code> receives a reference to a
+multiple selection list and returns a array of the text selected in the list.
+In the HTML selection list below, depending on the options selected, this
+function would return an empty array (if no items were selected) or the values
+"the variable x" and or "the variable y". <strong>Note:</strong> for this to work the VALUE
+attribute of the option tag is NOT required as the option text is returned.</p>
+<pre><code>&lt;select name="s" multiple&gt;
+  &lt;option value="x"&gt;the variable x&lt;/option&gt;
+  &lt;option value="y"&gt;the variable y&lt;/option&gt;
+&lt;select&gt;</code></pre>
+</article>
+<article>
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getMSelectTextA( selectList ) {
+   const values = [];
+   for ( let i = 0; i < selectList.length; i++ ) {
+      if ( selectList.options[ i ].selected ) {
+         values[ values.length ] = selectList.options[ i ].text;
+      }
+   }
+   return values;
+}
+</code></pre>
+
+<h3>Get a String of the Selected Text</h3>
+<p>The function <code>getMSelectTextS(selectList, separator)</code> receives a reference to a
+multiple selection list and returns a string of the text selected in the list.
+Each value is separated by the character or string passed in the separator
+parameter.
+In the HTML selection list below, depending on the options selected, this
+function would return an empty string (if no items were selected) or the values
+"the variable x" and or "the variable y". Note: for this to work the VALUE
+attribute of the option tag is NOT required as the option text is returned.</p>
+<pre><code>&lt;select name="s" multiple&gt;
+  &lt;option value="x"&gt;the variable x&lt;/option&gt;
+  &lt;option value="y"&gt;the variable y&lt;/option&gt;
+&lt;select&gt;</code></pre>
+
+<h4>Example</h4>
+<pre class="language-javascript"><code>function getMSelectTextS( selectList, separator ) {
+   let count = 0;
+   let tempString = "";
+   for ( let i = 0; i < selectList.length; i++ ) {
+      if ( selectList.options[ i ].selected ) {
+         if ( count > 0 ) {
+            tempString += separator;
+         }
+         tempString += selectList.options[ i ].text;
+         count++;
+      }
+   }
+   return tempString;
+}</code></pre>
+
+<hr>
+<div class="alert alert-warning" role="alert">
+<br><br><h2 id="review" class="group">Review Questions</h2>
+
+<ul>
+<li>Question 1 - </li>
+<li>Question 2 - </li>
+<li>Question 3 - </li>
+
+</ul>
+
+</div>
+</div>
+
+<div class="row">
+    <!--Nav Bar -->
+    
+    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+        <ul id="sidebar" class="nav nav-stacked">
+            
+            <li>
+                <a href="#functions">Javascript and Forms</a>
+                <ul class="nav nav-stacked">
+					<li><a href="#gettingSetting">Getting and Setting input text field values</a></li>
+                    <li><a href="#functionsRadio">Radio buttons</a></li>
+                    <li><a href="#functionsCheckbox">Checkboxes</a>
+                    <li><a href="#functionsSelect">Select</a></li>
+                    <li><a href="#functionsSelectMultiple">Select Multiple</a></li>
+                    
+   
+                </ul>
+                
+            </li>
+           <!-- <li>
+                <a href="#DOM">Document Object Model</a>
+            </li>
+            
+            <li><a href="#review">Review Questions</a></li>-->
+        </ul>
+    </nav>
+</div>
+</main>
+
+<nav class="navbar navbar-default no-margin-bottom">
+<div class="container">
+<p class="navbar-text navbar-right">&copy; Copyright 2016-2022 <a href="https://www.westminster.ac.uk" class="navbar-link">University of Westminster</a></p>
+</div>
+</nav>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="prism/prism.js"></script>
+<script src="prism/prism-line-numbers.js"></script>
+<script src="prism/prism-line-highlight.js"></script>
+<script>
+$('body').scrollspy({
+  target: '.bs-docs-sidebar',
+  offset: 60
+});
+$("#sidebar").affix({
+  offset: {
+    top: 80
+  }
+});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRNL1F43P4');
+</script>
+<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+</html>

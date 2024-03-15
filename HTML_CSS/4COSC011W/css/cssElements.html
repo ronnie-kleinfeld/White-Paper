@@ -1,0 +1,1092 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Styling &amp; CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="authors" content="Anne-Gaelle Colom, Wendy Purdy and Daphne Economou">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link href="prism/prism.css" rel="stylesheet" />
+	<link href="prism/prism-line-numbers.css" rel="stylesheet" />
+	<link href="prism/prism-line-highlight.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="style.css" />
+	<style>
+		.bs-docs-sidebar .nav>li>a:hover,
+		.bs-docs-sidebar .nav>li>a:focus {
+			color: #800080,
+				border-left: 1px solid #800080;
+		}
+
+		.bs-docs-sidebar .nav>.active>a,
+		.bs-docs-sidebar .nav>.active:hover>a,
+		.bs-docs-sidebar .nav>.active:focus>a {
+			padding-left: 18px;
+			font-weight: bold;
+			color: #800080;
+			background-color: transparent;
+			border-left: 2px solid #800080;
+		}
+
+		.back-to-top:hover,
+		.bs-docs-theme-toggle:hover {
+			color: #800080;
+			text-decoration: none;
+		}
+
+		.dropdown-menu>.active>a,
+		.dropdown-menu>.active>a:focus,
+		.dropdown-menu>.active>a:hover {
+			background-image: none;
+			background-color: #800080;
+		}
+
+		th {
+			text-align: center;
+		}
+	</style>
+
+	<style type="text/css">
+		#radiusBorder {
+			border: 2px solid blue;
+			padding: 30px;
+			width: 275px;
+			-moz-border-radius: 20px;
+			/* Old Firefox */
+			border-radius: 20px;
+			/* for current browsers */
+		}
+
+		#radiusBG {
+			background: aqua;
+			padding: 30px;
+			width: 275px;
+			-moz-border-radius: 20px;
+			/* Old Firefox */
+			border-radius: 20px;
+			/* for current browsers */
+		}
+
+		#bs {
+			width: 300px;
+			height: 100px;
+			background-color: lightblue;
+			-moz-box-shadow: 10px 10px 5px #888888;
+			/* Old Firefox */
+			box-shadow: 10px 10px 5px #888888;
+			padding: 10px;
+		}
+
+		.official {
+			color: blue;
+		}
+
+		#intro {
+			color: green;
+		}
+
+		pre {
+			font-size: 16px !important;
+		}
+
+		.addedPadding td,
+		.addedPadding th {
+			padding: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-css">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Home</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Module Info<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="general.html">General Information</a></li>
+							<li><a href="schedule.html">Schedule</a></li>
+							<li><a href="team.html">Module Team</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="unix.html">Introduction to Unix</a></li>
+							<li><a href="basicTags.html">Basic HTML tags</a></li>
+							<li><a href="lists.html">Lists</a></li>
+							<li><a href="tables.html">Tables</a></li>
+							<li><a href="colours.html">Colours</a></li>
+							<li><a href="images.html">Images</a></li>
+							<li><a href="links.html">Links &amp; iframes</a></li>
+							<li><a href="special.html">Special Characters</a></li>
+							<li><a href="forms.html">Forms</a></li>
+						</ul>
+					</li>
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<!--<li class="active html"><a href="addStyle.html">Adding a Style</a></li>-->
+							<li><a href="cssSyntax.html">CSS Syntax</a></li>
+							<li class="active css"><a href="cssElements.html">Styling Elements</a></li>
+							<!--<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="stylingLists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">JavaScript<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="js1.html">Introduction to JavaScript</a></li>
+							<li><a href="js2.html">Objects, Methods and Functions</a></li>
+							<li><a href="js3.html">JavaScript and Forms</a></li>
+							<li><a href="js4.html">JavaScript and the DOM</a></li>
+							<li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+						</ul>
+					</li>
+
+				</ul>
+
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<main class="container language-html">
+		<div class="col-md-9" role="main">
+			<h1>Styling &amp; CSS</h1>
+
+			<h2 id="cssBoxModel" class="group">CSS Box Model </h2>
+
+			<table>
+				<tr>
+					<td>For CSS display purposes, every element in a document is considered to be a rectangular box. The
+						appearance and position of this box can be manipulated. Each box has a content area (e.g., the
+						text, image etc) and an OPTIONAL surrounding: <b> padding</b>, <b>border</b> and <b>margin</b>.
+					</td>
+				</tr>
+			</table>
+
+			<table>
+				<tr>
+					<td><img src="cssBoxModel.png"></td>
+				</tr>
+			</table>
+
+			<h3>Space properties and values </h3>
+
+			</p>
+
+			<pre data-line="7,12-17"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;An Introduction to Style Sheets&lt;/title&gt;
+   	&lt;style&gt;
+	body {
+     	margin-left: 8%; 
+     	font-family: Arial, Helvetica, sans-serif;
+   	}
+    p {
+    	text-indent: 2em;
+    	margin-left: 10%;
+    	margin-right: 10%;
+    	padding: 2em;
+    	border-color: red;
+    	border-style: groove;
+    	border-width: thick;
+    	text-align:justify;
+    	text-transform:capitalize;
+    	line-height:16pt;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body>
+&lt;span> test1 text2 &lt;/span>
+&lt;div>text1  text2 &lt;/div> 
+&lt;p>
+	Some text.  Some text.  Some text.  Some text.  Some text.
+	Some text.  Some text.  Some text.  Some text.  Some text.  
+	Some text.  Some text.  Some text.  Some text.  Some text.  
+	Some text.  Some text.  Some text.  Some text.  Some text. 
+	Some text.  Some text.  Some text.  Some text.  Some text.  
+	Some text.
+&lt;/p>
+
+&lt;p> 
+	Some more text. Some more text.Some more text.Some more text.
+	Some more text.Some more text.Some more text.Some more text.
+	Some more text.Some more text.Some more text.Some more text.
+	Some more text.Some more text.Some more text.Some more text.
+	Some more text. Some more text.Some more text.Some more text.
+&lt;/p>
+&lt;body>
+&lt;html></code></pre>
+			<form><input value="View result" onclick='window.open("examples/style_example4_space.html")' type="button">
+			</form>
+
+			<br>
+			<table class="table-hover addedPadding">
+				<tbody>
+					<tr>
+						<th align="left" valign="top">margin </th>
+						<td align="left" valign="top">outer wrapping of box. The margin is transparent. Shorthand - one
+							value specifies all four sides:
+							<pre class="language-css"><code>margin: 5px; 
+margin: 5%;</code></pre>
+
+
+							The four sides can be set individually (<tt>margin-top, margin-bottom, margin-left,
+								margin-right</tt>). <br>The four sides are Top, Right, Bottom, Left (Use the mnemonic
+							TRouBLe
+							to remember order).
+						</td>
+					</tr>
+
+					<tr>
+						<th align="left" valign="top">border-color </th>
+						<td align="left" valign="top">sets the colour of an element's border. </td>
+					</tr>
+					<tr>
+						<th align="left" valign="top">border-style </th>
+						<td align="left" valign="top">sets the appearance of an element's border. Border-style values:
+							solid, dotted, dashed, double, groove, ridge, inset and outset.
+							<form><input value="View different border styles"
+									onclick='window.open("examples/borders.html")' type="button"></form>
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" valign="top">border-width </th>
+						<td align="left" valign="top">sets the thickness of an element's border. Value
+							can be <tt>thin, medium, thick</tt> or absolute or percentage value. </td>
+					</tr>
+					<tr>
+						<th align="left" valign="top">border</th>
+						<td align="left">Useful <strong>border shortcut</strong> - to specify width, style and colour in
+							one line:
+
+
+							<pre class="language-css"><code>p { border: thick groove red; }
+h2 { border: 2px dotted blue }</code></pre>
+
+							The following sets these separately:
+							<pre class="language-css"><code>h2 { 
+	border-style: dotted; 
+	border-width: 2px;
+	border-color: blue;
+}</code></pre>
+
+
+							Or set the properties for single sides (top, bottom, left, right):
+							<pre class="language-css"><code>border-top-width: 4px;
+border-top-color: red;
+border-top-style: solid;</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" valign="top">padding </th>
+						<td align="left" valign="top">space between content of element &amp; border. Inherits background
+							(e.g., colour ) of element. Shorthand - one value specifies all four sides.
+							<pre class="language-css"><code>padding: 10px; 
+padding: 10%;</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" valign="top" colspan="3">Other properties: </td>
+					</tr>
+
+
+					<tr>
+						<th align="left" valign="top">line-height </th>
+						<td align="left" valign="top">sets the height of a line of text. Value can be
+							a length or percentage of the current font-size or a point size. </td>
+					</tr>
+				</tbody>
+			</table>
+
+			<br>
+
+
+			<!---  --->
+
+			<h2 id="stylingTables" class="group">Styling Tables</h2>
+
+
+			CSS can also be used to modify the rendering of tables:
+			</p>
+			<pre data-line="6-19"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&nbsp;&lt;head&gt;
+	&lt;title&gt;An Introduction to Style Sheets&lt;/title&gt;
+  	&lt;style&gt;
+    table { 
+    	border-collapse: collapse;
+        border: 5px solid yellow; 
+    }    
+    td { 
+     	border: 1px solid red;
+      	padding: 1em; 
+    }
+    td.dashed-blue {
+      	border: 5px dashed blue; 
+    }
+    td.solid-green {
+    	border: 5px solid green;
+   	}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt; 1 &lt;/td&gt;
+     	&lt;td&gt; 2 &lt;/td&gt;
+      	&lt;td&gt; 3 &lt;/td&gt;
+   	&lt;/tr&gt;
+   	&lt;tr&gt;
+		&lt;td&gt; 4 &lt;/td&gt;
+		&lt;td class="dashed-blue"&gt; 5 &lt;/td&gt;
+      	&lt;td class="solid-green"&gt; 6 &lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+      	&lt;td&gt; 7 &lt;/td&gt;
+		&lt;td&gt; 8 &lt;/td&gt;
+		&lt;td&gt; 9 &lt;/td&gt;
+	&lt;/tr&gt;
+   	&lt;tr&gt;
+      	&lt;td&gt; 10 &lt;/td&gt;
+		&lt;td&gt; 11 &lt;/td&gt;
+		&lt;td&gt; 12 &lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+      	&lt;td&gt; 13 &lt;/td&gt;
+		&lt;td&gt; 14 &lt;/td&gt;
+		&lt;td&gt; 15 &lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			<form><input value="View result" onclick='window.open("examples/style_example5_table.html")' type="button">
+			</form>
+
+
+
+			<br>
+
+
+			The above shows how to define CSS classes.
+			<pre class="language-css"><code>td.dashed-blue  { border: 5px dashed blue; }
+td.solid-green { border: 5px solid green; }</code></pre>
+			Also, how to use these classes in the web page:
+			<pre><code>&lt;td class="dashed-blue"&gt; 5 &lt;/td&gt;
+&lt;td class="solid-green"&gt; 6 &lt;/td&gt;</code></pre>
+
+			The above also shows the use of the table border-collapse property:
+			<dl>
+				<dt>
+					<pre class="language-css"><code>table { border-collapse: collapse; } </code></pre>
+				</dt>
+				<dd>Adjacent cells collapse into a single border</dd>
+				<dt>
+					<pre class="language-css"><code>table { border-collapse: separate; }</code></pre>
+				</dt>
+				<dd>Adjacent cells have their own distinct borders (default)</dd>
+			</dl>
+
+			<form><input value="View two tables - border:separate & border:collapse"
+					onclick='window.open("examples/style_example6_separate.html")' type="button"> </form><br>
+
+
+			<p>Tables - another example to increase their readability - uses CSS classes</p>
+
+
+			<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Table with CSS classes&lt;/title&gt;
+    &lt;style&gt;
+    table { 
+    	border-collapse: collapse;
+        border: 1px solid black; 
+    }
+    tr.p  {
+    	text-align:center; 
+    	background-color: #ffddff; 
+    }
+    tr.b  {
+    	text-align:center; 
+    	background-color: #ccffff; 
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Using CSS classes&lt;/h2&gt;
+
+&lt;table width="80%"&gt;
+&lt;tr&gt;
+    &lt;th&gt;Module Name&lt;/th&gt;
+    &lt;th&gt;Module Code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr class="p"&gt;
+    &lt;td&gt; Communications and Career Management&lt;/td&gt;
+    &lt;td&gt; ECSC400&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="b"&gt;
+    &lt;td&gt; Computer Systems Fundamentals&lt;/td&gt;
+    &lt;td&gt; ECSC404&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="p"&gt;
+    &lt;td&gt; Software Development Principles II&lt;/td&gt;
+    &lt;td&gt; ECSC405&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="b"&gt;
+    &lt;td&gt; Mathematics for Computing&lt;/td&gt;
+    &lt;td&gt; ECSC408&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="p"&gt;
+    &lt;td&gt; Information Systems&lt;/td&gt;
+    &lt;td&gt; ECSC411&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+			<form><input value="View result" onclick='window.open("examples/style_example7_readability.html")'
+					type="button"> </form>
+
+			<h4>CSS3 - Alternative Zebra Stripe Table Rows</h4>
+
+			In the following example the CSS3 pseudo-class <code>:nth-of-type() </code>is used to select odd and even
+			rows. Then the first row is selected.
+			<pre><code>&lt;style&gt;</code><code class="language-css" >
+	tr:nth-of-type(odd) { background-color: #ffddff; text-align: center; }
+    tr:nth-of-type(even) { background-color: #ccffff; text-align: center; } 
+    tr:nth-of-type(1) { color: red; }  /* for first row only  */</code><code class="language-html">	
+&lt;style&gt;</code></pre>
+
+			Alternative Zebra Stripe Table Rows
+
+			<form><input value="View result" onclick='window.open("examples/style_example8_zebraTable.html")'
+					type="button"> </form>
+
+			<!-- extra selectors -->
+
+			<br>
+			<h3>CSS3 Child Selectors</h3>
+
+			<p>CSS3 includes specific pseudo-classes for selecting child elements. A child tag is any tag enclosed by
+				another tag.</p>
+
+			<img src="css3image.png">
+
+			<ol>
+				<li><strong>:FIRST-CHILD</strong> Lets you select and format just
+					the first of however many children an element may have. E.g., to select the first &lt;h1> tag on the
+					page, create a
+					selector like this:</li>
+
+				<pre><code class="language-css">h2:first-child</code></pre>
+
+				<li><strong>:LAST-CHILD</strong> This is like :first-child but just with the last child of an element.
+					E.g., to style the last item in a list, you use: </li>
+				<pre><code class="language-css"> ul li:last-child </code></pre>
+
+
+				<li><strong>:NTH-CHILD</strong> You can style every other row in a table, every third list item, or
+					style any combination of alternating child elements. </li>
+				<br>Using a keyword, either odd or even, lets you select alternating odd or even child elements.
+				E.g., applying one background colour for each even row in a table
+				and another background colour of each odd-numbered row:
+				<pre><code class="language-css">tr:nth-child(odd) { background-color: #D9F0FF; }
+tr:nth-child(even) { background-color: #FFFFFF; }</code></pre>
+				<p>:nth-child() can also be used in another way. E.g., to highlight every third table cell inside a row,
+					starting with the second table cell:
+				</p>
+				<pre><code class="language-css">tr td:nth-child(3n+2) { background-color:#900; }</code></pre>
+				<p>The number before the n (3 in this case) represents which child element you’re after.
+					So, 3n means every third element, while 4n means every fourth element.
+				</p>
+				<p>
+					The plus sign followed by a number (+2 in this example) indicates which element to start at,
+					so +2 means start at the second child element, while +5 means start at the fifth child element.
+				</p>
+				<p>
+					So :nth-child(5n + 4) selects every fifth child element starting at the fourth child element.
+				</p>
+			</ol>
+			<br>
+			<h2 id="cssPositioning" class="group">CSS Positioning </h2>
+
+			<h3>The position property</h3>
+
+			<p>The position property identifies how an element is positioned on a page.</p>
+			<ul>
+				<li>static<br>
+					By default every element has a position value of static, which means that it exists in the normal
+					flow of a document. The static value can be overwritten with a relative, absolute or fixed value.
+				</li>
+				<pre><code class="language-css">.static {
+  position: static;
+}</code></pre>
+
+				<li>relative<br>
+					Setting the top, right, bottom, and left properties
+					of a relatively-positioned element will cause it to be
+					adjusted away from its normal position.
+					Other content will <b>not</b> be adjusted to fit into any gap left by the element - there will be
+					blank space where the relatively-positioned element would normally be.
+
+
+				</li>
+				<pre><code class="language-css">.relative {
+  position: relative;
+  top: -20px;
+  left: 20px;
+  width: 500px;
+}</code></pre>
+
+				<li>fixed<br>
+					A fixed element is positioned relative to the viewport, the element remains fixed at the
+					same position inside the browser window. This means it always stays in the same place even if the
+					page
+					is scrolled. The top, right, bottom, and left properties can be used.
+				</li>
+				<pre><code class="language-css">.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+}</code></pre>
+
+				<li>absolute<br>
+
+					Taken out of the normal document flow. An element positioned with absolute is positioned relative
+					to the nearest positioned parent.
+					If an absolutely-positioned element doesn’t have any parent elements,
+					then the initial document &lt;html&gt; will be its parent.</li>
+				<pre><code class="language-css">.absolute {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 300px;
+  height: 200px;
+}</code></pre>
+
+
+				<form><input value="View result" onclick='window.open("examples/style_example9_position_absolute.html")'
+						type="button"> </form>
+
+
+				<li>absolute Inside Other Positioned Elements<br>
+					When an absolute positioned element is nested inside another element which also has some position
+					value set,
+					then the element with the position : absolute is positioned absolutely inside the parent element.
+				</li>
+				<pre><code class="language-css">#outerDiv {
+      position: relative;
+  /*  top     : 0px;
+      left    : 0px;  */
+      border  : 1px solid #ccc;
+      padding : 10px;
+  }
+
+  #innerDiv {
+      position: absolute;
+      top     : 0px;
+      right   : 0px;
+      padding : 10px;
+      background-color: #ccffcc;
+      border  : 1px solid #99cc99;
+  }</code></pre>
+
+
+				<form><input value="View result"
+						onclick='window.open("examples/style_example9_position_Outer_Inner.html")' type="button">
+				</form>
+
+				<li>z-index <br>
+					The z-index property specifies the stack order of a positioned element using integer values
+					(positive or negative).
+					The element with the highest z-index value will be at the foreground,
+					while the element with the lowest z-index value will be at the back.
+					<br>
+					In this example, element1 will overlap element2 as it has the highest z-index value
+				</li>
+				<pre><code class="language-css">.element1 {
+position: absolute;
+z-index: 1;
+}
+
+.element2 {
+position: absolute;
+z-index: -1;
+}</code></pre>
+			</ul>
+
+			<h2 id="cssFloat" class="group">Making elements Float</h2>
+			<!--<h3>Making elements Float</h3>-->
+
+			<p>We will look at two common uses for CSS float:
+			<ul>
+				<li>Images - We can float an image left or right allowing text and/or other elements to wrap around it.
+				</li>
+				<li>Layouts - We can also use float as a technique to achieve multicolumn layouts. </li>
+			</ul>
+			</p>
+
+			<code>float</code> can be set as either <code>left</code>, <code>right</code> or <code>none</code>
+			(default). E.g.:
+			<ul>
+				<li><code>float:left </code> Slides the element to the left while content below wraps around the right
+					side of the element.</li>
+				<li><code>float:right </code> Slides the element to the right while content below wraps around the left
+					side of the element.</li>
+			</ul>
+
+
+			<br>
+			<strong>Floating images</strong><br>
+			We can use float to move an image either left or right. This will allow the text to flow to the side of the
+			floated element. The following shows how an image can be floated.<br>
+
+
+			<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;float and images&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Example 1 - image without float (default). &lt;/h2&gt;
+&lt;p&gt;
+	&lt;img src="image_f.gif" alt="non-floated image"&gt;
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Example 2 - image with style float:right.&lt;/h2&gt;
+&lt;p&gt;
+	&lt;img src="image_f.gif" alt="float right image" style="float:right;"&gt;
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Example 3 - An image with style float:left.&lt;/h2&gt;
+&lt;p&gt;
+	&lt;img src="image_f.gif" alt="float left image" style="float:left;"&gt;
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+	Some text to wrap around the image. Some text to wrap around the image.
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+			<form><input value="View result" onclick='window.open("examples/style_example9_Float.html")' type="button">
+			</form>
+
+
+
+
+			<br>
+			<strong>Float and html forms</strong><br>
+
+			<p>We can add CSS float styles to the label tag to improve the form alignment/display.</p>
+			<ul>
+				<li><a href="examples/style_example10_Form.html">Example HTML5 form with CSS</a></li>
+			</ul>
+
+
+			<br>
+			<strong>Float and layouts</strong><br>
+
+
+			<p>When using CSS float for layouts it is common to float a block-level element such as
+				<code>&lt;div&gt;</code> (or one of the HTML5 new elements like <code>article</code>,
+				<code>section</code>, <code>aside</code>). The floated elements will require a width.
+			</p>
+
+
+			<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;CSS floated columns&lt;/title&gt;
+	&lt;style&gt;
+	
+    #header { 
+       	font-size: 2em; 
+	    text-align: center; 
+        border: solid 2px blue; 
+        color: blue; 
+    }
+
+    #column1 {
+		float: left;
+		width: 40%; 
+    }
+
+    #column2 {
+		float: left;
+		width: 60%; 
+	}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div id="header"&gt;
+	&lt;p&gt;Using float to create column layout&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="column1"&gt;
+	&lt;h2&gt;Column 1&lt;/h2&gt;
+	&lt;p&gt;
+	Some content for the column.  Some content for the column.
+	Some content for the column.  Some content for the column.
+	Some content for the column.  Some content for the column.
+	Some content for the column.  Some content for the column.
+	&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="column2"&gt;
+	&lt;h2&gt;Column 2&lt;/h2&gt;
+	&lt;p&gt;
+	Some content for the column.  Some content for the column.
+	Some content for the column.  Some content for the column.
+	Some content for the column.  Some content for the column.
+	Some content for the column.  Some content for the column.
+	&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+			<form><input value="View result" onclick='window.open("examples/style_example9_Float_layouts.html")'
+					type="button"> </form>
+
+
+			<p>Layout approaches:
+			<ul>
+				<li>using percentages for the widths creates a fluid (or liquid) layout that skrinks and expands
+					depending on the size of the browser window.</li>
+				<li>fixed layouts use pixel-based widths - the layout does not change when viewed on smaller/larger
+					devices.</li>
+			</ul>
+
+			<p>What happens if we add some padding to each column?:
+			<pre class="language-css" data-line="4,9"><code>#column1 {
+	float: left;
+	width: 40%; 
+	padding: 2%;}
+
+#column2 {
+	float: left;
+	width: 60%;
+	padding: 2%;
+}</code></pre>
+
+			<form><input value="View result" onclick='window.open("examples/style_example9_Float_layouts+padding.html")'
+					type="button"> </form>
+
+
+
+			<p>Example shows float drop - one column has dropped down. Why – because there is not enough room for the
+				column.
+				Note: the width of an element displayed in the browser window is not the same as its width
+				property.</br>
+
+
+			<p>The displayed width of any element is a combination of its width, left and right border sizes, left and
+				right padding and left and right margins.
+			<ul>
+				<li>Width of Column 1 = 40% plus left padding (2%) plus right padding (2%) = 44% </li>
+				<li>Width of Column 2 = 60% plus left padding (2%) plus right padding (2%) = 64% </li>
+			</ul>
+
+			<p>For the columns to fit the browser window / containing block must accommodate the combined total of all
+				these widths.
+				How can we solve this? </p>
+
+			Solution 1 - Reduce column widths:<br>
+			<ul>
+				<li>Column 1 = 36% plus left padding (2%) plus right padding (2%) = 40%</li>
+				<li>Column 2 = 56% plus left padding (2%) plus right padding (2%) = 60%</li>
+			</ul>
+			or
+			<p>Solution 2 - Use CSS3 box-sizing property. This includes the width and any paddings and borders within
+				the width of the column (reduces the column width). Need prefix for Firefox. </p>
+			<pre class="language-css"><code>    { -moz-box-sizing:border-box;  /* for Firefox */
+           box-sizing:border-box;  /* for other browsers */ }</code></pre>
+			View the source of those examples
+			<form><input value="View result - Solution 1"
+					onclick='window.open("examples/style_example9_Float_layouts+padding_Solution1.html")' type="button">
+			</form>
+
+			<form><input value="View result - Solution 2"
+					onclick='window.open("examples/style_example9_Float_layouts+padding_Solution2.html")' type="button">
+			</form>
+
+			<br>
+			<strong>clear property</strong><br>
+
+			As we know, with CSS float an element can be pushed to the left or right, allowing other elements to wrap
+			around it.</p>
+
+
+			<p>The CSS clear property instructs an element to <strong>not wrap</strong> around a floated element.
+				By clearing an element you can force it to drop
+				down below the floated item. </p>
+
+			<p>You have three options - clear:left; clear:right; clear:both. Many people choose to use clear:both since
+				it clears elements floated left and/or right. </p>
+
+			<p>
+				Example - We add the following footer to the web page:
+
+			<pre><code>&lt;div id="footer"&gt;
+	&lt;p&gt;Some content for the footer.  Some content for the footer.
+	Some content for the footer.  Some content for the footer.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			We add the following CSS to our embedded style:
+
+			<pre class="language-css"><code>#footer { 
+	border: solid 2px blue; 
+	color:blue;
+}</code></pre>
+			</p>
+
+			<form><input value="View result" onclick='window.open("examples/style_example9_Footer.html")' type="button">
+			</form>
+
+			<br> The results are not as expected - the footer is trying to wrap around the floated columns! We need to
+			force the footer to drop
+			down below the floated items by adding clear:both to the CSS:
+
+			<pre class="language-css" data-line="4"><code>#footer { 
+	border: solid 2px blue; 
+	color: blue;
+	clear:both;
+}</code></pre>
+
+			</p>
+
+			<form><input value="View result" onclick='window.open("examples/style_example9_Footer+Clearboth.html")'
+					type="button"> </form>
+
+			<br>
+
+			<h2 id="css3" class="group">CSS3</h2>
+
+			The CSS3 specification is still under development. However, many of the new CSS3 properties have been
+			implemented in modern browsers.<br> <br>
+			While waiting for the CSS3 specification to become final, browser makers added (often nonstandard) features
+			and prefixed the property names:
+			<ul>
+				<li>Firefox uses <code>-moz-</code></li>
+				<li>Chrome uses <code>-webkit-</code></li>
+				<li>IE uses <code>-ms-</code></li>
+				<li>Opera uses <code>-o-</code></li>
+			</ul>
+
+			The following will discuss border-radius and illustrate the use of vendor prefixes
+
+			<h4>border-radius</h4>
+
+			To specify rounded corners to rectangular shapes. Supported in IE9+, Firefox 4+, Chrome, Safari 5+, and
+			Opera. To round all four corners equally:
+
+			<pre class="language-css"><code>border-radius: 20px;</code></pre>
+			<br>
+			<h4>Example border-radius with vendor prefix</h4>
+
+			<pre class="language-css" data-line="5-6"><code>#radiusBorder {
+	border:2px solid blue;
+	padding: 30px; 
+	width: 275px;
+	-moz-border-radius: 20px; /* Old Firefox */
+	border-radius: 20px;  	 /* for current browsers */ 
+}
+</code><code class="language-html">
+&lt;div id="radiusBorder"&gt;
+	If supported the browser will display this as a box with rounded corners
+&lt;/div&gt;</code></pre>
+
+			<div class="displaydiv">
+				<div id="radiusBorder">If supported the browser will display this as a box with rounded corners</div>
+			</div><br>
+			Remember to have a border (as above) or a background colour (as below) so that the rounded corners can be
+			seen.
+
+			<pre class="language-css" data-line="5-6"><code>#radiusBG {
+    background: aqua;
+	padding: 30px;
+	width: 275px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;  /* current browsers */ 
+}
+</code><code class="language-html">
+&lt;div id="radiusBG"&gt;
+	If supported the browser will display this as a box with rounded corners
+&lt;/div&gt;</code></pre>
+			<div class="displaydiv">
+				<div id="radiusBG">If supported the browser will display this as a box with rounded corners</div>
+			</div>
+			<br>
+			<h4>box-shadow</h4>
+
+			To implement multiple drop shadows on box elements, specifying values for size of offset blur and colour.
+
+			<pre class="language-css"><code>box-shadow: 10px 10px 5px #888;</code></pre>
+
+			Accepts the horizontal offset (from left), vertical offset (from top), optional blur distance and optional
+			colour value.
+			Outer shadow is the default. Optional <code>inset</code> keyword creates an inner shadow.
+
+			<h4>Example box-shadow with vendor prefixes</h4>
+
+			<pre class="language-css" data-line="5-6"><code>#bs {
+	width: 300px;
+	height: 100px;
+	background-color: lightblue;
+	-moz-box-shadow: 10px 10px 5px #888888; /* Old Firefox */
+	box-shadow: 10px 10px 5px #888888;
+	padding: 10px;
+    }
+</code><code class="language-html">
+&lt;div id="bs"&gt;
+	If supported the browser will display a box with box-shadow
+&lt;/div&gt;</code></pre>
+			<div class="displaydiv">
+				<div id="bs">If supported the browser will display a box with box-shadow</div>
+			</div>
+			<br>
+			<h4>text-shadow</h4>
+
+			The text-shadow property applies shadow to text. Accepts offset from left, offset from top, blur distance
+			and colour. <b>IE does not support the text-shadow property</b>.
+
+			<pre><code>&lt;h1 style="text-shadow: 3px 3px 1px #888;"&gt;
+	If supported the browser will display this with text shadow
+&lt;/h1&gt;</code></pre>
+			<div class="displaydiv">
+				<h1 style="text-shadow: 3px 3px 1px #888;">If supported the browser will <br>display this with text
+					shadow</h1>
+			</div>
+			</p>
+
+
+			<br>
+
+		</div>
+
+		<!--
+
+-->
+
+		<div class="row">
+
+			<!--Nav Bar -->
+
+			<nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+				<ul id="sidebar" class="nav nav-stacked">
+
+
+					<li><a href="#stylingLinks">Styling Links</a></li>
+					<li><a href="#stylingLists">Styling Lists</a></li>
+					<li><a href="#cssBoxModel">CSS Box Model</a></li>
+					<li><a href="#stylingTables">Styling Tables</a></li>
+					<li><a href="#cssPositioning">CSS Positioning</a></li>
+					<li><a href="#cssFloat">Making Elements Float</a></li>
+					<li><a href="#css3">CSS3</a></li>
+					<!-- <li><a href="#review">Review Questions</a></li> -->
+
+				</ul>
+			</nav>
+		</div>
+	</main>
+
+	<nav class="navbar navbar-default no-margin-bottom">
+		<div class="container">
+			<p class="navbar-text navbar-right">&copy; Copyright 2016-2022 <a href="https://www.westminster.ac.uk"
+					class="navbar-link">University of Westminster</a></p>
+		</div>
+	</nav>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+
+	<script src="prism/prism.js"></script>
+	<script src="prism/prism-line-numbers.js"></script>
+	<script src="prism/prism-line-highlight.js"></script>
+	<script>
+		$('body').scrollspy({
+			target: '.bs-docs-sidebar',
+			offset: 60
+		});
+		$("#sidebar").affix({
+			offset: {
+				top: 80
+			}
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-RRNL1F43P4');
+	</script>
+
+
+	<br>
+	<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>

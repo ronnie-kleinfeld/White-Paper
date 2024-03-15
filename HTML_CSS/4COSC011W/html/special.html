@@ -1,0 +1,1391 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+  <link href="prism/prism.css" rel="stylesheet" />
+  <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+  <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+      color: #3387EB,
+        border-left: 1px solid #3387EB;
+    }
+
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+      padding-left: 18px;
+      font-weight: bold;
+      color: #3387EB;
+      background-color: transparent;
+      border-left: 2px solid #3387EB;
+    }
+
+    .back-to-top:hover,
+    .bs-docs-theme-toggle:hover {
+      color: #563d7c;
+      text-decoration: none;
+    }
+
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:focus,
+    .dropdown-menu>.active>a:hover {
+      background-image: none;
+      background-color: #3387EB;
+    }
+
+    th {
+      text-align: center;
+    }
+
+    #marker {
+      padding-top: 60px;
+      margin-top: -60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-html">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Module Info<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">General Information</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="team.html">Module Team</a></li>
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="unix.html">Introduction to Unix</a></li>
+              <li><a href="basicTags.html">Basic HTML tags</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="tables.html">Tables</a></li>
+              <li><a href="colours.html">Colours</a></li>
+              <li><a href="images.html">Images</a></li>
+              <li><a href="links.html">Links & iframes</a></li>
+              <li class="active video"><a href="special.html">Special Characters</a></li>
+              <li><a href="forms.html">Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+              <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+              <li><a href="cssElements.html">Styling Elements</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">JavaScript<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="js1.html">Introduction to JavaScript</a></li>
+              <li><a href="js2.html">Objects, Methods and Functions</a></li>
+              <li><a href="js3.html">JavaScript and Forms</a></li>
+              <li><a href="js4.html">JavaScript and the DOM</a></li>
+              <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+
+
+
+  <main class="container language-html">
+    <div class="col-md-9" role="main">
+      <h1>HTML Special Characters</h1>
+
+      <h2>Special Characters</h2>
+      <span class="glyphicon glyphicon-hand-right" aria-hidden="true"> Hand</span>
+      <span class="glyphicon glyphicon-education" aria-hidden="true"> Education</span>
+
+
+      <h2 id="special" class="group">Special HTML characters</h2>
+      <p>The markup language uses the character < to start a markup tag. The consequence of this is that < can not be
+          used to represent the less than character directly in a web page. The HTML markup languages defines an escape
+          sequences of characters to represent such special characters.</p>
+          <p>
+            The following are some of the character sequences used to represent characters that have a special meaning
+            in the HTML language.</p>
+          <table class="table table-bordered">
+            <tr>
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+            </tr>
+
+            <tr>
+              <td>&lt;</td>
+
+              <td><code>&amp;lt;</code></td>
+
+              <td>&gt;</td>
+
+              <td><code>&amp;gt;</code></td>
+
+              <td>&nbsp;</td>
+
+              <td><code>&amp;nbsp;</code></td>
+            </tr>
+            <tr>
+              <td>&amp;</td>
+
+              <td><code>&amp;amp;</code></td>
+
+              <td>&quot;</td>
+
+              <td><code>&amp;quot;</code></td>
+
+              <td>&copy;</td>
+
+              <td><code>&amp;copy;</code></td>
+            </tr>
+          </table>
+          <h2 id="outside" class="group">Characters outside the normal ASCII set</h2>
+          <p>Characters not in the normal ASCII character set are also represented by an escape sequence. This is so
+            that they may be typed on computer systems which do not directly support the input of such characters. For
+            example:</p>
+
+          <table class="table table-bordered">
+            <tr>
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+            </tr>
+            <tr>
+              <td>&aacute;</td>
+
+              <td><code>&amp;aacute;</code></td>
+
+              <td>&ccedil;</td>
+
+              <td><code>&amp;ccedil;</code></td>
+
+              <td>&euml;</td>
+
+              <td><code>&amp;euml;</code></td>
+            </tr>
+          </table>
+          <h2 id="space" class="group">Non breakable space</h2>
+
+          <p>To prevent the web browser breaking a line at a space character a non breaking space character is used
+            rather than the normal space character.. A non breaking space character is represented by the escape
+            sequence &nbsp;. This can also be used to introduce more than one space character between words. For
+            example:</p>
+          <table class="table table-bordered">
+            <tr>
+              <th>HTML</th>
+              <th>Formatted text</th>
+            </tr>
+            <tr>
+              <td>
+                <pre><code>A&amp;nbsp;&amp;nbsp;B&lt;br>A B</code></pre>
+              </td>
+              <td>A&nbsp;&nbsp;B<br>A B</td>
+            </tr>
+          </table>
+          <h2 id="latin" class="group">LATIN-1 character set</h2>
+
+
+
+          <p>In addition a character from the LATIN-1 character set is represented by &#nn;. Where nn represents the
+            character code in decimal. For example:</p>
+
+
+          <table class="table table-bordered">
+            <tr>
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+
+              <th>Character</th>
+
+              <th>Represent by sequence&nbsp;</th>
+            </tr>
+            <tr>
+              <td>!</td>
+
+              <td><code>&amp;#33;</code></td>
+
+              <td>"</td>
+
+              <td><code>&amp;#34;</code></td>
+
+              <td>#</td>
+
+              <td><code>&amp;#35;</code></td>
+            </tr>
+
+            <tr>
+              <td>$</td>
+
+              <td><code>&amp;#36;</code></td>
+
+              <td>%</td>
+
+              <td><code>&amp;#37;</code></td>
+
+              <td>&amp;</td>
+
+              <td><code>&amp;#38;</code></td>
+            </tr>
+
+            <tr>
+              <td>'</td>
+
+              <td><code>&amp;#39;</code></td>
+
+              <td>(</td>
+
+              <td><code>&amp;#40;</code></td>
+
+              <td>)</td>
+
+              <td><code>&amp;#41;</code></td>
+            </tr>
+
+            <tr>
+              <td>*</td>
+
+              <td><code>&amp;#42;</code></td>
+
+              <td>+</td>
+
+              <td><code>&amp;#43;</code></td>
+
+              <td>,</td>
+
+              <td><code>&amp;#44;</code></td>
+            </tr>
+
+            <tr>
+              <td>-</td>
+
+              <td><code>&amp;#45;</code></td>
+
+              <td>.</td>
+
+              <td><code>&amp;#46;</code></td>
+
+              <td>/</td>
+
+              <td><code>&amp;#47;</code></td>
+            </tr>
+
+            <tr>
+              <td>0</td>
+
+              <td><code>&amp;#48;</code></td>
+
+              <td>1</td>
+
+              <td><code>&amp;#49;</code></td>
+
+              <td>2</td>
+
+              <td><code>&amp;#50;</code></td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+
+              <td><code>&amp;#51;</code></td>
+
+              <td>4</td>
+
+              <td><code>&amp;#52;</code></td>
+
+              <td>5</td>
+
+              <td><code>&amp;#53;</code></td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+
+              <td><code>&amp;#54;</code></td>
+
+              <td>7</td>
+
+              <td><code>&amp;#55;</code></td>
+
+              <td>8</td>
+
+              <td><code>&amp;#56;</code></td>
+            </tr>
+
+            <tr>
+              <td>9</td>
+
+              <td><code>&amp;#57;</code></td>
+
+              <td>:</td>
+
+              <td><code>&amp;#58;</code></td>
+
+              <td>;</td>
+
+              <td><code>&amp;#59;</code></td>
+            </tr>
+
+            <tr>
+              <td>&lt;</td>
+
+              <td><code>&amp;#60;</code></td>
+
+              <td>=</td>
+
+              <td><code>&amp;#61;</code></td>
+
+              <td>></td>
+
+              <td><code>&amp;#62;</code></td>
+            </tr>
+
+            <tr>
+              <td>?</td>
+
+              <td><code>&amp;#63;</code></td>
+
+              <td>@</td>
+
+              <td><code>&amp;#64;</code></td>
+
+              <td>A</td>
+
+              <td><code>&amp;#65;</code></td>
+            </tr>
+
+            <tr>
+              <td>B</td>
+
+              <td><code>&amp;#66;</code></td>
+
+              <td>C</td>
+
+              <td><code>&amp;#67;</code></td>
+
+              <td>D</td>
+
+              <td><code>&amp;#68;</code></td>
+            </tr>
+
+            <tr>
+              <td>E</td>
+
+              <td><code>&amp;#69;</code></td>
+
+              <td>F</td>
+
+              <td><code>&amp;#70;</code></td>
+
+              <td>G</td>
+
+              <td><code>&amp;#71;</code></td>
+            </tr>
+
+            <tr>
+              <td>H</td>
+
+              <td><code>&amp;#72;</code></td>
+
+              <td>I</td>
+
+              <td><code>&amp;#73;</code></td>
+
+              <td>J</td>
+
+              <td><code>&amp;#74;</code></td>
+            </tr>
+
+            <tr>
+              <td>K</td>
+
+              <td><code>&amp;#75;</code></td>
+
+              <td>L</td>
+
+              <td><code>&amp;#76;</code></td>
+
+              <td>M</td>
+
+              <td><code>&amp;#77;</code></td>
+            </tr>
+
+            <tr>
+              <td>N</td>
+
+              <td><code>&amp;#78;</code></td>
+
+              <td>O</td>
+
+              <td><code>&amp;#79;</code></td>
+
+              <td>P</td>
+
+              <td><code>&amp;#80;</code></td>
+            </tr>
+
+            <tr>
+              <td>Q</td>
+
+              <td><code>&amp;#81;</code></td>
+
+              <td>R</td>
+
+              <td><code>&amp;#82;</code></td>
+
+              <td>S</td>
+
+              <td><code>&amp;#83;</code></td>
+            </tr>
+
+            <tr>
+              <td>T</td>
+
+              <td><code>&amp;#84;</code></td>
+
+              <td>U</td>
+
+              <td><code>&amp;#85;</code></td>
+
+              <td>V</td>
+
+              <td><code>&amp;#86;</code></td>
+            </tr>
+
+            <tr>
+              <td>W</td>
+
+              <td><code>&amp;#87;</code></td>
+
+              <td>X</td>
+
+              <td><code>&amp;#88;</code></td>
+
+              <td>Y</td>
+
+              <td><code>&amp;#89;</code></td>
+            </tr>
+
+            <tr>
+              <td>Z</td>
+
+              <td><code>&amp;#90;</code></td>
+
+              <td>[</td>
+
+              <td><code>&amp;#91;</code></td>
+
+              <td>\</td>
+
+              <td><code>&amp;#92;</code></td>
+            </tr>
+
+            <tr>
+              <td>]</td>
+
+              <td><code>&amp;#93;</code></td>
+
+              <td>^</td>
+
+              <td><code>&amp;#94;</code></td>
+
+              <td>_</td>
+
+              <td><code>&amp;#95;</code></td>
+            </tr>
+
+            <tr>
+              <td>`</td>
+
+              <td><code>&amp;#96;</code></td>
+
+              <td>a</td>
+
+              <td><code>&amp;#97;</code></td>
+
+              <td>b</td>
+
+              <td><code>&amp;#98;</code></td>
+            </tr>
+
+            <tr>
+              <td>c</td>
+
+              <td><code>&amp;#99;</code></td>
+
+              <td>d</td>
+
+              <td><code>&amp;#100;</code></td>
+
+              <td>e</td>
+
+              <td><code>&amp;#101;</code></td>
+            </tr>
+
+            <tr>
+              <td>f</td>
+
+              <td><code>&amp;#102;</code></td>
+
+              <td>g</td>
+
+              <td><code>&amp;#103;</code></td>
+
+              <td>h</td>
+
+              <td><code>&amp;#104;</code></td>
+            </tr>
+
+            <tr>
+              <td>i</td>
+
+              <td><code>&amp;#105;</code></td>
+
+              <td>j</td>
+
+              <td><code>&amp;#106;</code></td>
+
+              <td>k</td>
+
+              <td><code>&amp;#107;</code></td>
+            </tr>
+
+            <tr>
+              <td>l</td>
+
+              <td><code>&amp;#108;</code></td>
+
+              <td>m</td>
+
+              <td><code>&amp;#109;</code></td>
+
+              <td>n</td>
+
+              <td><code>&amp;#110;</code></td>
+            </tr>
+
+            <tr>
+              <td>o</td>
+
+              <td><code>&amp;#111;</code></td>
+
+              <td>p</td>
+
+              <td><code>&amp;#112;</code></td>
+
+              <td>q</td>
+
+              <td><code>&amp;#113;</code></td>
+            </tr>
+
+            <tr>
+              <td>r</td>
+
+              <td><code>&amp;#114;</code></td>
+
+              <td>s</td>
+
+              <td><code>&amp;#115;</code></td>
+
+              <td>t</td>
+
+              <td><code>&amp;#116;</code></td>
+            </tr>
+
+            <tr>
+              <td>u</td>
+
+              <td><code>&amp;#117;</code></td>
+
+              <td>v</td>
+
+              <td><code>&amp;#118;</code></td>
+
+              <td>w</td>
+
+              <td><code>&amp;#119;</code></td>
+            </tr>
+
+            <tr>
+              <td>x</td>
+
+              <td><code>&amp;#120;</code></td>
+
+              <td>y</td>
+
+              <td><code>&amp;#121;</code></td>
+
+              <td>z</td>
+
+              <td><code>&amp;#122;</code></td>
+            </tr>
+
+            <tr>
+              <td>{</td>
+
+              <td><code>&amp;#123;</code></td>
+
+              <td>|</td>
+
+              <td><code>&amp;#124;</code></td>
+
+              <td>}</td>
+
+              <td><code>&amp;#125;</code></td>
+            </tr>
+
+            <tr>
+              <td>~</td>
+
+              <td><code>&amp;#126;</code></td>
+
+              <td>?</td>
+
+              <td><code>&amp;#127;</code></td>
+
+              <td>€</td>
+
+              <td><code>&amp;#128;</code></td>
+            </tr>
+
+            <tr>
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#129;</code></td>
+
+              <td>,</td>
+
+              <td><code>&amp;#130;</code></td>
+
+              <td>f</td>
+
+              <td><code>&amp;#131;</code></td>
+            </tr>
+
+            <tr>
+              <td>,,</td>
+
+              <td><code>&amp;#132;</code></td>
+
+              <td>...</td>
+
+              <td><code>&amp;#133;</code></td>
+
+              <td>?</td>
+
+              <td><code>&amp;#134;</code></td>
+            </tr>
+
+            <tr>
+              <td>?</td>
+
+              <td><code>&amp;#135;</code></td>
+
+              <td>^</td>
+
+              <td><code>&amp;#136;</code></td>
+
+              <td>?</td>
+
+              <td><code>&amp;#137;</code></td>
+            </tr>
+
+            <tr>
+              <td>S</td>
+
+              <td><code>&amp;#138;</code></td>
+
+              <td>&lt;</td>
+
+              <td><code>&amp;#139;</code></td>
+
+              <td>OE</td>
+
+              <td><code>&amp;#140;</code></td>
+            </tr>
+
+            <tr>
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#141;</code></td>
+
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#142;</code></td>
+
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#143;</code></td>
+            </tr>
+
+            <tr>
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#144;</code></td>
+
+              <td>`</td>
+
+              <td><code>&amp;#145;</code></td>
+
+              <td>'</td>
+
+              <td><code>&amp;#146;</code></td>
+            </tr>
+
+            <tr>
+              <td>"</td>
+
+              <td><code>&amp;#147;</code></td>
+
+              <td>"</td>
+
+              <td><code>&amp;#148;</code></td>
+
+              <td>*</td>
+
+              <td><code>&amp;#149;</code></td>
+            </tr>
+
+            <tr>
+              <td>-</td>
+
+              <td><code>&amp;#150;</code></td>
+
+              <td>-</td>
+
+              <td><code>&amp;#151;</code></td>
+
+              <td>~</td>
+
+              <td><code>&amp;#152;</code></td>
+            </tr>
+
+            <tr>
+              <td>[tm]</td>
+
+              <td><code>&amp;#153;</code></td>
+
+              <td>s</td>
+
+              <td><code>&amp;#154;</code></td>
+
+              <td>></td>
+
+              <td><code>&amp;#155;</code></td>
+            </tr>
+
+            <tr>
+              <td>oe</td>
+
+              <td><code>&amp;#156;</code></td>
+
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#157;</code></td>
+
+              <td>&#x8D;</td>
+
+              <td><code>&amp;#158;</code></td>
+            </tr>
+
+            <tr>
+              <td>Y</td>
+
+              <td><code>&amp;#159;</code></td>
+
+              <td>&nbsp;</td>
+
+              <td><code>&amp;#160;</code></td>
+
+              <td>&iexcl;</td>
+
+              <td><code>&amp;#161;</code></td>
+            </tr>
+
+            <tr>
+              <td>&cent;</td>
+
+              <td><code>&amp;#162;</code></td>
+
+              <td>&pound;</td>
+
+              <td><code>&amp;#163;</code></td>
+
+              <td>&curren;</td>
+
+              <td><code>&amp;#164;</code></td>
+            </tr>
+
+            <tr>
+              <td>&yen;</td>
+
+              <td><code>&amp;#165;</code></td>
+
+              <td>&brvbar;</td>
+
+              <td><code>&amp;#166;</code></td>
+
+              <td>&sect;</td>
+
+              <td><code>&amp;#167;</code></td>
+            </tr>
+
+            <tr>
+              <td>&uml;</td>
+
+              <td><code>&amp;#168;</code></td>
+
+              <td>&copy;</td>
+
+              <td><code>&amp;#169;</code></td>
+
+              <td>&ordf;</td>
+
+              <td><code>&amp;#170;</code></td>
+            </tr>
+
+            <tr>
+              <td>&laquo;</td>
+
+              <td><code>&amp;#171;</code></td>
+
+              <td>&not;</td>
+
+              <td><code>&amp;#172;</code></td>
+
+              <td>&shy;</td>
+
+              <td><code>&amp;#173;</code></td>
+            </tr>
+
+            <tr>
+              <td>&reg;</td>
+
+              <td><code>&amp;#174;</code></td>
+
+              <td>&macr;</td>
+
+              <td><code>&amp;#175;</code></td>
+
+              <td>&deg;</td>
+
+              <td><code>&amp;#176;</code></td>
+            </tr>
+
+            <tr>
+              <td>&plusmn;</td>
+
+              <td><code>&amp;#177;</code></td>
+
+              <td>&sup2;</td>
+
+              <td><code>&amp;#178;</code></td>
+
+              <td>&sup3;</td>
+
+              <td><code>&amp;#179;</code></td>
+            </tr>
+
+            <tr>
+              <td>&acute;</td>
+
+              <td><code>&amp;#180;</code></td>
+
+              <td>&micro;</td>
+
+              <td><code>&amp;#181;</code></td>
+
+              <td>&para;</td>
+
+              <td><code>&amp;#182;</code></td>
+            </tr>
+
+            <tr>
+              <td>&middot;</td>
+
+              <td><code>&amp;#183;</code></td>
+
+              <td>&cedil;</td>
+
+              <td><code>&amp;#184;</code></td>
+
+              <td>&sup1;</td>
+
+              <td><code>&amp;#185;</code></td>
+            </tr>
+
+            <tr>
+              <td>&ordm;</td>
+
+              <td><code>&amp;#186;</code></td>
+
+              <td>&raquo;</td>
+
+              <td><code>&amp;#187;</code></td>
+
+              <td>&frac14;</td>
+
+              <td><code>&amp;#188;</code></td>
+            </tr>
+
+            <tr>
+              <td>&frac12;</td>
+
+              <td><code>&amp;#189;</code></td>
+
+              <td>&frac34;</td>
+
+              <td><code>&amp;#190;</code></td>
+
+              <td>&iquest;</td>
+
+              <td><code>&amp;#191;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Agrave;</td>
+
+              <td><code>&amp;#192;</code></td>
+
+              <td>&Aacute;</td>
+
+              <td><code>&amp;#193;</code></td>
+
+              <td>&Acirc;</td>
+
+              <td><code>&amp;#194;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Atilde;</td>
+
+              <td><code>&amp;#195;</code></td>
+
+              <td>&Auml;</td>
+
+              <td><code>&amp;#196;</code></td>
+
+              <td>&Aring;</td>
+
+              <td><code>&amp;#197;</code></td>
+            </tr>
+
+            <tr>
+              <td>&AElig;</td>
+
+              <td><code>&amp;#198;</code></td>
+
+              <td>&Ccedil;</td>
+
+              <td><code>&amp;#199;</code></td>
+
+              <td>&Egrave;</td>
+
+              <td><code>&amp;#200;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Eacute;</td>
+
+              <td><code>&amp;#201;</code></td>
+
+              <td>&Ecirc;</td>
+
+              <td><code>&amp;#202;</code></td>
+
+              <td>&Euml;</td>
+
+              <td><code>&amp;#203;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Igrave;</td>
+
+              <td><code>&amp;#204;</code></td>
+
+              <td>&Iacute;</td>
+
+              <td><code>&amp;#205;</code></td>
+
+              <td>&Icirc;</td>
+
+              <td><code>&amp;#206;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Iuml;</td>
+
+              <td><code>&amp;#207;</code></td>
+
+              <td>&ETH;</td>
+
+              <td><code>&amp;#208;</code></td>
+
+              <td>&Ntilde;</td>
+
+              <td><code>&amp;#209;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Ograve;</td>
+
+              <td><code>&amp;#210;</code></td>
+
+              <td>&Oacute;</td>
+
+              <td><code>&amp;#211;</code></td>
+
+              <td>&Ocirc;</td>
+
+              <td><code>&amp;#212;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Otilde;</td>
+
+              <td><code>&amp;#213;</code></td>
+
+              <td>&Ouml;</td>
+
+              <td><code>&amp;#214;</code></td>
+
+              <td>&times;</td>
+
+              <td><code>&amp;#215;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Oslash;</td>
+
+              <td><code>&amp;#216;</code></td>
+
+              <td>&Ugrave;</td>
+
+              <td><code>&amp;#217;</code></td>
+
+              <td>&Uacute;</td>
+
+              <td><code>&amp;#218;</code></td>
+            </tr>
+
+            <tr>
+              <td>&Ucirc;</td>
+
+              <td><code>&amp;#219;</code></td>
+
+              <td>&Uuml;</td>
+
+              <td><code>&amp;#220;</code></td>
+
+              <td>&Yacute;</td>
+
+              <td><code>&amp;#221;</code></td>
+            </tr>
+
+            <tr>
+              <td>&THORN;</td>
+
+              <td><code>&amp;#222;</code></td>
+
+              <td>&szlig;</td>
+
+              <td><code>&amp;#223;</code></td>
+
+              <td>&agrave;</td>
+
+              <td><code>&amp;#224;</code></td>
+            </tr>
+
+            <tr>
+              <td>&aacute;</td>
+
+              <td><code>&amp;#225;</code></td>
+
+              <td>&acirc;</td>
+
+              <td><code>&amp;#226;</code></td>
+
+              <td>&atilde;</td>
+
+              <td><code>&amp;#227;</code></td>
+            </tr>
+
+            <tr>
+              <td>&auml;</td>
+
+              <td><code>&amp;#228;</code></td>
+
+              <td>&aring;</td>
+
+              <td><code>&amp;#229;</code></td>
+
+              <td>&aelig;</td>
+
+              <td><code>&amp;#230;</code></td>
+            </tr>
+
+            <tr>
+              <td>&ccedil;</td>
+
+              <td><code>&amp;#231;</code></td>
+
+              <td>&egrave;</td>
+
+              <td><code>&amp;#232;</code></td>
+
+              <td>&eacute;</td>
+
+              <td><code>&amp;#233;</code></td>
+            </tr>
+
+            <tr>
+              <td>&ecirc;</td>
+
+              <td><code>&amp;#234;</code></td>
+
+              <td>&euml;</td>
+
+              <td><code>&amp;#235;</code></td>
+
+              <td>&igrave;</td>
+
+              <td><code>&amp;#236;</code></td>
+            </tr>
+
+            <tr>
+              <td>&iacute;</td>
+
+              <td><code>&amp;#237;</code></td>
+
+              <td>&icirc;</td>
+
+              <td><code>&amp;#238;</code></td>
+
+              <td>&iuml;</td>
+
+              <td><code>&amp;#239;</code></td>
+            </tr>
+
+            <tr>
+              <td>&eth;</td>
+
+              <td><code>&amp;#240;</code></td>
+
+              <td>&ntilde;</td>
+
+              <td><code>&amp;#241;</code></td>
+
+              <td>&ograve;</td>
+
+              <td><code>&amp;#242;</code></td>
+            </tr>
+
+            <tr>
+              <td>&oacute;</td>
+
+              <td><code>&amp;#243;</code></td>
+
+              <td>&ocirc;</td>
+
+              <td><code>&amp;#244;</code></td>
+
+              <td>&otilde;</td>
+
+              <td><code>&amp;#245;</code></td>
+            </tr>
+
+            <tr>
+              <td>&ouml;</td>
+
+              <td><code>&amp;#246;</code></td>
+
+              <td>&divide;</td>
+
+              <td><code>&amp;#247;</code></td>
+
+              <td>&oslash;</td>
+
+              <td><code>&amp;#248;</code></td>
+            </tr>
+
+            <tr>
+              <td>&ugrave;</td>
+
+              <td><code>&amp;#249;</code></td>
+
+              <td>&uacute;</td>
+
+              <td><code>&amp;#250;</code></td>
+
+              <td>&ucirc;</td>
+
+              <td><code>&amp;#251;</code></td>
+            </tr>
+
+            <tr>
+              <td>&uuml;</td>
+
+              <td><code>&amp;#252;</code></td>
+
+              <td>&yacute;</td>
+
+              <td><code>&amp;#253;</code></td>
+
+              <td>&thorn;</td>
+
+              <td><code>&amp;#254;</code></td>
+            </tr>
+
+            <tr>
+              <td>&yuml;</td>
+
+              <td><code>&amp;#255;</code></td>
+            </tr>
+          </table>
+
+
+          <hr>
+          <div class="alert alert-warning" role="alert">
+            <h2 id="review" class="group">Review Questions</h2>
+
+            <ul>
+              <li>Question 1 - What is the sequence for a non breakable space?</li>
+              <li>Question 2 - Write the HTML to display <code>&lt;br></code> on a web page</li>
+
+          </div>
+    </div>
+
+    <div class="row">
+      <!--Nav Bar -->
+
+      <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+        <ul id="sidebar" class="nav nav-stacked">
+          <li>
+            <a href="#special">Special HTML characters</a>
+          </li>
+          <li>
+            <a href="#outside">Characters outside the normal ASCII set</a>
+          </li>
+          <li>
+            <a href="#space">Non breakable space</a>
+          </li>
+
+          <li><a href="#latin">LATIN-1 character set</a></li>
+          <li><a href="#review">Review Questions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <nav class="navbar navbar-default no-margin-bottom">
+    <div class="container">
+      <p class="navbar-text navbar-right">&copy; Copyright 2016-2023 <a href="https://www.westminster.ac.uk"
+          class="navbar-link">University of Westminster</a></p>
+    </div>
+  </nav>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+
+  <script src="prism/prism.js"></script>
+  <script src="prism/prism-line-numbers.js"></script>
+  <script src="prism/prism-line-highlight.js"></script>
+  <script>
+    $('body').scrollspy({
+      target: '.bs-docs-sidebar',
+      offset: 60
+    });
+    $("#sidebar").affix({
+      offset: {
+        top: 80
+      }
+    });
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RRNL1F43P4');
+  </script>
+  <br>
+  <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Styling &amp; CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="authors" content="Anne-Gaelle Colom, Wendy Purdy and Daphne Economou">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link href="prism/prism.css" rel="stylesheet" />
+	<link href="prism/prism-line-numbers.css" rel="stylesheet" />
+	<link href="prism/prism-line-highlight.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="style.css" />
+	<style>
+		.bs-docs-sidebar .nav>li>a:hover,
+		.bs-docs-sidebar .nav>li>a:focus {
+			color: #800080,
+				border-left: 1px solid #800080;
+		}
+
+		.bs-docs-sidebar .nav>.active>a,
+		.bs-docs-sidebar .nav>.active:hover>a,
+		.bs-docs-sidebar .nav>.active:focus>a {
+			padding-left: 18px;
+			font-weight: bold;
+			color: #800080;
+			background-color: transparent;
+			border-left: 2px solid #800080;
+		}
+
+		.back-to-top:hover,
+		.bs-docs-theme-toggle:hover {
+			color: #800080;
+			text-decoration: none;
+		}
+
+		.dropdown-menu>.active>a,
+		.dropdown-menu>.active>a:focus,
+		.dropdown-menu>.active>a:hover {
+			background-image: none;
+			background-color: #800080;
+		}
+
+		th {
+			text-align: center;
+		}
+	</style>
+
+	<style type="text/css">
+		#radiusBorder {
+			border: 2px solid blue;
+			padding: 30px;
+			width: 275px;
+			-moz-border-radius: 20px;
+			/* Old Firefox */
+			border-radius: 20px;
+			/* for current browsers */
+		}
+
+		#radiusBG {
+			background: aqua;
+			padding: 30px;
+			width: 275px;
+			-moz-border-radius: 20px;
+			/* Old Firefox */
+			border-radius: 20px;
+			/* for current browsers */
+		}
+
+		#bs {
+			width: 300px;
+			height: 100px;
+			background-color: lightblue;
+			-moz-box-shadow: 10px 10px 5px #888888;
+			/* Old Firefox */
+			box-shadow: 10px 10px 5px #888888;
+			padding: 10px;
+		}
+
+		.official {
+			color: blue;
+		}
+
+		#intro {
+			color: green;
+		}
+
+		pre {
+			font-size: 16px !important;
+		}
+
+		.addedPadding td,
+		.addedPadding th {
+			padding: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-css">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Home</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Module Info<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="general.html">General Information</a></li>
+							<li><a href="schedule.html">Schedule</a></li>
+							<li><a href="team.html">Module Team</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="unix.html">Introduction to Unix</a></li>
+							<li><a href="basicTags.html">Basic HTML tags</a></li>
+							<li><a href="lists.html">Lists</a></li>
+							<li><a href="tables.html">Tables</a></li>
+							<li><a href="colours.html">Colours</a></li>
+							<li><a href="images.html">Images</a></li>
+							<li><a href="links.html">Links &amp; iframes</a></li>
+							<li><a href="special.html">Special Characters</a></li>
+							<li><a href="forms.html">Forms</a></li>
+						</ul>
+					</li>
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="cssSyntax.html">CSS Syntax</a></li>
+							<li class="active css"><a href="cssElements.html">Styling Elements</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">JavaScript<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="js1.html">Introduction to JavaScript</a></li>
+							<li><a href="js2.html">Objects, Methods and Functions</a></li>
+							<li><a href="js3.html">JavaScript and Forms</a></li>
+							<li><a href="js4.html">JavaScript and the DOM</a></li>
+							<li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+						</ul>
+					</li>
+
+				</ul>
+
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<main class="container language-html">
+		<div class="col-md-9" role="main">
+			<h1>Styling &amp; CSS</h1>
+
+			<h2 id="stylingTables" class="group">Styling Tables</h2>
+			<div>
+				<style scoped>
+					table {
+						border-collapse: collapse;
+						border: 5px solid yellow;
+					}
+
+					td {
+						border: 1px solid red;
+						padding: 1em;
+					}
+
+					td.dashed-blue {
+						border: 5px dashed blue;
+					}
+
+					td.solid-green {
+						border: 5px solid green;
+					}
+				</style>
+				<table>
+					<tr>
+						<td> 1 </td>
+						<td> 2 </td>
+						<td> 3 </td>
+					</tr>
+					<tr>
+						<td> 4 </td>
+						<td class="dashed-blue"> 5 </td>
+						<td class="solid-green"> 6 </td>
+					</tr>
+					<tr>
+						<td> 7 </td>
+						<td> 8 </td>
+						<td> 9 </td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<pre data-line="6-19"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;style&gt;
+		table { 
+			border-collapse: collapse;
+			border: 5px solid yellow; 
+		}    
+		td { 
+			border: 1px solid red;
+			padding: 1em; 
+		}
+		td.dashed-blue {
+			border: 5px dashed blue; 
+		}
+		td.solid-green {
+			border: 5px solid green;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;td&gt; 1 &lt;/td&gt;
+			&lt;td&gt; 2 &lt;/td&gt;
+			&lt;td&gt; 3 &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; 4 &lt;/td&gt;
+			&lt;td class="dashed-blue"&gt; 5 &lt;/td&gt;
+			&lt;td class="solid-green"&gt; 6 &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; 7 &lt;/td&gt;
+			&lt;td&gt; 8 &lt;/td&gt;
+			&lt;td&gt; 9 &lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			<hr>
+
+			The above shows how to define CSS classes.
+			<pre class="language-css"><code>td.dashed-blue  { border: 5px dashed blue; }
+td.solid-green { border: 5px solid green; }</code></pre>
+			Also, how to use these classes in the web page:
+			<pre><code>&lt;td class="dashed-blue"&gt; 5 &lt;/td&gt;
+&lt;td class="solid-green"&gt; 6 &lt;/td&gt;</code></pre>
+
+			The above also shows the use of the table border-collapse property:
+			<dl>
+				<dt>
+					<pre class="language-css"><code>table { border-collapse: collapse; } </code></pre>
+				</dt>
+				<dd>Adjacent cells collapse into a single border</dd>
+				<dt>
+					<pre class="language-css"><code>table { border-collapse: separate; }</code></pre>
+				</dt>
+				<dd>Adjacent cells have their own distinct borders (default)</dd>
+			</dl>
+
+			<form><input value="View two tables - border:separate & border:collapse"
+					onclick='window.open("examples/style_example6_separate.html")' type="button"> </form><br>
+
+
+			<p>Tables - another example to increase their readability - uses CSS classes</p>
+
+
+			<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Table with CSS classes&lt;/title&gt;
+    &lt;style&gt;
+    table { 
+    	border-collapse: collapse;
+        border: 1px solid black; 
+    }
+    tr.p  {
+    	text-align:center; 
+    	background-color: #ffddff; 
+    }
+    tr.b  {
+    	text-align:center; 
+    	background-color: #ccffff; 
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Using CSS classes&lt;/h2&gt;
+
+&lt;table width="80%"&gt;
+&lt;tr&gt;
+    &lt;th&gt;Module Name&lt;/th&gt;
+    &lt;th&gt;Module Code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr class="p"&gt;
+    &lt;td&gt; Communications and Career Management&lt;/td&gt;
+    &lt;td&gt; ECSC400&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="b"&gt;
+    &lt;td&gt; Computer Systems Fundamentals&lt;/td&gt;
+    &lt;td&gt; ECSC404&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="p"&gt;
+    &lt;td&gt; Software Development Principles II&lt;/td&gt;
+    &lt;td&gt; ECSC405&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="b"&gt;
+    &lt;td&gt; Mathematics for Computing&lt;/td&gt;
+    &lt;td&gt; ECSC408&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="p"&gt;
+    &lt;td&gt; Information Systems&lt;/td&gt;
+    &lt;td&gt; ECSC411&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+			<form><input value="View result" onclick='window.open("examples/style_example7_readability.html")'
+					type="button"> </form>
+
+			<h4>CSS3 - Alternative Zebra Stripe Table Rows</h4>
+
+			In the following example the CSS3 pseudo-class <code>:nth-of-type() </code>is used to select odd and even
+			rows. Then the first row is selected.
+			<pre><code>&lt;style&gt;</code><code class="language-css" >
+	tr:nth-of-type(odd) { background-color: #ffddff; text-align: center; }
+    tr:nth-of-type(even) { background-color: #ccffff; text-align: center; } 
+    tr:nth-of-type(1) { color: red; }  /* for first row only  */</code><code class="language-html">	
+&lt;style&gt;</code></pre>
+
+			Alternative Zebra Stripe Table Rows
+
+			<form><input value="View result" onclick='window.open("examples/style_example8_zebraTable.html")'
+					type="button"> </form>
+
+			<!-- extra selectors -->
+
+			<br>
+			<h3>CSS3 Child Selectors</h3>
+
+			<p>CSS3 includes specific pseudo-classes for selecting child elements. A child tag is any tag enclosed by
+				another tag.</p>
+
+			<img src="css3image.png">
+
+			<ol>
+				<li><strong>:FIRST-CHILD</strong> Lets you select and format just
+					the first of however many children an element may have. E.g., to select the first &lt;h1> tag on the
+					page, create a
+					selector like this:</li>
+
+				<pre><code class="language-css">h2:first-child</code></pre>
+
+				<li><strong>:LAST-CHILD</strong> This is like :first-child but just with the last child of an element.
+					E.g., to style the last item in a list, you use: </li>
+				<pre><code class="language-css"> ul li:last-child </code></pre>
+
+
+				<li><strong>:NTH-CHILD</strong> You can style every other row in a table, every third list item, or
+					style any combination of alternating child elements. </li>
+				<br>Using a keyword, either odd or even, lets you select alternating odd or even child elements.
+				E.g., applying one background colour for each even row in a table
+				and another background colour of each odd-numbered row:
+				<pre><code class="language-css">tr:nth-child(odd) { background-color: #D9F0FF; }
+tr:nth-child(even) { background-color: #FFFFFF; }</code></pre>
+				<p>:nth-child() can also be used in another way. E.g., to highlight every third table cell inside a row,
+					starting with the second table cell:
+				</p>
+				<pre><code class="language-css">tr td:nth-child(3n+2) { background-color:#900; }</code></pre>
+				<p>The number before the n (3 in this case) represents which child element you’re after.
+					So, 3n means every third element, while 4n means every fourth element.
+				</p>
+				<p>
+					The plus sign followed by a number (+2 in this example) indicates which element to start at,
+					so +2 means start at the second child element, while +5 means start at the fifth child element.
+				</p>
+				<p>
+					So :nth-child(5n + 4) selects every fifth child element starting at the fourth child element.
+				</p>
+			</ol>
+
+			<div class="row">
+
+				<!--Nav Bar -->
+
+				<nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+					<ul id="sidebar" class="nav nav-stacked">
+
+
+						<li><a href="#stylingLinks">Styling Links</a></li>
+						<li><a href="#stylingLists">Styling Lists</a></li>
+						<li><a href="#cssBoxModel">CSS Box Model</a></li>
+						<li><a href="#stylingTables">Styling Tables</a></li>
+						<li><a href="#cssPositioning">CSS Positioning</a></li>
+						<li><a href="#cssFloat">Making Elements Float</a></li>
+						<li><a href="#css3">CSS3</a></li>
+						<!-- <li><a href="#review">Review Questions</a></li> -->
+
+					</ul>
+				</nav>
+			</div>
+	</main>
+
+	<nav class="navbar navbar-default no-margin-bottom">
+		<div class="container">
+			<p class="navbar-text navbar-right">&copy; Copyright 2016-2022 <a href="https://www.westminster.ac.uk"
+					class="navbar-link">University of Westminster</a></p>
+		</div>
+	</nav>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+
+	<script src="prism/prism.js"></script>
+	<script src="prism/prism-line-numbers.js"></script>
+	<script src="prism/prism-line-highlight.js"></script>
+	<script>
+		$('body').scrollspy({
+			target: '.bs-docs-sidebar',
+			offset: 60
+		});
+		$("#sidebar").affix({
+			offset: {
+				top: 80
+			}
+		});
+	</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-RRNL1F43P4');
+	</script>
+
+
+	<br>
+	<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>

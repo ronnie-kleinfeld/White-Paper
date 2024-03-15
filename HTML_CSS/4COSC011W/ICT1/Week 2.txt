@@ -1,0 +1,28 @@
+Week 2
+
+Question 1
+A html ordered list starts with:
+<ol>
+
+Question 2
+A html bulleted list starts with:
+<ul>
+
+Question 3
+Which would merge two rows in a table?
+<td rowspan="2">
+
+Question 4
+<th></th>
+
+Question 5
+When we use CSS to add a border to to a table, how do the borders appear by default?
+border-collapse: separate
+
+Question 6
+Where is the padding in the CSS Box Model?
+Between the content and border
+
+Question 7
+Which of the following is not taken by the border-style property?
+out

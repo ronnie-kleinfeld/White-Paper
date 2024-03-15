@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Introduction to Unix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+  <link href="prism/prism.css" rel="stylesheet" />
+  <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+  <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+      color: #3387EB,
+        border-left: 1px solid #3387EB;
+    }
+
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+      padding-left: 18px;
+      font-weight: bold;
+      color: #3387EB;
+      background-color: transparent;
+      border-left: 2px solid #3387EB;
+    }
+
+    .back-to-top:hover,
+    .bs-docs-theme-toggle:hover {
+      color: #563d7c;
+      text-decoration: none;
+    }
+
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:focus,
+    .dropdown-menu>.active>a:hover {
+      background-image: none;
+      background-color: #3387EB;
+    }
+
+    th {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-html">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Module Info<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">General Information</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="team.html">Module Team</a></li>
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="active html"><a href="unix.html">Introduction to Unix</a></li>
+              <li><a href="basicTags.html">Basic HTML tags</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="tables.html">Tables</a></li>
+              <li><a href="colours.html">Colours</a></li>
+              <li><a href="images.html">Images</a></li>
+              <li><a href="links.html">Links & iframes</a></li>
+              <li><a href="special.html">Special Characters</a></li>
+              <li><a href="forms.html">Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+              <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+              <li><a href="cssElements.html">Styling Elements</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">JavaScript<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="js1.html">Introduction to JavaScript</a></li>
+              <li><a href="js2.html">Objects, Methods and Functions</a></li>
+              <li><a href="js3.html">JavaScript and Forms</a></li>
+              <li><a href="js4.html">JavaScript and the DOM</a></li>
+              <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+
+
+
+  <main class="container language-none">
+    <div class="col-md-9" role="main">
+      <h1>Introduction to Unix</h1>
+      <h2 id="Directory" class="group">Directory</h2>
+      <p>When you want to prepare Web pages that are going to be accessible by anyone in the world, you need to put
+        these pages in a directory called <code>public_html</code>. Hence you need to create this directory in your
+        <code>home</code> directory. You are also required to create a directory called <code>WebDev</code> in which you
+        will store your tutorial work for this module. As this work needs to be accessible by anyone, this directory
+        will have to be in your <code>public_html</code> directory.</p>
+      <h2 id="Access" class="group">Access Rights</h2>
+      <p>When you type <code>ls</code> or <code>ls -l</code> in your terminal window, you will see lots of details about
+        the contents of your directory:
+      <pre><code>11 grizzly.cscs.wmin.ac.uk% ls -l
+ total 41978
+ drwxr-xr-x   2 coloma   800       512 Feb 11 16:25 lect01
+ -rw-r--r--   1 coloma   800     25126 Jan 02 09:23 lect01.html 
+ drwxr-xr-x   2 coloma   800       512 Feb 20 08:54 lect02
+ -rw-r--r--   1 coloma   800     29164 Feb 13 10:12 lect02.html
+ drwxr-xr-x   2 coloma   800       512 Feb 22 17:43 lect03
+ -rw-r--r--   1 coloma   800     29816 Feb 20 11:52 lect03.html
+ drwx--x--x   2 coloma   800       512 Feb 28 12:47 lect04
+ -rw-r--r--   1 coloma   800     29935 Mar 14 09:54 lect04.html
+12 grizzly.cscs.wmin.ac.uk%</code></pre>
+      <p>In the left-hand column is a 10 symbol ‘string’ consisting of symbols <code>d</code>,
+        <code>r</code>,<code>w</code>, <code>x</code>, <code>-</code>. If <code>d</code> is present, it will be at the
+        left-hand end of the string, and indicates a directory. Otherwise ‘<code>-</code>’ will be the starting symbol
+        of the string.</p>
+
+      <p>The 9 remaining symbols indicate the permissions, or access rights, and are taken as three groups of 3:
+      <ul>
+        <li>The left group of 3 gives the file permissions for the <em>user</em> that owns the file (or directory)
+          (<code>coloma</code> in the above example);</li>
+
+        <li>the middle group gives the permissions for the <em>group</em> of people to whom the file (or directory)
+          belongs (<code>800</code> in the above example);</li>
+
+        <li>the rightmost group gives the permissions for all <em>others</em>.</li>
+      </ul>
+      <p>The symbols <code>r</code>, <code>w</code>, etc., have slightly different meanings depending on whether they
+        refer to a simple file or to a directory.</p>
+      <h3 class="subgroup" id="accessFiles">Access rights on files</h3>
+      <ul>
+        <li><code>r</code> (or <code>-</code>), indicates <em>read</em> permission (or otherwise), that is, the presence
+          or absence of permission to read and copy the file</li>
+        <li><code>w</code> (or <code>-</code>), indicates <em>write</em> permission (or otherwise), that is, the
+          permission (or otherwise) to modify a file</li>
+        <li><code>x</code> (or <code>-</code>), indicates <em>execution</em> permission (or otherwise), that is, the
+          permission to execute a file, where appropriate</li>
+      </ul>
+
+      <h3 class="subgroup" id="accessDir">Access rights on directories</h3>
+
+      <ul>
+        <li><code>r</code> allows users to list files in the directory;</li>
+        <li><code>w</code> allows users to make changes to the content of the directory, including delete files from the
+          directory or move files into it;</li>
+        <li><code>x</code> means the right to access files in the directory. This implies that users may read files in
+          the directory provided they have read permission on the individual files.</li>
+      </ul>
+      <div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+            aria-hidden="true"></span> Note:</strong> In order to read a file, you must have execute permission on the
+        directory containing that file,as well as on any directory containing that directory as a subdirectory, and so
+        on, up the navigation tree.</div>
+
+      <h3 class="subgroup" id="changeAccess">Changing access right</h3>
+      <p>Only the <em>owner</em> of a file can use <code>chmod</code> to change the permissions of a file. The options
+        of <code>chmod</code> are as follows:</p>
+
+      <table class="table table-hover">
+        <tr>
+          <th>Symbol</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>u</td>
+          <td>user</td>
+        </tr>
+        <tr>
+          <td>g</td>
+          <td>group</td>
+        </tr>
+        <tr>
+          <td>o</td>
+          <td>other</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>all</td>
+        </tr>
+        <tr>
+          <td>r</td>
+          <td>read</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>write (and delete)</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>execute (and access directory)</td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>add permission</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>take away permission</td>
+        </tr>
+      </table>
+
+      <p>For example, to remove read write and execute permissions on the file welcome.html for the group and others,
+        type:<br>
+      <pre><code>chmod go-rwx welcome.html</code></pre>
+      This will leave the other permissions unaffected.</p>
+
+      <p>To give read and write permissions on the file welcome.html to all:<br>
+      <pre><code>chmod a+rw welcome.html</code></pre>
+      </p>
+      <p>Alternatively, it is also possible to change access rights using the corresponding <em>octal</em> value of the
+        permission: <code>read</code> permission is given the value <code>4</code>, <code>write</code> permission the
+        value <code>2</code> and <code>execute</code> permission <code>1</code>:</p>
+      <pre><code>rwx
+421</code></pre>
+      <p>These values are added together for any one user category:
+      </p>
+      <table class="table table-hover">
+        <tr>
+          <th>Value</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>execute only</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>write only</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>write and execute (2 + 1)</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>read only</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>read and execute (4 + 1)</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>read and write (4 + 2)</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>read, write and execute (4 + 2 + 1)</td>
+        </tr>
+      </table>
+
+      <p>So access permissions can be expressed as three digits. For example:
+      <pre><code>                            user    group   others
+
+      chmod 644 file1       rw-     r--     r--
+      chmod 711 dir1       drwx     --x     --x
+      chmod 600 file2       rw-     ---     ---</code></pre>
+
+      <p>When creating web pages and setting up web sites, your pages need to be accessible by anyone in the world. You
+        need to set permissions to directories and files as follows:
+
+      <table class="table table-hover table-bordered">
+        <tr>
+          <th>Action</th>
+          <th>Code to type in your terminal</th>
+        </tr>
+        <tr>
+          <td>Directory permissions to be set up for:
+            <ul>
+              <li>read/write/execute for you</li>
+              <li>execute for your group</li>
+              <li>execute for others</li>
+            </ul>
+            Please note that this concerns files in the <code>public_html</code> directory as well as subdirectories
+            inside your <code>public_html</code> directory. So we'll start by changing permission to your home directory
+            by going to the home directory and changing permissions to the current (<code>.</code>) folder, and then
+            your <code>public_html</code> directory. Finally, we create the <code>WebDev</code> directory, and change
+            its permission to 711.
+          </td>
+          <td>
+            <pre><code>cd 
+chmod 711 .
+cd 
+chmod 711 public_html
+cd public_html
+mkdir WebDev
+chmod 711 WebDev</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            File permissions to be set up for:
+            <ul>
+              <li>read/write for you</li>
+              <li>read for your group</li>
+              <li>read for others</li>
+            </ul>
+          </td>
+          <td>
+            <pre><code>cd WebDev
+chmod 644 tut1.html</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <hr>
+      <div class="alert alert-warning" role="alert">
+        <h2 id="review" class="group">Review Questions</h2>
+
+        <ul>
+          <li>Question 1 - What Permissions should you set to directories for your pages to be viewed on the Web but not
+            allow file listing?</li>
+          <li>Question 2 - What Permissions should you set to files for your pages to be viewed on the Web?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <!--Nav Bar -->
+
+      <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+        <ul id="sidebar" class="nav nav-stacked">
+          <li>
+            <a href="#Directory">Directory</a>
+          </li>
+          <li>
+            <a href="#Access">Access Rights</a>
+            <ul class="nav nav-stacked">
+              <li><a href="#accessFiles">Access rights on files</a></li>
+              <li><a href="#accessDir">Access rights on directories</a></li>
+              <li><a href="#changeAccess">Changing access rights</a></li>
+            </ul>
+          </li>
+          <li><a href="#review">Review Questions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <nav class="navbar navbar-default no-margin-bottom">
+    <div class="container">
+      <p class="navbar-text navbar-right">&copy; Copyright 2016-2017 <a href="https://www.westminster.ac.uk"
+          class="navbar-link">University of Westminster</a></p>
+    </div>
+  </nav>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+
+  <script src="prism/prism.js"></script>
+  <script src="prism/prism-line-numbers.js"></script>
+  <script src="prism/prism-line-highlight.js"></script>
+  <script>
+    $('body').scrollspy({
+      target: '.bs-docs-sidebar',
+      offset: 60
+    });
+    $("#sidebar").affix({
+      offset: {
+        top: 80
+      }
+    });
+  </script>
+  <br>
+  <center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>

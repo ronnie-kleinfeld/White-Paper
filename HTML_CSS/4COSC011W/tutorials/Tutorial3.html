@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Web Design and Development - Tutorial 1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<style>
+		h1,
+		h2 {
+			text-align: center;
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		h3 {
+			color: #3387EB;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			margin-top: 30px;
+		}
+
+		body {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			font-weight: 200;
+			font-size: 16px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.myinfo {
+			background-color: #f5f2f0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			font-weight: 500;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<h1>Web Design and Development</h1>
+	<h2>Tutorial 3 - Images and links</h2>
+	<br>
+
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-hand-right"
+				aria-hidden="true"></span></strong> This is the <strong>third page of a full Portfolio</strong>. This
+		Portfolio will help you prepare for the tutorial test that will count towards your final Coursework mark.</div>
+
+	<h3>Task 1 - Create/structure the Web Page content</h3>
+
+	<p>Download <a
+			href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/tutorials/tut_examples/Tutorial3_startup.html"
+			target="_blank">Tutorial3_startup.html</a>, open it in the text editor of your choice, and in a browser.
+		Notice that the browser does not recognise the documents structure. Save the file on your home
+		<strong>h:</strong> drive as <strong>tutorial3.html</strong>
+
+
+	</p>
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Notes:</strong>
+		<ul>
+			<li>No space in the filename</li>
+			<li>File must have the .html extension</li>
+		</ul>
+	</div>
+
+
+	The web page you create should resemble <a
+		href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/tutorials/Tutorial3.html#Figure">Fig.2 below</a>.
+	To achieve this, follow the steps outlined below:
+
+	<ul>
+		<li>Use appropriate HTML tags to establish the correct structure for an HTML document. Begin by defining the
+			document as HTML and create the basic structure with a head and body.</li>
+		<li>Create the appropriate head tags, Tutorial 3 for the title.</li>
+		<li>The top of the page contains a navbar. Use an HTML unordered list <code>&lt;ul&gt;&lt;/ul&gt;</code> to
+			structure the links for (Tutorials, University Work, Web Stuff, Social Media). Later, we will use CSS to
+			style the list horizontally. These links at the top will act as anchors to the categories on your page.
+			(Note: if you are not using the startup file, you will need some length on your page for the anchors to
+			work). We will create the links later.
+		</li>
+		<li>'My Useful Links' as the page heading. <code>&lt;h1&gt;&lt;/h1&gt;</code> </li>
+
+		<li>Notice that the page content is composed of subheadings constisting of:</li>
+		<ul>
+			<li>Heading, you can use <code>&lt;h2&gt;&lt;/h2&gt;</code> for this heading.</li>
+			<li>Subheading<code>&lt;dl&gt;&lt;/dl&gt;</code></li>
+			<li>Some descriptive text related to the subheading.</li>
+		</ul>
+		<li>You need to create a description list for this. Consult <a
+				href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/lists.html#description">description
+				lists</a> in the lecture notes for this type of a list.</li>
+		<li>Add small decorative images <code>&lt;img src=""&gt;</code> before the headings, as in Fig.1. You can use
+			the provided <a
+				href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/tutorials/tutorials/tut_examples/Tutorial3_files/tut3images.zip">support
+				images</a> or look for some on the web (e.g. <a
+				href="https://www.iconfinder.com/">https://www.iconfinder.com/</a>).
+		</li>
+		<li>At a decorative image at the bottom of the page next to the "Back To The Top" text" text.</li>
+
+
+	</ul>
+	Make sure you cater for accessibility on your page by using alternative text in the image attribute
+	<code>alt="ginger cat"</code>
+
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Note:</strong> You must ensure you comply with the image license agreement. </div>
+
+	<ul>
+		<li>Create a ruler acting as a separator at the end of the document</li>
+		<li>Your email address inside an address element</li>
+		<li>The last modified date (just as hard coded date), use the <code>&lt;sup&gt;&lt;/sup&gt;</code>HTML tag to
+			create Superscript text formating. </li>
+	</ul>
+
+	The content of the page should look similar to Fig.2 at this stage.<br>
+
+	<!-- Make this pop up image  -->
+	<img src="Tutorial3_images/Tut3a_new.png" alt="example of page layout" style="width: 800px;">
+	<figcaption>Fig.2 - A snapshot of the page layout without formating with CSS.</figcaption>
+
+
+	<h3>Task 2 - Create Links</h3>
+	<p>The page should contain a series of links:</p>
+	<ul>
+
+		<li>The navbar at the top of the page contains links to corresponding subheadings. Define the headings
+			"Tutorials", "University Work", "Web Stuff", "Social Media" as <b>anchors</b> and create links from the
+			navbar to the corresponding headings in the page content, <code>&lt;h2 id="Name"&gt; &lt;/h2&gt;</code>
+			<code>&lt;a href="#ID_Name"&gt; &lt;/a&gt;</code>. (Note: if you are not using the startup file, you will
+			need some length on your page for the anchors to work).
+		</li>
+		<li>The subheadings under Tutorials are internal links to files within your portfolio folder, specified with <a
+				href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/tutorials/The%20folder%20structure%20and%20the%20file%20name%20of%20the%20tutorial%20files">
+			</a>. These are relative links, and it is recommended that you organize your website (in your case, this
+			could be the module website or your portfolio website) with relative links. So, when you are working locally
+			and you transfer the entire folder to the web server, all internal links and content should work as
+			intended.<br>
+		</li>
+		<li>Use appropriate anchor target attributes so that the links from those headings open corresponding content as
+			separate pages.</li>
+		<ul>
+			<li>_blank: Opens the linked document in a new tab or window.</li>
+			<li>_self: Opens the linked document in the same frame or tab.</li>
+			<li>_parent: Opens the linked document in the parent frame.</li>
+			<li>_top: Opens the linked document in the full body of the window.</li>
+		</ul>
+
+		<li>The subheadings under University Work, Web Stuff, and Social Media are external links
+			<code>&lt;a href="The URL of the page"&gt; &lt;/a&gt;</code>. Use appropriate anchor target attributes so
+			that the links from those headings open corresponding content as separate pages.</li>
+		<li>Add a back to top link (hint: you want to link back to your starting &lt;h1&gt; tag)</li>
+	</ul>
+
+	<p>If you've reached this far, you should be proud of yourself for having worked that hard! You are not done though,
+		you still need to style the page.</p>
+
+	<h3>Task 3 - Format the page </h3>
+
+	<div class="myinfo" role="alert"><strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+			Important Notes:</strong>
+		<ul>
+			<li>
+				Use an embedded or external style sheet and do NOT use inline styles.</li>
+
+		</ul>
+	</div>
+
+	<p>Use embedded style sheet to further modify the HTML content to resemple the example layout of Fig.1 : </p>
+	<img src="Tutorial3_images/Tut3b_new.png" alt="example of page layout" style="width: 600px;" id="Figure">
+	<figcaption>Fig.2 - A snapshot of the expected layout for tutorial 3.</figcaption>
+	<br>
+	<p>Proceed on the following formating:</p>
+	<ul>
+		<li>change the document background colour to <code>background-color: Gainsboro;</code>, or specify a colour you
+			prefer</li>
+		<li>document text to <code>font-family: Arial, sans-serif;</code></li>
+		<li>h2 <code>padding: 3px;</code> to create the wide blue box around the heading, and
+			<code>background-color: LightSkyBlue; </code>, or specify a colour or width of your choice for the heading
+			box</li>
+		<li>set the image <code>width: 25px;</code> and add some space between the image and the heading by changing the
+			padding attribute <code>padding-right: 5px; </code>, experiment with <code>float: left;</code>, and
+			<code>float: right;</code></li>
+		<li>turn the ordered list to a navbar by targeting the ordered list items and set the attribute
+			<code>display: inline;</code> </li>
+		<li>use Link pseudo-classes to define different styles the page links, and the link states unvisited, visited,
+			hovered, active</li>
+	</ul>
+
+	<p>Now your page should look pretty simmilar to Fig. 2.</p>
+
+	<h3>Task 4 - Create a Fixed Horizontal Navigation Bar </h3>
+
+	<ul>
+		<li>Use fixed positioning so that the list of anchor links at the top of your page is a horizontal navigation
+			bar
+			that always appears at the top of the web page when you page down.
+			(Note: you will need some length to your page for this to work).<br>
+
+		</li>
+		<li>To achieve this create two &lt;div&gt; sections in the body of your document.
+			<ul>
+				<li>The first section will contain the navigation bar. </li>
+				<li>The second section will contain the heading, subheadings, and links with descriptions.</li>
+
+				The CSS attributes you need for the navbar are
+				<code>overflow: hidden; position: fixed; top: 0; width: 100%;</code>, but you also need to adjust the
+				margins of the main part of the page to prevent it from disappearing behind the navbar.
+
+			</ul>
+		</li>
+
+	</ul>
+
+	See Below for an example of the fixed Navigation Bar. Image 2 shows the fixed Navigation Bar when scrolling down the
+	page. <br>
+	<br>
+	<img src="Tutorial3_images/Tut3c_new.png" alt="example of fixed Navigation Bar" style="width: 500px;">
+	<p></p>
+
+
+	<h3>Task 5 - Validate your code</h3>
+	<ul>
+		<li>Use <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+				style="text-decoration: underline; font-weight: bold">W3C Markup Validation Service</a> to check if your
+			code is correct before uploading it to the webserver. If it is not consult the validator's comments to
+			correct your code. Keep checking until the code is 100% correct.
+		</li>
+	</ul>
+
+	<h3>Task 6 - Upload your page to the Web server and set the correct permissions</h3>
+	<ul>
+		<li>Connect to <strong>compute0.westminster.ac.uk</strong> using sftp using WinSCP, FileZilla, CyberDuck (or any
+			other ftp tool you prefer).</li>
+		<li>Upload your work to the webDev folder</li>
+		<li>Check that your work is accessible online. The URL for the page will be
+			<strong>https://wxxxxxxx.users.ecs.westminster.ac.uk/webDev/tutorial1.html</strong> where
+			<strong>wxxxxxxx</strong> is your registration number.</li>
+	</ul>
+
+	<h3>Task 7 - Share your design with your peers and comment on other's work.</h3>
+	<ul>
+		<li>
+			Let's become co-creators. Share your designs with the rest of the class and take the opportunity to exchange
+			ideas and receive feedback. To do so go to the module <b><a
+					href="https://uowdigital.padlet.org/deconomou/web-design-and-development-mxtetaee9i380pk9"
+					target="_blank">Padlet</a></b>, upload a screenshoot of your page, and provide the URL of the page
+			from your Unix account.
+		</li>
+	</ul>
+
+	<h3>Task 8 - Prepare for the ICT test</h3>
+	<ul>
+		<li>The document can be structured using the following HTML5
+			<code>&lt;nav&gt; &lt;/nav&gt;</code>,
+			<code>&lt;header&gt; &lt;/header&gt;</code>,
+			<code>&lt;footer&gt; &lt;/footer&gt;</code>, and
+			<code>&lt;main&gt; &lt;/main&gt;</code> tags:
+		</li>
+		<ul>
+			<li> <code>&lt;nav&gt; &lt;/nav&gt;</code>: Wrap your navigation links in this tag. It's a neat way to tell
+				browsers that these links are part of the navigation menu.</li>
+			<li> <code>&lt;header&gt; &lt;/header&gt;</code>: Stick your introductory content in here—like logos,
+				headings, or anything you want at the top of your page.</li>
+			<li> <code>&lt;footer&gt; &lt;/footer&gt;</code>: The bottom of your page is the perfect home for this tag.
+				Put your copyright info, contact details, or whatever you want to appear at the page's end here.</li>
+			<li> <code>&lt;main&gt; &lt;/main&gt;</code> : This is where the bulk of your page's unique content should
+				go.</li>
+		</ul>
+		<li>In case you worked with embedded style-sheets, copy all the CSS elements in a separate file and connect this
+			file to your html page as <a
+				href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/cssSyntax.html#external">external
+				style-sheets</a>. </li>
+		<li>Modify the style-sheets using as selectors those HTML tags rather than creating <b>classes</b> or
+			<b>ids</b>. The second completed example follows this structure.</li>
+	</ul>
+
+
+	<h3>Task 9 - Complete the Practice Test on Blackboard</h3>
+	<ul>
+		<li>Go to <a href="https://learning.westminster.ac.uk/ultra/courses/_95466_1/outline" target="_blank">Practice
+				Tests -&gt; Week 3 Practice Test</a> and complete the test. You can have up to five attempts to get the
+			maximum score of 2 marks.</li>
+
+	</ul>
+
+	<hr>
+	Prepared by Anne-Gaelle Colom, and Wendy Purdy 2019.<br>
+	Last modified, January 2024 by <a href="mailto:D.Economou@westminster.ac.uk">Daphne Economou</a>
+
+	<br>
+	<center><a href='/accessibility' target='_blank'>Accessibility statement</a>
+</body>
+
+</html>

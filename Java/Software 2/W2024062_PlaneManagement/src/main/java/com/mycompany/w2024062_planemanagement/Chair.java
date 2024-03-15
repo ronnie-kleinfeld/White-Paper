@@ -24,11 +24,11 @@ public class Chair {
 
     public int getPrice() {
         switch (getPriceLevel()) {
-            case PriceLevelEnum.firstClass:
+            case firstClass:
                 return 200;
-            case PriceLevelEnum.business:
+            case business:
                 return 180;
-            case PriceLevelEnum.tourist:
+            case tourist:
                 return 150;
         }
         return -1;
@@ -53,7 +53,7 @@ public class Chair {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
         } else if (getIsSold()) {
-            throw new Exception("Seat is not available, can not buy a sold seat.");
+            throw new Exception("Seat " + toString() + " is not available, can not buy a sold seat.");
         } else {
             this.isSold = true;
         }
@@ -63,7 +63,7 @@ public class Chair {
         if (getExists() == ExistsEnum.notExists) {
             throw new Exception("Invalid seat");
         } else if (!getIsSold()) {
-            throw new Exception("Seat is available, can not cancel an available seat.");
+            throw new Exception("Seat " + toString() + " is available, can not cancel an available seat.");
         } else {
             this.isSold = false;
         }

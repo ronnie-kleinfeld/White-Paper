@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+  <link href="prism/prism.css" rel="stylesheet" />
+  <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+  <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+      color: #3387EB,
+        border-left: 1px solid #3387EB;
+    }
+
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+      padding-left: 18px;
+      font-weight: bold;
+      color: #3387EB;
+      background-color: transparent;
+      border-left: 2px solid #3387EB;
+    }
+
+    .back-to-top:hover,
+    .bs-docs-theme-toggle:hover {
+      color: #563d7c;
+      text-decoration: none;
+    }
+
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:focus,
+    .dropdown-menu>.active>a:hover {
+      background-image: none;
+      background-color: #3387EB;
+    }
+
+    th {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-html">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Module Info<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">General Information</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="team.html">Module Team</a></li>
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="unix.html">Introduction to Unix</a></li>
+              <li><a href="basicTags.html">Basic HTML tags</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li class="active video"><a href="tables.html">Tables</a></li>
+              <li><a href="colours.html">Colours</a></li>
+              <li><a href="images.html">Images</a></li>
+              <li><a href="links.html">Links & iframes</a></li>
+              <li><a href="special.html">Special Characters</a></li>
+              <li><a href="forms.html">Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+              <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+              <li><a href="cssElements.html">Styling Elements</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">JavaScript<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="js1.html">Introduction to JavaScript</a></li>
+              <li><a href="js2.html">Objects, Methods and Functions</a></li>
+              <li><a href="js3.html">JavaScript and Forms</a></li>
+              <li><a href="js4.html">JavaScript and the DOM</a></li>
+              <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <main class="container language-html">
+    <div class="col-md-9" role="main">
+      <h1>Tables</h1>
+
+      <h2>Structure</h2>
+      <table class="table table-bordered">
+        <table border="1px">
+          <caption>Table Caption</caption>
+          <tr>
+            <th>Exam</th>
+            <th colspan="2">Coursework </th>
+          </tr>
+          <tr>
+            <td rowspan="2"> 60%</td>
+            <td>Tutorials</td>
+            <td> 30%</td>
+          </tr>
+          <tr>
+            <td> Coursework</td>
+            <td> 10%</td>
+          </tr>
+        </table>
+        <br>
+        <pre><code class="language-css">table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td { 
+    padding: 5px;
+}</code></pre>
+
+        <pre><code>&lt;table border="1px">
+    &lt;caption>Table Caption&lt;/caption>
+    &lt;tr>
+        &lt;th>Exam&lt;/th>
+        &lt;th colspan="2">Coursework&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td rowspan="2"60%&lt;/td>
+        &lt;td>Tutorials&lt;/td>
+        &lt;td>30%&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td> Coursework&lt;/td>
+        &lt;td>10%&lt;/td>
+    &lt;/tr>
+&lt;/table> </code></pre>
+        <hr>
+
+        <h2>Table Styling</h2>
+        <table class="table table-hover table-bordered">
+          <tr>
+            <td><code>&lt;table&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></td>
+            <td><code>border</code>, e.g.<br><code class="language-css"> td {border: 1px solid black;}</code></td>
+            <td>border width <code>&lt;table border="1"&gt;</code></td>
+          </tr>
+
+          <tr>
+            <td rowspan="4" style="vertical-align:middle"><code>&lt;table&gt;</code>,
+              <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>
+            </td>
+            <td>
+              <code class="language-css">padding</code>, e.g.<br><code class="language-css">td {padding: 25px;}</code>
+            </td>
+            <td>gap around contents</td>
+          </tr>
+
+          <tr>
+            <td><code>background-color</code>, e.g.<br> <code
+                class="language-css">table {background-color: aqua;}</code>
+            </td>
+            <td>background color</td>
+          </tr>
+          <tr>
+            <td><code>width</code>, e.g.<br><code class="language-css">table {width: 80%;}</code></td>
+            <td>80% of window width</td>
+          </tr>
+          <tr>
+            <td><code>width</code>, e.g.<br><code class="language-css">table {width: 500px;}</code></td>
+            <td>500 pixels wide</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="vertical-align:middle"><code>&lt;th&gt;</code>,<code>&lt;td&gt;</code></td>
+            <td><code>text-align</code>, e.g.<br><code class="language-css">td {text-align: right;}</code></td>
+            <td>text alignment left, right, center or justify </td>
+          </tr>
+          <tr>
+            <td><code class="language-css">vertical-align</code>, e.g.<br><code
+                class="language-css">td {vertical-align: top;}</code></td>
+            <td>vertical alignment top, bottom or middle</td>
+          </tr>
+        </table>
+        <hr>
+
+        <h2>Alignment</h2>
+        <div>
+          <style scoped>
+            td,
+            th {
+              padding: 2px;
+            }
+          </style>
+          <table border="1" style="width:250px; height:250px;">
+            <caption>An example to demonstrate alignment</caption>
+            <tr style="vertical-align:top">
+              <td>Top left </td>
+              <td style="text-align:center">Top center </td>
+              <td style="text-align:right">Top right </td>
+            </tr>
+            <tr>
+              <td style="vertical-align:middle !important;">Middle left </td>
+              <td style="text-align:center; vertical-align:middle !important;">Middle center </td>
+              <td style="text-align:right; vertical-align:middle !important;">Middle right </td>
+            </tr>
+            <tr style="vertical-align:bottom;">
+              <td style="vertical-align:bottom !important;">Bottom left </td>
+              <td style="text-align:center; vertical-align:bottom !important;">Bottom center </td>
+              <td style="text-align:right; vertical-align:bottom !important;">Bottom right </td>
+            </tr>
+          </table>
+          <br>
+          <pre><code>&lt;table border="1" style="width:250px; height:250px">
+    &lt;caption>An example to demonstrate alignment&lt;/caption>
+    &lt;tr style="vertical-align:top">
+        &lt;td>Top left &lt;/td>
+        &lt;td style="text-align:center">Top center &lt;/td>
+        &lt;td style="text-align:right">Top right &lt;/td>
+    &lt;/tr>
+    &lt;tr style="vertical-align:middle">
+        &lt;td>Middle left &lt;/td>
+        &lt;td style="text-align:center">Middle center &lt;/td>
+        &lt;td style="text-align:right">Middle right &lt;/td>
+    &lt;/tr>
+    &lt;tr style="vertical-align:bottom">
+        &lt;td >Bottom left &lt;/td>
+        &lt;td style="text-align:center">Bottom center &lt;/td>
+        &lt;td style="text-align:right">Bottom right &lt;/td>
+    &lt;/tr>
+&lt;/table> </code></pre>
+        </div>
+    </div>
+  </main>
+</body>
+
+</html>
