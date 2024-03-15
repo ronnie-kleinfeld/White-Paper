@@ -1,0 +1,42 @@
+﻿@page
+@model ASPNETCoreWebAppRazorPageEF.Pages.MoviesModel
+@{
+    ViewData["Title"] = "Movie";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr/>
+
+<table class="table-primary">
+<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var item in Model.Movies) {
+            <tr class="table-primary">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rate)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+  </tbody>
+</table>

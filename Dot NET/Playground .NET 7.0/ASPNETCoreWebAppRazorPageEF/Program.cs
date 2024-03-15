@@ -1,4 +1,5 @@
 using ASPNETCoreWebAppRazorPageEF.Data;
+using ASPNETCoreWebAppRazorPageEF.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASPNETCoreWebAppRazorPageEF {
@@ -7,10 +8,15 @@ namespace ASPNETCoreWebAppRazorPageEF {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddRazorPages();
+
+            //builder.Services.AddTransient // a new instance for each request
+            //builder.Services.AddScoped // a new instance for each page
+            //builder.Services.AddSingleton // a singleton instance
+            builder.Services.AddScoped<IMovieService, MovieService>();
+
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(connectionString));
-
-            builder.Services.AddRazorPages();
 
             var app = builder.Build();
 
