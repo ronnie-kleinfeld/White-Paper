@@ -68,42 +68,49 @@ public class PlaneManagement {
 
     private void askForOption() {
         Scanner scanner = new Scanner(System.in);
-        int choice;
+
+        int choice = -1;
         do {
             showMenu();
             ConsoleHelper.printBlue("Please select an option: ");
-            choice = scanner.nextInt();
-            ConsoleHelper.println();
+            String input = scanner.next();
+            try {
+                choice = Integer.parseInt(input);
 
-            switch (choice) {
-                case 1:
-                    buy_seat();
-                    break;
-                case 2:
-                    cancel_seat();
-                    break;
-                case 3:
-                    find_first_available();
-                    break;
-                case 4:
-                    show_seating_plan();
-                    break;
-                case 5:
-                    print_tickets_info();
-                    break;
-                case 6:
-                    search_ticket();
-                    break;
-                case 0:
-                    break;
-                default:
-                    ConsoleHelper.println();
-                    ConsoleHelper.printlnRed("Please enter a valid option from the list.");
+                ConsoleHelper.println();
 
-                    ConsoleHelper.println();
+                switch (choice) {
+                    case 1:
+                        buy_seat();
+                        break;
+                    case 2:
+                        cancel_seat();
+                        break;
+                    case 3:
+                        find_first_available();
+                        break;
+                    case 4:
+                        show_seating_plan();
+                        break;
+                    case 5:
+                        print_tickets_info();
+                        break;
+                    case 6:
+                        search_ticket();
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        ConsoleHelper.println();
+                        ConsoleHelper.printlnRed("Please enter a valid option from the list.");
+
+                        ConsoleHelper.println();
+                }
+
+                ConsoleHelper.println();
+            } catch (Exception e) {
+                ConsoleHelper.printlnRed("Please enter a valid option from the list.");
             }
-
-            ConsoleHelper.println();
         } while (choice != 0);
     }
 
@@ -118,6 +125,7 @@ public class PlaneManagement {
             chair.setAsSold();
             tickets = TicketsHelper.addTicket(tickets, ticket);
             ticket.save();
+            ConsoleHelper.printlnGreen("Ticket information saved to " + ticket.fileName());
             ConsoleHelper.printlnGreen(chair.toString() + " sold to " + ticket.getPerson().toString());
         } catch (Exception ex) {
             ConsoleHelper.printlnRed(ex.getMessage());
@@ -242,21 +250,26 @@ public class PlaneManagement {
         Scanner scanner = new Scanner(System.in);
 
         int row = -1;
+        int maxAvaliableSeats = 14;
         while (row == -1) {
             ConsoleHelper.printBlue("Enter a Row (A,B,C,D): ");
             String input = scanner.next();
             switch (input.toUpperCase()) {
                 case "A":
                     row = 0;
+                    maxAvaliableSeats = 14;
                     break;
                 case "B":
                     row = 1;
+                    maxAvaliableSeats = 12;
                     break;
                 case "C":
                     row = 2;
+                    maxAvaliableSeats = 12;
                     break;
                 case "D":
                     row = 3;
+                    maxAvaliableSeats = 14;
                     break;
                 default:
                     ConsoleHelper.printlnRed("Invalid Row, Please enter (A,B,C,D)");
@@ -265,17 +278,17 @@ public class PlaneManagement {
 
         int seat = -1;
         while (seat == -1) {
-            ConsoleHelper.printBlue("Enter a Seat (1-14): ");
+            ConsoleHelper.printBlue("Enter a Seat (1-" + maxAvaliableSeats + "): ");
             String input = scanner.next();
             try {
                 int s = Integer.parseInt(input);
-                if (s >= 1 && s <= 14) {
+                if (s >= 1 && s <= maxAvaliableSeats) {
                     seat = s;
                 } else {
-                    ConsoleHelper.printlnRed("Invalid Seat, Please enter (1-14)");
+                    ConsoleHelper.printlnRed("Invalid Seat, Please enter (1-" + maxAvaliableSeats + ")");
                 }
             } catch (Exception e) {
-                ConsoleHelper.printlnRed("Invalid Seat, Please enter (1-14)");
+                ConsoleHelper.printlnRed("Invalid Seat, Please enter (1-" + maxAvaliableSeats + ")");
             }
         }
 

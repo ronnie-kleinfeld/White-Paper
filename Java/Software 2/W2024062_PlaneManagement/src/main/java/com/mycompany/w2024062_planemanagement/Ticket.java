@@ -93,12 +93,15 @@ public class Ticket {
                 + person.getSurname() + "," + person.getEmail();
     }
 
-    public void save() throws IOException {
+    public String fileName() {
         // convert the char to string, without this the concatenation below will convert
         // the char to ascii code A2->65+1=66.txt
         String rowLetter = getRowLetter() + "";
+        return rowLetter + (getSeat() + 1) + ".txt";
+    }
 
-        String filename = rowLetter + (getSeat() + 1) + ".txt";
+    public void save() throws IOException {
+        String filename = fileName();
 
         try {
             FileWriter fileWriter = new FileWriter(filename);
