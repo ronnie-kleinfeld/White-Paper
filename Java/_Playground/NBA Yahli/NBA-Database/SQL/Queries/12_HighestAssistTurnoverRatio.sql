@@ -1,4 +1,4 @@
--- Which player had the highest assist to turnover ratio?
+-- Which PlayerHighestAssistToTurnoverRatio?
 
 SELECT player, ast, tov, CAST(ast as FLOAT)/CAST(tov as FLOAT) as astTovRatio
 FROM player_stats

@@ -1,4 +1,4 @@
--- What was the oldest team in the league?
+-- What was the OldestTeamInLeague?
 
 SELECT tm, AVG(age)
 FROM players JOIN player_stats ON name = player
