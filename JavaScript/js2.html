@@ -1,0 +1,715 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavsScript Objects, Methods and Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Anne-Gaelle Colom and Wendy Purdy">
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-git.js"></script>-->
+
+    <link href="prism/prism.css" rel="stylesheet" />
+    <link href="prism/prism-line-numbers.css" rel="stylesheet" />
+    <link href="prism/prism-line-highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+     
+<link rel="stylesheet" href="style.css" /> 
+<style>
+
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+  color: #ff0099,
+  border-left: 1px solid #ff0099;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+  padding-left: 18px;
+  font-weight: bold;
+  color: #ff0099;
+  background-color: transparent;
+  border-left: 2px solid #ff0099;
+}
+.back-to-top:hover,
+.bs-docs-theme-toggle:hover {
+  color: #563d7c;
+  text-decoration: none;
+}
+
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:focus, 
+.dropdown-menu>.active>a:hover {
+  background-image: none;
+  background-color: #ff0099;
+}
+th { text-align:center;}
+
+nav.navbar-js {
+	border-top: 4px solid #ff0099;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-js" >
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Module Info<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="general.html">General Information</a></li>
+              	<li><a href="schedule.html">Schedule</a></li>
+              	<li><a href="team.html">Module Team</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intro & HTML<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="unix.html">Introduction to Unix</a></li>
+              	<li><a href="basicTags.html">Basic HTML tags</a></li>
+              	<li><a href="lists.html">Lists</a></li>
+              	<li><a href="tables.html">Tables</a></li>
+              	<li><a href="colours.html">Colours</a></li>
+                <li><a href="images.html">Images</a></li>
+              	<li><a href="links.html">Links & iframes</a></li>
+                <li><a href="special.html">Special Characters</a></li>
+                <li><a href="forms.html">Forms</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styling & CSS<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              	<!--<li><a href="addStyle.html">Addind a Style</a></li>
+              	<li><a href="cssSyntax.html">CSS Syntax</a></li>
+              	<li><a href="generalStyling.html">General Page Styling</a></li>
+                <li><a href="stylingLinks.html">Styling Links</a></li>
+              	<li><a href="styling Lists.html">Styling Lists</a></li>
+                <li><a href="cssBoxModel.html">CSS Box Model</a></li>
+              	<li><a href="stylingTables.html">Styling Tables</a></li>
+                <li><a href="cssPositioning.html">CSS Positioning</a></li>
+                <li><a href="css3.html">CSS3</a></li>-->
+                <li><a href="cssSyntax.html">Introduction to CSS</a></li>
+				  <li><a href="cssElements.html">Styling Elements</a></li>
+              </ul>
+            </li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="js1.html">Introduction to JavaScript</a></li>
+                <li class="active js"><a href="js2.html">Objects, Methods and Functions</a></li>
+                <li><a href="js3.html">JavaScript and Forms</a></li>
+                <li><a href="js4.html">JavaScript and the DOM</a></li>
+                <li><a href="js5.html">DOM EventListeners and Navigation</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+<main class="container language-html">
+<div class="col-md-9" role="main"><h1>JavaScript Objects, Methods and Functions</h1>
+
+<br><br>  
+<h2 id="objects" class="group">JavaScript Objects</h2>
+
+<p>In JavaScript, an object is data, with properties and methods.</p>
+<p>When you declare a JavaScript variable like this:</p>
+<pre class="language-javascript"><code>const message="Hello World!";</code></pre>
+<p>You create a JavaScript String object. <br /><br />The String object has a built-in property called length. For the string above, length has the value 12. <br /><br />The String object also have several built-in methods.
+
+<br><br><h3 id="accessingObjectProps" class="subgroup">Accessing Object Properties</h3>
+<h4>Syntax</h4>
+<pre class="language-javascript"><code>objectName.propertyName</code></pre>
+<h4>Example</h4>
+<pre class="language-javascript"><code>const message = "Hello world!";
+let messageLength = message.length; //12</code></pre>
+
+<br><br><h3 id="accessingObjectMethods" class="subgroup">Accessing Object Methods</h3>
+<h4>Syntax</h4>
+<pre class="language-javascript"><code>objectName.methodName()</code></pre>
+<h4>Example</h4>
+<pre class="language-javascript"><code>const message = "Hello world!";
+let newMessage = message.toUpperCase(); //HELLO WORLD!</code></pre>
+
+
+<br><br><h2 id="arrays" class="group">JavaScript Arrays</h2>
+ <p>An array is a special variable, which can hold more than one value at a time. There are various ways of creating an array:</p>
+<ol><li>Regular
+<pre class="language-javascript"><code>const questions = [];
+questions[ 0 ] = "1 + 1";      
+questions[ 1 ] = "2 x 3";
+questions[ 2 ] = "6 - 4";
+</code></pre>
+</li>
+<li>Litteral
+<pre class="language-javascript"><code>const questions = [ "1 + 1", "2 x 3", "6 - 4" ];</code></pre></li></ol>
+
+  
+  
+
+  <br><br><h3 id="arrayProps" class="subgroup">Array Properties</h3>
+  <br /><br />
+  
+<table class="table table-bordered table-striped ">
+
+  <tbody><tr>
+    <th align="left" width="28%">Property</th>
+	<th align="left" width="66%">Description</th>
+  </tr>
+  <tr>
+  	<td>constructor</td>
+	<td>Returns the function that created the Array object's prototype</td>
+  </tr>
+  <tr>
+  	<td>length</td>
+	<td>Sets or returns the number of elements in an array</td>
+  </tr>
+  <tr>
+  	<td>prototype</td>
+	<td>Allows you to add properties and methods to an Array object</td>
+  </tr>
+	</tbody></table>
+  <br><br><h3 id="arrayMethods" class="subgroup">Array Methods</h3>
+  <br />
+  <table class="table table-bordered table-striped ">
+
+  <tbody><tr>
+    <th align="left" width="18%">Method</th>
+	<th align="left" width="76%">Description</th>
+  </tr>
+  <tr>
+    <td>concat()</td>
+	  <td>Joins two or more arrays, and returns a copy of the joined arrays<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+const vegetables = [&quot;Carrot&quot;, &quot;Potato&quot;];
+const fruitsAndVeg = fruits.concat(vegetables);
+//fruitsAndVeg is equal to </code><code>["Apple", "Banana", "Mango", "Carrot&quot;, &quot;Potato&quot;]</code></pre></td>
+	  
+  </tr>
+  <tr>
+    <td>every()</td>
+    <td>Checks if every element in an array pass a test and returns a boolean value<br><h4>Example</h4>
+  <pre class="language-javascript"><code>function containsFiveLetters(currentValue) {
+  return currentValue.length == 5;
+}
+
+const fruit1 = ["Apple", "Banana", "Mango"];
+const fruit2 = ["Apple", "Mango"];
+
+console.log(fruit1.every(containsFiveLetters));
+//outputs: false
+console.log(fruit2.every(containsFiveLetters));
+//outputs: true</code></pre></td>
+  </tr>
+    <tr>
+    <td>fill()</td>
+    <td>Fills the elements in an array with a static value from an optional start index (default 0) to an optional end index (default array length)<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+fruits.fill("Strawberry", 2, 4);
+// fills with "Strawberry" from position 2 until position 4
+console.log(fruits);
+//outputs ["Apple", "Banana", "Strawberry", "Strawberry"]</code></pre></td>
+    </tr>
+    <tr>
+    <td>filter()</td>
+    <td>Creates a new array with every element in an array that pass a test<br><h4>Example</h4>
+<pre class="language-javascript"><code>function containsFiveLetters(currentValue) {
+  return currentValue.length == 5;
+}
+
+const fruits = [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Mango&quot;, &quot;Orange&quot;, &quot;Strawberry&quot;];
+const result = fruits.filter(containsFiveLetters);
+//result is equal to ["Apple", "Mango"]</code></pre></td>
+    </tr>
+    <tr>
+    <td>find()</td>
+    <td>Returns the value of the first element in an array that passes a test<br>
+      <h4>Example</h4>
+<pre class="language-javascript"><code>function containsSixLetters(currentValue) {
+  return currentValue.length == 6;
+}
+
+const fruits = ["Apple", "Banana", "Mango", "Orange", "Strawberry"];
+let result = fruits.find(containsSixLetters);
+//result is equal to "Banana"</code></pre></td>
+    </tr>
+    <tr>
+    <td>findIndex()</td>
+    <td>Returns the index of the first element in an array that passes a test, otherwise returns -1<br><h4>Example</h4>
+<pre class="language-javascript"><code>function containsSixLetters(currentValue) {
+  return currentValue.length == 6;
+}
+
+const fruits = ["Apple", "Banana", "Mango", "Orange", "Strawberry"];
+let result = fruits.findIndex(containsSixLetters);
+//result is equal to 1</code></pre></td>
+    </tr>
+  <tr>
+    <td>forEach()</td>
+    <td>Calls a function for each array element<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+fruits.forEach(function(element) {<br>  console.log(element);<br>});
+   
+//outputs: "Apple"
+//outputs: "Banana"
+//outputs: "Mango"</code></pre></td>
+    </tr>
+    <tr>
+    <td>includes()</td>
+    <td>Searches the array for an element and returns true if the element exists in the array, and false if it doesn't<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+let isInTheArray = fruits.includes("Banana"); 
+// isInTheArray is equal to true</code></pre></td>
+    </tr>
+    <tr>
+    <td>indexOf()</td>
+    <td>Searches the array for an element and returns its position<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+let pos = fruits.indexOf("Banana"); 
+// pos is equal to 1</code></pre></td>
+    </tr>
+  <tr>
+    <td>isArray()</td>
+    <td>Checks whether an object is an array<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Mango&quot;];
+console.log(Array.isArray(fruits));
+// outputs true</code></pre></td>
+    </tr>
+  <tr>
+    <td>join()</td>
+    <td>Joins all elements of an array into a string, and takes a separator as option<br>
+      <h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+let myString = fruits.join(&quot; * &quot;);
+// myString is equal to: Apple * Banana * Mango </code></pre></td>
+    </tr>
+  <tr>
+    <td>lastIndexOf()</td>
+    <td>Search the array for an element, starting at the end, and returns its position<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango", &quot;Banana&quot;, &quot;Strawberry&quot;];
+let pos = fruits.lastIndexOf("Banana"); 
+// pos is equal to 3</code></pre></td>
+    </tr>
+    <tr>
+    <td>map()</td>
+    <td>Creates a new array with the result of calling a function for each array element<br><h4>Example</h4>
+<pre class="language-javascript"><code>const array1 = [1, 4, 9, 16];
+
+function doubleValues(myVal) {
+  return( myVal * 2); 
+}
+
+const map1 = array1.map(doubleValues);
+
+console.log(map1);
+// outputs: Array [2, 8, 18, 32]</code></pre></td>
+    </tr>
+  <tr>
+    <td>pop()</td>
+    <td>Removes the last element of an array, and returns that element<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.pop());
+// outputs: "Mango"
+
+console.log(fruits);
+// outputs: Array ["Apple", "Banana"]
+
+fruits.pop();
+
+console.log(fruits);
+// outputs: Array ["Apple"]
+</code></pre></td>
+    </tr>
+  <tr>
+    <td>push()</td>
+    <td>Adds new elements to the end of an array, and returns the new length<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+fruits.push(&quot;Orange&quot;); //["Apple", "Banana", "Mango", "Orange"]</code></pre></td>
+    </tr>
+    <tr>
+    <td>reduce()</td>
+    <td>Reduce the values of an array to a single value (going left-to-right)<br><h4>Example</h4>
+<pre class="language-javascript"><code>const array1 = [1, 2, 3, 4];
+
+function addUp(total, num) {
+  return (total + num);
+}
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(addUp));
+// outputs: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(addUp, 5));
+// outputs: 15</code></pre></td>
+    </tr>
+    <tr>
+    <td>reduceRight()</td>
+    <td>Reduce the values of an array to a single value (going right-to-left)<br><h4>Example</h4>
+<pre class="language-javascript"><code>const array1 = [1, 2, 3, 4];
+
+function takeAway(total, num) {
+  return (total - num);
+}
+
+// 4 - 3 - 2 - 1
+console.log(array1.reduceRight(takeAway));
+// outputs: -2
+
+// 5 - 4 - 3 - 2 - 1
+console.log(array1.reduceRight(takeAway, 5));
+// outputs: -5</code></pre></td>
+    </tr>
+  <tr>
+    <td>reverse()</td>
+    <td>Reverses the order of the elements in an array. The original array is modified.<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+fruits.reverse(); 
+console.log( fruits );
+//outputs: Array ["Mango", "Banana", "Apple"]</code></pre></td>
+    </tr>
+  <tr>
+    <td>shift()</td>
+    <td>Removes the first element of an array, and returns that element<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+let firstElement = fruits.shift();
+
+console.log(fruits);
+//outputs: Array ["Banana", "Mango"]
+
+console.log(firstElement);
+//outputs: "Apple"</code></pre></td>
+    </tr>
+  <tr>
+    <td>slice()</td>
+    <td>Selects a part of an array, and returns the new array. The original array is not modified.<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango", "Banana", "Strawberry"];
+
+console.log(fruits.slice(2));
+//outputs: Array ["Mango", "Banana", "Strawberry"]
+
+console.log(fruits.slice(2, 4));
+//outputs: Array ["Mango", "Banana"]
+
+console.log(fruits.slice(1, 5));
+//outputs: Array ["Banana", "Mango", "Banana", "Strawberry"]
+</code></pre></td>
+    </tr>
+  <tr>
+    <td>some()</td>
+    <td>Checks if any of the elements in an array pass a test<br><h4>Example</h4>
+<pre class="language-javascript"><code>const myArray = [1, 2, 3, 4, 5];
+
+let even = function(element) {
+  // checks whether an element is even
+  return element % 2 === 0;
+};
+
+console.log(myArray.some(even));
+//outputs: true</code></pre></td>
+    </tr>
+  <tr>
+    <td>sort()</td>
+    <td>Sorts the elements of an array and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values, so should not be used for sorting number values.<br><h4>Example</h4>
+<pre class="language-javascript"><code>const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months);
+//outputs: Array ["Dec", "Feb", "Jan", "March"]
+
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort();
+console.log(array1);
+//outputs: Array [1, 100000, 21, 30, 4]</code></pre></td>
+    </tr>
+  <tr>
+    <td>splice()</td>
+    <td>Adds/Removes elements from an array<br><h4>Example</h4>
+<pre class="language-javascript"><code>const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+//inserts at index 1
+console.log(months);
+//outputs: Array ['Jan', 'Feb', 'March', 'April', 'June']
+
+months.splice(4, 1, 'May');
+//replaces 1 element at index 4
+console.log(months);
+//outputs: Array ['Jan', 'Feb', 'March', 'April', 'May']
+</code></pre></td>
+    </tr>
+  <tr>
+    <td>toString()</td>
+    <td>Converts an array to a string, and returns the result<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+let myString = fruits.toString();
+// myString is equal to: Apple, Banana, Mango </code></pre></td>
+    </tr>
+  <tr>
+    <td>unshift()</td>
+    <td>Adds new elements to the beginning of an array, and returns the new length<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.unshift("Strawberry", "Orange"));
+//outputs: 5
+
+console.log(fruits);
+//outputs: Array ["Strawberry", "Orange", "Apple", "Banana", "Mango"]
+</code></pre></td>
+    </tr>
+  <tr>
+    <td>valueOf()</td>
+    <td>Returns the primitive value of an array<br><h4>Example</h4>
+<pre class="language-javascript"><code>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let v = fruits.valueOf();
+
+console.log(v);
+//outputs: Array ["Banana", "Orange", "Apple", "Mango"]</code></pre></td>
+    </tr>
+</tbody>
+	</table>
+
+<div class="alert alert-info" role="alert"><strong><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Note:</strong> For additional information on Javascript Arrays, please check the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Mozilla Developer Network Array Section</a><br>
+</div>
+<h2 id="functions" class="group">Functions</h2>
+<p>A function is a collection of JavaScript statements. These statements usually have a single purpose, such as performing a complex calculation or verifying the data entered into an HTML form. Functions can be passed copies of objects or variables to work with.This is done in the parameter list.</p><p> JavaScript functions can be placed inside script tags anywhere in the document. However, they should be placed in the head of the document to guarantee they are loaded before being called from script statements in the body of the document.
+</p>
+<p>There are several ways to declare a function in JavaScript
+<ul>
+  <li>
+    <strong>Function Declaration:</strong> A function declaration is a named function that can be called from anywhere in your code. Here is an example for a function with no parameters and which does not return anything:
+    <pre class="language-javascript"><code>function myFunction() {
+  console.log("Hello World");
+}</code></pre>
+Here is an example for a function with 2 parameters <code>(a and b)</code> which returns <code>a + b</code>
+<pre class="language-javascript"><code>function addNumbers(a, b) {
+  return a + b;
+}</code></pre>   
+    </p>
+  </li>
+  <li><strong>Function Expression:</strong> A function expression is a function that is assigned to a variable. You can use function expressions to create anonymous functions or to assign a function to a variable. Here is an example for a function with no parameters and which does not return anything:
+    <pre class="language-javascript"><code>let myFunction = function() {
+  console.log("Hello World");
+};</code></pre>
+Here is an example for a function with 2 parameters <code>(a and b)</code> which returns <code>a + b</code>
+<pre class="language-javascript"><code>let addNumbers = function(a, b) {
+  return a + b;
+};</code></pre>   
+  </li>
+  <li><strong>Arrow Function:</strong> Arrow functions were introduced in ECMAScript 6 (ES6) and provide a shorthand syntax for defining functions. Here is an example for a function with no parameters and which does not return anything:
+    <pre class="language-javascript"><code>let myFunction = () => {
+  console.log("Hello World");
+};</code></pre>
+Here is an example for a function with 2 parameters <code>(a and b)</code> which returns <code>a + b</code>
+<pre class="language-javascript"><code>let addNumbers = (a, b) => {
+  return a + b;
+};</code></pre>   
+
+This example can also be written as follows:
+<pre class="language-javascript"><code>let addNumbers = (a, b) => a + b;</code></pre> 
+Both forms are equivalent and it's a matter of preference. The first form is more concise and is recommended if the function only contains a single expression (such as a return statement). The second form with a block body is recommended if you need to write multiple statements in the function body.  
+  </li>
+
+</ul>
+  <p>It's important to note that the syntax of an arrow function is different from a traditional function expression, but the functionality is the same.
+
+    In all three cases, the result is a function named myFunction that logs "Hello World" to the console when it is called.</p>
+<h4>Syntax</h4>
+<pre class="language-javascript"><code>function functionName( parameter_1, parameter_2, ..  parameter_n ) {
+   statement1;
+   statement2;
+   .
+   .
+   .
+   statementn;
+}</code></pre>
+ 
+<h4>Example</h4>
+<p>Here is a function that finds that maximum value of two numbers.</p>
+<pre class="language-javascript"><code>function getMax( n1, n2 ) {
+   if ( n1 &lt; n2 ) {
+      return n2;
+   } else {
+      return n1;
+   }</code></pre>
+ 
+<p>Here is an example of how this function might be used.</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+    function getMax( n1, n2 ) {
+       if ( n1 &lt; n2 ) {
+          return n2;
+       } else {
+          return n1;
+       }
+    }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;script&gt;
+     document.write( "&lt;p&gt;" );
+     document.write( "The largest number of 5 or 6 is: " + getMax( 5, 6 ) );
+     document.write( "&lt;/p&gt;" );
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+ 
+<p>A function to check the length of a student username</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+    function checkUserName( form ) {
+       if ( form.reg.value.length != 8 ) {
+          alert( "You have not entered an eight character string" );
+          return false;
+       } else {
+          alert( "This is correct" );
+          return true;
+       }
+    }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;p&gt; Please enter your student username: &lt;input type="text" name="reg" /&gt;
+   &lt;input type="button" onclick="checkUserName(form);" value="check validity"/&gt; 
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<a href="jsLect2xample1.html">Example Built in class</a> 
+
+<br><br>
+<h2 id="global" class="group">Global Functions</h2>
+<p>The JavaScript language comes with global properties and functions that can be used with all the built-in JavaScript objects:
+
+<table class="table table-bordered table-striped ">
+  <tbody>
+  <tr><td>decodeURI()</td><td> Decodes a URI</td></tr>
+<tr><td>decodeURIComponent()</td><td>  Decodes a URI component</td></tr>
+<tr><td>encodeURI()</td><td> Encodes a URI</td></tr>
+<tr><td>encodeURIComponent() </td><td> Encodes a URI component</td></tr>
+<tr><td>eval() </td><td> Evaluates a string and executes it as if it was script code<h4>Example</h4>
+<pre class="language-javascript"><code>const match4 = 140;
+const match3 = 30;
+let match = 3;
+match = "match" + match;
+alert("You win: £" + eval(match)); // alert("You win £30");
+</code></pre></td></tr>
+<tr><td>isFinite() </td><td> Determines whether a value is a finite, legal number</td></tr>
+<tr><td>isNaN() </td><td>Determines whether a value is not a number (NAN)</td></tr>
+<tr><td>Number() </td><td> Converts an object's value to a number</td></tr>
+<tr><td>parseFloat()</td><td>  Parses a string and returns a floating point number</td></tr>
+<tr><td>parseInt()</td><td>  Parses a string and returns an integer</td></tr>
+<tr><td>String()</td><td>  Converts an object's value to a string</td></tr>
+</tbody></table>
+
+<br><br>
+<hr>
+<div class="alert alert-warning" role="alert">
+<br><br><h2 id="review" class="group">Review Questions</h2>
+
+<ul>
+<li>Question 1 - </li>
+<li>Question 2 - </li>
+<li>Question 3 - </li>
+
+</ul>
+
+</div>
+</div>
+
+<div class="row">
+    <!--Nav Bar -->
+    
+    <nav class="col-md-3 bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+        <ul id="sidebar" class="nav nav-stacked">
+            <li>
+                <a href="#objects">JavaScript Objects</a>
+                <ul class="nav nav-stacked">
+
+                    <li><a href="#accessingObjectProps">Accessing Object Properties</a></li>
+                    <li><a href="#accessingObjectMethods">Accessing Object Methods</a></li>
+   
+                </ul>
+            </li>
+            <li>
+                <a href="#arrays">Arrays</a>
+                <ul class="nav nav-stacked">
+                    <li><a href="#arrayProps">Array Properties</a></li>
+                    <li><a href="#arrayMethods">Array Methods</a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="#functions">Functions</a>
+                
+            </li>
+            <li>
+                <a href="#global">Global Functions</a>
+                
+            </li>
+           <!-- <li>
+                <a href="#DOM">Document Object Model</a>
+            </li>
+            
+            <li><a href="#review">Review Questions</a></li>-->
+        </ul>
+    </nav>
+</div>
+</main>
+
+<nav class="navbar navbar-default no-margin-bottom">
+<div class="container">
+<p class="navbar-text navbar-right">&copy; Copyright 2016-2023 <a href="https://www.westminster.ac.uk" class="navbar-link">University of Westminster</a></p>
+</div>
+</nav>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="prism/prism.js"></script>
+<script src="prism/prism-line-numbers.js"></script>
+<script src="prism/prism-line-highlight.js"></script>
+<script>
+$('body').scrollspy({
+  target: '.bs-docs-sidebar',
+  offset: 60
+});
+$("#sidebar").affix({
+  offset: {
+    top: 80
+  }
+});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRNL1F43P4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRNL1F43P4');
+</script>
+<br><center><a href='/accessibility' target='_blank'>Accessibility statement</a></body>
+</html>
