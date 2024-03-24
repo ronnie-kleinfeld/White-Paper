@@ -26,6 +26,28 @@
             <input type="button" onclick="checkUserName(form);" value="check validity" />
         </p>
     </form>
+
+    <div id="turnPurple" style="height:150px; width:150px; border: solid thin black; margin: 10px; float: left;">
+        Click Me
+        I'll turn purple
+    </div>
+    <div id="clearPurple" style="height:150px; width:150px; border: solid thin black; margin: 10px; float: left;">
+        Click Me
+        to clear purple
+    </div>
 </body>
+
+<script>
+    // addEventListener()
+    document.getElementById("turnPurple").addEventListener("click", function () {
+        document.getElementById("turnPurple").style.backgroundColor = "purple";
+    });
+    document.getElementById("clearPurple").addEventListener("click", function () {
+        document.getElementById("turnPurple").style.backgroundColor = "white";
+    });
+
+    // removeEventListener()
+    element.removeEventListener("mousemove", myFunction);
+</script>
 
 </html>
