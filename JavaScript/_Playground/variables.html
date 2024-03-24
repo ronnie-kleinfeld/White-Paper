@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>variables</title>
-
     <script>
+        const myAwesomeVariable = "a";
+        const myAwesomeVariable2 = "b";
+        const my_awesome_variable = "c";
+        const $my_AwesomeVariable = "d";
+        const _my_awesome_variable_$ = "e";
+
+        // primitives
         // Number
         // String
         // Boolean
@@ -20,8 +25,33 @@
         let localVariable = 0;
         const constVariable = 0;
 
-        alert("Ronnie");
-    </script>
+        // Type Coercion
+        8 == "8" // true
+
+        null == udefined   // true
+        false == undefined // false
+        false == "false"   // false
+
+        '' == '0'          // false
+        0 == ''            // true
+        0 == '0'           // true
+
+        8 === "8"           // false
+
+        null === udefined   // false
+        false === undefined // false
+        false === "false"   // false
+
+        '' === '0'          // false
+        0 === ''            // false
+        0 === '0'           // false
+
+        // Null and Undefined
+        let foo = null;
+
+        // Two ways to achieve an undefined value. 
+        var bar1 = undefined;
+        var bar2;    </script>
 </head>
 
 <body>
