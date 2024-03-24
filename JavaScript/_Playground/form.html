@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script>
+        result = document.test.firstName.value
+        document.test.firstName.value = "Hello World!"
+
+        function checkUserName(form) {
+            if (form.reg.value.length != 8) {
+                alert("You have not entered an eight character string");
+                return false;
+            } else {
+                alert("This is correct");
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <p>
+            Please enter your student username:
+            <input type="text" name="reg" />
+            <input type="button" onclick="checkUserName(form);" value="check validity" />
+        </p>
+    </form>
+</body>
+
+</html>
