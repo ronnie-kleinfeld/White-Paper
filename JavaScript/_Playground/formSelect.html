@@ -1,0 +1,166 @@
+<html>
+
+<head>
+    <script>
+        function getSelectedvalue(selectList) {
+            return selectList[selectList.selectedIndex].value
+        }
+
+        function getSelectedText(selectList) {
+            return selectList.options[selectList.selectedIndex].text
+        }
+
+        function getMSelectvaluesA(selectList) {
+            var i
+            var values = new Array()
+            for (i = 0; i < selectList.length; i++) {
+                if (selectList.options[i].selected) {
+                    values[values.length] = selectList.options[i].value
+                }
+            }
+            return values
+        }
+
+        function getMSelectvaluesS(selectList, separator) {
+            var i
+            var count = 0
+            var tempString = ""
+
+            for (i = 0; i < selectList.length; i++) {
+                if (selectList.options[i].selected) {
+                    if (count > 0) tempString += separator
+                    tempString += selectList.options[i].value
+                    count++
+                }
+            }
+            return tempString
+        }
+
+        function getMSelectTextA(selectList) {
+            var i
+            var values = new Array()
+            for (i = 0; i < selectList.length; i++) {
+                if (selectList.options[i].selected) {
+                    values[values.length] = selectList.options[i].text
+                }
+            }
+            return values
+        }
+
+        function getMSelectTextS(selectList, separator) {
+            var i
+            var count = 0
+            var tempString = ""
+            for (i = 0; i < selectList.length; i++) {
+                if (selectList.options[i].selected) {
+                    if (count > 0) tempString += separator
+                    tempString += selectList.options[i].text
+                    count++
+                }
+            }
+            return tempString
+        }
+
+        function showSelectvalue(formRef) {
+            var rvalue = getSelectedvalue(formRef.Select1)
+            alert("The value selected is: \n" + rvalue)
+        }
+
+        function showSelectText(formRef) {
+            var rText = getSelectedText(formRef.Select1)
+            alert("The text selected is: \n" + rText)
+        }
+
+        function showSelectedvaluesA(formRef) {
+            var tempString = ""
+            var rvalues = getMSelectvaluesA(formRef.Select2)
+            if (rvalues.length == 0)
+                alert("No Items were selected.")
+            else {
+                for (i = 0; i < rvalues.length; i++) {
+                    tempString += rvalues[i] + "\n"
+                }
+                alert("Here are the value(s):\n\n" + tempString)
+            }
+        }
+
+        function showSelectedvaluesS(formRef) {
+            var rvalues = getMSelectvaluesS(formRef.Select2, "\n")
+            if (rvalues == "")
+                alert("No items were selected.")
+            else
+                alert("values of items selected: \n\n" + rvalues)
+        }
+
+        function showSelectedTextA(formRef) {
+            var tempString = ""
+            var rTexts = getMSelectTextA(formRef.Select2)
+            if (rTexts.length == 0)
+                alert("No Items were selected.")
+            else {
+                for (i = 0; i < rTexts.length; i++) {
+                    tempString += rTexts[i] + "\n"
+                }
+                alert("Here are the Text item(s):\n\n" + tempString)
+            }
+        }
+
+        function showSelectedTextS(formRef) {
+
+            var rTexts = getMSelectTextS(formRef.Select2, "\n")
+            if (rTexts == "")
+                alert("No items selected.")
+            else
+                alert("Text of items selected: \n\n" + rTexts)
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <form>
+            <table cellpadding="4">
+                <tr>
+                    <td>
+                        <p><select name="Select1">
+                                <option value="valueItem1">Text Item 1</option>
+                                <option value="valueItem2">Text Item 2</option>
+                                <option value="valueItem3">Text Item 3</option>
+                            </select></p>
+                    </td>
+                    <td><input type="button" name="ShowSelectvalue" value="Show Selected Item value"
+                            onclick="showSelectvalue(this.form)"><BR>
+                        &nbsp;<BR>
+                        <input type="button" name="ShowSelectText" value="Selected Item Text"
+                            onclick="showSelectText(this.form)">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr size="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><select name="Select2" multiple="multiple">
+                                <option value="valueItem1">Text Item 1</option>
+                                <option value="valueItem2">Text Item 2</option>
+                                <option value="valueItem3">Text Item 3</option>
+                            </select></p>
+                    </td>
+                    <td>
+                        <p><input type="button" name="" value="Get Selected values - String"
+                                onclick="showSelectedvaluesS(this.form)"><input type="button" name="Button3"
+                                value="Get Selected values - Array" onclick="showSelectedvaluesA(this.form)"></p>
+                        <p><input type="button" name="Button4" value="Get Selected Text    -  String"
+                                onclick="showSelectedTextS(this.form)"><input type="button" name="Button4"
+                                value="Get Selected Text    -  Array" onclick="showSelectedTextA(this.form)"></p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
