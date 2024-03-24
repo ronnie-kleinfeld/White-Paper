@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script>
+        //https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/js4.html
+
+        // Document Object Propoerties
+        window
+        window.parent
+        window.frames
+        window.location
+        window.document
+        window.document.anchors
+        window.document.body
+        window.document.cookie
+        window.document.domain
+        window.document.forms
+        window.document.forms[0].elements
+        window.document.images
+        window.document.links
+        window.document.referrer
+        window.document.title
+        window.document.URL
+
+        // Document Object Methods
+        close()	                    // close document
+        getElementsByName()	        // by name
+        getElementById()	        // by id
+        getElementsByClassName()    // by class
+        getElementsByTagName()	    // by tag name
+        open()	                    // open document
+        write()	                    // writes HTML or JavaScript to document
+        writeln()	                // writes HTML or JavaScript to document and new line
+
+        // find element
+        var x = document.getElementById("id1");
+        var x = document.getElementsByTagName("p");
+        var x = document.getElementsByClassName("myClass");
+
+        // set style
+        document.getElementById("id1").style.property = new style;
+
+        document.getElementById("id2").style.color = "blue";
+
+        var myParagraph = document.getElementById("id3");
+        myParagraph.style.color = "blue";
+        myParagraph.style.fontSize = "30";
+
+        // replace image
+        document.images[0].src = "http://www.somehost.co.uk/images/myImg.gif";
+
+        // setTimeout()
+        window.setTimeout("javascript function", milliseconds);
+        setTimeout(function () {
+            alert("Hello")
+        }, 3000
+        );
+
+        window.clearTimeout(timeoutVariable)
+    </script>
+</head>
+
+<body>
+    <p id="id2">Hello World!</p>
+    <p id="id3">Hello World!</p>
+</body>
+
+</html>
