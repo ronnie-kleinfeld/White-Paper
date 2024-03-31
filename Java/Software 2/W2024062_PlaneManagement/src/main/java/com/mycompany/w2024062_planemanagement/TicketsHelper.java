@@ -31,7 +31,7 @@ public class TicketsHelper {
         if (index == -1) {
             return null;
         } else {
-            return TicketsHelper.removeByIndex(tickets, index);
+            return removeByIndex(tickets, index);
         }
     }
 
