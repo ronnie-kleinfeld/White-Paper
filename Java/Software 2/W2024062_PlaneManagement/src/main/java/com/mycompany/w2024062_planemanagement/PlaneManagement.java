@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PlaneManagement {
 
-    private Chair[][] chairs; // [row][seat] row-A,B,C,D seat-1..14 char 5A
+    private Chair[][] chairs; // [row][seat] row-A,B,C,D seat-1..14 chair 5A
     private static Ticket[] tickets;
 
     public PlaneManagement() throws Exception {
