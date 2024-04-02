@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>Shop</title>
+  <link rel="stylesheet" href="./css/reset-utility.css">
+  <link rel="stylesheet" href="./css/shop.css">
+  <!-- template.css -->
+  <link rel="stylesheet" href="./css/home/template.css">
+  <!-- YOUR CSS GOES HERE -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <style>
+    .shop {
+      width: 100%;
+    }
+
+    .container div {
+      float: left;
+      clear: none;
+    }
+
+    .shoppingContainer {
+      width: 100%;
+      padding: 10px;
+      overflow: hidden;
+      background-image: url('./images/hero-img-v2-min.jpg');
+      background-position: bottom center;
+      background-repeat: no-repeat;
+    }
+
+    .shopContainer {
+      float: left;
+      background-color: #FBC412;
+      width: 67%;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .cartContainer {
+      float: left;
+      background-color: #90C187;
+      width: 32%;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .shop-item {
+      background-color: #BF922F;
+      width: 234px;
+      float: left;
+      display: inline;
+      min-width: 200px;
+      min-height: 150px;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    .shop-item img {
+      border-radius: 5px;
+    }
+
+    .shop-item-info {
+      display: grid;
+    }
+
+    .shop-item-price {
+      display: block;
+    }
+
+    .shop-item-price span {
+      display: inline-block;
+      width: 80px;
+    }
+
+    .shop-item-quantity {
+      display: block;
+    }
+
+    .shop-item-quantity label {
+      display: inline-block;
+      width: 80px;
+    }
+
+    input[type='input'] {
+      width: 40px;
+    }
+
+    .shop-item-size {
+      display: block;
+    }
+
+    .shop-item-size label {
+      display: inline-block;
+      width: 80px;
+    }
+
+    .shop-item-add-to-cart {
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .shop-item-add-to-cart-button {
+      background-color: #FBC412;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .cart-item {
+      background-color: #BF922F;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .cart-item-title {
+      font-size: 16px;
+    }
+
+    .cart-item img {
+      max-width: 40px;
+      max-height: 40px;
+      margin-right: 10px;
+      float: left;
+    }
+
+    .cart-item-cost {
+      font-size: 13px;
+    }
+
+    .cart-item-button {
+      margin-left: auto;
+    }
+
+    .cart-list-buttons {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .cart-list-clear-cart-button {
+      background-color: #D9D9D9;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .cart-list-checkout-button {
+      background-color: #FBC412;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #FFB000;
+      border: 1px solid #212529;
+      color: #212529;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .top:hover {
+      background-color: #FFD700;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960"
+            width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="home.html">
+          <div>
+            <img src="images/logo-width-32.svg" alt="shop">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Profile</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <div style="background-color: #FFB000; width: 100%; text-align: center;">
+    <h1>Buy from the organisation merchandise</h1>
+  </div>
+  <div style="background-color: #FBC412; width: 100%; text-align: center;">
+    <h2>
+      It's for a good cause
+    </h2>
+  </div>
+  <article class="card-1 card">
+    <div class="shoppingContainer">
+      <div class="shopContainer">
+        <h3>Shooping List</h3>
+        <div id="shop-items">
+          <div id="shop-item" class="shop-item">
+            <input type="hidden" id="shop-item-hidden">
+            <h3 id="shop-item-title">Title of Item 1</h3>
+            <img id="shop-item-img" src="./images/products/product1.png" alt="Item 1">
+            <div class="shop-item-info">
+              <p id="shop-item-description">description</p>
+            </div>
+            <div class="shop-item-price">
+              <span>Price: </span>&#163;<span id="shop-item-price">9.99</span>
+            </div>
+            <div class="shop-item-quantity">
+              <label for="shop-item-quantity">Quantity:</label>
+              <input type="text" id="shop-item-quantity" name="shop-item-quantity" value="0">
+            </div>
+            <div class="shop-item-size">
+              <label for="shop-item-size-ddl">Size:</label>
+              <select id="shop-item-size-ddl" name="shop-item-size">
+                <option value="Small">Small</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Large">Large</option>
+              </select>
+            </div>
+            <div class="shop-item-add-to-cart">
+              <input id="shop-item-add-to-cart-button" class="shop-item-add-to-cart-button" type="button"
+                value="Add to Cart" name="button">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cartContainer">
+        <h3>Cart</h3>
+        <form id="cart-form" action="./shop_summary.html" method="post">
+          <div id="cart-items">
+            <div id="cart-item" class="cart-item">
+              <input type="hidden" id="cart-item-hidden">
+              <img id="cart-item-img" src="./images/products/product1.png" alt="Item 1">
+              <span class="cart-item-title" id="cart-item-title">my titleas jakshdflkjahs kljashdfkj</span>
+              <div class="cart-item-cost">
+                <input id="cart-item-button" class="cart-item-button" type="button" value="Delete" name="button"
+                  onclick="deleteItemFromCart(this)">&nbsp;
+                &#163;<span id="cart-item-price">9.99</span> x
+                <span id="cart-item-quantity">2</span> =
+                &#163;<span id="cart-item-total">19.98</span>
+                &nbsp;Size: <span id="cart-item-size">Medium</span>
+              </div>
+            </div>
+          </div>
+          <p>Total: &#163;<span id="cart-list-total">0</span></p>
+          <div class="cart-list-buttons">
+            <input class="cart-list-clear-cart-button" type="button" value="Clear Cart" name="button"
+              onclick="clearCart(this)">
+            <input class="cart-list-checkout-button" type="submit" value="Checkout" name="button" onclick="onSubmit()">
+          </div>
+        </form>
+      </div>
+    </div>
+  </article>
+  <article class="card-1 card">
+    <div class="row">
+      <a href="#top" class="top" style="text-decoration: none;">Top</a>
+
+      <div class="footer bg-yellow-v1">
+        <p>&copy; This page was edited by: <span><a class="text-green-v1" href="./pageEditor_ST1.html">Ronnie
+              Kleinfeld</a></span></p>
+      </div>
+    </div>
+  </article>
+
+
+  <script src="./js/shop.js" defer></script>
+  <script src="./js/shopList.js"></script>
+  <script src="./js/cartList.js"></script>
+  <script>
+    // shop list
+    function fillShopItems() {
+      for (var i = 0; i < sc_shopArray.length; i++) {
+        var item = sc_shopArray[i];
+        fillShopItem(item);
+      }
+    }
+    function fillShopItem(item) {
+      shop_item = shop_item_template.cloneNode(true);
+
+      shop_item.querySelector("#shop-item-hidden").value = item.id;
+      shop_item.querySelector("#shop-item-title").innerHTML = item.title;
+      shop_item.querySelector("#shop-item-img").src = item.image_src;
+      shop_item.querySelector("#shop-item-img").alt = item.alt;
+      shop_item.querySelector("#shop-item-description").innerHTML = item.description;
+      shop_item.querySelector("#shop-item-price").innerHTML = parseFloat(item.price).toFixed(2);
+      shop_item.querySelector("#shop-item-quantity").value = item.quantity;
+      shop_item.querySelector("#shop-item-size-ddl").value = item.size;
+      button = shop_item.querySelector("#shop-item-add-to-cart-button");
+      button.onclick = () => addItemToCart(item.id);
+
+      document.getElementById("shop-items").appendChild(shop_item);
+    }
+
+    function fillCartItems() {
+      for (var i = 0; i < sc_cartArray.length; i++) {
+        var item = sc_cartArray[i];
+        fillCartItem(item);
+      }
+      updateCartTotal();
+    }
+    function fillCartItem(item) {
+      cart_item = cart_item_template.cloneNode(true);
+
+      cart_item.querySelector("#cart-item-hidden").value = item.id;
+      cart_item.querySelector("#cart-item-img").src = item.image_src;
+      cart_item.querySelector("#cart-item-img").alt = item.alt;
+      cart_item.querySelector("#cart-item-title").innerHTML = item.title;
+      cart_item.querySelector("#cart-item-size").innerHTML = item.size;
+      cart_item.querySelector("#cart-item-price").innerHTML = parseFloat(item.price).toFixed(2);
+      cart_item.querySelector("#cart-item-quantity").innerHTML = item.quantity;
+      cart_item.querySelector("#cart-item-total").innerHTML = (parseFloat(item.price) * parseFloat(item.quantity)).toFixed(2);
+      button = cart_item.querySelector("#cart-item-button");
+      button.onclick = () => deleteItemFromCart(item.id);
+
+      document.getElementById("cart-items").appendChild(cart_item);
+    }
+
+    function getShopItemById(id) {
+      var shop_items = document.getElementById("shop-items");
+      for (var i = 0; i < shop_items.children.length; i++) {
+        shop_item = shop_items.children[i];
+        shop_id = shop_item.querySelector("#shop-item-hidden").value;
+        if (shop_id == id) {
+          return shop_item;
+        }
+      }
+    }
+
+    function addItemToCart(id) {
+      var item;
+      for (var i = 0; i < sc_shopArray.length; i++) {
+        if (sc_shopArray[i].id == id) {
+          item = sc_shopArray[i];
+        }
+      }
+
+      console.info("Ronnie");
+      var shop_item = getShopItemById(id);
+      console.info(shop_item);
+
+      let shopId = shop_item.querySelector("#shop-item-hidden").value;
+      let shopTitle = shop_item.querySelector("#shop-item-title").innerHTML;
+      let shopImageSrc = shop_item.querySelector("#shop-item-img").src;
+      let shopImageAlt = shop_item.querySelector("#shop-item-img").alt;
+      let shopDescription = shop_item.querySelector("#shop-item-description").innerHTML;
+      let shopPrice = shop_item.querySelector("#shop-item-price").innerHTML;
+      let shopQuantity = shop_item.querySelector("#shop-item-quantity").value;
+      var shopSize = shop_item.querySelector("#shop-item-size-ddl").value;
+      var cartItem = sc_addCartItem(shopId, shopTitle, shopDescription, shopPrice, shopQuantity, shopSize, shopImageSrc, shopImageAlt);
+      console.info(cartItem);
+      fillCartItem(cartItem);
+
+      updateCartTotal();
+    }
+
+    // cart list
+    function deleteItemFromCart(id) {
+      var cart_items = document.getElementById("cart-items");
+      for (var i = 0; i < cart_items.children.length; i++) {
+        cart_item = cart_items.children[i];
+        cart_id = cart_item.querySelector("#cart-item-hidden").value;
+        if (cart_id == id) {
+          cart_items.removeChild(cart_item);
+
+          sc_deleteCartItem(i);
+          break;
+        }
+      }
+
+      updateCartTotal();
+    }
+    function clearCart(item) {
+      document.getElementById("cart-items").innerHTML = "";
+
+      sc_clearCart();
+      updateCartTotal();
+    }
+
+    function onSubmit() {
+      if (sc_cartArray.length == 0) {
+        alert("Please add items to the cart before going to Checkout.")
+        event.preventDefault();
+      }
+    };
+
+    function updateCartTotal() {
+      document.getElementById("cart-list-total").innerHTML = sc_cartTotal().toFixed(2);
+    }
+
+    shop_item_template = document.getElementById("shop-item");
+    document.getElementById("shop-items").removeChild(shop_item_template);
+
+    cart_item_template = document.getElementById("cart-item");
+    document.getElementById("cart-items").removeChild(cart_item_template);
+
+    fillShopItems();
+    fillCartItems();
+  </script>
+</body>
+
+</html>

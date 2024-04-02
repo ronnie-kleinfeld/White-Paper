@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>Affordable Energy | HOME </title>
+  <!-- reset-utility.css -->
+  <link rel="stylesheet" href="css/reset-utility.css">
+  <!-- template.css -->
+  <link rel="stylesheet" href="css/template.css">
+  <!-- home.css -->
+  <link rel="stylesheet" href="css/home.css">
+
+</head>
+
+<body>
+
+  <!------------------------------------------>
+  <!-- NAVBAR CODE DO NOT DELETE IT (START) -->
+  <!------------------------------------------>
+
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="home.html"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="#">
+          <div>
+            <img src="images/logo-width-32.svg" alt="logo">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Profile</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <!------------------------------------------>
+  <!-- NAVBAR CODE DO NOT DELETE IT (END)   -->
+  <!------------------------------------------>
+
+
+
+
+
+  <!-- ------------------------->
+  <!-- YOUR CONTENT GOES HERE -->
+  <!-- ------------------------->
+
+  <!-- [START] HERO IMAGE -->
+  <main>
+    <div class="hero-section">
+      <div class="hero-image">
+        <!-- <img src="images/hero-image.jpg" alt="logo"> -->
+      </div>
+    </div>
+    </div>
+    <!-- [END] HERO IMAGE -->
+
+
+    <!-- [START] CARDS -->
+
+    <!-- card 1 -->
+    <article class="card-1 card">
+      <div class="row">
+        <div class="container">
+          <div class="img-card"><img src="images/about-us-v1-min.jpg" alt="about us"></div>
+        </div>
+        <div class="container">
+          <div class="card-content bg-green-v1">
+            <h2>WHAT WE DO</h2>
+            <p>
+              We are a non-governmental organization that ensure access to affordable, reliable, sustainable and modern
+              energy for all.
+            </p>
+            <h3><a href="./content_ST1.html">Ronnie Kleinfeld (Student 1)</a></h3>
+            <h3><a href="./content_ST2.html">Isabelle Waltrick (Student 2)</a></h3>
+            <h3><a href="./content_ST3.html">Nafiu Amosa (Student 3)</a></h3>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- card 2 -->
+    <article class="card-2 card">
+      <div class="row" id="row-reverse">
+        <div class="container">
+          <div class="card-content bg-brown-v1">
+            <h2><a href="./shop.html">OUR SHOP</a></h2>
+            <p>
+              Are you passionate about empowering communities and promoting sustainable energy solutions? Then we invite
+              you to support our cause by shopping at our <a href="#">shop</a>.
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="img-card"><img src="images/shop-img-v1-min.png" alt="shop"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- card 3 -->
+    <article class="card-3 card">
+      <div class="row">
+        <div class="container">
+          <div class="img-card"><img src="images/meet-the-team-v2-min.jpg" alt="meet the team"></div>
+        </div>
+        <div class="container">
+          <div class="card-content bg-green-v1">
+            <h2><a href="./team.html">MEET THE TEAM</a></h2>
+            <p>
+              Get to know the passionate individuals driving our sustainable energy initiatives forward. Our team is
+              comprised of dedicated professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- card 4 -->
+    <article class="card-4 card">
+      <div class="row" id="row-reverse">
+        <div class="container">
+          <div class="card-content bg-brown-v1">
+            <h2><a href="./feedback.html">LEAVE US A FEEDBACK</a></h2>
+            <p>
+              We value your opinion! Share your thoughts and experiences with us through feedback. Your insights help us
+              continually improve and refine our efforts towards achieving sustainable energy goals together.
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="img-card"><img src="images/feedback-v1-min.jpg" alt="feedback"></div>
+        </div>
+      </div>
+    </article>
+    <!-- [END] CARDS -->
+  </main>
+
+  <!-- ------------------------->
+  <!-- YOUR CONTENT GOES HERE -->
+  <!-- ------------------------->
+
+
+
+
+
+  <!-- ------------------------------- -->
+  <!-- FOOTER DO NOT DELETE IT (START) -->
+  <!-- ------------------------------- -->
+
+  <div class="footer bg-yellow-v1">
+    <p>&copy; This page was edited by: <span><a class="text-green-v1" href="./pageEditor_ST2.html"
+          target="_blank">Isabelle
+          Waltrick</a></span></p>
+  </div>
+
+  <!-- ------------------------------- -->
+  <!-- FOOTER DO NOT DELETE IT (END) -->
+  <!-- ------------------------------- -->
+
+  <script src="./home/template.js" defer></script>
+</body>
+
+</html>

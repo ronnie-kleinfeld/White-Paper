@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UN Goal 7: Affordable and Clean Energy</title>
+    <!-- reset-utility.css -->
+    <link rel="stylesheet" href="css/reset-utility.css" />
+    <!-- template.css -->
+    <link rel="stylesheet" href="css/template.css" />
+    <!-- home.css -->
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/s3_style.css" />
+    <link rel="stylesheet" href="css/reset-utility.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- ROBOTO -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- OSWALD -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo-width-32.svg" type="image/x-icon" />
+
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+        }
+
+
+        main {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .btn-editor {
+            width: 10vw;
+            display: inline-block;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 1vw;
+            font-size: 1rem;
+            border-radius: .25rem;
+            margin: 0 15px;
+            border: 1px solid #212529;
+
+        }
+
+        a:first-child .btn-editor {
+            color: #000;
+        }
+
+        a:first-child:hover .btn-editor {
+            background-color: #90C187;
+            color: #212529;
+        }
+
+        a:last-child:hover .btn-editor {
+            background-color: #fff;
+            color: #212529;
+        }
+
+        a .contact {
+            border: 1px solid #212529;
+            background-color: #212529;
+            color: #fff;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .btn-editor {
+                width: 20vw;
+            }
+
+            .container img {
+                display: none;
+            }
+
+            .banner_text h1 {
+                font-size: 1rem;
+            }
+
+            .container:first-child {
+                background-image: url('https://www.shipleyenergy.com/wp-content/uploads/2021/01/iStock-637732264.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .container:last-child {
+                background-image: url('images/1690543195145.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!------------------------------------------>
+    <!-- NAVBAR CODE DO NOT DELETE IT (START) -->
+    <!------------------------------------------>
+
+    <!-- This is the menu items for MOBILE view -->
+    <nav class="bg-yellow-v2">
+        <ul class="sidebar">
+            <!-- Close button (mobile view) -->
+            <!-- When the button is clicked it will call the "hideSidebar function" -->
+            <li onclick="hideSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960" width="35">
+                        <path
+                            d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+                            fill="white" />
+                    </svg></a>
+            </li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+
+        <!-- This is the menu items for DESKTOP view -->
+        <ul>
+            <li>
+                <a href="home.html">
+                    <div>
+                        <img src="images/logo-width-32.svg" alt="logo" />
+                    </div>
+                </a>
+            </li>
+            <li class="hideOnMobile"><a href="team.html">Team</a></li>
+            <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+            <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+            <li class="hideOnMobile"><a href="profile.html">Profile</a></li>
+            <!-- Menu Icon (mobile view) -->
+            <!-- When the button is clicked it will call the "showSidebar function" -->
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960" width="35">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+                    </svg></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!------------------------------------------>
+    <!-- NAVBAR CODE DO NOT DELETE IT (END)   -->
+    <!------------------------------------------>
+    <article class="card-1 card">
+        <div class="banner banner_ext">
+            <div class="banner-section">
+                <div class="banner_text">
+                    Sustainable Development Goals <br>
+                    <h1>Invest in renewable energy sources like solar, wind, and hydro power today</h1>
+                </div>
+                <div class="buttons">
+                    <a href="profile.html" target="_blank" rel="noopener noreferrer"><button class="btn-editor">Get
+                            Started</button></a>
+                    <a href="team.html" target="_blank"><button class="btn-editor contact">Learn More</button></a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <header>
+        UN Goal 7: Affordable and Clean Energy
+    </header>
+    <!-- card 3 -->
+    <article class="card-3 card">
+        <div class="row">
+            <div class="container">
+                <div class="img-card">
+                    <img src="https://www.shipleyenergy.com/wp-content/uploads/2021/01/iStock-637732264.jpg"
+                        alt="meet the team" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="card-content bg-green-v1">
+                    <h2>Actions</h2>
+                    <ul>
+                        <li>Investing in renewable energy sources like solar, wind, and hydro power</li>
+                        <li>Promoting energy efficiency measures in industries, buildings, and transportation</li>
+                        <li>Expanding access to electricity in rural and remote areas</li>
+                        <li>Supporting research and development of clean energy technologies</li>
+                    </ul><a href="team/team.html" target="_blank" rel="noopener noreferrer">Team Page</a>
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- card 3 ends here -->
+
+    <!-- card 4 -->
+    <article class="card-4 card">
+        <div class="row" id="row-reverse">
+            <div class="container">
+                <div class="card-content bg-brown-v1">
+                    <h2>Targets</h2>
+                    <ul>
+                        <li>By 2030, ensure universal access to affordable, reliable, and modern energy services</li>
+                        <li>By 2030, increase substantially the share of renewable energy in the global energy mix</li>
+                        <li>By 2030, double the global rate of improvement in energy efficiency</li>
+                        <li>By 2030, enhance international cooperation to facilitate access to clean energy research and
+                            technology</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="img-card">
+                    <img src="images/1690543195145.png" alt="targets" />
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- [END] CARDS -->
+    <!-- GoTop -->
+    <button class="go-top" onclick="scrollToTop()">
+        &#x2191;
+    </button>
+
+    <div class="footer bg-yellow-v1">
+        <p>
+            &copy; This page was edited by:
+            <span><a class="text-green-v1" href="pageEditor_ST3.html" target="_blank">Nafiu Amosa</a></span>
+        </p>
+    </div>
+    <script>
+        window.addEventListener("scroll", function () {
+            if (window.scrollY === 0) {
+                document.querySelector(".go-top").style.display = "none";
+            } else if (window.scrollY > 100) {
+                document.querySelector(".go-top").style.display = "block";
+            }
+        });
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>

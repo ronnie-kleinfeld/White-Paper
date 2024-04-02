@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset-utility.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ROBOTO -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- OSWALD -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Components</title>
+    <style>
+        body {
+            background-color: #F3EEE4;
+        }
+
+        .container {
+            padding: 20px 100px;
+        }
+
+        .colour-box {
+            height: 140px;
+            width: 230px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+            border: black;
+            border-width: 1px;
+            border-style: outset;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 1px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin-top: 20px; text-align: center;">
+    <div class="container">
+        <h1 class="text-dark-v1">Visual look of the reset-utility.css file</h1>
+        <br>
+        <p>
+            This document serves as a component of the tasks 3.1.2 and 3.1.12 within the coursework. Its purpose is to
+            provide a visual representation of the external file "reset-utility.css". This CSS file is designed to
+            ensure a consistent look and feel across the website, offering default styling for various page components,
+            along with a defined color palette and typography system. Additionally, the external file offers CSS reset
+            properties, facilitating the seamless integration of additional CSS solutions.</p>
+        <br>
+        <br>
+        <p>For implementation, the CSS file should be included in the head section of the HTML page for each student,
+            using a link tag such as: &lt;link rel="stylesheet" href="reset-utility.css"&gt;. It's essential to position
+            this link before the student's own CSS file. By adhering to this structure, any personal CSS styling applied
+            by the student will overwrite the default styles established by the external CSS file. This approach grants
+            students greater freedom to imbue their pages with their unique stylistic preferences.</p>
+
+        <br>
+
+        <h2 style="margin-bottom: 10px;">1) Colours</h2>
+        <p>These colors are intended for consistent use across the website, ensuring a cohesive color palette
+            throughout.</p>
+        <br>
+        <p>To apply these colors, students can utilize the class "bg-color-v(n)" to set the background color of an
+            element or "text-color-v(n)" to specify the color of the text within an element.</p>
+        <br>
+        <h3>Yellows:</h3>
+        <br>
+        <!-- .yellow-v1 -->
+        <div style="background-color: #FFB000;" class="colour-box">
+            <p style="margin-top: 25px;"><b>#FFB000</b></p>
+            <p style="color: rgba(0, 0, 0, 0.8);">class = "bg-yellow-v1"</p>
+            <p style="color: rgba(0, 0, 0, 0.8);">class = "text-yellow-v1"</p>
+        </div>
+
+        <!-- .yellow-v2 -->
+        <div style="background-color: #FBC412;" class="colour-box">
+            <p style="margin-top: 25px;"><b>#FBC412</b></p>
+            <p style="color: rgba(0, 0, 0, 0.8);">class = "bg-yellow-v2"</p>
+            <p style="color: rgba(0, 0, 0, 0.8);">class = "text-yellow-v2"</p>
+        </div>
+        <!-- .yellow-v3 -->
+        <div style="background-color: #FCD65A;" class="colour-box">
+            <p style="margin-top: 25px;"><b>#FCD65A</b></p>
+            <p style="color: rgba(0, 0, 0, 0.8);">class = "bg-yellow-v3"</p>
+            <p style="color: rgba(0, 0, 0, 0.8);">class = "text-yellow-v3"</p>
+        </div>
+        <br>
+        <h3 style="margin-top: 25px;">Greys:</h3>
+        <br>
+        <!-- .grey-v1 -->
+        <div style="background-color: #7F7F7F;" class="colour-box">
+            <p style="margin-top: 25px; color: white">#7F7F7F</p>
+            <p style="color: rgba(255, 255, 255, 0.5);">class = "bg-grey-v1"</p>
+            <p style="color: rgba(255, 255, 255, 0.5);">class = "text-grey-v1"</p>
+        </div>
+        <!-- grey-v2 -->
+        <div style="background-color: #BCC9C7;" class="colour-box">
+            <p style="margin-top: 25px"><b>#BCC9C7</b></p>
+            <p style="color: rgba(80, 72, 72, 0.7);">class = "bg-grey-v2"</p>
+            <p style="color: rgba(80, 72, 72, 0.7);">class = "text-grey-v2"</p>
+        </div>
+        <!-- grey-v3 -->
+        <div style="background-color: #D9D9D9;" class="colour-box">
+            <p style="margin-top: 25px"><b>#D9D9D9</b></p>
+            <p style="color: rgba(80, 72, 72, 0.7);">class = "bg-grey-v3"</p>
+            <p style="color: rgba(80, 72, 72, 0.7);">class = "text-grey-v3"</p>
+        </div>
+        <br>
+        <h3 style="margin-top: 25px;">Additional colours:</h3>
+        <br>
+        <!-- brown-v1 -->
+        <div style="background-color: #BF922F;" class="colour-box">
+            <p style="margin-top: 25px"><b>#BF922F</b></p>
+            <p style="color: rgba(255, 255, 255, 0.6);">class = "bg-brown-v1"</p>
+            <p style="color: rgba(255, 255, 255, 0.6);">class = "text-brown-v1"</p>
+        </div>
+        <!-- green-v1 -->
+        <div style="background-color: #90C187;" class="colour-box">
+            <p style="margin-top: 25px"><b>#90C187F</b></p>
+            <p style="color: rgba(0, 0, 0, 0.693);">class = "bg-green-v1"</p>
+            <p style="color: rgba(0, 0, 0, 0.693);">class = "text-green-v1"</p>
+        </div>
+        <!-- dark-v1 -->
+        <div style="background-color: #212529;" class="colour-box">
+            <p style="margin-top: 25px; color: #F3EEE4;"><b>#212529</b></p>
+            <p style="color: rgba(255, 255, 255, 0.633);">class = "bg-dark-v1"</p>
+            <p style="color: rgba(255, 255, 255, 0.633);">class = "text-dark-v1"</p>
+        </div>
+        <!-- TYPOGRAPHY -->
+        <br>
+        <h2 style="margin-top: 25px;">2) Typography</h2>
+        <br>
+        <p>
+            Similarly to the color scheme, these fonts are selected to maintain a consistent look and feel across the
+            website. The CSS properties associated with the following tags have been directly applied to the tags
+            themselves. Therefore, there is no requirement to add a class to these tags on different pages of the
+            website.</p>
+        <br>
+        <h1 class="bg-yellow-v3">H1</h1>
+        <br>
+        <h1>This is a text example of the H1 tag</h1>
+        <br>
+        <p class="text-dark-v1">
+            <b>font-family:</b> 'Oswald', sans-serif;
+            <br>
+            <b>font-size:</b> 45px;
+            <br>
+            <b>font-weight:</b> 500;
+            <br>
+        </p>
+        <br>
+        <h2 class="bg-yellow-v2">H2</h2>
+        <br>
+        <h2>This is a text example of the H2 tag</h2>
+        <br>
+        <p class="text-dark-v1">
+            <b>font-family:</b> 'Oswald', sans-serif;
+            <br>
+            <b>font-size:</b> 28px;
+            <br>
+            <b>font-weight:</b> 500;
+        </p>
+        <br>
+        <h3 class="bg-yellow-v1">H3</h3>
+        <br>
+        <h3>This is a text example of the h3 tag</h3>
+        <br>
+        <p class="text-dark-v1">
+            <b>font-family:</b> 'Oswald', sans-serif;
+            <br>
+            <b>font-size:</b> 25px;
+            <br>
+            <b>font-weight:</b> 500;
+        </p>
+        <br>
+        <p style="color: #F3EEE4;" class="bg-dark-v1">P</p>
+        <br>
+        <p class="text-dark-v1">
+            <b>font-family:</b> 'Roboto', sans-serif;
+            <br>
+            <b>font-size:</b> 18px;
+            <br>
+            <b>font-weight:</b> 500;
+        </p>
+    </div>
+</body>
+
+</html>

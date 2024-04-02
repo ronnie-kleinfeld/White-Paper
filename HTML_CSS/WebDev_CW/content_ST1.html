@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>Content ST1</title>
+  <!-- reset-utility.css -->
+  <link rel="stylesheet" href="./css/reset-utility.css">
+  <!-- template.css -->
+  <link rel="stylesheet" href="./css/template.css">
+  <!-- home.css -->
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+  <style>
+    .go-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #FFB000;
+      border: 1px solid #212529;
+      color: #212529;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .go-top:hover {
+      background-color: #FFD700;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="./home.html"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Account</a></li>
+    </ul>
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="#">
+          <div>
+            <img src="./images/logo-width-32.svg" alt="logo">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Account</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div style="background-color: #FFB000; width: 100%; text-align: center;">
+      <h1>PUBLICATIONS</h1>
+    </div>
+    <div style="background-color: #FBC412; width: 100%;">
+      <ul>
+        <li><a href="#Publication1">Moldova Partnership Landscape Assessment</a></li>
+        <li><a href="#Publication2">Synergy Solutions for a World in Crisis: Tackling Climate and SDG Action
+            Together</a></li>
+        <li><a href="#Publication3">2023 Agenda Partnership Accelerator - Opportunities for partners and donors</a></li>
+        <li><a href="#Publication4">Tracking SDG7: The Energy Progress Report 2022</a></li>
+      </ul>
+    </div>
+
+    <!-- [START] CARDS -->
+    <!-- card 1 -->
+    <a id="Publication1" href="https://sdgs.un.org/publications/moldova-partnership-landscape-assessment-54274"
+      target="_blank">
+      <article class="card-1 card">
+        <div class="row">
+          <div class="container">
+            <div class="img-card">
+              <img src="https://sdgs.un.org/sites/default/files/2023-12/cover.png"
+                alt="Moldova Partnership Landscape Assessment">
+            </div>
+          </div>
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>Moldova Partnership Landscape Assessment</h2>
+              <p>
+                The Moldova Partnership Landscape Assessment aims to examine the multifaceted ecosystem of
+                partnerships,
+                focusing on the efficacy and potential to realize the Sustainable Development Goals (SDGs) by 2030.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- card 2 -->
+    <a id="Publication2"
+      href="https://sdgs.un.org/synergy-solutions-world-crisis-tackling-climate-and-sdg-action-together"
+      target="_blank">
+      <article class="card-2 card">
+        <div class="row">
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>Synergy Solutions for a World in Crisis: Tackling Climate and SDG Action Together</h2>
+              <p>
+                We must change course. Without synergies, the Sustainable Development Goals (SDGs) and climate
+                objectives
+                remain out of reach. The evidence is clear: addressing climate change and achieving the SDGs are
+                inextricably
+                intertwined. Co-benefits far outweigh trade-offs. By maximizing these synergies, we can also bridge
+                investment gaps worth trillions
+                of dollars. Synergistic action should be a required component of national commitments, reporting and
+                financing for
+                climate and development goals. We must act on the climate emergency and sustainable development
+                together
+                now, or we
+                risk not solving them at all.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="img-card">
+              <img src="https://sdgs.un.org/sites/default/files/2023-09/un_climate_sdg_synergies_report-cover_1.png"
+                alt="Synergy Solutions for a World in Crisis: Tackling Climate and SDG Action Together">
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- card 3 -->
+    <a id="Publication3"
+      href="https://sdgs.un.org/publications/2023-agenda-partnership-accelerator-opportunities-partners-and-donors-53894"
+      target="_blank">
+      <article class="card-3 card">
+        <div class="row">
+          <div class="container">
+            <div class="img-card">
+              <img src="https://sdgs.un.org/sites/default/files/2022-11/photo.jpg"
+                alt="2023 Agenda Partnership Accelerator - Opportunities for partners and donors">
+            </div>
+          </div>
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>2023 Agenda Partnership Accelerator - Opportunities for partners and donors
+              </h2>
+              <p>
+                The Division for Sustainable Development
+                Goals of United Nations Department of
+                Economic and Social Affairs (UN DESA)
+                acts as the Secretariat for the SDGs,
+                providing substantive support and
+                capacity-building for the goals and their
+                related thematic issues.
+                The Division promotes multi-stakeholder
+                and participatory approaches and supports
+                governments and stakeholders to monitor
+                and develop effective partnerships for the
+                SDGs. </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- card 4 -->
+    <a id="Publication4" href="https://sdgs.un.org/publications/tracking-sdg7-energy-progress-report-2022-47726"
+      target="_blank">
+      <article class="card-4 card">
+        <div class="row">
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>Tracking SDG7: The Energy Progress Report 2022</h2>
+              <p>
+                Tracking SDG7: The Energy Progress Report provides the international community with a global dashboard
+                to register
+                progress on the targets of Sustainable Development Goal 7 (SDG7): ensuring universal energy access,
+                doubling progress on
+                energy efficiency and substantially increasing the share of renewable energy. It also registers
+                progress
+                towards
+                enhanced international cooperation to facilitate access to clean and renewable energy by 2030, as well
+                as on the
+                expansion of infrastructure and technology upgrade for supplying modern and sustainable energy
+                services
+                for all in
+                developing countries. It assesses the progress made by each country on these targets and provides a
+                snapshot of how far
+                we are from achieving SDG7. The 2022 release is the eight edition of this report, which was formerly
+                known as the Global
+                Tracking Framework (GTF).
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="img-card">
+              <img
+                src="https://sdgs.un.org/sites/default/files/2022-06/Screen%20Shot%202022-06-30%20at%209.25.33%20AM.png"
+                alt="Tracking SDG7: The Energy Progress Report 2022">
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+    <!-- [END] CARDS -->
+  </main>
+
+  <button class="go-top" onclick="scrollToTop()">
+    &#x2191;
+  </button>
+
+  <div class="footer bg-yellow-v1">
+    <p>&copy; This page was edited by: <span><a class="text-green-v1" href="./pageEditor_ST1.html">Ronnie
+          Kleinfeld</a></span></p>
+  </div>
+
+  <script src="./js/template.js" defer></script>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+
+</html>

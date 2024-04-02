@@ -1,0 +1,364 @@
+/* use these #FFB000, #FBC412, #FCD65A, #7F7F7F, #BCC9C7, #D9D9D9,#BF922F, #90C187 and #212529 */
+.s3_profile_box {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+   
+   
+}
+.box{
+    min-height: 100vh;
+    padding-top: 20vh;
+}
+.box:first-child{
+    background-color: #7F7F7F;
+    background-image: url('../images/logo-width-32.svg');
+    background-size:5%; /* Cover the entire div */
+    background-position:bottom center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+.box:last-child{
+    background-image: url('../images/hero-img-v2-min.jpg');
+    background-size:cover; /* Cover the entire div */
+    background-position:center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.s3_profile {
+    width: 70%;
+    height: 250px;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid #D9D9D9;
+    padding: 10px;
+    background-color: #BCC9C7;
+}
+
+.s3_h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.s3_start {
+    width: 70px;
+    padding: 5px;
+    border-radius: 5%;
+    margin: 0 auto;
+    background: #90C187;
+    text-align: center;
+    color: #212529;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.s3_progress_bar_fill_text {
+    overflow: hidden;
+    color: #212529;
+    margin-top: 20px;
+}
+
+.s3_progress {
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.s3_progress_bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+    background: none;
+    border: 1px solid #212529;
+}
+
+.s3_progress_bar_fill {
+    width: 0%;
+    height: 100%;
+    background: #90C187;
+    
+}
+.s3_output_col{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0 auto;
+}
+.s3_output {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid #D9D9D9;
+    background-color: #D9D9D9;
+    color: #212529;
+    border-radius: 15px;
+    padding-left: 10px;
+    display: none;
+}
+
+.s3_output_title {
+    width: 15%;
+    float: left;
+    padding-top: 10px;
+    color: #212529;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.s3_output_context {
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+    height: auto;
+    overflow: hidden;
+    color: #212529;
+    font-family: 'Roboto', sans-serif;
+    border-left: 1px solid #212529;
+
+}
+
+.s3_output_context_text_row:first-child {
+    margin-top: 0px;
+}
+.s3_output_context_text_row{
+    margin: 10px 0;
+}
+.s3_profile_label p{
+    font-size: 16px;
+}
+.s3_profile_title{
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+.s3_profile_form{
+    width:auto;
+    height: 150px;
+    margin: 0 auto;
+    padding: 5px;
+    position: relative;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+.s3_profile_prompt{
+    width: 15%;
+    height: 130px;
+    line-height: 130px;
+    vertical-align: middle;
+    float: left;
+    color: #212529;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+.s3_profile_input_box{
+    height: 130px;
+    position: relative;
+    color: #212529;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+.s3_profile_input_outter_box{
+    width: 70%;
+    height: 130px;
+    margin: 0 auto;
+    float: left;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+}
+.s3_profile_input_box{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: hidden;
+}
+.s3_profile_title{
+    width: auto;
+    height: auto;
+    padding:10px 0px 10px 15px;
+    font-weight:bold;
+    color: #212529;
+}
+.s3_profile_label{
+    width: 90%;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+
+}
+#s3_input_holder{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+}
+.s3_profile_input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #D9D9D9;
+    padding-left: 5px ;
+}
+textarea {
+    resize: none;
+  }
+.s3_profile_textarea{
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #D9D9D9;
+    padding-left: 5px ;
+}
+.s3_profile_input:hover{
+    border: 1px solid #FFB000;
+}
+.s3_profile_button{
+    width: auto;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: #212529;
+    font-family: 'Roboto', sans-serif;
+}
+.s3_profile_button button{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #212529;
+    margin: 0 10px;
+    color: #212529;
+    cursor: pointer;
+}
+.s3_profile_checkbox {
+    width: 30px;
+    height: 50px;
+    margin: 0px 15px;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+#s3_input_holder label, input[type="checkbox"] {
+    color: #FFB000;
+}
+
+.s3_profile_input_box {
+    transition: transform 0.5s ease;
+}
+.go-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #FFB000;
+    border: 1px solid #212529;
+    color: #212529;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.go-top:hover {
+    background-color: #FFD700;
+    transform: scale(1.1);
+}
+
+/* Content_ST3.html and team.html Style */
+
+.banner{
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    background: linear-gradient(90deg, #fbc412 68%, rgba(76, 161, 70, 0.60828) 100%), url("https://sdgs.un.org/themes/custom/porto/assets/goal-02.jpg");
+}
+.banner_ext{
+    height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+}
+.banner-section{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 15vh 0 15vh 0;
+}
+.banner_text{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 3.5vw;
+    color: white;
+    font-weight: bold;
+    margin-top: 10vh;
+}
+.banner_text h1{
+    font-size: 2.0vw;
+    color: #212529;
+    font-weight: bold;
+}
+.context{
+    font-size: 2.8vw;/*Responsive text*/
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10vh;
+    width: 70%;
+    margin: 0 auto;
+    
+}
+
+
+/* End of content_st3.html and team.html styling */
+@media screen and (max-width: 1300px) {
+    .s3_profile_box {
+        width: 90%;
+    }
+    .box{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        height: auto;
+    }
+    .box:last-child{
+        display: none;
+    }
+    .s3_profile {
+        width: auto;
+    }
+    .s3_h1 {
+        font-size: 30px;
+    }
+    .s3_progress {
+        width: 100%;
+    }
+    .s3_progress_bar {
+        width: 100%;
+    }
+    .s3_output {
+        width: 100%;
+    }
+    .s3_profile_label p{
+        font-size: 14px;
+    }
+    .s3_output_col{
+        width: 100%;
+    }
+}

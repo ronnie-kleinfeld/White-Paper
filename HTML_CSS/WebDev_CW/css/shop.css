@@ -1,0 +1,146 @@
+   /* ------------------- */
+   /* NAVBAR CODE (START) */
+   /* ------------------- */
+
+   
+   /* This code remove default margins (without it the navbar shows with a gap on the top) */
+   *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav{
+    /* Shadow beneath the navbar */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav ul{
+    width: 100%;
+    /* This remove the bullet point os the list items */
+    list-style: none;
+    /* This makes the items stay next to each other */
+    display: flex;
+  }
+  
+  /* Size of the navbar */
+  nav li{
+    height: 80px;
+  }
+  
+  nav a{
+    /* This makes the items on navbar to match the size of the bar while also centering the items vertically*/
+    height: 100%;
+    padding: 0 50px;
+    /* Remove the underline of the links */
+    text-decoration: none;
+    /* Display items next to each other and center it */
+    display: flex;
+    align-items: center;
+    /* Colour of the items (desktop view) */
+    color: white;
+    font-weight: bold;
+    /* Space between the letters (it makes more readable */
+    letter-spacing: 1px;
+  }
+  
+  /* Dark colour for the menu items on side bar */
+  .sidebar a {
+    color: #212529;
+  }
+  
+  /* Hover effect */
+  nav a:hover{
+    background-color: #FCD65A;
+  }
+  
+  /* Smooth hover transition */
+  nav a {
+    transition: background-color 0.5s ease;
+  }
+  
+  /* Makes the menu icon stay on the right side of the screen */
+  nav li:first-child{
+    margin-right: auto;
+  }
+  
+  .sidebar{
+    /* Positionin the side bar to be on the right side of the screen */
+    position: fixed;
+    top: 0; 
+    right: 0;
+    /* The side bar will cover all of the visible height of the page */
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Gives a blur effect to the side bar */
+    backdrop-filter: blur(12px);
+    /* Shadow affect */
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  
+    /* list-style: none; */
+    display: none;
+  
+    /* Display the item vertically */
+    flex-direction: column;
+  }
+  
+  .menu-button{
+    display: none;
+  }
+  
+  /* Mobile and tablet view */
+  @media only screen and (max-width: 800px) {
+    /* hide the menu items from navbar */
+    .hideOnMobile{
+      display: none;
+    }
+    /* Make sure the menu button appears */
+    .menu-button{
+      display: block;
+    }
+  }
+  
+  /* Mobile view (smaller mobile width) */
+  @media(max-width: 400px){
+    /* The side bar will cover the full screen */
+    .sidebar{
+      width: 100%;
+    }
+  }
+/* ------------------- */
+/* NAVBAR CODE (END) */
+/* ------------------- */
+
+
+/* -------------------- */
+/* FOOTER CODE (START)  */
+/* -------------------- */
+
+.footer {
+  margin-top: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+.footer p {
+  color: #ffe07b;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+        color: #212529;
+    }
+
+/* -------------------- */
+/* FOOTER CODE (END)  */
+/* -------------------- */

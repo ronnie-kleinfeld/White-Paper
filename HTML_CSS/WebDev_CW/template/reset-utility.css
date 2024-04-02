@@ -1,0 +1,188 @@
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://scrimba.com/learn/spacetravel */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+    color: #212529;
+}
+
+/* set up the body */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* YELLOWS */
+
+/* yellow-v1 */
+.bg-yellow-v1 {
+    background-color: #FFB000;
+}
+.text-yellow-v1 {
+    color: #FFB000;
+}
+
+/* yellow-v2 */
+.bg-yellow-v2 {
+    background-color: #FBC412;
+}
+.text-yellow-v2 {
+    color: #FBC412;
+}
+
+/* yellow-v3 */
+.bg-yellow-v3 {
+    background-color: #FCD65A;
+}
+.text-yellow-v3 {
+    color: #FCD65A;
+}
+
+/* GREYS */
+
+/* grey-v1 */
+.bg-grey-v1 {
+    background-color: #7F7F7F;
+}
+.text-grey-v1 {
+    color: #7F7F7F;
+}
+
+/* grey-v2 */
+.bg-grey-v2 {
+    background-color: #BCC9C7;
+}
+.text-grey-v2 {
+    color: #BCC9C7;
+}
+
+/* grey-v3 */
+.bg-grey-v3 {
+    background-color: #D9D9D9;
+}
+.text-grey-v3 {
+    color: #D9D9D9;
+}
+
+/* ADDITIONAL COLOURS */
+
+/* Brown-v1 */
+.bg-brown-v1 {
+    background-color: #BF922F;
+}
+.text-brown-v1 {
+    color: #BF922F;
+}
+
+/* Green-v1 */
+.bg-green-v1 {
+    background-color: #90C187;
+}
+.text-green-v1 {
+    color: #90C187;
+}
+
+/* Dark-v1 */
+.bg-dark-v1 {
+    background-color: #212529;
+}
+.text-dark-v1 {
+    color: #212529;
+}
+
+
+/* TYPOGRAPHY */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+    font-weight: 500;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.primary-button {
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #212529;
+    background-color: #90C187;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    color: #212529;
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,90 @@
+/* [START] HERO IMAGE */
+.hero-section {
+  width: 100vw;
+  height: 90vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+ 
+.hero-image{
+  height: 90vh;
+  width: 100vw;
+  background-image: url('../images/hero-img-v2-min.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: none;
+}
+
+/* [END] HERO IMAGE */
+  
+ /* [START] CARDS */
+
+#bg-brown {
+    background-color: #996D3B;
+  }
+  
+  #bg-grey {
+    background-color: #2F2F2F;
+  }
+  
+  p {
+    color: #EBEBEB;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #FFFF;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+    .footer a:hover {
+        color: #212529;
+      }
+  
+  article .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  /* Makes img stay at the top of text (necessary for mobile view) */
+  #row-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  
+  article .container {
+    display: flex;
+    flex-direction: column;
+    /* flex-basis: 100%; */
+    flex: 1; /* Takes the entire height */
+  }
+  
+  .img-container, .card-content {
+    height: 100%;
+  }
+  
+  .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  /* [END] CARDS */
+
+  @media (max-width: 800px) {
+    article .container {
+        flex: 100%;
+        max-width: 100%;
+      }
+  }

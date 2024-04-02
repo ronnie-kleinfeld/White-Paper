@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Affordable Energy :: Team</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- reset-utility.css -->
+  <link rel="stylesheet" href="css/reset-utility.css">
+  <!-- template.css -->
+  <link rel="stylesheet" href="css/template.css">
+  <!-- home.css -->
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/s3_style.css">
+  <link rel="stylesheet" href="css/reset-utility.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- ico  -->
+  <link rel="icon" href="images/logo-width-32.svg" type="image/x-icon">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- YOUR CSS GOES HERE -->
+
+  <style>
+    .team {
+      width: 900px;
+      margin: 0 auto;
+      height: 420px;
+      padding-top: 20px;
+
+    }
+
+    .student_container {
+      width: 100%;
+    }
+
+    .student {
+      width: 200px;
+      height: 400px;
+      float: left;
+      transition: transform 0.5s ease;
+    }
+
+    .student:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    .student:hover .student_name {
+      visibility: visible;
+      transform: scale(1.1);
+    }
+
+    .student:first-child {
+      margin: 0px 25px 20px 12.5px;
+    }
+
+    .student:last-child {
+      margin: 0px 12.5px 20px 0px;
+    }
+
+    .student:nth-child(2),
+    .student:nth-child(3) {
+      margin: 0px 25px 20px 0px;
+    }
+
+    .student_name {
+      background-color: #FFB000;
+      width: auto;
+      height: 50px;
+      text-align: center;
+      color: black;
+      vertical-align: middle;
+      line-height: 50px;
+      font-weight: bold;
+      visibility: hidden;
+      transition: transform 0.5s ease-out;
+
+    }
+
+    .student_img,
+    .student_img img {
+      width: 100%;
+      height: 200px;
+
+    }
+
+    .description {
+      margin: 0px;
+      background-color: white;
+      padding-top: 5px;
+      text-align: center;
+      font-size: 12px;
+      width: auto;
+      height: 120px;
+      color: black;
+    }
+
+    .social {
+      margin: 0px;
+      background-color: rgb(244, 242, 242);
+      width: auto;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50px;
+      color: rgb(252, 101, 126);
+      font-weight: bold;
+    }
+
+    .textholder {
+      padding: 10px;
+      line-height: 120px;
+      vertical-align: middle;
+    }
+
+    @media screen and (max-width: 1300px) {
+      .student_container {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 20px;
+      }
+
+      .team {
+        width: 100%;
+        margin: 0 auto;
+        height: 100vh;
+        padding-top: 20px;
+
+      }
+
+      .student {
+        width: 150px;
+        height: 400px;
+        float: left;
+        margin: 0px 25px 20px 0px;
+        transition: transform 0.5s ease;
+
+      }
+
+      .student:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+
+      .student:hover .student_name {
+        visibility: visible;
+        transform: scale(1.1);
+      }
+
+      .student_name {
+        background-color: #FFB000;
+        width: auto;
+        height: 50px;
+        text-align: center;
+        color: black;
+        vertical-align: middle;
+        line-height: 50px;
+        font-weight: bold;
+        visibility: hidden;
+        transition: transform 0.5s ease-out;
+
+      }
+
+      .student_img,
+      .student_img img {
+        width: 100%;
+        height: 150px;
+
+      }
+
+      .description {
+        margin: 0px;
+        background-color: white;
+        padding-top: 5px;
+        text-align: center;
+        font-size: 12px;
+        width: auto;
+        height: 120px;
+        color: black;
+      }
+
+      .social {
+        margin: 0px;
+        background-color: rgb(244, 242, 242);
+        width: auto;
+        height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+        color: rgb(252, 101, 126);
+        font-weight: bold;
+      }
+
+      .textholder {
+        padding: 10px;
+        line-height: 120px;
+        vertical-align: middle;
+      }
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+
+  <!-- This is the menu items for MOBILE view -->
+ 
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960"
+            width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="home.html">
+          <div>
+            <img src="images/logo-width-32.svg" alt="logo">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Profile</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+
+  <!-- YOUR CONTENT GOES HERE -->
+  <article class="card-1 card">
+    <div class="banner">
+      <div class="context">
+        <h2>Group Name: The Light</h2>
+        Meet our team, that ensure access to affordable, reliable, sustainable and modern energy for all
+      </div>
+    </div>
+  </article>
+  <div style="background-color: #90C187; height: 800px; width: 100%; text-align: center;">
+    <article class="card-1 card">
+      <div class="team">
+        <h1>OUR TEAM</h1>
+        <div class="student_container">
+          <div class="student" id="student_1" onmouseover="mouseOverImage(0)" onmouseleave="mouseLeaveImage(0)">
+            <div class="student_name"> Ronnie Kleinfeld</div>
+            <div class="student_img">
+              <img src="images/team/student_1.jpg" id="student1" alt="Photo of Ronnie">
+            </div>
+            <div class="description">
+              <div id="textholder_1" class="textholder">
+                <p>Student 1</p>
+              </div>
+              <div id="description_1" style="display: none;">
+                <div>Project: Goal 7</div>
+                <p>Role: Student 1</p>
+                <span style="color: #BF922F;">Designed and implemented pages: Splash Screen | Shop | Content Page | Page
+                  Editor</span>
+              </div>
+
+            </div>
+            <div class="social">
+              <img src="images/team/social.jpg" alt="social icons">
+            </div>
+          </div>
+          <div class="student" id="student_2" onmouseover="mouseOverImage(1)" onmouseleave="mouseLeaveImage(1)">
+            <div class="student_name">Isabelle Waltrick</div>
+            <div class="student_img">
+              <img src="images/team/student_2.jpg" id="student2" alt="Photo of Isabelle">
+            </div>
+            <div class="description">
+              <div id="textholder_2" class="textholder">
+                <p>Student 2</p>
+              </div>
+              <div id="description_2" style="display: none;">
+                <div>Project: Goal 7</div>
+                <p>Role: Student 2</p>
+                <span style="color: #BF922F;">Designed and implemented pages: Home Page + Template + Nav | Feedback |
+                  Content Page | Page Editor</span>
+              </div>
+
+            </div>
+            <div class="social">
+              <img src="images/team/social.jpg" alt="social icons">
+            </div>
+          </div>
+          <div class="student" id="student_3" onmouseover="mouseOverImage(2)" onmouseleave="mouseLeaveImage(2)">
+            <div class="student_name"> Nafiu Amosa</div>
+            <div class="student_img">
+              <img src="images/team/student_3.jpg" id="student3" alt="Photo of Nafiu">
+            </div>
+            <div class="description">
+              <div id="textholder_3" class="textholder">
+                <p>Student 3</p>
+              </div>
+              <div id="description_3" style="display: none;">
+                <div>Project: Goal 7</div>
+                <p>Role: Student 3</p>
+                <span style="color: #BF922F;">Designed and implemented pages: User Profile | Team | Content Page | Page
+                  Editor</span>
+              </div>
+
+            </div>
+            <div class="social">
+              <img src="images/team/social.jpg" alt="social icons">
+            </div>
+          </div>
+          <div class="student" id="student_4" onmouseover="mouseOverImage(3)" onmouseleave="mouseLeaveImage(3)">
+            <div class="student_name"> xxxxxx xxxxxxx </div>
+            <div class="student_img">
+              <img src="images/team/student_4.jpg" id="student4" alt="No name">
+            </div>
+            <div class="description">
+              <div id="textholder_4" class="textholder">
+                <p>Student 4</p>
+              </div>
+              <div id="description_4" style="display: none;">
+                <div>Project: Goal 7</div>
+                <p>Role: Student 4</p>
+                <span style="color: #BF922F;">Designed and implemented pages: XXXXXXXXXXXX | XXXXXXXXXX | XXXXXXXXX Page
+                  | XXXXXXXXX Editor</span>
+              </div>
+
+            </div>
+            <div class="social">
+              <img src="images/team/social.jpg" alt="social icons">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+
+  <article class="card-1 card">
+    <div class="footer bg-yellow-v1">
+      <h4>&copy; This page was edited by: <span><a class="text-green-v1" href="pageEditor_ST3.html" target="_blank">Nafiu
+            Amosa</a></span></h4>
+    </div>
+  </article>
+
+
+  <!-- FOOTER DO NOT DELETE IT (END) -->
+
+
+  <script src="js/template.js" defer></script>
+  <script>
+    function mouseOverImage(x) {
+      const studentImage = document.querySelectorAll(".student_img").forEach((image, index) => {
+        if (index === x) {
+          document.getElementById(`student${x + 1}`).style.opacity = 0.5;
+          document.getElementById(`description_${x + 1}`).style.display = "block";
+          document.getElementById(`textholder_${x + 1}`).style.display = "none";
+        }
+      })
+
+    }
+
+    function mouseLeaveImage(x) {
+      const studentImage = document.querySelectorAll(".student_img").forEach((image, index) => {
+        if (index === x) {
+          document.getElementById(`student${x + 1}`).style.opacity = 1;
+          document.getElementById(`description_${x + 1}`).style.display = "none";
+          document.getElementById(`textholder_${x + 1}`).style.display = "block";
+
+        }
+      })
+
+    }
+  </script>
+</body>
+
+</html>

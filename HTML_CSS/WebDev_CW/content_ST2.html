@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>Content ST1</title>
+  <!-- reset-utility.css -->
+  <link rel="stylesheet" href="./css/reset-utility.css">
+  <!-- template.css -->
+  <link rel="stylesheet" href="./css/template.css">
+  <!-- home.css -->
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <style>
+    .go-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #FFB000;
+      border: 1px solid #212529;
+      color: #212529;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .go-top:hover {
+      background-color: #FFD700;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="./home.html"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Account</a></li>
+    </ul>
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="#">
+          <div>
+            <img src="./images/logo-width-32.svg" alt="logo">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Account</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div style="background-color: #FFB000; width: 100%; text-align: center;">
+      <h1>NEWS</h1>
+    </div>
+    <div style="background-color: #FBC412; width: 100%;">
+      <ul>
+        <li><a href="#New1">UN to Convene Global Experts in Tokyo</a></li>
+        <li><a href="#New2">To save the planet, we need a just and fair renewable energy revolution</a></li>
+        <li><a href="#New3">COP28 ends with call to ‘transition away’ from fossil fuels; UN’s Guterres says phaseout is
+            inevitable</a></li>
+        <li><a href="#New4">United Nations Secretary-General Appoints New Members to the High-level Group to Champion
+            Science, Technology, and Innovation for the Sustainable Development Goals</a></li>
+      </ul>
+    </div>
+
+    <!-- [START] CARDS -->
+    <!-- card 1 -->
+    <a id="New1"
+      href="https://sdgs.un.org/news/un-convene-global-experts-tokyo-4-6-march-assess-climate-action-targets-under-sustainable"
+      target="_blank">
+      <article class="card-1 card">
+        <div class="row">
+          <div class="container">
+            <div class="img-card">
+              <img src="https://sdgs.un.org/sites/default/files/news/31153368763_7dff8224b8_o_1_0.jpg"
+                alt="UN to Convene Global Experts in Tokyo">
+            </div>
+          </div>
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>UN to Convene Global Experts in Tokyo</h2>
+              <p>
+                The experts will be looking at issues under SDG 13, by which countries committed to taking urgent
+                climate action, such as: how to strengthen resilience to climate disasters; how to realign financial
+                flows and mobilize the
+                massive finance needed for climate action and a just transition, particularly in developing countries;
+                and how to better
+                integrate climate concerns into national policies and planning across the board, as well as how to
+                improve
+                education and public awareness about reducing emissions and adapting to new climate realities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- card 2 -->
+    <a id="New2" href="https://www.un.org/en/desa/cop28-save-planet-we-need-just-and-fair-renewable-energy-revolution"
+      target="_blank">
+      <article class="card-2 card">
+        <div class="row">
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>To save the planet, we need a just and fair renewable energy revolution</h2>
+              <p>
+                5 December 2023 - The key to ensuring that communities – especially the most vulnerable – can leave
+                fossil-fuel based economies behind, is to create space for a just transition to a green economy, clean
+                energy advocates and representatives of indigenous groups argued on Tuesday at COP28.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="img-card">
+              <img
+                src="https://www.un.org/sites/un2.un.org/files/styles/large-article-image-style-16-9/public/field/image/2023/12/image1170x530cropped.jpg"
+                alt="To save the planet, we need a just and fair renewable energy revolution">
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- card 3 -->
+    <a id="New3"
+      href="https://www.un.org/en/desa/cop28-ends-call-‘transition-away’-fossil-fuels-un’s-guterres-says-phaseout-inevitable"
+      target="_blank">
+      <article class="card-3 card">
+        <div class="row">
+          <div class="container">
+            <div class="img-card">
+              <img
+                src="https://www.un.org/sites/un2.un.org/files/styles/large-article-image-style-16-9/public/field/image/2023/12/cop28_1.jpg"
+                alt="COP28 ends with call to ‘transition away’ from fossil fuels; UN’s Guterres says phaseout is inevitable">
+            </div>
+          </div>
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>COP28 ends with call to ‘transition away’ from fossil fuels; UN’s Guterres says phaseout is inevitable
+              </h2>
+              <p>
+                13 December 2023 - Nations at COP28 in Dubai approved earlier on Wednesday a roadmap for “transitioning
+                away from fossil fuels” – a first for a UN climate conference – but the deal still stopped short of a
+                long-demanded call for a “phaseout” of oil, coal and gas.
+                Reacting to the adoption of the outcome document, UN chief António Guterres said that mention of the
+                world’s leading contributor to climate change comes after many years in which the discussion of this
+                issue was blocked.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- card 4 -->
+    <a id="New4"
+      href="https://sdgs.un.org/news/united-nations-secretary-general-appoints-new-members-high-level-group-champion-science"
+      target="_blank">
+      <article class="card-4 card">
+        <div class="row">
+          <div class="container">
+            <div class="card-content bg-green-v1">
+              <h2>United Nations Secretary-General Appoints New Members to the High-level Group to Champion Science,
+                Technology, and Innovation for the Sustainable Development Goals</h2>
+              <p>
+                New York, 1 February 2024– In a significant move to bolster global efforts towards achieving the
+                Sustainable Development Goals (SDGs), the United Nations Secretary-General has announced the appointment
+                of the United Nations Group of Ten High-level Representatives of Civil Society, Private Sector, and
+                Scientific Community to Promote Science, Technology, and Innovation for the SDGs (10-Member-Group) for
+                2024 to 2025. This pivotal group is a central component of the UN Technology Facilitation Mechanism,
+                designed to harness multi-stakeholder collaboration for sustainable development.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="img-card">
+              <img src="https://sdgs.un.org/themes/custom/porto/assets/default-news.png"
+                alt="United Nations Secretary-General Appoints New Members to the High-level Group to Champion Science, Technology, and Innovation for the Sustainable Development Goals">
+            </div>
+          </div>
+        </div>
+      </article>
+    </a>
+    <!-- [END] CARDS -->
+  </main>
+
+  <button class="go-top" onclick="scrollToTop()">
+    &#x2191;
+  </button>
+
+  <div class="footer bg-yellow-v1">
+    <p>&copy; This page was edited by: <span><a class="text-green-v1" href="./pageEditor_ST2.html"
+          target="_blank">Isabelle Waltrick</a></span></p>
+  </div>
+
+  <script src="./js/template.js" defer></script>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+
+</html>

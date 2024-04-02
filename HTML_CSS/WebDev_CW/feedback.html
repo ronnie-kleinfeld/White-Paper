@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>Affordable Energy | Feedback</title>
+  <link rel="stylesheet" href="css/reset-utility.css">
+  <link rel="stylesheet" href="css/template.css">
+  <link rel="stylesheet" href="css/feedback.css">
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "hzPkb5LEIxer9d0AB",
+      });
+    })();
+  </script>
+
+</head>
+
+<body class="bg-green-v1">
+
+  <!------------------------------------------>
+  <!-- NAVBAR CODE DO NOT DELETE IT (START) -->
+  <!------------------------------------------>
+
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960"
+            width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="home.html">
+          <div>
+            <img src="images/logo-width-32.svg" alt="logo">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="#">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Profile</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <!------------------------------------------>
+  <!-- NAVBAR CODE DO NOT DELETE IT (END)   -->
+  <!------------------------------------------>
+
+
+
+
+
+  <!-- ------------------------->
+  <!-- YOUR CONTENT GOES HERE -->
+  <!-- ------------------------->
+
+  <div class="container">
+    <h3>Feedback</h3>
+    <br>
+    <div id="form-inputs">
+      <p id="p-instructions">Please, let us know how we are doing:</p>
+      <form id="myForm">
+        <div class="form-control">
+          <input class="input" id="name" type="text" required onblur="checkFields();">
+          <label for="name">Name *</label>
+          <p id="name-error" style="color: rgb(160, 12, 12); display: none;">You must type your name.</p>
+        </div>
+
+
+        <div class="form-control">
+          <input class="input" id="email" type="text" required onblur="checkFields('email');">
+          <label for="email">Email *</label>
+          <p id="email-error" style="color: rgb(160, 12, 12); display: none;">Please enter a valid email address.</p>
+        </div>
+
+
+        <!-- <br> -->
+
+        <label class="rating" id="rating">How satisfied are you with our services?</label>
+        <div class="form-control-rating">
+          <div class="unhappy">
+            <input type="radio" id="unhappy" name="rating" value="Unhappy">
+            <label for="neutral">Unhappy</label>
+          </div>
+          <div class="neutral">
+            <input type="radio" id="neutral" name="rating" value="Neutral">
+            <label for="neutral">Neutral</label>
+          </div>
+          <div class="satisfied">
+            <input type="radio" id="satisfied" name="rating" value="Satisfied">
+            <label for="satisfied">Satisfied</label>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="form-control">
+          <input class="input" id="subject" type="text" required onblur="checkField('subject');">
+          <label for="subject">Subject *</label>
+          <p id="subject-error" style="color: rgb(160, 12, 12); display: none;">You must type the subject.</p>
+        </div>
+
+        <br>
+
+        <label for="message">Message: *</label>
+        <br>
+        <!-- src: https://codepen.io/rexkirby/pen/kMvYOb -->
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="message" required
+          onblur="checkFields();"></textarea>
+        <p id="message-error" style="color: rgb(160, 12, 12); display: none;">Please enter your message.</p>
+
+        <br><br>
+        <button class="btn bg-green-v1 text-dark-v1" id="btn-next">Next</button>
+
+    </div> <!-- end of .form-inputs -->
+
+    <!-- This section is hidden at the start of the program (it shows up when user presses "Next") -->
+    <div class="hidden" id="form-preview">
+      <br>
+      <p>Name: <br> <span id="name-input" class="feedback-span"></span> <br> </p>
+      <br>
+      <p>Email: <br> <span id="email-input" class="feedback-span"></span> <br></p>
+      <br>
+      <p>Rating: <br> <span id="rating-input" class="feedback-span"></span> <br></p>
+      <br>
+      <p>Subject: <br> <span id="subject-input" class="feedback-span"></span> <br></p>
+      <br>
+      <p>Message: <br> <span id="message-input" class="feedback-span"></span> <br></p>
+      <br><br>
+      <button class="btn text-dark-v1" id="edit">Edit</button>
+      <button class="btn bg-green-v1 text-dark-v1" id="submit" onclick="sendMail()">Submit</button>
+    </div>
+
+    </form>
+
+  </div>
+
+
+  <!-- ------------------------->
+  <!-- YOUR CONTENT GOES HERE -->
+  <!-- ------------------------->
+
+
+
+
+
+  <!-- ------------------------------- -->
+  <!-- FOOTER DO NOT DELETE IT (START) -->
+  <!-- ------------------------------- -->
+
+  <div class="footer bg-yellow-v1">
+    <p>&copy; This page was edited by: <span><a class="text-green-v1" href="./pageEditor_ST2.html"
+          target="_blank">Isabelle
+          Waltrick</a></span></p>
+  </div>
+
+  <!-- ------------------------------- -->
+  <!-- FOOTER DO NOT DELETE IT (END) -->
+  <!-- ------------------------------- -->
+
+  <script src="js/feedback-navbar.js" defer></script>
+  <script src="js/feedback.js"></script>
+</body>
+
+</html>

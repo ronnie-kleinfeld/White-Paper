@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>Checkout</title>
+  <link rel="stylesheet" href="./css/reset-utility.css">
+  <link rel="stylesheet" href="./css/shop.css">
+  <!-- template.css -->
+  <link rel="stylesheet" href="./css/template.css">
+  <!-- YOUR CSS GOES HERE -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <style>
+    .checkoutContainer {
+      width: 100%;
+      height: 100vh;
+      padding: 10px;
+      overflow: hidden;
+      background-image: url('./images/hero-img-v2-min.jpg');
+      background-position: bottom center;
+      background-repeat: no-repeat;
+    }
+
+    .detailsContainer {
+      float: left;
+      background-color: #FBC412;
+      width: 67%;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .formContainer {
+      float: left;
+      background-color: #90C187;
+      width: 32%;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .fieldset-line {
+      height: 25px;
+    }
+
+    .requiredRedAfter label:after {
+      color: red;
+      content: ' *';
+      display: inline;
+    }
+
+    .requiredRedBefore label:before {
+      color: red;
+      content: '* ';
+      display: inline;
+    }
+
+    label {
+      float: left;
+      width: 30%;
+      margin-right: 0.5em;
+      text-align: left;
+      color: black;
+      font-weight: normal;
+    }
+
+    fieldset {
+      background-color: #FCD65A;
+      padding: 15px;
+      font: 80%/1 sans-serif;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      font-weight: bold;
+    }
+
+    .fieldset-buttons {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .form-clear-fields-button {
+      background-color: #D9D9D9;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .form-save-changes-button {
+      background-color: #FBC412;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .form-item {
+      background-color: #BF922F;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .form-item-title {
+      font-size: 16px;
+    }
+
+    .form-item img {
+      max-width: 40px;
+      max-height: 40px;
+      margin-right: 10px;
+      float: left;
+    }
+
+    .form-item-cost {
+      font-size: 13px;
+    }
+
+    .form-buttons {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .form-reset-button {
+      background-color: #D9D9D9;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .form-submit-button {
+      background-color: #FBC412;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #FFB000;
+      border: 1px solid #212529;
+      color: #212529;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .top:hover {
+      background-color: #FFD700;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960"
+            width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="home.html">
+          <div>
+            <img src="images/logo-width-32.svg" alt="shop">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="team.html">Team</a></li>
+      <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+      <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+      <li class="hideOnMobile"><a href="profile.html">Account</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <div style="background-color: #FFB000; width: 100%; text-align: center;">
+    <h1>Almost there...</h1>
+  </div>
+  <div style="background-color: #FBC412; width: 100%; text-align: center;">
+    <h2>
+      Fill in the details below to complete your purchase
+    </h2>
+  </div>
+
+  <article class="card-1 card">
+    <div class="checkoutContainer">
+      <form>
+        <div class="detailsContainer">
+          <div>
+            <h3>Customer Details</h3>
+            <div class="requiredRedBefore"><label></label></div>
+            Indicates required information
+          </div>
+          <br>
+          <div id="details-items">
+            <fieldset>
+              <legend>Payment Information:</legend>
+              <div class="fieldset-line">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" name="cardNumber" id="cardNumber" autofocus><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="cardHolderName">Card Holder Name</label>
+                <input type="text" name="cardHolderName" id="cardHolderName"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" name="expiryDate" id="expiryDate" size="8" placeholder="MM/YY"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="ccv">CCV</label>
+                <input type="text" name="ccv" id="ccv" size="4"><br>
+              </div>
+              <div class="fieldset-buttons">
+                <input class="form-clear-fields-button" type="button" name="paymentClearFields" value="Clear Fields"
+                  onclick="clearFieldsetByArray(paymentElementsArray)">
+                <input class="form-save-changes-button" type="button" name="paymentSaveChanges" value="Save Changes"
+                  onclick="saveFieldsetByArray(paymentElementsArray)">
+              </div>
+            </fieldset>
+            <br>
+            <fieldset>
+              <legend>Billing Address:</legend>
+              <div class="fieldset-line">
+                <label for="addressLine1">Address Line 1</label>
+                <input type="text" name="addressLine1" id="addressLine1"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="addressLine2">Address Line 2</label>
+                <input type="text" name="addressLine2" id="addressLine2"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="addressLine3">Address Line 3</label>
+                <input type="text" name="addressLine3" id="addressLine3"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="townCity">Town/City</label>
+                <input type="text" name="townCity" id="townCity" size="15"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="stateCounty">State/County</label>
+                <input type="text" name="stateCounty" id="stateCounty" size="15"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="postcodeZipCode">Postcode/Zip code</label>
+                <input type="text" name="postcodeZipCode" id="postcodeZipCode" size="9"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                </select>
+              </div>
+              <div class="fieldset-buttons">
+                <input class="form-clear-fields-button" type="button" value="Clear Fields"
+                  onclick="clearAddressFieldset()">
+                <input class="form-save-changes-button" type="button" value="Save Changes"
+                  onclick="saveAddressFieldset()">
+              </div>
+            </fieldset>
+            <br>
+            <fieldset>
+              <legend>Contact Details</legend>
+              <div class="requiredRedAfter fieldset-line">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName"><br>
+              </div>
+              <div class="requiredRedAfter fieldset-line">
+                <label for="surname">Surname</label>
+                <input type="text" name="surname" id="surname"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" name="phoneNumber" id="phoneNumber" size="15"><br>
+              </div>
+              <div class="fieldset-line">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" name="emailAddress" id="emailAddress" size="25"><br>
+              </div>
+              <div class="fieldset-buttons">
+                <input class="form-clear-fields-button" type="button" value="Clear Fields"
+                  onclick="clearFieldsetByArray(contactElementsArray)">
+                <input class="form-save-changes-button" type="button" value="Save Changes"
+                  onclick="saveFieldsetByArray(contactElementsArray)">
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="formContainer">
+          <h3>Checkout</h3>
+          <div id="receivedData"></div>
+          <div id="form-items">
+            <div id="form-item" class="form-item">
+              <img id="form-item-img" src="./images/products/product1.png" alt="Item 1">
+              <span class="form-item-title" id="form-item-title">my titleas</span>
+              <div class="form-item-cost">
+                &#163;<span id="form-item-price">9.99</span> x
+                <span id="form-item-quantity">2</span> =
+                &#163;<span id="form-item-total">19.98</span>
+                &nbsp;Size: <span id="form-item-size">Medium</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>Total: &#163;<span id="form-total">0</span></p>
+            <div class="form-buttons">
+              <input class="form-submit-button" type="button" name="submit" value="Submit" onclick="onSubmit()">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </article>
+
+  <article class="card-1 card">
+    <div class="row">
+      <a href="#top" class="top" style="text-decoration: none;">Top</a>
+
+      <div class="footer bg-yellow-v1">
+        <p>&copy; This page was edited by: <span><a class="text-green-v1" href="pageEditor_ST1.html">Ronnie
+              Kleinfeld</a></span></p>
+      </div>
+    </div>
+  </article>
+
+  <script src="./js/shop.js" defer></script>
+  <script src="./js/shopList.js"></script>
+  <script src="./js/cartList.js"></script>
+  <script src="./js/country.js"></script>
+  <script>
+    var formMap;
+    const paymentElementsArray = ["cardNumber", "cardHolderName", "expiryDate", "ccv"];
+    const addressElementsArray = ["addressLine1", "addressLine2", "addressLine3", "townCity", "stateCounty", "postcodeZipCode"];
+    const countryElement = "country";
+    const contactElementsArray = ["firstName", "surname", "phoneNumber", "emailAddress"];
+
+    function clearFieldset() {
+      clearFieldsetByArray(paymentElementsArray)
+      clearAddressFieldset()
+      clearFieldsetByArray(contactElementsArray)
+    }
+    function setFieldset() {
+      setFieldsetByArray(paymentElementsArray)
+      setAddressFieldset()
+      setFieldsetByArray(contactElementsArray)
+    }
+    function saveFieldset() {
+      saveFieldsetByArray(paymentElementsArray)
+      saveAddressFieldset()
+      saveFieldsetByArray(contactElementsArray)
+    }
+
+    function clearAddressFieldset() {
+      clearFieldsetByArray(addressElementsArray)
+
+      let countrySelectTag = document.getElementById(countryElement)
+      countrySelectTag.selectedIndex = defaultCountryIndex
+      formMap.set(countryElement, countrySelectTag.value)
+      setAddressFieldset()
+    }
+    function setAddressFieldset() {
+      setFieldsetByArray(addressElementsArray)
+
+      let countrySelectTag = document.getElementById(countryElement)
+      countrySelectTag[countrySelectTag.selectedIndex].value = formMap.get(countryElement)
+    }
+    function saveAddressFieldset() {
+      saveFieldsetByArray(addressElementsArray)
+
+      let countrySelectTag = document.getElementById(countryElement)
+      formMap.set(countryElement, countrySelectTag[countrySelectTag.selectedIndex].value)
+    }
+
+    function clearFieldsetByArray(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        formMap.set(arr[i], "")
+      }
+      setFieldsetByArray(arr)
+    }
+    function setFieldsetByArray(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        document.getElementById(arr[i]).value = formMap.get(arr[i])
+      }
+    }
+    function saveFieldsetByArray(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        formMap.set(arr[i], document.getElementById(arr[i]).value)
+      }
+    }
+
+    // form validation
+    function validate() {
+      let result = new Array();
+
+      let firstName = formMap.get("firstName");
+      if (firstName == "") {
+        result.push("First Name is required.");
+      }
+
+      let surname = formMap.get("surname");
+      if (surname == "") {
+        result.push("Surname is required.");
+      }
+
+      let emailAddress = formMap.get("emailAddress");
+      let indexOf1 = emailAddress.indexOf("@");
+      let indexOf2 = emailAddress.indexOf(".");
+      if (indexOf1 < 0 || indexOf2 < 0 || indexOf1 > indexOf2) {
+        result.push("EMail Address invalid format.");
+      }
+
+      return result;
+    }
+
+    function initCountryList() {
+      let countrySelectTag = document.getElementById("country")
+
+      for (let i = 0; i < countriesArray.length; i++) {
+        let country = countriesArray[i];
+        countrySelectTag.options.add(new Option(country.label, country.value));
+      }
+    }
+
+    function initFormMap() {
+      formMap = new Map()
+      initCountryList()
+      clearFieldset()
+    }
+    initFormMap()
+
+    // checkout
+    function fillCheckoutItems() {
+      for (var i = 0; i < sc_cartArray.length; i++) {
+        fillCheckoutItem(sc_cartArray[i]);
+      }
+    }
+    function fillCheckoutItem(item) {
+      form_item = form_item_template.cloneNode(true);
+      form_item.querySelector("#form-item-img").src = item.image_src;
+      form_item.querySelector("#form-item-img").alt = item.alt;
+      form_item.querySelector("#form-item-title").innerHTML = item.title;
+      form_item.querySelector("#form-item-price").innerHTML = parseFloat(item.price).toFixed(2);
+      form_item.querySelector("#form-item-quantity").innerHTML = item.quantity;
+      form_item.querySelector("#form-item-total").innerHTML = (parseFloat(item.price) * parseFloat(item.quantity)).toFixed(2);
+      form_item.querySelector("#form-item-size").innerHTML = item.size;
+
+      document.getElementById("form-items").appendChild(form_item);
+
+      updateFormTotal();
+    }
+
+    function updateFormTotal() {
+      document.getElementById("form-total").innerHTML = sc_cartTotal().toFixed(2);
+    }
+
+    var form_item_template = document.getElementById("form-item");
+    document.getElementById("form-items").removeChild(form_item_template);
+
+    fillCheckoutItems();
+
+    function toFeedback() {
+      let result = "Customer Details:\n"
+      result += "First Name: " + formMap.get("firstName") + "\n";
+      result += "Surname: " + formMap.get("surname") + "\n";
+      result += "Phone Number: " + formMap.get("phoneNumber") + "\n";
+      result += "EMail Address: " + formMap.get("emailAddress");
+      return result;
+    }
+
+    function onSubmit(event) {
+      if (sc_cartArray.length == 0) {
+        alert("Please add items to the cart before going to Checkout.")
+        event.preventDefault();
+      } else {
+        saveFieldset();
+        // validation
+        let validation = validate();
+        if (validation.length > 0) {
+          alert("Invalid form entries\n\n" + validation.join("\n"));
+        } else {
+          // call server to subimt order
+
+          alert("Thanks you for your purchase\n\n" +
+            sc_toFeedback() + "\n\n" +
+            toFeedback() + "\n\n" +
+            "We will send you a confirmation email as soon as the order is shipped.");
+          sc_clearCart();
+          window.location.replace("home.html");
+        }
+      }
+    };
+  </script>
+</body>
+
+</html>

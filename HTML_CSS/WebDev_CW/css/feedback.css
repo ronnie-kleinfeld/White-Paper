@@ -1,0 +1,206 @@
+
+
+/* with this code anytime we add a border to an element it won't affcts its width */
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-image: url(../images/feedback-v2-min.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+h3 {
+    text-align: center;
+}
+
+.container {
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #7f7f7f94;
+    padding: 20px 40px;
+    border-radius: 5px;
+    border-radius: 5px;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    display: inline;
+    color: white;
+}
+
+.feedback-span {
+    color: #212529;
+}
+
+
+.btn {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 15px;
+    border: 1px solid #212529;
+    font-weight: 500;
+    z-index: -1;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.text {
+    margin-top: 30px;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px white solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.form-control input:focus, 
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: #212529;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+}
+
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    transform: translateY(-30px);
+    color: #212529;
+}
+
+
+.form-control-rating {
+    display: flex;
+    align-content: space-around;
+    margin-top: 15px;
+}
+
+#rating {
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+
+
+.unhappy {
+    margin-right: 40px;
+}
+
+.neutral {
+    margin-right: 40px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+    border: 2px solid #D9D9D9;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #212529;
+}
+
+.feedback-input:focus {
+    outline: none !important;
+    border:1px solid #7F7F7F;
+}
+
+
+
+#fill-inputs {
+    color: 
+    rgb(163, 12, 12);
+    font-size: 12.5px;
+    font-weight: bold;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #DDE0E7; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #815649; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:  #47271d; 
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
+}

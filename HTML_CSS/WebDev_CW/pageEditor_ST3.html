@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nafiu Amosa | Page Editor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/reset-utility.css">
+    <link rel="stylesheet" href="css/template.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo-width-32.svg" type="image/x-icon" >
+
+    <!-- Font Awesome css -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="css/solid.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ROBOTO -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- OSWALD -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- YOUR CSS GOES HERE -->
+
+    <style>
+        .card-body {
+            background-color: #eee;
+            background-image: url("images/feedback-v2-min.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            margin: 0 auto;
+            height: auto;
+            width: 50%;
+            border-left: 5px solid #b16dc4;
+            border-radius: 10px;
+            background-color: #fff;
+
+            transition: all 0.5s;
+            transform-origin: bottom;
+
+        }
+
+        .container:hover {
+            transform: scaleY(1);
+            border-color: #8b1daa;
+        }
+
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+            padding-top: 50px;
+        }
+
+        .img-frame {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            overflow: hidden;
+
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #8b1daa;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .social-list {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .social-list li {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #8b1daa;
+            cursor: pointer;
+        }
+
+        li a {
+            color: #8b1daa;
+        }
+
+        .page-context {
+            width: 60%;
+            font-size: 12px;
+            margin: 0 auto;
+            text-align: justify;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-context a {
+            display: block;
+            text-align: right;
+            text-decoration: none;
+        }
+
+        .btn-editor {
+            width: 100px;
+            height: 40px;
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+            margin: 0 15px;
+            border: 1px solid #8b1daa;
+
+        }
+
+        .btn-editor {
+            color: #8b1daa;
+            height: 40px;
+        }
+
+        .contact {
+            border: 1px solid #8b1daa;
+            background-color: #8b1daa;
+            color: #fff;
+            height: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .container {
+                width: 95%;
+            }
+
+            .page-context {
+                width: 90%;
+                font-size: 11px;
+                margin: 0 auto;
+                text-align: justify;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="image-column">
+                    <div class="img-frame">
+                        <img src="images/team/student_3.jpg" alt="Nafiu Amosa">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 style="text-align: center; margin-top: 10px;">
+                    <button class="bg-green-v1 btn">Page Editor</button>
+                </h3>
+            </div>
+            <div class="row">
+                <div class="text-column">
+                    <h3 style="text-align: center;">Nafiu Amosa</h3>
+                    <p style="text-align: center;">ID: W1879673 | Role: Student 3</p>
+                    <p>
+
+                    <p class="page-context">
+                        <b style="color: #8b1daa;">Profile Page</b>
+                        Successfully implemented a user profile page featuring prompts for progressive data collection,
+                        dynamic output display, progress completion indicator, and user-controlled profile enrichment,
+                        in line with provided requirements. <br>
+                        <a href="profile.html" target="_blank" rel="noopener noreferrer" style="color: #8b1daa;"> LINK
+                            TO PROFILE PAGE</a>
+                    </p>
+
+                    
+                    <p class="page-context">
+                        <b style="color: #8b1daa;">Team Page</b>
+                        Successfully implemented a user profile page featuring prompts for progressive data collection,
+                        dynamic output display, progress completion indicator, and user-controlled profile enrichment,
+                        in line with provided requirements. <br> <a href="team.html" target="_blank"
+                            rel="noopener noreferrer" style="color: #8b1daa;"> LINK TO TEAM PAGE</a>
+                    </p>
+                    
+                    
+                        <p class="page-context">
+                            <b style="color: #8b1daa;">Page Editor Page</b>
+                            Created the page editor page featuring my name, role in the group work, and a list of pages I
+                            have edited.
+                            <br> <a href="pageEditor_ST3.html" target="_blank" rel="noopener noreferrer"
+                                style="color: #8b1daa;"> LINK TO PAGE EDITOR</a>
+                        </p>
+                    
+
+                    
+                    <p class="page-context">
+                        <b style="color: #8b1daa;">Content Page</b>
+                        Created the content page featuring my name, role in the group work, and a list of pages I have
+                        edited.
+                        <br> <a href="content_ST3.html" target="_blank" rel="noopener noreferrer"
+                            style="color: #8b1daa;"> LINK TO PAGE EDITOR</a>
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <ul class="social-list">
+                    <li><a href="https://linktr.ee/northdeals" ><i class="fa fa-link"></i></a></li>
+                    <li><a href="https://github.com/AMOSA500/WebDev_CW" > <i
+                                class="fa fa-github-square"></i></a></li>
+                    <li><a href="#"> <i class="fa fa-instagram" ></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/amosa500/" > <i
+                                class="fa fa-linkedin"></i></a></li>
+                    <li><a href="mailto:naf.amosa@gmail.com" > <i class="fa fa-google"></i> </a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="buttons">
+                    <button class="btn-editor" onclick="window.location.href='#';">Message</button>
+
+                    <button class="btn-editor contact" onclick="window.location.href='mailto:naf.amosa@gmail.com'">Contact</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

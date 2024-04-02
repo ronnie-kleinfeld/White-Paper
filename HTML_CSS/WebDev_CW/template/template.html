@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ROBOTO -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- OSWALD -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <title>[YOUR TITLE GOES HERE]</title>
+  <link rel="stylesheet" href="reset-utility.css">
+  <link rel="stylesheet" href="template.css">
+  <!-- YOUR CSS GOES HERE -->
+
+</head>
+
+<body>
+
+  <!------------------------------------------>
+  <!-- NAVBAR CODE DO NOT DELETE IT (START) -->
+  <!------------------------------------------>
+
+  <!-- This is the menu items for MOBILE view -->
+  <nav class="bg-yellow-v2">
+    <ul class="sidebar">
+      <!-- Close button (mobile view) -->
+      <!-- When the button is clicked it will call the "hideSidebar function" -->
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960"
+            width="35">
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              fill="white" />
+          </svg></a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+
+
+    <!-- This is the menu items for DESKTOP view -->
+    <ul>
+      <li><a href="#">
+          <div>
+            <img src="logo-width-32.svg" alt="logo">
+          </div>
+        </a></li>
+      <li class="hideOnMobile"><a href="#">Team</a></li>
+      <li class="hideOnMobile"><a href="#">Feedback</a></li>
+      <li class="hideOnMobile"><a href="#">Shop</a></li>
+      <li class="hideOnMobile"><a href="#">Profile</a></li>
+      <!-- Menu Icon (mobile view) -->
+      <!-- When the button is clicked it will call the "showSidebar function" -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35"
+            viewBox="0 96 960 960" width="35">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <!------------------------------------------>
+  <!-- NAVBAR CODE DO NOT DELETE IT (END)   -->
+  <!------------------------------------------>
+
+
+
+
+
+  <!-- ------------------------->
+  <!-- YOUR CONTENT GOES HERE -->
+  <!-- ------------------------->
+
+  <div style="background-color: rgb(234, 234, 234); height: 800px; width: 100%; text-align: center;">
+    <p style="padding-top: 100px;">I am a div. Please delete me and replace me with your content.</p>
+    <p><i>I won't cry I promise.</i></p>
+  </div>
+
+
+  <!-- ------------------------->
+  <!-- YOUR CONTENT GOES HERE -->
+  <!-- ------------------------->
+
+
+
+
+
+  <!-- ------------------------------- -->
+  <!-- FOOTER DO NOT DELETE IT (START) -->
+  <!-- ------------------------------- -->
+
+  <div class="footer bg-yellow-v1">
+    <p>&copy; This page was edited by: <span><a class="text-green-v1" href="http://" target="_blank">student
+          name</a></span></p>
+  </div>
+
+  <!-- ------------------------------- -->
+  <!-- FOOTER DO NOT DELETE IT (END) -->
+  <!-- ------------------------------- -->
+
+  <script src="template.js" defer></script>
+</body>
+
+</html>

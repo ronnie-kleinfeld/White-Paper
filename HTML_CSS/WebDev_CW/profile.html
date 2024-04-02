@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Affordable Energy | Profile</title>
+    <!-- reset-utility.css -->
+    <link rel="stylesheet" href="css/reset-utility.css">
+    <!-- template.css -->
+    <link rel="stylesheet" href="css/template.css">
+    <!-- home.css -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/s3_style.css">
+    <link rel="stylesheet" href="css/reset-utility.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ROBOTO -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- OSWALD -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo-width-32.svg" type="image/x-icon">
+</head>
+
+<body id="top">
+
+    <!-- This is the menu items for MOBILE view -->
+    <nav class="bg-yellow-v2">
+        <ul class="sidebar">
+            <!-- Close button (mobile view) -->
+            <!-- When the button is clicked it will call the "hideSidebar function" -->
+            <li onclick="hideSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960" width="35">
+                        <path
+                            d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+                            fill="white" />
+                    </svg></a>
+            </li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+
+        <!-- This is the menu items for DESKTOP view -->
+        <ul>
+            <li>
+                <a href="home.html">
+                    <div>
+                        <img src="images/logo-width-32.svg" alt="logo">
+                    </div>
+                </a>
+            </li>
+            <li class="hideOnMobile"><a href="team.html">Team</a></li>
+            <li class="hideOnMobile"><a href="feedback.html">Feedback</a></li>
+            <li class="hideOnMobile"><a href="shop.html">Shop</a></li>
+            <li class="hideOnMobile"><a href="profile.html">Profile</a></li>
+            <!-- Menu Icon (mobile view) -->
+            <!-- When the button is clicked it will call the "showSidebar function" -->
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 96 960 960" width="35">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
+                    </svg></a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!--      USER Profile FORM   -->
+
+    <article class="card-1 card">
+        <div class="row">
+            <div class="container box">
+                <div class="s3_profile_box">
+                    <h2 class="s3_h1">Profile</h2>
+                    <div class="s3_start">START</div>
+                    <div class="s3_profile">
+                        <div class="s3_profile_title">
+                            STEP <span id="counter">1</span>
+                            <span id="step_profile_label">Personal
+                                Details</span> | Question
+                            <span id="question">1</span>/<span id="quest_sum">5</span>
+                        </div>
+                        <div class="s3_profile_form">
+                            <div class="s3_profile_prompt">Prompt</div>
+                            <div class="s3_profile_input_outter_box">
+                                <div class="s3_profile_input_box">
+                                    <div class="s3_profile_label">
+                                        <p style="color: #212529" id="label_question">
+                                            Enter your <span id="label_title">full
+                                                name</span>
+                                        </p>
+                                    </div>
+                                    <div id="s3_input_holder">
+                                        <input type="text" id="name" name="name" autocomplete="cc-name"
+                                            class="s3_profile_input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s3_profile_button">
+                            <button id="next" class="s3_profile_button bg-green-v1">
+                                Next
+                            </button>
+                            <button id="skip" class="s3_profile_button bg-green-v1">
+                                Skip
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Progress completion -->
+                    <div class="s3_progress">
+                        <div class="s3_progress_bar_fill_text">
+                            Profile completed <span id="bar_fill">0</span>%
+                        </div>
+                        <div class="s3_progress_bar">
+                            <div class="s3_progress_bar_fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- User output will be displayed here -->
+                    <div class="s3_output_col">
+                        <div class="s3_output">
+                            <p style="text-align: right;"><a href="">Edit</a></p>
+                            <div class="s3_output_title">Output</div>
+                            <div class="s3_output_context">
+                                <div class="s3_output_context_text" id="s3_output_context_text">
+                                    <!-- Output will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="s3_output">
+                            <div class="s3_output_context">
+                                <div class="s3_output_context_text" id="s3_output_context_text_step2">
+                                    <!-- Output will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="s3_output">
+                            <div class="s3_output_title">Output</div>
+                            <div class="s3_output_context">
+                                <div class="s3_output_context_text" id="s3_output_context_text_step3">
+                                    <!-- Output will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="s3_output">
+                            <div class="s3_output_context">
+                                <div class="s3_output_context_text" id="s3_output_context_text_step4">
+                                    <!-- Output will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container box">
+                <!-- // Side box -->
+            </div>
+        </div>
+    </article>
+
+    <!-- card 3 -->
+    <article class="card-3 card">
+        <div class="row">
+            <div class="container">
+                <div class="img-card">
+                    <img src="images/meet-the-team-v2-min.jpg" alt="meet the team">
+                </div>
+            </div>
+            <div class="container">
+                <div class="card-content bg-green-v1">
+                    <h2>MEET THE TEAM</h2>
+                    <p>
+                        Get to know the passionate individuals driving our
+                        sustainable
+                        energy initiatives forward. Our team is comprised of
+                        dedicated
+                        professionals. We are committed to providing you with
+                        the best service and support. <a href="team.html" target="_blank" rel="noopener noreferrer">Team
+                            Page</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- card 3 ends here -->
+
+    <!-- card 4 -->
+    <article class="card-4 card">
+        <div class="row" id="row-reverse">
+            <div class="container">
+                <div class="card-content bg-brown-v1">
+                    <h2>LEAVE US A FEEDBACK</h2>
+                    <p>
+                        We value your opinion! Share your thoughts and
+                        experiences with us
+                        through feedback. Your insights help us continually
+                        improve and
+                        refine our efforts towards achieving sustainable
+                        energy goals
+                        together.
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="img-card">
+                    <img src="images/feedback-v1-min.jpg" alt="feedback">
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- [END] CARDS -->
+
+
+    <!-- GoTop -->
+    <button class="go-top" onclick="scrollToTop()">
+        &#x2191;
+    </button>
+
+    <!-- Footer  -->
+    <div class="footer bg-yellow-v1">
+        <p>
+            &copy; This page was edited by:
+            <span><a class="text-green-v1" href="pageEditor_ST3.html" target="_blank">Nafiu Amosa</a></span>
+        </p>
+    </div>
+
+
+    <script src="js/template.js" defer></script>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY === 0) {
+                document.querySelector(".go-top").style.display = "none";
+            } else if (window.scrollY > 100) {
+                document.querySelector(".go-top").style.display = "block";
+            }
+        });
+    </script>
+    <script>
+        // Step 1: Personal Details - Name, Surname, Age
+        var counter = 1;
+        var question = 0;
+        var bar_fill = 0;
+        var row = 0;
+        var currentWidth;
+        const label_list = [["Name", "Age", "Gender", "Email", "Telephone"]];
+        const prompts_question = [
+            { key: "prompt1", value: "Current energy sources and usage:" },
+            { key: "prompt2", value: "Challenges accessing affordable energy:" },
+            { key: "prompt3", value: "Monthly energy bill expenses:" },
+            { key: "prompt4", value: "Interest in renewable energy:" },
+            { key: "prompt5", value: "Access to energy-efficient appliances:" },
+            { key: "prompt6", value: "Awareness of assistance programs:" },
+            { key: "prompt7", value: "Energy-saving practices implemented:" },
+            { key: "prompt8", value: "Stay informed about energy issues:" },
+            {
+                key: "prompt9",
+                value: "Barriers to adopting sustainable practices:",
+            },
+            {
+                key: "prompt10",
+                value: "Are you interested in community energy initiatives:",
+            },
+            { key: "prompt11", value: "Additional support needed:" },
+            { key: "prompt12", value: "Agree with privacy term to continue:" },
+        ];
+        const selectOptions = [
+            { value: "", text: "Select gender" },
+            { value: "Male", text: "Male" },
+            { value: "Female", text: "Female" },
+            { value: "Other", text: "Other" }
+        ];
+
+        document.getElementById("next").addEventListener("click", function () {
+            if (question < 5 && row == 0) {
+                switch (question) {
+                    case 0: // Get name vaue
+                        document.querySelector(".s3_start").style.display = "none";
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+                        var inputValue = document.getElementById(id).value;
+                        if (inputValue.trim() === "") {
+                            alert("Please enter your " + id);
+                            return;
+                        } else {
+                            // Update input field and output for age
+                            createHTMLElements(
+                                row,
+                                "number",
+                                id,
+                                id_next,
+                                "name",
+                                "s3_profile_input",
+                                question,
+                                inputValue,
+                                null,
+                                false,
+                                null
+                            );
+                        }
+                        break;
+
+                    case 1: //Get age value
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+                        var inputValue = document.getElementById(id).value;
+                        if (inputValue.trim() === "") {
+                            alert("Please enter a " + id);
+                            return;
+                        }
+                        else {
+                            // Insert select option field and output for gender
+                            createHTMLElements(
+                                row,
+                                null,
+                                id,
+                                id_next,
+                                null,
+                                "s3_profile_input",
+                                question,
+                                inputValue,
+                                selectOptions,
+                                true,
+                                null
+                            );
+                        }
+                        break;
+                    case 2: // Get gender value
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+                        var inputValue = document.getElementById(id).value;
+                        if (inputValue.trim() === "") {
+                            alert("Please select a " + id);
+                            return;
+                        } else {
+                            // Insert input field and output for email
+                            createHTMLElements(
+                                row,
+                                "text",
+                                id,
+                                id_next,
+                                id_next,
+                                "s3_profile_input",
+                                question,
+                                inputValue,
+                                null,
+                                null,
+                                null
+                            );
+                        }
+                        break;
+                    case 3: // get email value
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+                        var inputValue = document.getElementById(id).value;
+                        if (inputValue.trim() === "") {
+                            alert("Please enter your " + id);
+                            return;
+                        } else if (!validateEmail(inputValue)) {
+                            alert("Invalid email address");
+                            return;
+                        } else {
+                            // Insert input field and output for telephone
+                            createHTMLElements(
+                                row,
+                                "text",
+                                id,
+                                id_next,
+                                id_next,
+                                "s3_profile_input",
+                                question,
+                                inputValue,
+                                null,
+                                null,
+                                null
+                            );
+                        }
+                        break;
+                    case 4: // Get Telephone value
+                        var id = label_list[row][question].toLowerCase();
+                        var inputValue = document.getElementById(id).value;
+                        if (inputValue.trim() === "") {
+                            //alert("You must agree with privacy term to continue");
+                            alert("Field is empty - " + id + " is required");
+                            return;
+                        } else if (!validatePhoneNumber(inputValue)) {
+                            alert("Phone must be 10 digits and valid");
+                            return;
+                        } else {
+                            counter++;
+                            row++;
+                            question = 0; //Reset question
+                            var id_next_key = prompts_question[question].key;
+                            // Step 2: Insert the next input field
+                            createHTMLElements(
+                                row,
+                                "text",
+                                id,
+                                id_next_key,
+                                null,
+                                "s3_profile_input",
+                                question,
+                                inputValue,
+                                null,
+                                false,
+                                false
+                            );
+                            const outputElement = document.querySelectorAll(".s3_output");
+                            if (outputElement.length > 0) {
+                                outputElement[0].style.width = "49%";
+                                outputElement[0].style.margin = "0";
+                                outputElement[0].style.float = "left";
+                                outputElement[0].style.margin = "0 1% 1% 0";
+                                outputElement[0].style.fontSize = "14px";
+                            }
+                            var text = "Energy Usage and Challenges"; // Output text
+                            document.getElementById("step_profile_label").innerHTML = text;
+                            document.getElementById("counter").innerHTML = counter;
+                            document.getElementById("question").innerHTML = question + 1;
+                            document.getElementById("quest_sum").innerHTML = 4;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                bar_fill = bar_fill + 5; // Increment the progress bar
+                question++; // Increment the question number
+                document.getElementById("bar_fill").innerHTML = bar_fill;
+                document.querySelector(".s3_progress_bar_fill").animate(
+                    [
+                        // keyframes
+                        { width: currentWidth + "%" },
+                        { width: bar_fill + "%" },
+                    ],
+                    {
+                        // timing options
+                        duration: 1000,
+                        iterations: 1,
+                        fill: "forwards",
+                    }
+                );
+                currentWidth = bar_fill; // Update the current width
+            }
+            // END OF STEP 1
+
+            // BEGINNING OF NEXT STEPS
+            else {
+                // End of All Questions
+
+                // NEXT STEP CONTEXT
+                var id = prompts_question[question - 1].key; // Get the last input field id
+                var id_next_key = question !== 12 ? prompts_question[question].key : ""; // Get the next input field id
+                var inputValue = document.getElementById(id).value;
+                if (inputValue.trim() === "") {
+                    alert("Field is required - " + id);
+                    return;
+                } else {
+
+                    // Step 2: Insert the next input field
+                    if (question == 12) {
+                        var id = prompts_question[question - 1].key; // Get the last input field id
+                        var inputValue = document.getElementById(id).checked;
+                        if (inputValue === true) {
+                            inputValue = "Yes";
+                            document.getElementById(
+                                "s3_output_context_text_step" + 4
+                            ).innerHTML +=
+                                '<div class="s3_output_context_text_row">' +
+                                prompts_question[question - 1].value +
+                                ' <span id="' +
+                                id +
+                                '">' +
+                                inputValue +
+                                "</span></div>";
+
+                        } else {
+                            alert("You must agree with privacy term to continue");
+                            return;
+                        }
+                    } else if (question == 11) {
+                        createHTMLElements(
+                            row,
+                            "checkbox",
+                            id,
+                            "prompt12",
+                            null,
+                            "s3_profile_input",
+                            question,
+                            inputValue,
+                            null,
+                            false,
+                            true,
+                            true
+                        );
+                    } else {
+                        createHTMLElements(
+                            row,
+                            "text",
+                            id,
+                            id_next_key,
+                            null,
+                            "s3_profile_input",
+                            question,
+                            inputValue,
+                            null,
+                            false,
+                            false,
+                            true
+                        );
+                    }
+
+                    // Update the progress bar
+                    bar_fill = bar_fill + 6.25; // Increment the progress bar
+                    document.getElementById("bar_fill").innerHTML = (bar_fill - (6.25 * question) + 5 * question);
+                    document.querySelector(".s3_progress_bar_fill").animate(
+                        [
+                            // keyframes
+                            { width: currentWidth + "%" },
+                            { width: (bar_fill) + "%" },
+                        ],
+                        {
+                            // timing options
+                            duration: 1000,
+                            iterations: 1,
+                            fill: "forwards",
+                        }
+                    );
+                    currentWidth = bar_fill; // Update the current width
+                    question++;
+                }
+            }
+        });
+        // END OF NEXT STEPS
+
+        // Ref: https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
+        function validateEmail(email) {
+            return String(email).toLowerCase().match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+        }
+
+        // Ref: https://stackoverflow.com/questions/26211225/validating-phone-numbers-using-javascript
+        function validatePhoneNumber(number) {
+            var formatter = number.replace(/[^\d]/g, '');
+            return formatter.length > 6 && formatter.length < 12 ? true : false;
+        }
+
+        // Skip button
+        document.getElementById("skip").addEventListener("click", function () {
+            if (question < 5 && row == 0) {
+                switch (question) {
+                    case 0: // Get name vaue
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+
+                        // Update input field and output for age
+                        createHTMLElements(
+                            row,
+                            "number",
+                            id,
+                            id_next,
+                            "age",
+                            "s3_profile_input",
+                            question,
+                            "N/A",
+                            null,
+                            false,
+                            null
+                        );
+
+                        break;
+
+                    case 1: //Get age value
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+
+
+                        // Insert select option field and output for gender
+                        createHTMLElements(
+                            row,
+                            null,
+                            id,
+                            id_next,
+                            null,
+                            "s3_profile_input",
+                            question,
+                            "N/A",
+                            selectOptions,
+                            true,
+                            null
+                        );
+
+                        break;
+                    case 2: // Get gender value
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+
+                        // Insert input field and output for email
+                        createHTMLElements(
+                            row,
+                            "text",
+                            id,
+                            id_next,
+                            id_next,
+                            "s3_profile_input",
+                            question,
+                            inputValue,
+                            null,
+                            null,
+                            null
+                        );
+
+                        break;
+                    case 3: // get email value
+                        var id = label_list[row][question].toLowerCase();
+                        var id_next = label_list[row][question + 1].toLowerCase();
+
+                        // Insert input field and output for telephone
+                        createHTMLElements(
+                            row,
+                            "text",
+                            id,
+                            id_next,
+                            id_next,
+                            "s3_profile_input",
+                            question,
+                            inputValue,
+                            null,
+                            null,
+                            null
+                        );
+
+                        break;
+                    case 4: // Get Telephone value
+                        var id = label_list[row][question].toLowerCase();
+                        var inputValue = document.getElementById(id).value;
+
+                        counter++;
+                        row++;
+                        question = 0; //Reset question
+                        var id_next_key = prompts_question[question].key;
+                        // Step 2: Insert the next input field
+                        createHTMLElements(
+                            row,
+                            "text",
+                            id,
+                            id_next_key,
+                            null,
+                            "s3_profile_input",
+                            question,
+                            inputValue,
+                            null,
+                            false,
+                            false
+                        );
+                        const outputElement = document.querySelectorAll(".s3_output");
+                        if (outputElement.length > 0) {
+                            outputElement[0].style.width = "49%";
+                            outputElement[0].style.margin = "0";
+                            outputElement[0].style.float = "left";
+                            outputElement[0].style.margin = "0 1% 1% 0";
+                            outputElement[0].style.fontSize = "14px";
+                        }
+                        var text = "Energy Usage and Challenges"; // Output text
+                        document.getElementById("step_profile_label").innerHTML = text;
+                        document.getElementById("counter").innerHTML = counter;
+                        document.getElementById("question").innerHTML = question + 1;
+                        document.getElementById("quest_sum").innerHTML = 4;
+
+                        break;
+                    default:
+                        break;
+                }
+
+                question++;
+            }
+            // END OF STEP 1
+
+            // BEGINNING OF NEXT STEPS
+            else {
+                // End of All Questions
+
+                // NEXT STEP CONTEXT
+                var id = prompts_question[question - 1].key; // Get the last input field id
+                var id_next_key = question !== 12 ? prompts_question[question].key : ""; // Get the next input field id
+
+
+                // Step 2: Insert the next input field
+                if (question == 12) {
+                    var id = prompts_question[question - 1].key; // Get the last input field id
+                    var inputValue = document.getElementById(id).checked;
+                    if (inputValue === false) {
+                        inputValue = "N/A";
+                        document.getElementById(
+                            "s3_output_context_text_step" + 4
+                        ).innerHTML +=
+                            '<div class="s3_output_context_text_row">' +
+                            prompts_question[question - 1].value +
+                            ' <span id="' +
+                            id +
+                            '">' +
+                            inputValue +
+                            "</span></div>";
+
+                    }
+                } else if (question == 11) {
+                    createHTMLElements(
+                        row,
+                        "checkbox",
+                        id,
+                        "prompt12",
+                        null,
+                        "s3_profile_input",
+                        question,
+                        "N/A",
+                        null,
+                        false,
+                        true,
+                        true
+                    );
+                } else {
+                    createHTMLElements(
+                        row,
+                        "text",
+                        id,
+                        id_next_key,
+                        null,
+                        "s3_profile_input",
+                        question,
+                        "N/A",
+                        null,
+                        false,
+                        false,
+                        true
+                    );
+                }
+
+                question++;
+
+            }
+        });
+
+
+        function createHTMLElements(
+            row,
+            type,
+            id,
+            id_next,
+            autocomplete,
+            className,
+            question,
+            inputValue,
+            selectOptions,
+            isOption,
+            isCheckbox,
+            nextStep = false
+        ) {
+            // Slide out to the current input to the right
+            // Get all currentInputBoxElements with class "s3_profile_input_box"
+            const currentInputBoxElements = document.getElementsByClassName(
+                "s3_profile_input_box"
+            );
+
+            // Loop through each element and apply the transform style
+            for (let i = 0; i < currentInputBoxElements.length; i++) {
+                currentInputBoxElements[i].style.transform = "translateX(120%)";
+            }
+
+            // Delay for a short duration (optional)
+            setTimeout(function () {
+                // Hide next input while sliding to the left
+                document.querySelector(".s3_profile_input_box").style.opacity = "0";
+                // Next input slide back to the left
+                document.querySelector(".s3_profile_input_box").style.transform =
+                    "translateX(-120%)";
+
+                // Delay for a short duration (optional)
+                setTimeout(function () {
+                    // Hide the current input
+                    document.getElementById(id).style.display = "none";
+
+                    // Create a new input element
+                    if (isOption) {
+                        // if Select element
+                        const new_input = createSelectElement(
+                            id_next,
+                            id_next,
+                            className,
+                            selectOptions
+                        );
+                        // Append the new input
+                        document.getElementById("s3_input_holder").appendChild(new_input);
+                    } else if (!isOption && isCheckbox) {
+                        // Create a new checkbox element
+                        document.getElementById("s3_input_holder").innerHTML +=
+                            '<input type="' +
+                            type +
+                            '" id="' +
+                            id_next +
+                            '" name="' +
+                            id_next +
+                            '" class="' +
+                            className +
+                            ' s3_profile_checkbox"><label id="checkbox" for="' +
+                            id_next +
+                            '">I agree <a href="#">privacy term</a></label>';
+                    } else {
+                        // Insert Input element
+                        if (row == 0) {
+                            const new_input = createInputElement(
+                                type,
+                                id_next,
+                                id_next,
+                                autocomplete,
+                                className
+                            );
+                            // Append the new input
+                            document.getElementById("s3_input_holder").appendChild(new_input);
+                        } else {
+                            const new_input = createTextAreaElement(
+                                type,
+                                id_next,
+                                id_next,
+                                autocomplete,
+                                className
+                            );
+                            // Append the new input
+                            document.getElementById("s3_input_holder").appendChild(new_input);
+
+                        }
+
+                    }
+
+                    // Update the label title
+                    if (row == 0) {
+                        document.getElementById("label_title").innerHTML =
+                            id_next.toLowerCase();
+                    }
+                    if (row == 1) {
+                        document.getElementById("label_question").innerHTML =
+                            prompts_question[question].value;
+                    }
+
+                    // Show the new input
+                    document.querySelector(".s3_profile_input_box").style.opacity = "1";
+                    // Slide in the new input from the left
+                    document.querySelector(".s3_profile_input_box").style.transform =
+                        "translateX(0)";
+                    setTimeout(function () {
+                        // Focus on the new input
+                        document.getElementById(id_next).focus();
+                    }, 300);
+                }, 300); // Adjust the delay duration as needed (ms)
+            }, 300); // Adjust the delay duration as needed (ms)
+
+            // Update the output
+            document.getElementsByClassName("s3_output")[0].style.display = "block";
+
+            // Check if the input is a checkbox
+            if (typeof inputValue === "boolean") {
+                document.getElementById("checkbox").style.display = "none";
+                inputValue = "Yes";
+                document.getElementById("s3_output_context_text").innerHTML +=
+                    '<div class="s3_output_context_text_row">Agree with privacy term: <span id="' +
+                    id +
+                    '">' +
+                    inputValue +
+                    "</span></div>";
+            }
+
+            if (nextStep && row == 1) {
+                // Update the output with the new input value
+                var i = 2; // Output row
+                var x = 1; // Output column
+                var text = "";
+                var number = 1; // Output number
+                if (question == 4) {
+                    counter = 3;
+                } else if (question == 8) {
+                    counter = 4;
+                }
+                if (question <= 4) {
+                    text = "Energy Usage and Challenges";
+                    question == 4 ? (text = "Interest and Awareness") : text;
+                    x = 1;
+                } else if (question >= 5 && question <= 8) {
+                    text = "Interest and Awareness";
+                    question == 8 ? (text = "Future Considerations") : text;
+                    i = 3;
+                    x = 2;
+                    number = question + 1 - 4; // Output number
+                } else if (question >= 9 && question <= 12) {
+                    text = "Future Considerations";
+                    i = 4;
+                    x = 3;
+                    number = question + 1 - 8; // Output number
+                }
+
+                document.getElementById("step_profile_label").innerHTML = text;
+                document.getElementById("counter").innerHTML = counter;
+                document.getElementById("question").innerHTML =
+                    question + 1 > 4 ? number : question + 1;
+
+                const outputElement = document.querySelectorAll(".s3_output");
+                if (outputElement.length > 0) {
+                    outputElement[x].style.display = "block";
+                    outputElement[x].style.width = "49%";
+                    outputElement[x].style.margin = "0";
+                    outputElement[x].style.float = "left";
+                    outputElement[x].style.fontSize = "12px";
+                    outputElement[x].style.margin = "0 1% 1% 0";
+                }
+                document.getElementById(
+                    "s3_output_context_text_step" + i
+                ).innerHTML +=
+                    '<div class="s3_output_context_text_row">' +
+                    prompts_question[question - 1].value +
+                    ' <span id="' +
+                    id +
+                    '">' +
+                    inputValue +
+                    "</span></div>";
+            } else {
+                // Update the output with the new input value
+                inputValue = inputValue === undefined ? "" : inputValue;
+                document.getElementById("s3_output_context_text").innerHTML +=
+                    '<div class="s3_output_context_text_row">' +
+                    id.charAt(0).toUpperCase() +
+                    id.slice(1) +
+                    ': <span id="' +
+                    id +
+                    '">' +
+                    inputValue +
+                    "</span></div>";
+            }
+
+            // Update the question number
+            if (row == 0) {
+                document.getElementById("question").innerHTML = question + 2;
+            }
+        }
+
+        function createInputElement(type, id, name, autocomplete, className) {
+            const input = document.createElement("input");
+            input.type = type;
+            input.id = id;
+            input.name = name;
+            input.autocomplete = autocomplete;
+            input.className = className;
+            return input;
+        }
+
+        function createTextAreaElement(type, id, name, autocomplete, className) {
+            const textarea = document.createElement("textarea");
+            textarea.type = type;
+            textarea.id = id;
+            textarea.name = name;
+            textarea.autocomplete = autocomplete;
+            textarea.cols = 50;
+            textarea.rows = 4;
+            textarea.className = className + " s3_profile_textarea";
+            return textarea;
+        }
+
+        function createSelectElement(id, name, className, selectOptions) {
+            const select = document.createElement("select");
+            select.id = id;
+            select.name = name;
+            select.className = className;
+
+            for (const options of selectOptions) {
+                var option = document.createElement("option");
+                option.value = options.value;
+                option.text = options.text;
+                select.appendChild(option);
+            }
+            return select;
+        }
+
+    </script>
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            // This will change the display of the sidebar from "none" to "flex". Which will make the sidebar appears when the menu button is clicked.
+            sidebar.style.display = "flex";
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            // This will change the display of the sidebar from "flex" to "none". Which will make the sidebar disappears when the close button is clicked.
+            sidebar.style.display = "none";
+        }
+
+        // Function to close sidebar when window is resized to desktop view
+        function closeSidebarOnResize() {
+            const sidebar = document.querySelector(".sidebar");
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth > 800) {
+                hideSidebar();
+            }
+        }
+
+        // Add event listener for window resize event
+        window.addEventListener("resize", closeSidebarOnResize);
+    </script>
+</body>
+
+</html>
