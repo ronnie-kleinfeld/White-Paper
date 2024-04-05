@@ -17,6 +17,8 @@ namespace SignalRChatRoomWebApplication {
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddRazorPages();
 
+            builder.Services.AddSignalR();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -36,6 +38,8 @@ namespace SignalRChatRoomWebApplication {
             app.UseAuthorization();
 
             app.MapRazorPages();
+
+            app.MapHub<ChatHub>("/chatHub");
 
             app.Run();
         }
