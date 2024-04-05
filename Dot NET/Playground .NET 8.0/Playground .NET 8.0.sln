@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground .NET 8.0", "Play
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{4512CEFC-1DE0-4FC5-B101-7F3448A34153}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{3AB8A840-33A4-4882-9A87-748D209FC996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChatRoomWebApplication", "SignalRChatRoomWebApplication\SignalRChatRoomWebApplication.csproj", "{438CCB44-3A5D-4AD9-8895-EF2AB84CB6D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{4512CEFC-1DE0-4FC5-B101-7F3448A34153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4512CEFC-1DE0-4FC5-B101-7F3448A34153}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4512CEFC-1DE0-4FC5-B101-7F3448A34153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438CCB44-3A5D-4AD9-8895-EF2AB84CB6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438CCB44-3A5D-4AD9-8895-EF2AB84CB6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438CCB44-3A5D-4AD9-8895-EF2AB84CB6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438CCB44-3A5D-4AD9-8895-EF2AB84CB6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{438CCB44-3A5D-4AD9-8895-EF2AB84CB6D1} = {3AB8A840-33A4-4882-9A87-748D209FC996}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {672EBC56-4754-4762-AA55-141CA091C1C9}
