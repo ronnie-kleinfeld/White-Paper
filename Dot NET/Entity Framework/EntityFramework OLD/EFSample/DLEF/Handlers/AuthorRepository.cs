@@ -14,9 +14,7 @@ namespace DLEF.Handlers {
 
     internal class AuthorIDMap : BaseIDMap<AuthorData> {
         public AuthorIDMap() : base("Authors") {
-            Property(v => v.Name)
-                 .IsRequired()
-                 .HasMaxLength(255);
+            Property(v => v.Name).IsRequired().HasMaxLength(255);
         }
     }
 
