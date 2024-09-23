@@ -15,7 +15,11 @@ namespace CodeFirst.Context {
 
         // The following configures EF to create a Sqlite database file in the
         // special "local" folder for your platform.
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer($"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFCoreDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;");
+        protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) {
+            string connectionString =
+                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFCoreDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+            dbContextOptionsBuilder
+                .UseSqlServer(connectionString, providerOptions => { providerOptions.EnableRetryOnFailure(); });
+        }
     }
 }
