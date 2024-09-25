@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace DLEFCore2.Migrations
 {
     /// <inheritdoc />
-    public partial class AddNumbersToUserModel : Migration
+    public partial class AddNumbersToUserMode5 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +37,7 @@ namespace DLEFCore2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EntitesId",
+                name: "EntityId",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -44,11 +46,11 @@ namespace DLEFCore2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EntitesId", x => x.Id);
+                    table.PrimaryKey("PK_EntityId", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "EntitesNoId",
+                name: "EntityNoId",
                 columns: table => new
                 {
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()")
@@ -73,6 +75,46 @@ namespace DLEFCore2.Migrations
                 {
                     table.PrimaryKey("PK_GenderType", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
+                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    GenderTypeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_GenderType_GenderTypeId",
+                        column: x => x.GenderTypeId,
+                        principalTable: "GenderType",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "GenderType",
+                columns: new[] { "Id", "Description", "IsDefault", "Name", "OrderBy" },
+                values: new object[] { 1, "Male", true, "Male", 1 });
+
+            migrationBuilder.InsertData(
+                table: "GenderType",
+                columns: new[] { "Id", "Description", "Name", "OrderBy" },
+                values: new object[,]
+                {
+                    { 2, "Female", "Female", 2 },
+                    { 3, "Other", "Other", 3 }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_GenderTypeId",
+                table: "Users",
+                column: "GenderTypeId");
         }
 
         /// <inheritdoc />
@@ -82,10 +124,13 @@ namespace DLEFCore2.Migrations
                 name: "DataTypes");
 
             migrationBuilder.DropTable(
-                name: "EntitesId");
+                name: "EntityId");
 
             migrationBuilder.DropTable(
-                name: "EntitesNoId");
+                name: "EntityNoId");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "GenderType");

@@ -16,7 +16,7 @@ namespace DLEFCore2.Repository.Samples {
 
             builder
                 .Property(m => m.CreatedDateTime)
-                .HasDefaultValueSql("GETDATE()"); // For SQL Server
+                .HasDefaultValueSql("GETDATE()");
         }
     }
 

@@ -86,7 +86,7 @@ namespace DLEFCore2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EntitesId");
+                    b.ToTable("EntityId");
                 });
 
             modelBuilder.Entity("DLEFCore2.Repository.Samples.EntityNoIdModel", b =>
@@ -96,7 +96,7 @@ namespace DLEFCore2.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.ToTable("EntitesNoId");
+                    b.ToTable("EntityNoId");
                 });
 
             modelBuilder.Entity("DLEFCore2.Repository.Samples.GenderTypeModel", b =>
@@ -134,6 +134,74 @@ namespace DLEFCore2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GenderType");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Male",
+                            Disabled = false,
+                            IsDefault = true,
+                            Name = "Male",
+                            OrderBy = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Female",
+                            Disabled = false,
+                            IsDefault = false,
+                            Name = "Female",
+                            OrderBy = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Other",
+                            Disabled = false,
+                            IsDefault = false,
+                            Name = "Other",
+                            OrderBy = 3
+                        });
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.UserModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<int>("GenderTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GenderTypeId");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.UserModel", b =>
+                {
+                    b.HasOne("DLEFCore2.Repository.Samples.GenderTypeModel", "GenderType")
+                        .WithMany()
+                        .HasForeignKey("GenderTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GenderType");
                 });
 #pragma warning restore 612, 618
         }

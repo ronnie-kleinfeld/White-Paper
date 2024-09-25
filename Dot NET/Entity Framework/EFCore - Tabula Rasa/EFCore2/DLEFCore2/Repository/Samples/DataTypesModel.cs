@@ -15,6 +15,7 @@ namespace DLEFCore2.Repository.Samples {
         }
     }
 
+    [EntityTypeConfiguration(typeof(DataTypesMap))]
     public class DataTypesModel : BaseEntityModel {
         /// <summary>
         ///  sql identity with auto incerement of 1,1

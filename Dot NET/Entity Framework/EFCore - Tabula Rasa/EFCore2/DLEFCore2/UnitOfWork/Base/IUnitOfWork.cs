@@ -2,13 +2,19 @@
 
 namespace DLEFCore2.UnitOfWork.Base {
     public interface IUnitOfWork : IDisposable {
-        IEntityIdRepository EntitesId {
+        IDataTypesRepository DataTypesRepository {
             get;
         }
-        IEntityNoIdRepository EntitesNoId {
+        IEntityIdRepository EntityId {
+            get;
+        }
+        IEntityNoIdRepository EntityNoId {
             get;
         }
         IGenderTypeRepository GenderType {
+            get;
+        }
+        IUserRepository User {
             get;
         }
 

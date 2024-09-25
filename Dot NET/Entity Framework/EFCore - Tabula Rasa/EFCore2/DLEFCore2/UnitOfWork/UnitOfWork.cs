@@ -12,15 +12,20 @@ namespace DLEFCore2.UnitOfWork {
             Context = context;
         }
 
-        public IEntityIdRepository EntitesId {
+        public IDataTypesRepository DataTypesRepository {
             get;
         }
-        public IEntityNoIdRepository EntitesNoId {
+        public IEntityIdRepository EntityId {
+            get;
+        }
+        public IEntityNoIdRepository EntityNoId {
             get;
         }
         public IGenderTypeRepository GenderType {
             get;
         }
+
+        public IUserRepository User => throw new NotImplementedException();
 
         public int Complete() {
             return Context.SaveChanges();

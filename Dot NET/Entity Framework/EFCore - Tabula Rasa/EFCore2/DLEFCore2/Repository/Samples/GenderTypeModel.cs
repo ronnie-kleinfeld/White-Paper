@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using DLEFCore2.Context;
+﻿using DLEFCore2.Context;
 using DLEFCore2.Repository.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.ComponentModel.DataAnnotations;
 
 namespace DLEFCore2.Repository.Samples {
     public interface IGenderTypeRepository : IRepository<GenderTypeModel> {
@@ -15,6 +15,27 @@ namespace DLEFCore2.Repository.Samples {
             builder.Property(m => m.OrderBy).HasDefaultValueSql("-1");
             builder.Property(m => m.IsDefault).HasDefaultValue(false);
             builder.Property(m => m.Disabled).HasDefaultValue(false);
+
+            builder.HasData(
+                new GenderTypeModel {
+                    Id = 1,
+                    Name = "Male",
+                    Description = "Male",
+                    OrderBy = 1,
+                    IsDefault = true
+                },
+                new GenderTypeModel {
+                    Id = 2,
+                    Name = "Female",
+                    Description = "Female",
+                    OrderBy = 2
+                },
+                new GenderTypeModel {
+                    Id = 3,
+                    Name = "Other",
+                    Description = "Other",
+                    OrderBy = 3
+                });
         }
     }
 
@@ -39,5 +60,11 @@ namespace DLEFCore2.Repository.Samples {
         public bool Disabled {
             get; set;
         }
+    }
+
+    public enum GenderTypeEnum {
+        Male = 1,
+        Female = 2,
+        Other = 3
     }
 }
