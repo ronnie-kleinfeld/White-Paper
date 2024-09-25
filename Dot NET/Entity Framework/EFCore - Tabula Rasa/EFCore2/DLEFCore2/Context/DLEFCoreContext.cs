@@ -1,5 +1,4 @@
-﻿using DLEFCore2.Repository;
-using DLEFCore2.Repository.Samples;
+﻿using DLEFCore2.Repository.Samples;
 using Microsoft.EntityFrameworkCore;
 
 namespace DLEFCore2.Context {
@@ -11,7 +10,10 @@ namespace DLEFCore2.Context {
         public DbSet<EntityNoIdModel> EntitesNoId {
             get; set;
         }
-        public DbSet<UserModel> Users {
+        public DbSet<GenderTypeModel> GenderType {
+            get; set;
+        }
+        public DbSet<DataTypesModel> DataTypes {
             get; set;
         }
 
@@ -29,14 +31,6 @@ namespace DLEFCore2.Context {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.Entity<UserModel>()
-                .Property(user => user.Name1)
-                .HasDefaultValue("Ronnie");
-
-            modelBuilder.Entity<UserModel>()
-                .Property(e => e.CreatedDateTime1)
-                .HasDefaultValueSql("GETDATE()");
-
             base.OnModelCreating(modelBuilder);
         }
     }

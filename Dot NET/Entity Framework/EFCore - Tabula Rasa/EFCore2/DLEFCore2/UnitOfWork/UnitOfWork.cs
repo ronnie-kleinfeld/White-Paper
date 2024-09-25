@@ -18,6 +18,9 @@ namespace DLEFCore2.UnitOfWork {
         public IEntityNoIdRepository EntitesNoId {
             get;
         }
+        public IGenderTypeRepository GenderType {
+            get;
+        }
 
         public int Complete() {
             return Context.SaveChanges();

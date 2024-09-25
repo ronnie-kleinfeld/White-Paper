@@ -8,6 +8,9 @@ namespace DLEFCore2.UnitOfWork.Base {
         IEntityNoIdRepository EntitesNoId {
             get;
         }
+        IGenderTypeRepository GenderType {
+            get;
+        }
 
         int Complete();
     }
