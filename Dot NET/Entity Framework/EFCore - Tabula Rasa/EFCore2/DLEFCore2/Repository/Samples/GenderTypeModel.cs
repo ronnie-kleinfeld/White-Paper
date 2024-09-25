@@ -51,15 +51,21 @@ namespace DLEFCore2.Repository.Samples {
         public string Description {
             get; set;
         }
+
         public int OrderBy {
-            get; set;
-        }
+            get;
+            set;
+        } = -1;
+
         public bool IsDefault {
-            get; set;
-        }
+            get;
+            set;
+        } = false;
+
         public bool Disabled {
-            get; set;
-        }
+            get;
+            set;
+        } = false;
     }
 
     public enum GenderTypeEnum {
