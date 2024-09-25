@@ -1,9 +1,16 @@
 ﻿using DLEFCore2.Repository;
+using DLEFCore2.Repository.Samples;
 using Microsoft.EntityFrameworkCore;
 
 namespace DLEFCore2.Context {
     public class DLEFCoreContext : DbContext {
         // members
+        public DbSet<EntityIdModel> EntitesId {
+            get; set;
+        }
+        public DbSet<EntityNoIdModel> EntitesNoId {
+            get; set;
+        }
         public DbSet<UserModel> Users {
             get; set;
         }

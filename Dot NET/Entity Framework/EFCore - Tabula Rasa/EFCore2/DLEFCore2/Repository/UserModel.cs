@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DLEFCore2.Repository {
     public class UserModel {
@@ -12,9 +11,8 @@ namespace DLEFCore2.Repository {
         }
 
         public string Name11 {
-            get;
-            set;
-        } = "Ronnie";
+            get; set;
+        }
 
         public string? Name2 {
             get; set;
@@ -33,7 +31,7 @@ namespace DLEFCore2.Repository {
 
         public DateTime CreatedDateTime1 {
             get; set;
-        } = DateTime.Now;
+        }
 
         public int Age1 {
             get; set;

@@ -22,6 +22,34 @@ namespace DLEFCore2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.EntityIdModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EntitesId");
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.EntityNoIdModel", b =>
+                {
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.ToTable("EntitesNoId");
+                });
+
             modelBuilder.Entity("DLEFCore2.Repository.UserModel", b =>
                 {
                     b.Property<int>("Id")

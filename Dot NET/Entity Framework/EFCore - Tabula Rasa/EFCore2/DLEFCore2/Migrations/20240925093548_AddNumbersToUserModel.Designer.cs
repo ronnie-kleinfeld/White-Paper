@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DLEFCore2.Migrations
 {
     [DbContext(typeof(DLEFCoreContext))]
-    [Migration("20240925073609_AddNumbersToUserModel")]
+    [Migration("20240925093548_AddNumbersToUserModel")]
     partial class AddNumbersToUserModel
     {
         /// <inheritdoc />
@@ -24,6 +24,34 @@ namespace DLEFCore2.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.EntityIdModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EntitesId");
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.EntityNoIdModel", b =>
+                {
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.ToTable("EntitesNoId");
+                });
 
             modelBuilder.Entity("DLEFCore2.Repository.UserModel", b =>
                 {

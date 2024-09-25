@@ -7,7 +7,7 @@ Create Model (in Program.cs)
 
 Add ConnectionString to App.Config
   <connectionStrings>
-    <add name="DefaultConnection" connectionString="Data Source=RonnieDev;Initial Catalog=Pluto2;Persist Security Info=True;User ID=sa;Password=qweQWE123!@#" providerName="System.Data.SqlClient"/>
+    <add name="DefaultConnection" connectionString="Data Source=RonnieDev;Initial Catalog=Pluto2;Persist Security Info=True;User Id=sa;Password=qweQWE123!@#" provIderName="System.Data.SqlClient"/>
   </connectionStrings>
 
 Create DBContext (in Program.cs)
