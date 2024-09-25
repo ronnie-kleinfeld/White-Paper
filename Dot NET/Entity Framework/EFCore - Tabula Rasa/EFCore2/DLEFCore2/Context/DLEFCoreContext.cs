@@ -18,11 +18,17 @@ namespace DLEFCore2.Context {
             base.OnConfiguring(optionsBuilder);
 
             optionsBuilder.UseSqlServer(
-                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFCoreDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;");
+                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFCore2DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            //new NameMap().Configure(modelBuilder.Entity<NameModel>());
+            modelBuilder.Entity<UserModel>()
+                .Property(user => user.Name1)
+                .HasDefaultValue("Ronnie");
+
+            modelBuilder.Entity<UserModel>()
+                .Property(e => e.CreatedDateTime1)
+                .HasDefaultValueSql("GETDATE()");
 
             base.OnModelCreating(modelBuilder);
         }
