@@ -165,6 +165,52 @@ namespace DLEFCore2.Migrations
                         });
                 });
 
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.GroupModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<string>("GroupName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.UserGroupModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UsersGroups");
+                });
+
             modelBuilder.Entity("DLEFCore2.Repository.Samples.UserModel", b =>
                 {
                     b.Property<int>("Id")
@@ -181,7 +227,7 @@ namespace DLEFCore2.Migrations
                     b.Property<int>("GenderTypeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("GroupName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -193,6 +239,25 @@ namespace DLEFCore2.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.UserGroupModel", b =>
+                {
+                    b.HasOne("DLEFCore2.Repository.Samples.GroupModel", "Group")
+                        .WithMany("GroupUsers")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DLEFCore2.Repository.Samples.UserModel", "User")
+                        .WithMany("UserGroups")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DLEFCore2.Repository.Samples.UserModel", b =>
                 {
                     b.HasOne("DLEFCore2.Repository.Samples.GenderTypeModel", "GenderType")
@@ -202,6 +267,16 @@ namespace DLEFCore2.Migrations
                         .IsRequired();
 
                     b.Navigation("GenderType");
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.GroupModel", b =>
+                {
+                    b.Navigation("GroupUsers");
+                });
+
+            modelBuilder.Entity("DLEFCore2.Repository.Samples.UserModel", b =>
+                {
+                    b.Navigation("UserGroups");
                 });
 #pragma warning restore 612, 618
         }

@@ -20,6 +20,12 @@ namespace DLEFCore2.Context {
         public DbSet<UserModel> Users {
             get; set;
         }
+        public DbSet<GroupModel> Groups {
+            get; set;
+        }
+        public DbSet<UserGroupModel> UsersGroups {
+            get; set;
+        }
 
         // class
         public DLEFCoreContext() {

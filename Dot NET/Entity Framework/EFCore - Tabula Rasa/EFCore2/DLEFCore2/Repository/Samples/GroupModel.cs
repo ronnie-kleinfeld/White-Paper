@@ -5,23 +5,21 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
 
 namespace DLEFCore2.Repository.Samples {
-    public interface IUserRepository : IRepository<UserModel> {
+    public interface IGroupRepository : IRepository<GroupModel> {
     }
-    public class UserRepository(DLEFCoreContext context) : BaseRepository<UserModel>(context), IUserRepository {
+    public class GroupRepository(DLEFCoreContext context) : BaseRepository<GroupModel>(context), IGroupRepository {
     }
 
-    public class UserMap : IEntityTypeConfiguration<UserModel> {
-        public void Configure(EntityTypeBuilder<UserModel> builder) {
+    public class GroupMap : IEntityTypeConfiguration<GroupModel> {
+        public void Configure(EntityTypeBuilder<GroupModel> builder) {
             builder
                 .Property(m => m.CreatedDateTime)
                 .HasDefaultValueSql("GETDATE()");
-
-            builder.HasOne(m => m.GenderType);
         }
     }
 
-    [EntityTypeConfiguration(typeof(UserMap))]
-    public class UserModel : BaseEntityModel {
+    [EntityTypeConfiguration(typeof(GroupMap))]
+    public class GroupModel : BaseEntityModel {
         public int Id {
             get; set;
         }
@@ -35,11 +33,7 @@ namespace DLEFCore2.Repository.Samples {
             get; set;
         }
 
-        public GenderTypeModel GenderType {
-            get; set;
-        }
-
-        public List<UserGroupModel> UserGroups {
+        public List<UserGroupModel> GroupUsers {
             get;
         }
     }
