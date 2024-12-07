@@ -1,0 +1,72 @@
+1. Button Variations (`btn`)
+Button Styles: `btn-primary`, `btn-secondary`, `btn-success`, `btn-danger`, `btn-warning`, `btn-info`, `btn-light`, `btn-dark`, `btn-link`, `btn-outline-*`
+Sizes: `btn-sm`, `btn-lg`
+States: `disabled`
+
+2. Background Colors (`bg-`)
+`bg-primary`, `bg-secondary`, `bg-success`, `bg-danger`, `bg-warning`, `bg-info`, `bg-light`, `bg-dark`, `bg-white`, `bg-transparent`
+
+3. Text Colors (`text-`)
+`text-primary`, `text-secondary`, `text-success`, `text-danger`, `text-warning`, `text-info`, `text-light`, `text-dark`, `text-white`, `text-body`, `text-muted`, `text-black-50`, `text-white-50`
+
+4. Borders (`border-`)
+Colors: `border-primary`, `border-secondary`, `border-success`, `border-danger`, `border-warning`, `border-info`, `border-light`, `border-dark`, `border-white`
+Widths: `border-0`, `border-1`, `border-2`, `border-3`, `border-4`, `border-5`
+Rounded Corners: `rounded`, `rounded-top`, `rounded-end`, `rounded-bottom`, `rounded-start`, `rounded-circle`, `rounded-pill`, `rounded-0`
+
+5. Spacing (`m-`, `p-`)
+Margin and Padding Classes:
+Margins: `m-0`, `m-1`, `m-2`, `m-3`, `m-4`, `m-5`, `m-auto`
+Padding: `p-0`, `p-1`, `p-2`, `p-3`, `p-4`, `p-5`
+Sides: `mt-*`, `mb-*`, `ms-*`, `me-*`, `pt-*`, `pb-*`, `ps-*`, `pe-*`
+
+6. Display Utilities (`d-`)
+Display Types: `d-none`, `d-inline`, `d-inline-block`, `d-block`, `d-flex`, `d-grid`, `d-inline-flex`, `d-inline-grid`
+Responsive Variations: `d-*-none`, `d-*-inline`, `d-*-block`, etc. (`*` = breakpoint)
+
+7. Flexbox Utilities (`flex-`)
+Alignment and Justification:
+`justify-content-start`, `justify-content-end`, `justify-content-center`, `justify-content-between`, `justify-content-around`, `justify-content-evenly`
+`align-items-start`, `align-items-center`, `align-items-end`, `align-items-baseline`, `align-items-stretch`
+Direction and Wrapping:
+`flex-row`, `flex-row-reverse`, `flex-column`, `flex-column-reverse`
+`flex-wrap`, `flex-nowrap`, `flex-wrap-reverse`
+
+8. Grid System (`col-`, `row`)
+Columns:
+Default: `col`, `col-1` to `col-12`
+Responsive: `col-*-1` to `col-*-12` (`*` = breakpoint)
+Rows and Gutters:
+`row`, `gx-0` to `gx-5`, `gy-0` to `gy-5`
+
+9. Sizing (`w-`, `h-`)
+Width: `w-25`, `w-50`, `w-75`, `w-100`, `w-auto`
+Height: `h-25`, `h-50`, `h-75`, `h-100`, `h-auto`
+Viewport: `vw-100`, `vh-100`
+
+10. Text Alignment and Transform (`text-`)
+Alignment: `text-start`, `text-center`, `text-end`
+Transformation: `text-lowercase`, `text-uppercase`, `text-capitalize`
+Wrapping: `text-wrap`, `text-nowrap`
+
+11. Positioning (`position-`)
+`position-static`, `position-relative`, `position-absolute`, `position-fixed`, `position-sticky`
+Offsets: `top-0`, `start-0`, `bottom-0`, `end-0`
+
+12. Visibility (`visibility-`, `overflow-`)
+Visibility: `visible`, `invisible`
+Overflow: `overflow-auto`, `overflow-hidden`, `overflow-visible`, `overflow-scroll`
+
+13. Components
+Alerts: `alert`, `alert-*` (color variations)
+Badges: `badge`, `badge-*`
+Cards: `card`, `card-header`, `card-body`, `card-footer`
+Navbars: `navbar`, `navbar-expand-*`, `navbar-light`, `navbar-dark`
+Modals: `modal`, `modal-dialog`, `modal-content`
+Forms: `form-control`, `form-check`, `form-select`, `input-group`
+
+14. Other Utilities
+Shadows: `shadow-sm`, `shadow`, `shadow-lg`, `shadow-none`
+Float: `float-start`, `float-end`, `float-none`
+Borders: `border`, `border-*`
+Visibility: `visible`, `invisible`
