@@ -1,8 +1,8 @@
 package Extends.OsherAll;
 
 public class Company {
-    Employee[] employees;
-    int current;
+    private Employee[] employees;
+    private int current;
     final static int MAX = 100;
 
     public Company() {

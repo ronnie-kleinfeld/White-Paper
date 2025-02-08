@@ -1,7 +1,7 @@
 package Extends.OsherAll;
 
 public class Supervisior extends Employee {
-    Employee[] employees;
+    private Employee[] employees;
 
     public Supervisior(int years) {
         super(years);
@@ -17,7 +17,7 @@ public class Supervisior extends Employee {
     }
 
     public String toString() {
-        return "Supervisior " + years + " years, " + employees.length + " employees";
+        return "Supervisior " + getYears() + " years, " + employees.length + " employees";
     }
 
     public int getScore() {

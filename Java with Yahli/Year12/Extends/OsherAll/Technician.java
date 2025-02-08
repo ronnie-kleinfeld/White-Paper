@@ -17,7 +17,7 @@ public class Technician extends Employee {
     }
 
     public String toString() {
-        return "Technician " + years + " years, " + computers + " computers";
+        return "Technician " + getYears() + " years, " + computers + " computers";
     }
 
     public int getScore() {

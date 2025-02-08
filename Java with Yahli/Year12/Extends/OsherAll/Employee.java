@@ -1,7 +1,7 @@
 package Extends.OsherAll;
 
 public class Employee {
-    int years;
+    private int years;
 
     public Employee(int years) {
         this.years = years;

@@ -1,7 +1,7 @@
 package Extends.OsherAll;
 
 public class UnionMember extends Employee {
-    int yearsAsUnionMember;
+    private int yearsAsUnionMember;
 
     public UnionMember(int years, int yearsAsUnionMember) {
         super(years);
@@ -9,7 +9,7 @@ public class UnionMember extends Employee {
     }
 
     public String toString() {
-        return "UnionMember " + years + " years";
+        return "UnionMember " + getYears() + " years";
     }
 
     public int getScore() {
