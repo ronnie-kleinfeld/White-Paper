@@ -1,3 +1,10 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "_Year12a/2021 אהל-שם/T2021Q7",
+        "_Year12a/2021 אהל-שם/Q7",
+        "Year12OLD",
+        "Year 10",
+        "_Year12a/2021 אהל-שם/t2021/q7"
+    ]
 }

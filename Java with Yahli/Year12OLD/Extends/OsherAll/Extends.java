@@ -20,6 +20,5 @@ public class Extends {
         company.addEmployee(supervisior);
 
         System.out.println(company.totalSalary());
-        System.out.println(Company.isAccepted(company.employees));
     }
 }
